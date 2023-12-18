@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/MJ-Health/static/css/main.1a7488ce.css",
+    "main.js": "/MJ-Health/static/js/main.0abbcdbd.js",
+    "static/js/787.7b8c4eda.chunk.js": "/MJ-Health/static/js/787.7b8c4eda.chunk.js",
+    "index.html": "/MJ-Health/index.html",
+    "main.1a7488ce.css.map": "/MJ-Health/static/css/main.1a7488ce.css.map",
+    "main.0abbcdbd.js.map": "/MJ-Health/static/js/main.0abbcdbd.js.map",
+    "787.7b8c4eda.chunk.js.map": "/MJ-Health/static/js/787.7b8c4eda.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a7488ce.css",
+    "static/js/main.0abbcdbd.js"
+  ]
+}
