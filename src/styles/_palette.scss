@@ -1,0 +1,9 @@
+$labelColor: #211d4e;
+$titleColor: #5a567b;
+$gradientColor: linear-gradient(90deg, #3adebb 0%, #00aee9 100%);
+
+:export {
+    labelColor: $labelColor;
+    titleColor: $titleColor;
+    gradientColor: $gradientColor;
+}
