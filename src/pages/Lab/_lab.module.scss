@@ -1,0 +1,132 @@
+@use '../../styles/variables' as *;
+
+.labTestTitleDiv {
+    position: relative;
+    padding-bottom: 15px;
+    background-color: #ffffff;
+    padding-top: 10px;
+}
+
+.labTestTitleButtonDiv {
+    position: absolute;
+}
+
+.labTestTitleButtonDivMobile {
+    position: relative;
+}
+
+.labTestTitleButtonMobile {
+    background-color: #5a567b !important;
+}
+
+.labTestTitleButton {
+    margin-left: 4rem !important;
+    background-color: #5a567b !important;
+}
+
+.labTestTitle {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #219e8b;
+}
+
+.labTestSection {
+    background-color: #d3d3d3;
+    height: 120vh;
+}
+
+.mt1 {
+    margin-top: 1rem;
+}
+
+.mt2 {
+    margin-top: 2rem;
+}
+
+.singleItemBttn {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(90deg, #3adebb -0.18%, #00aee9 99.82%);
+    font-weight: bold !important;
+    font-size: 18px !important;
+    width: 100%;
+    height: 100%;
+}
+
+.outsourceItemBttn {
+    background-color: #de4e3a !important;
+    font-weight: bold !important;
+    font-size: 18px !important;
+    width: 100%;
+    height: 100%;
+}
+
+.searchFieldDiv {
+    text-align: end;
+}
+
+.searchField {
+    background-color: #ffffff;
+    .MuiInputBase-root {
+        border-radius: 10px !important;
+    }
+}
+
+.rootSearchField {
+    .MuiInputBase-formControl {
+        border-radius: 10px !important;
+    }
+}
+
+.searchIcon {
+    color: #219b8e;
+}
+
+.labTestTableHeader {
+    background-color: #219e8b;
+    position: sticky;
+    top: 0;
+}
+
+.labTestTableColumn {
+    color: #ffffff !important;
+}
+
+.labTestTable {
+    max-height: 600px;
+}
+
+.labTestTable::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.labTestTable::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.successIcon {
+    color: #3adebb;
+    font-size: 10px !important;
+}
+
+.failIcon {
+    color: #de4e3a;
+    font-size: 10px !important;
+}
+
+.statusButton {
+    font-size: 12px !important;
+    font-weight: bold !important;
+}
+
+.disabledStatusButton {
+    color: #000 !important;
+}
+
+.fontBold {
+    font-weight: bold !important;
+}
