@@ -86,6 +86,7 @@
     background-color: #219e8b;
     position: sticky;
     top: 0;
+    z-index: 3;
 }
 
 .labTestTableColumn {
@@ -129,4 +130,117 @@
 
 .fontBold {
     font-weight: bold !important;
+}
+
+.doctorOnShiftText {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+    color: #ffffff;
+}
+
+.doctorName {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #ffffff;
+}
+
+.time {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 37px;
+    text-align: center;
+    letter-spacing: 0.14em;
+    color: #ffffff;
+}
+
+.date {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.3em;
+
+    color: #ffffff;
+}
+
+.modalFlex {
+    display: flex;
+}
+
+.marginLeft15PX {
+    margin-left: 15px;
+}
+
+.doctorInfoDiv {
+    margin-left: 15px;
+    margin-top: 3px;
+}
+
+.padding25PX {
+    padding: 25px;
+}
+
+.gradientBackground {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(90deg, #3adebb -0.18%, #00aee9 99.82%);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.whiteBackground {
+    background-color: #ffffff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.checkInTimeTitle {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+
+    /* MJ Deep Green */
+    color: #219b8e;
+}
+
+.checkInTime {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14.8371px;
+    line-height: 31px;
+    /* or 209% */
+    letter-spacing: 0.3em;
+
+    color: #918fa7;
+}
+
+.checkoutButton {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px !important;
+    text-align: center;
+
+    color: #ffffff;
+    background-color: #5a567b !important;
+}
+
+.closeIcon {
+    cursor: pointer;
+    color: #ffffff;
 }

@@ -16,9 +16,12 @@ import Paper from '@mui/material/Paper'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import CompleteStatus from './components/statusComponent'
+import CheckOutModal from './components/checkoutModal'
+import { useState } from 'react'
 const LabPage = () => {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
+    const [checkOutModalOpen, setCheckOutModalOpen] = useState(false)
     const fakeData = [
         {
             seqNo: '001',
@@ -223,6 +226,7 @@ const LabPage = () => {
                                     : styles.labTestTitleButtonMobile
                             }
                             startIcon={<img src={test} />}
+                            onClick={() => setCheckOutModalOpen(true)}
                         >
                             Check Out
                         </Button>
@@ -559,6 +563,10 @@ const LabPage = () => {
                             </Table>
                         </TableContainer>
                     </div>
+                    <CheckOutModal
+                        open={checkOutModalOpen}
+                        setOpen={setCheckOutModalOpen}
+                    />
                 </Container>
             </section>
         </>
