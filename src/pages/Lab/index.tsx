@@ -18,10 +18,13 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import CompleteStatus from './components/statusComponent'
 import CheckOutModal from './components/checkoutModal'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { LAB_TEST_SINGLE_ITEM_PAGE } from 'constant'
 const LabPage = () => {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
     const [checkOutModalOpen, setCheckOutModalOpen] = useState(false)
+    const navigate = useNavigate()
     const fakeData = [
         {
             seqNo: '001',
@@ -242,6 +245,9 @@ const LabPage = () => {
                                 <Button
                                     variant="contained"
                                     className={styles.singleItemBttn}
+                                    onClick={() =>
+                                        navigate(LAB_TEST_SINGLE_ITEM_PAGE)
+                                    }
                                 >
                                     Single Items
                                 </Button>

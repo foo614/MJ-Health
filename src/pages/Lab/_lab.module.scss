@@ -244,3 +244,135 @@
     cursor: pointer;
     color: #ffffff;
 }
+
+.labTestBackButtonMobile {
+    color: #211d4e !important;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px !important;
+    line-height: 22px;
+    /* identical to box height */
+    text-align: center;
+}
+
+.labTestBackButton {
+    margin-left: 4rem !important;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px !important;
+    line-height: 22px;
+    /* identical to box height */
+    text-align: center;
+
+    /* TItle Color */
+    color: #211d4e !important;
+}
+
+.backIcon {
+    font-size: 30px !important;
+}
+
+.singleItemDiv {
+    padding: 4rem;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin-top: 2rem;
+    height: 100%;
+}
+
+.itemDiv {
+    background-color: #ededed;
+    padding: 25px 10px 15px 15px;
+    border-radius: 10px;
+    // height: 100%;
+}
+
+.singleItemLabelContainer {
+    background: #ffffff;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px 10px 10px 25px;
+}
+
+.labelTextDiv {
+    margin: auto !important;
+}
+
+.labelText {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #211d4e;
+}
+
+.singleItemAvatar {
+    background-color: #219b8e !important;
+
+    font-family: 'Montserrat' !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    color: #ffffff;
+}
+
+.singleItemTitle {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #211d4e;
+    margin-bottom: 1rem;
+}
+
+.itemMainGridContainer{
+    max-height: 700px;
+    overflow: auto;
+    padding-right: 10px;
+}
+
+.itemMainGridContainer::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #e6e6e6; /* or add it to the track */
+}
+
+.itemMainGridContainer::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.outsideContainer{
+    height: 100vh;
+}
+
+.height100{
+    height: 100%;
+}
+
+.singleItemMainGridContainer{
+    max-height: 250px;
+    overflow: auto;
+    padding-right: 10px;
+}
+
+.singleItemMainGridContainer::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #e6e6e6; /* or add it to the track */
+}
+
+.singleItemMainGridContainer::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.labTestSingleItemSection {
+    background-color: #d3d3d3;
+    height: 110vh;
+}

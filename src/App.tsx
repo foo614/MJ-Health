@@ -6,15 +6,20 @@ import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
 import LabPage from 'pages/Lab'
-
+import LabSingleItemPage from 'pages/Lab/single-item'
+import { LAB_TEST_PAGE, LAB_TEST_SINGLE_ITEM_PAGE, LOGIN_PAGE } from 'constant'
 function App() {
     return (
         <ThemeProvider theme={theme}>
             <Routes>
                 <Route path="/" element={<Counter />} />
                 <Route path="/2" element={<Counter />} />
-                <Route path="/3" element={<Login />} />
-                <Route path="/lab-test" element={<LabPage />} />
+                <Route path={LOGIN_PAGE} element={<Login />} />
+                <Route path={LAB_TEST_PAGE} element={<LabPage />} />
+                <Route
+                    path={LAB_TEST_SINGLE_ITEM_PAGE}
+                    element={<LabSingleItemPage />}
+                />
             </Routes>
         </ThemeProvider>
     )
