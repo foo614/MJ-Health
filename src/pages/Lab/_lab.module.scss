@@ -278,8 +278,8 @@
     padding: 4rem;
     background-color: #ffffff;
     border-radius: 5px;
-    margin-top: 2rem;
     height: 100%;
+    margin-top: 1rem;
 }
 
 .itemDiv {
@@ -294,6 +294,7 @@
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     padding: 10px 10px 10px 25px;
+    cursor: pointer;
 }
 
 .labelTextDiv {
@@ -328,7 +329,7 @@
     margin-bottom: 1rem;
 }
 
-.itemMainGridContainer{
+.itemMainGridContainer {
     max-height: 700px;
     overflow: auto;
     padding-right: 10px;
@@ -346,15 +347,15 @@
     border-radius: 10px;
 }
 
-.outsideContainer{
+.outsideContainer {
     height: 100vh;
 }
 
-.height100{
+.height100 {
     height: 100%;
 }
 
-.singleItemMainGridContainer{
+.singleItemMainGridContainer {
     max-height: 250px;
     overflow: auto;
     padding-right: 10px;
@@ -375,4 +376,95 @@
 .labTestSingleItemSection {
     background-color: #d3d3d3;
     height: 110vh;
+}
+
+.singleItemEditBttn {
+    font-family: 'Montserrat' !important;
+    font-style: normal;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    text-align: center;
+    background-color: #219b8e !important;
+    color: #ffffff;
+    height: 50px !important;
+}
+
+//Info Modal CSS
+.infoModalTitle {
+    font-family: 'Montserrat' !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    font-size: 28px !important;
+    color: #f9f9f9 !important;
+}
+
+.infoModalTitleBackground {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(90deg, #3adebb -0.18%, #00aee9 99.82%);
+    padding: 20px 0px 20px 25px !important;
+}
+
+.infoModalRadius {
+    border-radius: 10px !important;
+    max-width: 1100px !important;
+}
+
+.infoTableTH {
+    font-family: 'Montserrat' !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    //text-align: center;
+    color: #211d4e !important;
+}
+
+.infoTableTRCell {
+    font-family: 'Montserrat' !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    color: #211d4e !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.infoModalDialogContent {
+    padding: 0px 15px 0px 15px !important;
+}
+
+.infoModalDialogContent::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.infoModalDialogContent::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.infoModalDialogActions {
+    padding: 20px 15px 20px 15px !important;
+}
+
+.infoModalDialogConfirmBttn {
+    font-family: 'Montserrat' !important;
+    font-style: normal;
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    text-align: center !important;
+    background-color: #3adebb !important;
+    color: #ffffff !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.infoTableTR {
+    cursor: pointer;
+}
+
+.infoTableTRSelected {
+    cursor: pointer;
+    background: #f9f9f9 !important;
 }

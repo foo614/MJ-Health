@@ -8,12 +8,14 @@ import { LAB_TEST_PAGE } from 'constant'
 import Container from '@mui/material/Container'
 import { Grid } from '@mui/material'
 import Label from './components/label'
-
+import TextField from '@mui/material/TextField'
+import { useState } from 'react'
+import InfoModal from './components/info-modal'
 const SingleItem = () => {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
     const navigate = useNavigate()
-
+    const [openInfoModal, setOpenInfoModal] = useState(false)
     const fakeData = [
         {
             id: 1,
@@ -167,6 +169,25 @@ const SingleItem = () => {
                     </div>
                 </div>
                 <Container maxWidth="xl">
+                    <div className={styles.mt2}>
+                        <Grid container spacing={2}>
+                            <Grid item md={4}>
+                                <TextField variant="outlined" />
+                                <TextField variant="outlined" />
+                            </Grid>
+                            <Grid item md={8} className={styles.searchFieldDiv}>
+                                <Button
+                                    variant="contained"
+                                    sx={{
+                                        width: matches ? '220px' : 'auto',
+                                    }}
+                                    className={styles.singleItemEditBttn}
+                                >
+                                    EDIT
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </div>
                     <div className={styles.singleItemDiv}>
                         <Grid container spacing={3}>
                             <Grid
@@ -199,7 +220,11 @@ const SingleItem = () => {
                                                         md={6}
                                                         key={index}
                                                     >
-                                                        <Label />
+                                                        <Label
+                                                            setOpen={
+                                                                setOpenInfoModal
+                                                            }
+                                                        />
                                                     </Grid>
                                                 )
                                             }
@@ -249,7 +274,11 @@ const SingleItem = () => {
                                                                     md={12}
                                                                     key={index}
                                                                 >
-                                                                    <Label />
+                                                                    <Label
+                                                                        setOpen={
+                                                                            setOpenInfoModal
+                                                                        }
+                                                                    />
                                                                 </Grid>
                                                             )
                                                         }
@@ -289,7 +318,11 @@ const SingleItem = () => {
                                                                 md={12}
                                                                 key={index}
                                                             >
-                                                                <Label />
+                                                                <Label
+                                                                    setOpen={
+                                                                        setOpenInfoModal
+                                                                    }
+                                                                />
                                                             </Grid>
                                                         )
                                                     }
@@ -332,7 +365,11 @@ const SingleItem = () => {
                                                                 md={12}
                                                                 key={index}
                                                             >
-                                                                <Label />
+                                                                <Label
+                                                                    setOpen={
+                                                                        setOpenInfoModal
+                                                                    }
+                                                                />
                                                             </Grid>
                                                         )
                                                     }
@@ -367,7 +404,11 @@ const SingleItem = () => {
                                                                 md={12}
                                                                 key={index}
                                                             >
-                                                                <Label />
+                                                                <Label
+                                                                    setOpen={
+                                                                        setOpenInfoModal
+                                                                    }
+                                                                />
                                                             </Grid>
                                                         )
                                                     }
@@ -379,6 +420,13 @@ const SingleItem = () => {
                             </Grid>
                         </Grid>
                     </div>
+                    {openInfoModal ? (
+                        <InfoModal
+                            open={openInfoModal}
+                            setOpen={setOpenInfoModal}
+                            fakeData={fakeData}
+                        />
+                    ) : null}
                 </Container>
             </section>
         </>
