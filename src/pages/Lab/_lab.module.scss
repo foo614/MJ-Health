@@ -375,7 +375,7 @@
 
 .labTestSingleItemSection {
     background-color: #d3d3d3;
-    height: 110vh;
+    height: 300vh;
 }
 
 .singleItemEditBttn {
@@ -467,4 +467,79 @@
 .infoTableTRSelected {
     cursor: pointer;
     background: #f9f9f9 !important;
+}
+
+//Lab Test Info
+.labTestInfoMenuSelected {
+    border-radius: 5px !important;
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    text-align: center;
+    background: #219b8e !important;
+    color: #ffffff !important;
+}
+
+//Lab Test Info
+.labTestInfoMenu {
+    border-radius: 5px !important;
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    text-align: center;
+    background: #ededed !important;
+    color: #5a567b !important;
+}
+
+//Staff Edit Modal{
+.staffEditModalDialog {
+    border-radius: 8px;
+    width: 700px;
+    padding: 20px;
+}
+
+.staffEditModalDialogTitle {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    color: #211d4e !important;
+}
+
+.staffEditModalCancelBttn {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    font-size: 24px !important;
+    text-align: center;
+    background-color: #eeeeee !important;
+    color: #918fa7 !important;
+}
+
+.staffEditModalConfirmBttn {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    font-size: 24px !important;
+    text-align: center;
+    background-color: #3adebb !important;
+    color: #ffffff !important;
+}
+
+.staffEditModalSmallText {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    color: #999999 !important;
+}
+
+.staffEditModalLabelProps {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    color: #5a567b !important;
 }

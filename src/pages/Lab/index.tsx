@@ -19,7 +19,7 @@ import CompleteStatus from './components/statusComponent'
 import CheckOutModal from './components/checkoutModal'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { LAB_TEST_SINGLE_ITEM_PAGE } from 'constant'
+import { LAB_TEST_SINGLE_ITEM_PAGE, LAB_TEST_INFO_PAGE } from 'constant'
 const LabPage = () => {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
@@ -287,138 +287,9 @@ const LabPage = () => {
                         </Grid>
                     </div>
                     <div className={styles.mt2}>
-                        {/* <div>
-                            <div style={{ position: 'sticky', top: 0 }}>
-                                <Table>
-                                    <TableHead
-                                        className={styles.labTestTableHeader}
-                                    >
-                                        <TableRow>
-                                            <TableCell
-                                                className={
-                                                    styles.labTestTableColumn
-                                                }
-                                            >
-                                                Seq No.
-                                            </TableCell>
-                                            <TableCell
-                                                className={
-                                                    styles.labTestTableColumn
-                                                }
-                                            >
-                                                Name
-                                            </TableCell>
-                                            <TableCell
-                                                className={
-                                                    styles.labTestTableColumn
-                                                }
-                                            >
-                                                Age
-                                            </TableCell>
-                                            <TableCell
-                                                className={
-                                                    styles.labTestTableColumn
-                                                }
-                                            >
-                                                Gender
-                                            </TableCell>
-                                            <TableCell
-                                                className={
-                                                    styles.labTestTableColumn
-                                                }
-                                            >
-                                                Package
-                                            </TableCell>
-                                            <TableCell
-                                                className={
-                                                    styles.labTestTableColumn
-                                                }
-                                            >
-                                                Blood Sampling
-                                            </TableCell>
-                                            <TableCell
-                                                className={
-                                                    styles.labTestTableColumn
-                                                }
-                                            >
-                                                Hematology
-                                            </TableCell>
-                                            <TableCell
-                                                className={
-                                                    styles.labTestTableColumn
-                                                }
-                                            >
-                                                Immunology
-                                            </TableCell>
-                                            <TableCell
-                                                className={
-                                                    styles.labTestTableColumn
-                                                }
-                                            >
-                                                Biochemistry
-                                            </TableCell>
-                                            <TableCell
-                                                className={
-                                                    styles.labTestTableColumn
-                                                }
-                                            >
-                                                Urine & Stool
-                                            </TableCell>
-                                            <TableCell
-                                                className={
-                                                    styles.labTestTableColumn
-                                                }
-                                            >
-                                                Optional Items
-                                            </TableCell>
-                                        </TableRow>
-                                    </TableHead>
-                                </Table>
-                            </div>
-                            <div style={{ height: '300px', overflow: 'auto' }}>
-                                <Table>
-                                    <TableBody>
-                                        {fakeData.map((row) => (
-                                            <TableRow key={row.seqNo}>
-                                                <TableCell>
-                                                    {row.seqNo}
-                                                </TableCell>
-                                                <TableCell>
-                                                    {row.name}
-                                                </TableCell>
-                                                <TableCell>{row.age}</TableCell>
-                                                <TableCell>
-                                                    {row.gender}
-                                                </TableCell>
-                                                <TableCell>
-                                                    {row.package}
-                                                </TableCell>
-                                                <TableCell>
-                                                    {row.blood_sampling}
-                                                </TableCell>
-                                                <TableCell>
-                                                    {row.hematology}
-                                                </TableCell>
-                                                <TableCell>
-                                                    {row.immunology}
-                                                </TableCell>
-                                                <TableCell>
-                                                    {row.biochemistry}
-                                                </TableCell>
-                                                <TableCell>
-                                                    {row.urine_stool}
-                                                </TableCell>
-                                                <TableCell>
-                                                    {row.optional_items}
-                                                </TableCell>
-                                            </TableRow>
-                                        ))}
-                                    </TableBody>
-                                </Table>
-                            </div>
-                        </div> */}
                         <TableContainer
                             component={Paper}
+                            style={{ maxHeight: 600 }}
                             className={styles.labTestTable}
                         >
                             <Table sx={{ minWidth: 650 }}>
@@ -507,7 +378,13 @@ const LabPage = () => {
                                 </TableHead>
                                 <TableBody>
                                     {fakeData.map((row) => (
-                                        <TableRow key={row.seqNo}>
+                                        <TableRow
+                                            key={row.seqNo}
+                                            className={styles.infoTableTR}
+                                            onClick={() =>
+                                                navigate(LAB_TEST_INFO_PAGE)
+                                            }
+                                        >
                                             <TableCell
                                                 className={styles.fontBold}
                                             >

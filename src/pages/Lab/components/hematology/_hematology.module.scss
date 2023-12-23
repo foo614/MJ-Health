@@ -1,0 +1,236 @@
+.card {
+    margin-top: 2rem;
+    border-radius: 10px !important;
+}
+
+.cardHeader {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(90deg, #3adebb -0.18%, #00aee9 99.82%);
+}
+
+.cardHeaderTitle {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 24px !important;
+    color: #ffffff !important;
+}
+
+.cardHeaderContent {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.paddingBottom0 {
+    padding-bottom: 0 !important;
+}
+
+.selectedIcon {
+    color: #219b8e;
+    font-size: 10px !important;
+}
+
+.unselectedIcon {
+    color: #d9d9d9;
+    font-size: 10px !important;
+}
+
+.statusButton {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 18px !important;
+    color: #333333 !important;
+}
+
+.disabledStatusButton {
+    color: #000 !important;
+}
+
+.hematologyResultTitle {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    color: #211d4e !important;
+}
+
+.hematologySuccessBttn {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    text-align: center;
+    background-color: #3adebb !important;
+    color: #ffffff !important;
+}
+
+.hematologyFailedBttn {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    text-align: center;
+    background-color: #de4e3a !important;
+    color: #ffffff !important;
+}
+
+.branchTextFieldColorDivFail {
+    background-color: #de4e3a;
+    width: 40px;
+    border-radius: 0px 5px 5px 0px !important;
+}
+
+.branchTextFieldColorDivSuccess {
+    background-color: #3adebb;
+    width: 40px;
+    border-radius: 0px 5px 5px 0px !important;
+}
+
+.branchTextFieldColorDivPending {
+    background-color: #ededed;
+    width: 40px;
+    border-radius: 0px 5px 5px 0px !important;
+}
+
+.branchTextField {
+    border-radius: 5px 0px 0px 5px !important;
+    background-color: #f9f9f9 !important;
+    padding: 5px !important;
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    color: #211d4e !important;
+}
+
+.hematologyStatusModalRadius {
+    border-radius: 10px !important;
+    width: 1200px !important;
+}
+.hematologyStatusModalTitleBackground {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(90deg, #3adebb -0.18%, #00aee9 99.82%);
+    padding: 16px !important;
+}
+
+.hematologyStatusModalTitleDiv {
+    margin-left: 2rem !important;
+    margin-right: 2rem !important;
+}
+
+.hematologyStatusModalTitle {
+    font-family: 'Montserrat' !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    font-size: 28px !important;
+    color: #ffffff !important;
+}
+
+.hematologyStatusModalBottomText {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    text-align: right !important;
+
+    color: #999999 !important;
+}
+
+.divBorder {
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.hematologyDataOutsideDiv {
+    padding: 2.5rem;
+}
+.dataTitle {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    color: #219b8e !important;
+}
+
+.dataCategory {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    color: #211d4e !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 2px solid #eeeeee;
+}
+
+.currentDataBackgroundColor {
+    background-color: #dddddd;
+}
+
+.existingDataBackgroundColor {
+    background-color: #f9f9f9;
+}
+
+.dataTitleColumn {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    color: #211d4e !important;
+    text-align: center;
+}
+
+.dataTable {
+    border-collapse: separate !important;
+    border-spacing: 20px 0px !important;
+}
+
+.nextForwardBttn {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 20px !important;
+    text-align: center !important;
+    background-color: #dddddd !important;
+    color: #211d4e !important;
+}
+
+.saveBttn {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    font-size: 24px !important;
+    text-align: center !important;
+    background-color: #219b8e !important;
+    color: #ffffff !important;
+}
+
+.editBttn {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    font-size: 24px !important;
+    text-align: center !important;
+    background-color: #5a567b !important;
+    color: #ffffff !important;
+}
+
+.confirmBttn {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    font-size: 24px !important;
+    text-align: center !important;
+    background-color: #3adebb !important;
+    color: #ffffff !important;
+}
+
+.confirmBttnDisabled {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    font-size: 24px !important;
+    text-align: center !important;
+    color: rgba(0, 0, 0, 0.26) !important;
+    box-shadow: none !important;
+    background-color: rgba(0, 0, 0, 0.12) !important;
+}
