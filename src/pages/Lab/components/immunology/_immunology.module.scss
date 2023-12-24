@@ -1,0 +1,117 @@
+.card {
+    margin-top: 2rem;
+    border-radius: 10px !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    max-width: 100%;
+    overflow: auto;
+}
+
+.dataTable {
+    border-collapse: separate !important;
+    border-spacing: 10px 0px !important;
+}
+
+.currentDataBackgroundColor {
+    background-color: #dddddd;
+}
+
+.existingDataBackgroundColor {
+    background-color: #f9f9f9;
+}
+
+.dataTitleColumn {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    color: #211d4e !important;
+    text-align: center;
+}
+
+.dataCategory {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    color: #211d4e !important;
+}
+
+.dataCategoryItalic {
+    font-family: 'Montserrat' !important;
+    font-style: italic !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    color: #5a567b !important;
+}
+.rowRemovePaddingTopBottom {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    border-bottom: 2px solid #eeeeee !important;
+}
+
+.textFieldProps {
+    border-radius: 3px !important;
+    background-color: #ffffff !important;
+    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.smokerTextCss{
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    color: #211d4e !important;
+}
+
+
+.nextForwardBttn {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 20px !important;
+    text-align: center !important;
+    background-color: #dddddd !important;
+    color: #211d4e !important;
+}
+
+.saveBttn {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    font-size: 24px !important;
+    text-align: center !important;
+    background-color: #219b8e !important;
+    color: #ffffff !important;
+}
+
+.editBttn {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    font-size: 24px !important;
+    text-align: center !important;
+    background-color: #5a567b !important;
+    color: #ffffff !important;
+}
+
+.confirmBttn {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    font-size: 24px !important;
+    text-align: center !important;
+    background-color: #3adebb !important;
+    color: #ffffff !important;
+}
+
+.confirmBttnDisabled {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    font-size: 24px !important;
+    text-align: center !important;
+    color: rgba(0, 0, 0, 0.26) !important;
+    box-shadow: none !important;
+    background-color: rgba(0, 0, 0, 0.12) !important;
+}

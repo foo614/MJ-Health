@@ -10,7 +10,12 @@ import { useState } from 'react'
 import HematologyStatusModal from './components/hematology-status-modal'
 import HematologyData from './components/hematology-data'
 import StaffEditModal from '../staffEditModal'
+import { useTheme } from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
+
 const Hematology = () => {
+    const theme = useTheme()
+    const matches = useMediaQuery(theme.breakpoints.up('sm'))
     const [openStatusModal, setOpenStatusModal] = useState(false)
     const [currentSelectedItem, setCurrentSelectedItem] = useState('')
     const [editMode, setEditMode] = useState(true)
@@ -406,7 +411,16 @@ const Hematology = () => {
                 </div>
                 <div className={styles.divBorder}>
                     <div className={styles.hematologyDataOutsideDiv}>
-                        <HematologyData editMode={editMode} />
+                        <div
+                            style={
+                                matches
+                                    ? {}
+                                    : { maxWidth: '400px', overflow: 'auto' }
+                            }
+                        >
+                            <HematologyData editMode={editMode} matches={matches} />
+                        </div>
+
                         <div
                             style={{
                                 marginLeft: '1rem',
@@ -415,10 +429,10 @@ const Hematology = () => {
                                 marginTop: '1rem',
                             }}
                         >
-                            <Grid container spacing={8}>
-                                <Grid item md={6}>
+                            <Grid container spacing={8} >
+                                <Grid item md={6} xs={12}>
                                     <Grid container spacing={1}>
-                                        <Grid item md={6}>
+                                        <Grid item md={6} xs={12}>
                                             <Button
                                                 size="small"
                                                 variant="contained"
@@ -430,7 +444,7 @@ const Hematology = () => {
                                                 Next
                                             </Button>
                                         </Grid>
-                                        <Grid item md={6}>
+                                        <Grid item md={6} xs={12}>
                                             <Button
                                                 size="small"
                                                 variant="contained"
@@ -444,9 +458,9 @@ const Hematology = () => {
                                         </Grid>
                                     </Grid>
                                 </Grid>
-                                <Grid item md={6}>
+                                <Grid item md={6} xs={12}>
                                     <Grid container spacing={1}>
-                                        <Grid item md={6}>
+                                        <Grid item md={6} xs={12}>
                                             {editMode ? (
                                                 <Button
                                                     size="small"
@@ -470,7 +484,7 @@ const Hematology = () => {
                                                 </Button>
                                             )}
                                         </Grid>
-                                        <Grid item md={6}>
+                                        <Grid item md={6} xs={12}>
                                             <Button
                                                 size="small"
                                                 variant="contained"

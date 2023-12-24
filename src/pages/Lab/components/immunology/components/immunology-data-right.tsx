@@ -1,25 +1,25 @@
-// import { Grid } from '@mui/material'
-import styles from '../_hematology.module.scss'
 import TextField from '@mui/material/TextField'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
+import styles from '../_immunology.module.scss'
 
-type HematologyDataProps = {
+type ImmunologyDataRightProps = {
     editMode: boolean
     matches: boolean
 }
 
-const HematologyData: React.FC<HematologyDataProps> = ({
+const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
     editMode,
     matches,
-}: HematologyDataProps) => {
+}: ImmunologyDataRightProps) => {
     return (
         <Table
-            style={matches ? {} : { width: '800px' }}
             className={styles.dataTable}
+            style={matches ? {} : { width: '800px' }}
+            size="small"
         >
             <TableHead>
                 <TableRow>
@@ -55,719 +55,11 @@ const HematologyData: React.FC<HematologyDataProps> = ({
             </TableHead>
             <TableBody>
                 <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataTitle}>Blood Test</p>
-                    </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    ></TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    ></TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    ></TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>WBC</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
+                        className={styles.rowRemovePaddingTopBottom}
                     >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>RBC</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>Hb</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>Hematocrit</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>MCV</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>MCH</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>MCHC</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>RDW</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>PLT</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataTitle}>
-                            WBC Differential Count
-                        </p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    ></TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    ></TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    ></TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>Neutrophils</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>Lymphocytes</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>Monocytes</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>Eosinophils</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>Basophilis</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataTitle}>ABO Blood Type</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    ></TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    ></TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    ></TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>ABO Blood Type</p>
+                        <p className={styles.dataCategory}>TSH</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -814,17 +106,13 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                 </TableRow>
                 <TableRow>
                     <TableCell
-                        style={{
-                            border: '0',
-                        }}
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
                     >
-                        <p className={styles.dataCategory}>Rhesus Typing</p>
+                        <p className={styles.dataCategory}>F-T4</p>
                     </TableCell>
                     <TableCell
-                        style={{
-                            border: '0',
-                            borderRadius: '0px 0px 8px 8px',
-                        }}
+                        style={{ border: '0' }}
                         className={styles.currentDataBackgroundColor}
                     >
                         <TextField
@@ -838,10 +126,7 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                         />
                     </TableCell>
                     <TableCell
-                        style={{
-                            border: '0',
-                            borderRadius: '0px 0px 8px 8px',
-                        }}
+                        style={{ border: '0' }}
                         className={styles.existingDataBackgroundColor}
                     >
                         <TextField
@@ -855,10 +140,916 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                         />
                     </TableCell>
                     <TableCell
-                        style={{
-                            border: '0',
-                            borderRadius: '0px 0px 8px 8px',
-                        }}
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>a-FP</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.currentDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>CEA</p>
+                        <p className={styles.smokerTextCss}>(General/Smoker)</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.currentDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>RA Factor (RF)</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.currentDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>RPR</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.currentDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>TPHA with Titre</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.currentDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>Anti-HCV</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.currentDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>AIDS</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.currentDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>PSA</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.currentDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>CA15-3</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.currentDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>CA125</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.currentDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>CA19-9</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.currentDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>H.pylori Ab</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.currentDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>Homocysteine</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.currentDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>Insulin</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.currentDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>Testosterone</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.currentDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>Vitamin D</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0', borderRadius: '0px 0px 8px 8px' }}
+                        className={styles.currentDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0', borderRadius: '0px 0px 8px 8px' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0', borderRadius: '0px 0px 8px 8px' }}
                         className={styles.existingDataBackgroundColor}
                     >
                         <TextField
@@ -876,5 +1067,4 @@ const HematologyData: React.FC<HematologyDataProps> = ({
         </Table>
     )
 }
-
-export default HematologyData
+export default ImmunologyDataRightProps

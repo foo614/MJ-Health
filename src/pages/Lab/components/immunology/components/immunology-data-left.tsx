@@ -1,25 +1,25 @@
-// import { Grid } from '@mui/material'
-import styles from '../_hematology.module.scss'
 import TextField from '@mui/material/TextField'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
+import styles from '../_immunology.module.scss'
 
-type HematologyDataProps = {
+type ImmunologyDataLeftProps = {
     editMode: boolean
     matches: boolean
 }
 
-const HematologyData: React.FC<HematologyDataProps> = ({
+const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
     editMode,
     matches,
-}: HematologyDataProps) => {
+}: ImmunologyDataLeftProps) => {
     return (
         <Table
-            style={matches ? {} : { width: '800px' }}
             className={styles.dataTable}
+            style={matches ? {} : { width: '800px' }}
+            size="small"
         >
             <TableHead>
                 <TableRow>
@@ -55,25 +55,11 @@ const HematologyData: React.FC<HematologyDataProps> = ({
             </TableHead>
             <TableBody>
                 <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataTitle}>Blood Test</p>
-                    </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    ></TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    ></TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    ></TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>WBC</p>
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>HBsAG</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -88,11 +74,6 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                                 className: styles.textFieldProps,
                             }}
                         />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
                         <TextField
                             size="small"
                             fullWidth
@@ -107,6 +88,38 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                         style={{ border: '0' }}
                         className={styles.existingDataBackgroundColor}
                     >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
                         <TextField
                             size="small"
                             fullWidth
@@ -119,8 +132,11 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>RBC</p>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>Anti-HBs</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -135,11 +151,6 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                                 className: styles.textFieldProps,
                             }}
                         />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
                         <TextField
                             size="small"
                             fullWidth
@@ -154,6 +165,38 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                         style={{ border: '0' }}
                         className={styles.existingDataBackgroundColor}
                     >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
                         <TextField
                             size="small"
                             fullWidth
@@ -166,8 +209,11 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>Hb</p>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>Anti-HBc</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -182,11 +228,6 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                                 className: styles.textFieldProps,
                             }}
                         />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
                         <TextField
                             size="small"
                             fullWidth
@@ -201,6 +242,38 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                         style={{ border: '0' }}
                         className={styles.existingDataBackgroundColor}
                     >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
                         <TextField
                             size="small"
                             fullWidth
@@ -213,8 +286,11 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>Hematocrit</p>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategoryItalic}>*HBe Ag</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -229,11 +305,6 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                                 className: styles.textFieldProps,
                             }}
                         />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
                         <TextField
                             size="small"
                             fullWidth
@@ -248,6 +319,38 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                         style={{ border: '0' }}
                         className={styles.existingDataBackgroundColor}
                     >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
                         <TextField
                             size="small"
                             fullWidth
@@ -260,8 +363,11 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>MCV</p>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategoryItalic}>*Anti HBe</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -276,11 +382,6 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                                 className: styles.textFieldProps,
                             }}
                         />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
                         <TextField
                             size="small"
                             fullWidth
@@ -295,6 +396,38 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                         style={{ border: '0' }}
                         className={styles.existingDataBackgroundColor}
                     >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
                         <TextField
                             size="small"
                             fullWidth
@@ -307,8 +440,11 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>MCH</p>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>Total Anti-Hav</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -323,11 +459,6 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                                 className: styles.textFieldProps,
                             }}
                         />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
                         <TextField
                             size="small"
                             fullWidth
@@ -342,6 +473,38 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                         style={{ border: '0' }}
                         className={styles.existingDataBackgroundColor}
                     >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
                         <TextField
                             size="small"
                             fullWidth
@@ -354,404 +517,89 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>MCHC</p>
-                    </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
+                        className={styles.rowRemovePaddingTopBottom}
                     >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>RDW</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>PLT</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataTitle}>
-                            WBC Differential Count
+                        <p className={styles.dataCategoryItalic}>
+                            *EBV Anti-Body
                         </p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
                         className={styles.currentDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
                     ></TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    ></TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    ></TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>Neutrophils</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>Lymphocytes</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>Monocytes</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>Eosinophils</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>Basophilis</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataTitle}>ABO Blood Type</p>
-                    </TableCell>
                     <TableCell
                         style={{ border: '0' }}
                         className={styles.currentDataBackgroundColor}
@@ -766,8 +614,11 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                     ></TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell style={{ border: '0' }}>
-                        <p className={styles.dataCategory}>ABO Blood Type</p>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>CA72-4</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -814,11 +665,60 @@ const HematologyData: React.FC<HematologyDataProps> = ({
                 </TableRow>
                 <TableRow>
                     <TableCell
-                        style={{
-                            border: '0',
-                        }}
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
                     >
-                        <p className={styles.dataCategory}>Rhesus Typing</p>
+                        <p className={styles.dataCategory}>Vitamin B12</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.currentDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.rowRemovePaddingTopBottom}
+                    >
+                        <p className={styles.dataCategory}>Folic Acid</p>
                     </TableCell>
                     <TableCell
                         style={{
@@ -876,5 +776,4 @@ const HematologyData: React.FC<HematologyDataProps> = ({
         </Table>
     )
 }
-
-export default HematologyData
+export default ImmunologyDataLeft
