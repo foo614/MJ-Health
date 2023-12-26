@@ -4,22 +4,20 @@ import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import styles from '../_immunology.module.scss'
-
-type ImmunologyDataLeftProps = {
+import styles from '../_biochemistry.module.scss'
+type BiochemistryDataRightProps = {
     editMode: boolean
     matches: boolean
 }
 
-const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
+const BiochemistryDataRight: React.FC<BiochemistryDataRightProps> = ({
     editMode,
     matches,
-}: ImmunologyDataLeftProps) => {
+}: BiochemistryDataRightProps) => {
     return (
         <Table
+            style={matches ? {} : { width: '800px' }}
             className={styles.dataTable}
-            style={matches ? {tableLayout: 'fixed'} : { width: '800px' }}
-            size="small"
         >
             <TableHead>
                 <TableRow>
@@ -55,8 +53,31 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
             </TableHead>
             <TableBody>
                 <TableRow>
-                    <TableCell className={styles.ptpb0}>
-                        <p className={styles.dataCategory}>HBsAG</p>
+                    <TableCell
+                        style={{
+                            border: '0',
+                            paddingLeft: '10px',
+                            paddingRight: '10px',
+                        }}
+                    >
+                        <p className={styles.dataTitle}>Urine Acid Tests</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.currentDataBackgroundColor}
+                    ></TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    ></TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    ></TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell style={{ border: '0' }} className={styles.ptpb0}>
+                        <p className={styles.dataCategory}>Urine Acid</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -75,15 +96,6 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                                 className: styles.textFieldProps,
                             }}
                         />
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -102,15 +114,6 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                                 className: styles.textFieldProps,
                             }}
                         />
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -120,15 +123,6 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                             styles.ptpb0
                         }
                     >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
                         <TextField
                             size="small"
                             fullWidth
@@ -141,8 +135,31 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell className={styles.ptpb0}>
-                        <p className={styles.dataCategory}>Anti-HBs</p>
+                    <TableCell
+                        style={{
+                            border: '0',
+                            paddingLeft: '10px',
+                            paddingRight: '10px',
+                        }}
+                    >
+                        <p className={styles.dataTitle}>Blood Lipid Tests</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.currentDataBackgroundColor}
+                    ></TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    ></TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    ></TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell style={{ border: '0' }} className={styles.ptpb0}>
+                        <p className={styles.dataCategory}>Triglyceride</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -161,15 +178,6 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                                 className: styles.textFieldProps,
                             }}
                         />
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -188,15 +196,6 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                                 className: styles.textFieldProps,
                             }}
                         />
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -206,15 +205,6 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                             styles.ptpb0
                         }
                     >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
                         <TextField
                             size="small"
                             fullWidth
@@ -227,8 +217,8 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell className={styles.ptpb0}>
-                        <p className={styles.dataCategory}>Anti-HBc</p>
+                    <TableCell style={{ border: '0' }} className={styles.ptpb0}>
+                        <p className={styles.dataCategory}>Cholesterol</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -247,15 +237,6 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                                 className: styles.textFieldProps,
                             }}
                         />
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -274,15 +255,6 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                                 className: styles.textFieldProps,
                             }}
                         />
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -292,15 +264,6 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                             styles.ptpb0
                         }
                     >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
                         <TextField
                             size="small"
                             fullWidth
@@ -313,8 +276,8 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell  className={styles.ptpb0}>
-                        <p className={styles.dataCategoryItalic}>*HBe Ag</p>
+                    <TableCell style={{ border: '0' }} className={styles.ptpb0}>
+                        <p className={styles.dataCategory}>HDL-Cholesterol</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -333,15 +296,6 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                                 className: styles.textFieldProps,
                             }}
                         />
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -360,15 +314,6 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                                 className: styles.textFieldProps,
                             }}
                         />
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -378,15 +323,6 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                             styles.ptpb0
                         }
                     >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
                         <TextField
                             size="small"
                             fullWidth
@@ -399,8 +335,8 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell  className={styles.ptpb0}>
-                        <p className={styles.dataCategoryItalic}>*Anti HBe</p>
+                    <TableCell style={{ border: '0' }} className={styles.ptpb0}>
+                        <p className={styles.dataCategory}>LDL-Cholesterol</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -419,15 +355,6 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                                 className: styles.textFieldProps,
                             }}
                         />
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -446,15 +373,6 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                                 className: styles.textFieldProps,
                             }}
                         />
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -464,15 +382,6 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                             styles.ptpb0
                         }
                     >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
                         <TextField
                             size="small"
                             fullWidth
@@ -485,8 +394,8 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell className={styles.ptpb0}>
-                        <p className={styles.dataCategory}>Total Anti-Hav</p>
+                    <TableCell style={{ border: '0' }} className={styles.ptpb0}>
+                        <p className={styles.dataCategory}>CHOL/HDL-C</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -505,15 +414,6 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                                 className: styles.textFieldProps,
                             }}
                         />
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -532,15 +432,6 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                                 className: styles.textFieldProps,
                             }}
                         />
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -550,15 +441,6 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                             styles.ptpb0
                         }
                     >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
                         <TextField
                             size="small"
                             fullWidth
@@ -571,126 +453,351 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell className={styles.ptpb0}>
-                        <p className={styles.dataCategoryItalic}>
-                            *EBV Anti-Body
+                    <TableCell
+                        style={{
+                            border: '0',
+                            paddingLeft: '10px',
+                            paddingRight: '10px',
+                        }}
+                    >
+                        <p className={styles.dataTitle}>Ca.P.Fe Tests</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.currentDataBackgroundColor}
+                    ></TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    ></TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={styles.existingDataBackgroundColor}
+                    ></TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell style={{ border: '0' }} className={styles.ptpb0}>
+                        <p className={styles.dataCategory}>Ca</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell style={{ border: '0' }} className={styles.ptpb0}>
+                        <p className={styles.dataCategory}>P</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell style={{ border: '0' }} className={styles.ptpb0}>
+                        <p className={styles.dataCategory}>Fe</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell style={{ border: '0' }} className={styles.ptpb0}>
+                        <p className={styles.dataCategory}>TIBC</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell style={{ border: '0' }} className={styles.ptpb0}>
+                        <p className={styles.dataCategory}>% Saturation</p>
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                    <TableCell
+                        style={{ border: '0' }}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
+                    >
+                        <TextField
+                            size="small"
+                            fullWidth
+                            margin="dense"
+                            disabled={editMode ? false : true}
+                            InputProps={{
+                                className: styles.textFieldProps,
+                            }}
+                        />
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell
+                        style={{
+                            border: '0',
+                            paddingLeft: '10px',
+                            paddingRight: '10px',
+                        }}
+                    >
+                        <p className={styles.dataTitle}>
+                            Tissue Inflammation Screening
                         </p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={
-                            styles.currentDataBackgroundColor +
-                            ' ' +
-                            styles.ptpb0
-                        }
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={
-                            styles.existingDataBackgroundColor +
-                            ' ' +
-                            styles.ptpb0
-                        }
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={
-                            styles.existingDataBackgroundColor +
-                            ' ' +
-                            styles.ptpb0
-                        }
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.ptpb0}
+                        className={styles.currentDataBackgroundColor}
                     ></TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={
-                            styles.currentDataBackgroundColor +
-                            ' ' +
-                            styles.ptpb0
-                        }
+                        className={styles.existingDataBackgroundColor}
                     ></TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={
-                            styles.existingDataBackgroundColor +
-                            ' ' +
-                            styles.ptpb0
-                        }
-                    ></TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={
-                            styles.existingDataBackgroundColor +
-                            ' ' +
-                            styles.ptpb0
-                        }
+                        className={styles.existingDataBackgroundColor}
                     ></TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell  className={styles.ptpb0}>
-                        <p className={styles.dataCategory}>CA72-4</p>
+                    <TableCell style={{ border: '0' }} className={styles.ptpb0}>
+                        <p className={styles.dataCategory}>CRP</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
@@ -748,67 +855,8 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell  className={styles.ptpb0}>
-                        <p className={styles.dataCategory}>Vitamin B12</p>
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={
-                            styles.currentDataBackgroundColor +
-                            ' ' +
-                            styles.ptpb0
-                        }
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={
-                            styles.existingDataBackgroundColor +
-                            ' ' +
-                            styles.ptpb0
-                        }
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={
-                            styles.existingDataBackgroundColor +
-                            ' ' +
-                            styles.ptpb0
-                        }
-                    >
-                        <TextField
-                            size="small"
-                            fullWidth
-                            margin="dense"
-                            disabled={editMode ? false : true}
-                            InputProps={{
-                                className: styles.textFieldProps,
-                            }}
-                        />
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell className={styles.ptpb0}>
-                        <p className={styles.dataCategory}>Folic Acid</p>
+                    <TableCell style={{ border: '0' }} className={styles.ptpb0}>
+                        <p className={styles.dataCategory}>HS_CRP</p>
                     </TableCell>
                     <TableCell
                         style={{
@@ -878,4 +926,4 @@ const ImmunologyDataLeft: React.FC<ImmunologyDataLeftProps> = ({
         </Table>
     )
 }
-export default ImmunologyDataLeft
+export default BiochemistryDataRight

@@ -18,7 +18,7 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
     return (
         <Table
             className={styles.dataTable}
-            style={matches ? {} : { width: '800px' }}
+            style={matches ? { tableLayout: 'fixed' } : { width: '800px' }}
             size="small"
         >
             <TableHead>
@@ -55,15 +55,16 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
             </TableHead>
             <TableBody>
                 <TableRow>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.rowRemovePaddingTopBottom}
-                    >
+                    <TableCell className={styles.ptpb0}>
                         <p className={styles.dataCategory}>TSH</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -77,7 +78,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -91,7 +96,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -105,15 +114,16 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.rowRemovePaddingTopBottom}
-                    >
+                    <TableCell className={styles.ptpb0}>
                         <p className={styles.dataCategory}>F-T4</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -127,7 +137,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -141,7 +155,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -155,15 +173,16 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.rowRemovePaddingTopBottom}
-                    >
+                    <TableCell className={styles.ptpb0}>
                         <p className={styles.dataCategory}>a-FP</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -177,7 +196,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -191,7 +214,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -205,16 +232,17 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.rowRemovePaddingTopBottom}
-                    >
+                    <TableCell className={styles.ptpb0}>
                         <p className={styles.dataCategory}>CEA</p>
                         <p className={styles.smokerTextCss}>(General/Smoker)</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -228,7 +256,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -242,7 +274,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -256,15 +292,16 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.rowRemovePaddingTopBottom}
-                    >
+                    <TableCell className={styles.ptpb0}>
                         <p className={styles.dataCategory}>RA Factor (RF)</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -287,7 +324,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -310,7 +351,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -333,15 +378,16 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.rowRemovePaddingTopBottom}
-                    >
+                    <TableCell className={styles.ptpb0}>
                         <p className={styles.dataCategory}>RPR</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -355,7 +401,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -369,7 +419,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -383,15 +437,16 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.rowRemovePaddingTopBottom}
-                    >
+                    <TableCell className={styles.ptpb0}>
                         <p className={styles.dataCategory}>TPHA with Titre</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -414,7 +469,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -437,7 +496,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -460,15 +523,16 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.rowRemovePaddingTopBottom}
-                    >
+                    <TableCell className={styles.ptpb0}>
                         <p className={styles.dataCategory}>Anti-HCV</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -491,7 +555,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -514,7 +582,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -537,15 +609,16 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.rowRemovePaddingTopBottom}
-                    >
+                    <TableCell className={styles.ptpb0}>
                         <p className={styles.dataCategory}>AIDS</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -568,7 +641,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -591,7 +668,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -614,15 +695,16 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.rowRemovePaddingTopBottom}
-                    >
+                    <TableCell className={styles.ptpb0}>
                         <p className={styles.dataCategory}>PSA</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -636,7 +718,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -650,7 +736,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -664,15 +754,16 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.rowRemovePaddingTopBottom}
-                    >
+                    <TableCell className={styles.ptpb0}>
                         <p className={styles.dataCategory}>CA15-3</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -686,7 +777,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -700,7 +795,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -714,15 +813,16 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.rowRemovePaddingTopBottom}
-                    >
+                    <TableCell className={styles.ptpb0}>
                         <p className={styles.dataCategory}>CA125</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -736,7 +836,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -750,7 +854,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -764,15 +872,16 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.rowRemovePaddingTopBottom}
-                    >
+                    <TableCell className={styles.ptpb0}>
                         <p className={styles.dataCategory}>CA19-9</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -800,7 +909,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -814,15 +927,16 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.rowRemovePaddingTopBottom}
-                    >
+                    <TableCell className={styles.ptpb0}>
                         <p className={styles.dataCategory}>H.pylori Ab</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -836,7 +950,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -850,7 +968,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -864,15 +986,16 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.rowRemovePaddingTopBottom}
-                    >
+                    <TableCell className={styles.ptpb0}>
                         <p className={styles.dataCategory}>Homocysteine</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -886,7 +1009,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -900,7 +1027,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -914,15 +1045,16 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.rowRemovePaddingTopBottom}
-                    >
+                    <TableCell className={styles.ptpb0}>
                         <p className={styles.dataCategory}>Insulin</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -936,7 +1068,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -950,7 +1086,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -964,15 +1104,16 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.rowRemovePaddingTopBottom}
-                    >
+                    <TableCell className={styles.ptpb0}>
                         <p className={styles.dataCategory}>Testosterone</p>
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.currentDataBackgroundColor}
+                        className={
+                            styles.currentDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -986,7 +1127,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -1000,7 +1145,11 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                     <TableCell
                         style={{ border: '0' }}
-                        className={styles.existingDataBackgroundColor}
+                        className={
+                            styles.existingDataBackgroundColor +
+                            ' ' +
+                            styles.ptpb0
+                        }
                     >
                         <TextField
                             size="small"
@@ -1014,14 +1163,18 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell
-                        style={{ border: '0' }}
-                        className={styles.rowRemovePaddingTopBottom}
-                    >
+                    <TableCell className={styles.ptpb0}>
                         <p className={styles.dataCategory}>Vitamin D</p>
                     </TableCell>
                     <TableCell
-                        style={{ border: '0', borderRadius: '0px 0px 8px 8px' }}
+                        style={{
+                            border: '0',
+                            borderRadius: '0px 0px 8px 8px',
+                            paddingBottom: '16px !important',
+                            paddingTop: '0px',
+                            paddingLeft: '10px',
+                            paddingRight: '10px',
+                        }}
                         className={styles.currentDataBackgroundColor}
                     >
                         <TextField
@@ -1035,7 +1188,14 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                         />
                     </TableCell>
                     <TableCell
-                        style={{ border: '0', borderRadius: '0px 0px 8px 8px' }}
+                        style={{
+                            border: '0',
+                            borderRadius: '0px 0px 8px 8px',
+                            paddingBottom: '16px !important',
+                            paddingTop: '0px',
+                            paddingLeft: '10px',
+                            paddingRight: '10px',
+                        }}
                         className={styles.existingDataBackgroundColor}
                     >
                         <TextField
@@ -1049,7 +1209,14 @@ const ImmunologyDataRightProps: React.FC<ImmunologyDataRightProps> = ({
                         />
                     </TableCell>
                     <TableCell
-                        style={{ border: '0', borderRadius: '0px 0px 8px 8px' }}
+                        style={{
+                            border: '0',
+                            borderRadius: '0px 0px 8px 8px',
+                            paddingBottom: '16px !important',
+                            paddingTop: '0px',
+                            paddingLeft: '10px',
+                            paddingRight: '10px',
+                        }}
                         className={styles.existingDataBackgroundColor}
                     >
                         <TextField

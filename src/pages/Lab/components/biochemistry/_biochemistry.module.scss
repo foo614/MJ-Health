@@ -5,9 +5,23 @@
     padding-bottom: 10px;
 }
 
-.dataTable {
-    border-collapse: separate !important;
-    border-spacing: 10px 0px !important;
+.dataTitle {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    color: #219b8e !important;
+}
+
+.dataCategory {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    color: #211d4e !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 2px solid #eeeeee;
 }
 
 .currentDataBackgroundColor {
@@ -27,23 +41,9 @@
     text-align: center;
 }
 
-.dataCategory {
-    font-family: 'Montserrat' !important;
-    font-style: normal !important;
-    font-weight: 600 !important;
-    font-size: 16px !important;
-    color: #211d4e !important;
-}
-
-.dataCategoryItalic {
-    font-family: 'Montserrat' !important;
-    font-style: italic !important;
-    font-weight: 600 !important;
-    font-size: 16px !important;
-    color: #5a567b !important;
-    // padding-top: 10px !important;
-    // padding-bottom: 10px !important;
-    // border-bottom: 2px solid #eeeeee;
+.dataTable {
+    border-collapse: separate !important;
+    border-spacing: 10px 0px !important;
 }
 
 .textFieldProps {
@@ -52,12 +52,11 @@
     box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1) !important;
 }
 
-.smokerTextCss {
-    font-family: 'Montserrat' !important;
-    font-style: normal !important;
-    font-weight: 600 !important;
-    font-size: 12px !important;
-    color: #211d4e !important;
+.ptpb0 {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
 }
 
 .nextForwardBttn {
@@ -109,12 +108,4 @@
     color: rgba(0, 0, 0, 0.26) !important;
     box-shadow: none !important;
     background-color: rgba(0, 0, 0, 0.12) !important;
-}
-
-.ptpb0 {
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-    border-bottom: 2px solid #eeeeee;
 }
