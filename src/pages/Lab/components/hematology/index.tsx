@@ -418,7 +418,10 @@ const Hematology = () => {
                                     : { maxWidth: '400px', overflow: 'auto' }
                             }
                         >
-                            <HematologyData editMode={editMode} matches={matches} />
+                            <HematologyData
+                                editMode={editMode}
+                                matches={matches}
+                            />
                         </div>
 
                         <div
@@ -429,8 +432,8 @@ const Hematology = () => {
                                 marginTop: '1rem',
                             }}
                         >
-                            <Grid container spacing={8} >
-                                <Grid item md={6} xs={12}>
+                            <Grid container spacing={2}>
+                                <Grid item md={5} xs={12}>
                                     <Grid container spacing={1}>
                                         <Grid item md={6} xs={12}>
                                             <Button
@@ -458,7 +461,8 @@ const Hematology = () => {
                                         </Grid>
                                     </Grid>
                                 </Grid>
-                                <Grid item md={6} xs={12}>
+                                <Grid item md={2}></Grid>
+                                <Grid item md={5} xs={12}>
                                     <Grid container spacing={1}>
                                         <Grid item md={6} xs={12}>
                                             {editMode ? (

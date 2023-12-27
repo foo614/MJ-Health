@@ -446,7 +446,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -481,7 +481,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -521,7 +521,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -556,7 +556,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -591,7 +591,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -631,7 +631,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -666,7 +666,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -701,7 +701,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -741,7 +741,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -776,7 +776,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -811,7 +811,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -851,7 +851,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -886,7 +886,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -921,7 +921,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -961,7 +961,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -996,7 +996,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -1031,7 +1031,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -1745,7 +1745,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                                               className={styles.textFieldProps}
                                           >
                                               <Select
-                                              className={styles.fieldCss}
+                                                  className={styles.fieldCss}
                                                   value={currentListItem.value}
                                                   onChange={(e) =>
                                                       handleUpdateOtherItemSelectOptions(
@@ -1790,7 +1790,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                                               className={styles.textFieldProps}
                                           >
                                               <Select
-                                              className={styles.fieldCss}
+                                                  className={styles.fieldCss}
                                                   // value={age}
                                                   onChange={handleValueChange}
                                               >
@@ -1830,7 +1830,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                                               className={styles.textFieldProps}
                                           >
                                               <Select
-                                              className={styles.fieldCss}
+                                                  className={styles.fieldCss}
                                                   // value={age}
                                                   onChange={handleValueChange}
                                               >
@@ -1912,7 +1912,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 value={otherItemCurrentSelectValue}
                                 onChange={handleOtherItemsValueChange}
                             >
@@ -1947,7 +1947,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -1982,7 +1982,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -2058,7 +2058,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -2093,7 +2093,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -2128,7 +2128,7 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                             className={styles.textFieldProps}
                         >
                             <Select
-                            className={styles.fieldCss}
+                                className={styles.fieldCss}
                                 // value={age}
                                 onChange={handleValueChange}
                             >
@@ -2153,12 +2153,15 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                         <p className={styles.dataCategory}>Value</p>
                     </TableCell>
                     <TableCell
-                        style={{ border: '0' }}
-                        className={
-                            styles.currentDataBackgroundColor +
-                            ' ' +
-                            styles.ptpb0
-                        }
+                        style={{
+                            border: '0',
+                            borderRadius: '0px 0px 8px 8px',
+                            paddingBottom: '16px !important',
+                            paddingTop: '0px',
+                            paddingLeft: '10px',
+                            paddingRight: '10px',
+                        }}
+                        className={styles.currentDataBackgroundColor}
                     >
                         <TextField
                             size="small"
@@ -2171,12 +2174,15 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                         />
                     </TableCell>
                     <TableCell
-                        style={{ border: '0' }}
-                        className={
-                            styles.existingDataBackgroundColor +
-                            ' ' +
-                            styles.ptpb0
-                        }
+                        style={{
+                            border: '0',
+                            borderRadius: '0px 0px 8px 8px',
+                            paddingBottom: '16px !important',
+                            paddingTop: '0px',
+                            paddingLeft: '10px',
+                            paddingRight: '10px',
+                        }}
+                        className={styles.existingDataBackgroundColor}
                     >
                         <TextField
                             size="small"
@@ -2189,12 +2195,15 @@ const UrineFaecesData: React.FC<UrineFaecesDataProps> = ({
                         />
                     </TableCell>
                     <TableCell
-                        style={{ border: '0' }}
-                        className={
-                            styles.existingDataBackgroundColor +
-                            ' ' +
-                            styles.ptpb0
-                        }
+                        style={{
+                            border: '0',
+                            borderRadius: '0px 0px 8px 8px',
+                            paddingBottom: '16px !important',
+                            paddingTop: '0px',
+                            paddingLeft: '10px',
+                            paddingRight: '10px',
+                        }}
+                        className={styles.existingDataBackgroundColor}
                     >
                         <TextField
                             size="small"

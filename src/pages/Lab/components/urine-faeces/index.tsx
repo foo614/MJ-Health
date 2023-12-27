@@ -13,7 +13,7 @@ const UrineFaeces = () => {
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
     const [editMode, setEditMode] = useState(true)
     const [staffOpenModal, setStaffOpenModal] = useState(false)
-    
+
     return (
         <>
             <Card className={styles.card}>
@@ -103,8 +103,8 @@ const UrineFaeces = () => {
                         marginTop: '1rem',
                     }}
                 >
-                    <Grid container spacing={8}>
-                        <Grid item md={6} xs={12}>
+                    <Grid container spacing={2}>
+                        <Grid item md={5} xs={12}>
                             <Grid container spacing={1}>
                                 <Grid item md={6} xs={12}>
                                     <Button
@@ -128,7 +128,8 @@ const UrineFaeces = () => {
                                 </Grid>
                             </Grid>
                         </Grid>
-                        <Grid item md={6} xs={12}>
+                        <Grid item md={2}></Grid>
+                        <Grid item md={5} xs={12}>
                             <Grid container spacing={1}>
                                 <Grid item md={6} xs={12}>
                                     {editMode ? (
