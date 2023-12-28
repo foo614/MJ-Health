@@ -1,0 +1,102 @@
+.checkInLabTest2Child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  background-color: var(--color-white);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  width: 557px;
+  height: 250px;
+}
+.checkInLabTest2Item {
+  position: absolute;
+  top: 146px;
+  left: 0;
+  background-color: var(--color-whitesmoke-100);
+  width: 557px;
+  height: 2px;
+}
+.checkInRoom {
+  top: 40px;
+  font-size: var(--font-size-base);
+}
+.checkInRoom,
+.labTest,
+.sept2022 {
+  position: absolute;
+  left: 50px;
+}
+.labTest {
+  top: 76px;
+  font-size: 32px;
+  line-height: 16px;
+  font-weight: 600;
+  color: var(--mj-deep-green);
+}
+.sept2022 {
+  top: 102px;
+  font-size: 14.84px;
+  letter-spacing: 0.3em;
+  line-height: 31.03px;
+  color: var(--label-color);
+}
+.groupChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-whitesmoke-300);
+  width: 220px;
+  height: 56px;
+  cursor: pointer;
+}
+.cancel {
+  position: absolute;
+  top: 14px;
+  left: 67px;
+}
+.groupItem,
+.rectangleParent {
+  position: absolute;
+  width: 220px;
+  height: 56px;
+}
+.rectangleParent {
+  top: 167px;
+  left: 50px;
+  text-align: center;
+  color: var(--color-lightslategray);
+}
+.groupItem {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-turquoise);
+  cursor: pointer;
+}
+.confirm,
+.rectangleGroup {
+  position: absolute;
+  top: 13px;
+  left: 59px;
+}
+.rectangleGroup {
+  top: 168px;
+  left: 287px;
+  width: 220px;
+  height: 56px;
+  text-align: center;
+  color: var(--color-white);
+}
+.checkInLabTest2 {
+  position: relative;
+  width: 557px;
+  height: 250px;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--title-color);
+  font-family: var(--font-montserrat);
+}

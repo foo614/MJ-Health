@@ -1,0 +1,61 @@
+.groupChild,
+.groupItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-whitesmoke-200);
+  width: 400px;
+  height: 140px;
+}
+.groupItem {
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05),
+    0 2px 2px 1px rgba(0, 0, 0, 0.05) inset;
+  height: 40px;
+}
+.vectorIcon {
+  position: absolute;
+  top: 16px;
+  left: 363px;
+  width: 16px;
+  height: 7.98px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.div {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-weight: 500;
+}
+.rectangleParent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 140px;
+}
+.healthManagementConsultation,
+.physicianConsultation {
+  position: absolute;
+  top: 60px;
+  left: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.physicianConsultation {
+  top: 100px;
+}
+.consultationCheckIn2 {
+  position: relative;
+  width: 400px;
+  height: 140px;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--title-color);
+  font-family: var(--font-montserrat);
+}

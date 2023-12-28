@@ -7,35 +7,34 @@ let theme = createTheme({
             main: '#219B8E',
         },
         secondary: {
-            main: '#3ADEBB',
+            main: '#fff',
         },
     },
 })
 
-const components: any = createTheme(theme, {
-    MuiButton: {
-        //add variants to button component
-        variants: [
-            {
-                props: { variant: 'dashed' },
-                style: {
-                    textTransform: 'none',
-                    border: `2px dashed ${theme.palette.primary.main}`,
-                },
-            },
-        ],
-        styleOverrides: {
-            root: {
-                fontSize: '1em',
-            },
-        },
-    },
-})
+// const components: any = createTheme(theme, {
+//     MuiButton: {
+//         //add variants to button component
+//         variants: [
+//             {
+//                 props: { variant: 'primary' },
+//                 style: {
+//                     backgroundColor: `${theme.palette.primary.main}`,
+//                 },
+//             },
+//         ],
+//         styleOverrides: {
+//             root: {
+//                 fontSize: '1em',
+//             },
+//         },
+//     },
+// })
 
-// Create a theme instance.
-theme = createTheme({
-    components,
-})
+// // Create a theme instance.
+// theme = createTheme({
+//     components,
+// })
 // add responsive MUI responsiveFontSize
 theme = responsiveFontSizes(theme)
 

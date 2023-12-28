@@ -1,0 +1,110 @@
+.checkInRoom,
+.consultationCheckInChild {
+  position: absolute;
+  top: 32px;
+  left: 50px;
+}
+.consultationCheckInChild {
+  top: 59px;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-white);
+  box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.05) inset;
+  width: 400px;
+  height: 40px;
+  cursor: pointer;
+}
+.vectorIcon {
+  top: 75px;
+  left: 413px;
+  width: 16px;
+  height: 7.98px;
+  object-fit: cover;
+}
+.div,
+.sept2022,
+.vectorIcon {
+  position: absolute;
+}
+.div {
+  top: 69px;
+  left: 66px;
+  font-weight: 500;
+}
+.sept2022 {
+  top: 110px;
+  left: 50px;
+  font-size: 14.84px;
+  letter-spacing: 0.3em;
+  line-height: 31.03px;
+  color: var(--label-color);
+}
+.consultationCheckInItem,
+.groupChild {
+  position: absolute;
+  top: 154px;
+  left: 0;
+  background-color: var(--color-whitesmoke-100);
+  width: 557px;
+  height: 2px;
+}
+.groupChild {
+  top: 0;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-whitesmoke-300);
+  width: 220px;
+  height: 56px;
+}
+.cancel {
+  position: absolute;
+  top: 14px;
+  left: 67px;
+}
+.groupItem,
+.rectangleParent {
+  position: absolute;
+  width: 220px;
+  height: 56px;
+}
+.rectangleParent {
+  top: 176px;
+  left: 50px;
+  cursor: pointer;
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  color: var(--color-lightslategray);
+}
+.groupItem {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-whitesmoke-100);
+}
+.confirm,
+.rectangleGroup {
+  position: absolute;
+  top: 13px;
+  left: 59px;
+}
+.rectangleGroup {
+  top: 176px;
+  left: 290px;
+  width: 220px;
+  height: 56px;
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  color: #ddd;
+}
+.consultationCheckIn {
+  position: relative;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  width: 560px;
+  height: 250px;
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 100%;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--title-color);
+  font-family: var(--font-montserrat);
+}

@@ -3,3 +3,34 @@
 .colorText {
     color: $titleColor;
 }
+.loginChild,
+.maskGroupIcon {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: -webkit-fill-available;
+    @media screen and (max-width: 600px) {
+        width: 100%;
+    }
+}
+
+.maskGroupIcon {
+    object-fit: cover;
+}
+.loginChild {
+    top: 36rem;
+    background-color: $primaryColor;
+    height: 300px;
+}
+.imgSize {
+    width: 250px;
+    @media screen and (max-width: 600px) {
+        margin-top: 5rem;
+    }
+}
+
+.login1Icon {
+    width: 32px;
+    height: 32px;
+    margin-left: 1rem;
+}

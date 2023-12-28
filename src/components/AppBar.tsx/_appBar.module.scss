@@ -1,0 +1,13 @@
+@use '../../styles/variables' as *;
+
+.buttonText {
+    color: $primaryColor !important;
+}
+
+.labelText {
+    font-size: large;
+}
+
+.captionText {
+    font-size: x-small;
+}

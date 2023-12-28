@@ -1,0 +1,773 @@
+@use '../../styles/variables' as *;
+
+.mjHealth,
+.southernGelangPatah {
+    position: absolute;
+    top: 0;
+    left: 94px;
+    font-weight: 500;
+}
+.mjHealth {
+    left: 0;
+    font-weight: 600;
+}
+.southernGelangPatahParent {
+    position: absolute;
+    top: 1023px;
+    left: 160px;
+    width: 297px;
+    height: 17px;
+    text-align: left;
+    font-size: var(--font-size-sm);
+    color: var(--color-darkgray-100);
+}
+.dashboardChild,
+.dashboardChild1,
+.dashboardChild2,
+.dashboardChild3,
+.dashboardInner,
+.dashboardItem,
+.rectangleDiv {
+    position: absolute;
+    top: 675px;
+    left: 161px;
+    border-radius: var(--br-3xs);
+    background: linear-gradient(231.33deg, #fff, #f3f3f3);
+    box-shadow: 0 3px 6px rgba(89, 86, 122, 0.15);
+    width: 160px;
+    height: 160px;
+    cursor: pointer;
+}
+.dashboardChild1,
+.dashboardChild2,
+.dashboardChild3,
+.dashboardInner,
+.dashboardItem,
+.rectangleDiv {
+    left: 351px;
+}
+.dashboardChild1,
+.dashboardChild2,
+.dashboardChild3,
+.dashboardInner,
+.rectangleDiv {
+    left: 541px;
+}
+.dashboardChild1,
+.dashboardChild2,
+.dashboardChild3,
+.rectangleDiv {
+    left: 731px;
+}
+.dashboardChild1,
+.dashboardChild2,
+.dashboardChild3 {
+    left: 921px;
+}
+.dashboardChild2,
+.dashboardChild3 {
+    left: 1111px;
+}
+.dashboardChild3 {
+    left: 1304px;
+}
+.groupIcon {
+    position: absolute;
+    top: 710px;
+    left: 1361px;
+    width: 45px;
+    height: 50px;
+    object-fit: cover;
+}
+.healthScreening,
+.services {
+    position: absolute;
+    top: 125px;
+    left: 208px;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    text-align: left;
+}
+.healthScreening {
+    top: 377px;
+}
+.cardiogram1Icon,
+.headphones1Icon {
+    position: absolute;
+    top: 120px;
+    left: 160px;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    object-fit: cover;
+}
+.cardiogram1Icon {
+    top: 372px;
+}
+.itRoom {
+    margin: 0;
+}
+.itRoomMonitorContainer {
+    position: absolute;
+    top: 780px;
+    left: 207px;
+    font-weight: 600;
+}
+.itPrintingRoomContainer,
+.mulReport,
+.staffsManagement {
+    position: absolute;
+    top: 780px;
+    left: 388px;
+    font-weight: 600;
+}
+.mulReport,
+.staffsManagement {
+    left: 565px;
+}
+.mulReport {
+    top: 790px;
+    left: 762px;
+}
+.finalReport,
+.roomManagement,
+.wordBank {
+    position: absolute;
+    top: 780px;
+    left: 1135px;
+    font-weight: 600;
+}
+.finalReport,
+.wordBank {
+    top: 790px;
+    left: 1330px;
+}
+.wordBank {
+    left: 955px;
+}
+.groupChild {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: var(--br-3xs);
+    background: linear-gradient(231.33deg, #fff, #f3f3f3);
+    box-shadow: 0 3px 6px rgba(89, 86, 122, 0.15);
+    width: 160px;
+    height: 160px;
+}
+.iconAlternatePhone {
+    position: absolute;
+    top: 35px;
+    left: 55px;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+.phoneConsultation {
+    position: absolute;
+    top: 105px;
+    left: 27px;
+    font-weight: 600;
+}
+.dashboardChild4,
+.rectangleParent {
+    position: absolute;
+    top: 424px;
+    left: 1301px;
+    width: 160px;
+    height: 160px;
+    cursor: pointer;
+}
+.dashboardChild4 {
+    left: 351px;
+    border-radius: var(--br-3xs);
+    background: linear-gradient(231.33deg, #fff, #f3f3f3);
+    box-shadow: 0 3px 6px rgba(89, 86, 122, 0.15);
+}
+.labTest {
+    position: absolute;
+    top: 539px;
+    left: 396px;
+    font-weight: 600;
+}
+.swab1Icon {
+    position: absolute;
+    top: 459px;
+    left: 406px;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    object-fit: cover;
+}
+.dashboardChild5 {
+    position: absolute;
+    top: 172px;
+    left: 731px;
+    border-radius: var(--br-3xs);
+    background: linear-gradient(231.33deg, #fff, #f3f3f3);
+    box-shadow: 0 3px 6px rgba(89, 86, 122, 0.15);
+    width: 160px;
+    height: 160px;
+    cursor: pointer;
+}
+.dining {
+    position: absolute;
+    top: 283px;
+    left: 783px;
+    font-weight: 600;
+}
+.hotFood12 {
+    position: absolute;
+    top: 207px;
+    left: 786px;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    object-fit: cover;
+}
+.dashboardChild6 {
+    position: absolute;
+    top: 172px;
+    left: 161px;
+    border-radius: var(--br-3xs);
+    background: linear-gradient(231.33deg, #fff, #f3f3f3);
+    box-shadow: 0 3px 6px rgba(89, 86, 122, 0.15);
+    width: 160px;
+    height: 160px;
+    cursor: pointer;
+}
+.selfKioskUi {
+    position: absolute;
+    top: 283px;
+    left: 189px;
+    font-weight: 600;
+}
+.dashboardChild7 {
+    position: absolute;
+    top: 424px;
+    left: 921px;
+    border-radius: var(--br-3xs);
+    background: linear-gradient(231.33deg, #fff, #f3f3f3);
+    box-shadow: 0 3px 6px rgba(89, 86, 122, 0.15);
+    width: 160px;
+    height: 160px;
+    opacity: 0.77;
+    cursor: pointer;
+}
+.queueManagement {
+    position: absolute;
+    top: 529px;
+    left: 945px;
+    font-weight: 600;
+}
+.line1Icon {
+    position: absolute;
+    top: 459px;
+    left: 976px;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    object-fit: cover;
+}
+.dashboardChild8 {
+    position: absolute;
+    top: 424px;
+    left: 731px;
+    border-radius: var(--br-3xs);
+    background: linear-gradient(231.33deg, #fff, #f3f3f3);
+    box-shadow: 0 3px 6px rgba(89, 86, 122, 0.15);
+    width: 160px;
+    height: 160px;
+    cursor: pointer;
+}
+.monitorSystem {
+    position: absolute;
+    top: 539px;
+    left: 746px;
+    font-weight: 600;
+}
+.list1Icon {
+    position: absolute;
+    top: 459px;
+    left: 786px;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    object-fit: cover;
+}
+.dashboardChild9 {
+    position: absolute;
+    top: 172px;
+    left: 351px;
+    border-radius: var(--br-3xs);
+    background: linear-gradient(231.33deg, #fff, #f3f3f3);
+    box-shadow: 0 3px 6px rgba(89, 86, 122, 0.15);
+    width: 160px;
+    height: 160px;
+    cursor: pointer;
+}
+.receptionCounter {
+    position: absolute;
+    top: 277px;
+    left: 389px;
+    line-height: 16px;
+    font-weight: 600;
+}
+.groupIcon1,
+.vectorIcon {
+    position: absolute;
+    height: 44.98%;
+    width: 100%;
+    top: 55.02%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+}
+.vectorIcon {
+    height: 41.47%;
+    width: 46.35%;
+    top: 0;
+    right: 10.08%;
+    bottom: 58.53%;
+    left: 43.57%;
+}
+.group,
+.group1 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.group {
+    width: 98.39%;
+    right: 0.8%;
+    left: 0.8%;
+}
+.healthcare11 {
+    position: absolute;
+    top: 207px;
+    left: 406px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1) inset;
+    width: 49px;
+    height: 50px;
+    overflow: hidden;
+}
+.dashboardChild10 {
+    position: absolute;
+    top: 424px;
+    left: 541px;
+    border-radius: var(--br-3xs);
+    background: linear-gradient(231.33deg, #fff, #f3f3f3);
+    box-shadow: 0 3px 6px rgba(89, 86, 122, 0.15);
+    width: 160px;
+    height: 160px;
+    cursor: pointer;
+}
+.consultation1 {
+    position: absolute;
+    top: 539px;
+    left: 568px;
+    font-weight: 600;
+}
+.chat11 {
+    position: absolute;
+    top: 459px;
+    left: 596px;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    object-fit: cover;
+}
+.dashboardChild11 {
+    position: absolute;
+    top: 424px;
+    left: 161px;
+    border-radius: var(--br-3xs);
+    background: linear-gradient(231.33deg, #fff, #f3f3f3);
+    box-shadow: 0 3px 6px rgba(89, 86, 122, 0.15);
+    width: 160px;
+    height: 160px;
+    cursor: pointer;
+}
+.screeningRoomSystemContainer {
+    position: absolute;
+    top: 529px;
+    left: 172px;
+    font-weight: 600;
+}
+.frameIcon {
+    position: absolute;
+    top: 459px;
+    left: 218px;
+    width: 46.66px;
+    height: 50px;
+    overflow: hidden;
+    object-fit: cover;
+}
+.group1Icon,
+.handTouchingTabletScreen1Icon,
+.monitor1Icon,
+.printer11 {
+    position: absolute;
+    top: 710px;
+    left: 216px;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    object-fit: cover;
+}
+.group1Icon,
+.handTouchingTabletScreen1Icon,
+.printer11 {
+    left: 406px;
+}
+.group1Icon,
+.handTouchingTabletScreen1Icon {
+    left: 596px;
+}
+.handTouchingTabletScreen1Icon {
+    top: 207px;
+    left: 216px;
+}
+.otherFunction {
+    position: absolute;
+    top: 5px;
+    left: 48px;
+    font-weight: 600;
+}
+.other2Icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    object-fit: cover;
+}
+.otherFunctionParent {
+    position: absolute;
+    top: 624px;
+    left: 160px;
+    width: 191px;
+    height: 32px;
+    text-align: left;
+    font-size: var(--font-size-lg);
+}
+.dashboardChild12 {
+    position: absolute;
+    top: 172px;
+    left: 541px;
+    border-radius: var(--br-3xs);
+    background: linear-gradient(231.33deg, #fff, #f3f3f3);
+    box-shadow: 0 3px 6px rgba(89, 86, 122, 0.15);
+    width: 160px;
+    height: 160px;
+    cursor: pointer;
+}
+.printSticker {
+    position: absolute;
+    top: 283px;
+    left: 570px;
+    font-weight: 600;
+}
+.file1Icon,
+.frame {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+}
+.file1Icon {
+    top: 207px;
+    left: 596px;
+    object-fit: cover;
+}
+.frame {
+    top: 629px;
+    left: 911px;
+}
+.iconReport,
+.subtractIcon,
+.vectorIcon1 {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+.iconReport,
+.vectorIcon1 {
+    position: absolute;
+    top: 710px;
+    left: 976px;
+}
+.iconReport {
+    left: 788px;
+    width: 46.67px;
+}
+.groupItem,
+.headerChild {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.headerChild {
+    height: 100%;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    background-color: var(--mj-deep-green);
+}
+.groupItem {
+    border-radius: var(--br-10xs);
+    background-color: var(--color-white);
+    width: 160px;
+    height: 40px;
+    cursor: pointer;
+}
+.logout1Icon {
+    position: absolute;
+    top: 1px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    object-fit: cover;
+}
+.logout {
+    position: absolute;
+    top: 0;
+    left: 24px;
+    font-weight: 500;
+}
+.logout1Parent,
+.rectangleGroup {
+    position: absolute;
+    top: 9px;
+    left: 35px;
+    width: 90px;
+    height: 22px;
+}
+.rectangleGroup {
+    top: 20px;
+    left: 1700px;
+    width: 160px;
+    height: 40px;
+    color: var(--mj-deep-green);
+}
+.groupInner {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    border-radius: var(--br-10xs);
+    border: 2px solid var(--color-white);
+    box-sizing: border-box;
+    width: 162px;
+    height: 42px;
+    cursor: pointer;
+}
+.setting {
+    position: absolute;
+    top: 0;
+    left: 27.45px;
+    font-weight: 500;
+    display: inline-block;
+    width: 67px;
+    height: 18px;
+}
+.settingParent,
+.vectorIcon2 {
+    position: absolute;
+    height: 20px;
+}
+.vectorIcon2 {
+    top: 0;
+    left: 0;
+    border-radius: 100px;
+    width: 21.33px;
+    object-fit: cover;
+}
+.settingParent {
+    top: 10px;
+    left: 33px;
+    width: 94.45px;
+}
+.rectangleContainer {
+    position: absolute;
+    top: 20px;
+    left: 1520px;
+    width: 160px;
+    height: 40px;
+    color: var(--color-whitesmoke-100);
+}
+.mjHealth1 {
+    margin-block-start: 0;
+    margin-block-end: 8px;
+    letter-spacing: 0.08em;
+}
+.p {
+    margin: 0;
+    font-size: var(--font-size-lg);
+}
+.mjHealthContainer {
+    position: absolute;
+    top: 8.33px;
+    left: 99px;
+}
+.frameIcon1,
+.mjHealthParent {
+    position: absolute;
+    height: 60px;
+}
+.frameIcon1 {
+    top: 0;
+    left: 0;
+    width: 66.29px;
+    overflow: hidden;
+    object-fit: cover;
+    cursor: pointer;
+}
+.mjHealthParent {
+    top: 10px;
+    left: 61px;
+    width: 245px;
+    font-size: 22px;
+    font-family: var(--font-gotham);
+}
+.todayAppointment {
+    position: absolute;
+    top: 29px;
+    left: 0;
+    line-height: 12px;
+    font-weight: 500;
+}
+.div {
+    position: absolute;
+    top: 0;
+    left: 29px;
+    font-size: var(--font-size-5xl);
+    font-weight: 600;
+}
+.totalCheckedInContainer {
+    position: absolute;
+    top: 29px;
+    left: 134px;
+    line-height: 12px;
+    font-weight: 500;
+}
+.div1 {
+    position: absolute;
+    top: 0;
+    left: 155px;
+    font-size: var(--font-size-5xl);
+    font-weight: 600;
+}
+.canceledAppointment {
+    position: absolute;
+    top: 29px;
+    left: 379px;
+    line-height: 12px;
+    font-weight: 500;
+}
+.div2 {
+    position: absolute;
+    top: 0;
+    left: 415px;
+    font-size: var(--font-size-5xl);
+    font-weight: 600;
+}
+.totalRegistration {
+    position: absolute;
+    top: 29px;
+    left: 253px;
+    line-height: 12px;
+    font-weight: 500;
+}
+.div3 {
+    position: absolute;
+    top: 0;
+    left: 282px;
+    font-size: var(--font-size-5xl);
+    font-weight: 600;
+}
+.completedAppointment {
+    position: absolute;
+    top: 29px;
+    left: 514px;
+    line-height: 12px;
+    font-weight: 500;
+}
+.div4 {
+    position: absolute;
+    top: 0;
+    left: 548px;
+    font-size: var(--font-size-5xl);
+    font-weight: 600;
+}
+.todayAppointmentParent {
+    position: absolute;
+    top: 13px;
+    left: 661px;
+    width: 597px;
+    height: 53px;
+    text-align: center;
+    font-size: var(--font-size-xs);
+}
+.groupChild1,
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.header {
+    width: 1920px;
+    height: 80px;
+    text-align: left;
+    font-size: var(--font-size-lg);
+    color: var(--color-white);
+}
+.groupChild1 {
+    border-radius: var(--br-3xs);
+    background: linear-gradient(231.33deg, #fff, #f3f3f3);
+    box-shadow: 0 3px 6px rgba(89, 86, 122, 0.15);
+    width: 160px;
+    height: 160px;
+    cursor: pointer;
+}
+.radiologyReporting {
+    position: absolute;
+    top: 105px;
+    left: 38px;
+    font-weight: 600;
+}
+.groupDiv {
+    position: absolute;
+    top: 424px;
+    left: 1111px;
+    width: 160px;
+    height: 160px;
+}
+.dashboard {
+    position: relative;
+    background-color: var(--color-whitesmoke-100);
+    width: 100%;
+    height: 1080px;
+    overflow-y: auto;
+    text-align: center;
+    font-size: var(--font-size-base);
+    color: var(--title-color);
+    font-family: var(--font-montserrat);
+}
+.buttonText {
+    color: $primaryColor !important;
+}
+
+.textCenter {
+    text-align: center;
+}
