@@ -502,6 +502,7 @@
     object-fit: cover;
 }
 .iconReport,
+.subtractIcon,
 .vectorIcon1 {
     position: absolute;
     top: 710px;
@@ -510,6 +511,9 @@
 .iconReport {
     left: 788px;
     width: 46.67px;
+}
+.subtractIcon {
+    left: 1165px;
 }
 .groupItem,
 .headerChild {

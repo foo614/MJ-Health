@@ -2,7 +2,6 @@ import ResponsiveAppBar from 'components/AppBar.tsx'
 import Cardiogram from 'images/cardiogram-1@2x.png'
 import Chat1 from 'images/chat-1-1@2x.png'
 import File1 from 'images/file-1@2x.png'
-import Frame2 from 'images/frame@2x.png'
 import Group1 from 'images/group-1@2x.png'
 import GroupIcon from 'images/group-3091@2x.png'
 import Group2 from 'images/group@2x.png'
@@ -11,10 +10,14 @@ import HeadPhones from 'images/headphones-1@2x.png'
 import HotFood from 'images/hotfood-1-2@2x.png'
 import LineIcon from 'images/line-1@2x.png'
 import Monitor from 'images/monitor-1@2x.png'
+import MulIcon from 'images/mul-1@2x.png'
 import Other2 from 'images/other-2@2x.png'
+import PhoneIcon from 'images/phone-1-1@2x.png'
 import Printer from 'images/printer-1-1@2x.png'
+import RoomIcon from 'images/room-1-1@2x.png'
+import Frame2 from 'images/screening-1@2x.png'
 import Swab from 'images/swab-1@2x.png'
-import Vector2 from 'images/vector@2x.png'
+import Vector2 from 'images/vector-1-1@2x.png'
 import { FunctionComponent, useCallback, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './_dashboard.module.scss'
@@ -207,7 +210,7 @@ const Dashboard: FunctionComponent = () => {
                     <img
                         className={styles.iconAlternatePhone}
                         alt=""
-                        src={`🦆 icon "Alternate Phone"_4`}
+                        src={PhoneIcon}
                     />
                     <div className={styles.phoneConsultation}>
                         <p className={styles.itRoom}>Phone</p>
@@ -304,12 +307,9 @@ const Dashboard: FunctionComponent = () => {
                 <div className={styles.printSticker}>Print Sticker</div>
                 <img className={styles.file1Icon} alt="" src={File1} />
                 <div className={styles.frame} />
+                <img className={styles.subtractIcon} alt="" src={RoomIcon} />
                 <img className={styles.vectorIcon1} alt="" src={Vector2} />
-                <img
-                    className={styles.iconReport}
-                    alt=""
-                    src={`🦆 icon "report"_21`}
-                />
+                <img className={styles.iconReport} alt="" src={MulIcon} />
                 <div className={styles.groupDiv}>
                     <div
                         className={styles.groupChild1}
