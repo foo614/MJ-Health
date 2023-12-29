@@ -2,6 +2,7 @@ import { ThemeProvider } from '@mui/material/styles'
 import Counter from 'components/Counter'
 import {
     DASHBOARD_PAGE,
+    DINING_PAGE,
     LAB_TEST_INFO_PAGE,
     LAB_TEST_PAGE,
     LAB_TEST_SINGLE_ITEM_PAGE,
@@ -16,6 +17,7 @@ import { Route, Routes } from 'react-router-dom'
 import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
+import Dining from 'pages/Dining'
 function App() {
     return (
         <ThemeProvider theme={theme}>
@@ -30,6 +32,7 @@ function App() {
                     element={<LabSingleItemPage />}
                 />
                 <Route path={LAB_TEST_INFO_PAGE} element={<LabInfo />} />
+                <Route path={DINING_PAGE} element={<Dining />} />
             </Routes>
         </ThemeProvider>
     )
