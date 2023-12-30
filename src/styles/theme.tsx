@@ -7,31 +7,38 @@ let theme = createTheme({
             main: '#219B8E',
         },
         secondary: {
-            main: '#fff',
+            main: '#219B8E',
         },
     },
 })
 
-// const components: any = createTheme(theme, {
-//     MuiButton: {
-//         //add variants to button component
-//         variants: [
-//             {
-//                 props: { variant: 'primary' },
-//                 style: {
-//                     backgroundColor: `${theme.palette.primary.main}`,
-//                 },
-//             },
-//         ],
-//         styleOverrides: {
-//             root: {
-//                 fontSize: '1em',
-//             },
-//         },
-//     },
-// })
+const components: any = createTheme(theme, {
+    // MuiButton: {
+    //     //add variants to button component
+    //     variants: [
+    //         {
+    //             props: { variant: 'primary' },
+    //             style: {
+    //                 backgroundColor: `${theme.palette.primary.main}`,
+    //             },
+    //         },
+    //     ],
+    //     styleOverrides: {
+    //         root: {
+    //             fontSize: '1em',
+    //         },
+    //     },
+    // },
+    // MuiContainer: {
+    //     styleOverrides: {
+    //         root: {
+    //             backgroundColor: 'red',
+    //         },
+    //     },
+    // },
+})
 
-// // Create a theme instance.
+// Create a theme instance.
 // theme = createTheme({
 //     components,
 // })

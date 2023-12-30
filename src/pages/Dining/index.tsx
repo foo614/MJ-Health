@@ -1,16 +1,16 @@
-import ResponsiveAppBar from 'components/AppBar.tsx'
-import styles from './_dining.module.scss'
-import TextField from '@mui/material/TextField'
-import InputAdornment from '@mui/material/InputAdornment'
 import SearchIcon from '@mui/icons-material/Search'
 import { Button, Container, Grid } from '@mui/material'
 import Box, { BoxProps } from '@mui/material/Box'
+import InputAdornment from '@mui/material/InputAdornment'
+import TextField from '@mui/material/TextField'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
-import WaitingListTable from './components/waiting-list-table'
+import ResponsiveAppBar from 'components/AppBar.tsx'
+import { useState } from 'react'
+import styles from './_dining.module.scss'
 import CheckOutListTable from './components/checkout-list-table'
 import PrintModal from './components/print-modal'
-import { useState } from 'react'
+import WaitingListTable from './components/waiting-list-table'
 
 const Dining = () => {
     const theme = useTheme()
@@ -260,7 +260,6 @@ const Dining = () => {
                             sx={{
                                 display: 'flex',
                                 flexDirection: matches ? 'row' : 'column',
-                                bgcolor: 'background.paper',
                                 borderRadius: 1,
                             }}
                         >
@@ -348,7 +347,6 @@ const Dining = () => {
                             sx={{
                                 display: 'block',
                                 flexDirection: 'row',
-                                bgcolor: 'background.paper',
                                 borderRadius: 1,
                                 height: '100%',
                             }}

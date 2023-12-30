@@ -140,7 +140,9 @@ export default function LoginView() {
                     fullWidth
                     size="large"
                     type="submit"
-                    color="secondary"
+                    style={{
+                        backgroundColor: '#211D4E',
+                    }}
                     variant="contained"
                 >
                     Login

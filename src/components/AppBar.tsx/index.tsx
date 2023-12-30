@@ -14,8 +14,10 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemText from '@mui/material/ListItemText'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
+import { DASHBOARD_PAGE } from 'constant'
 import AppIcon from 'images/app-icon.png'
 import * as React from 'react'
+import { useNavigate } from 'react-router-dom'
 import styles from './_appBar.module.scss'
 
 const pages = [
@@ -43,11 +45,16 @@ const pages = [
 const settings = ['Setting', 'Logout']
 const drawerWidth = 240
 
-function ResponsiveAppBar() {
+const ResponsiveAppBar = () => {
     const [mobileOpen, setMobileOpen] = React.useState(false)
+    const navigate = useNavigate()
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState)
+    }
+
+    const navigateHome = () => {
+        navigate('/' + DASHBOARD_PAGE)
     }
 
     const drawer = (
@@ -76,15 +83,16 @@ function ResponsiveAppBar() {
             <AppBar position="static">
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
-                        {/* <AdbIcon
-                        sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
-                    /> */}
                         <IconButton
                             size="large"
                             edge="start"
                             color="inherit"
                             aria-label="menu"
-                            sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
+                            sx={{
+                                display: { xs: 'none', md: 'flex' },
+                                mr: 1,
+                            }}
+                            disableRipple
                         >
                             <img
                                 src={AppIcon}
@@ -96,7 +104,7 @@ function ResponsiveAppBar() {
                             variant="h6"
                             noWrap
                             component="a"
-                            href="#app-bar-with-responsive-menu"
+                            href="/dashboard"
                             sx={{
                                 mr: 2,
                                 display: { xs: 'none', md: 'flex' },
@@ -110,7 +118,6 @@ function ResponsiveAppBar() {
                             MJ HEALTH <br />
                             美兆国际健康管理
                         </Typography>
-
                         <Box
                             sx={{
                                 flexGrow: 1,

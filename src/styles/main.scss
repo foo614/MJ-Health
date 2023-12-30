@@ -24,6 +24,7 @@
     --color-turquoise: #3adebb;
     --color-lightslategray: #918fa7;
     --label-color: #5a567b;
+    --color-lightgray: #f9f9f9;
 
     /* Border radiuses */
     --br-3xs: 10px;
@@ -46,4 +47,8 @@ body {
     font-size: 1rem; /* 16px */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+    background-color: var(--color-lightgray);
 }
