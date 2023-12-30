@@ -8,6 +8,9 @@ import Paper from '@mui/material/Paper'
 import CheckInAtComponent from './check-in-at-component'
 import styles from '../_dining.module.scss'
 import { Button } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
+import { DINING_CHECK_IN_PAGE } from 'constant'
+
 type WaitingListTableProps = {
     fakeData: any
     setOpen: any
@@ -17,6 +20,7 @@ const WaitingListTable: React.FC<WaitingListTableProps> = ({
     fakeData,
     setOpen,
 }: WaitingListTableProps) => {
+    const navigate = useNavigate()
     return (
         <TableContainer component={Paper} className={styles.diningTable}>
             <Table>
@@ -124,6 +128,9 @@ const WaitingListTable: React.FC<WaitingListTableProps> = ({
                                         variant="contained"
                                         className={styles.checkInBttn}
                                         fullWidth
+                                        onClick={() =>
+                                            navigate(DINING_CHECK_IN_PAGE)
+                                        }
                                     >
                                         Check In
                                     </Button>

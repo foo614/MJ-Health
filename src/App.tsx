@@ -2,6 +2,7 @@ import { ThemeProvider } from '@mui/material/styles'
 import Counter from 'components/Counter'
 import {
     DASHBOARD_PAGE,
+    DINING_CHECK_IN_PAGE,
     DINING_PAGE,
     LAB_TEST_INFO_PAGE,
     LAB_TEST_PAGE,
@@ -18,6 +19,7 @@ import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
 import Dining from 'pages/Dining'
+import DiningCheckIn from 'pages/Dining-Check-In'
 function App() {
     return (
         <ThemeProvider theme={theme}>
@@ -33,6 +35,10 @@ function App() {
                 />
                 <Route path={LAB_TEST_INFO_PAGE} element={<LabInfo />} />
                 <Route path={DINING_PAGE} element={<Dining />} />
+                <Route
+                    path={DINING_CHECK_IN_PAGE}
+                    element={<DiningCheckIn />}
+                />
             </Routes>
         </ThemeProvider>
     )

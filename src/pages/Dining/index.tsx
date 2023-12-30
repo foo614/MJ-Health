@@ -233,7 +233,13 @@ const Dining = () => {
         <>
             <ResponsiveAppBar />
             <div className={styles.diningHeader}>
-                <div className={styles.diningSearchDiv}>
+                <div
+                    className={
+                        matches
+                            ? styles.diningSearchDiv
+                            : styles.diningSearchDivMobile
+                    }
+                >
                     <TextField
                         InputProps={{
                             startAdornment: (
@@ -253,7 +259,7 @@ const Dining = () => {
                     <p>DINING</p>
                 </div>
             </div>
-            <Container maxWidth="xl">
+            <Container maxWidth="xl" style={{ marginTop: '1rem' }}>
                 <Grid container>
                     <Grid item md={9} xs={12}>
                         <Box

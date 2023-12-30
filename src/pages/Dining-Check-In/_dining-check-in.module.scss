@@ -1,0 +1,128 @@
+@use '../../styles/variables' as *;
+.diningHeader {
+    position: relative;
+    padding-bottom: 15px;
+    //background-color: #ffffff !important;
+    padding-top: 10px;
+}
+
+.diningHeaderTitle {
+    text-align: center;
+    font-size: 28px;
+    color: var(--mj-deep-green);
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+}
+
+.diningBackButton {
+    font-weight: 500 !important;
+    font-size: var(--font-size-lg) !important;
+    text-align: center;
+    color: var(--title-color) !important;
+}
+
+.diningTitleButtonDiv {
+    position: absolute;
+    margin-left: 4rem;
+}
+
+.diningTitleButtonDivMobile {
+    position: relative;
+}
+
+.backIcon {
+    font-size: 30px !important;
+}
+
+.card {
+    background: var(--color-white) !important;
+    border-radius: 10px 10px 0px 0px !important;
+}
+
+.innerCard {
+    background: var(--color-white) !important;
+    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 5px !important;
+}
+
+.innerCardTitle {
+    font-weight: 600;
+    font-size: var(--font-size-5xl);
+    text-transform: uppercase;
+    color: var(--mj-deep-green);
+}
+
+.tableColumn {
+    background-color: var(--color-whitesmoke-100) !important;
+    border: 0 !important;
+    padding: 0px 35px 0px 35px !important;
+}
+
+.textFieldProps {
+    border-radius: 3px !important;
+    background-color: var(--color-white) !important;
+    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.tableColumnEnd {
+    background-color: var(--color-whitesmoke-100) !important;
+    border: 0 !important;
+    padding: 0px 35px 20px 35px !important;
+}
+
+.mealTitle {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--mj-deep-green) !important;
+}
+
+.titleCellMealTitle {
+    padding-left: 0px !important;
+    border: 0 !important;
+    padding-bottom: 0px !important;
+}
+
+.titleCell {
+    padding-left: 0px !important;
+    border-bottom: 2px solid var(--color-whitesmoke-300) !important;
+}
+
+.mealCategory {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.border0 {
+    border: 0 !important;
+}
+
+.columnTitle {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--title-color) !important;
+}
+
+.tableColumnTitle {
+    background-color: var(--color-whitesmoke-100) !important;
+    border: 0 !important;
+    padding: 15px 35px 15px 35px !important;
+}
+
+.confirmBttnDiv {
+    margin-top: 2rem;
+    text-align: end;
+}
+
+.confirmBttn {
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+    background-color: var(--color-turquoise) !important;
+    color: var(--color-white) !important;
+    text-transform: capitalize !important;
+}
