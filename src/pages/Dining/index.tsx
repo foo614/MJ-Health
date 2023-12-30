@@ -11,11 +11,13 @@ import styles from './_dining.module.scss'
 import CheckOutListTable from './components/checkout-list-table'
 import PrintModal from './components/print-modal'
 import WaitingListTable from './components/waiting-list-table'
-
+import { useNavigate } from 'react-router-dom'
+import { DINING_MEAL_SETUP_PAGE } from 'constant'
 const Dining = () => {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
     const [openPrintModal, setOpenPrintModal] = useState<boolean>(false)
+    const navigate = useNavigate()
     function Item(props: BoxProps) {
         const { sx, ...other } = props
         return (
@@ -363,6 +365,9 @@ const Dining = () => {
                                     className={styles.mealSetupButton}
                                     size="small"
                                     fullWidth={matches ? false : true}
+                                    onClick={() =>
+                                        navigate(DINING_MEAL_SETUP_PAGE)
+                                    }
                                 >
                                     <span
                                         className={styles.mealSetupButtonText}

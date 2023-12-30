@@ -8,6 +8,7 @@ import {
     LAB_TEST_PAGE,
     LAB_TEST_SINGLE_ITEM_PAGE,
     LOGIN_PAGE,
+    DINING_MEAL_SETUP_PAGE,
 } from 'constant'
 import Dashboard from 'pages/Dashboard'
 import LabPage from 'pages/Lab'
@@ -20,6 +21,7 @@ import './styles/main.scss'
 import theme from './styles/theme'
 import Dining from 'pages/Dining'
 import DiningCheckIn from 'pages/Dining-Check-In'
+import MealSetup from 'pages/Meal-Setup'
 function App() {
     return (
         <ThemeProvider theme={theme}>
@@ -39,6 +41,7 @@ function App() {
                     path={DINING_CHECK_IN_PAGE}
                     element={<DiningCheckIn />}
                 />
+                <Route path={DINING_MEAL_SETUP_PAGE} element={<MealSetup />} />
             </Routes>
         </ThemeProvider>
     )

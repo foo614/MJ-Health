@@ -1,39 +1,4 @@
 @use '../../styles/variables' as *;
-.diningHeader {
-    position: relative;
-    padding-bottom: 15px;
-    //background-color: #ffffff !important;
-    padding-top: 10px;
-}
-
-.diningHeaderTitle {
-    text-align: center;
-    font-size: 28px;
-    color: var(--mj-deep-green);
-    font-family: var(--font-montserrat);
-    font-weight: 600;
-}
-
-.diningBackButton {
-    font-weight: 500 !important;
-    font-size: var(--font-size-lg) !important;
-    text-align: center;
-    color: var(--title-color) !important;
-}
-
-.diningTitleButtonDiv {
-    position: absolute;
-    margin-left: 4rem;
-}
-
-.diningTitleButtonDivMobile {
-    position: relative;
-}
-
-.backIcon {
-    font-size: 30px !important;
-}
-
 .card {
     background: var(--color-white) !important;
     border-radius: 10px 10px 0px 0px !important;
