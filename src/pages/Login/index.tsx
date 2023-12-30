@@ -2,8 +2,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import PersonOutlineRoundedIcon from '@mui/icons-material/PersonOutlineRounded'
 import Visibility from '@mui/icons-material/Visibility'
 import VisibilityOff from '@mui/icons-material/VisibilityOff'
+import Backdrop from '@mui/material/Backdrop'
 import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
 import InputAdornment from '@mui/material/InputAdornment'
 import Paper from '@mui/material/Paper'
@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Unstable_Grid2'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import CustomButton from 'components/CustomButton'
 import { useFormik } from 'formik'
 import Logo from 'images/asset-2-1@2x.png'
 import LoginIcon from 'images/login-1@2x.png'
@@ -21,12 +22,20 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import * as Yup from 'yup'
 import styles from './_login.module.scss'
+import Branch from './components/Branch'
 // ----------------------------------------------------------------------
 
 export default function LoginView() {
     const [showPassword, setShowPassword] = useState(false)
     const theme = useTheme()
     const navigate = useNavigate()
+    const [open, setOpen] = useState(false)
+    const handleClose = () => {
+        setOpen(false)
+    }
+    const handleOpen = () => {
+        setOpen(true)
+    }
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
     const formik = useFormik({
         initialValues: {
@@ -40,7 +49,8 @@ export default function LoginView() {
         onSubmit: (values) => {
             // Handle login logic here
             console.log('Form submitted with values:', values)
-            navigate('/dashboard')
+            handleOpen()
+            // navigate('/dashboard')
         },
     })
 
@@ -136,18 +146,25 @@ export default function LoginView() {
                     }
                 />
                 <Box sx={{ mt: 3 }}></Box>
-                <Button
+                <CustomButton
                     fullWidth
                     size="large"
                     type="submit"
-                    style={{
-                        backgroundColor: '#211D4E',
-                    }}
                     variant="contained"
                 >
                     Login
-                </Button>
+                </CustomButton>
             </Stack>
+            <Backdrop
+                sx={{
+                    color: '#fff',
+                    zIndex: (theme) => theme.zIndex.drawer + 1,
+                }}
+                open={open}
+                // onClick={handleClose}
+            >
+                <Branch handleClose={handleClose} open={open} />
+            </Backdrop>
         </form>
     )
 

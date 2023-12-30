@@ -1,0 +1,133 @@
+.vectorIcon {
+    position: absolute;
+    top: 33px;
+    left: 590px;
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+.chooseBranch1 {
+    // position: absolute;
+    // top: 80px;
+    // left: 229px;
+    font-size: 24px;
+    color: var(--title-color);
+}
+.chooseBranchChild {
+    // position: absolute;
+    // top: 129px;
+    // left: 175px;
+    border-radius: 30px;
+    background-color: #3adebb;
+    width: 300px;
+    height: 8px;
+    margin-top: 1rem;
+}
+.maskGroupIcon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 260px;
+    object-fit: contain;
+}
+.groupChild,
+.groupItem {
+    position: absolute;
+    top: 206px;
+    left: 0;
+    background-color: var(--color-white);
+    width: 220px;
+    height: 4px;
+}
+.groupItem {
+    top: 210px;
+    border-radius: 0 0 var(--br-8xs) var(--br-8xs);
+    background-color: var(--title-color);
+    height: 50px;
+}
+.mjHealthSouthern {
+    position: absolute;
+    top: 224px;
+    left: 12px;
+    line-height: 20px;
+}
+.maskGroupParent {
+    // position: absolute;
+    // top: 167px;
+    // left: 340px;
+    // box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+    width: 220px;
+    height: 260px;
+    cursor: pointer;
+}
+.groupInner,
+.maskGroupIcon1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 260px;
+}
+.maskGroupIcon1 {
+    object-fit: cover;
+}
+.groupInner {
+    border-radius: var(--br-8xs);
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(
+            144.7deg,
+            rgba(58, 222, 187, 0.5) 2.24%,
+            rgba(0, 174, 233, 0.5)
+        );
+}
+.mjHealthCentre {
+    position: absolute;
+    top: 224px;
+    // left: 26px;
+    line-height: 20px;
+}
+.maskGroupGroup {
+    position: absolute;
+    top: 167px;
+    left: 90px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+    width: 220px;
+    height: 260px;
+    cursor: pointer;
+}
+.clipPathGroup,
+.clipPathGroup1 {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+}
+.clipPathGroup1 {
+    right: 39.38%;
+    left: 54.46%;
+}
+.chooseBranchInner,
+.chooseBranchItem {
+    z-index: 1;
+    width: 102.83px;
+    height: 100px;
+    object-fit: cover;
+}
+.chooseBranchInner {
+    left: 399px;
+}
+.chooseBranch {
+    position: relative;
+    border-radius: 15px;
+    background-color: var(--color-white);
+    width: 100%;
+    // height: 500px;
+    text-align: center;
+    font-size: var(--font-size-base);
+    color: var(--color-white);
+    font-family: var(--font-montserrat);
+}
