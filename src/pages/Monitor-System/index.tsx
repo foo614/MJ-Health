@@ -8,10 +8,13 @@ import MonitorSystemTopTable from './components/monitor-system-top-table'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import MonitorSystemBottomTable from './components/monitor-system-bottom-table'
-
+import { useState } from 'react'
+import ChangeStationModal from './components/change-station-modal'
 const MonitorSystem = () => {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
+    const [openChangeStationModal, setOpenChangeStationModal] =
+        useState<boolean>(false)
     const topFakeData = [
         {
             roomNo: 'A-01',
@@ -382,6 +385,9 @@ const MonitorSystem = () => {
                                     variant="contained"
                                     className={styles.changeStationBttn}
                                     fullWidth
+                                    onClick={() =>
+                                        setOpenChangeStationModal(true)
+                                    }
                                 >
                                     Change Station
                                 </Button>
@@ -389,6 +395,13 @@ const MonitorSystem = () => {
                         </Grid>
                     </Grid>
                 </div>
+                {openChangeStationModal ? (
+                    <ChangeStationModal
+                        open={openChangeStationModal}
+                        setOpen={setOpenChangeStationModal}
+                        matches={matches}
+                    />
+                ) : null}
             </div>
         </>
     )
