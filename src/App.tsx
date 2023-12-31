@@ -9,6 +9,7 @@ import {
     LAB_TEST_SINGLE_ITEM_PAGE,
     LOGIN_PAGE,
     DINING_MEAL_SETUP_PAGE,
+    MONITOR_SYSTEM_PAGE,
 } from 'constant'
 import Dashboard from 'pages/Dashboard'
 import LabPage from 'pages/Lab'
@@ -22,6 +23,7 @@ import theme from './styles/theme'
 import Dining from 'pages/Dining'
 import DiningCheckIn from 'pages/Dining-Check-In'
 import MealSetup from 'pages/Meal-Setup'
+import MonitorSystem from 'pages/Monitor-System'
 function App() {
     return (
         <ThemeProvider theme={theme}>
@@ -42,6 +44,7 @@ function App() {
                     element={<DiningCheckIn />}
                 />
                 <Route path={DINING_MEAL_SETUP_PAGE} element={<MealSetup />} />
+                <Route path={MONITOR_SYSTEM_PAGE} element={<MonitorSystem />} />
             </Routes>
         </ThemeProvider>
     )
