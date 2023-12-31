@@ -1,0 +1,22 @@
+.customBox {
+    border-radius: var(--br-3xs);
+    background: linear-gradient(231.33deg, #fff, #f3f3f3);
+    box-shadow: 0 3px 6px rgba(89, 86, 122, 0.15) !important;
+    width: 160px;
+    height: 160px;
+    cursor: pointer;
+}
+
+.boxLabel {
+    font-weight: 600;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.boxImage {
+    width: 50px;
+    height: 50px;
+    margin-top: 2rem;
+    overflow: hidden;
+    object-fit: cover;
+}

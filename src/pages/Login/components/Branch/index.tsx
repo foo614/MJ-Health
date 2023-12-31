@@ -7,11 +7,13 @@ import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
 import IconButton from '@mui/material/IconButton'
 import { styled } from '@mui/material/styles'
+import { DASHBOARD_PAGE } from 'constant'
 import Background1 from 'images/background-img1.png'
 import Background2 from 'images/background-img2.png'
 import Icon from 'images/icon.png'
 import Johor from 'images/johor.png'
 import Selangor from 'images/selangor.png'
+import { useNavigate } from 'react-router-dom'
 import styles from './_branch.module.scss'
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -94,10 +96,10 @@ type Props = {
     open: boolean
 }
 
-function Branch(props: Props) {
+const Branch = (props: Props) => {
+    const navigate = useNavigate()
     return (
         <BootstrapDialog
-            // onClose={() => props.handleClose()}
             aria-labelledby="customized-dialog-title"
             open={props.open}
         >
@@ -147,6 +149,7 @@ function Branch(props: Props) {
                                 style={{
                                     width: '220px',
                                 }}
+                                onClick={() => navigate(DASHBOARD_PAGE)}
                                 key={image.title}
                             >
                                 <ImageSrc
