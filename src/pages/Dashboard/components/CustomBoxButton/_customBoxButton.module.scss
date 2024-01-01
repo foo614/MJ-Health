@@ -5,12 +5,19 @@
     width: 160px;
     height: 160px;
     cursor: pointer;
+    @media screen and (max-width: 600px) {
+        width: 130px;
+        height: 130px;
+    }
 }
 
 .boxLabel {
     font-weight: 600;
     margin-top: 1rem;
     text-align: center;
+    @media screen and (max-width: 600px) {
+        font-size: small;
+    }
 }
 
 .boxImage {
@@ -19,4 +26,8 @@
     margin-top: 2rem;
     overflow: hidden;
     object-fit: cover;
+    @media screen and (max-width: 600px) {
+        width: 25px;
+        height: 25px;
+    }
 }

@@ -52,19 +52,17 @@ const HealthAndScreening = () => {
                 <div className={styles.services}>Health & Screening</div>
             </Grid>
             <Grid>
-                <Stack direction="row" spacing={2}>
+                <Stack direction="row" spacing={2} useFlexGap flexWrap="wrap">
                     <CustomBoxButton
                         image={Frame2}
                         label="Screening Room System"
                         onClick={openCheckInScreeningRoom1}
                     />
-                    {/* prompt */}
                     <CustomBoxButton
                         image={Swab}
                         label="Lab Test"
                         onClick={openCheckInLabTest2}
                     />
-                    {/* prompt */}
                     <CustomBoxButton
                         image={Chat1}
                         label="Consultation"

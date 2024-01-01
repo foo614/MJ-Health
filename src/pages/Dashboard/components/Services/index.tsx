@@ -20,7 +20,7 @@ const Services = () => {
                 <div className={styles.services}>Services</div>
             </Grid>
             <Grid>
-                <Stack direction="row" spacing={2}>
+                <Stack direction="row" spacing={2} useFlexGap flexWrap="wrap">
                     <CustomBoxButton image={HandTouch} label="Self-Kiosk UI" />
                     <CustomBoxButton
                         image={HealthCare}

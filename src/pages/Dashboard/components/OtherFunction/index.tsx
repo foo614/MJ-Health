@@ -18,7 +18,7 @@ const OtherFunction = () => {
                 <div className={styles.services}>Other Function</div>
             </Grid>
             <Grid>
-                <Stack direction="row" spacing={2}>
+                <Stack direction="row" spacing={2} useFlexGap flexWrap="wrap">
                     <CustomBoxButton image={Monitor} label="IT Room Monitor" />
                     <CustomBoxButton image={Printer} label="IT Printing Room" />
                     <CustomBoxButton image={Group1} label="Staff Management" />
