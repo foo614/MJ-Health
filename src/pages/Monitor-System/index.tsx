@@ -10,11 +10,8 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import MonitorSystemBottomTable from './components/monitor-system-bottom-table'
 import { useState } from 'react'
 import ChangeStationModal from './components/change-station-modal'
+import FlowModifierModal from './components/flow-modifier-modal'
 const MonitorSystem = () => {
-    const theme = useTheme()
-    const matches = useMediaQuery(theme.breakpoints.up('sm'))
-    const [openChangeStationModal, setOpenChangeStationModal] =
-        useState<boolean>(false)
     const topFakeData = [
         {
             roomNo: 'A-01',
@@ -120,6 +117,7 @@ const MonitorSystem = () => {
 
     const bottomFakeData = [
         {
+            id: 1,
             seqNo: '001',
             name: 'Jeffery Mohamad Bin Christofa',
             age: 54,
@@ -130,6 +128,7 @@ const MonitorSystem = () => {
             nextStation: 'A-02 General Measurement',
         },
         {
+            id: 2,
             seqNo: '002',
             name: 'Wong Sin Yi',
             age: 54,
@@ -140,6 +139,7 @@ const MonitorSystem = () => {
             nextStation: '-',
         },
         {
+            id: 3,
             seqNo: '003',
             name: 'Liu Yan',
             age: 54,
@@ -150,6 +150,7 @@ const MonitorSystem = () => {
             nextStation: 'A-04 Vision & Ocular Tension Test',
         },
         {
+            id: 4,
             seqNo: '004',
             name: 'Lok Wing Ching',
             age: 54,
@@ -160,6 +161,7 @@ const MonitorSystem = () => {
             nextStation: '-',
         },
         {
+            id: 5,
             seqNo: '005',
             name: 'Angelica Lee',
             age: 54,
@@ -170,6 +172,7 @@ const MonitorSystem = () => {
             nextStation: '-',
         },
         {
+            id: 6,
             seqNo: '005',
             name: 'Angelica Lee',
             age: 54,
@@ -180,6 +183,7 @@ const MonitorSystem = () => {
             nextStation: '-',
         },
         {
+            id: 7,
             seqNo: '005',
             name: 'Angelica Lee',
             age: 54,
@@ -190,6 +194,7 @@ const MonitorSystem = () => {
             nextStation: '-',
         },
         {
+            id: 8,
             seqNo: '005',
             name: 'Angelica Lee',
             age: 54,
@@ -200,6 +205,18 @@ const MonitorSystem = () => {
             nextStation: '-',
         },
     ]
+
+    const theme = useTheme()
+    const matches = useMediaQuery(theme.breakpoints.up('sm'))
+    const [openChangeStationModal, setOpenChangeStationModal] =
+        useState<boolean>(false)
+
+    const [currentSelectedItem, setCurrentSelectedItem] = useState(
+        bottomFakeData?.[0]
+    )
+
+    const [openFlowModifierModal, setOpenFlowModifierModal] =
+        useState<boolean>(false)
     return (
         <>
             <ResponsiveAppBar />
@@ -358,7 +375,11 @@ const MonitorSystem = () => {
                     <MonitorSystemTopTable fakeData={topFakeData} />
                 </div>
                 <div style={{ marginTop: '2rem' }}>
-                    <MonitorSystemBottomTable fakeData={bottomFakeData} />
+                    <MonitorSystemBottomTable
+                        fakeData={bottomFakeData}
+                        currentSelectedItem={currentSelectedItem}
+                        setCurrentSelectedItem={setCurrentSelectedItem}
+                    />
                 </div>
 
                 <div style={{ marginTop: '2rem' }}>
@@ -378,6 +399,9 @@ const MonitorSystem = () => {
                                     variant="contained"
                                     className={styles.flowModifierBttn}
                                     fullWidth
+                                    onClick={() =>
+                                        setOpenFlowModifierModal(true)
+                                    }
                                 >
                                     Flow Modifier
                                 </Button>
@@ -400,6 +424,16 @@ const MonitorSystem = () => {
                         open={openChangeStationModal}
                         setOpen={setOpenChangeStationModal}
                         matches={matches}
+                        currentItem={currentSelectedItem}
+                    />
+                ) : null}
+
+                {openFlowModifierModal ? (
+                    <FlowModifierModal
+                        open={openFlowModifierModal}
+                        setOpen={setOpenFlowModifierModal}
+                        matches={matches}
+                        currentItem={currentSelectedItem}
                     />
                 ) : null}
             </div>

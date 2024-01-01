@@ -25,12 +25,14 @@ type Props = {
     open: boolean
     setOpen: any
     matches: any
+    currentItem: any
 }
 
 const ChangeStationModal: React.FC<Props> = ({
     open,
     setOpen,
     matches,
+    currentItem,
 }: Props) => {
     const selectOptions = [
         {
@@ -129,7 +131,7 @@ const ChangeStationModal: React.FC<Props> = ({
                                     size="small"
                                     margin="dense"
                                     fullWidth
-                                    defaultValue="008"
+                                    value={currentItem.seqNo}
                                     InputProps={{
                                         className: styles.textFieldProps,
                                         classes: {
@@ -162,7 +164,7 @@ const ChangeStationModal: React.FC<Props> = ({
                                     size="small"
                                     margin="dense"
                                     fullWidth
-                                    defaultValue="Sib Trial Run 7"
+                                    value={currentItem.name}
                                     InputProps={{
                                         className: styles.textFieldProps,
                                         classes: {
@@ -195,7 +197,7 @@ const ChangeStationModal: React.FC<Props> = ({
                                     size="small"
                                     margin="dense"
                                     fullWidth
-                                    defaultValue="B-01 Interview"
+                                    value={currentItem.nextStation}
                                     InputProps={{
                                         className: styles.textFieldProps,
                                         classes: {

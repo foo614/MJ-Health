@@ -9,8 +9,14 @@ import Paper from '@mui/material/Paper'
 
 type Props = {
     fakeData: any
+    currentSelectedItem: any
+    setCurrentSelectedItem: any
 }
-const MonitorSystemBottomTable: React.FC<Props> = ({ fakeData }: Props) => {
+const MonitorSystemBottomTable: React.FC<Props> = ({
+    fakeData,
+    currentSelectedItem,
+    setCurrentSelectedItem,
+}: Props) => {
     return (
         <TableContainer
             component={Paper}
@@ -79,7 +85,15 @@ const MonitorSystemBottomTable: React.FC<Props> = ({ fakeData }: Props) => {
                 <TableBody>
                     {fakeData.map((item: any, index: number) => {
                         return (
-                            <TableRow key={index}>
+                            <TableRow
+                                key={index}
+                                className={
+                                    currentSelectedItem?.id === item.id
+                                        ? styles.currentSelectedItem
+                                        : styles.cursorPointer
+                                }
+                                onClick={() => setCurrentSelectedItem(item)}
+                            >
                                 <TableCell>
                                     <p
                                         className={
