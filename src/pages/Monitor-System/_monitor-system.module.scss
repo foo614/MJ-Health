@@ -276,6 +276,101 @@
 }
 
 .selectPaperCss::-webkit-scrollbar-thumb {
-    background: #A8A8A8;
+    background: #a8a8a8;
     border-radius: 10px;
+}
+
+.currentSelectedItem {
+    background-color: var(--color-lightgray);
+    cursor: pointer;
+}
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+.flowModifierModal {
+    width: 1096px !important;
+    max-width: unset !important;
+    border-radius: 20px !important;
+}
+
+.flowModifierModalTitle {
+    font-weight: 700 !important;
+    font-size: 28px !important;
+    text-align: center;
+    color: var(--color-white) !important;
+}
+
+.flowModifierTitleColor {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(90deg, #3adebb -0.18%, #00aee9 99.82%);
+
+    border-bottom: 4px solid #ededed;
+}
+
+.flowModifierCloseIcon {
+    color: var(--color-white) !important;
+}
+
+.flowModifierModalSectionTitle {
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    color: var(--mj-deep-green);
+}
+
+.flowModifierModalSectionSubTitle {
+    font-weight: 500 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--label-color) !important;
+}
+
+.flowModifierDialogContent {
+    padding: 20px 40px !important;
+    max-height: 600px;
+    overflow: auto;
+}
+
+.selectFieldCssIncomplete {
+    font-family: 'Montserrat' !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: #de4e3a !important;
+}
+
+.flowModifierDialogContent::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.flowModifierDialogContent::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.flowModifierDialogActionsTitle {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.flowModifierDialogActions {
+    border-top: 4px solid #ededed;
+    background-color: #FDFDFD !important;
+}
+
+.flowModifierDialogActionsValue {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.flowModifierModalSaveBttn {
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    text-align: center !important;
+    color: var(--color-white) !important;
+    background-color: var(--color-turquoise) !important;
 }
