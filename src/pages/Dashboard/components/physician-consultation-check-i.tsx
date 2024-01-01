@@ -1,7 +1,7 @@
 import { FunctionComponent, useCallback, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import ConsultationCheckIn4 from './HealthAndScreening/components/Consultation/consultation-check-in4'
 import styles from './_physician-consultation-check-i.module.scss'
-import ConsultationCheckIn4 from './consultation-check-in4'
 import PortalPopup from './portal-popup'
 
 const PhysicianConsultationCheckI: FunctionComponent = () => {

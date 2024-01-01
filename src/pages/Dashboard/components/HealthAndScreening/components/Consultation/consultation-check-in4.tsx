@@ -1,13 +1,10 @@
 import { FunctionComponent, useCallback, useState } from 'react'
-import styles from './_consultation-check-in2.module.scss'
-import ConsultationCheckIn from './consultation-check-in'
-import HealthManagementConsultation from './health-management-consultation'
-import PhysicianConsultationCheckI from './physician-consultation-check-i'
-import PortalPopup from './portal-popup'
+import HealthManagementConsultation from '../../../health-management-consultation'
+import PhysicianConsultationCheckI from '../../../physician-consultation-check-i'
+import PortalPopup from '../../../portal-popup'
+import styles from './_consultation-check-in4.module.scss'
 
-const ConsultationCheckIn2: FunctionComponent = () => {
-    const [isConsultationCheckInOpen, setConsultationCheckInOpen] =
-        useState(false)
+const ConsultationCheckIn4: FunctionComponent = () => {
     const [
         isHealthManagementConsultation1Open,
         setHealthManagementConsultation1Open,
@@ -16,14 +13,6 @@ const ConsultationCheckIn2: FunctionComponent = () => {
         isPhysicianConsultationCheckIOpen,
         setPhysicianConsultationCheckIOpen,
     ] = useState(false)
-
-    const openConsultationCheckIn = useCallback(() => {
-        setConsultationCheckInOpen(true)
-    }, [])
-
-    const closeConsultationCheckIn = useCallback(() => {
-        setConsultationCheckInOpen(false)
-    }, [])
 
     const openHealthManagementConsultation1 = useCallback(() => {
         setHealthManagementConsultation1Open(true)
@@ -43,7 +32,7 @@ const ConsultationCheckIn2: FunctionComponent = () => {
 
     return (
         <>
-            <div className={styles.consultationCheckIn2}>
+            <div className={styles.consultationCheckIn4}>
                 <div className={styles.rectangleParent}>
                     <div className={styles.groupChild} />
                     <div className={styles.groupItem} />
@@ -51,9 +40,10 @@ const ConsultationCheckIn2: FunctionComponent = () => {
                         className={styles.vectorIcon}
                         alt=""
                         src="/vector@2x.png"
-                        onClick={openConsultationCheckIn}
                     />
-                    <div className={styles.div}>-</div>
+                    <div className={styles.physicianConsultation}>
+                        Physician Consultation
+                    </div>
                 </div>
                 <div
                     className={styles.healthManagementConsultation}
@@ -62,21 +52,12 @@ const ConsultationCheckIn2: FunctionComponent = () => {
                     Health Management Consultation
                 </div>
                 <div
-                    className={styles.physicianConsultation}
+                    className={styles.physicianConsultation1}
                     onClick={openPhysicianConsultationCheckI}
                 >
                     Physician Consultation
                 </div>
             </div>
-            {isConsultationCheckInOpen && (
-                <PortalPopup
-                    overlayColor="rgba(113, 113, 113, 0.3)"
-                    placement="Centered"
-                    onOutsideClick={closeConsultationCheckIn}
-                >
-                    <ConsultationCheckIn />
-                </PortalPopup>
-            )}
             {isHealthManagementConsultation1Open && (
                 <PortalPopup
                     overlayColor="rgba(113, 113, 113, 0.3)"
@@ -99,4 +80,4 @@ const ConsultationCheckIn2: FunctionComponent = () => {
     )
 }
 
-export default ConsultationCheckIn2
+export default ConsultationCheckIn4

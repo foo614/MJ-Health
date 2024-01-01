@@ -5,10 +5,6 @@ import { useNavigate } from 'react-router-dom'
 import HealthAndScreening from './components/HealthAndScreening'
 import OtherFunction from './components/OtherFunction'
 import Services from './components/Services'
-import CheckInLabTest2 from './components/check-in-lab-test2'
-import CheckInScreeningRoom1 from './components/check-in-screening-room1'
-import ConsultationCheckIn from './components/consultation-check-in'
-import PortalPopup from './components/portal-popup'
 
 const Dashboard: FunctionComponent = () => {
     const [isCheckInLabTest2Open, setCheckInLabTest2Open] = useState(false)
@@ -122,34 +118,6 @@ const Dashboard: FunctionComponent = () => {
                 <HealthAndScreening />
                 <OtherFunction />
             </Grid>
-
-            {isCheckInLabTest2Open && (
-                <PortalPopup
-                    overlayColor="rgba(113, 113, 113, 0.3)"
-                    placement="Centered"
-                    onOutsideClick={closeCheckInLabTest2}
-                >
-                    <CheckInLabTest2 />
-                </PortalPopup>
-            )}
-            {isConsultationCheckInOpen && (
-                <PortalPopup
-                    overlayColor="rgba(113, 113, 113, 0.3)"
-                    placement="Centered"
-                    onOutsideClick={closeConsultationCheckIn}
-                >
-                    <ConsultationCheckIn />
-                </PortalPopup>
-            )}
-            {isCheckInScreeningRoom1Open && (
-                <PortalPopup
-                    overlayColor="rgba(113, 113, 113, 0.3)"
-                    placement="Centered"
-                    onOutsideClick={closeCheckInScreeningRoom1}
-                >
-                    <CheckInScreeningRoom1 />
-                </PortalPopup>
-            )}
         </>
     )
 }

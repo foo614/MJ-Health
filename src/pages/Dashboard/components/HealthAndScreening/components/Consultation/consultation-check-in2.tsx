@@ -1,25 +1,35 @@
 import { FunctionComponent, useCallback, useState } from 'react'
-import styles from './_consultation-check-in3.module.scss'
-import HealthManagementConsultation from './health-management-consultation'
-import PhysicianConsultationCheckI from './physician-consultation-check-i'
-import PortalPopup from './portal-popup'
+import HealthManagementConsultation from '../../../health-management-consultation'
+import PhysicianConsultationCheckI from '../../../physician-consultation-check-i'
+import PortalPopup from '../../../portal-popup'
+import styles from './_consultation-check-in2.module.scss'
 
-const ConsultationCheckIn3: FunctionComponent = () => {
+const ConsultationCheckIn2: FunctionComponent = () => {
+    const [isConsultationCheckInOpen, setConsultationCheckInOpen] =
+        useState(false)
     const [
-        isHealthManagementConsultation2Open,
-        setHealthManagementConsultation2Open,
+        isHealthManagementConsultation1Open,
+        setHealthManagementConsultation1Open,
     ] = useState(false)
     const [
         isPhysicianConsultationCheckIOpen,
         setPhysicianConsultationCheckIOpen,
     ] = useState(false)
 
-    const openHealthManagementConsultation2 = useCallback(() => {
-        setHealthManagementConsultation2Open(true)
+    const openConsultationCheckIn = useCallback(() => {
+        setConsultationCheckInOpen(true)
     }, [])
 
-    const closeHealthManagementConsultation2 = useCallback(() => {
-        setHealthManagementConsultation2Open(false)
+    const closeConsultationCheckIn = useCallback(() => {
+        setConsultationCheckInOpen(false)
+    }, [])
+
+    const openHealthManagementConsultation1 = useCallback(() => {
+        setHealthManagementConsultation1Open(true)
+    }, [])
+
+    const closeHealthManagementConsultation1 = useCallback(() => {
+        setHealthManagementConsultation1Open(false)
     }, [])
 
     const openPhysicianConsultationCheckI = useCallback(() => {
@@ -32,7 +42,7 @@ const ConsultationCheckIn3: FunctionComponent = () => {
 
     return (
         <>
-            <div className={styles.consultationCheckIn3}>
+            <div className={styles.consultationCheckIn2}>
                 <div className={styles.rectangleParent}>
                     <div className={styles.groupChild} />
                     <div className={styles.groupItem} />
@@ -40,14 +50,13 @@ const ConsultationCheckIn3: FunctionComponent = () => {
                         className={styles.vectorIcon}
                         alt=""
                         src="/vector@2x.png"
+                        onClick={openConsultationCheckIn}
                     />
-                    <div className={styles.healthManagementConsultation}>
-                        Health Management Consultation
-                    </div>
+                    <div className={styles.div}>-</div>
                 </div>
                 <div
-                    className={styles.healthManagementConsultation1}
-                    onClick={openHealthManagementConsultation2}
+                    className={styles.healthManagementConsultation}
+                    onClick={openHealthManagementConsultation1}
                 >
                     Health Management Consultation
                 </div>
@@ -58,11 +67,20 @@ const ConsultationCheckIn3: FunctionComponent = () => {
                     Physician Consultation
                 </div>
             </div>
-            {isHealthManagementConsultation2Open && (
+            {/* {isConsultationCheckInOpen && (
                 <PortalPopup
                     overlayColor="rgba(113, 113, 113, 0.3)"
                     placement="Centered"
-                    onOutsideClick={closeHealthManagementConsultation2}
+                    onOutsideClick={closeConsultationCheckIn}
+                >
+                    <ConsultationCheckIn />
+                </PortalPopup>
+            )} */}
+            {isHealthManagementConsultation1Open && (
+                <PortalPopup
+                    overlayColor="rgba(113, 113, 113, 0.3)"
+                    placement="Centered"
+                    onOutsideClick={closeHealthManagementConsultation1}
                 >
                     <HealthManagementConsultation />
                 </PortalPopup>
@@ -80,4 +98,4 @@ const ConsultationCheckIn3: FunctionComponent = () => {
     )
 }
 
-export default ConsultationCheckIn3
+export default ConsultationCheckIn2
