@@ -1,4 +1,11 @@
-import { Button, Divider, TextField, Typography } from '@mui/material'
+import {
+    Button,
+    Divider,
+    TextField,
+    Typography,
+    useMediaQuery,
+    useTheme,
+} from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
@@ -9,12 +16,14 @@ import { DASHBOARD_PAGE } from 'constant'
 import styles from './_setting.module.scss'
 
 function Setting() {
+    const theme = useTheme()
+    const matches = useMediaQuery(theme.breakpoints.up('sm'))
     return (
         <>
             <ResponsiveAppBar />
             <CustomHeader to={DASHBOARD_PAGE} title="ACCOUNT SETTING" />
             <Grid container>
-                <Grid xs mdOffset={3} md={3} sx={{ mx: 2, my: 3 }}>
+                <Grid xs={12} mdOffset={3} md={3} sx={{ mx: 2, my: 3 }}>
                     <Typography variant="h6" className={styles.title}>
                         Staff Information
                     </Typography>
@@ -56,7 +65,9 @@ function Setting() {
                         <DatePicker className={styles.textField} />
                     </LocalizationProvider>
                 </Grid>
-                <Divider orientation="vertical" flexItem sx={{ mx: 10 }} />
+                {matches && (
+                    <Divider orientation="vertical" flexItem sx={{ mx: 10 }} />
+                )}
                 <Grid xs md={3} mdOffset={0} sx={{ mx: 2, my: 3 }}>
                     <Typography variant="h6" className={styles.title}>
                         Contact Information

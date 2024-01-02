@@ -59,7 +59,9 @@ const CustomHeader: React.FC<Props> = ({ to, title }: Props) => {
                 </Grid>
                 <Grid item>
                     {pathname.includes('setting') && (
-                        <Button variant="contained">Switch Branch</Button>
+                        <Button variant="contained">
+                            {!matches ? 'Branch' : 'Switch Branch'}
+                        </Button>
                     )}
                 </Grid>
             </Grid>
