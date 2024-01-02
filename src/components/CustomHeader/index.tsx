@@ -15,22 +15,27 @@ const CustomHeader: React.FC<Props> = ({ to, title }: Props) => {
     const navigate = useNavigate()
     return (
         <div className={styles.header}>
-            <div
-                className={
-                    matches
-                        ? styles.titleButtonDiv
-                        : styles.titleButtonDivMobile
-                }
-            >
-                <Button
-                    variant="text"
-                    className={styles.backButton}
-                    startIcon={<ChevronLeftIcon className={styles.backIcon} />}
-                    onClick={() => navigate(to)}
+            {to ? (
+                <div
+                    className={
+                        matches
+                            ? styles.titleButtonDiv
+                            : styles.titleButtonDivMobile
+                    }
                 >
-                    BACK
-                </Button>
-            </div>
+                    <Button
+                        variant="text"
+                        className={styles.backButton}
+                        startIcon={
+                            <ChevronLeftIcon className={styles.backIcon} />
+                        }
+                        onClick={() => navigate(to)}
+                    >
+                        BACK
+                    </Button>
+                </div>
+            ) : null}
+
             <div className={styles.headerTitle}>
                 <p>{title}</p>
             </div>

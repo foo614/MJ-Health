@@ -10,6 +10,7 @@ import {
     LOGIN_PAGE,
     DINING_MEAL_SETUP_PAGE,
     MONITOR_SYSTEM_PAGE,
+    STICKER_PRINTING_PAGE,
 } from 'constant'
 import Dashboard from 'pages/Dashboard'
 import LabPage from 'pages/Lab'
@@ -24,6 +25,7 @@ import Dining from 'pages/Dining'
 import DiningCheckIn from 'pages/Dining-Check-In'
 import MealSetup from 'pages/Meal-Setup'
 import MonitorSystem from 'pages/Monitor-System'
+import StickerPrinting from 'pages/Sticker-Printing'
 function App() {
     return (
         <ThemeProvider theme={theme}>
@@ -45,6 +47,10 @@ function App() {
                 />
                 <Route path={DINING_MEAL_SETUP_PAGE} element={<MealSetup />} />
                 <Route path={MONITOR_SYSTEM_PAGE} element={<MonitorSystem />} />
+                <Route
+                    path={STICKER_PRINTING_PAGE}
+                    element={<StickerPrinting />}
+                />
             </Routes>
         </ThemeProvider>
     )
