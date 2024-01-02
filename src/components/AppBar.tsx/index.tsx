@@ -14,7 +14,7 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemText from '@mui/material/ListItemText'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
-import { DASHBOARD_PAGE } from 'constant'
+import { DASHBOARD_PAGE, SETTING_PAGE } from 'constant'
 import AppIcon from 'images/app-icon.png'
 import * as React from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -227,6 +227,7 @@ const ResponsiveAppBar = () => {
                                 variant="outlined"
                                 startIcon={<SettingsIcon />}
                                 sx={{ marginRight: '1rem' }}
+                                onClick={() => navigate(SETTING_PAGE)}
                             >
                                 Setting
                             </Button>

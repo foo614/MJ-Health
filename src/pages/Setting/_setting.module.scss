@@ -1,0 +1,19 @@
+@use '../../styles/variables' as *;
+
+.title {
+    color: $primaryColor;
+    font-size: 20px;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+.fieldLabel {
+    color: #5a567b;
+    font-size: 18px;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+.textField {
+    background-color: white;
+}

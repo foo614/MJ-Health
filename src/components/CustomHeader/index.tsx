@@ -1,9 +1,9 @@
-import styles from './_custom-header.module.scss'
-import { Button } from '@mui/material'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
-import { useNavigate } from 'react-router-dom'
+import { Button, Grid } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import { useLocation, useNavigate } from 'react-router-dom'
+import styles from './_custom-header.module.scss'
 
 type Props = {
     to: string
@@ -13,9 +13,11 @@ const CustomHeader: React.FC<Props> = ({ to, title }: Props) => {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
     const navigate = useNavigate()
+    const location = useLocation()
+    const { pathname } = location
     return (
         <div className={styles.header}>
-            {to ? (
+            {/* {to ? (
                 <div
                     className={
                         matches
@@ -34,11 +36,33 @@ const CustomHeader: React.FC<Props> = ({ to, title }: Props) => {
                         BACK
                     </Button>
                 </div>
-            ) : null}
+            ) : null} */}
 
-            <div className={styles.headerTitle}>
+            {/* <div className={styles.headerTitle}>
                 <p>{title}</p>
-            </div>
+            </div> */}
+            <Grid xs container justifyContent={'space-between'} spacing={1}>
+                <Grid item>
+                    {to && (
+                        <Button
+                            variant="text"
+                            className={styles.backButton}
+                            startIcon={<ChevronLeftIcon />}
+                            onClick={() => navigate(to)}
+                        >
+                            BACK
+                        </Button>
+                    )}
+                </Grid>
+                <Grid item className={styles.headerTitle}>
+                    {title}
+                </Grid>
+                <Grid item>
+                    {pathname.includes('setting') && (
+                        <Button variant="contained">Switch Branch</Button>
+                    )}
+                </Grid>
+            </Grid>
         </div>
     )
 }

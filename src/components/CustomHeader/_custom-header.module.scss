@@ -13,12 +13,16 @@
     color: var(--mj-deep-green);
     font-family: var(--font-montserrat);
     font-weight: 600;
+    @media screen and (max-width: 600px) {
+        font-size: 16px;
+        align-self: center;
+    }
 }
 
 .backButton {
     font-weight: 500 !important;
     font-size: var(--font-size-lg) !important;
-    text-align: center;
+    // text-align: center;
     color: var(--title-color) !important;
 }
 
