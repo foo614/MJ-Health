@@ -276,12 +276,32 @@
 
 .mealCardDivider {
     width: 80mm;
-    height: 107mm;
-    border: 1px solid black;
+    // height: 107mm;
+    // border: 1px solid black;
+    border-top: 1px solid var(--mj-deep-green);
+    border-left: 1px solid var(--mj-deep-green);
+    border-right: 1px solid var(--mj-deep-green);
+}
+
+.mealCardTitleDivider {
+    width: 80mm;
+}
+
+.mealCardTitle {
+    font-size: var(--font-size-base) !important;
+    font-weight: 700 !important;
+    color: var(--mj-deep-green) !important;
+    text-align: center;
+}
+
+.mealCardInfoDivider {
+    height: 33mm;
+    padding: 5px;
+    border-bottom: 1px solid var(--mj-deep-green);
 }
 
 .mealCardText {
-    font-size: 14px;
+    font-size: var(--font-size-sm);
     color: var(--mj-deep-green);
 }
 
@@ -293,4 +313,106 @@
 
 .mealCardValue {
     font-size: 16px;
+}
+
+.row {
+    content: '';
+    display: table;
+    clear: both;
+    width: 100%;
+    height: 30px;
+}
+
+.dishesColumn {
+    float: left;
+    padding: 5px;
+    width: 40%;
+    // border: 1px solid black;
+    height: 100%;
+    border-bottom: 1px solid var(--mj-deep-green);
+}
+
+.weightColumn {
+    float: left;
+    padding: 5px;
+    width: 30%;
+    // border: 1px solid black;
+    height: 100%;
+    border-bottom: 1px solid var(--mj-deep-green);
+    border-left: 1px solid var(--mj-deep-green);
+    border-right: 1px solid var(--mj-deep-green);
+}
+
+.caloriesColumn {
+    float: left;
+    padding: 5px;
+    width: 30%;
+    // border: 1px solid black;
+    height: 100%;
+    border-bottom: 1px solid var(--mj-deep-green);
+}
+
+.middleSectionText {
+    font-size: var(--font-size-sm) !important;
+    color: var(--mj-deep-green);
+    text-align: center;
+}
+
+.caloriesSectionText {
+    font-size: 12px !important;
+    color: var(--mj-deep-green);
+    text-align: center;
+    margin-top: 2px;
+}
+
+.dishesTextColumn {
+    float: left;
+    padding: 5px;
+    width: 40%;
+    // border: 1px solid black;
+}
+
+.dishesRow {
+    content: '';
+    display: table;
+    clear: both;
+    width: 100%;
+    height: 60px;
+}
+
+.mealCardFrontDivider {
+    width: 105mm;
+    height: 100%;
+    // width: 80mm;
+}
+
+.mealCardFrontLogoDivider {
+    // height: 60px;
+    background-color: var(--mj-deep-green);
+    display: flex;
+    padding: 10px;
+}
+
+.mealCardFrontLogoText {
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    color: var(--color-white) !important;
+    white-space: nowrap;
+}
+
+.mealCardFrontTitle {
+    font-weight: 700 !important;
+    color: var(--color-white) !important;
+    font-size: var(--font-size-lg) !important;
+    white-space: nowrap;
+}
+
+.mealCardFrontText {
+    color: var(--mj-deep-green) !important;
+    font-size: var(--font-size-lg) !important;
+}
+
+.mealCardFrontBottomText {
+    color: var(--mj-deep-green) !important;
+    font-size: var(--font-size-xs) !important;
 }

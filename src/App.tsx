@@ -11,6 +11,7 @@ import {
     MONITOR_SYSTEM_PAGE,
     SETTING_PAGE,
     STICKER_PRINTING_PAGE,
+    PRINTING_STICKER_TEST_PAGE
 } from 'constant'
 import Dashboard from 'pages/Dashboard'
 import Dining from 'pages/Dining'
@@ -55,6 +56,7 @@ function App() {
                     path={STICKER_PRINTING_PAGE}
                     element={<StickerPrinting />}
                 />
+                {/* <Route path={PRINTING_STICKER_TEST_PAGE} element={<PrintingTest />} /> */}
             </Routes>
         </ThemeProvider>
     )

@@ -7,6 +7,9 @@ import { TransitionProps } from '@mui/material/transitions'
 import styles from '../_sticker-printing.module.scss'
 import PrintIcon from './print-icon.png'
 import { Grid } from '@mui/material'
+import { PrintingSticker } from './printing-test'
+import { useReactToPrint } from 'react-to-print'
+import { useRef } from 'react'
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
         children: React.ReactElement<any, any>
@@ -27,9 +30,14 @@ const PrintStickerModal: React.FC<Props> = ({
     setOpen,
     open,
 }: Props) => {
+    const stickerRef = useRef(null)
     const handleClose = () => {
         setOpen(false)
     }
+
+    const handlePrint = useReactToPrint({
+        content: () => stickerRef.current,
+    })
 
     return (
         <React.Fragment>
@@ -81,12 +89,15 @@ const PrintStickerModal: React.FC<Props> = ({
                                         variant="contained"
                                         className={styles.printStickerYesBttn}
                                         fullWidth
-                                        onClick={handleClose}
+                                        onClick={handlePrint}
                                     >
                                         Yes
                                     </Button>
                                 </Grid>
                             </Grid>
+                            <div style={{ display: 'none' }}>
+                                <PrintingSticker ref={stickerRef} />
+                            </div>
                         </div>
                     </div>
                 </DialogContent>

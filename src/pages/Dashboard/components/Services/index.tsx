@@ -7,8 +7,10 @@ import HealthCare from 'images/healthcare.png'
 import HotFood from 'images/hotfood-1-2@2x.png'
 import CustomBoxButton from '../CustomBoxButton'
 import styles from './_services.module.scss'
-
+import { useNavigate } from 'react-router-dom'
+import { DINING_PAGE, STICKER_PRINTING_PAGE } from 'constant'
 const Services = () => {
+    const navigate = useNavigate()
     return (
         <Grid container sx={{ mb: 4 }}>
             <Grid xs={12} display="flex" sx={{ mb: 3 }}>
@@ -26,8 +28,16 @@ const Services = () => {
                         image={HealthCare}
                         label="Reception Counter"
                     />
-                    <CustomBoxButton image={File1} label="Print Sticker" />
-                    <CustomBoxButton image={HotFood} label="Dining" />
+                    <CustomBoxButton
+                        image={File1}
+                        label="Print Sticker"
+                        onClick={() => navigate(STICKER_PRINTING_PAGE)}
+                    />
+                    <CustomBoxButton
+                        image={HotFood}
+                        label="Dining"
+                        onClick={() => navigate(DINING_PAGE)}
+                    />
                 </Stack>
             </Grid>
         </Grid>
