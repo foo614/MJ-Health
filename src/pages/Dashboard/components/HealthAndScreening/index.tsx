@@ -14,8 +14,11 @@ import styles from './_healthAndScreening.module.scss'
 import ConsultationCheckIn from './components/Consultation/consultation-check-in'
 import CheckInLabTest2 from './components/LabTest/check-in-lab-test2'
 import CheckInScreeningRoom1 from './components/ScreeningRoomSystem/check-in-screening-room1'
+import { useNavigate } from 'react-router-dom'
+import { MONITOR_SYSTEM_PAGE } from 'constant'
 
 const HealthAndScreening = () => {
+    const navigate = useNavigate()
     const [isCheckInLabTest2Open, setCheckInLabTest2Open] = useState(false)
     const [isCheckInScreeningRoom1Open, setCheckInScreeningRoom1Open] =
         useState(false)
@@ -68,7 +71,11 @@ const HealthAndScreening = () => {
                         label="Consultation"
                         onClick={openConsultationCheckIn}
                     />
-                    <CustomBoxButton image={LineIcon} label="Monitor System" />
+                    <CustomBoxButton
+                        image={LineIcon}
+                        label="Monitor System"
+                        onClick={() => navigate(MONITOR_SYSTEM_PAGE)}
+                    />
                     <CustomBoxButton
                         image={LineIcon}
                         label="Queue Management"

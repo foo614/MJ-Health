@@ -11,7 +11,8 @@ import {
     MONITOR_SYSTEM_PAGE,
     SETTING_PAGE,
     STICKER_PRINTING_PAGE,
-    PRINTING_STICKER_TEST_PAGE
+    PRINTING_STICKER_TEST_PAGE,
+    KIOSK_PAGE,
 } from 'constant'
 import Dashboard from 'pages/Dashboard'
 import Dining from 'pages/Dining'
@@ -28,6 +29,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
+import Kiosk from 'pages/Kiosk'
 function App() {
     return (
         <ThemeProvider theme={theme}>
@@ -56,6 +58,7 @@ function App() {
                     path={STICKER_PRINTING_PAGE}
                     element={<StickerPrinting />}
                 />
+                <Route path={KIOSK_PAGE} element={<Kiosk />} />
                 {/* <Route path={PRINTING_STICKER_TEST_PAGE} element={<PrintingTest />} /> */}
             </Routes>
         </ThemeProvider>

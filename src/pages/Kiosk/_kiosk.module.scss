@@ -1,0 +1,143 @@
+@use '../../styles/variables' as *;
+.maskGroupIcon {
+    position: absolute;
+    // left: 0;
+    width: 100%;
+    height: -webkit-fill-available;
+    @media screen and (max-width: 600px) {
+        width: 100%;
+    }
+    // position: absolute;
+    // left: 0;
+    // width: 100%;
+    // height: -webkit-fill-available;
+    // @media screen and (max-width: 600px) {
+    //     width: 100%;
+    // }
+}
+
+.maskGroupIcon {
+    object-fit: cover;
+}
+
+.languageDiv {
+    // background: var(--label-color);
+    border-radius: 30px;
+    // opacity: 0.5;
+    background-color: rgba($color: #5a567b, $alpha: 0.5);
+    display: flex;
+    column-gap: 10px;
+}
+
+.selectedLanguageDiv {
+    background-color: var(--color-turquoise);
+    border-radius: 30px;
+    padding: 10px 15px 10px 15px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.englishLanguage {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--color-white) !important;
+    margin: auto;
+}
+
+.unselectedLanguageDiv {
+    border-radius: 30px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.chineseLanguage {
+    font-family: 'FZZhunYuan-M02S' !important;
+    font-weight: 400 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+
+    color: var(--color-white) !important;
+}
+
+.time {
+    font-weight: 500 !important;
+    font-size: 42px !important;
+    text-align: center;
+    color: var(--color-white) !important;
+}
+
+.date {
+    font-weight: 700 !important;
+    font-size: 32px !important;
+    text-align: center;
+    color: var(--color-white) !important;
+}
+
+.idNo {
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    color: var(--color-white) !important;
+    margin-top: 5px;
+}
+
+.kioskFieldProps {
+    background: var(--color-whitesmoke-300) !important;
+    border: 1px solid #ddd;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-5xl) !important;
+    color: #908ea7;
+}
+
+.checkInBttn {
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center !important;
+    color: var(--color-white) !important;
+    background: var(--title-color) !important;
+    border-radius: var(--br-8xs) !important;
+}
+
+.checkInBttn:hover {
+    background: linear-gradient(
+        90deg,
+        #3adebb -0.18%,
+        #00aee9 99.82%
+    ) !important;
+}
+
+.personIcon {
+    font-size: 38px !important;
+    color: var(--color-white) !important;
+}
+
+.walkInNoticeDiv {
+    height: 240px;
+    width: 100%;
+    border-radius: 20px;
+    background-color: rgba($color: #fff, $alpha: 0.5);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4rem;
+    padding: 40px 20px;
+}
+
+.walkInTitle {
+    font-weight: 700 !important;
+    font-size: 32px !important;
+    color: var(--title-color) !important;
+}
+
+.walkInText {
+    font-weight: 500 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center !important;
+    color: var(--title-color) !important;
+    margin-top: 2rem;
+}
+
+.kioskDiv {
+    padding: 1rem;
+}

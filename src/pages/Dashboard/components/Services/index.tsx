@@ -8,7 +8,7 @@ import HotFood from 'images/hotfood-1-2@2x.png'
 import CustomBoxButton from '../CustomBoxButton'
 import styles from './_services.module.scss'
 import { useNavigate } from 'react-router-dom'
-import { DINING_PAGE, STICKER_PRINTING_PAGE } from 'constant'
+import { DINING_PAGE, KIOSK_PAGE, STICKER_PRINTING_PAGE } from 'constant'
 const Services = () => {
     const navigate = useNavigate()
     return (
@@ -23,7 +23,11 @@ const Services = () => {
             </Grid>
             <Grid>
                 <Stack direction="row" spacing={2} useFlexGap flexWrap="wrap">
-                    <CustomBoxButton image={HandTouch} label="Self-Kiosk UI" />
+                    <CustomBoxButton
+                        image={HandTouch}
+                        label="Self-Kiosk UI"
+                        onClick={() => navigate(KIOSK_PAGE)}
+                    />
                     <CustomBoxButton
                         image={HealthCare}
                         label="Reception Counter"
