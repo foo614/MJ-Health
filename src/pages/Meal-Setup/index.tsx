@@ -1,15 +1,14 @@
-import ResponsiveAppBar from 'components/AppBar.tsx'
-import CustomHeader from 'components/CustomHeader'
-import { DINING_PAGE } from 'constant'
-import { Container, Card, Grid, Button } from '@mui/material'
-import styles from './_meal-setup.module.scss'
+import { Button, Card, Container, Grid } from '@mui/material'
+import Stack from '@mui/material/Stack'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import ResponsiveAppBar from 'components/AppBar'
+import CustomHeader from 'components/CustomHeader'
+import { DINING_PAGE } from 'constant'
 import { useState } from 'react'
-import MealSetupTable from './components/meal-setup-table'
+import styles from './_meal-setup.module.scss'
 import MealSetupEditTable from './components/meal-setup-edit-table'
-import Stack from '@mui/material/Stack'
-import AddNewModal from './components/add-new-modal'
+import MealSetupTable from './components/meal-setup-table'
 const MealSetup = () => {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))

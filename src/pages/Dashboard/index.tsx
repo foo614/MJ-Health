@@ -1,5 +1,5 @@
 import Grid from '@mui/material/Grid'
-import ResponsiveAppBar from 'components/AppBar.tsx'
+import ResponsiveAppBar from 'components/AppBar'
 import { FunctionComponent, useCallback, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import HealthAndScreening from './components/HealthAndScreening'

@@ -4,32 +4,34 @@ import {
     DINING_CHECK_IN_PAGE,
     DINING_MEAL_SETUP_PAGE,
     DINING_PAGE,
+    KIOSK_PAGE,
     LAB_TEST_INFO_PAGE,
     LAB_TEST_PAGE,
     LAB_TEST_SINGLE_ITEM_PAGE,
     LOGIN_PAGE,
     MONITOR_SYSTEM_PAGE,
+    QUEUE_MANAGEMENT_PAGE,
     SETTING_PAGE,
     STICKER_PRINTING_PAGE,
-    PRINTING_STICKER_TEST_PAGE,
-    KIOSK_PAGE,
 } from 'constant'
 import Dashboard from 'pages/Dashboard'
 import Dining from 'pages/Dining'
 import DiningCheckIn from 'pages/Dining-Check-In'
+import Kiosk from 'pages/Kiosk'
 import LabPage from 'pages/Lab'
 import LabInfo from 'pages/Lab/lab-info'
 import LabSingleItemPage from 'pages/Lab/single-item'
 import Login from 'pages/Login'
 import MealSetup from 'pages/Meal-Setup'
 import MonitorSystem from 'pages/Monitor-System'
+import QueueManagement from 'pages/Queue-Management'
+import QueueManagementList from 'pages/Queue-Management/components/queue-list'
 import Setting from 'pages/Setting'
 import StickerPrinting from 'pages/Sticker-Printing'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
-import Kiosk from 'pages/Kiosk'
 function App() {
     return (
         <ThemeProvider theme={theme}>
@@ -59,6 +61,14 @@ function App() {
                     element={<StickerPrinting />}
                 />
                 <Route path={KIOSK_PAGE} element={<Kiosk />} />
+                <Route
+                    path={QUEUE_MANAGEMENT_PAGE}
+                    element={<QueueManagement />}
+                />
+                <Route
+                    path={QUEUE_MANAGEMENT_PAGE + '/:id'}
+                    element={<QueueManagementList />}
+                />
                 {/* <Route path={PRINTING_STICKER_TEST_PAGE} element={<PrintingTest />} /> */}
             </Routes>
         </ThemeProvider>
