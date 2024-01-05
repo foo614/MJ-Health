@@ -18,9 +18,13 @@
     object-fit: cover;
 }
 .loginChild {
-    top: 36rem;
     background-color: $primaryColor;
+    left: 0;
+    background-color: #219b8e;
     height: 300px;
+    right: 0;
+    position: absolute;
+    bottom: 0;
 }
 .imgSize {
     width: 250px;

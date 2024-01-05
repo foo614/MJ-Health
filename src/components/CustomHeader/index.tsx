@@ -17,30 +17,6 @@ const CustomHeader: React.FC<Props> = ({ to, title }: Props) => {
     const { pathname } = location
     return (
         <div className={styles.header}>
-            {/* {to ? (
-                <div
-                    className={
-                        matches
-                            ? styles.titleButtonDiv
-                            : styles.titleButtonDivMobile
-                    }
-                >
-                    <Button
-                        variant="text"
-                        className={styles.backButton}
-                        startIcon={
-                            <ChevronLeftIcon className={styles.backIcon} />
-                        }
-                        onClick={() => navigate(to)}
-                    >
-                        BACK
-                    </Button>
-                </div>
-            ) : null} */}
-
-            {/* <div className={styles.headerTitle}>
-                <p>{title}</p>
-            </div> */}
             <Grid xs container justifyContent={'space-between'} spacing={1}>
                 <Grid item>
                     {to && (

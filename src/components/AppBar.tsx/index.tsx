@@ -14,7 +14,7 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemText from '@mui/material/ListItemText'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
-import { DASHBOARD_PAGE, SETTING_PAGE } from 'constant'
+import { LOGIN_PAGE, SETTING_PAGE } from 'constant'
 import AppIcon from 'images/app-icon.png'
 import * as React from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -53,8 +53,8 @@ const ResponsiveAppBar = () => {
         setMobileOpen((prevState) => !prevState)
     }
 
-    const navigateHome = () => {
-        navigate('/' + DASHBOARD_PAGE)
+    const logout = () => {
+        navigate(LOGIN_PAGE)
     }
 
     const drawer = (
@@ -67,7 +67,10 @@ const ResponsiveAppBar = () => {
                 {settings.map((item) => (
                     <ListItem key={item} disablePadding>
                         <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText primary={item} />
+                            <ListItemText
+                                primary={item}
+                                onClick={() => logout()}
+                            />
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -202,13 +205,14 @@ const ResponsiveAppBar = () => {
                                         mr: 2,
                                         my: 2,
                                         color: 'white',
-                                        display: 'block',
+                                        // display: 'block',
+                                        width: '5rem',
+                                        display: 'inline-grid',
                                     }}
                                 >
                                     <b className={styles.labelText}>
                                         {page.value}
                                     </b>
-                                    <br />
                                     <small className={styles.captionText}>
                                         {page.name}
                                     </small>
@@ -236,6 +240,7 @@ const ResponsiveAppBar = () => {
                                 variant="contained"
                                 className={styles.buttonText}
                                 startIcon={<LogoutIcon />}
+                                onClick={() => logout()}
                             >
                                 Logout
                             </Button>

@@ -1,4 +1,5 @@
 import CloseIcon from '@mui/icons-material/Close'
+import { useMediaQuery } from '@mui/material'
 import Box from '@mui/material/Box'
 import ButtonBase from '@mui/material/ButtonBase'
 import Dialog from '@mui/material/Dialog'
@@ -6,7 +7,7 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
 import IconButton from '@mui/material/IconButton'
-import { styled } from '@mui/material/styles'
+import { styled, useTheme } from '@mui/material/styles'
 import { DASHBOARD_PAGE } from 'constant'
 import Background1 from 'images/background-img1.png'
 import Background2 from 'images/background-img2.png'
@@ -98,6 +99,8 @@ type Props = {
 
 const Branch = (props: Props) => {
     const navigate = useNavigate()
+    const theme = useTheme()
+    const matches = useMediaQuery(theme.breakpoints.up('sm'))
     return (
         <BootstrapDialog
             aria-labelledby="customized-dialog-title"
@@ -135,11 +138,12 @@ const Branch = (props: Props) => {
                         sx={{
                             display: 'flex',
                             flexWrap: 'wrap',
-                            minHeight: 300,
-                            gap: 4,
+                            minHeight: matches ? 300 : 280,
+                            gap: matches ? 4 : 2,
                             mx: 6,
                             overflowX: 'hidden',
-                            marginBottom: '4rem',
+                            marginBottom: matches ? '4rem' : '0',
+                            marginTop: matches ? '0' : '1rem',
                             placeContent: 'space-evenly',
                         }}
                     >
@@ -147,7 +151,7 @@ const Branch = (props: Props) => {
                             <ImageButton
                                 focusRipple
                                 style={{
-                                    width: '220px',
+                                    width: matches ? '220px' : '260px',
                                 }}
                                 onClick={() => navigate(DASHBOARD_PAGE)}
                                 key={image.title}
@@ -169,10 +173,18 @@ const Branch = (props: Props) => {
                                         alt=""
                                         src={Icon}
                                     />
-                                    <div className={styles.groupItem} />
-                                    <b className={styles.mjHealthCentre}>
-                                        {image.title}
-                                    </b>
+                                    {matches ? (
+                                        <>
+                                            <div className={styles.groupItem} />
+                                            <b
+                                                className={
+                                                    styles.mjHealthCentre
+                                                }
+                                            >
+                                                {image.title}
+                                            </b>
+                                        </>
+                                    ) : null}
                                 </Image>
                             </ImageButton>
                         ))}

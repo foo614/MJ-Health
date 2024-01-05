@@ -145,7 +145,7 @@ export default function LoginView() {
                         formik.touched.password && formik.errors.password
                     }
                 />
-                <Box sx={{ mt: 3 }}></Box>
+                {!matches ? null : <Box sx={{ mt: 3 }}></Box>}
                 <CustomButton
                     fullWidth
                     size="large"
