@@ -7,8 +7,9 @@ import { TransitionProps } from '@mui/material/transitions'
 import styles from '../_dining.module.scss'
 import PrintIcon from './print-icon.png'
 import { Grid } from '@mui/material'
-import MealCardRear from './meal-card-rear'
-import MealCardFront from './meal-card-front'
+import { useReactToPrint } from 'react-to-print'
+import { useRef } from 'react'
+import { TestPrintMealCard } from './test-print-meal-card'
 
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
@@ -30,9 +31,33 @@ const PrintModal: React.FC<PrintModalProps> = ({
     setOpen,
     open,
 }: PrintModalProps) => {
+    const mealCardRef = useRef(null)
     const handleClose = () => {
         setOpen(false)
     }
+
+//     const pageStyle = `
+//     @page {
+//       size: 200mm 200mm;
+//     }
+  
+//     @media all {
+//       .pagebreak {
+//         display: none;
+//       }
+//     }
+  
+//     @media print {
+//       .pagebreak {
+//         page-break-after: always;
+//       }
+//     }
+//   `
+
+    const handlePrint = useReactToPrint({
+        content: () => mealCardRef.current,
+        // pageStyle: pageStyle,
+    })
 
     return (
         <React.Fragment>
@@ -43,8 +68,6 @@ const PrintModal: React.FC<PrintModalProps> = ({
                 classes={{ paper: styles.printModal }}
             >
                 <DialogContent>
-                    {/* <MealCardFront />
-                    <MealCardRear /> */}
                     <div style={{ marginTop: '4rem' }}>
                         <div style={{ textAlign: 'center' }}>
                             <img src={PrintIcon} alt="print icon" />
@@ -86,12 +109,16 @@ const PrintModal: React.FC<PrintModalProps> = ({
                                         variant="contained"
                                         className={styles.printMealCardYesBttn}
                                         fullWidth
-                                        onClick={handleClose}
+                                        // onClick={handleClose}
+                                        onClick={handlePrint}
                                     >
                                         Yes
                                     </Button>
                                 </Grid>
                             </Grid>
+                            <div style={{ display: 'none' }}>
+                                <TestPrintMealCard ref={mealCardRef} />
+                            </div>
                         </div>
                     </div>
                 </DialogContent>

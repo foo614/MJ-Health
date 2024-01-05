@@ -35,8 +35,15 @@ const PrintStickerModal: React.FC<Props> = ({
         setOpen(false)
     }
 
+    //     const pageStyle = `
+    //     @page {
+    //       size: 1000mm 1000mm;
+    //     }
+    //   `
+
     const handlePrint = useReactToPrint({
         content: () => stickerRef.current,
+        // pageStyle: pageStyle,
     })
 
     return (

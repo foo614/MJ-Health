@@ -13,6 +13,8 @@ import PrintModal from './components/print-modal'
 import WaitingListTable from './components/waiting-list-table'
 import { useNavigate } from 'react-router-dom'
 import { DINING_MEAL_SETUP_PAGE } from 'constant'
+import MealCardFront from './components/meal-card-front'
+import AppIcon from '../../images/app-icon.png'
 const Dining = () => {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
@@ -292,33 +294,6 @@ const Dining = () => {
                     </>
                 )}
             </div>
-            {/* <div className={styles.diningHeader}>
-                <div
-                    className={
-                        matches
-                            ? styles.diningSearchDiv
-                            : styles.diningSearchDivMobile
-                    }
-                >
-                    <TextField
-                        InputProps={{
-                            startAdornment: (
-                                <InputAdornment position="start">
-                                    <SearchIcon className={styles.searchIcon} />
-                                </InputAdornment>
-                            ),
-                        }}
-                        variant="outlined"
-                        size="small"
-                        margin="dense"
-                        placeholder="Search..."
-                        className={styles.diningSearchInput}
-                    />
-                </div>
-                <div className={styles.diningHeaderTitle}>
-                    <p>DINING</p>
-                </div>
-            </div> */}
             <Container maxWidth="xl" style={{ marginTop: '1rem' }}>
                 <Grid container>
                     <Grid item md={9} xs={12}>
