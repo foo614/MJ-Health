@@ -6,20 +6,43 @@ import { useState } from 'react'
 import { Button, TextField } from '@mui/material'
 import PersonIcon from '@mui/icons-material/Person'
 import Stack from '@mui/material/Stack'
-import WarningAmberIcon from '@mui/icons-material/WarningAmber';
+import WarningAmberIcon from '@mui/icons-material/WarningAmber'
+import InlineModal from './components/in-line-modal'
+import { useTheme } from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
+import NoRecordModal from './components/no-record-modal'
+import * as Yup from 'yup'
+import { useFormik } from 'formik'
+
 const Kiosk = () => {
     const [language, setLanguage] = useState('en')
+    const [openInlineModal, setOpenInlineModal] = useState<boolean>(false)
+    const [openNoRecordModal, setOpenNoRecordModal] = useState<boolean>(false)
 
+    const theme = useTheme()
+    const matches = useMediaQuery(theme.breakpoints.up('sm'))
+    const formik = useFormik({
+        initialValues: {
+            idNo: '',
+        },
+        validationSchema: Yup.object({
+            idNo: Yup.string().required('ID No is required'),
+        }),
+        onSubmit: (values) => {
+            // Handle login logic here
+            console.log('Form submitted with values:', values)
+            if (values.idNo === '123') {
+                setOpenInlineModal(true)
+            } else {
+                setOpenNoRecordModal(true)
+            }
+        },
+    })
     const handleLanguageChange = (language: string) => {
         setLanguage(language)
     }
     return (
         <div className={styles.kioskDiv}>
-            {/* <img
-                className={styles.maskGroupIcon}
-                alt="kiosk-background"
-                src={kioskBackground}
-            /> */}
             <div style={{ display: 'flex' }}>
                 <div>
                     <img width="150" src={logo} alt="logo" />
@@ -61,42 +84,57 @@ const Kiosk = () => {
                     marginTop: '4rem',
                 }}
             >
-                <Stack>
-                    <Box
-                        sx={{
-                            display: 'flex',
-                        }}
-                    >
-                        <PersonIcon
+                <form onSubmit={formik.handleSubmit}>
+                    <Stack>
+                        <Box
                             sx={{
-                                fontSize: 34,
-                                color: '#fff',
-                                verticalAlign: 'bottom',
-                                marginRight: 0.5,
+                                display: 'flex',
                             }}
+                        >
+                            <PersonIcon
+                                sx={{
+                                    fontSize: 34,
+                                    color: '#fff',
+                                    verticalAlign: 'bottom',
+                                    marginRight: 0.5,
+                                }}
+                            />
+                            <p className={styles.idNo}>ID No:</p>
+                        </Box>
+                        <TextField
+                            name="idNo"
+                            variant="outlined"
+                            margin="dense"
+                            size="small"
+                            fullWidth
+                            InputProps={{
+                                className: styles.kioskFieldProps,
+                            }}
+                            value={formik.values.idNo}
+                            placeholder="Enter Your ID No. (Enter 123 or 456 to check the modal)"
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            error={
+                                formik.touched.idNo &&
+                                Boolean(formik.errors.idNo)
+                            }
+                            helperText={
+                                formik.touched.idNo && formik.errors.idNo
+                            }
                         />
-                        <p className={styles.idNo}>ID No:</p>
-                    </Box>
-                    <TextField
-                        variant="outlined"
-                        margin="dense"
-                        size="small"
-                        fullWidth
-                        InputProps={{
-                            className: styles.kioskFieldProps,
-                        }}
-                        placeholder="Enter Your ID No."
-                    />
-                    <Box sx={{ mt: 3 }}></Box>
-                    <Button
-                        variant="contained"
-                        size="small"
-                        fullWidth
-                        className={styles.checkInBttn}
-                    >
-                        Check In
-                    </Button>
-                </Stack>
+                        <Box sx={{ mt: 3 }}></Box>
+                        <Button
+                            variant="contained"
+                            size="small"
+                            fullWidth
+                            className={styles.checkInBttn}
+                            type="submit"
+                        >
+                            Check In
+                        </Button>
+                    </Stack>
+                </form>
+
                 <div className={styles.walkInNoticeDiv}>
                     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                         <WarningAmberIcon
@@ -114,6 +152,20 @@ const Kiosk = () => {
                         customers right now.
                     </p>
                 </div>
+                {openInlineModal ? (
+                    <InlineModal
+                        open={openInlineModal}
+                        matches={matches}
+                        setOpen={setOpenInlineModal}
+                    />
+                ) : null}
+                {openNoRecordModal ? (
+                    <NoRecordModal
+                        open={openNoRecordModal}
+                        matches={matches}
+                        setOpen={setOpenNoRecordModal}
+                    />
+                ) : null}
             </Box>
         </div>
     )
