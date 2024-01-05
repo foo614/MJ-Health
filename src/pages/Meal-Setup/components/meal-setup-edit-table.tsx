@@ -88,7 +88,8 @@ const MealSetupEditTable: React.FC<Props> = ({
                                             classes: {
                                                 input: styles.inputPropsForMealCategory,
                                             },
-                                            className: styles.textFieldProps,
+                                            className:
+                                                styles.textFieldEditProps,
                                         }}
                                     />
                                 </TableCell>
@@ -106,7 +107,8 @@ const MealSetupEditTable: React.FC<Props> = ({
                                             classes: {
                                                 input: styles.inputProps,
                                             },
-                                            className: styles.textFieldProps,
+                                            className:
+                                                styles.textFieldEditProps,
                                         }}
                                     />
                                 </TableCell>
@@ -124,7 +126,8 @@ const MealSetupEditTable: React.FC<Props> = ({
                                             classes: {
                                                 input: styles.inputProps,
                                             },
-                                            className: styles.textFieldProps,
+                                            className:
+                                                styles.textFieldEditProps,
                                         }}
                                     />
                                 </TableCell>

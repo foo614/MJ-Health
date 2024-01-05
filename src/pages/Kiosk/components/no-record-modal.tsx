@@ -44,12 +44,14 @@ const NoRecordModal: React.FC<Props> = ({ open, matches, setOpen }: Props) => {
                 keepMounted
                 classes={{ paper: styles.kioskInlineModal }}
             >
-                <DialogContent sx={{ padding: '3rem' }}>
+                <DialogContent
+                    sx={{ paddingTop: '2rem', paddingBottom: '2rem' }}
+                >
                     <Box sx={{ textAlign: 'center' }}>
                         <img
                             src={KioskNoRecordImage}
-                            width="auto"
-                            height="auto"
+                            width="100"
+                            height="100"
                         />
                         <p className={styles.kioskModalTitle}>
                             No Record Found

@@ -44,13 +44,11 @@ const InlineModal: React.FC<Props> = ({ open, matches, setOpen }: Props) => {
                 keepMounted
                 classes={{ paper: styles.kioskInlineModal }}
             >
-                <DialogContent sx={{ padding: '3rem' }}>
+                <DialogContent
+                    sx={{ paddingTop: '2rem', paddingBottom: '2rem' }}
+                >
                     <Box sx={{ textAlign: 'center' }}>
-                        <img
-                            src={KioskInlineImage}
-                            width="auto"
-                            height="auto"
-                        />
+                        <img src={KioskInlineImage} width="100" height="100" />
                         <p className={styles.kioskModalTitle}>
                             We have you in line.
                         </p>
@@ -66,12 +64,17 @@ const InlineModal: React.FC<Props> = ({ open, matches, setOpen }: Props) => {
                             }
                         />
                     </Box>
-                    <Box sx={{ padding: '15px' }}>
+                    <Box>
                         <Grid
                             container
                             columnSpacing={1}
-                            rowSpacing={2}
-                            sx={{ marginTop: '.5rem', paddingBottom: '1rem' }}
+                            rowSpacing={1}
+                            sx={{
+                                marginTop: '.5rem',
+                                paddingBottom: '1rem',
+                                paddingLeft: '12px',
+                                paddingRight: '12px',
+                            }}
                         >
                             <Grid item md={4} xs={4}>
                                 <p className={styles.kioskModalTextFieldTitle}>

@@ -70,6 +70,15 @@
     color: var(--title-color) !important;
 }
 
+.textFieldEditProps {
+    border-radius: 3px !important;
+    background-color: var(--color-lightgray) !important;
+    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
 .mealCategory {
     font-weight: 500 !important;
     font-size: var(--font-size-base) !important;
@@ -107,11 +116,15 @@
 
 .inputProps {
     text-align: center !important;
-    font-family: var(--font-montserrat) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
 }
 
 .inputPropsForMealCategory {
-    font-family: var(--font-montserrat) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
 }
 
 .cancelIcon {
@@ -128,6 +141,7 @@
     background-color: var(--color-whitesmoke-300) !important;
     text-transform: capitalize !important;
     border-radius: var(--br-8xs) !important;
+    box-shadow: unset !important;
 }
 
 .saveBttn {
@@ -174,7 +188,8 @@
     color: var(--color-lightslategray) !important;
     background-color: var(--color-whitesmoke-300) !important;
     border-radius: var(--br-10xs) !important;
-    text-transform: capitalize !important;
+    text-transform: unset !important;
+    box-shadow: unset !important;
 }
 
 .addNewModalAddBttn {
@@ -184,5 +199,6 @@
     color: var(--color-white) !important;
     background-color: var(--color-turquoise) !important;
     border-radius: var(--br-10xs) !important;
-    text-transform: capitalize !important;
+    text-transform: unset !important;
+    box-shadow: unset !important;
 }

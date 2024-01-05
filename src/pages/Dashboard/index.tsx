@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import HealthAndScreening from './components/HealthAndScreening'
 import OtherFunction from './components/OtherFunction'
 import Services from './components/Services'
-
+import styles from './_dashboard.module.scss'
 const Dashboard: FunctionComponent = () => {
     const [isCheckInLabTest2Open, setCheckInLabTest2Open] = useState(false)
     const [isConsultationCheckInOpen, setConsultationCheckInOpen] =
@@ -117,6 +117,16 @@ const Dashboard: FunctionComponent = () => {
                 <Services />
                 <HealthAndScreening />
                 <OtherFunction />
+                <div style={{ marginTop: '6rem' }}>
+                    <p>
+                        <span className={styles.bottomTextMJ}>
+                            MJ HEALTH {'  '}
+                        </span>
+                        <span className={styles.bottomTextSouthern}>
+                            SOUTHERN, GELANG PATAH
+                        </span>
+                    </p>
+                </div>
             </Grid>
         </>
     )

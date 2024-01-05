@@ -26,28 +26,28 @@
     // opacity: 0.5;
     background-color: rgba($color: #5a567b, $alpha: 0.5);
     display: flex;
-    column-gap: 10px;
+    // column-gap: 10px;
+}
+
+.englishLanguage {
+    font-weight: 600 !important;
+    font-size: var(--font-size-xs) !important;
+    color: var(--color-white) !important;
+    margin: auto;
 }
 
 .selectedLanguageDiv {
     background-color: var(--color-turquoise);
     border-radius: 30px;
-    padding: 10px 15px 10px 15px;
+    padding: 10px 15px;
     cursor: pointer;
     z-index: 1;
 }
 
-.englishLanguage {
-    font-weight: 600 !important;
-    font-size: var(--font-size-base) !important;
-    color: var(--color-white) !important;
-    margin: auto;
-}
-
 .unselectedLanguageDiv {
     border-radius: 30px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 10px;
+    padding-left: 10px;
     margin: auto;
     cursor: pointer;
 }
@@ -55,24 +55,25 @@
 .chineseLanguage {
     font-family: 'FZZhunYuan-M02S' !important;
     font-weight: 400 !important;
-    font-size: var(--font-size-base) !important;
+    font-size: var(--font-size-xs) !important;
     text-align: center;
-
     color: var(--color-white) !important;
 }
 
 .time {
     font-weight: 500 !important;
-    font-size: 42px !important;
+    font-size: 28px !important;
     text-align: center;
     color: var(--color-white) !important;
+    text-align: end;
 }
 
 .date {
     font-weight: 700 !important;
-    font-size: 32px !important;
+    font-size: 22px !important;
     text-align: center;
     color: var(--color-white) !important;
+    text-align: end;
 }
 
 .idNo {
@@ -87,17 +88,23 @@
     border: 1px solid #ddd;
     border-radius: var(--br-8xs) !important;
     font-weight: 500 !important;
-    font-size: var(--font-size-5xl) !important;
+    font-size: 20px !important;
     color: #908ea7;
+    font-family: var(--font-montserrat) !important;
+}
+
+.inputField {
+    padding: 8.5px 20px !important;
 }
 
 .checkInBttn {
     font-weight: 700 !important;
-    font-size: var(--font-size-5xl) !important;
+    font-size: 22px !important;
     text-align: center !important;
     color: var(--color-white) !important;
     background: var(--title-color) !important;
     border-radius: var(--br-8xs) !important;
+    text-transform: capitalize !important;
 }
 
 .checkInBttn:hover {
@@ -114,33 +121,34 @@
 }
 
 .walkInNoticeDiv {
-    height: 240px;
     width: 100%;
     border-radius: 20px;
     background-color: rgba($color: #fff, $alpha: 0.5);
     margin-left: auto;
     margin-right: auto;
-    margin-top: 4rem;
-    padding: 40px 20px;
+    margin-top: 3rem;
+    padding: 25px 15px;
 }
 
 .walkInTitle {
     font-weight: 700 !important;
-    font-size: 32px !important;
+    font-size: 20px !important;
     color: var(--title-color) !important;
 }
 
 .walkInText {
     font-weight: 500 !important;
-    font-size: var(--font-size-5xl) !important;
+    font-size: var(--font-size-base) !important;
     text-align: center !important;
     color: var(--title-color) !important;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
 }
 
 .kioskDiv {
     background: url('../../images//mask-group-kiosk@2x.png');
-    padding: 1rem;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 25px;
     background-size: cover;
     height: 100vh;
 }
@@ -154,15 +162,15 @@
 
 .kioskModalTitle {
     font-weight: 700 !important;
-    font-size: 28px !important;
+    font-size: var(--font-size-lg) !important;
     text-align: center !important;
     color: var(--title-color) !important;
-    margin-top: 2rem !important;
+    margin: 0.5rem !important;
 }
 
 .kioskModalSubTitle {
     font-weight: 700 !important;
-    font-size: 22px !important;
+    font-size: var(--font-size-sm) !important;
     text-align: center !important;
     color: #59567a !important;
     margin-top: 0.5rem !important;
@@ -178,7 +186,7 @@
     margin-right: auto;
 }
 .kioskModalDividerMobile {
-    width: 100%;
+    width: 60%;
     height: 8px;
     background-color: var(--color-turquoise);
     border-radius: 30px;
@@ -189,20 +197,20 @@
 
 .kioskModalTextFieldTitle {
     font-weight: 500 !important;
-    font-size: var(--font-size-lg) !important;
+    font-size: var(--font-size-sm) !important;
     color: #59567a !important;
-    text-align: center !important;
+    white-space: nowrap !important;
 }
 
 .kioskModalTextFieldValue {
     font-weight: 700 !important;
-    font-size: var(--font-size-lg) !important;
+    font-size: var(--font-size-sm) !important;
     color: var(--title-color) !important;
 }
 
 .kioskModalReturnText {
     font-weight: 500;
-    font-size: var(--font-size-lg) !important;
+    font-size: var(--font-size-sm) !important;
     text-align: center;
     color: #908ea7 !important;
     margin-top: 1rem;

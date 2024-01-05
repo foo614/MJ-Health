@@ -139,12 +139,13 @@ const StickerPrinting = () => {
                                         />
                                     </InputAdornment>
                                 ),
+                                classes: { input: styles.inputField },
                             }}
                             fullWidth
                             variant="outlined"
                             size="small"
                             margin="dense"
-                            placeholder="Search..."
+                            placeholder="Search Member Seq No..."
                             className={styles.stickerPrintingSearchInput}
                         />
                     </Grid>
@@ -155,7 +156,7 @@ const StickerPrinting = () => {
                             className={styles.printBarcodeBttn}
                             onClick={() => setOpenPrintBarcodeModal(true)}
                         >
-                            PRINT BARCODE STICKER
+                            Print Barcode Sticker
                         </Button>
                     </Grid>
                     <Grid item md={3} className={styles.marginAuto} xs={12}>
@@ -165,7 +166,7 @@ const StickerPrinting = () => {
                             className={styles.printStickerBttn}
                             onClick={() => setOpenPrintStickerModal(true)}
                         >
-                            PRINT STICKER
+                            Print Sticker
                         </Button>
                     </Grid>
                 </Grid>
