@@ -129,6 +129,9 @@ const DiningCheckIn = () => {
                                                     InputProps={{
                                                         className:
                                                             styles.textFieldProps,
+                                                        classes: {
+                                                            input: styles.textInput,
+                                                        },
                                                     }}
                                                 />
                                             </TableCell>
@@ -145,6 +148,9 @@ const DiningCheckIn = () => {
                                                     InputProps={{
                                                         className:
                                                             styles.textFieldProps,
+                                                        classes: {
+                                                            input: styles.textInput,
+                                                        },
                                                     }}
                                                 />
                                             </TableCell>
@@ -171,6 +177,9 @@ const DiningCheckIn = () => {
                                                     InputProps={{
                                                         className:
                                                             styles.textFieldProps,
+                                                        classes: {
+                                                            input: styles.textInput,
+                                                        },
                                                     }}
                                                 />
                                             </TableCell>
@@ -187,6 +196,9 @@ const DiningCheckIn = () => {
                                                     InputProps={{
                                                         className:
                                                             styles.textFieldProps,
+                                                        classes: {
+                                                            input: styles.textInput,
+                                                        },
                                                     }}
                                                 />
                                             </TableCell>
@@ -213,6 +225,9 @@ const DiningCheckIn = () => {
                                                     InputProps={{
                                                         className:
                                                             styles.textFieldProps,
+                                                        classes: {
+                                                            input: styles.textInput,
+                                                        },
                                                     }}
                                                 />
                                             </TableCell>
@@ -229,6 +244,9 @@ const DiningCheckIn = () => {
                                                     InputProps={{
                                                         className:
                                                             styles.textFieldProps,
+                                                        classes: {
+                                                            input: styles.textInput,
+                                                        },
                                                     }}
                                                 />
                                             </TableCell>
@@ -255,6 +273,9 @@ const DiningCheckIn = () => {
                                                     InputProps={{
                                                         className:
                                                             styles.textFieldProps,
+                                                        classes: {
+                                                            input: styles.textInput,
+                                                        },
                                                     }}
                                                 />
                                             </TableCell>
@@ -271,6 +292,9 @@ const DiningCheckIn = () => {
                                                     InputProps={{
                                                         className:
                                                             styles.textFieldProps,
+                                                        classes: {
+                                                            input: styles.textInput,
+                                                        },
                                                     }}
                                                 />
                                             </TableCell>
@@ -297,6 +321,9 @@ const DiningCheckIn = () => {
                                                     InputProps={{
                                                         className:
                                                             styles.textFieldProps,
+                                                        classes: {
+                                                            input: styles.textInput,
+                                                        },
                                                     }}
                                                 />
                                             </TableCell>
@@ -313,6 +340,9 @@ const DiningCheckIn = () => {
                                                     InputProps={{
                                                         className:
                                                             styles.textFieldProps,
+                                                        classes: {
+                                                            input: styles.textInput,
+                                                        },
                                                     }}
                                                 />
                                             </TableCell>
@@ -339,6 +369,9 @@ const DiningCheckIn = () => {
                                                     InputProps={{
                                                         className:
                                                             styles.textFieldProps,
+                                                        classes: {
+                                                            input: styles.textInput,
+                                                        },
                                                     }}
                                                 />
                                             </TableCell>
@@ -355,6 +388,9 @@ const DiningCheckIn = () => {
                                                     InputProps={{
                                                         className:
                                                             styles.textFieldProps,
+                                                        classes: {
+                                                            input: styles.textInput,
+                                                        },
                                                     }}
                                                 />
                                             </TableCell>

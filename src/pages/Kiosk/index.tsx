@@ -44,8 +44,8 @@ const Kiosk = () => {
     return (
         <div className={styles.kioskDiv}>
             <div style={{ display: 'flex' }}>
-                <div>
-                    <img width="150" src={logo} alt="logo" />
+                <div style={{ marginTop: 'auto' }}>
+                    <img width="110" height="110" src={logo} alt="logo" />
                 </div>
                 <div style={{ marginLeft: 'auto' }}>
                     <div className={styles.languageDiv}>
@@ -109,6 +109,7 @@ const Kiosk = () => {
                             fullWidth
                             InputProps={{
                                 className: styles.kioskFieldProps,
+                                classes: { input: styles.inputField },
                             }}
                             value={formik.values.idNo}
                             placeholder="Enter Your ID No. (Enter 123 or 456 to check the modal)"
@@ -139,7 +140,7 @@ const Kiosk = () => {
                     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                         <WarningAmberIcon
                             sx={{
-                                fontSize: 40,
+                                fontSize: 26,
                                 color: '#211d4e',
                                 verticalAlign: 'bottom',
                                 marginRight: 0.5,

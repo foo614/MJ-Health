@@ -775,3 +775,16 @@
 .textCenter {
     text-align: center;
 }
+
+.bottomTextMJ {
+    font-weight: 600 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--color-darkgray-100) !important;
+    margin-right: 10px;
+}
+
+.bottomTextSouthern {
+    font-weight: 500 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--color-darkgray-100) !important;
+}

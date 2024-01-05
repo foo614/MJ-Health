@@ -209,6 +209,11 @@ const PrintBarcodeModal: React.FC<Props> = ({
                                                             className={
                                                                 styles.printBarcodeDateInput
                                                             }
+                                                            InputProps={{
+                                                                classes: {
+                                                                    input: styles.inputField,
+                                                                },
+                                                            }}
                                                             margin="dense"
                                                         />
                                                     ),
@@ -231,6 +236,11 @@ const PrintBarcodeModal: React.FC<Props> = ({
                                                             className={
                                                                 styles.printBarcodeDateInput
                                                             }
+                                                            InputProps={{
+                                                                classes: {
+                                                                    input: styles.inputField,
+                                                                },
+                                                            }}
                                                             margin="dense"
                                                         />
                                                     ),
@@ -256,6 +266,11 @@ const PrintBarcodeModal: React.FC<Props> = ({
                                             className={
                                                 styles.printBarcodeDateInput
                                             }
+                                            InputProps={{
+                                                classes: {
+                                                    input: styles.inputField,
+                                                },
+                                            }}
                                         />
                                     </Grid>
                                     <Grid item md={6} xs={12}>
@@ -269,6 +284,11 @@ const PrintBarcodeModal: React.FC<Props> = ({
                                             className={
                                                 styles.printBarcodeDateInput
                                             }
+                                            InputProps={{
+                                                classes: {
+                                                    input: styles.inputField,
+                                                },
+                                            }}
                                         />
                                     </Grid>
                                 </Grid>
@@ -277,7 +297,11 @@ const PrintBarcodeModal: React.FC<Props> = ({
                     </Grid>
                 </DialogContent>
                 <DialogActions className={styles.printBarcodeActions}>
-                    <Button variant="contained" className={styles.printBttn} onClick={() => setOpen(false)}>
+                    <Button
+                        variant="contained"
+                        className={styles.printBttn}
+                        onClick={() => setOpen(false)}
+                    >
                         Print
                     </Button>
                 </DialogActions>

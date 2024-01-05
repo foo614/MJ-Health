@@ -32,6 +32,13 @@
     color: var(--title-color) !important;
 }
 
+.textInput {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center !important;
+    color: var(--label-color) !important;
+}
+
 .tableColumnEnd {
     background-color: var(--color-whitesmoke-100) !important;
     border: 0 !important;
@@ -89,5 +96,7 @@
     text-align: center;
     background-color: var(--color-turquoise) !important;
     color: var(--color-white) !important;
-    text-transform: capitalize !important;
+    text-transform: unset !important;
+    box-shadow: 0px 3px 15px rgba(33, 155, 142, 0.25) !important;
+    border-radius: var(--br-8xs) !important;
 }
