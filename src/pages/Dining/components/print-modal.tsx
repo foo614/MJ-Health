@@ -1,14 +1,14 @@
-import * as React from 'react'
+import { Grid } from '@mui/material'
 import Button from '@mui/material/Button'
 import Dialog from '@mui/material/Dialog'
 import DialogContent from '@mui/material/DialogContent'
 import Slide from '@mui/material/Slide'
 import { TransitionProps } from '@mui/material/transitions'
+import * as React from 'react'
+import { useRef } from 'react'
+import { useReactToPrint } from 'react-to-print'
 import styles from '../_dining.module.scss'
 import PrintIcon from './print-icon.png'
-import { Grid } from '@mui/material'
-import { useReactToPrint } from 'react-to-print'
-import { useRef } from 'react'
 import { TestPrintMealCard } from './test-print-meal-card'
 
 const Transition = React.forwardRef(function Transition(
@@ -36,23 +36,23 @@ const PrintModal: React.FC<PrintModalProps> = ({
         setOpen(false)
     }
 
-//     const pageStyle = `
-//     @page {
-//       size: 200mm 200mm;
-//     }
-  
-//     @media all {
-//       .pagebreak {
-//         display: none;
-//       }
-//     }
-  
-//     @media print {
-//       .pagebreak {
-//         page-break-after: always;
-//       }
-//     }
-//   `
+    //     const pageStyle = `
+    //     @page {
+    //       size: 200mm 200mm;
+    //     }
+
+    //     @media all {
+    //       .pagebreak {
+    //         display: none;
+    //       }
+    //     }
+
+    //     @media print {
+    //       .pagebreak {
+    //         page-break-after: always;
+    //       }
+    //     }
+    //   `
 
     const handlePrint = useReactToPrint({
         content: () => mealCardRef.current,

@@ -1,7 +1,7 @@
-import styles from '../_dining.module.scss'
+import { Grid } from '@mui/material'
 import * as React from 'react'
 import AppIcon from '../../../images/app-icon.png'
-import { Grid } from '@mui/material'
+import styles from '../_dining.module.scss'
 
 export class TestPrintMealCard extends React.PureComponent {
     render() {
@@ -96,6 +96,7 @@ export class TestPrintMealCard extends React.PureComponent {
                         </div>
                     </div>
                 </div>
+                <div className={styles.pagebreak}></div>
                 <div
                     style={{
                         maxWidth: '105MM',
@@ -105,6 +106,7 @@ export class TestPrintMealCard extends React.PureComponent {
                         paddingLeft: '15px',
                         paddingRight: '15px',
                         marginTop: '1rem',
+                        pageBreakAfter: 'always',
                     }}
                 >
                     <p className={styles.mealCardTitle}>Standard Meal Card</p>

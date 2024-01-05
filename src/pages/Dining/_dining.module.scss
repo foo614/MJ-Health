@@ -413,3 +413,18 @@
     color: var(--mj-deep-green) !important;
     font-size: var(--font-size-xs) !important;
 }
+
+@media print {
+    html,
+    body {
+        -webkit-print-color-adjust: exact;
+    }
+    .pagebreak {
+        page-break-before: always !important;
+    }
+}
+
+@page {
+    size: auto;
+    margin: 20mm;
+}
