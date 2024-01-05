@@ -9,8 +9,10 @@ import {
     LAB_TEST_PAGE,
     LAB_TEST_SINGLE_ITEM_PAGE,
     LOGIN_PAGE,
+    MEMBER_PROFILE_PAGE,
     MONITOR_SYSTEM_PAGE,
     QUEUE_MANAGEMENT_PAGE,
+    RECEPTION_PAGE,
     SETTING_PAGE,
     STICKER_PRINTING_PAGE,
 } from 'constant'
@@ -32,6 +34,8 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
+import Reception from 'pages/Reception'
+import MemberProfile from 'pages/Member-Profile'
 function App() {
     return (
         <ThemeProvider theme={theme}>
@@ -69,7 +73,11 @@ function App() {
                     path={QUEUE_MANAGEMENT_PAGE + '/:id'}
                     element={<QueueManagementList />}
                 />
-                {/* <Route path={PRINTING_STICKER_TEST_PAGE} element={<PrintingTest />} /> */}
+                <Route path={RECEPTION_PAGE} element={<Reception />} />
+                <Route
+                    path={MEMBER_PROFILE_PAGE + '/:id'}
+                    element={<MemberProfile />}
+                />
             </Routes>
         </ThemeProvider>
     )

@@ -1,0 +1,13 @@
+@use '../../styles/variables' as *;
+.textField {
+    border: 1px solid var(--color-whitesmoke-300) !important;
+    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+    border-radius: var(--br-8xs) !important;
+    background: var(--color-white) !important;
+}
+
+.inputField {
+    font-weight: 500 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--label-color) !important;
+}

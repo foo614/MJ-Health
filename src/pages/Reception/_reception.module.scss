@@ -1,0 +1,124 @@
+@use '../../styles/variables' as *;
+.receptionHeader {
+    position: relative;
+    padding-bottom: 15px;
+    background-color: #ffffff !important;
+    padding-top: 10px;
+}
+
+.receptionSearchDiv {
+    position: absolute;
+    right: 0;
+}
+
+.searchIcon {
+    color: var(--mj-deep-green);
+}
+
+.receptionSearchInput {
+    border: 1px solid var(--color-whitesmoke-300) !important;
+    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+    border-radius: var(--br-8xs) !important;
+    width: 300px;
+    margin-top: 0px !important;
+    margin-right: 3rem !important;
+}
+
+.receptionHeaderTitle {
+    text-align: center;
+    font-size: 28px;
+    color: var(--mj-deep-green);
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+}
+
+.receptionSearchInputMobile {
+    border: 1px solid var(--color-whitesmoke-300) !important;
+    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+    border-radius: var(--br-8xs) !important;
+}
+
+.receptionTable {
+    max-height: 800px;
+}
+
+.receptionTable::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.receptionTable::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.receptionTableHeadTitle {
+    font-weight: 500 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--color-white) !important;
+}
+
+.receptionTableHead {
+    background-color: var(--mj-deep-green) !important;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+.tableCellBoldValue {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color);
+}
+
+.tableCellValue {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color);
+    text-align: center;
+}
+
+.timeComponentWithValueBttn {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    background-color: #88ffe6 !important;
+    border-radius: 3px;
+}
+
+.timeComponentWithValueText {
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    color: var(--mj-deep-green);
+}
+
+.timeComponentWithoutValueBttn {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    background: rgba(136, 255, 230, 0.2) !important;
+    border-radius: 3px;
+}
+
+.timeComponentWithoutValueText {
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    color: #a8a8a8;
+}
+
+.highlightedRow {
+    background-color: var(--color-lightgray);
+}
+
+.disabledRow p {
+    color: var(--color-lightslategray);
+}
+
+.highlightedRowWithDisabledRow {
+    background-color: var(--color-lightgray);
+    p {
+        color: var(--color-lightslategray);
+    }
+}

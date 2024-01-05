@@ -8,7 +8,12 @@ import HotFood from 'images/hotfood-1-2@2x.png'
 import CustomBoxButton from '../CustomBoxButton'
 import styles from './_services.module.scss'
 import { useNavigate } from 'react-router-dom'
-import { DINING_PAGE, KIOSK_PAGE, STICKER_PRINTING_PAGE } from 'constant'
+import {
+    DINING_PAGE,
+    KIOSK_PAGE,
+    RECEPTION_PAGE,
+    STICKER_PRINTING_PAGE,
+} from 'constant'
 const Services = () => {
     const navigate = useNavigate()
     return (
@@ -31,6 +36,7 @@ const Services = () => {
                     <CustomBoxButton
                         image={HealthCare}
                         label="Reception Counter"
+                        onClick={() => navigate(RECEPTION_PAGE)}
                     />
                     <CustomBoxButton
                         image={File1}
