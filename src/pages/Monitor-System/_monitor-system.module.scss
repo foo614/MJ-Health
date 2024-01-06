@@ -57,7 +57,8 @@
     text-align: center;
     color: var(--color-white) !important;
     background-color: var(--mj-deep-green) !important;
-    height: 100%;
+    height: 60px !important;
+    // height: 100%;
     line-height: unset !important;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1) !important;
     border-radius: var(--br-8xs) !important;
@@ -69,7 +70,7 @@
     text-align: center;
     color: var(--color-white) !important;
     background-color: var(--mj-deep-green) !important;
-    height: 100%;
+    height: 60px !important;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1) !important;
     border-radius: var(--br-8xs) !important;
 }
@@ -80,7 +81,8 @@
     text-align: center;
     color: var(--label-color) !important;
     background-color: #ddd !important;
-    height: 100%;
+    height: 60px !important;
+    // height: 100%;
     line-height: unset !important;
     box-shadow: none !important;
 }
@@ -91,7 +93,7 @@
     text-align: center;
     color: var(--label-color) !important;
     background-color: #ddd !important;
-    height: 100%;
+    height: 60px !important;
     box-shadow: none !important;
 }
 
