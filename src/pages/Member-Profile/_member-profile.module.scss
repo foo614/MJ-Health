@@ -1,13 +1,248 @@
 @use '../../styles/variables' as *;
-.textField {
-    border: 1px solid var(--color-whitesmoke-300) !important;
-    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
-    border-radius: var(--br-8xs) !important;
-    background: var(--color-white) !important;
+// .textField {
+//     border: 1px solid var(--color-whitesmoke-300) !important;
+//     box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+//     border-radius: var(--br-8xs) !important;
+//     background: var(--color-white) !important;
+// }
+
+// .inputField {
+//     font-weight: 500 !important;
+//     font-size: var(--font-size-lg) !important;
+//     color: var(--label-color) !important;
+// }
+
+.memberProfileTitle {
+    font-weight: 600 !important;
+    font-size: 20px !important;
+    color: var(--mj-deep-green) !important;
+    margin-top: 15px !important;
 }
 
-.inputField {
+.memberProfileFieldTitle {
     font-weight: 500 !important;
     font-size: var(--font-size-lg) !important;
     color: var(--label-color) !important;
+    margin-top: 15px !important;
+}
+
+.readOnlyField {
+    background: var(--color-whitesmoke-100) !important;
+    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+    border-radius: var(--br-8xs) !important;
+}
+
+.editField {
+    background: #fdfdfd !important;
+    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+    border-radius: var(--br-8xs) !important;
+}
+
+.inputField {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--title-color) !important;
+}
+
+.adornedEndCss {
+    padding-right: 0px !important;
+}
+
+.checkBoxLabel {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
+}
+
+.consentFormBttn {
+    background: linear-gradient(
+        231.33deg,
+        #ffffff 8.64%,
+        #f3f3f3 91.7%
+    ) !important;
+    box-shadow: 0px 3px 4px rgba(89, 86, 122, 0.15) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--label-color) !important;
+    padding: 1rem !important;
+    text-transform: unset !important;
+}
+
+.consentFormViewDocBttn {
+    background: linear-gradient(
+        231.33deg,
+        #ffffff 8.64%,
+        #f3f3f3 91.7%
+    ) !important;
+    box-shadow: 0px 3px 4px rgba(89, 86, 122, 0.15) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--mj-deep-green) !important;
+    padding: 1rem !important;
+    text-transform: unset !important;
+}
+
+.tableValue {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--title-color) !important;
+}
+
+.cancelItem {
+    font-weight: 500 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--mj-deep-green) !important;
+}
+
+.cancelAppointmentBttn {
+    background: var(--color-whitesmoke-300) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    color: var(--color-lightslategray) !important;
+    box-shadow: unset !important;
+    text-transform: unset !important;
+    text-align: center;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.saveBttn {
+    background: var(--color-turquoise) !important;
+    box-shadow: 0px 3px 15px rgba(33, 155, 142, 0.25) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    text-align: center;
+    color: var(--color-white) !important;
+    text-transform: unset !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.editBttn {
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    color: var(--mj-deep-green) !important;
+    text-transform: unset !important;
+}
+
+.cancelAppointmentModal {
+    width: 650px;
+    height: 500px;
+    background: var(--color-white) !important;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 25px !important;
+}
+
+.cancelAppointmentTitle {
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+    color: var(--title-color) !important;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cancelAppointmentSubtitle {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--label-color) !important;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cancelAppointmentDivider {
+    width: 300px;
+    height: 8px;
+    background-color: var(--color-turquoise);
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.cancelAppointmentDividerMobile {
+    width: 100%;
+    height: 8px;
+    background-color: var(--color-turquoise);
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cancelAppointmentNoBttn {
+    background: var(--color-turquoise) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+    color: var(--color-white) !important;
+    box-shadow: unset !important;
+}
+
+.cancelAppointmentYesBttn {
+    background: #de4e3a !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+    color: var(--color-white) !important;
+    box-shadow: unset !important;
+}
+
+.cancelAppointmentModalBttnDiv {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 2rem;
+}
+
+.saveAppointmentModal {
+    width: 600px;
+    height: 460px;
+    background: var(--color-white) !important;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 25px !important;
+}
+
+.saveAppointmentModalTitle {
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+    color: var(--title-color) !important;
+    margin-top: 3rem;
+}
+.seqNoText {
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    text-align: center;
+    color: var(--label-color) !important;
+    margin-top: 1rem;
+}
+
+.seqNo {
+    font-weight: 700 !important;
+    font-size: 150px !important;
+    text-align: center;
+    color: var(--title-color) !important;
+}
+
+.checkInText {
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--label-color);
+    text-align: center;
+}
+
+.checkInValue {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--title-color);
 }
