@@ -3,17 +3,26 @@
 .title {
     color: $primaryColor;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 600 !important;
     word-wrap: break-word;
 }
 
 .fieldLabel {
     color: #5a567b;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600 !important;
     word-wrap: break-word;
 }
 
 .textField {
     background-color: white;
+}
+
+.addressText {
+    color: #211d4e;
+    font-size: 16px;
+    font-weight: bolder;
+    line-height: 28px;
+    word-wrap: break-word;
+    margin-top: 16px;
 }

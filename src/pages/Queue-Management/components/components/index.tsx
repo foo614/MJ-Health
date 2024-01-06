@@ -11,7 +11,7 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemText from '@mui/material/ListItemText'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
-import { LOGIN_PAGE } from 'constant'
+import { DASHBOARD_PAGE, LOGIN_PAGE } from 'constant'
 import AppIcon from 'images/app-icon.png'
 import * as React from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -154,7 +154,7 @@ const QueueListAppBar = () => {
                             variant="h6"
                             noWrap
                             component="a"
-                            href="#app-bar-with-responsive-menu"
+                            onClick={() => navigate(DASHBOARD_PAGE)}
                             sx={{
                                 mr: 2,
                                 display: { xs: 'flex', md: 'none' },
