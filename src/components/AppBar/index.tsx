@@ -101,6 +101,7 @@ const ResponsiveAppBar = () => {
                                 src={AppIcon}
                                 alt="app-icon"
                                 style={{ width: '50px' }}
+                                onClick={() => navigate(DASHBOARD_PAGE)}
                             />
                         </IconButton>
                         <Typography
@@ -167,6 +168,7 @@ const ResponsiveAppBar = () => {
                                 src={AppIcon}
                                 alt="app-icon"
                                 style={{ width: '50px' }}
+                                onClick={() => navigate(DASHBOARD_PAGE)}
                             />
                         </IconButton>
                         <Typography
