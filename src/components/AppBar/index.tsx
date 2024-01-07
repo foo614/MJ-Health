@@ -232,14 +232,18 @@ const ResponsiveAppBar = () => {
                                 color="inherit"
                                 variant="outlined"
                                 startIcon={<SettingsIcon />}
-                                sx={{ marginRight: '1rem' }}
+                                sx={{
+                                    marginRight: '1rem',
+                                    backgroundColor: 'transparent !important',
+                                }}
                                 onClick={() => navigate(SETTING_PAGE)}
                             >
                                 Setting
                             </Button>
                             <Button
-                                color="secondary"
+                                // color="secondary"
                                 variant="contained"
+                                sx={{ backgroundColor: '#fff !important' }}
                                 className={styles.buttonText}
                                 startIcon={<LogoutIcon />}
                                 onClick={() => logout()}

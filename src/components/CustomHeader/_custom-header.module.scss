@@ -20,9 +20,8 @@
 }
 
 .backButton {
-    font-weight: 500 !important;
+    font-weight: 600 !important;
     font-size: var(--font-size-lg) !important;
-    // text-align: center;
     color: var(--title-color) !important;
     @media screen and (max-width: 600px) {
         font-size: var(--font-size-sx) !important;

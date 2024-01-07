@@ -26,10 +26,10 @@ const CustomHeader: React.FC<Props> = ({ to, title }: Props) => {
                         <Button
                             variant="text"
                             className={styles.backButton}
-                            startIcon={<ChevronLeftIcon />}
+                            startIcon={<ChevronLeftIcon fontSize={'large'} />}
                             onClick={() => navigate(to)}
                         >
-                            BACK
+                            <span style={{ marginLeft: '-5px' }}>BACK</span>
                         </Button>
                     )}
                 </Grid>
