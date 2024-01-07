@@ -131,6 +131,13 @@
     text-transform: unset !important;
 }
 
+.editBttnDisabled {
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    color: #dddddd !important;
+    text-transform: unset !important;
+}
+
 .cancelAppointmentModal {
     width: 650px;
     height: 500px;
@@ -245,4 +252,59 @@
     font-weight: 700;
     font-size: 20px;
     color: var(--title-color);
+}
+
+.optionalItemModal {
+    background: var(--color-whitesmoke-200) !important;
+    width: 1040px !important;
+    max-width: unset !important;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 10px !important;
+}
+
+.optionalItemTitle {
+    font-weight: 500 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--label-color) !important;
+}
+
+.searchField {
+    background: var(--color-white) !important;
+    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+    border-radius: var(--br-8xs) !important;
+}
+
+.searchInputField {
+    font-weight: 500 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--label-color) !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.optionalItemModalBottomText {
+    font-weight: 500 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--color-darkgray-100) !important;
+}
+
+.optionalItemTableHeader {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+.optionalModalTable {
+    max-height: 250px;
+}
+.optionalModalTable::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.optionalModalTable::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
 }

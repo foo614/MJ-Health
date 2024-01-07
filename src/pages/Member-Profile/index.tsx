@@ -33,13 +33,17 @@ import MemberEditIcon from '../../images/member-edit.png'
 import CancelAppointmentModal from './components/cancel-appointment-modal'
 import SaveAppointmentModal from './components/save-appointment-modal'
 import Autocomplete from '@mui/material/Autocomplete'
-
+import OptionalItemModal from './components/optional-item-modal'
+import MemberEditDisabledIcon from '../../images/member-edit-disabled.png'
 const MemberProfile = () => {
     const [isEdit, setIsEdit] = React.useState<boolean>(false)
     const [openCancelAppointmentModal, setOpenCancelAppointmentModal] =
         React.useState<boolean>(false)
 
     const [openSaveAppointmentModal, setOpenSaveAppointmentModal] =
+        React.useState<boolean>(false)
+
+    const [openOptionalItemModal, setOpenOptionalItemModal] =
         React.useState<boolean>(false)
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
@@ -150,6 +154,39 @@ const MemberProfile = () => {
         { id: 1, label: 'Malaysia' },
         { id: 2, label: 'Singapore' },
     ]
+
+    const optionalItems = [
+        {
+            id: 1,
+            item: 'Gynecological Sonography',
+            price: 120,
+        },
+        {
+            id: 2,
+            item: 'Body Composition Test',
+            price: 150,
+        },
+        {
+            id: 3,
+            item: 'CA15-3',
+            price: 60,
+        },
+        {
+            id: 4,
+            item: 'CA15-3',
+            price: 60,
+        },
+        {
+            id: 5,
+            item: 'CA15-3',
+            price: 60,
+        },
+        {
+            id: 6,
+            item: 'CA15-3',
+            price: 60,
+        },
+    ]
     return (
         <>
             <ResponsiveAppBar />
@@ -173,12 +210,20 @@ const MemberProfile = () => {
                             variant="text"
                             endIcon={
                                 <img
-                                    src={MemberEditIcon}
+                                    src={
+                                        isEdit
+                                            ? MemberEditDisabledIcon
+                                            : MemberEditIcon
+                                    }
                                     height={25}
                                     width={25}
                                 />
                             }
-                            className={styles.editBttn}
+                            className={
+                                isEdit
+                                    ? styles.editBttnDisabled
+                                    : styles.editBttn
+                            }
                             onClick={() => setIsEdit(true)}
                         >
                             Edit
@@ -698,12 +743,20 @@ const MemberProfile = () => {
                                                 flexDirection: 'column',
                                                 justifyContent: 'center',
                                                 alignContent: 'center',
-                                                backgroundColor: '#3adebb',
+                                                backgroundColor: isEdit
+                                                    ? '#ededed'
+                                                    : '#3adebb',
                                                 height: 42,
                                                 width: 100,
                                                 borderRadius: '0px 5px 5px 0px',
                                                 cursor: 'pointer',
+                                                pointerEvents: isEdit
+                                                    ? 'none'
+                                                    : 'unset',
                                             }}
+                                            onClick={() =>
+                                                setOpenOptionalItemModal(true)
+                                            }
                                         >
                                             <InputAdornment
                                                 position="start"
@@ -760,93 +813,45 @@ const MemberProfile = () => {
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
-                                        <TableRow>
-                                            <TableCell>
-                                                <p
-                                                    className={
-                                                        styles.tableValue
-                                                    }
-                                                >
-                                                    Gynecological Sonography
-                                                </p>
-                                            </TableCell>
-                                            <TableCell>
-                                                <p
-                                                    className={
-                                                        styles.tableValue
-                                                    }
-                                                >
-                                                    120
-                                                </p>
-                                            </TableCell>
-                                            <TableCell>
-                                                <p
-                                                    className={
-                                                        styles.cancelItem
-                                                    }
-                                                >
-                                                    Cancel Item
-                                                </p>
-                                            </TableCell>
-                                        </TableRow>
-                                        <TableRow>
-                                            <TableCell>
-                                                <p
-                                                    className={
-                                                        styles.tableValue
-                                                    }
-                                                >
-                                                    Body Composition Test
-                                                </p>
-                                            </TableCell>
-                                            <TableCell>
-                                                <p
-                                                    className={
-                                                        styles.tableValue
-                                                    }
-                                                >
-                                                    150
-                                                </p>
-                                            </TableCell>
-                                            <TableCell>
-                                                <p
-                                                    className={
-                                                        styles.cancelItem
-                                                    }
-                                                >
-                                                    Cancel Item
-                                                </p>
-                                            </TableCell>
-                                        </TableRow>
-                                        <TableRow>
-                                            <TableCell>
-                                                <p
-                                                    className={
-                                                        styles.tableValue
-                                                    }
-                                                >
-                                                    CA15-3
-                                                </p>
-                                            </TableCell>
-                                            <TableCell>
-                                                <p
-                                                    className={
-                                                        styles.tableValue
-                                                    }
-                                                >
-                                                    60
-                                                </p>
-                                            </TableCell>
-                                            <TableCell>
-                                                <p
-                                                    className={
-                                                        styles.cancelItem
-                                                    }
-                                                >
-                                                    Cancel Item
-                                                </p>
-                                            </TableCell>
-                                        </TableRow>
+                                        {optionalItems.map(
+                                            (item: any, index: number) => {
+                                                return (
+                                                    <TableRow key={index}>
+                                                        <TableCell>
+                                                            <p
+                                                                className={
+                                                                    styles.tableValue
+                                                                }
+                                                            >
+                                                                {item.item}
+                                                            </p>
+                                                        </TableCell>
+                                                        <TableCell>
+                                                            <p
+                                                                className={
+                                                                    styles.tableValue
+                                                                }
+                                                            >
+                                                                {item.price}
+                                                            </p>
+                                                        </TableCell>
+                                                        <TableCell
+                                                            sx={{
+                                                                cursor: 'pointer',
+                                                            }}
+                                                        >
+                                                            <p
+                                                                className={
+                                                                    styles.cancelItem
+                                                                }
+                                                            >
+                                                                Cancel Item
+                                                            </p>
+                                                        </TableCell>
+                                                    </TableRow>
+                                                )
+                                            }
+                                        )}
                                     </TableBody>
                                 </Table>
                             </div>
@@ -1120,16 +1125,33 @@ const MemberProfile = () => {
                                 sx={{ marginTop: '5px' }}
                             >
                                 <Grid item md={6} xs={12}>
-                                    <Button
-                                        variant="contained"
-                                        fullWidth
-                                        className={styles.cancelAppointmentBttn}
-                                        onClick={() =>
-                                            setOpenCancelAppointmentModal(true)
-                                        }
-                                    >
-                                        Cancel Appointment
-                                    </Button>
+                                    {isEdit ? (
+                                        <Button
+                                            variant="contained"
+                                            fullWidth
+                                            className={
+                                                styles.cancelAppointmentBttn
+                                            }
+                                            onClick={() => setIsEdit(false)}
+                                        >
+                                            Cancel
+                                        </Button>
+                                    ) : (
+                                        <Button
+                                            variant="contained"
+                                            fullWidth
+                                            className={
+                                                styles.cancelAppointmentBttn
+                                            }
+                                            onClick={() =>
+                                                setOpenCancelAppointmentModal(
+                                                    true
+                                                )
+                                            }
+                                        >
+                                            Cancel Appointment
+                                        </Button>
+                                    )}
                                 </Grid>
                                 <Grid item md={6} xs={12}>
                                     <Button
@@ -1159,6 +1181,13 @@ const MemberProfile = () => {
                         open={openSaveAppointmentModal}
                         setOpen={setOpenSaveAppointmentModal}
                         matches={matches}
+                    />
+                ) : null}
+                {openOptionalItemModal ? (
+                    <OptionalItemModal
+                        open={openOptionalItemModal}
+                        setOpen={setOpenOptionalItemModal}
+                        optionalItems={optionalItems}
                     />
                 ) : null}
             </Box>
