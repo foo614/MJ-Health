@@ -35,6 +35,8 @@ import SaveAppointmentModal from './components/save-appointment-modal'
 import Autocomplete from '@mui/material/Autocomplete'
 import OptionalItemModal from './components/optional-item-modal'
 import MemberEditDisabledIcon from '../../images/member-edit-disabled.png'
+import HIVConsentFormModal from './components/hiv-consent-form-modal'
+import PDPAConsentFormModal from './components/pdpa-consent-form-modal'
 const MemberProfile = () => {
     const [isEdit, setIsEdit] = React.useState<boolean>(false)
     const [openCancelAppointmentModal, setOpenCancelAppointmentModal] =
@@ -45,6 +47,9 @@ const MemberProfile = () => {
 
     const [openOptionalItemModal, setOpenOptionalItemModal] =
         React.useState<boolean>(false)
+
+    const [openHIVModal, setOpenHIVModal] = React.useState<boolean>(false)
+    const [openPDPAModal, setOpenPDPAModal] = React.useState<boolean>(false)
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
     const formik = useFormik({
@@ -1060,12 +1065,14 @@ const MemberProfile = () => {
                                 <Button
                                     variant="contained"
                                     className={styles.consentFormBttn}
+                                    onClick={() => setOpenHIVModal(true)}
                                 >
                                     HIV Consent Form
                                 </Button>
                                 <Button
                                     variant="contained"
                                     className={styles.consentFormBttn}
+                                    onClick={() => setOpenPDPAModal(true)}
                                 >
                                     PDPA Consent Form
                                 </Button>
@@ -1188,6 +1195,21 @@ const MemberProfile = () => {
                         open={openOptionalItemModal}
                         setOpen={setOpenOptionalItemModal}
                         optionalItems={optionalItems}
+                    />
+                ) : null}
+                {openHIVModal ? (
+                    <HIVConsentFormModal
+                        open={openHIVModal}
+                        setOpen={setOpenHIVModal}
+                        matches={matches}
+                    />
+                ) : null}
+
+                {openPDPAModal ? (
+                    <PDPAConsentFormModal
+                        open={openPDPAModal}
+                        setOpen={setOpenPDPAModal}
+                        matches={matches}
                     />
                 ) : null}
             </Box>
