@@ -17,7 +17,7 @@ let theme = createTheme({
                     borderRadius: '5px !important',
                     boxShadow:
                         '0px 3px 15px rgba(33, 155, 142, 0.25) !important',
-                    backgroundColor: '#3ADEBB !important',
+                    backgroundColor: '#3ADEBB',
                 },
                 root: {
                     height: '45px',
