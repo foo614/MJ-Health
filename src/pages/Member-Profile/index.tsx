@@ -37,6 +37,8 @@ import OptionalItemModal from './components/optional-item-modal'
 import MemberEditDisabledIcon from '../../images/member-edit-disabled.png'
 import HIVConsentFormModal from './components/hiv-consent-form-modal'
 import PDPAConsentFormModal from './components/pdpa-consent-form-modal'
+import LetterAuthorizationModal from './components/letter-authorization-modal'
+import ViewDocumentModal from './components/view-document-modal'
 const MemberProfile = () => {
     const [isEdit, setIsEdit] = React.useState<boolean>(false)
     const [openCancelAppointmentModal, setOpenCancelAppointmentModal] =
@@ -50,6 +52,12 @@ const MemberProfile = () => {
 
     const [openHIVModal, setOpenHIVModal] = React.useState<boolean>(false)
     const [openPDPAModal, setOpenPDPAModal] = React.useState<boolean>(false)
+
+    const [openLetterAuthorizationModal, setOpenLetterAuthorizationModal] =
+        React.useState<boolean>(false)
+
+    const [openViewDocumentModal, setOpenViewDocumentModal] =
+        React.useState<boolean>(false)
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
     const formik = useFormik({
@@ -1079,6 +1087,9 @@ const MemberProfile = () => {
                                 <Button
                                     variant="contained"
                                     className={styles.consentFormBttn}
+                                    onClick={() =>
+                                        setOpenLetterAuthorizationModal(true)
+                                    }
                                 >
                                     Letter of Authorization
                                 </Button>
@@ -1086,6 +1097,9 @@ const MemberProfile = () => {
                                     variant="contained"
                                     className={styles.consentFormViewDocBttn}
                                     startIcon={<img src={PDFIcon} />}
+                                    onClick={() =>
+                                        setOpenViewDocumentModal(true)
+                                    }
                                 >
                                     View Document
                                 </Button>
@@ -1209,6 +1223,21 @@ const MemberProfile = () => {
                     <PDPAConsentFormModal
                         open={openPDPAModal}
                         setOpen={setOpenPDPAModal}
+                        matches={matches}
+                    />
+                ) : null}
+
+                {openLetterAuthorizationModal ? (
+                    <LetterAuthorizationModal
+                        open={openLetterAuthorizationModal}
+                        setOpen={setOpenLetterAuthorizationModal}
+                        matches={matches}
+                    />
+                ) : null}
+                {openViewDocumentModal ? (
+                    <ViewDocumentModal
+                        open={openViewDocumentModal}
+                        setOpen={setOpenViewDocumentModal}
                         matches={matches}
                     />
                 ) : null}

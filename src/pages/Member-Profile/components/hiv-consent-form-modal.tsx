@@ -77,7 +77,7 @@ const HIVConsentFormModal: React.FC<Props> = ({
                             marginBottom: '2rem',
                         }}
                     />
-                    <Stack direction="row" spacing={2}>
+                    <Stack direction={matches ? 'row' : 'column'} spacing={2}>
                         <div>
                             <p
                                 style={{ marginTop: '10px' }}
@@ -86,7 +86,7 @@ const HIVConsentFormModal: React.FC<Props> = ({
                                 I
                             </p>
                         </div>
-                        <div style={{ width: '80%' }}>
+                        <div style={{ width: matches ? '80%' : '100%' }}>
                             <TextField
                                 variant="outlined"
                                 size="small"
@@ -104,7 +104,7 @@ const HIVConsentFormModal: React.FC<Props> = ({
                         </div>
                     </Stack>
                     <Stack
-                        direction="row"
+                        direction={matches ? 'row' : 'column'}
                         spacing={2}
                         sx={{ marginTop: '1rem' }}
                     >
@@ -116,7 +116,7 @@ const HIVConsentFormModal: React.FC<Props> = ({
                                 NRIC No.
                             </p>
                         </div>
-                        <div style={{ width: '50%' }}>
+                        <div style={{ width: matches ? '50%' : '100%' }}>
                             <TextField
                                 variant="outlined"
                                 size="small"

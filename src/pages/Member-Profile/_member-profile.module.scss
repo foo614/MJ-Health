@@ -380,3 +380,19 @@
     background: #aaa;
     border-radius: 10px;
 }
+
+.viewDocumentModal {
+    width: 530px !important;
+    max-width: unset !important;
+    border-radius: 8px !important;
+    background-color: var(--color-white) !important;
+}
+
+.viewDocumentDisabledPrintBttn {
+    background: var(--color-whitesmoke-100) !important;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    color: #dddddd !important;
+    box-shadow: unset !important;
+}
