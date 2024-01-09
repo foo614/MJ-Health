@@ -1,0 +1,388 @@
+@use '../../styles/variables' as *;
+.monitorSystemHeader {
+    position: relative;
+    padding-bottom: 15px;
+    background-color: var(--color-white) !important;
+    padding-top: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05) !important;
+    // padding-right: 3rem;
+    // padding-left: 3rem;
+}
+
+.monitorSystemHeaderTitle {
+    text-align: center;
+    font-size: 28px;
+    color: var(--mj-deep-green);
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+}
+
+.monitorSearchDiv {
+    position: absolute;
+    right: 0;
+}
+
+.monitorSearchDivMobile {
+    position: relative;
+}
+
+.monitorSystemSearchInput {
+    border: 1px solid var(--color-whitesmoke-300);
+    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 5px;
+    width: 300px;
+    margin-top: 0px !important;
+    margin-right: 3rem !important;
+}
+
+.monitorSystemSearchInputMobile {
+    border: 1px solid var(--color-whitesmoke-300);
+    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 5px;
+}
+
+.searchIcon {
+    color: var(--mj-deep-green);
+}
+
+.monitorSystemDiv {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-top: 2rem;
+}
+
+.selectedBttn {
+    font-weight: 700 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--color-white) !important;
+    background-color: var(--mj-deep-green) !important;
+    height: 60px !important;
+    // height: 100%;
+    line-height: unset !important;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1) !important;
+    border-radius: var(--br-8xs) !important;
+}
+
+.selectedBttnMobile {
+    font-weight: 700 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--color-white) !important;
+    background-color: var(--mj-deep-green) !important;
+    height: 60px !important;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1) !important;
+    border-radius: var(--br-8xs) !important;
+}
+
+.unselectedBttn {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--label-color) !important;
+    background-color: #ddd !important;
+    height: 60px !important;
+    // height: 100%;
+    line-height: unset !important;
+    box-shadow: none !important;
+}
+
+.unselectedBttnMobile {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--label-color) !important;
+    background-color: #ddd !important;
+    height: 60px !important;
+    box-shadow: none !important;
+}
+
+.monitorSystemTableHead {
+    background-color: var(--mj-deep-green) !important;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+.monitorSystemTableHeadTitle {
+    font-weight: 500 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--color-white) !important;
+}
+
+.tableCellValue {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--title-color);
+}
+
+.tableCellBottomTableValue {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color);
+}
+
+.tableCellWaitingStatusValue {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color);
+}
+
+.tableCellCheckingStatusValue {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--color-turquoise);
+}
+
+.tableCellBoldValue {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    line-height: 20px;
+    color: var(--title-color) !important;
+}
+
+.tableCellDisabledValue {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: #aaaaaa !important;
+}
+
+.tableCellDisabledBoldValue {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    line-height: 20px;
+    color: #aaaaaa !important;
+}
+
+.monitorSystemTableTop {
+    max-height: 500px;
+}
+
+.monitorSystemTableTop::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.monitorSystemTableTop::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.monitorSystemTableBottom {
+    max-height: 300px;
+}
+
+.monitorSystemTableBottom::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.monitorSystemTableBottom::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.flowModifierBttn {
+    font-weight: 500 !important;
+    font-size: var(--font-size-lg);
+    text-align: center;
+    color: var(--color-white) !important;
+    background-color: var(--mj-deep-green) !important;
+    box-shadow: 0px 3px 15px rgba(90, 86, 123, 0.25) !important;
+    border-radius: var(--br-8xs) !important;
+}
+
+.changeStationBttn {
+    font-weight: 500 !important;
+    font-size: var(--font-size-lg);
+    text-align: center;
+    color: var(--color-white) !important;
+    background-color: var(--color-turquoise) !important;
+    box-shadow: 0px 3px 15px rgba(90, 86, 123, 0.25) !important;
+    border-radius: var(--br-8xs) !important;
+}
+
+.changeStationModal {
+    width: 522px;
+    background: var(--color-lightgray) !important;
+    border-radius: 20px !important;
+}
+
+.changeStationModalTitle {
+    font-weight: 600 !important;
+    font-size: var(--font-size-5xl) !important;
+    color: var(--title-color) !important;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.changeStationModalDivider {
+    border: 2px solid #ededed;
+}
+
+.textFieldProps {
+    border-radius: 3px !important;
+    background-color: var(--color-white) !important;
+    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.changeStationModalGridContainer {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.changeStationModalTextFieldTitle {
+    font-weight: 500 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--label-color) !important;
+}
+
+.textFieldPropsInput {
+    background-color: #f2f2f2 !important;
+    font-family: var(--font-montserrat) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
+}
+
+.changeStationModalSaveBttn {
+    font-weight: 600 !important;
+    font-size: 20px !important;
+    text-align: center;
+    color: var(--color-white) !important;
+    background-color: var(--color-turquoise) !important;
+}
+
+.selectFieldCss {
+    font-family: 'Montserrat' !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.selectPaperCss {
+    max-height: 200px !important;
+    background-color: var(--color-lightgray) !important;
+}
+
+.selectPaperCss::-webkit-scrollbar {
+    width: 4px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: var(--color-lightgray) !important;
+}
+
+.selectPaperCss::-webkit-scrollbar-thumb {
+    background: #a8a8a8;
+    border-radius: 10px;
+}
+
+.currentSelectedItem {
+    background-color: var(--color-lightgray);
+    cursor: pointer;
+}
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+.flowModifierModal {
+    width: 1096px !important;
+    max-width: unset !important;
+    border-radius: 20px !important;
+}
+
+.flowModifierModalTitle {
+    font-weight: 700 !important;
+    font-size: 28px !important;
+    text-align: center;
+    color: var(--color-white) !important;
+}
+
+.flowModifierTitleColor {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(90deg, #3adebb -0.18%, #00aee9 99.82%);
+
+    border-bottom: 4px solid #ededed;
+}
+
+.flowModifierCloseIcon {
+    color: var(--color-white) !important;
+}
+
+.flowModifierModalSectionTitle {
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    color: var(--mj-deep-green);
+}
+
+.flowModifierModalSectionSubTitle {
+    font-weight: 500 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--label-color) !important;
+}
+
+.flowModifierDialogContent {
+    padding: 20px 40px !important;
+    max-height: 600px;
+    overflow: auto;
+}
+
+.selectFieldCssIncomplete {
+    font-family: 'Montserrat' !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: #de4e3a !important;
+}
+
+.flowModifierDialogContent::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.flowModifierDialogContent::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.flowModifierDialogActionsTitle {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.flowModifierDialogActions {
+    border-top: 4px solid #ededed;
+    background-color: #fdfdfd !important;
+}
+
+.flowModifierDialogActionsValue {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.flowModifierModalSaveBttn {
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    text-align: center !important;
+    color: var(--color-white) !important;
+    background-color: var(--color-turquoise) !important;
+}
+.tableCellValueLast {
+    color: var(--color-lightslategray);
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    text-align: center;
+}

@@ -4,6 +4,7 @@ import {
     DINING_CHECK_IN_PAGE,
     DINING_MEAL_SETUP_PAGE,
     DINING_PAGE,
+    IT_MONITOR_ROOM_PAGE,
     KIOSK_PAGE,
     LAB_TEST_INFO_PAGE,
     LAB_TEST_PAGE,
@@ -19,23 +20,24 @@ import {
 import Dashboard from 'pages/Dashboard'
 import Dining from 'pages/Dining'
 import DiningCheckIn from 'pages/Dining-Check-In'
+import ITRoomMonitor from 'pages/IT-Room-Monitor'
 import Kiosk from 'pages/Kiosk'
 import LabPage from 'pages/Lab'
 import LabInfo from 'pages/Lab/lab-info'
 import LabSingleItemPage from 'pages/Lab/single-item'
 import Login from 'pages/Login'
 import MealSetup from 'pages/Meal-Setup'
+import MemberProfile from 'pages/Member-Profile'
 import MonitorSystem from 'pages/Monitor-System'
 import QueueManagement from 'pages/Queue-Management'
 import QueueManagementList from 'pages/Queue-Management/components/queue-list'
+import Reception from 'pages/Reception'
 import Setting from 'pages/Setting'
 import StickerPrinting from 'pages/Sticker-Printing'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
-import Reception from 'pages/Reception'
-import MemberProfile from 'pages/Member-Profile'
 function App() {
     return (
         <ThemeProvider theme={theme}>
@@ -77,6 +79,10 @@ function App() {
                 <Route
                     path={MEMBER_PROFILE_PAGE + '/:id'}
                     element={<MemberProfile />}
+                />
+                <Route
+                    path={IT_MONITOR_ROOM_PAGE}
+                    element={<ITRoomMonitor />}
                 />
             </Routes>
         </ThemeProvider>
