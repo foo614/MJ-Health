@@ -1,5 +1,6 @@
 import Grid from '@mui/material/Grid'
 import Stack from '@mui/material/Stack'
+import { IT_MONITOR_ROOM_PAGE } from 'constant'
 import Group1 from 'images/group-1@2x.png'
 import GroupIcon from 'images/group-3091@2x.png'
 import Monitor from 'images/monitor-1@2x.png'
@@ -7,10 +8,12 @@ import MulIcon from 'images/mul-1@2x.png'
 import Other2 from 'images/other-2@2x.png'
 import Printer from 'images/printer-1-1@2x.png'
 import RoomIcon from 'images/room-1-1@2x.png'
+import { useNavigate } from 'react-router-dom'
 import CustomBoxButton from '../CustomBoxButton'
 import styles from './_services.module.scss'
 
 const OtherFunction = () => {
+    const navigate = useNavigate()
     return (
         <Grid container sx={{ mb: 4 }}>
             <Grid xs={12} display="flex" sx={{ mb: 3 }}>
@@ -19,7 +22,11 @@ const OtherFunction = () => {
             </Grid>
             <Grid>
                 <Stack direction="row" spacing={2} useFlexGap flexWrap="wrap">
-                    <CustomBoxButton image={Monitor} label="IT Room Monitor" />
+                    <CustomBoxButton
+                        image={Monitor}
+                        label="IT Room Monitor"
+                        onClick={() => navigate(IT_MONITOR_ROOM_PAGE)}
+                    />
                     <CustomBoxButton image={Printer} label="IT Printing Room" />
                     <CustomBoxButton image={Group1} label="Staff Management" />
                     <CustomBoxButton image={MulIcon} label="Word Bank" />
