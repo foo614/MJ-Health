@@ -1,11 +1,14 @@
+import Box from '@mui/material/Box'
+import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import ResponsiveAppBar from 'components/AppBar'
+import Footer from 'components/Footer'
 import { FunctionComponent, useCallback, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import HealthAndScreening from './components/HealthAndScreening'
 import OtherFunction from './components/OtherFunction'
 import Services from './components/Services'
-import styles from './_dashboard.module.scss'
+
 const Dashboard: FunctionComponent = () => {
     const [isCheckInLabTest2Open, setCheckInLabTest2Open] = useState(false)
     const [isConsultationCheckInOpen, setConsultationCheckInOpen] =
@@ -112,22 +115,25 @@ const Dashboard: FunctionComponent = () => {
 
     return (
         <>
-            <ResponsiveAppBar />
-            <Grid sx={{ p: 6 }}>
-                <Services />
-                <HealthAndScreening />
-                <OtherFunction />
-                <div style={{ marginTop: '6rem' }}>
-                    <p>
-                        <span className={styles.bottomTextMJ}>
-                            MJ HEALTH {'  '}
-                        </span>
-                        <span className={styles.bottomTextSouthern}>
-                            SOUTHERN, GELANG PATAH
-                        </span>
-                    </p>
-                </div>
-            </Grid>
+            <Box
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    minHeight: '100vh',
+                }}
+            >
+                <ResponsiveAppBar />
+                <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="xl">
+                    <Grid container>
+                        <Grid xs>
+                            <Services />
+                            <HealthAndScreening />
+                            <OtherFunction />
+                        </Grid>
+                    </Grid>
+                </Container>
+                <Footer />
+            </Box>
         </>
     )
 }

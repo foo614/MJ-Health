@@ -29,7 +29,7 @@ const CustomHeader: React.FC<Props> = ({ to, title }: Props) => {
                             startIcon={<ChevronLeftIcon fontSize={'large'} />}
                             onClick={() => navigate(to)}
                         >
-                            <span style={{ marginLeft: '-5px' }}>BACK</span>
+                            <span style={{ marginLeft: '-5px' }}>Back</span>
                         </Button>
                     )}
                 </Grid>

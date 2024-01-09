@@ -18,7 +18,19 @@ let theme = createTheme({
                     boxShadow:
                         '0px 3px 15px rgba(33, 155, 142, 0.25) !important',
                     backgroundColor: '#3ADEBB !important',
+                },
+                root: {
                     height: '45px',
+                    textTransform: 'none',
+                },
+            },
+        },
+        MuiInputBase: {
+            styleOverrides: {
+                root: {
+                    '&.Mui-disabled': {
+                        border: 'none',
+                    },
                 },
             },
         },
@@ -46,43 +58,17 @@ let theme = createTheme({
                     '&.Mui-focused.Mui-active fieldset': {
                         borderColor: 'transparent !important', // Remove the border on active
                     },
+                    '&.Mui-disabled': {
+                        '& fieldset': {
+                            border: 'none !important',
+                        },
+                    },
                 },
             },
         },
     },
 })
 
-const components: any = createTheme(theme, {
-    // MuiButton: {
-    //     //add variants to button component
-    //     variants: [
-    //         {
-    //             props: { variant: 'primary' },
-    //             style: {
-    //                 backgroundColor: `${theme.palette.primary.main}`,
-    //             },
-    //         },
-    //     ],
-    //     styleOverrides: {
-    //         root: {
-    //             fontSize: '1em',
-    //         },
-    //     },
-    // },
-    // MuiContainer: {
-    //     styleOverrides: {
-    //         root: {
-    //             backgroundColor: 'red',
-    //         },
-    //     },
-    // },
-})
-
-// Create a theme instance.
-// theme = createTheme({
-//     components,
-// })
-// add responsive MUI responsiveFontSize
 theme = responsiveFontSizes(theme)
 
 export default theme
