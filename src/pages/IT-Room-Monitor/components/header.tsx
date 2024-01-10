@@ -1,74 +1,35 @@
 import SearchIcon from '@mui/icons-material/Search'
 import InputAdornment from '@mui/material/InputAdornment'
 import TextField from '@mui/material/TextField'
+import Grid from '@mui/material/Unstable_Grid2'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import styles from '../_it-room-monitor.module.scss'
-
 function Header() {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
     return (
-        <div
-            className={styles.monitorSystemHeader}
-            style={matches ? { paddingLeft: '3rem', paddingRight: '3rem' } : {}}
-        >
-            {matches ? (
-                <>
-                    <div className={styles.monitorSearchDiv}>
-                        <TextField
-                            InputProps={{
-                                startAdornment: (
-                                    <InputAdornment position="start">
-                                        <SearchIcon
-                                            className={styles.searchIcon}
-                                        />
-                                    </InputAdornment>
-                                ),
-                            }}
-                            variant="outlined"
-                            size="small"
-                            margin="dense"
-                            placeholder="Search Member Seq No..."
-                            className={styles.monitorSystemSearchInput}
-                        />
-                    </div>
-                    <div>
-                        <p className={styles.monitorSystemHeaderTitle}>
-                            IT ROOM MONITOR
-                        </p>
-                    </div>
-                </>
-            ) : (
-                <>
-                    <div>
-                        <p className={styles.monitorSystemHeaderTitle}>
-                            IT ROOM MONITOR
-                        </p>
-                        <div style={{ textAlign: 'center' }}>
-                            <TextField
-                                InputProps={{
-                                    startAdornment: (
-                                        <InputAdornment position="start">
-                                            <SearchIcon
-                                                className={styles.searchIcon}
-                                            />
-                                        </InputAdornment>
-                                    ),
-                                }}
-                                variant="outlined"
-                                size="small"
-                                margin="dense"
-                                placeholder="Search..."
-                                className={
-                                    styles.monitorSystemSearchInputMobile
-                                }
-                            />
-                        </div>
-                    </div>
-                </>
-            )}
-        </div>
+        <Grid container className={styles.header}>
+            <Grid xs={12} md={6} mdOffset={3} className={styles.headerTitle}>
+                IT ROOM MONITOR
+            </Grid>
+            <Grid xs={12} md={3} textAlign={matches ? 'center' : 'end'}>
+                <TextField
+                    InputProps={{
+                        startAdornment: (
+                            <InputAdornment position="start">
+                                <SearchIcon className={styles.searchIcon} />
+                            </InputAdornment>
+                        ),
+                    }}
+                    variant="outlined"
+                    size="small"
+                    margin="dense"
+                    placeholder="Search..."
+                    className={styles.searchInput}
+                />
+            </Grid>
+        </Grid>
     )
 }
 

@@ -78,6 +78,52 @@ const mockData = [
     },
 ]
 
+type CustomTableProps = {
+    area: string
+}
+
+type TextAlign = 'left' | 'center' | 'right' | 'justify' | 'inherit'
+
+type TableRowData = {
+    accessor: keyof (typeof mockData)[0]
+    textAlign?: TextAlign
+}
+
+function CustomTableButton({ area }: CustomTableProps) {
+    const theme = useTheme()
+    const matches = useMediaQuery(theme.breakpoints.up('sm'))
+
+    return (
+        <Grid item md={2} sx={{ marginBottom: '15px' }} xs={12}>
+            <Button
+                variant="contained"
+                fullWidth
+                className={
+                    matches
+                        ? area === 'Front Area'
+                            ? styles.selectedBttn
+                            : styles.unselectedBttn
+                        : area === 'Front Area'
+                          ? styles.selectedBttnMobile
+                          : styles.unselectedBttnMobile
+                }
+                size="small"
+            >
+                {area}
+            </Button>
+        </Grid>
+    )
+}
+
+const tableHeadTitles: { label: string; textAlign?: TextAlign }[] = [
+    { label: 'Room No.', textAlign: 'center' },
+    { label: 'Room Name', textAlign: 'left' },
+    { label: 'Doctor', textAlign: 'left' },
+    { label: 'Nurse', textAlign: 'left' },
+    { label: 'Check In At', textAlign: 'center' },
+    { label: 'Status', textAlign: 'left' },
+]
+
 function CustomTable() {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
@@ -99,93 +145,47 @@ function CustomTable() {
             backgroundColor: '#DDDDDD',
         },
     }))
+
+    const areas = [
+        'Front Area',
+        'Area 1',
+        'Area 2',
+        'Dining Area',
+        'Physician Consultation Zone',
+        'Life Style Consulting Area',
+    ]
+
+    const tableBodyData: TableRowData[] = [
+        { accessor: 'roomNo', textAlign: 'center' },
+        { accessor: 'roomName', textAlign: 'left' },
+        { accessor: 'doctor', textAlign: 'left' },
+        { accessor: 'nurse', textAlign: 'left' },
+        { accessor: 'checkInAt', textAlign: 'center' },
+        { accessor: 'status', textAlign: 'left' },
+    ]
+
+    const renderStatus = (status: number) => {
+        if (status === 0) {
+            return (
+                <StyledActiveBadge badgeContent={''}>
+                    <p className={styles.tableCellValueLast}>Active</p>
+                </StyledActiveBadge>
+            )
+        } else {
+            return (
+                <StyledInactiveBadge badgeContent={''}>
+                    <p className={styles.tableCellValueLast}>Off</p>
+                </StyledInactiveBadge>
+            )
+        }
+    }
+
     return (
         <div className={styles.monitorSystemDiv}>
             <Grid container columnSpacing={2}>
-                <Grid item md={2} sx={{ marginBottom: '15px' }} xs={12}>
-                    <Button
-                        variant="contained"
-                        fullWidth
-                        className={
-                            matches
-                                ? styles.selectedBttn
-                                : styles.selectedBttnMobile
-                        }
-                        size="small"
-                    >
-                        Front Area
-                    </Button>
-                </Grid>
-                <Grid item md={2} sx={{ marginBottom: '15px' }} xs={12}>
-                    <Button
-                        variant="contained"
-                        fullWidth
-                        className={
-                            matches
-                                ? styles.unselectedBttn
-                                : styles.unselectedBttnMobile
-                        }
-                        size="small"
-                    >
-                        Area 1
-                    </Button>
-                </Grid>
-                <Grid item md={2} sx={{ marginBottom: '15px' }} xs={12}>
-                    <Button
-                        variant="contained"
-                        fullWidth
-                        className={
-                            matches
-                                ? styles.unselectedBttn
-                                : styles.unselectedBttnMobile
-                        }
-                        size="small"
-                    >
-                        Area 2
-                    </Button>
-                </Grid>
-                <Grid item md={2} sx={{ marginBottom: '15px' }} xs={12}>
-                    <Button
-                        variant="contained"
-                        fullWidth
-                        className={
-                            matches
-                                ? styles.unselectedBttn
-                                : styles.unselectedBttnMobile
-                        }
-                        size="small"
-                    >
-                        Dining Area
-                    </Button>
-                </Grid>
-                <Grid item md={2} sx={{ marginBottom: '15px' }} xs={12}>
-                    <Button
-                        variant="contained"
-                        fullWidth
-                        className={
-                            matches
-                                ? styles.unselectedBttn
-                                : styles.unselectedBttnMobile
-                        }
-                        size="small"
-                    >
-                        Physician Consultation Zone
-                    </Button>
-                </Grid>
-                <Grid item md={2} sx={{ marginBottom: '15px' }} xs={12}>
-                    <Button
-                        variant="contained"
-                        fullWidth
-                        className={
-                            matches
-                                ? styles.unselectedBttn
-                                : styles.unselectedBttnMobile
-                        }
-                        size="small"
-                    >
-                        Life Style Consulting Area
-                    </Button>
-                </Grid>
+                {areas.map((area, index) => (
+                    <CustomTableButton area={area} key={index} />
+                ))}
             </Grid>
             <div style={{ marginTop: '1rem' }}>
                 <TableContainer
@@ -195,152 +195,52 @@ function CustomTable() {
                     <Table>
                         <TableHead className={styles.monitorSystemTableHead}>
                             <TableRow>
-                                <TableCell>
-                                    <p
-                                        className={
-                                            styles.monitorSystemTableHeadTitle
-                                        }
-                                        style={{ textAlign: 'center' }}
+                                {tableHeadTitles.map((title, index) => (
+                                    <TableCell
+                                        key={index}
+                                        style={{ textAlign: title.textAlign }}
                                     >
-                                        Room No.
-                                    </p>
-                                </TableCell>
-                                <TableCell>
-                                    <p
-                                        className={
-                                            styles.monitorSystemTableHeadTitle
-                                        }
-                                    >
-                                        Room Name
-                                    </p>
-                                </TableCell>
-                                <TableCell>
-                                    <p
-                                        className={
-                                            styles.monitorSystemTableHeadTitle
-                                        }
-                                    >
-                                        Doctor
-                                    </p>
-                                </TableCell>
-                                <TableCell>
-                                    <p
-                                        className={
-                                            styles.monitorSystemTableHeadTitle
-                                        }
-                                    >
-                                        Nurse
-                                    </p>
-                                </TableCell>
-                                <TableCell>
-                                    <p
-                                        className={
-                                            styles.monitorSystemTableHeadTitle
-                                        }
-                                        style={{ textAlign: 'center' }}
-                                    >
-                                        Check In At
-                                    </p>
-                                </TableCell>
-                                <TableCell>
-                                    <p
-                                        className={
-                                            styles.monitorSystemTableHeadTitle
-                                        }
-                                        style={{ textAlign: 'center' }}
-                                    >
-                                        Status
-                                    </p>
-                                </TableCell>
+                                        <p
+                                            className={
+                                                styles.monitorSystemTableHeadTitle
+                                            }
+                                        >
+                                            {title.label}
+                                        </p>
+                                    </TableCell>
+                                ))}
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {mockData.map((item: any, index: number) => {
-                                return (
-                                    <TableRow key={index}>
-                                        <TableCell>
-                                            <p
-                                                className={
-                                                    styles.tableCellValue
-                                                }
+                            {mockData.map((item: any, rowIndex: number) => (
+                                <TableRow key={rowIndex}>
+                                    {tableBodyData.map(
+                                        (
+                                            { accessor, textAlign },
+                                            cellIndex
+                                        ) => (
+                                            <TableCell
+                                                key={cellIndex}
+                                                style={{ textAlign }}
                                             >
-                                                {item.roomNo}
-                                            </p>
-                                        </TableCell>
-                                        <TableCell>
-                                            <p
-                                                className={
-                                                    styles.tableCellBoldValue
-                                                }
-                                            >
-                                                {item.roomName}
-                                            </p>
-                                        </TableCell>
-                                        <TableCell>
-                                            <p
-                                                className={
-                                                    styles.tableCellBoldValue
-                                                }
-                                            >
-                                                {item.doctor}
-                                            </p>
-                                        </TableCell>
-                                        <TableCell>
-                                            <p
-                                                className={
-                                                    styles.tableCellBoldValue
-                                                }
-                                            >
-                                                {item.nurse}
-                                            </p>
-                                        </TableCell>
-                                        <TableCell>
-                                            <p
-                                                className={
-                                                    styles.tableCellBoldValue
-                                                }
-                                                style={{
-                                                    textAlign: 'center',
-                                                }}
-                                            >
-                                                <Button
-                                                    variant="contained"
-                                                    disableRipple
+                                                <p
+                                                    className={
+                                                        textAlign === 'center'
+                                                            ? styles.tableCellValue
+                                                            : styles.tableCellBoldValue
+                                                    }
                                                 >
-                                                    {item.checkInAt}
-                                                </Button>
-                                            </p>
-                                        </TableCell>
-                                        <TableCell>
-                                            {item.status === 0 ? (
-                                                <StyledActiveBadge
-                                                    badgeContent={''}
-                                                >
-                                                    <p
-                                                        className={
-                                                            styles.tableCellValueLast
-                                                        }
-                                                    >
-                                                        Active
-                                                    </p>
-                                                </StyledActiveBadge>
-                                            ) : (
-                                                <StyledInactiveBadge
-                                                    badgeContent={''}
-                                                >
-                                                    <p
-                                                        className={
-                                                            styles.tableCellValueLast
-                                                        }
-                                                    >
-                                                        Off
-                                                    </p>
-                                                </StyledInactiveBadge>
-                                            )}
-                                        </TableCell>
-                                    </TableRow>
-                                )
-                            })}
+                                                    {accessor === 'status'
+                                                        ? renderStatus(
+                                                              item[accessor]
+                                                          )
+                                                        : item[accessor]}
+                                                </p>
+                                            </TableCell>
+                                        )
+                                    )}
+                                </TableRow>
+                            ))}
                         </TableBody>
                     </Table>
                 </TableContainer>
