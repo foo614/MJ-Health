@@ -13,6 +13,7 @@ import {
     MEMBER_PROFILE_PAGE,
     MONITOR_SYSTEM_PAGE,
     QUEUE_MANAGEMENT_PAGE,
+    RADIOLOGY_REPORTING_PAGE,
     RECEPTION_PAGE,
     SETTING_PAGE,
     STICKER_PRINTING_PAGE,
@@ -31,6 +32,8 @@ import MemberProfile from 'pages/Member-Profile'
 import MonitorSystem from 'pages/Monitor-System'
 import QueueManagement from 'pages/Queue-Management'
 import QueueManagementList from 'pages/Queue-Management/components/queue-list'
+import RadiologyReport from 'pages/Radiology-Reporting'
+import RadiologyReportDetail from 'pages/Radiology-Reporting/components/details'
 import Reception from 'pages/Reception'
 import Setting from 'pages/Setting'
 import StickerPrinting from 'pages/Sticker-Printing'
@@ -83,6 +86,14 @@ function App() {
                 <Route
                     path={IT_MONITOR_ROOM_PAGE}
                     element={<ITRoomMonitor />}
+                />
+                <Route
+                    path={RADIOLOGY_REPORTING_PAGE}
+                    element={<RadiologyReport />}
+                />
+                <Route
+                    path={RADIOLOGY_REPORTING_PAGE + '/:id'}
+                    element={<RadiologyReportDetail />}
                 />
             </Routes>
         </ThemeProvider>

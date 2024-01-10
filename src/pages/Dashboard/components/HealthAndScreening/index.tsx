@@ -1,6 +1,10 @@
 import Grid from '@mui/material/Grid'
 import Stack from '@mui/material/Stack'
-import { MONITOR_SYSTEM_PAGE, QUEUE_MANAGEMENT_PAGE } from 'constant'
+import {
+    MONITOR_SYSTEM_PAGE,
+    QUEUE_MANAGEMENT_PAGE,
+    RADIOLOGY_REPORTING_PAGE,
+} from 'constant'
 import Cardiogram from 'images/cardiogram-1@2x.png'
 import Chat1 from 'images/chat-1-1@2x.png'
 import Group2 from 'images/group@2x.png'
@@ -84,6 +88,7 @@ const HealthAndScreening = () => {
                     <CustomBoxButton
                         image={Group2}
                         label="Rediology Reporting"
+                        onClick={() => navigate(RADIOLOGY_REPORTING_PAGE)}
                     />
                     <CustomBoxButton
                         image={PhoneIcon}

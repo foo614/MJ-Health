@@ -1,0 +1,191 @@
+@use '../../styles/variables' as *;
+
+//table
+.tableCellValueLast {
+    color: var(--color-lightslategray);
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    text-align: center;
+}
+.monitorSystemDiv {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-top: 2rem;
+}
+.monitorSystemTableTop {
+    max-height: 500px;
+    border-radius: unset !important;
+}
+.monitorSystemTableTop::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb;
+}
+.monitorSystemTableTop::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.tableCellBoldValue {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    line-height: 20px;
+    color: var(--title-color) !important;
+}
+.tableCellValue {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--title-color);
+}
+
+.selectedBttn {
+    font-weight: 700 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--color-white) !important;
+    background-color: var(--mj-deep-green) !important;
+    height: 60px !important;
+    // height: 100%;
+    line-height: unset !important;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1) !important;
+    border-radius: var(--br-8xs) !important;
+}
+
+.selectedBttnMobile {
+    font-weight: 700 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--color-white) !important;
+    background-color: var(--mj-deep-green) !important;
+    height: 60px !important;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1) !important;
+    border-radius: var(--br-8xs) !important;
+}
+
+.unselectedBttn {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--label-color) !important;
+    background-color: #ddd !important;
+    height: 60px !important;
+    // height: 100%;
+    line-height: unset !important;
+    box-shadow: none !important;
+}
+
+.unselectedBttnMobile {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--label-color) !important;
+    background-color: #ddd !important;
+    height: 60px !important;
+    box-shadow: none !important;
+}
+
+.tableHeaderTitle {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    word-wrap: break-word;
+}
+
+// header component
+.headerTitle {
+    text-align: center;
+    font-size: 28px;
+    color: var(--mj-deep-green);
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+    margin-top: 0.7rem;
+}
+.searchInput {
+    border: 1px solid var(--color-whitesmoke-300);
+    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) inset !important;
+    border-radius: 5px;
+}
+.header {
+    position: relative;
+    padding-bottom: 15px;
+    background-color: var(--color-white) !important;
+    padding-top: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05) !important;
+    // padding-right: 3rem;
+    // padding-left: 3rem;
+}
+.searchIcon {
+    color: var(--mj-deep-green);
+}
+.monitorSystemTableHeadTitle {
+    font-weight: 500 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--color-white) !important;
+}
+.monitorSystemTableHead {
+    background-color: var(--mj-deep-green) !important;
+    // position: sticky;
+    // top: 0;
+    // z-index: 3;
+}
+
+//user header
+.userHeader {
+    background: #5a567b;
+    height: 50px;
+    color: #eeeeee;
+    font-size: 20px;
+    font-weight: 700;
+    word-wrap: break-word;
+    @media screen and (max-width: 600px) {
+        font-size: 13px !important;
+    }
+}
+.headerTitle {
+    text-align: center;
+    font-size: 28px;
+    color: var(--mj-deep-green);
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+    @media screen and (max-width: 600px) {
+        font-size: var(--font-size-sx) !important;
+        align-self: center;
+        margin-top: 0 !important;
+    }
+}
+
+.backButton {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--title-color) !important;
+    @media screen and (max-width: 600px) {
+        font-size: 13px !important;
+        align-self: center;
+        margin-top: 0.5rem !important;
+    }
+}
+
+.confirmButton {
+    text-align: end;
+    padding-right: 2rem !important;
+    @media screen and (max-width: 600px) {
+        padding: 0.5rem !important;
+    }
+}
+
+//details page
+.card {
+    background: linear-gradient(231deg, white 0%, #f3f3f3 100%);
+    box-shadow: 0px 3px 6px rgba(89, 86, 122, 0.15);
+    border-radius: 10px;
+}
+
+.cardText {
+    color: var(--title-color);
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    text-align: center;
+}
