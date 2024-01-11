@@ -11,6 +11,8 @@ import styles from '../_member-profile.module.scss'
 import IconButton from '@mui/material/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
 import { Box, Divider, Grid, Stack } from '@mui/material'
+import AddCircleIcon from '@mui/icons-material/AddCircle'
+import SignatureModal from './signature-modal'
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
         children: React.ReactElement<any, any>
@@ -31,8 +33,13 @@ const PDPAConsentFormModal: React.FC<Props> = ({
     setOpen,
     open,
 }: Props) => {
-    const handleClose = () => {
-        setOpen(false)
+    const [title, setTitle] = React.useState<string>('')
+    const [openSignatureModal, setOpenSignatureModal] =
+        React.useState<boolean>(false)
+
+    const handleSetTitle = (title: string) => {
+        setTitle(title)
+        setOpenSignatureModal(true)
     }
 
     return (
@@ -440,6 +447,183 @@ const PDPAConsentFormModal: React.FC<Props> = ({
                             marginBottom: '2rem',
                         }}
                     />
+                    <Grid container columnSpacing={3} sx={{ padding: '20px' }}>
+                        <Grid item md={4} xs={12} sm={6}>
+                            <div
+                                className={styles.signatureDiv}
+                                onClick={() =>
+                                    handleSetTitle('Party to the Agreement')
+                                }
+                            >
+                                <div className={styles.signatureTitleDiv}>
+                                    <p className={styles.signatureTitle}>
+                                        Party to the Agreement:
+                                    </p>
+                                </div>
+                                <div
+                                    style={{
+                                        textAlign: 'center',
+                                        marginTop: '4rem',
+                                    }}
+                                >
+                                    <AddCircleIcon
+                                        className={styles.addCircleIcon}
+                                    />
+                                </div>
+                            </div>
+                            <div style={{ marginTop: '5px' }}>
+                                <p className={styles.infoModalRestText}>
+                                    Party to the Agreement:
+                                </p>
+                                <Stack
+                                    direction="row"
+                                    columnGap={2}
+                                    sx={{ marginTop: '10px' }}
+                                >
+                                    <p
+                                        className={styles.infoModalRestText}
+                                        style={{ margin: 'auto' }}
+                                    >
+                                        NRIC:
+                                    </p>
+                                    <TextField
+                                        variant="outlined"
+                                        size="small"
+                                        fullWidth
+                                        InputProps={{
+                                            classes: {
+                                                input: styles.inputField,
+                                            },
+                                        }}
+                                        className={styles.modalFormField}
+                                    />
+                                </Stack>
+                            </div>
+                        </Grid>
+                        <Grid item md={4} xs={12} sm={6}>
+                            <div
+                                className={styles.signatureDiv}
+                                onClick={() =>
+                                    handleSetTitle('Legal Representative')
+                                }
+                            >
+                                <div className={styles.signatureTitleDiv}>
+                                    <p className={styles.signatureTitle}>
+                                        Legal Representative:.
+                                    </p>
+                                </div>
+                                <div
+                                    style={{
+                                        textAlign: 'center',
+                                        marginTop: '4rem',
+                                    }}
+                                >
+                                    <AddCircleIcon
+                                        className={styles.addCircleIcon}
+                                    />
+                                </div>
+                            </div>
+                            <div style={{ marginTop: '5px' }}>
+                                <p className={styles.infoModalRestText}>
+                                    Legal Representative:.
+                                </p>
+                            </div>
+                            <Stack
+                                direction="row"
+                                columnGap={2}
+                                sx={{ marginTop: '10px' }}
+                            >
+                                <p
+                                    className={styles.infoModalRestText}
+                                    style={{ margin: 'auto' }}
+                                >
+                                    NRIC:
+                                </p>
+                                <TextField
+                                    variant="outlined"
+                                    size="small"
+                                    fullWidth
+                                    InputProps={{
+                                        classes: {
+                                            input: styles.inputField,
+                                        },
+                                    }}
+                                    className={styles.modalFormField}
+                                />
+                            </Stack>
+                            <p
+                                className={styles.infoModalRestText}
+                                style={{ marginTop: '5px' }}
+                            >
+                                Relation to the undersigned:
+                            </p>
+                            <TextField
+                                variant="outlined"
+                                size="small"
+                                fullWidth
+                                InputProps={{
+                                    classes: {
+                                        input: styles.inputField,
+                                    },
+                                }}
+                                className={styles.modalFormField}
+                            />
+                            <Stack
+                                direction="row"
+                                columnGap={2}
+                                sx={{ marginTop: '10px' }}
+                            >
+                                <p
+                                    className={styles.infoModalRestText}
+                                    style={{ margin: 'auto' }}
+                                >
+                                    Date:
+                                </p>
+                                <TextField
+                                    variant="outlined"
+                                    size="small"
+                                    fullWidth
+                                    InputProps={{
+                                        classes: {
+                                            input: styles.inputField,
+                                        },
+                                    }}
+                                    className={styles.modalFormField}
+                                />
+                            </Stack>
+                        </Grid>
+                        <Grid item md={4} xs={12} sm={6}>
+                            <p
+                                className={styles.infoModalRestText}
+                                style={
+                                    matches
+                                        ? { width: '50%' }
+                                        : { width: '100%' }
+                                }
+                            >
+                                Signature of legal representation if the
+                                undersigned is a minor under the age of 18 year
+                            </p>
+                        </Grid>
+                    </Grid>
+                    <div style={{ textAlign: 'end', marginTop: '1rem' }}>
+                        <Button
+                            variant="contained"
+                            className={styles.saveBttn}
+                            sx={{ width: '180px' }}
+                            onClick={() => setOpen(false)}
+                        >
+                            Save
+                        </Button>
+                    </div>
+                    {openSignatureModal ? (
+                        <SignatureModal
+                            open={openSignatureModal}
+                            setOpen={setOpenSignatureModal}
+                            matches={matches}
+                            title={title}
+                        />
+                    ) : null}
                 </DialogContent>
             </Dialog>
         </React.Fragment>

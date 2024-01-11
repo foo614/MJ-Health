@@ -15,8 +15,8 @@ import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import FormControl from '@mui/material/FormControl'
-import FormLabel from '@mui/material/FormLabel'
-
+import AddCircleIcon from '@mui/icons-material/AddCircle'
+import SignatureModal from './signature-modal'
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
         children: React.ReactElement<any, any>
@@ -37,8 +37,13 @@ const LetterAuthorizationModal: React.FC<Props> = ({
     setOpen,
     open,
 }: Props) => {
-    const handleClose = () => {
-        setOpen(false)
+    const [title, setTitle] = React.useState<string>('false')
+    const [openSignatureModal, setOpenSignatureModal] =
+        React.useState<boolean>(false)
+
+    const handleSetTitle = (title: string) => {
+        setTitle(title)
+        setOpenSignatureModal(true)
     }
 
     return (
@@ -238,6 +243,57 @@ const LetterAuthorizationModal: React.FC<Props> = ({
                             marginBottom: '2rem',
                         }}
                     />
+                    <Grid container columnSpacing={3}>
+                        <Grid item md={4} xs={12} sm={6}>
+                            <div
+                                className={styles.signatureDiv}
+                                onClick={() =>
+                                    handleSetTitle("Subject Person's Signature")
+                                }
+                            >
+                                <div className={styles.signatureTitleDiv}>
+                                    <p className={styles.signatureTitle}>
+                                        Subject Person&apos;s Signature:
+                                    </p>
+                                </div>
+                                <div
+                                    style={{
+                                        textAlign: 'center',
+                                        marginTop: '4rem',
+                                    }}
+                                >
+                                    <AddCircleIcon
+                                        className={styles.addCircleIcon}
+                                    />
+                                </div>
+                            </div>
+                            <div style={{ marginTop: '5px' }}>
+                                <p className={styles.infoModalRestText}>
+                                    Subject Person&apos;s Signature
+                                </p>
+                            </div>
+                        </Grid>
+                        <Grid item md={4} xs={12} sm={6}></Grid>
+                        <Grid item md={4} xs={12} sm={6}></Grid>
+                    </Grid>
+                    <div style={{ textAlign: 'end', marginTop: '1rem' }}>
+                        <Button
+                            variant="contained"
+                            className={styles.saveBttn}
+                            sx={{ width: '180px' }}
+                            onClick={() => setOpen(false)}
+                        >
+                            Save
+                        </Button>
+                    </div>
+                    {openSignatureModal ? (
+                        <SignatureModal
+                            open={openSignatureModal}
+                            setOpen={setOpenSignatureModal}
+                            matches={matches}
+                            title={title}
+                        />
+                    ) : null}
                 </DialogContent>
             </Dialog>
         </React.Fragment>

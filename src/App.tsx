@@ -17,6 +17,7 @@ import {
     RECEPTION_PAGE,
     SETTING_PAGE,
     STICKER_PRINTING_PAGE,
+    TEST_PDPA_PAGE,
 } from 'constant'
 import Dashboard from 'pages/Dashboard'
 import Dining from 'pages/Dining'
@@ -41,6 +42,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
+import { TestPDPAPage } from 'pages/Member-Profile/components/test-pdpa-page'
 function App() {
     return (
         <ThemeProvider theme={theme}>
@@ -95,6 +97,7 @@ function App() {
                     path={RADIOLOGY_REPORTING_PAGE + '/:id'}
                     element={<RadiologyReportDetail />}
                 />
+                <Route path={TEST_PDPA_PAGE} element={<TestPDPAPage />} />
             </Routes>
         </ThemeProvider>
     )

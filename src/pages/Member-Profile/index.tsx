@@ -1179,8 +1179,13 @@ const MemberProfile = () => {
                                         variant="contained"
                                         fullWidth
                                         className={styles.saveBttn}
-                                        onClick={() =>
-                                            setOpenSaveAppointmentModal(true)
+                                        onClick={
+                                            isEdit
+                                                ? () => setIsEdit(false)
+                                                : () =>
+                                                      setOpenSaveAppointmentModal(
+                                                          true
+                                                      )
                                         }
                                     >
                                         Save

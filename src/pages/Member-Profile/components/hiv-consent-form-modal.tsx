@@ -11,6 +11,8 @@ import styles from '../_member-profile.module.scss'
 import IconButton from '@mui/material/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
 import { Box, Divider, Grid, Stack } from '@mui/material'
+import AddCircleIcon from '@mui/icons-material/AddCircle'
+import SignatureModal from './signature-modal'
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
         children: React.ReactElement<any, any>
@@ -31,8 +33,14 @@ const HIVConsentFormModal: React.FC<Props> = ({
     setOpen,
     open,
 }: Props) => {
-    const handleClose = () => {
-        setOpen(false)
+    const [openSignatureModal, setOpenSignatureModal] =
+        React.useState<boolean>(false)
+
+    const [title, setTitle] = React.useState<string>('')
+
+    const handleSetTitle = (title: string) => {
+        setTitle(title)
+        setOpenSignatureModal(true)
     }
 
     return (
@@ -308,16 +316,149 @@ const HIVConsentFormModal: React.FC<Props> = ({
                             RECPF005 (Rev:01)
                         </p>
                     </Box>
+                    <Grid container columnSpacing={3}>
+                        <Grid item md={4} xs={12} sm={6}>
+                            <div
+                                className={styles.signatureDiv}
+                                onClick={() =>
+                                    handleSetTitle("Subject Person's Signature")
+                                }
+                            >
+                                <div className={styles.signatureTitleDiv}>
+                                    <p className={styles.signatureTitle}>
+                                        Subject Person&apos;s Signature:
+                                    </p>
+                                </div>
+                                <div
+                                    style={{
+                                        textAlign: 'center',
+                                        marginTop: '4rem',
+                                    }}
+                                >
+                                    <AddCircleIcon
+                                        className={styles.addCircleIcon}
+                                    />
+                                </div>
+                            </div>
+                            <div style={{ marginTop: '5px' }}>
+                                <p className={styles.infoModalRestText}>
+                                    Subject Person&apos;s Signature
+                                </p>
+                            </div>
+                        </Grid>
+                        <Grid item md={4} xs={12} sm={6}>
+                            <div
+                                className={styles.signatureDiv}
+                                onClick={() =>
+                                    handleSetTitle("Guardian's Signature")
+                                }
+                            >
+                                <div className={styles.signatureTitleDiv}>
+                                    <p className={styles.signatureTitle}>
+                                        Guardian&apos;s Signature:
+                                    </p>
+                                </div>
+                                <div
+                                    style={{
+                                        textAlign: 'center',
+                                        marginTop: '4rem',
+                                    }}
+                                >
+                                    <AddCircleIcon
+                                        className={styles.addCircleIcon}
+                                    />
+                                </div>
+                            </div>
+                            <div style={{ marginTop: '5px' }}>
+                                <p className={styles.infoModalRestText}>
+                                    Guardian&apos;s Signature:
+                                </p>
+                            </div>
+                            <Stack
+                                direction="row"
+                                columnGap={2}
+                                sx={{ marginTop: '10px' }}
+                            >
+                                <p
+                                    className={styles.infoModalRestText}
+                                    style={{ margin: 'auto' }}
+                                >
+                                    NRIC:
+                                </p>
+                                <TextField
+                                    variant="outlined"
+                                    size="small"
+                                    fullWidth
+                                    InputProps={{
+                                        classes: {
+                                            input: styles.inputField,
+                                        },
+                                    }}
+                                    className={styles.modalFormField}
+                                />
+                            </Stack>
+                            <p
+                                className={styles.infoModalRestText}
+                                style={{ marginTop: '5px' }}
+                            >
+                                Relation with the subject person:
+                            </p>
+                            <TextField
+                                variant="outlined"
+                                size="small"
+                                fullWidth
+                                InputProps={{
+                                    classes: {
+                                        input: styles.inputField,
+                                    },
+                                }}
+                                className={styles.modalFormField}
+                            />
+                            <Stack
+                                direction="row"
+                                columnGap={2}
+                                sx={{ marginTop: '10px' }}
+                            >
+                                <p
+                                    className={styles.infoModalRestText}
+                                    style={{ margin: 'auto' }}
+                                >
+                                    Date:
+                                </p>
+                                <TextField
+                                    variant="outlined"
+                                    size="small"
+                                    fullWidth
+                                    InputProps={{
+                                        classes: {
+                                            input: styles.inputField,
+                                        },
+                                    }}
+                                    className={styles.modalFormField}
+                                />
+                            </Stack>
+                        </Grid>
+                        <Grid item md={4} xs={12} sm={6}></Grid>
+                    </Grid>
+                    <div style={{ textAlign: 'end', marginTop: '1rem' }}>
+                        <Button
+                            variant="contained"
+                            className={styles.saveBttn}
+                            sx={{ width: '180px' }}
+                            onClick={() => setOpen(false)}
+                        >
+                            Save
+                        </Button>
+                    </div>
+                    {openSignatureModal ? (
+                        <SignatureModal
+                            open={openSignatureModal}
+                            setOpen={setOpenSignatureModal}
+                            matches={matches}
+                            title={title}
+                        />
+                    ) : null}
                 </DialogContent>
-                {/* <DialogActions className={styles.printBarcodeActions}>
-                    <Button
-                        variant="contained"
-                        className={styles.printBttn}
-                        onClick={() => setOpen(false)}
-                    >
-                        Print
-                    </Button>
-                </DialogActions> */}
             </Dialog>
         </React.Fragment>
     )

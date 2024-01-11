@@ -4,19 +4,17 @@ import TextField from '@mui/material/TextField'
 import Dialog from '@mui/material/Dialog'
 import DialogContent from '@mui/material/DialogContent'
 import DialogTitle from '@mui/material/DialogTitle'
-import DialogActions from '@mui/material/DialogActions'
 import Slide from '@mui/material/Slide'
 import { TransitionProps } from '@mui/material/transitions'
 import styles from '../_member-profile.module.scss'
 import IconButton from '@mui/material/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
 import { Box, Divider, Grid, Stack } from '@mui/material'
-import Radio from '@mui/material/Radio'
-import RadioGroup from '@mui/material/RadioGroup'
-import FormControlLabel from '@mui/material/FormControlLabel'
-import FormControl from '@mui/material/FormControl'
-import FormLabel from '@mui/material/FormLabel'
-
+import { useReactToPrint } from 'react-to-print'
+import { useRef } from 'react'
+import { TestPDPAPage } from './test-pdpa-page'
+import pdf from '../../../types.pdf'
+const testPDF = pdf('lorem-ipsum.pdf')
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
         children: React.ReactElement<any, any>
@@ -37,8 +35,15 @@ const ViewDocumentModal: React.FC<Props> = ({
     setOpen,
     open,
 }: Props) => {
-    const handleClose = () => {
-        setOpen(false)
+    const pdpaRef = useRef(null)
+    const handlePrint = useReactToPrint({
+        content: () => pdpaRef.current,
+        // pageStyle: pageStyle,
+    })
+
+    const handleOpenPDF = (pdfFile: any) => {
+        const pdfURLPath = `${window.location.origin}/${pdfFile}`
+        window.open(pdfURLPath)
     }
 
     return (
@@ -75,6 +80,7 @@ const ViewDocumentModal: React.FC<Props> = ({
                                 variant="contained"
                                 fullWidth
                                 sx={{ fontWeight: '600' }}
+                                onClick={() => handleOpenPDF(testPDF)}
                             >
                                 Print
                             </Button>
@@ -103,6 +109,7 @@ const ViewDocumentModal: React.FC<Props> = ({
                                 variant="contained"
                                 fullWidth
                                 sx={{ fontWeight: '600' }}
+                                onClick={handlePrint}
                             >
                                 Print
                             </Button>
@@ -136,6 +143,9 @@ const ViewDocumentModal: React.FC<Props> = ({
                             </Button>
                         </Grid>
                     </Grid>
+                    <div style={{ display: 'none' }}>
+                        <TestPDPAPage ref={pdpaRef} />
+                    </div>
                 </DialogContent>
             </Dialog>
         </React.Fragment>

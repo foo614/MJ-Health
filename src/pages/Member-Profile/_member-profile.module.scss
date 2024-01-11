@@ -322,7 +322,7 @@
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         linear-gradient(90deg, #3adebb -0.18%, #00aee9 99.82%);
 
-    border-bottom: 2px solid var(--color-whitesmoke-200);
+    border-bottom: 2px solid #ededed !important;
     padding: 20px 35px !important;
     overflow-y: unset !important;
 }
@@ -395,4 +395,135 @@
     font-size: var(--font-size-sm);
     color: #dddddd !important;
     box-shadow: unset !important;
+}
+
+.signatureTitle {
+    font-weight: 600;
+    font-size: var(--font-size-base) !important;
+    color: var(--color-white) !important;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.signatureTitleDiv {
+    height: 40px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: var(--title-color);
+}
+
+.signatureDiv {
+    height: 300px;
+    background-color: var(--color-whitesmoke-100);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.addCircleIcon {
+    color: var(--color-whitesmoke-300) !important;
+    font-size: 7rem !important;
+}
+
+.signatureModal {
+    width: 1000px !important;
+    max-width: unset !important;
+    border-radius: 20px !important;
+    background-color: var(--color-white) !important;
+}
+
+.signaturePad {
+    width: 100%;
+    height: 100%;
+}
+
+.signatureModalDialogActions {
+    padding: 10px 35px !important;
+    background-color: var(--color-whitesmoke-100) !important;
+}
+
+.signatureModalDialogActionsText {
+    font-size: var(--font-size-xs) !important;
+    color: #999999;
+}
+
+.signatureModalRetryBttn {
+    font-weight: 600;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+    background-color: var(--color-whitesmoke-300) !important;
+    color: var(--color-lightslategray) !important;
+}
+
+.signatureModalSaveBttn {
+    font-weight: 600;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+    background-color: var(--color-turquoise) !important;
+    color: var(--color-white) !important;
+}
+
+.watermarkDiv {
+    position: absolute;
+    top: 45%;
+    left: 35%;
+    z-index: -1 !important;
+    pointer-events: none;
+}
+
+.watermarkText {
+    font-weight: 600 !important;
+    font-size: 50px !important;
+    color: #d9d9d9 !important;
+}
+
+.signatureModalDiv {
+    height: 500px;
+    border: 2px dashed #d9d9d9;
+    z-index: 99999;
+    position: relative;
+}
+
+.pdpaPrintFormTitle {
+    font-weight: 700 !important;
+    font-size: 28px !important;
+    text-align: center;
+    color: #000000;
+    margin-top: 15px;
+}
+
+.pdpaPrintFormHeader {
+    height: 100%;
+    width: 100%;
+    background-image: url('../../images/pdpa-form-header.png');
+    background-size: cover !important;
+    background-color: var(--mj-deep-green) !important;
+    display: flex;
+    padding: 30px;
+}
+
+.pdpaPrintFormHeaderTitle {
+    font-weight: 700 !important;
+    font-size: 32px !important;
+    color: var(--color-white) !important;
+}
+
+.pdpaPrintFormHeaderSubText {
+    font-weight: 500 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--color-white) !important;
+    margin-top: 10px !important;
+}
+
+@media print {
+    html,
+    body {
+        -webkit-print-color-adjust: exact;
+    }
+    .pagebreak {
+        page-break-before: always !important;
+    }
+}
+
+@page {
+    size: auto;
+    margin: 20mm;
 }
