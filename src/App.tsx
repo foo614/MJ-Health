@@ -5,6 +5,7 @@ import {
     DINING_MEAL_SETUP_PAGE,
     DINING_PAGE,
     IT_MONITOR_ROOM_PAGE,
+    IT_ROOM_PRINTING_PAGE,
     KIOSK_PAGE,
     LAB_TEST_INFO_PAGE,
     LAB_TEST_PAGE,
@@ -43,6 +44,7 @@ import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
 import { TestPDPAPage } from 'pages/Member-Profile/components/test-pdpa-page'
+import ITRoomPrintingPage from 'pages/IT-Room-Printing'
 function App() {
     return (
         <ThemeProvider theme={theme}>
@@ -97,7 +99,11 @@ function App() {
                     path={RADIOLOGY_REPORTING_PAGE + '/:id'}
                     element={<RadiologyReportDetail />}
                 />
-                <Route path={TEST_PDPA_PAGE} element={<TestPDPAPage />} />
+                <Route
+                    path={IT_ROOM_PRINTING_PAGE}
+                    element={<ITRoomPrintingPage />}
+                />
+                {/* <Route path={TEST_PDPA_PAGE} element={<TestPDPAPage />} /> */}
             </Routes>
         </ThemeProvider>
     )
