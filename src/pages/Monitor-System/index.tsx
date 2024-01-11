@@ -208,6 +208,8 @@ const MonitorSystem = () => {
 
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
+
+    const lgUp = useMediaQuery(theme.breakpoints.up('lg'))
     const [openChangeStationModal, setOpenChangeStationModal] =
         useState<boolean>(false)
 
@@ -223,10 +225,10 @@ const MonitorSystem = () => {
             <div
                 className={styles.monitorSystemHeader}
                 style={
-                    matches ? { paddingLeft: '3rem', paddingRight: '3rem' } : {}
+                    lgUp ? { paddingLeft: '3rem', paddingRight: '3rem' } : {}
                 }
             >
-                {matches ? (
+                {lgUp ? (
                     <>
                         <div className={styles.monitorSearchDiv}>
                             <TextField

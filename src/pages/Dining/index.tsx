@@ -15,7 +15,7 @@ import PrintModal from './components/print-modal'
 import WaitingListTable from './components/waiting-list-table'
 const Dining = () => {
     const theme = useTheme()
-    const matches = useMediaQuery(theme.breakpoints.up('sm'))
+    const matches = useMediaQuery(theme.breakpoints.up('md'))
     const [openPrintModal, setOpenPrintModal] = useState<boolean>(false)
     const navigate = useNavigate()
     function Item(props: BoxProps) {

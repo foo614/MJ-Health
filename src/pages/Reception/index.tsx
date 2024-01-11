@@ -9,8 +9,9 @@ import { Box } from '@mui/system'
 import ReceptionTable from './components/reception-table'
 const Reception = () => {
     const theme = useTheme()
-    const matches = useMediaQuery(theme.breakpoints.up('sm'))
+    const matches = useMediaQuery(theme.breakpoints.up('md'))
 
+    const lgUp = useMediaQuery(theme.breakpoints.up('lg'))
     const fakeData = [
         {
             id: 1,
@@ -221,10 +222,10 @@ const Reception = () => {
             <div
                 className={styles.receptionHeader}
                 style={
-                    matches ? { paddingLeft: '3rem', paddingRight: '3rem' } : {}
+                    lgUp ? { paddingLeft: '3rem', paddingRight: '3rem' } : {}
                 }
             >
-                {matches ? (
+                {lgUp ? (
                     <>
                         <div className={styles.receptionSearchDiv}>
                             <TextField
