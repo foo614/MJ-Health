@@ -26,7 +26,11 @@ function Header() {
                 RADIOLOGY REPORTING
             </Grid>
             <Grid xs={4} md={3} className={styles.confirmButton}>
-                <Button variant="contained" size={matches ? 'medium' : 'small'}>
+                <Button
+                    variant="contained"
+                    sx={{ height: '40px', marginTop: '5px' }}
+                    size={matches ? 'medium' : 'small'}
+                >
                     Confirm
                 </Button>
             </Grid>

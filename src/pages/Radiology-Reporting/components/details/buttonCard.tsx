@@ -14,14 +14,22 @@ function ButtonCard({ label, onClick }: Props) {
                 display: 'flex',
                 flexWrap: 'wrap',
                 '& > :not(style)': {
-                    m: 1,
+                    m: 'auto',
                     width: 140,
                     height: 120,
-                    p: 5,
+                    p: '2rem',
+                    cursor: 'pointer',
+                    alignItems: 'center',
+                    display: 'flex',
                 },
             }}
+            onClick={onClick}
         >
-            <Paper elevation={0} className={styles.card} onClick={onClick}>
+            <Paper
+                elevation={0}
+                className={styles.card}
+                sx={{ textAlign: 'center' }}
+            >
                 <span className={styles.cardText}>{label}</span>
             </Paper>
         </Box>

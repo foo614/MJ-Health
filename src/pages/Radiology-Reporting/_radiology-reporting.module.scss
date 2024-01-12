@@ -101,7 +101,7 @@
     color: var(--mj-deep-green);
     font-family: var(--font-montserrat);
     font-weight: 600;
-    margin-top: 0.7rem;
+    margin-top: 0.3rem;
 }
 .searchInput {
     border: 1px solid var(--color-whitesmoke-300);
@@ -110,9 +110,9 @@
 }
 .header {
     position: relative;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
     background-color: var(--color-white) !important;
-    padding-top: 10px;
+    // padding-top: 5px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05) !important;
     // padding-right: 3rem;
     // padding-left: 3rem;
@@ -136,6 +136,8 @@
 .userHeader {
     background: #5a567b;
     height: 50px;
+    padding: 0 3rem !important;
+    align-content: center;
     color: #eeeeee;
     font-size: 20px;
     font-weight: 700;
@@ -187,5 +189,4 @@
     color: var(--title-color);
     font-size: var(--font-size-base);
     font-weight: 700;
-    text-align: center;
 }

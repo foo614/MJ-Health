@@ -1,4 +1,15 @@
-import { Button, Divider, InputBase, Stack, Typography } from '@mui/material'
+import {
+    Button,
+    Divider,
+    FormControl,
+    InputBase,
+    MenuItem,
+    Select,
+    SelectChangeEvent,
+    Stack,
+    TextField,
+    Typography,
+} from '@mui/material'
 import Box from '@mui/material/Box'
 import Tab from '@mui/material/Tab'
 import Tabs from '@mui/material/Tabs'
@@ -9,6 +20,7 @@ import { useState } from 'react'
 import UserHeader from '../user-header'
 import ButtonCard from './buttonCard'
 import Header from './header'
+import CustomizedTables from './table'
 
 const AntTabs = styled(Tabs)({
     borderBottom: '1px solid #e8e8e8',
@@ -75,28 +87,239 @@ function TabPanel(props: TabPanelProps) {
     )
 }
 
+const CommentSuggestionList = () => {
+    return (
+        <>
+            <Grid xs={12}>
+                <Typography
+                    variant="h6"
+                    sx={{
+                        color: '#219B8E',
+                        fontSize: '20px',
+                        fontWeight: 600,
+                    }}
+                >
+                    Overview
+                </Typography>
+            </Grid>
+            <Grid xs={12}>
+                <InputBase
+                    id="outlined-search"
+                    placeholder="Search..."
+                    type="search"
+                    sx={{
+                        background: '#F9F9F9',
+                        boxShadow: '0px 2px 2px 1px rgba(0, 0, 0, 0.05) inset',
+                        borderRadius: '5px',
+                        minWidth: '100%',
+                        padding: '10px 15px',
+                    }}
+                />
+                <CustomizedTables />
+            </Grid>
+            <Grid xs={12} md={2} mdOffset={10}>
+                <Button
+                    size="small"
+                    variant="contained"
+                    fullWidth
+                    sx={{ mt: 3 }}
+                >
+                    Save
+                </Button>
+            </Grid>
+        </>
+    )
+}
 function RadiologyReportDetail() {
     //for tab
-    const [value, setValue] = useState(0)
+    const [currentIndex, setCurrentIndex] = useState(0)
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-        setValue(newValue)
+        setCurrentIndex(newValue)
+        setSelectedType('report')
     }
 
-    //for row button
-    const [isSelected, setIsSelected] = useState(0)
+    const [selectedType, setSelectedType] = useState('report')
 
-    const handleButtonChange = (value: number) => {
-        setIsSelected(value)
+    const handleButtonChange = (type: string) => {
+        setSelectedType(type)
     }
 
+    //
+    const [mammography, setMammography] = useState('')
+
+    const handleMammography = (event: SelectChangeEvent) => {
+        setMammography(event.target.value)
+    }
+
+    const RowButtonOptions = () => {
+        return (
+            <Grid xs={12}>
+                <Button
+                    variant="contained"
+                    sx={{
+                        background:
+                            selectedType === 'report' ? '#fff' : '#EDEDED',
+                        boxShadow: '0px 3px 6px rgba(0, 0, 0, 0.10) !important',
+                        borderRadius: '5px',
+                        color:
+                            selectedType === 'report' ? '#211D4E' : '#5A567B',
+                        fontWeight: 600,
+                        marginRight: '1em',
+                    }}
+                    onClick={() => handleButtonChange('report')}
+                >
+                    Exam. Report
+                </Button>
+                <Button
+                    variant="contained"
+                    sx={{
+                        background:
+                            selectedType === 'comment' ? '#fff' : '#EDEDED',
+                        boxShadow: '0px 3px 6px rgba(0, 0, 0, 0.10) !important',
+                        borderRadius: '5px',
+                        color:
+                            selectedType === 'comment' ? '#211D4E' : '#5A567B',
+                        fontWeight: 600,
+                    }}
+                    onClick={() => handleButtonChange('comment')}
+                >
+                    Comment & Suggestion
+                </Button>
+
+                <Divider light sx={{ my: 3 }} />
+            </Grid>
+        )
+    }
+
+    const ItemCard = ({
+        label,
+        isCurrent,
+    }: {
+        label: string
+        isCurrent: boolean
+    }) => {
+        return (
+            <Box
+                sx={{
+                    background: isCurrent ? '#DDDDDD' : '#F9F9F9',
+                    borderRadius: '8px',
+                    minWidth: '300px',
+                }}
+            >
+                <Grid container>
+                    <Grid xs={12}>
+                        <Typography
+                            variant="body1"
+                            sx={{
+                                color: '#211D4E',
+                                fontSize: '16px',
+                                fontWeight: 500,
+                                textAlign: 'center',
+                                mt: 2,
+                            }}
+                        >
+                            {label}
+                        </Typography>
+                    </Grid>
+                    <Grid xs={12}>
+                        <FormControl
+                            sx={{
+                                p: 3,
+                            }}
+                            size="small"
+                            fullWidth
+                        >
+                            <Select
+                                labelId="demo-select-small-label"
+                                id="demo-select-small"
+                                value={mammography}
+                                onChange={handleMammography}
+                                sx={{
+                                    background: '#fff',
+                                }}
+                                placeholder="Normal"
+                            >
+                                <MenuItem value="">
+                                    <em>None</em>
+                                </MenuItem>
+                                <MenuItem value={'Normal'}>Normal</MenuItem>
+                            </Select>
+                        </FormControl>
+                    </Grid>
+                </Grid>
+            </Box>
+        )
+    }
+
+    const RowItemCard = ({ name }: { name: string }) => {
+        return (
+            <Grid xs={12}>
+                <div>
+                    <Grid container spacing={2}>
+                        <Grid xs={12} md={3}>
+                            <>
+                                <Grid container>
+                                    <Grid xs={12}>
+                                        <Typography
+                                            variant="h6"
+                                            sx={{
+                                                color: '#219B8E',
+                                                fontSize: '20px',
+                                                fontWeight: 600,
+                                            }}
+                                        >
+                                            Items
+                                        </Typography>
+                                    </Grid>
+                                    <Grid xs={12}>
+                                        <Box
+                                            sx={{
+                                                my: 3,
+                                            }}
+                                        />
+                                    </Grid>
+                                    <Grid xs={12}>
+                                        <Typography
+                                            variant="body1"
+                                            sx={{
+                                                color: '#211D4E',
+                                                fontSize: '16px',
+                                                fontWeight: 600,
+                                            }}
+                                        >
+                                            {name}
+                                        </Typography>
+                                        <Divider
+                                            sx={{
+                                                mt: 1,
+                                            }}
+                                        />
+                                    </Grid>
+                                </Grid>
+                            </>
+                        </Grid>
+                        <Grid xs={12} md={3}>
+                            <ItemCard label="Current" isCurrent={true} />
+                        </Grid>
+                        <Grid xs={12} md={3}>
+                            <ItemCard label="22-09-2020" isCurrent={false} />
+                        </Grid>
+                        <Grid xs={12} md={3}>
+                            <ItemCard label="22-09-2018" isCurrent={false} />
+                        </Grid>
+                    </Grid>
+                </div>
+            </Grid>
+        )
+    }
     return (
         <>
             <ResponsiveAppBar />
             <UserHeader />
             <Header />
             <Grid container sx={{ background: '#EDEDED' }}>
-                <Grid md={3} textAlign={'center'}>
+                <Grid md={2} sx={{ mt: 4 }}>
                     <Stack
                         direction="column"
                         justifyContent="space-between"
@@ -113,18 +336,19 @@ function RadiologyReportDetail() {
                                 onClick={() => console.log(1)}
                             />
                         </>
-
-                        <ButtonCard
-                            label="View Comment"
-                            onClick={() => console.log(1)}
-                        />
+                        <Box sx={{ py: 8 }}>
+                            <ButtonCard
+                                label="View Comment"
+                                onClick={() => console.log(1)}
+                            />
+                        </Box>
                     </Stack>
                 </Grid>
-                <Grid md={9}>
-                    <Box sx={{ width: '80%' }}>
+                <Grid md={10}>
+                    <Box sx={{ width: '100%' }}>
                         <Box sx={{ bgcolor: 'transparent', mt: 5 }}>
                             <AntTabs
-                                value={value}
+                                value={currentIndex}
                                 onChange={handleChange}
                                 aria-label="ant example"
                             >
@@ -134,94 +358,125 @@ function RadiologyReportDetail() {
                                 <AntTab label="Sonography" />
                             </AntTabs>
                             <Box sx={{ p: 3, bgcolor: '#fff' }}>
-                                <TabPanel value={value} index={0}>
+                                <TabPanel value={currentIndex} index={0}>
                                     <Grid container>
-                                        <Grid xs={12}>
-                                            <Button
-                                                variant="contained"
-                                                sx={{
-                                                    background:
-                                                        isSelected === 1
-                                                            ? '#fff'
-                                                            : '#EDEDED',
-                                                    boxShadow:
-                                                        '0px 3px 6px rgba(0, 0, 0, 0.10) !important',
-                                                    borderRadius: '5px',
-                                                    color:
-                                                        isSelected === 1
-                                                            ? '#211D4E'
-                                                            : '#5A567B',
-                                                    fontWeight: 600,
-                                                    marginRight: '1em',
-                                                }}
-                                                onClick={() =>
-                                                    handleButtonChange(1)
-                                                }
-                                            >
-                                                Exam. Report
-                                            </Button>
-                                            <Button
-                                                variant="contained"
-                                                sx={{
-                                                    background:
-                                                        isSelected === 0
-                                                            ? '#fff'
-                                                            : '#EDEDED',
-                                                    boxShadow:
-                                                        '0px 3px 6px rgba(0, 0, 0, 0.10) !important',
-                                                    borderRadius: '5px',
-                                                    color:
-                                                        isSelected === 0
-                                                            ? '#211D4E'
-                                                            : '#5A567B',
-                                                    fontWeight: 600,
-                                                }}
-                                                onClick={() =>
-                                                    handleButtonChange(0)
-                                                }
-                                            >
-                                                Comment & Suggestion
-                                            </Button>
-
-                                            <Divider light sx={{ my: 3 }} />
-                                        </Grid>
-                                        <Grid xs={12}>
-                                            <Typography
-                                                variant="h6"
-                                                sx={{
-                                                    color: '#219B8E',
-                                                    fontSize: '20px',
-                                                    fontWeight: 600,
-                                                }}
-                                            >
-                                                Overview
-                                            </Typography>
-                                        </Grid>
-                                        <Grid xs={12}>
-                                            <InputBase
-                                                id="outlined-search"
-                                                placeholder="Search..."
-                                                type="search"
-                                                sx={{
-                                                    background: '#F9F9F9',
-                                                    boxShadow:
-                                                        '0px 2px 2px 1px rgba(0, 0, 0, 0.05) inset',
-                                                    borderRadius: '5px',
-                                                    minWidth: '100%',
-                                                    padding: '10px 15px',
-                                                }}
-                                            />
-                                        </Grid>
+                                        <RowButtonOptions />
+                                        {selectedType === 'report' && (
+                                            <RowItemCard name="CT Scan" />
+                                        )}
+                                        {selectedType === 'report' && (
+                                            <Grid xs={12} md={2} mdOffset={10}>
+                                                <Button
+                                                    size="small"
+                                                    variant="contained"
+                                                    fullWidth
+                                                    sx={{ mt: 3 }}
+                                                >
+                                                    Save
+                                                </Button>
+                                            </Grid>
+                                        )}
+                                        {selectedType === 'comment' && (
+                                            <CommentSuggestionList />
+                                        )}
                                     </Grid>
                                 </TabPanel>
-                                <TabPanel value={value} index={1}>
-                                    Item Two
+                                <TabPanel value={currentIndex} index={1}>
+                                    <Grid container>
+                                        <RowButtonOptions />
+                                        {selectedType === 'report' && (
+                                            <RowItemCard name="Mammography" />
+                                        )}
+
+                                        {selectedType === 'report' && (
+                                            <Grid xs={12} md={2} mdOffset={10}>
+                                                <Button
+                                                    size="small"
+                                                    variant="contained"
+                                                    fullWidth
+                                                    sx={{ mt: 3 }}
+                                                >
+                                                    Save
+                                                </Button>
+                                            </Grid>
+                                        )}
+                                        {selectedType === 'comment' && (
+                                            <CommentSuggestionList />
+                                        )}
+                                    </Grid>
                                 </TabPanel>
-                                <TabPanel value={value} index={2}>
-                                    Item Three
+                                <TabPanel value={currentIndex} index={2}>
+                                    <RowButtonOptions />
+                                    {selectedType === 'report' && (
+                                        <RowItemCard name="X-Ray" />
+                                    )}
+
+                                    {selectedType === 'report' && (
+                                        <Grid xs={12} md={2} mdOffset={10}>
+                                            <Button
+                                                size="small"
+                                                variant="contained"
+                                                fullWidth
+                                                sx={{ mt: 3 }}
+                                            >
+                                                Save
+                                            </Button>
+                                        </Grid>
+                                    )}
+                                    {selectedType === 'comment' && (
+                                        <CommentSuggestionList />
+                                    )}
                                 </TabPanel>
-                                <TabPanel value={value} index={3}>
-                                    Item Four
+                                <TabPanel value={currentIndex} index={3}>
+                                    <RowButtonOptions />
+                                    {selectedType === 'report' && (
+                                        <RowItemCard name="Sonography" />
+                                    )}
+
+                                    {selectedType === 'report' && (
+                                        <>
+                                            <Grid xs={12} sx={{ mt: 5 }}>
+                                                <Typography
+                                                    variant="h6"
+                                                    sx={{
+                                                        color: '#219B8E',
+                                                        fontSize: '20px',
+                                                        fontWeight: 600,
+                                                    }}
+                                                >
+                                                    Other Comment
+                                                </Typography>
+                                            </Grid>
+                                            <Grid xs={12}>
+                                                <TextField
+                                                    sx={{
+                                                        borderRadius: '8px',
+                                                        background: '#F9F9F9',
+                                                        boxShadow:
+                                                            '0px 2px 2px 1px rgba(0, 0, 0, 0.05) inset',
+                                                    }}
+                                                    fullWidth
+                                                    id="outlined-multiline-static"
+                                                    multiline
+                                                    rows={4}
+                                                    defaultValue="Type in your message & recommendation."
+                                                />
+                                            </Grid>
+                                            <Grid xs={12} md={2} mdOffset={10}>
+                                                <Button
+                                                    size="small"
+                                                    variant="contained"
+                                                    fullWidth
+                                                    sx={{ mt: 3 }}
+                                                >
+                                                    Save
+                                                </Button>
+                                            </Grid>
+                                        </>
+                                    )}
+                                    {selectedType === 'comment' && (
+                                        <CommentSuggestionList />
+                                    )}
                                 </TabPanel>
                             </Box>
                         </Box>

@@ -20,7 +20,7 @@ const CustomHeader: React.FC<Props> = ({ to, title }: Props) => {
     const { pathname } = location
     return (
         <div className={styles.header}>
-            <Grid xs container justifyContent={'space-between'} spacing={1}>
+            <Grid xs container justifyContent={'space-between'}>
                 <Grid item>
                     {to && (
                         <Button
@@ -40,6 +40,7 @@ const CustomHeader: React.FC<Props> = ({ to, title }: Props) => {
                     {pathname.includes('setting') && (
                         <Button
                             variant="contained"
+                            size="small"
                             onClick={() => setOpen(true)}
                         >
                             {!matches ? 'Branch' : 'Switch Branch'}
