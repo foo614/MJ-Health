@@ -13,6 +13,8 @@ import {
     LOGIN_PAGE,
     MEMBER_PROFILE_PAGE,
     MONITOR_SYSTEM_PAGE,
+    PHYSICIAN_CONSULTATION_PAGE,
+    PHYSICIAN_CONSULTATION_INFO_PAGE,
     QUEUE_MANAGEMENT_PAGE,
     RADIOLOGY_REPORTING_PAGE,
     RECEPTION_PAGE,
@@ -45,6 +47,8 @@ import './styles/main.scss'
 import theme from './styles/theme'
 import { TestPDPAPage } from 'pages/Member-Profile/components/test-pdpa-page'
 import ITRoomPrintingPage from 'pages/IT-Room-Printing'
+import PhysicianConsultation from 'pages/Physician-Consultation'
+import PhysicianConsultationInfo from 'pages/Physician-Consultation-Info'
 function App() {
     return (
         <ThemeProvider theme={theme}>
@@ -102,6 +106,14 @@ function App() {
                 <Route
                     path={IT_ROOM_PRINTING_PAGE}
                     element={<ITRoomPrintingPage />}
+                />
+                <Route
+                    path={PHYSICIAN_CONSULTATION_PAGE}
+                    element={<PhysicianConsultation />}
+                />
+                <Route
+                    path={PHYSICIAN_CONSULTATION_INFO_PAGE + '/:id'}
+                    element={<PhysicianConsultationInfo />}
                 />
                 {/* <Route path={TEST_PDPA_PAGE} element={<TestPDPAPage />} /> */}
             </Routes>
