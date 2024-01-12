@@ -35,17 +35,17 @@ const ITRoomPrintingPage = () => {
             case 1:
                 return <AddressStickerTable />
             case 2:
-                return <CTScan />
+                return <CTScan matches={matches} />
             case 3:
-                return <FOBTList />
+                return <FOBTList matches={matches} />
             case 4:
                 return <HealthManagementPromotion />
             case 5:
                 return <HealthScreeningReport />
             case 6:
-                return <RegistrationList />
+                return <RegistrationList matches={matches} />
             case 7:
-                return <MakeUpLaterList />
+                return <MakeUpLaterList matches={matches} />
             case 8:
                 return <MicroPhysiologicalAssessment />
             case 9:
@@ -53,7 +53,7 @@ const ITRoomPrintingPage = () => {
             case 10:
                 return <PapSmearExamReport />
             case 11:
-                return <PostList />
+                return <PostList matches={matches} />
             case 12:
                 return <HMCRecord />
             default:
@@ -127,7 +127,13 @@ const ITRoomPrintingPage = () => {
                     </>
                 )}
             </div>
-            <div className={styles.itRoomPrintingMenuDiv}>
+            <div
+                className={
+                    matches
+                        ? styles.itRoomPrintingMenuDiv
+                        : styles.itRoomPrintingMenuDivMobile
+                }
+            >
                 <div>
                     <Button
                         variant="contained"
@@ -286,7 +292,13 @@ const ITRoomPrintingPage = () => {
                     </Button>
                 </div>
             </div>
-            <div className={styles.itRoomPrintingBodyDiv}>
+            <div
+                className={
+                    matches
+                        ? styles.itRoomPrintingBodyDiv
+                        : styles.itRoomPrintingBodyDivMobile
+                }
+            >
                 {displayCurrentSection(currentSection)}
             </div>
         </>
