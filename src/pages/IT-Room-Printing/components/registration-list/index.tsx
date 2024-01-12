@@ -12,12 +12,13 @@ import Select, { SelectChangeEvent } from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import { useState } from 'react'
+import PrintListModal from '../print-list-modal'
 type Props = {
     matches: boolean
 }
 const RegistrationList: React.FC<Props> = ({ matches }: Props) => {
     const [currentSelectedOption, setCurrentSelectedOption] = useState<any>(1)
-
+    const [openPrintModal, setOpenPrintModal] = useState<boolean>(false)
     const handleChange = (event: SelectChangeEvent) => {
         setCurrentSelectedOption(event.target.value as string)
     }
@@ -399,11 +400,19 @@ const RegistrationList: React.FC<Props> = ({ matches }: Props) => {
                         variant="contained"
                         className={styles.ctScanPrintBttn}
                         fullWidth
+                        onClick={() => setOpenPrintModal(true)}
                     >
                         Print
                     </Button>
                 </Stack>
             </div>
+            {openPrintModal ? (
+                <PrintListModal
+                    matches={matches}
+                    open={openPrintModal}
+                    setOpen={setOpenPrintModal}
+                />
+            ) : null}
         </>
     )
 }

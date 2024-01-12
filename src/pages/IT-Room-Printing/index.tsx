@@ -49,7 +49,7 @@ const ITRoomPrintingPage = () => {
             case 8:
                 return <MicroPhysiologicalAssessment />
             case 9:
-                return <OperatedTimeList />
+                return <OperatedTimeList matches={matches} />
             case 10:
                 return <PapSmearExamReport />
             case 11:

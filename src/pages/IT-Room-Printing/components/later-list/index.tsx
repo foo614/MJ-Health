@@ -7,10 +7,13 @@ import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
 import styles from '../../_it-room-printing.module.scss'
 import { Button, Stack } from '@mui/material'
+import { useState } from 'react'
+import PrintListModal from '../print-list-modal'
 type Props = {
     matches: boolean
 }
 const MakeUpLaterList: React.FC<Props> = ({ matches }: Props) => {
+    const [openPrintModal, setOpenPrintModal] = useState<boolean>(false)
     const fakeData = [
         {
             id: 1,
@@ -370,11 +373,19 @@ const MakeUpLaterList: React.FC<Props> = ({ matches }: Props) => {
                         variant="contained"
                         className={styles.ctScanPrintBttn}
                         fullWidth
+                        onClick={() => setOpenPrintModal(true)}
                     >
                         Print
                     </Button>
                 </Stack>
             </div>
+            {openPrintModal ? (
+                <PrintListModal
+                    matches={matches}
+                    open={openPrintModal}
+                    setOpen={setOpenPrintModal}
+                />
+            ) : null}
         </>
     )
 }

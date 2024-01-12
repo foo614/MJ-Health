@@ -7,11 +7,14 @@ import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
 import styles from '../../_it-room-printing.module.scss'
 import { Button, Grid } from '@mui/material'
+import { useState } from 'react'
+import PrintListModal from '../print-list-modal'
 import Stack from '@mui/material/Stack'
 type Props = {
     matches: boolean
 }
 const FOBTList: React.FC<Props> = ({ matches }: Props) => {
+    const [openPrintModal, setOpenPrintModal] = useState<boolean>(false)
     const fakeData = [
         {
             id: 1,
@@ -355,17 +358,25 @@ const FOBTList: React.FC<Props> = ({ matches }: Props) => {
                         className={styles.ctScanExamDateBttn}
                         fullWidth
                     >
-                        Exam Date.
+                        Exam. Date
                     </Button>
                     <Button
                         variant="contained"
                         className={styles.ctScanPrintBttn}
                         fullWidth
+                        onClick={() => setOpenPrintModal(true)}
                     >
                         Print
                     </Button>
                 </Stack>
             </div>
+            {openPrintModal ? (
+                <PrintListModal
+                    matches={matches}
+                    open={openPrintModal}
+                    setOpen={setOpenPrintModal}
+                />
+            ) : null}
         </>
     )
 }
