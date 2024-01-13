@@ -127,6 +127,7 @@
 .card {
     padding: 25px 35px !important;
     border-radius: var(--br-3xs) !important;
+    height: 100%;
 }
 
 .divLine {
@@ -401,4 +402,85 @@
     font-weight: 700 !important;
     font-size: var(--font-size-base) !important;
     color: var(--title-color) !important;
+}
+
+.currentTableEditModal {
+    width: 1200px;
+    max-width: unset !important;
+    background: var(--color-white) !important;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 10px !important;
+}
+
+.currentTableEditTable {
+    height: 250px;
+    overflow: auto;
+    border-radius: 0px !important;
+}
+
+.currentTableEditTable::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.currentTableEditTable::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+.currentTableEditModalDialogContent {
+    padding: 15px !important;
+}
+
+.currentTableEditTableCell {
+    background-color: var(--color-whitesmoke-100) !important;
+}
+
+.overviewDiv {
+    background-color: var(--color-whitesmoke-100);
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+    padding-top: 6px;
+    position: relative;
+}
+
+.overviewInnerDiv {
+    background-color: var(--color-white) !important;
+    border-radius: 4px;
+    border: 2px solid #ededed;
+    margin-top: 10px;
+    padding: 10px;
+    height: 380px;
+}
+
+.currentTableEditModalCancelBttn {
+    font-size: var(--font-size-5xl) !important;
+    font-weight: 700 !important;
+    color: var(--color-lightslategray) !important;
+    background-color: var(--color-whitesmoke-300) !important;
+    box-shadow: unset !important;
+}
+
+.currentTableEditModalConfirmBttn {
+    font-size: var(--font-size-5xl) !important;
+    font-weight: 700 !important;
+    color: var(--color-white) !important;
+    background-color: var(--color-turquoise) !important;
+    box-shadow: unset !important;
+}
+
+.overviewDivBttnStackAbsolute {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 15px;
+}
+
+.overviewDivBttnStackRelative {
+    position: relative;
 }

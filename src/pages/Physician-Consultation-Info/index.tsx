@@ -15,6 +15,7 @@ import MedicalHistoryModal from './components/medical-history-modal'
 import PersonalComplaintModal from './components/personal-complaint-modal'
 import AllergyModal from './components/allergy-modal'
 import CallHistoryModal from './components/call-history-modal'
+import CurrentTableEditModal from './components/current-table-edit-modal'
 
 const PhysicianConsultationInfo = () => {
     const theme = useTheme()
@@ -31,6 +32,7 @@ const PhysicianConsultationInfo = () => {
     const [openAllergyModal, setOpenAllergyModal] = useState<boolean>(false)
     const [openCallHistoryModal, setOpenCallHistoryModal] =
         useState<boolean>(false)
+
     const displaySelectedSection = () => {
         switch (selectedSection) {
             case 1:

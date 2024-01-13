@@ -7,7 +7,11 @@ import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
 import styles from '../_physician-consultation-info.module.scss'
 import { Stack, Button } from '@mui/material'
+import { useState } from 'react'
+import CurrentTableEditModal from './current-table-edit-modal'
 const CurrentTable = () => {
+    const [openCurrentTableEditModal, setOpenCurrentTableEditModal] =
+        useState<boolean>(false)
     const tableData = [
         {
             title: 'Weight and Body Build',
@@ -111,6 +115,11 @@ const CurrentTable = () => {
                                                 <Button
                                                     variant="text"
                                                     className={styles.editBttn}
+                                                    onClick={() =>
+                                                        setOpenCurrentTableEditModal(
+                                                            true
+                                                        )
+                                                    }
                                                 >
                                                     Edit
                                                 </Button>
@@ -137,6 +146,12 @@ const CurrentTable = () => {
                     Save
                 </Button>
             </div>
+            {openCurrentTableEditModal ? (
+                <CurrentTableEditModal
+                    open={openCurrentTableEditModal}
+                    setOpen={setOpenCurrentTableEditModal}
+                />
+            ) : null}
         </>
     )
 }
