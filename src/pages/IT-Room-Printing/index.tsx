@@ -7,7 +7,7 @@ import SearchIcon from '@mui/icons-material/Search'
 import TextField from '@mui/material/TextField'
 import AddressStickerTable from './components/address-sticker/address-sticker-table'
 import { Button, Stack } from '@mui/material'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import CTScan from './components/ct-scan'
 import FOBTList from './components/fobt-list'
 import HealthManagementPromotion from './components/health-management-promotion'
@@ -19,12 +19,50 @@ import OperatedTimeList from './components/operated-time-list'
 import PapSmearExamReport from './components/pap-smear-exam-report'
 import PostList from './components/post-list'
 import HMCRecord from './components/hmc-record'
-
 const ITRoomPrintingPage = () => {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('md'))
     const lgUp = useMediaQuery(theme.breakpoints.up('lg'))
     const [currentSection, setCurrentSection] = useState<number>(1)
+    const dragRef = useRef<HTMLDivElement>(null)
+    const [isMouseDown, setIsMouseDown] = useState(false)
+    const mouseCoords = useRef({
+        startX: 0,
+        startY: 0,
+        scrollLeft: 0,
+        scrollTop: 0,
+    })
+
+    const handleDragStart = (e: any) => {
+        if (!dragRef.current) return
+        const slider = dragRef.current as any
+        console.log(slider)
+        const startX = e.pageX - slider.offsetLeft
+        const startY = e.pageY - slider.offsetTop
+        const scrollLeft = slider.scrollLeft
+        const scrollTop = slider.scrollTop
+        mouseCoords.current = { startX, startY, scrollLeft, scrollTop }
+        setIsMouseDown(true)
+        document.body.style.cursor = 'grabbing'
+    }
+
+    const handleDragEnd = () => {
+        setIsMouseDown(false)
+        if (!dragRef.current) return
+        document.body.style.cursor = 'default'
+    }
+
+    const handleDrag = (e: any) => {
+        if (!isMouseDown || !dragRef.current) return
+        e.preventDefault()
+        const slider = dragRef.current as any;
+        const x = e.pageX - slider.offsetLeft
+        const y = e.pageY - slider.offsetTop
+        const walkX = (x - mouseCoords.current.startX) * 1.5
+        const walkY = (y - mouseCoords.current.startY) * 1.5
+        slider.scrollLeft = mouseCoords.current.scrollLeft - walkX
+        slider.scrollTop = mouseCoords.current.scrollTop - walkY
+    }
 
     const handleDisplayCurrentSection = (section: number) => {
         setCurrentSection(section)
@@ -60,6 +98,7 @@ const ITRoomPrintingPage = () => {
                 return null
         }
     }
+
     return (
         <>
             <ResponsiveAppBar />
@@ -133,6 +172,10 @@ const ITRoomPrintingPage = () => {
                         ? styles.itRoomPrintingMenuDiv
                         : styles.itRoomPrintingMenuDivMobile
                 }
+                onMouseDown={handleDragStart}
+                onMouseUp={handleDragEnd}
+                onMouseMove={handleDrag}
+                ref={dragRef}
             >
                 <div>
                     <Button
