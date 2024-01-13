@@ -1,3 +1,486 @@
-.test {
-    font-size: 12px;
+@use '../../styles/variables' as *;
+.physicianConsultationHeader {
+    position: relative;
+    padding-bottom: 15px;
+    background-color: #ffffff !important;
+    padding-top: 10px;
+}
+
+.physicianConsultationSearchDiv {
+    position: absolute;
+    right: 0;
+}
+
+.searchIcon {
+    color: var(--mj-deep-green);
+}
+
+.physicianConsultationSearchInput {
+    border: 1px solid var(--color-whitesmoke-300) !important;
+    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+    border-radius: var(--br-8xs) !important;
+    width: 300px;
+    margin-top: 0px !important;
+    margin-right: 3rem !important;
+}
+
+.physicianConsultationHeaderTitle {
+    text-align: center;
+    font-size: 28px;
+    color: var(--mj-deep-green);
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+}
+.backButton {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--title-color) !important;
+    @media screen and (max-width: 600px) {
+        font-size: var(--font-size-sx) !important;
+        align-self: center;
+    }
+}
+
+.headerTitle {
+    margin: auto;
+    text-align: center;
+    font-size: 28px;
+    color: var(--mj-deep-green);
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+    @media screen and (max-width: 600px) {
+        font-size: 16px;
+        align-self: center;
+    }
+}
+
+.physicianConsultationSearchInputMobile {
+    border: 1px solid var(--color-whitesmoke-300) !important;
+    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+    border-radius: var(--br-8xs) !important;
+}
+
+.header {
+    position: relative;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: var(--color-white) !important;
+    // padding-top: 5px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05) !important;
+    // padding-right: 3rem;
+    // padding-left: 3rem;
+}
+
+.exitStationBttn {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--color-white) !important;
+}
+
+.smallCard {
+    background: linear-gradient(
+        231.33deg,
+        #ffffff 8.64%,
+        #f3f3f3 91.7%
+    ) !important;
+    box-shadow: 0px 3px 6px rgba(89, 86, 122, 0.15) !important;
+    border-radius: var(--br-3xs) !important;
+    height: 120px;
+    display: flex;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.smallCardTitle {
+    font-weight: 700 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--title-color) !important;
+    margin: auto;
+}
+
+.selectedBttn {
+    background: var(--color-white) !important;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--title-color) !important;
+    width: 250px !important;
+    height: 50px !important;
+    line-height: unset !important;
+}
+
+.unSelectedBttn {
+    background: #ededed !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--label-color) !important;
+    width: 250px !important;
+    height: 50px !important;
+    line-height: unset !important;
+}
+
+.card {
+    padding: 25px 35px !important;
+    border-radius: var(--br-3xs) !important;
+    height: 100%;
+}
+
+.divLine {
+    height: 2px !important;
+    background: #ededed;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+
+.commentText {
+    font-weight: 600 !important;
+    font-size: 20px !important;
+    color: var(--mj-deep-green) !important;
+}
+
+.tableHeadCellText {
+    font-weight: 500 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--label-color) !important;
+}
+
+.tableBodyCell {
+    background-color: var(--color-whitesmoke-100) !important;
+}
+
+.tableBodyCellAbnormalItems {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.tableBodyCellContent {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
+}
+
+.editBttn {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--color-turquoise) !important;
+}
+
+.deleteBttn {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: #de4e3a !important;
+}
+
+.physicianConsultationInfoTable {
+    height: 450px;
+    overflow: auto;
+}
+
+.physicianConsultationInfoTable::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.physicianConsultationInfoTable::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.saveBttn {
+    /* MJ Light Green */
+    background: var(--color-turquoise) !important;
+    box-shadow: 0px 3px 15px rgba(33, 155, 142, 0.25) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+
+    color: var(--color-white) !important;
+}
+
+.medicalHistoryModal {
+    width: 660px;
+    // height: 480px;
+    // overflow: auto;
+    background: var(--color-white) !important;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 10px !important;
+}
+
+.infoModalColor {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(90deg, #3adebb -0.18%, #00aee9 99.82%);
+
+    border-bottom: 2px solid #ededed !important;
+    padding: 20px 35px !important;
+    overflow-y: unset !important;
+}
+
+.infoModalTitle {
+    font-weight: 600 !important;
+    font-size: var(--font-size-5xl) !important;
+    color: var(--color-white) !important;
+}
+.closeIcon {
+    color: var(--color-white) !important;
+}
+
+.medicalHistoryModalItemText {
+    font-weight: 700 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--mj-deep-green) !important;
+}
+
+.medicalHistoryModalItemButton {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    pointer-events: none !important;
+}
+
+.medicalHistoryModalDialogContent {
+    padding: 0 !important;
+    max-height: 480px;
+    overflow: auto;
+}
+
+.medicalHistoryModalDialogContent::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.medicalHistoryModalDialogContent::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.personalComplaintModal {
+    width: 1000px !important;
+    // height: 480px;
+    max-width: unset !important;
+    // overflow: auto;
+    background: var(--color-white) !important;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 10px !important;
+}
+
+.inputField {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--title-color) !important;
+}
+
+.textFieldProps {
+    border-radius: 3px !important;
+    background-color: var(--color-white) !important;
+    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.personalComplaintModalBottomText {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
+}
+
+.personalComplaintModalBottomValue {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
+    padding-left: 15px;
+}
+
+.personalComplaintModalDisabledBttn {
+    background-color: rgba(0, 0, 0, 0.12) !important;
+    color: rgba(0, 0, 0, 0.26) !important;
+    font-size: var(--font-size-5xl) !important;
+    font-weight: 600 !important;
+}
+
+.personalComplaintModalCancelBttn {
+    background: #ededed !important;
+    box-shadow: 0px 3px 15px rgba(33, 155, 142, 0.25) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+
+    color: rgba(0, 0, 0, 0.26) !important;
+}
+
+.personalComplaintModalEditBttn {
+    /* MJ Light Green */
+    background: var(--label-color) !important;
+    box-shadow: 0px 3px 15px rgba(33, 155, 142, 0.25) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+
+    color: var(--color-white) !important;
+}
+
+.callHistoryModal {
+    width: 1400px;
+    max-width: unset !important;
+    background: var(--color-white) !important;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 10px !important;
+}
+
+.callHistoryModalDialogContent {
+    padding: 0 !important;
+}
+
+.callHistoryTableCell {
+    font-weight: 700 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--label-color) !important;
+}
+
+.callHistoryTableValueDate {
+    font-weight: 700 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--color-darkgray-100) !important;
+}
+
+.callHistorySelect {
+    background: #fdfdfd !important;
+    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+    border-radius: var(--br-8xs) !important;
+}
+.inputField {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--title-color) !important;
+}
+
+.callHistoryTable {
+    height: 500px;
+    overflow: auto;
+}
+
+.callHistoryTable::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.callHistoryTable::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.callHistoryDialogAction {
+    background-color: var(--color-whitesmoke-100) !important;
+    display: block !important;
+}
+
+.callHistoryDialogActionText {
+    font-weight: 600 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--title-color) !important;
+}
+
+.callHistoryDialogActionValue {
+    margin-top: 5px;
+    font-weight: 700 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.currentTableEditModal {
+    width: 1200px;
+    max-width: unset !important;
+    background: var(--color-white) !important;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 10px !important;
+}
+
+.currentTableEditTable {
+    height: 250px;
+    overflow: auto;
+    border-radius: 0px !important;
+}
+
+.currentTableEditTable::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.currentTableEditTable::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+.currentTableEditModalDialogContent {
+    padding: 15px !important;
+}
+
+.currentTableEditTableCell {
+    background-color: var(--color-whitesmoke-100) !important;
+}
+
+.overviewDiv {
+    background-color: var(--color-whitesmoke-100);
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+    padding-top: 6px;
+    position: relative;
+}
+
+.overviewInnerDiv {
+    background-color: var(--color-white) !important;
+    border-radius: 4px;
+    border: 2px solid #ededed;
+    margin-top: 10px;
+    padding: 10px;
+    height: 380px;
+}
+
+.currentTableEditModalCancelBttn {
+    font-size: var(--font-size-5xl) !important;
+    font-weight: 700 !important;
+    color: var(--color-lightslategray) !important;
+    background-color: var(--color-whitesmoke-300) !important;
+    box-shadow: unset !important;
+}
+
+.currentTableEditModalConfirmBttn {
+    font-size: var(--font-size-5xl) !important;
+    font-weight: 700 !important;
+    color: var(--color-white) !important;
+    background-color: var(--color-turquoise) !important;
+    box-shadow: unset !important;
+}
+
+.overviewDivBttnStackAbsolute {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 15px;
+}
+
+.overviewDivBttnStackRelative {
+    position: relative;
 }
