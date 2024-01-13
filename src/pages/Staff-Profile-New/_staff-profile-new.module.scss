@@ -1,0 +1,121 @@
+@use '../../styles/variables' as *;
+
+.backButtonDiv {
+    position: absolute;
+    left: 0;
+}
+
+.backButton {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--title-color) !important;
+    @media screen and (max-width: 600px) {
+        font-size: var(--font-size-sx) !important;
+        align-self: center;
+    }
+    margin-left: 3rem !important;
+}
+
+.card {
+    background: var(--color-white) !important;
+    border-radius: 10px 10px 0px 0px !important;
+}
+
+.cardTitle {
+    font-weight: 600;
+    font-size: var(--font-size-5xl);
+    color: var(--mj-deep-green);
+}
+
+.authorizationTitle {
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    color: var(--title-color);
+}
+
+.staffProfileNewHeader {
+    position: relative;
+    padding-bottom: 15px;
+    background-color: #ffffff !important;
+    padding-top: 10px;
+}
+
+.saveButtonDiv {
+    float: right;
+    margin-top: 3rem;
+}
+
+.saveButton {
+    font-weight: 700 !important;
+    font-size: var(--font-size-lg) !important;
+    text-align: center;
+    color: var(--color-white) !important;
+    background-color: var(--color-turquoise) !important;
+    text-transform: unset !important;
+    border-radius: var(--br-8xs) !important;
+    box-shadow: 0px 3px 15px rgba(33, 155, 142, 0.25) !important;
+    width: 300px;
+}
+
+.staffProfileNewHeaderTitle {
+    text-align: center;
+    font-size: 28px;
+    color: var(--mj-deep-green);
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+}
+
+.staffProfileNewSearchInputMobile {
+    border: 1px solid var(--color-whitesmoke-300) !important;
+    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+    border-radius: var(--br-8xs) !important;
+}
+
+.staffProfileNewTable {
+    max-height: calc(100vh - 230px);
+}
+
+.staffProfileNewTable::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.staffProfileNewTable::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.staffProfileNewTableHeadTitle {
+    font-weight: 500 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--color-white) !important;
+}
+
+.staffProfileNewTableHead {
+    background-color: var(--mj-deep-green) !important;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+.tableCellBoldValue {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color);
+}
+
+.tableCellValue {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color);
+    text-align: left;
+}
+
+.staffDobDateInput {
+    border: 1px solid var(--color-whitesmoke-300) !important;
+    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+    border-radius: var(--br-8xs) !important;
+    background: #f5f5f5 !important;
+}

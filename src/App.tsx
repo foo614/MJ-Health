@@ -19,6 +19,9 @@ import {
     RADIOLOGY_REPORTING_PAGE,
     RECEPTION_PAGE,
     SETTING_PAGE,
+    STAFF_MANAGEMENT_PAGE,
+    STAFF_PROFILE_NEW_PAGE,
+    STAFF_PROFILE_PAGE,
     STICKER_PRINTING_PAGE,
     TEST_PDPA_PAGE,
 } from 'constant'
@@ -49,6 +52,9 @@ import { TestPDPAPage } from 'pages/Member-Profile/components/test-pdpa-page'
 import ITRoomPrintingPage from 'pages/IT-Room-Printing'
 import PhysicianConsultation from 'pages/Physician-Consultation'
 import PhysicianConsultationInfo from 'pages/Physician-Consultation-Info'
+import StaffManagement from 'pages/Staff-Management'
+import StaffProfile from 'pages/Staff-Profile'
+import StaffProfileNew from 'pages/Staff-Profile-New'
 function App() {
     return (
         <ThemeProvider theme={theme}>
@@ -114,6 +120,15 @@ function App() {
                 <Route
                     path={PHYSICIAN_CONSULTATION_INFO_PAGE + '/:id'}
                     element={<PhysicianConsultationInfo />}
+                />
+                <Route
+                    path={STAFF_MANAGEMENT_PAGE}
+                    element={<StaffManagement />}
+                />
+                <Route path={STAFF_PROFILE_PAGE} element={<StaffProfile />} />
+                <Route
+                    path={STAFF_PROFILE_NEW_PAGE}
+                    element={<StaffProfileNew />}
                 />
                 {/* <Route path={TEST_PDPA_PAGE} element={<TestPDPAPage />} /> */}
             </Routes>
