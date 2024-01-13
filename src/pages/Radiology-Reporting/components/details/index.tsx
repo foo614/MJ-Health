@@ -9,6 +9,8 @@ import {
     Stack,
     TextField,
     Typography,
+    useMediaQuery,
+    useTheme,
 } from '@mui/material'
 import Box from '@mui/material/Box'
 import Tab from '@mui/material/Tab'
@@ -16,10 +18,12 @@ import Tabs from '@mui/material/Tabs'
 import Grid from '@mui/material/Unstable_Grid2'
 import { styled } from '@mui/material/styles'
 import ResponsiveAppBar from 'components/AppBar'
+import CustomModal from 'components/Modal'
 import { useState } from 'react'
 import UserHeader from '../user-header'
 import ButtonCard from './buttonCard'
 import Header from './header'
+import ViewCommentModal from './modal'
 import CustomizedTables from './table'
 
 const AntTabs = styled(Tabs)({
@@ -65,6 +69,12 @@ type TabPanelProps = {
     dir?: string
     index: number
     value: number
+}
+
+type ModalState = {
+    medicalHistory: boolean
+    allergyDrugHx: boolean
+    viewComment: boolean
 }
 
 function TabPanel(props: TabPanelProps) {
@@ -133,6 +143,8 @@ const CommentSuggestionList = () => {
 function RadiologyReportDetail() {
     //for tab
     const [currentIndex, setCurrentIndex] = useState(0)
+    const theme = useTheme()
+    const matches = useMediaQuery(theme.breakpoints.up('sm'))
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setCurrentIndex(newValue)
@@ -145,7 +157,12 @@ function RadiologyReportDetail() {
         setSelectedType(type)
     }
 
-    //
+    //sidemenu
+    const [openMedicalHistory, setOpenMedicalHistory] = useState<boolean>(false)
+    const [openAllergyDrugHx, setOpenAllergyDrugHx] = useState<boolean>(false)
+    const [openViewComment, setOpenViewComment] = useState<boolean>(false)
+
+    //for mammography
     const [mammography, setMammography] = useState('')
 
     const handleMammography = (event: SelectChangeEvent) => {
@@ -329,17 +346,17 @@ function RadiologyReportDetail() {
                         <>
                             <ButtonCard
                                 label="Medical History"
-                                onClick={() => console.log(1)}
+                                onClick={() => setOpenMedicalHistory(true)}
                             />
                             <ButtonCard
                                 label="Allergy/ Drug Hx"
-                                onClick={() => console.log(1)}
+                                onClick={() => setOpenAllergyDrugHx(true)}
                             />
                         </>
                         <Box sx={{ py: 8 }}>
                             <ButtonCard
                                 label="View Comment"
-                                onClick={() => console.log(1)}
+                                onClick={() => setOpenViewComment(true)}
                             />
                         </Box>
                     </Stack>
@@ -483,6 +500,191 @@ function RadiologyReportDetail() {
                     </Box>
                 </Grid>
             </Grid>
+            {openMedicalHistory && (
+                <CustomModal
+                    open={openMedicalHistory}
+                    setOpen={setOpenMedicalHistory}
+                    title="Medical History"
+                    width="md"
+                >
+                    <Grid container>
+                        <Grid xs={12}>
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    color: '#219B8E',
+                                    fontSize: '20px',
+                                    fontWeight: 600,
+                                }}
+                            >
+                                Medical History
+                            </Typography>
+                        </Grid>
+                        <Grid
+                            xs={12}
+                            sx={{
+                                pl: 5,
+                                mt: 1,
+                                lineHeight: '2em',
+                                fontWeight: 600,
+                            }}
+                        >
+                            <ul>
+                                <li>Diabetes</li>
+                                <li>Uraemia</li>
+                            </ul>
+                        </Grid>
+                        <Grid xs={12}>
+                            <Divider sx={{ my: 2 }} />
+                        </Grid>
+                        <Grid xs={12}>
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    color: '#219B8E',
+                                    fontSize: '20px',
+                                    fontWeight: 600,
+                                }}
+                            >
+                                Previous Surgery
+                            </Typography>
+                        </Grid>
+                        <Grid
+                            xs={12}
+                            sx={{
+                                pl: 5,
+                                mt: 1,
+                                lineHeight: '2em',
+                                fontWeight: 600,
+                            }}
+                        >
+                            <ul>
+                                <li>Kidney Surgery</li>
+                            </ul>
+                        </Grid>
+                        <Grid xs={12}>
+                            <Divider sx={{ my: 2 }} />
+                        </Grid>
+                        <Grid xs={12}>
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    color: '#219B8E',
+                                    fontSize: '20px',
+                                    fontWeight: 600,
+                                }}
+                            >
+                                Family Medical History
+                            </Typography>
+                        </Grid>
+                        <Grid
+                            xs={12}
+                            sx={{
+                                pl: 5,
+                                mt: 1,
+                                lineHeight: '2em',
+                                fontWeight: 600,
+                            }}
+                        >
+                            <ul>
+                                <li>High Blood Pressure</li>
+                                <li>Type 2 Diabetes</li>
+                                <li>Cardiovascular Disease</li>
+                                <li>Obesity</li>
+                                <li>Myocarditis</li>
+                                <li>High Blood Pressure</li>
+                                <li>Type 2 Diabetes</li>
+                                <li>Cardiovascular Disease</li>
+                                <li>Obesity</li>
+                                <li>Myocarditis</li>
+                                <li>High Blood Pressure</li>
+                                <li>Type 2 Diabetes</li>
+                                <li>Cardiovascular Disease</li>
+                                <li>Obesity</li>
+                                <li>Myocarditis</li>
+                            </ul>
+                        </Grid>
+                    </Grid>
+                </CustomModal>
+            )}
+
+            {openAllergyDrugHx && (
+                <CustomModal
+                    open={openAllergyDrugHx}
+                    setOpen={setOpenAllergyDrugHx}
+                    title="Allergy/Drug Hx"
+                    width="md"
+                >
+                    <Grid container>
+                        <Grid xs={12}>
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    color: '#219B8E',
+                                    fontSize: '20px',
+                                    fontWeight: 600,
+                                }}
+                            >
+                                Medication
+                            </Typography>
+                        </Grid>
+                        <Grid
+                            xs={12}
+                            sx={{
+                                pl: 5,
+                                mt: 1,
+                                lineHeight: '2em',
+                                fontWeight: 600,
+                            }}
+                        >
+                            <ul>
+                                <li>Calories Control</li>
+                                <li>Blood Pressure Control</li>
+                                <li>Glycemia Manager</li>
+                            </ul>
+                        </Grid>
+                        <Grid xs={12}>
+                            <Divider sx={{ my: 2 }} />
+                        </Grid>
+                        <Grid xs={12}>
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    color: '#219B8E',
+                                    fontSize: '20px',
+                                    fontWeight: 600,
+                                }}
+                            >
+                                Allergy History
+                            </Typography>
+                        </Grid>
+                        <Grid
+                            xs={12}
+                            sx={{
+                                pl: 5,
+                                mt: 1,
+                                lineHeight: '2em',
+                                fontWeight: 600,
+                            }}
+                        >
+                            <ul>
+                                <li>Milk sensitization reaction</li>
+                                <li>Logan pulp sensitization reaction</li>
+                                <li>
+                                    Severe snow fungus sensitization reaction
+                                </li>
+                            </ul>
+                        </Grid>
+                    </Grid>
+                </CustomModal>
+            )}
+
+            {openViewComment && (
+                <ViewCommentModal
+                    open={openViewComment}
+                    handleClose={() => setOpenViewComment(false)}
+                />
+            )}
         </>
     )
 }

@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import { styled } from '@mui/material/styles'
+import styles from '../../_radiology-reporting.module.scss'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -16,6 +17,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.body}`]: {
         fontSize: 14,
         background: '#F9F9F9',
+        borderBottom: 'none',
     },
 }))
 
@@ -114,19 +116,21 @@ export default function CustomizedTables() {
             component={Paper}
             sx={{
                 mt: 3,
-                boxShadow:
-                    '0px 2px 2px 1px rgba(0, 0, 0, 0.05) inset !important',
                 borderRadius: '8px !important',
                 maxHeight: '300px',
             }}
+            className={styles.tableContainer}
         >
             <Table
                 aria-label="customized table"
                 size="small"
-                sx={{ minWidth: 700 }}
                 stickyHeader
+                sx={{
+                    minWidth: 700,
+                    boxShadow: '0px 2px 2px 1px rgba(0, 0, 0, 0.05) inset',
+                }}
             >
-                <TableHead>
+                <TableHead sx={{ borderBottom: 'none' }}>
                     <TableRow>
                         <StyledTableCell>No.</StyledTableCell>
                         <StyledTableCell>Content</StyledTableCell>

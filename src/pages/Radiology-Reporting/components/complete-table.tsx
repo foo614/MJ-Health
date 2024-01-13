@@ -8,6 +8,8 @@ import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import { RADIOLOGY_REPORTING_PAGE } from 'constant'
+import { useNavigate } from 'react-router-dom'
 import styles from '../_radiology-reporting.module.scss'
 
 const mockData = [
@@ -54,6 +56,7 @@ const tableHeadTitles: { label: string; textAlign?: TextAlign }[] = [
 function CompleteTable() {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
+    const navigate = useNavigate()
 
     const tableBodyData: TableRowData[] = [
         { accessor: 'seqNo', textAlign: 'left' },
@@ -119,7 +122,19 @@ function CompleteTable() {
                         </TableHead>
                         <TableBody>
                             {mockData.map((item: any, rowIndex: number) => (
-                                <TableRow key={rowIndex}>
+                                <TableRow
+                                    key={rowIndex}
+                                    onClick={() =>
+                                        navigate(
+                                            RADIOLOGY_REPORTING_PAGE +
+                                                '/' +
+                                                rowIndex +
+                                                1
+                                        )
+                                    }
+                                    sx={{ cursor: 'pointer' }}
+                                    hover
+                                >
                                     {tableBodyData.map(
                                         (
                                             { accessor, textAlign },

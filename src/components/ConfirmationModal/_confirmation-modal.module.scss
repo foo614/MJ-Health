@@ -1,0 +1,49 @@
+@use '../../styles/variables' as *;
+
+.modal {
+    background: var(--color-white) !important;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 25px !important;
+}
+.title {
+    color: var(--title-color) !important;
+    font-size: var(--font-size-5xl) !important;
+    font-weight: 700 !important;
+    text-align: center;
+}
+.description {
+    color: var(--label-color) !important;
+    font-size: var(--font-size-base) !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+}
+.divider {
+    width: 300px;
+    height: 8px;
+    background-color: var(--color-turquoise);
+    border-radius: 30px;
+    margin: auto;
+    @media screen and (max-width: 600px) {
+        width: 100%;
+        height: 8px;
+        background-color: var(--color-turquoise);
+        border-radius: 30px;
+        margin: auto;
+    }
+}
+
+.decline {
+    font-size: var(--font-size-5xl) !important;
+    font-weight: 700 !important;
+    color: var(--color-lightslategray) !important;
+    background-color: var(--color-whitesmoke-300) !important;
+    box-shadow: unset !important;
+}
+
+.accept {
+    font-size: var(--font-size-5xl) !important;
+    font-weight: 700 !important;
+    color: var(--color-white) !important;
+    background-color: var(--color-turquoise) !important;
+    box-shadow: unset !important;
+}

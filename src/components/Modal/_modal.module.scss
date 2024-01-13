@@ -1,0 +1,39 @@
+@use '../../styles/variables' as *;
+
+.infoModal {
+    border-radius: 8px !important;
+    background-color: var(--color-white) !important;
+}
+
+.infoModalColor {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(90deg, #3adebb -0.18%, #00aee9 99.82%);
+
+    border-bottom: 2px solid #ededed !important;
+    padding: 20px 35px !important;
+    overflow-y: unset !important;
+}
+.infoModalTitle {
+    font-weight: 600 !important;
+    font-size: var(--font-size-5xl) !important;
+    color: var(--color-white) !important;
+}
+.closeIcon {
+    color: var(--color-white) !important;
+}
+.modalDialogContent {
+    max-height: 700px;
+    padding: 20px 35px !important;
+}
+
+.modalDialogContent::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.modalDialogContent::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}

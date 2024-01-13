@@ -3,11 +3,15 @@ import { Button } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import ConfirmationModal from 'components/ConfirmationModal'
+import AcceptIcon from 'images/accept.png'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from '../../_radiology-reporting.module.scss'
 function Header() {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
+    const [open, setOpen] = useState<boolean>(false)
     const navigate = useNavigate()
 
     return (
@@ -30,10 +34,25 @@ function Header() {
                     variant="contained"
                     sx={{ height: '40px', marginTop: '5px' }}
                     size={matches ? 'medium' : 'small'}
+                    onClick={() => setOpen(true)}
                 >
                     Confirm
                 </Button>
             </Grid>
+            {open && (
+                <ConfirmationModal
+                    title={'Confirm Data'}
+                    context={
+                        'By selecting confirm, report status will be showed as ready to print.'
+                    }
+                    image={AcceptIcon}
+                    decline={() => setOpen(false)}
+                    accept={() => setOpen(false)}
+                    setOpen={setOpen}
+                    open={open}
+                    width="md"
+                />
+            )}
         </Grid>
     )
 }
