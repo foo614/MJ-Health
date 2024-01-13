@@ -1,0 +1,13 @@
+@use '../../../styles/variables' as *;
+
+.cardTitle {
+    font-weight: 600;
+    font-size: var(--font-size-5xl);
+    color: var(--mj-deep-green);
+}
+
+.authorizationTitle {
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    color: var(--title-color);
+}

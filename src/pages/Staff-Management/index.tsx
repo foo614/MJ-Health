@@ -13,9 +13,12 @@ import styles from './_staff-management.module.scss'
 import SearchIcon from '@mui/icons-material/Search'
 import { StaffData } from './types/StaffData'
 import StaffManagementTable from './components/staff-management-table'
+import { useNavigate } from 'react-router-dom'
+import { STAFF_PROFILE_NEW_PAGE } from 'constant'
 
 const StaffManagement = () => {
     const theme = useTheme()
+    const navigate = useNavigate()
 
     const lgUp = useMediaQuery(theme.breakpoints.up('lg'))
 
@@ -304,7 +307,7 @@ const StaffManagement = () => {
                                 variant="contained"
                                 fullWidth
                                 className={styles.newStaffBttn}
-                                // onClick={() => setOpenPrintStickerModal(true)}
+                                onClick={() => navigate(STAFF_PROFILE_NEW_PAGE)}
                             >
                                 New Staff
                             </Button>
