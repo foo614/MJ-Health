@@ -1,0 +1,86 @@
+@use '../../styles/variables' as *;
+
+.padding25PX {
+    padding: 25px;
+}
+
+.gradientBackground {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(90deg, #3adebb -0.18%, #00aee9 99.82%);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 20px;
+}
+
+.modalFlex {
+    display: flex;
+}
+
+.doctorInfoDiv {
+    margin-left: 15px;
+    margin-top: 3px;
+}
+
+.doctorOnShiftText {
+    font-weight: 500 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--color-white) !important;
+}
+
+.doctorName {
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    color: var(--color-white) !important;
+}
+
+.time {
+    font-weight: 600 !important;
+    font-size: 24px !important;
+    color: var(--color-white) !important;
+}
+
+.date {
+    font-weight: 600 !important;
+    font-size: 20px !important;
+    color: var(--color-white) !important;
+}
+
+.marginLeft15PX {
+    margin-left: 15px;
+}
+
+.closeIcon {
+    cursor: pointer;
+    color: var(--color-white) !important;
+}
+
+.modalPadding {
+    padding: 20px;
+}
+
+.checkOutModal {
+    width: 800px;
+    max-width: unset;
+}
+
+.checkoutButton {
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    text-align: center;
+
+    color: var(--color-white) !important;
+    background-color: #5a567b !important;
+    margin-left: auto !important;
+}
+
+.checkInTimeTitle {
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    color: var(--mj-deep-green) !important;
+}
+
+.checkInTime {
+    font-weight: 600 !important;
+    font-size: 20px !important;
+    color: var(--color-lightslategray) !important;
+}

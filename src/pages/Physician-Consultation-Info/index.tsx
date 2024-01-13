@@ -60,7 +60,7 @@ const PhysicianConsultationInfo = () => {
                     </Button>
                 </Grid>
                 <Grid xs={3} md={8} className={styles.headerTitle}>
-                    Physician Consultation
+                    PHYSICIAN CONSULTATION
                 </Grid>
                 <Grid xs={12} md={2} textAlign={matches ? 'center' : 'start'}>
                     <Button
@@ -131,51 +131,54 @@ const PhysicianConsultationInfo = () => {
                     </Grid>
                     <Grid item md={8} xs={12}>
                         <Card className={styles.card}>
-                            <Stack
-                                direction={{
-                                    xs: 'column',
-                                    sm: 'column',
-                                    md: 'column',
-                                    lg: 'row',
-                                    xl: 'row',
-                                }}
-                                spacing={2}
-                            >
-                                <Button
-                                    variant="contained"
-                                    className={
-                                        selectedSection === 1
-                                            ? styles.selectedBttn
-                                            : styles.unSelectedBttn
-                                    }
-                                    onClick={() => setSelectedSection(1)}
+                            <div style={{ padding: '25px 25px  0px 25px' }}>
+                                <Stack
+                                    direction={{
+                                        xs: 'column',
+                                        sm: 'column',
+                                        md: 'column',
+                                        lg: 'row',
+                                        xl: 'row',
+                                    }}
+                                    spacing={2}
                                 >
-                                    Current
-                                </Button>
-                                <Button
-                                    variant="contained"
-                                    className={
-                                        selectedSection === 2
-                                            ? styles.selectedBttn
-                                            : styles.unSelectedBttn
-                                    }
-                                    onClick={() => setSelectedSection(2)}
-                                >
-                                    Trend of Health Screening Outcome
-                                </Button>
-                                <Button
-                                    variant="contained"
-                                    className={
-                                        selectedSection === 3
-                                            ? styles.selectedBttn
-                                            : styles.unSelectedBttn
-                                    }
-                                    onClick={() => setSelectedSection(3)}
-                                >
-                                    Recommendation
-                                </Button>
-                            </Stack>
-                            <Divider className={styles.divLine} />
+                                    <Button
+                                        variant="contained"
+                                        className={
+                                            selectedSection === 1
+                                                ? styles.selectedBttn
+                                                : styles.unSelectedBttn
+                                        }
+                                        onClick={() => setSelectedSection(1)}
+                                    >
+                                        Current
+                                    </Button>
+                                    <Button
+                                        variant="contained"
+                                        className={
+                                            selectedSection === 2
+                                                ? styles.selectedBttn
+                                                : styles.unSelectedBttn
+                                        }
+                                        onClick={() => setSelectedSection(2)}
+                                    >
+                                        Trend of Health Screening Outcome
+                                    </Button>
+                                    <Button
+                                        variant="contained"
+                                        className={
+                                            selectedSection === 3
+                                                ? styles.selectedBttn
+                                                : styles.unSelectedBttn
+                                        }
+                                        onClick={() => setSelectedSection(3)}
+                                    >
+                                        Recommendation
+                                    </Button>
+                                </Stack>
+                                <Divider className={styles.divLine} />
+                            </div>
+
                             {displaySelectedSection()}
                         </Card>
                     </Grid>
