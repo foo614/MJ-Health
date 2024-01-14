@@ -8,7 +8,7 @@ import {
 import Group1 from 'images/group-1@2x.png'
 import GroupIcon from 'images/group-3091@2x.png'
 import Monitor from 'images/monitor-1@2x.png'
-import MulIcon from 'images/mul-1@2x.png'
+import { default as MULReport, default as MulIcon } from 'images/mul-1@2x.png'
 import Other2 from 'images/other-2@2x.png'
 import Printer from 'images/printer-1-1@2x.png'
 import RoomIcon from 'images/room-1-1@2x.png'
@@ -42,7 +42,7 @@ const OtherFunction = () => {
                         label="IT Printing Room"
                         onClick={() => navigate(IT_ROOM_PRINTING_PAGE)}
                     />
-                    <CustomBoxButton image={Group1} label="Staff Management" />
+                    <CustomBoxButton image={MULReport} label="MUL Report" />
                     <CustomBoxButton image={MulIcon} label="Word Bank" />
                     <CustomBoxButton image={RoomIcon} label="Room Management" />
                     <CustomBoxButton image={GroupIcon} label="Final Report" />
