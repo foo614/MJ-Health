@@ -1,5 +1,7 @@
 import Box from '@mui/material/Box'
 import Paper from '@mui/material/Paper'
+import { useTheme } from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import styles from '../../_radiology-reporting.module.scss'
 
 type Props = {
@@ -8,6 +10,8 @@ type Props = {
 }
 
 function ButtonCard({ label, onClick }: Props) {
+    const theme = useTheme()
+    const matches = useMediaQuery(theme.breakpoints.up('sm'))
     return (
         <Box
             sx={{
@@ -15,9 +19,9 @@ function ButtonCard({ label, onClick }: Props) {
                 flexWrap: 'wrap',
                 '& > :not(style)': {
                     m: 'auto',
-                    width: 140,
-                    height: 120,
-                    p: '2rem',
+                    width: matches ? 140 : 100,
+                    height: matches ? 120 : 80,
+                    p: matches ? '2rem' : '1rem',
                     cursor: 'pointer',
                     alignItems: 'center',
                     display: 'flex',

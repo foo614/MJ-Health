@@ -101,7 +101,7 @@ function CompleteTable() {
                     component={Paper}
                     className={styles.monitorSystemTableTop}
                 >
-                    <Table>
+                    <Table size={matches ? 'medium' : 'small'}>
                         <TableHead className={styles.monitorSystemTableHead}>
                             <TableRow>
                                 {tableHeadTitles.map((title, index) => (

@@ -10,10 +10,10 @@ function Header() {
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
     return (
         <Grid container className={styles.header}>
-            <Grid xs={3} md={6} mdOffset={3} className={styles.headerTitle}>
+            <Grid xs={12} md={6} mdOffset={3} className={styles.headerTitle}>
                 RADIOLOGY REPORTING
             </Grid>
-            <Grid xs={12} md={3} textAlign={matches ? 'center' : 'end'}>
+            <Grid xs={12} md={3} textAlign={'center'}>
                 <TextField
                     InputProps={{
                         startAdornment: (
