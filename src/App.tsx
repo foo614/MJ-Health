@@ -130,6 +130,10 @@ function App() {
                     path={STAFF_PROFILE_NEW_PAGE}
                     element={<StaffProfileNew />}
                 />
+                <Route
+                    path={STAFF_PROFILE_PAGE + '/:id'}
+                    element={<StaffProfile />}
+                />
                 {/* <Route path={TEST_PDPA_PAGE} element={<TestPDPAPage />} /> */}
             </Routes>
         </ThemeProvider>

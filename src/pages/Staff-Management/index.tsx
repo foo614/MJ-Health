@@ -41,6 +41,7 @@ const StaffManagement = () => {
             city: '',
             country: '',
             password: '',
+            status: true,
         },
         {
             id: 2,
@@ -60,6 +61,7 @@ const StaffManagement = () => {
             city: '',
             country: '',
             password: '',
+            status: false,
         },
         {
             id: 3,
@@ -79,6 +81,7 @@ const StaffManagement = () => {
             city: '',
             country: '',
             password: '',
+            status: false,
         },
         {
             id: 4,
@@ -98,6 +101,7 @@ const StaffManagement = () => {
             city: '',
             country: '',
             password: '',
+            status: false,
         },
         {
             id: 5,
@@ -117,6 +121,7 @@ const StaffManagement = () => {
             city: '',
             country: '',
             password: '',
+            status: false,
         },
         {
             id: 6,
@@ -136,6 +141,7 @@ const StaffManagement = () => {
             city: '',
             country: '',
             password: '',
+            status: false,
         },
         {
             id: 7,
@@ -155,6 +161,7 @@ const StaffManagement = () => {
             city: '',
             country: '',
             password: '',
+            status: false,
         },
         {
             id: 8,
@@ -174,6 +181,7 @@ const StaffManagement = () => {
             city: '',
             country: '',
             password: '',
+            status: false,
         },
         {
             id: 9,
@@ -193,6 +201,7 @@ const StaffManagement = () => {
             city: '',
             country: '',
             password: '',
+            status: false,
         },
         {
             id: 10,
@@ -212,6 +221,7 @@ const StaffManagement = () => {
             city: '',
             country: '',
             password: '',
+            status: false,
         },
         {
             id: 11,
@@ -231,6 +241,7 @@ const StaffManagement = () => {
             city: '',
             country: '',
             password: '',
+            status: false,
         },
         {
             id: 12,
@@ -250,6 +261,7 @@ const StaffManagement = () => {
             city: '',
             country: '',
             password: '',
+            status: false,
         },
         {
             id: 13,
@@ -269,6 +281,7 @@ const StaffManagement = () => {
             city: '',
             country: '',
             password: '',
+            status: false,
         },
         {
             id: 14,
@@ -288,6 +301,7 @@ const StaffManagement = () => {
             city: '',
             country: '',
             password: '',
+            status: false,
         },
     ]
 

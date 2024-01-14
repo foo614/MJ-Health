@@ -16,4 +16,5 @@ export type StaffData = {
     city: string
     country: string
     password: string
+    status: boolean
 }

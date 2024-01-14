@@ -11,6 +11,7 @@ import {
     TableRow,
 } from '@mui/material'
 import styles from '../_staff-management.module.scss'
+import { STAFF_PROFILE_PAGE } from 'constant'
 
 type Props = {
     fakeData: StaffData[]
@@ -128,6 +129,13 @@ const StaffManagementTable = ({ fakeData }: Props) => {
                                     <TableCell>
                                         <Button
                                             className={styles.manageAccountBttn}
+                                            onClick={() =>
+                                                navigate(
+                                                    STAFF_PROFILE_PAGE +
+                                                        '/' +
+                                                        item.id
+                                                )
+                                            }
                                         >
                                             Manage account
                                         </Button>

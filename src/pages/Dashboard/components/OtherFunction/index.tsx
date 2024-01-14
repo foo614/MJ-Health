@@ -32,7 +32,11 @@ const OtherFunction = () => {
                         onClick={() => navigate(IT_MONITOR_ROOM_PAGE)}
                     />
                     <CustomBoxButton image={Printer} label="IT Printing Room" />
-                    <CustomBoxButton image={Group1} label="Staff Management" />
+                    <CustomBoxButton
+                        image={Group1}
+                        label="Staff Management"
+                        onClick={() => navigate(STAFF_MANAGEMENT_PAGE)}
+                    />
                     <CustomBoxButton image={MulIcon} label="Word Bank" />
                     <CustomBoxButton image={RoomIcon} label="Room Management" />
                     <CustomBoxButton image={GroupIcon} label="Final Report" />
