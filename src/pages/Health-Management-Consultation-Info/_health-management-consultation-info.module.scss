@@ -1,0 +1,398 @@
+@use '../../styles/variables' as *;
+
+.userHeader {
+    background-color: var(--title-color) !important;
+    height: 50px;
+    padding: 0 3rem !important;
+    align-content: center;
+    color: #eeeeee;
+    font-size: 20px;
+    font-weight: 700;
+    @media screen and (max-width: 600px) {
+        font-size: 10px !important;
+        padding: 0 1rem !important;
+    }
+}
+
+.header {
+    position: relative;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: var(--color-white) !important;
+    // padding-top: 5px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05) !important;
+    // padding-right: 3rem;
+    // padding-left: 3rem;
+}
+
+.backButton {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--title-color) !important;
+    @media screen and (max-width: 600px) {
+        font-size: var(--font-size-sx) !important;
+        align-self: center;
+    }
+}
+
+.headerTitle {
+    margin: auto;
+    text-align: center;
+    font-size: 28px;
+    color: var(--mj-deep-green);
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+    @media screen and (max-width: 600px) {
+        font-size: 16px;
+        align-self: center;
+    }
+}
+
+.exitStationBttn {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--color-white) !important;
+}
+
+.smallCard {
+    background: linear-gradient(
+        231.33deg,
+        #ffffff 8.64%,
+        #f3f3f3 91.7%
+    ) !important;
+    box-shadow: 0px 3px 6px rgba(89, 86, 122, 0.15) !important;
+    border-radius: var(--br-3xs) !important;
+    height: 120px;
+    display: flex;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.smallCardTitle {
+    font-weight: 700 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--title-color) !important;
+    margin: auto;
+}
+
+.card {
+    // padding: 25px 35px !important;
+    border-radius: var(--br-3xs) !important;
+    height: 100%;
+}
+
+.selectedBttn {
+    background: var(--color-white) !important;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--title-color) !important;
+    width: 250px !important;
+    height: 50px !important;
+    line-height: unset !important;
+}
+
+.unSelectedBttn {
+    background: #ededed !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--label-color) !important;
+    width: 250px !important;
+    height: 50px !important;
+    line-height: unset !important;
+}
+
+.divLine {
+    height: 2px !important;
+    background: #ededed;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+
+// .selectedMenu {
+//     font-weight: 600 !important;
+//     font-size: 16px !important;
+//     text-align: center !important;
+//     color: var(--title-color) !important;
+//     background: var(--color-white) !important;
+//     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1) !important;
+//     border-radius: var(--br-8xs) !important;
+//     width: 215px !important;
+//     height: 50px !important;
+//     padding-top: 5px !important;
+//     padding-bottom: 5px !important;
+//     line-height: unset !important;
+// }
+
+// .unselectedMenu {
+//     font-weight: 500 !important;
+//     font-size: 16px !important;
+//     text-align: center !important;
+//     background: #dddddd !important;
+//     border-radius: var(--br-8xs) !important;
+//     color: var(--label-color) !important;
+//     width: 215px !important;
+//     height: 50px !important;
+//     padding-top: 5px !important;
+//     padding-bottom: 5px !important;
+//     line-height: unset !important;
+// }
+
+.healthManagementConsultationInfoMenuDiv {
+    padding: 10px;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    column-gap: 15px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.healthManagementConsultationInfoMenuDivMobile {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 10px;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    column-gap: 15px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.healthManagementConsultationInfoMenuDiv::-webkit-scrollbar {
+    display: none;
+}
+
+.personalComplaintModal {
+    width: 1000px !important;
+    // height: 480px;
+    max-width: unset !important;
+    // overflow: auto;
+    background: var(--color-white) !important;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 10px !important;
+}
+
+.infoModalColor {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(90deg, #3adebb -0.18%, #00aee9 99.82%);
+
+    border-bottom: 2px solid #ededed !important;
+    padding: 20px 35px !important;
+    overflow-y: unset !important;
+}
+
+.infoModalTitle {
+    font-weight: 600 !important;
+    font-size: var(--font-size-5xl) !important;
+    color: var(--color-white) !important;
+}
+
+.closeIcon {
+    color: var(--color-white) !important;
+}
+
+.inputField {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--title-color) !important;
+}
+
+.textFieldProps {
+    border-radius: 3px !important;
+    background-color: var(--color-white) !important;
+    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.personalComplaintModalBottomText {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
+}
+
+.personalComplaintModalBottomValue {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
+    padding-left: 15px;
+}
+
+.personalComplaintModalEditBttn {
+    /* MJ Light Green */
+    background: var(--label-color) !important;
+    box-shadow: 0px 3px 15px rgba(33, 155, 142, 0.25) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+
+    color: var(--color-white) !important;
+}
+
+.personalComplaintModalCancelBttn {
+    background: #ededed !important;
+    box-shadow: 0px 3px 15px rgba(33, 155, 142, 0.25) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+
+    color: rgba(0, 0, 0, 0.26) !important;
+}
+
+.personalComplaintModalDisabledBttn {
+    background-color: rgba(0, 0, 0, 0.12) !important;
+    color: rgba(0, 0, 0, 0.26) !important;
+    font-size: var(--font-size-5xl) !important;
+    font-weight: 600 !important;
+}
+
+.saveBttn {
+    /* MJ Light Green */
+    background: var(--color-turquoise) !important;
+    box-shadow: 0px 3px 15px rgba(33, 155, 142, 0.25) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+
+    color: var(--color-white) !important;
+}
+
+.callHistoryModal {
+    width: 1400px;
+    max-width: unset !important;
+    background: var(--color-white) !important;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 10px !important;
+}
+
+.callHistoryModalDialogContent {
+    padding: 0 !important;
+}
+
+.callHistoryTable {
+    height: 500px;
+    overflow: auto;
+}
+
+.callHistoryTable::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.callHistoryTable::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.callHistoryTableCell {
+    font-weight: 700 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--label-color) !important;
+}
+
+.callHistoryTableValueDate {
+    font-weight: 700 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--color-darkgray-100) !important;
+}
+.callHistorySelect {
+    background: #fdfdfd !important;
+    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+    border-radius: var(--br-8xs) !important;
+}
+
+.callHistoryDialogAction {
+    background-color: var(--color-whitesmoke-100) !important;
+    display: block !important;
+}
+
+.callHistoryDialogActionText {
+    font-weight: 600 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--title-color) !important;
+}
+
+.callHistoryDialogActionValue {
+    margin-top: 5px;
+    font-weight: 700 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.hmcReportModal {
+    width: 1120px;
+    max-width: unset !important;
+    background: var(--color-white) !important;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 10px !important;
+}
+
+.hmcModalTitleDiv {
+    background: var(--color-whitesmoke-100) !important;
+    padding: 15px 24px;
+    border-top: 2px solid #ededed;
+    border-bottom: 2px solid #ededed;
+}
+
+.hmcModalTitle {
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    color: var(--mj-deep-green) !important;
+}
+
+.diatery_lifestyle_item {
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    color: var(--title-color) !important;
+}
+
+.dietary_lifestyle_section_div {
+    padding: 20px 24px;
+    height: 500px;
+    overflow: auto;
+}
+
+.dietary_lifestyle_section_div::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.dietary_lifestyle_section_div::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.dietary_lifestyle_suggestion_text {
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    color: var(--title-color) !important;
+}
+
+.printInSelectedIcon {
+    color: var(--color-turquoise) !important;
+}
+
+.printInUnselectedIcon {
+    color: #dddddd !important;
+}
+
+.printInText {
+    font-weight: 700 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--color-turquoise) !important;
+}
