@@ -20,12 +20,13 @@ import { STAFF_MANAGEMENT_PAGE } from 'constant'
 import React, { useEffect, useState } from 'react'
 import styles from './_staff-profile.module.scss'
 import ConfirmationModal from 'components/ConfirmationModal'
-import RejectIcon from 'images/reject.png'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import AuthorizationModule from './components/authorization-module'
 import { StaffData } from 'pages/Staff-Management/types/StaffData'
 import { useNavigate, useParams } from 'react-router-dom'
+import ReactivateIcon from 'images/reject.png'
+import DeactivateIcon from 'images/cancel-appointment.png'
 
 const StaffProfile = () => {
     const theme = useTheme()
@@ -1240,7 +1241,11 @@ const StaffProfile = () => {
                                     ? 'Do you want to deactivate the staff’s account?'
                                     : 'Do you want to reactivate the staff’s account?'
                             }
-                            image={RejectIcon}
+                            image={
+                                fakeStaffData.status
+                                    ? DeactivateIcon
+                                    : ReactivateIcon
+                            }
                             decline={() => setOpen(false)}
                             accept={() => setOpen(false)}
                             setOpen={setOpen}
