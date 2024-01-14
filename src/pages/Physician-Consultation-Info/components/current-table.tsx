@@ -60,98 +60,105 @@ const CurrentTable = () => {
     ]
     return (
         <>
-            <p className={styles.commentText}>Comment and Suggestion</p>
-            <TableContainer
-                component={Paper}
-                className={styles.physicianConsultationInfoTable}
-                sx={{ marginTop: '1rem' }}
-            >
-                <Table stickyHeader>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>
-                                <p className={styles.tableHeadCellText}>
-                                    Abnormal Items
-                                </p>
-                            </TableCell>
-                            <TableCell sx={{ width: '70%' }}>
-                                <p className={styles.tableHeadCellText}>
-                                    Content
-                                </p>
-                            </TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {tableData.map((item: any, index: number) => {
-                            return (
-                                <TableRow key={index}>
-                                    <TableCell className={styles.tableBodyCell}>
-                                        <p
-                                            className={
-                                                styles.tableBodyCellAbnormalItems
-                                            }
+            <div style={{ paddingLeft: '35px', paddingRight: '35px' }}>
+                <p className={styles.commentText}>Comment and Suggestion</p>
+                <TableContainer
+                    component={Paper}
+                    className={styles.physicianConsultationInfoTable}
+                    sx={{ marginTop: '1rem' }}
+                >
+                    <Table stickyHeader>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>
+                                    <p className={styles.tableHeadCellText}>
+                                        Abnormal Items
+                                    </p>
+                                </TableCell>
+                                <TableCell sx={{ width: '70%' }}>
+                                    <p className={styles.tableHeadCellText}>
+                                        Content
+                                    </p>
+                                </TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {tableData.map((item: any, index: number) => {
+                                return (
+                                    <TableRow key={index}>
+                                        <TableCell
+                                            className={styles.tableBodyCell}
                                         >
-                                            {item.title}
-                                        </p>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Stack direction="row">
-                                            <div>
-                                                <p
-                                                    className={
-                                                        styles.tableBodyCellContent
-                                                    }
-                                                >
-                                                    {item.description}
-                                                </p>
-                                            </div>
-
-                                            <Stack
-                                                direction="row"
-                                                sx={{
-                                                    marginLeft: 'auto',
-                                                }}
+                                            <p
+                                                className={
+                                                    styles.tableBodyCellAbnormalItems
+                                                }
                                             >
-                                                <Button
-                                                    variant="text"
-                                                    className={styles.editBttn}
-                                                    onClick={() =>
-                                                        setOpenCurrentTableEditModal(
-                                                            true
-                                                        )
-                                                    }
-                                                >
-                                                    Edit
-                                                </Button>
-                                                <Button
-                                                    variant="text"
-                                                    className={
-                                                        styles.deleteBttn
-                                                    }
-                                                >
-                                                    Delete
-                                                </Button>
-                                            </Stack>
-                                        </Stack>
-                                    </TableCell>
-                                </TableRow>
-                            )
-                        })}
-                    </TableBody>
-                </Table>
-            </TableContainer>
+                                                {item.title}
+                                            </p>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Stack direction="row">
+                                                <div>
+                                                    <p
+                                                        className={
+                                                            styles.tableBodyCellContent
+                                                        }
+                                                    >
+                                                        {item.description}
+                                                    </p>
+                                                </div>
 
-            <div style={{ textAlign: 'end', marginTop: '1rem' }}>
-                <Button variant="contained" className={styles.saveBttn}>
-                    Save
-                </Button>
+                                                <Stack
+                                                    direction="row"
+                                                    sx={{
+                                                        marginLeft: 'auto',
+                                                    }}
+                                                >
+                                                    <Button
+                                                        variant="text"
+                                                        className={
+                                                            styles.editBttn
+                                                        }
+                                                        onClick={() =>
+                                                            setOpenCurrentTableEditModal(
+                                                                true
+                                                            )
+                                                        }
+                                                    >
+                                                        Edit
+                                                    </Button>
+                                                    <Button
+                                                        variant="text"
+                                                        className={
+                                                            styles.deleteBttn
+                                                        }
+                                                    >
+                                                        Delete
+                                                    </Button>
+                                                </Stack>
+                                            </Stack>
+                                        </TableCell>
+                                    </TableRow>
+                                )
+                            })}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+
+                <div style={{ textAlign: 'end', marginTop: '1rem' }}>
+                    <Button variant="contained" className={styles.saveBttn}>
+                        Save
+                    </Button>
+                </div>
+
+                {openCurrentTableEditModal ? (
+                    <CurrentTableEditModal
+                        open={openCurrentTableEditModal}
+                        setOpen={setOpenCurrentTableEditModal}
+                    />
+                ) : null}
             </div>
-            {openCurrentTableEditModal ? (
-                <CurrentTableEditModal
-                    open={openCurrentTableEditModal}
-                    setOpen={setOpenCurrentTableEditModal}
-                />
-            ) : null}
         </>
     )
 }

@@ -1,5 +1,6 @@
 import ErrorIcon from '@mui/icons-material/Error'
-import Grid from '@mui/material/Unstable_Grid2'
+import { Typography } from '@mui/material'
+import Grid from '@mui/material/Grid'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import styles from '../_radiology-reporting.module.scss'
@@ -11,18 +12,41 @@ function UserHeader() {
         <Grid
             container
             className={styles.userHeader}
-            justifyContent={'space-between'}
+            // justifyContent={'space-between'}
+            // wrap="nowrap"
         >
-            <Grid>
-                001 &nbsp; Jeffery Mohamad Bin Christofa &nbsp; 10-05-1990
-                &nbsp; 32/M &nbsp; 900510015213
+            <Grid item xs={12} md={8}>
+                <Typography
+                    noWrap
+                    sx={{
+                        color: '#eeeeee',
+                        fontSize: matches ? '20px' : '13px',
+                        fontWeight: 700,
+                    }}
+                >
+                    001 &nbsp; Jeffery Mohamad Bin Christofa &nbsp; 10-05-1990
+                    &nbsp; 32/M &nbsp; 900510015213
+                </Typography>
             </Grid>
-            <Grid>
-                0401101006000001 &nbsp;&nbsp; K2 &nbsp;&nbsp; BM | EN | CN
-                <ErrorIcon
-                    fontSize="medium"
-                    sx={{ color: '#F9C234', marginLeft: '5px' }}
-                />
+            <Grid item xs={12} md={4}>
+                <Typography
+                    noWrap
+                    sx={{
+                        color: '#eeeeee',
+                        fontSize: matches ? '20px' : '13px',
+                        fontWeight: 700,
+                    }}
+                >
+                    0401101006000001 &nbsp;&nbsp; K2 &nbsp;&nbsp; BM | EN | CN
+                    <ErrorIcon
+                        fontSize={matches ? 'medium' : 'small'}
+                        sx={{
+                            color: '#F9C234',
+                            marginLeft: '5px',
+                            verticalAlign: 'sub',
+                        }}
+                    />
+                </Typography>
             </Grid>
         </Grid>
     )

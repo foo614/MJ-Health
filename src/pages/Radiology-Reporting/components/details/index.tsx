@@ -174,6 +174,7 @@ function RadiologyReportDetail() {
             <Grid xs={12}>
                 <Button
                     variant="contained"
+                    size={matches ? 'medium' : 'small'}
                     sx={{
                         background:
                             selectedType === 'report' ? '#fff' : '#EDEDED',
@@ -183,6 +184,9 @@ function RadiologyReportDetail() {
                             selectedType === 'report' ? '#211D4E' : '#5A567B',
                         fontWeight: 600,
                         marginRight: '1em',
+                        '&:hover': {
+                            color: '#fff', // Change font color to white on hover
+                        },
                     }}
                     onClick={() => handleButtonChange('report')}
                 >
@@ -190,6 +194,7 @@ function RadiologyReportDetail() {
                 </Button>
                 <Button
                     variant="contained"
+                    size={matches ? 'medium' : 'small'}
                     sx={{
                         background:
                             selectedType === 'comment' ? '#fff' : '#EDEDED',
@@ -198,6 +203,9 @@ function RadiologyReportDetail() {
                         color:
                             selectedType === 'comment' ? '#211D4E' : '#5A567B',
                         fontWeight: 600,
+                        '&:hover': {
+                            color: '#fff', // Change font color to white on hover
+                        },
                     }}
                     onClick={() => handleButtonChange('comment')}
                 >
@@ -221,7 +229,6 @@ function RadiologyReportDetail() {
                 sx={{
                     background: isCurrent ? '#DDDDDD' : '#F9F9F9',
                     borderRadius: '8px',
-                    minWidth: '300px',
                 }}
             >
                 <Grid container>
@@ -336,12 +343,15 @@ function RadiologyReportDetail() {
             <UserHeader />
             <Header />
             <Grid container sx={{ background: '#EDEDED' }}>
-                <Grid md={2} sx={{ mt: 4 }}>
+                <Grid xs={12} md={2} sx={{ mt: matches ? 4 : 2 }}>
                     <Stack
-                        direction="column"
+                        direction={{ xs: 'row', sm: 'column' }}
                         justifyContent="space-between"
                         alignItems="center"
                         spacing={2}
+                        p={{
+                            xs: 1,
+                        }}
                     >
                         <>
                             <ButtonCard
@@ -353,7 +363,7 @@ function RadiologyReportDetail() {
                                 onClick={() => setOpenAllergyDrugHx(true)}
                             />
                         </>
-                        <Box sx={{ py: 8 }}>
+                        <Box sx={{ py: matches ? 8 : 0 }}>
                             <ButtonCard
                                 label="View Comment"
                                 onClick={() => setOpenViewComment(true)}
@@ -368,6 +378,7 @@ function RadiologyReportDetail() {
                                 value={currentIndex}
                                 onChange={handleChange}
                                 aria-label="ant example"
+                                variant="scrollable"
                             >
                                 <AntTab label="CT Scan" />
                                 <AntTab label="Mammography" />

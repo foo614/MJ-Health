@@ -37,6 +37,12 @@ const OtherFunction = () => {
                         label="Staff Management"
                         onClick={() => navigate(STAFF_MANAGEMENT_PAGE)}
                     />
+                    <CustomBoxButton
+                        image={Printer}
+                        label="IT Printing Room"
+                        onClick={() => navigate(IT_ROOM_PRINTING_PAGE)}
+                    />
+                    <CustomBoxButton image={Group1} label="Staff Management" />
                     <CustomBoxButton image={MulIcon} label="Word Bank" />
                     <CustomBoxButton image={RoomIcon} label="Room Management" />
                     <CustomBoxButton image={GroupIcon} label="Final Report" />

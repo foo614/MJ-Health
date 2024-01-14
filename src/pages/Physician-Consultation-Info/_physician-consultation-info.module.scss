@@ -125,7 +125,7 @@
 }
 
 .card {
-    padding: 25px 35px !important;
+    // padding: 25px 35px !important;
     border-radius: var(--br-3xs) !important;
     height: 100%;
 }
@@ -483,4 +483,50 @@
 
 .overviewDivBttnStackRelative {
     position: relative;
+}
+
+.screeningOutcomeTableHeadCell {
+    font-weight: 600 !important;
+    font-size: 20px !important;
+    color: var(--mj-deep-green) !important;
+}
+.screeningOutcomeTableBodyCell {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.adornedStartCss {
+    padding-left: 0px !important;
+}
+
+.inputFieldForTrend {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--title-color) !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    text-align: center;
+}
+
+.negativeDiv {
+    background-color: #de4e3a;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 45px;
+    width: 100px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.positiveDiv {
+    background-color: var(--color-turquoise);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 45px;
+    width: 100px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.textCenter {
+    text-align: center;
 }

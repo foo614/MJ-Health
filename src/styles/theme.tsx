@@ -23,6 +23,9 @@ let theme = createTheme({
                     height: '45px',
                     textTransform: 'none',
                 },
+                sizeSmall: {
+                    fontSize: '12px',
+                },
             },
         },
         MuiInputBase: {
