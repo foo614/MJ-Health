@@ -81,17 +81,18 @@ const PhysicianConsultationInfo = () => {
             >
                 <Grid
                     container
-                    columnSpacing={{ xs: 2, sm: 2, md: 2 }}
-                    rowSpacing={{ xs: 2, sm: 2, md: 2 }}
+                    spacing={2}
+                    // columnSpacing={{ xs: 2, sm: 2, md: 2, lg: 2, xl: 2 }}
+                    // rowSpacing={{ xs: 2, sm: 2, md: 2, lg: 2, xl: 2 }}
                 >
-                    <Grid item md={2} xs={12}>
+                    <Grid item md={2} xs={12} lg={2} xl={1}>
                         <Stack
                             direction="column"
                             spacing={2}
-                            sx={{
-                                width: lgUp ? '150px' : '100%',
-                                margin: 'auto',
-                            }}
+                            // sx={{
+                            //     width: lgUp ? '150px' : '100%',
+                            //     margin: 'auto',
+                            // }}
                         >
                             <div
                                 className={styles.smallCard}
@@ -129,7 +130,7 @@ const PhysicianConsultationInfo = () => {
                             </div>
                         </Stack>
                     </Grid>
-                    <Grid item md={8} xs={12}>
+                    <Grid item md={8} xs={12} lg={8} xl={10}>
                         <Card className={styles.card}>
                             <div style={{ padding: '25px 25px  0px 25px' }}>
                                 <Stack
@@ -182,13 +183,13 @@ const PhysicianConsultationInfo = () => {
                             {displaySelectedSection()}
                         </Card>
                     </Grid>
-                    <Grid item md={2} xs={12}>
+                    <Grid item md={2} xs={12} lg={2} xl={1}>
                         <Stack
                             direction="column"
-                            sx={{
-                                width: lgUp ? '150px' : '100%',
-                                margin: 'auto',
-                            }}
+                            // sx={{
+                            //     width: lgUp ? '150px' : '100%',
+                            //     margin: 'auto',
+                            // }}
                         >
                             <div className={styles.smallCard}>
                                 <p className={styles.smallCardTitle}>Images</p>
