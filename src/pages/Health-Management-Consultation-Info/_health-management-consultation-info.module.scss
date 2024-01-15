@@ -396,3 +396,69 @@
     font-size: var(--font-size-base) !important;
     color: var(--color-turquoise) !important;
 }
+
+.unSelectedMealBttn {
+    background-color: var(--color-lightgray) !important;
+    color: var(--label-color) !important;
+    height: 30px !important;
+}
+
+.selectedMealBttn {
+    background-color: var(--label-color) !important;
+    color: var(--color-white) !important;
+    height: 30px !important;
+}
+
+.nutrientsItem {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.nutrietsTextFieldText {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
+}
+
+.nutrients_section_div {
+    padding: 24px;
+    height: 500px;
+    overflow: auto;
+}
+
+.nutrients_section_div::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.nutrients_section_div::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.main_ingredient_div {
+    padding: 24px;
+    height: 500px;
+    overflow: auto;
+}
+
+.main_ingredient_div::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.main_ingredient_div::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.main_ingredient_text {
+    font-weight: 700 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
