@@ -462,3 +462,105 @@
     font-size: var(--font-size-base) !important;
     color: var(--title-color) !important;
 }
+
+.main_section_div {
+    padding: 0px 24px;
+}
+
+.main_section_text {
+    font-weight: 600 !important;
+    font-size: 20px !important;
+    color: var(--mj-deep-green) !important;
+}
+
+.tableHeadCellText {
+    font-weight: 500 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--label-color) !important;
+}
+
+.currentTableExamItemCellValue {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.currentTableUserName {
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    color: var(--color-turquoise) !important;
+}
+
+.current_table_selected_bttn {
+    background: var(--color-turquoise) !important;
+    box-shadow: 0px 3px 5px rgba(33, 155, 142, 0.15) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--color-white) !important;
+}
+
+.current_table_unselected_bttn {
+    background-color: var(--color-whitesmoke-100) !important;
+    border: 2px solid #ededed !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--label-color) !important;
+    line-height: unset !important;
+}
+
+.current_table_bottom_text_div {
+    background: #fdfdfd !important;
+    padding: 15px 24px;
+    border-top: 2px solid #ededed;
+    border-bottom: 2px solid #ededed;
+}
+
+.current_table_bottom_table_div {
+    background-color: var(--color-whitesmoke-100) !important;
+    padding: 20px 24px;
+}
+
+.current_table_bottom_table {
+    height: 380px;
+    overflow: auto;
+}
+
+.current_table_bottom_table::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.current_table_bottom_table::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.high_risk_group_div {
+    border-radius: 3px !important;
+    background-color: var(--color-whitesmoke-100) !important;
+    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+    padding: 15px;
+    height: 180px;
+}
+
+.high_risk_group_div_text {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: justify;
+    color: var(--title-color) !important;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.lifestyle_risk_table_cell {
+    background-color: var(--color-whitesmoke-100);
+}
