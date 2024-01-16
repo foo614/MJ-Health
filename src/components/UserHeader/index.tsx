@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 // import styles from '../_radiology-reporting.module.scss'
-import styles from "../_health-management-consultation-info.module.scss"
+import styles from "./_user-header.module.scss"
 function UserHeader() {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))

@@ -1,5 +1,5 @@
 import ResponsiveAppBar from 'components/AppBar'
-import UserHeader from './components/user-header'
+import UserHeader from '../../components/UserHeader'
 import { Grid, Button, Stack, Divider, Card } from '@mui/material'
 import {
     HEALTH_MANAGEMENT_CONSULTATION_PAGE,

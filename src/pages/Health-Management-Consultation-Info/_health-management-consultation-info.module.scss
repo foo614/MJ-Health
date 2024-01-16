@@ -564,3 +564,117 @@
 .lifestyle_risk_table_cell {
     background-color: var(--color-whitesmoke-100);
 }
+
+.editBttn {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--color-turquoise) !important;
+}
+
+.deleteBttn {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: #de4e3a !important;
+}
+
+.dietary_assessment_title {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.dietary_assessment_item {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+.dietary_assessment_sub_item {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--mj-deep-green) !important;
+}
+
+.dietary_assessment_sub_item_select {
+    font-weight: 600 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--title-color) !important;
+}
+
+.questionnaireBttn {
+    background: var(--label-color) !important;
+    box-shadow: 0px 3px 15px rgba(33, 155, 142, 0.25) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 700 !important;
+    font-size: 22px !important;
+    text-align: center;
+    color: var(--color-white) !important;
+    line-height: unset !important;
+}
+
+.hmp_report_build_indices_div {
+    background-color: var(--color-whitesmoke-100);
+}
+
+.hmp_report_title {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.hmp_report_inner_div {
+    padding: 20px 24px;
+}
+
+.hmp_report_sub_item {
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    color: var(--label-color) !important;
+}
+
+.hmp_table_head_text {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--color-white) !important;
+    text-align: center;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.unSelectedRankingBttn {
+    border-radius: 0 !important;
+    background: #fdfdfd !important;
+    border: 1px solid #ededed !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--label-color) !important;
+    line-height: unset !important;
+    box-shadow: unset !important;
+}
+
+.selectedRankingBttn {
+    border-radius: 0 !important;
+    background: var(--color-turquoise) !important;
+    border: 0 !important;
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--color-white) !important;
+    line-height: unset !important;
+    box-shadow: unset !important;
+}
+
+.printBttn {
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+    background-color: var(--label-color) !important;
+    color: var(--color-white) !important;
+    height: 64px !important;
+    width: 220px !important;
+}
