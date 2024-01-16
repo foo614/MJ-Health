@@ -24,6 +24,8 @@ import {
     STAFF_PROFILE_PAGE,
     STICKER_PRINTING_PAGE,
     TEST_PDPA_PAGE,
+    HEALTH_MANAGEMENT_CONSULTATION_PAGE,
+    HEALTH_MANAGEMENT_CONSULTATION_INFO_PAGE,
 } from 'constant'
 import Dashboard from 'pages/Dashboard'
 import Dining from 'pages/Dining'
@@ -55,6 +57,8 @@ import PhysicianConsultationInfo from 'pages/Physician-Consultation-Info'
 import StaffManagement from 'pages/Staff-Management'
 import StaffProfile from 'pages/Staff-Profile'
 import StaffProfileNew from 'pages/Staff-Profile-New'
+import HealthManagementConsultation from 'pages/Health-Management-Consultation'
+import HealthManagementConsultationInfo from 'pages/Health-Management-Consultation-Info'
 function App() {
     return (
         <ThemeProvider theme={theme}>
@@ -133,6 +137,14 @@ function App() {
                 <Route
                     path={STAFF_PROFILE_PAGE + '/:id'}
                     element={<StaffProfile />}
+                />
+                <Route
+                    path={HEALTH_MANAGEMENT_CONSULTATION_PAGE}
+                    element={<HealthManagementConsultation />}
+                />
+                <Route
+                    path={HEALTH_MANAGEMENT_CONSULTATION_INFO_PAGE + '/:id'}
+                    element={<HealthManagementConsultationInfo />}
                 />
                 {/* <Route path={TEST_PDPA_PAGE} element={<TestPDPAPage />} /> */}
             </Routes>

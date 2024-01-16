@@ -16,6 +16,7 @@ import PersonalComplaintModal from './components/personal-complaint-modal'
 import AllergyModal from './components/allergy-modal'
 import CallHistoryModal from './components/call-history-modal'
 import CurrentTableEditModal from './components/current-table-edit-modal'
+import UserHeader from './components/user-header'
 
 const PhysicianConsultationInfo = () => {
     const theme = useTheme()
@@ -48,6 +49,7 @@ const PhysicianConsultationInfo = () => {
     return (
         <>
             <ResponsiveAppBar />
+            <UserHeader />
             <Grid container className={styles.header}>
                 <Grid xs={12} md={2} textAlign={matches ? 'center' : 'start'}>
                     <Button
@@ -79,12 +81,7 @@ const PhysicianConsultationInfo = () => {
                     marginTop: '2rem',
                 }}
             >
-                <Grid
-                    container
-                    spacing={2}
-                    // columnSpacing={{ xs: 2, sm: 2, md: 2, lg: 2, xl: 2 }}
-                    // rowSpacing={{ xs: 2, sm: 2, md: 2, lg: 2, xl: 2 }}
-                >
+                <Grid container spacing={2}>
                     <Grid item md={2} xs={12} lg={2} xl={1}>
                         <Stack
                             direction="column"

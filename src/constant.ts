@@ -23,3 +23,5 @@ export const PHYSICIAN_CONSULTATION_INFO_PAGE = '/physician-consultation-info'
 export const STAFF_MANAGEMENT_PAGE = '/staff-management'
 export const STAFF_PROFILE_PAGE = '/staff-profile'
 export const STAFF_PROFILE_NEW_PAGE = '/staff-profile-new'
+export const HEALTH_MANAGEMENT_CONSULTATION_PAGE = "/health-management-consultation"
+export const HEALTH_MANAGEMENT_CONSULTATION_INFO_PAGE = "/health-management-consultation-info"
