@@ -332,29 +332,6 @@ const StaffProfile = () => {
         }
     }, [])
 
-    // const fakeStaffData = fakeData.find((data) => data.id.toString() == id)
-
-    // const fakeStaffData = {
-    //     id: 1,
-    //     staffId: 'MYJB-0001',
-    //     name: 'Lee Shen Long',
-    //     gender: 'Male',
-    //     icNo: '1501031979081310',
-    //     position: 1,
-    //     dob: '14-01-2000',
-    //     joinDate: '14-01-2024',
-    //     leaveDate: '-',
-    //     contactNo: '0123456789',
-    //     email: 'shenlong.lee@mjhealth.com',
-    //     address1: '11, jalan abc',
-    //     address2: 'taman abd',
-    //     postcode: '81300',
-    //     city: 'Johor Bahru',
-    //     country: 'Malaysia',
-    //     password: '',
-    //     status: false,
-    // }
-
     const serviceAuthorization = [
         {
             id: 0,

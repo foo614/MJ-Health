@@ -128,7 +128,9 @@ const StaffManagementTable = ({ fakeData }: Props) => {
                                     </TableCell>
                                     <TableCell>
                                         <Button
-                                            className={styles.manageAccountBttn}
+                                            className={
+                                                styles.manageAccountButton
+                                            }
                                             onClick={() =>
                                                 navigate(
                                                     STAFF_PROFILE_PAGE +
