@@ -8,8 +8,11 @@ import {
 } from '@mui/material'
 import styles from '../../_health-management-consultation-info.module.scss'
 import { useState } from 'react'
+import QuestionaireModal from './components/questionaire-modal'
 const DietaryAssessment = () => {
     const [mealTimeValue, setMealTimeValue] = useState<string>('-')
+    const [openQuestionaireModal, setOpenQuestionaireModal] =
+        useState<boolean>(false)
     const meal_time_option = [
         {
             id: 1,
@@ -476,6 +479,7 @@ const DietaryAssessment = () => {
                             variant="contained"
                             className={styles.questionnaireBttn}
                             sx={{ width: '220px', height: '64px' }}
+                            onClick={() => setOpenQuestionaireModal(true)}
                         >
                             Questionnaire Enquiry
                         </Button>
@@ -489,6 +493,12 @@ const DietaryAssessment = () => {
                     </Stack>
                 </Grid>
             </Grid>
+            {openQuestionaireModal ? (
+                <QuestionaireModal
+                    open={openQuestionaireModal}
+                    setOpen={setOpenQuestionaireModal}
+                />
+            ) : null}
         </div>
     )
 }
