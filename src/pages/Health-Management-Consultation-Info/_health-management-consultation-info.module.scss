@@ -365,6 +365,11 @@
     overflow: auto;
 }
 
+.mpaTable {
+    border-collapse: separate !important;
+    border-spacing: 10px 0px !important;
+}
+
 .dietary_lifestyle_section_div::-webkit-scrollbar {
     width: 5px;
     height: 8px;
@@ -677,4 +682,20 @@
     color: var(--color-white) !important;
     height: 64px !important;
     width: 220px !important;
+}
+
+.mpa_view {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    background-color: var(--label-color) !important;
+    color: var(--color-white) !important;
+    width: 120px;
+}
+
+.view_modal_text {
+    font-weight: 500 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+    color: var(--label-color) !important;
 }
