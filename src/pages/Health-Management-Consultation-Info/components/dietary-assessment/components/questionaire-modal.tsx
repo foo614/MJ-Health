@@ -12,6 +12,15 @@ import Tab from '@mui/material/Tab'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import BasicInfo from './basic-info'
+import LifeStyleHabit from './life-style-habit'
+import EatingHabit from './eating-habit'
+import ExerciseHabit from './exercise-habit'
+import SleepQuality from './sleep-quality'
+import PhysicalSymptoms1 from './physical-symptoms-1'
+import PhysicalSymptoms2 from './physical-symptoms-2'
+import PersonalFamilyHistory1 from './personal-family-history-1'
+import PersonalFamilyHistory2 from './personal-family-history-2'
+import PersonalFamilyHistory3 from './personal-family-history-3'
 
 type Props = {
     open: boolean
@@ -176,31 +185,31 @@ const QuestionaireModal: React.FC<Props> = ({ open, setOpen }: Props) => {
                             <BasicInfo />
                         </CustomTabPanel>
                         <CustomTabPanel value={value} index={1}>
-                            Item Two
+                            <LifeStyleHabit />
                         </CustomTabPanel>
                         <CustomTabPanel value={value} index={2}>
-                            Item 3
+                            <EatingHabit />
                         </CustomTabPanel>
                         <CustomTabPanel value={value} index={3}>
-                            Item 4
+                            <ExerciseHabit />
                         </CustomTabPanel>
                         <CustomTabPanel value={value} index={4}>
-                            Item 5
+                            <SleepQuality />
                         </CustomTabPanel>
                         <CustomTabPanel value={value} index={5}>
-                            Item 6
+                            <PhysicalSymptoms1 />
                         </CustomTabPanel>
                         <CustomTabPanel value={value} index={6}>
-                            Item 7
+                            <PhysicalSymptoms2 />
                         </CustomTabPanel>
                         <CustomTabPanel value={value} index={7}>
-                            Item 8
+                            <PersonalFamilyHistory1 />
                         </CustomTabPanel>
                         <CustomTabPanel value={value} index={8}>
-                            Item 9
+                            <PersonalFamilyHistory2 />
                         </CustomTabPanel>
                         <CustomTabPanel value={value} index={9}>
-                            Item 10
+                            <PersonalFamilyHistory3 />
                         </CustomTabPanel>
                     </Box>
                 </DialogContent>

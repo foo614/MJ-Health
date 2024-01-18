@@ -635,7 +635,7 @@
 
 .hmp_report_sub_item {
     font-weight: 500 !important;
-    font-size: 16px !important;
+    font-size: var(--font-size-base) !important;
     color: var(--label-color) !important;
 }
 
@@ -714,6 +714,7 @@
     font-weight: 500 !important;
     font-size: var(--font-size-base) !important;
     color: var(--label-color) !important;
+    text-transform: unset !important;
 }
 
 .questionnaire_modal_title {
@@ -744,4 +745,11 @@
 .questionaire_modal_child_div::-webkit-scrollbar-thumb {
     background: #aaa;
     border-radius: 10px;
+}
+
+.life_style_item_24 {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+    padding-left: 30px;
 }
