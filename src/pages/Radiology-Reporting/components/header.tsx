@@ -13,7 +13,7 @@ function Header() {
             <Grid xs={12} md={6} mdOffset={3} className={styles.headerTitle}>
                 RADIOLOGY REPORTING
             </Grid>
-            <Grid xs={12} md={3} textAlign={'center'}>
+            <Grid xs={12} md={3} textAlign={matches ? 'center' : 'end'}>
                 <TextField
                     InputProps={{
                         startAdornment: (

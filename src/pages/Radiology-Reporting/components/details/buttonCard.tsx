@@ -21,7 +21,7 @@ function ButtonCard({ label, onClick }: Props) {
                     m: 'auto',
                     width: matches ? 140 : 100,
                     height: matches ? 120 : 80,
-                    p: matches ? '2rem' : '1rem',
+                    p: matches ? '1.5rem' : '1rem',
                     cursor: 'pointer',
                     alignItems: 'center',
                     display: 'flex',

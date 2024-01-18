@@ -3,6 +3,7 @@ import Stack from '@mui/material/Stack'
 import {
     IT_MONITOR_ROOM_PAGE,
     IT_ROOM_PRINTING_PAGE,
+    MUL_REPORT_PAGE,
     STAFF_MANAGEMENT_PAGE,
 } from 'constant'
 import Group1 from 'images/group-1@2x.png'
@@ -42,7 +43,11 @@ const OtherFunction = () => {
                         label="IT Printing Room"
                         onClick={() => navigate(IT_ROOM_PRINTING_PAGE)}
                     />
-                    <CustomBoxButton image={MULReport} label="MUL Report" />
+                    <CustomBoxButton
+                        image={MULReport}
+                        label="MUL Report"
+                        onClick={() => navigate(MUL_REPORT_PAGE)}
+                    />
                     <CustomBoxButton image={MulIcon} label="Word Bank" />
                     <CustomBoxButton image={RoomIcon} label="Room Management" />
                     <CustomBoxButton image={GroupIcon} label="Final Report" />

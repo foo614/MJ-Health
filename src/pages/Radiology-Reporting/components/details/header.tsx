@@ -26,17 +26,18 @@ function Header() {
                     <span style={{ marginLeft: '-5px' }}>Back</span>
                 </Button>
             </Grid>
-            <Grid xs={4} md={6} className={styles.headerTitle}>
+            <Grid xs={4} md={8} className={styles.headerTitle}>
                 RADIOLOGY REPORTING
             </Grid>
-            <Grid xs={4} md={3} className={styles.confirmButton}>
+            <Grid xs={4} md={1} className={styles.confirmButton}>
                 <Button
                     variant="contained"
                     sx={{ height: '40px', marginTop: '5px' }}
                     size={matches ? 'medium' : 'small'}
                     onClick={() => setOpen(true)}
+                    fullWidth={matches ? true : false}
                 >
-                    Confirm
+                    Print
                 </Button>
             </Grid>
             {open && (

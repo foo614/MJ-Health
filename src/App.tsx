@@ -4,6 +4,8 @@ import {
     DINING_CHECK_IN_PAGE,
     DINING_MEAL_SETUP_PAGE,
     DINING_PAGE,
+    HEALTH_MANAGEMENT_CONSULTATION_INFO_PAGE,
+    HEALTH_MANAGEMENT_CONSULTATION_PAGE,
     IT_MONITOR_ROOM_PAGE,
     IT_ROOM_PRINTING_PAGE,
     KIOSK_PAGE,
@@ -13,8 +15,9 @@ import {
     LOGIN_PAGE,
     MEMBER_PROFILE_PAGE,
     MONITOR_SYSTEM_PAGE,
-    PHYSICIAN_CONSULTATION_PAGE,
+    MUL_REPORT_PAGE,
     PHYSICIAN_CONSULTATION_INFO_PAGE,
+    PHYSICIAN_CONSULTATION_PAGE,
     QUEUE_MANAGEMENT_PAGE,
     RADIOLOGY_REPORTING_PAGE,
     RECEPTION_PAGE,
@@ -23,42 +26,41 @@ import {
     STAFF_PROFILE_NEW_PAGE,
     STAFF_PROFILE_PAGE,
     STICKER_PRINTING_PAGE,
-    TEST_PDPA_PAGE,
-    HEALTH_MANAGEMENT_CONSULTATION_PAGE,
-    HEALTH_MANAGEMENT_CONSULTATION_INFO_PAGE,
 } from 'constant'
 import Dashboard from 'pages/Dashboard'
 import Dining from 'pages/Dining'
 import DiningCheckIn from 'pages/Dining-Check-In'
+import HealthManagementConsultation from 'pages/Health-Management-Consultation'
+import HealthManagementConsultationInfo from 'pages/Health-Management-Consultation-Info'
 import ITRoomMonitor from 'pages/IT-Room-Monitor'
+import ITRoomPrintingPage from 'pages/IT-Room-Printing'
 import Kiosk from 'pages/Kiosk'
 import LabPage from 'pages/Lab'
 import LabInfo from 'pages/Lab/lab-info'
 import LabSingleItemPage from 'pages/Lab/single-item'
 import Login from 'pages/Login'
+import MULReport from 'pages/MUL-Report'
+import MULReportDetail from 'pages/MUL-Report/components/details'
+import MULReportDetailTable from 'pages/MUL-Report/components/report'
 import MealSetup from 'pages/Meal-Setup'
 import MemberProfile from 'pages/Member-Profile'
 import MonitorSystem from 'pages/Monitor-System'
+import PhysicianConsultation from 'pages/Physician-Consultation'
+import PhysicianConsultationInfo from 'pages/Physician-Consultation-Info'
 import QueueManagement from 'pages/Queue-Management'
 import QueueManagementList from 'pages/Queue-Management/components/queue-list'
 import RadiologyReport from 'pages/Radiology-Reporting'
 import RadiologyReportDetail from 'pages/Radiology-Reporting/components/details'
 import Reception from 'pages/Reception'
 import Setting from 'pages/Setting'
+import StaffManagement from 'pages/Staff-Management'
+import StaffProfile from 'pages/Staff-Profile'
+import StaffProfileNew from 'pages/Staff-Profile-New'
 import StickerPrinting from 'pages/Sticker-Printing'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
-import { TestPDPAPage } from 'pages/Member-Profile/components/test-pdpa-page'
-import ITRoomPrintingPage from 'pages/IT-Room-Printing'
-import PhysicianConsultation from 'pages/Physician-Consultation'
-import PhysicianConsultationInfo from 'pages/Physician-Consultation-Info'
-import StaffManagement from 'pages/Staff-Management'
-import StaffProfile from 'pages/Staff-Profile'
-import StaffProfileNew from 'pages/Staff-Profile-New'
-import HealthManagementConsultation from 'pages/Health-Management-Consultation'
-import HealthManagementConsultationInfo from 'pages/Health-Management-Consultation-Info'
 function App() {
     return (
         <ThemeProvider theme={theme}>
@@ -145,6 +147,15 @@ function App() {
                 <Route
                     path={HEALTH_MANAGEMENT_CONSULTATION_INFO_PAGE + '/:id'}
                     element={<HealthManagementConsultationInfo />}
+                />
+                <Route path={MUL_REPORT_PAGE} element={<MULReport />} />
+                <Route
+                    path={MUL_REPORT_PAGE + '/:id'}
+                    element={<MULReportDetail />}
+                />
+                <Route
+                    path={MUL_REPORT_PAGE + '/:id' + '/:reportId'}
+                    element={<MULReportDetailTable />}
                 />
                 {/* <Route path={TEST_PDPA_PAGE} element={<TestPDPAPage />} /> */}
             </Routes>
