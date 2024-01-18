@@ -11,7 +11,10 @@ import Paper from '@mui/material/Paper'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './_consultation-check-in.module.scss'
-
+import {
+    HEALTH_MANAGEMENT_CONSULTATION_PAGE,
+    PHYSICIAN_CONSULTATION_PAGE,
+} from 'constant'
 type Props = {
     onClose: () => void
 }
@@ -29,6 +32,11 @@ const ConsultationCheckIn = (props: Props) => {
     }
 
     const handleConfirm = () => {
+        if (room == '1') {
+            navigate(HEALTH_MANAGEMENT_CONSULTATION_PAGE)
+        } else {
+            navigate(PHYSICIAN_CONSULTATION_PAGE)
+        }
         props.onClose()
     }
 
