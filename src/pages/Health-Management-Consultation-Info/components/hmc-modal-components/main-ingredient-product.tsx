@@ -1,7 +1,16 @@
 import { Grid, Stack, Checkbox } from '@mui/material'
 import styles from '../../_health-management-consultation-info.module.scss'
 import React from 'react'
+import { MainIngredientProductPrintOut } from './main-ingredient-product-pdf'
+import { useReactToPrint } from 'react-to-print'
+import { useRef } from 'react'
 const MainIngredientProduct = () => {
+    const mainIngredientPDF = useRef(null)
+    const handlePrint = useReactToPrint({
+        content: () => mainIngredientPDF.current,
+        // pageStyle: pageStyle,
+    })
+
     const data = [
         {
             item: 'TriBiotix P+',
@@ -103,8 +112,18 @@ const MainIngredientProduct = () => {
             </div>
             <Stack direction="row" spacing={2} alignItems="center">
                 <p>Print Main Ingredients of Products</p>
-                <Checkbox name="main_ingredient_checkbox" />
+                <Checkbox
+                    name="main_ingredient_checkbox"
+                    onClick={handlePrint}
+                />
             </Stack>
+
+            <div style={{ display: 'none' }}>
+                <MainIngredientProductPrintOut
+                    ref={mainIngredientPDF}
+                    fakeData={data}
+                />
+            </div>
         </div>
     )
 }

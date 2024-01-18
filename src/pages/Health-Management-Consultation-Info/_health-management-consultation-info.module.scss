@@ -753,3 +753,67 @@
     color: var(--title-color) !important;
     padding-left: 30px;
 }
+
+.printFormHeader {
+    height: 100%;
+    width: 100%;
+    background-image: url('../../images/pdpa-form-header.png');
+    background-size: cover !important;
+    background-color: var(--mj-deep-green) !important;
+    display: flex;
+    padding: 30px;
+}
+
+.printFormHeaderTitle {
+    font-weight: 700 !important;
+    font-size: 32px !important;
+    color: var(--color-white) !important;
+}
+
+.printFormHeaderSubText {
+    font-weight: 500 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--color-white) !important;
+    margin-top: 10px !important;
+}
+
+@media print {
+    html,
+    body {
+        -webkit-print-color-adjust: exact;
+    }
+    .pagebreak {
+        page-break-before: always !important;
+    }
+}
+
+@page {
+    size: auto;
+    margin: 20mm;
+}
+
+.printFormHealthManagementTitle {
+    font-weight: 700 !important;
+    font-size: 24px !important;
+    color: #000000;
+    text-align: center;
+}
+
+.printFormBodyHMConsultantText {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: #000000;
+}
+
+.printFormBodyTitle {
+    font-weight: 600 !important;
+    font-size: 22px !important;
+    color: var(--color-white) !important;
+    text-align: center;
+}
+
+.printFormItem {
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    color: #000000;
+}
