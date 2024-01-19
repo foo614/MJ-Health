@@ -36,7 +36,7 @@ const Header = (props: Props) => {
                 {props.title}
             </Grid>
             {props.hasSearch && (
-                <Grid xs={12} md={3} textAlign={matches ? 'center' : 'end'}>
+                <Grid xs={12} md={3} textAlign={'center'}>
                     <TextField
                         InputProps={{
                             startAdornment: (
