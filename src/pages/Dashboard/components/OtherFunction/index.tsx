@@ -9,10 +9,11 @@ import {
 import Group1 from 'images/group-1@2x.png'
 import GroupIcon from 'images/group-3091@2x.png'
 import Monitor from 'images/monitor-1@2x.png'
-import { default as MULReport, default as MulIcon } from 'images/mul-1@2x.png'
+import { default as MULReport } from 'images/mul-1@2x.png'
 import Other2 from 'images/other-2@2x.png'
 import Printer from 'images/printer-1-1@2x.png'
 import RoomIcon from 'images/room-1-1@2x.png'
+import WorldBankIcon from 'images/vector-1-1@2x.png'
 import { useNavigate } from 'react-router-dom'
 import CustomBoxButton from '../CustomBoxButton'
 import styles from './_services.module.scss'
@@ -48,7 +49,7 @@ const OtherFunction = () => {
                         label="MUL Report"
                         onClick={() => navigate(MUL_REPORT_PAGE)}
                     />
-                    <CustomBoxButton image={MulIcon} label="Word Bank" />
+                    <CustomBoxButton image={WorldBankIcon} label="Word Bank" />
                     <CustomBoxButton image={RoomIcon} label="Room Management" />
                     <CustomBoxButton image={GroupIcon} label="Final Report" />
                 </Stack>

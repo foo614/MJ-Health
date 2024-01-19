@@ -10,6 +10,7 @@ import Cardiogram from 'images/cardiogram-1@2x.png'
 import Chat1 from 'images/chat-1-1@2x.png'
 import Group2 from 'images/group@2x.png'
 import LineIcon from 'images/line-1@2x.png'
+import MonitorSystemIcon from 'images/list-1@2x.png'
 import PhoneIcon from 'images/phone-1-1@2x.png'
 import Frame2 from 'images/screening-1@2x.png'
 import Swab from 'images/swab-1@2x.png'
@@ -77,7 +78,7 @@ const HealthAndScreening = () => {
                         onClick={openConsultationCheckIn}
                     />
                     <CustomBoxButton
-                        image={LineIcon}
+                        image={MonitorSystemIcon}
                         label="Monitor System"
                         onClick={() => navigate(MONITOR_SYSTEM_PAGE)}
                     />

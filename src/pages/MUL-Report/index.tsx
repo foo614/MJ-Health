@@ -9,7 +9,7 @@ import TableRow from '@mui/material/TableRow'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import ResponsiveAppBar from 'components/AppBar'
-import { LAB_TEST_INFO_PAGE } from 'constant'
+import { MUL_REPORT_PAGE } from 'constant'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './_mul-report.module.scss'
@@ -264,9 +264,6 @@ const MULReport = () => {
                                     <TableRow
                                         key={row.identityCardNo}
                                         className={styles.infoTableTR}
-                                        onClick={() =>
-                                            navigate(LAB_TEST_INFO_PAGE)
-                                        }
                                     >
                                         <TableCell className={styles.fontBold}>
                                             {row.name}
@@ -290,7 +287,14 @@ const MULReport = () => {
                                             {row.latestScreeningDate}
                                         </TableCell>
                                         <TableCell>
-                                            <Button variant="contained">
+                                            <Button
+                                                variant="contained"
+                                                onClick={() =>
+                                                    navigate(
+                                                        MUL_REPORT_PAGE + '/1'
+                                                    )
+                                                }
+                                            >
                                                 View
                                             </Button>
                                         </TableCell>

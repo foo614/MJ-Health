@@ -5,6 +5,10 @@ import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { useState } from 'react'
 import CircleIcon from '@mui/icons-material/Circle'
+import { useReactToPrint } from 'react-to-print'
+import { useRef } from 'react'
+import { NutrientPrintOut } from './nutrients-pdf'
+
 const Nutrients = () => {
     // field 1 : Morning Meal
     // field 2: Anytime with capsule
@@ -16,6 +20,11 @@ const Nutrients = () => {
     const smUp = useMediaQuery(theme.breakpoints.up('sm'))
     const [printInLanguage, setPrintInLanguage] = useState<string>('CN')
     const [currentBttn, setCurrentBttn] = useState<number>(1)
+    const nutrientsPDF = useRef(null)
+    const handlePrint = useReactToPrint({
+        content: () => nutrientsPDF.current,
+        // pageStyle: pageStyle,
+    })
     const data = [
         {
             title: 'TriBiotix P+',
@@ -468,6 +477,7 @@ const Nutrients = () => {
                                     variant="contained"
                                     className={styles.saveBttn}
                                     sx={{ width: '150px' }}
+                                    onClick={handlePrint}
                                 >
                                     Save
                                 </Button>
@@ -475,6 +485,14 @@ const Nutrients = () => {
                         </Grid>
                     </Grid>
                 </div>
+            </div>
+            <div style={{ display: 'none' }}>
+                <NutrientPrintOut
+                    ref={nutrientsPDF}
+                    fakeData={data}
+                    smUp={smUp}
+                    displayField={displayField}
+                />
             </div>
         </>
     )

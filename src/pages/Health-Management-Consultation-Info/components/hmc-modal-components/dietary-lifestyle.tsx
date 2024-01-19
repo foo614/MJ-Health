@@ -7,12 +7,19 @@ import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { useState } from 'react'
 import CircleIcon from '@mui/icons-material/Circle'
+import { useReactToPrint } from 'react-to-print'
+import { useRef } from 'react'
+import { DietaryLifeStylePrintOut } from './dietary-lifestyle-pdf'
 
 const DietaryLifestyle = () => {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
     const [printInLanguage, setPrintInLanguage] = useState<string>('CN')
-
+    const lifestylePDF = useRef(null)
+    const handlePrint = useReactToPrint({
+        content: () => lifestylePDF.current,
+        // pageStyle: pageStyle,
+    })
     const data = [
         {
             item: 'Balance, Moderate & Variety Diet ',
@@ -311,6 +318,7 @@ const DietaryLifestyle = () => {
                                     variant="contained"
                                     className={styles.saveBttn}
                                     sx={{ width: '150px' }}
+                                    onClick={handlePrint}
                                 >
                                     Save
                                 </Button>
@@ -318,6 +326,9 @@ const DietaryLifestyle = () => {
                         </Grid>
                     </Grid>
                 </div>
+            </div>
+            <div style={{ display: 'none' }}>
+                <DietaryLifeStylePrintOut ref={lifestylePDF} fakeData={data} />
             </div>
         </>
     )

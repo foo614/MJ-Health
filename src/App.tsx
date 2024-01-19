@@ -26,6 +26,9 @@ import {
     STAFF_PROFILE_NEW_PAGE,
     STAFF_PROFILE_PAGE,
     STICKER_PRINTING_PAGE,
+    DIETARY_LIFE_STYLE_PAGE,
+    MAIN_INGREDIENT,
+    NUTRIENT,
     PHONE_CONSULTATION_PAGE,
     PHONE_CONSULTATION_DISTRIBUTE_PAGE,
 } from 'constant'
@@ -63,9 +66,81 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
+import { MainIngredientProductPrintOut } from 'pages/Health-Management-Consultation-Info/components/hmc-modal-components/main-ingredient-product-pdf'
+import { NutrientPrintOut } from 'pages/Health-Management-Consultation-Info/components/hmc-modal-components/nutrients-pdf'
 import PhoneConsultation from 'pages/Phone-Consultation'
 import PhoneConsultationDistribute from 'pages/Phone-Consultation-Distribute'
 function App() {
+    const data = [
+        {
+            item: 'TriBiotix P+',
+            nutrients:
+                'Probiotics(multiple strains), Brewer’s Yeast, Water-soluble Fiber, Vit.B complex , Yeast Ferment Extract, Pimola Extract , Elderberry Extract , Perilla Extract , Gold Colostrum Powder , Lactoferrin , Soy Peptide',
+        },
+        {
+            item: 'NTC Omega 3 Fish Oil',
+            nutrients: 'Fish Oil 500mg (contains EPA 180mg, DHA 120mg)',
+        },
+        {
+            item: 'Yeast B Complex with Minerals',
+            nutrients:
+                'Natural Yeast Extract (contains Vit. B complex, Zinc, Chromium, Selenium)',
+        },
+        {
+            item: 'Protide',
+            nutrients:
+                'Non-GMO Soybean Refining (Soy Protein) : Contain 17 types of a.a (Included 9 types essential a.a)',
+        },
+        {
+            item: 'Life Vital Fiber Powder',
+            nutrients:
+                'Oats Extract, Wheat Grass Extract, Garcinia Cambogia, L- Carnitine, Multi-berry powder, Polyphenol',
+        },
+        {
+            item: 'Life Lemon Algae Powder',
+            nutrients:
+                'Red Algae Powder, Inulin, Citric Acid, Lactic Acid Bacteria (Bifidobacterium Longum)',
+        },
+        {
+            item: 'Vitamin D3',
+            nutrients: 'Vitamin D3 800IU',
+        },
+        {
+            item: 'Life Vision Jelly',
+            nutrients:
+                'Marigold Flower Extract (contains Lutein), Bilberry Extract, Wolfberry Extract, Black Currant Extract, Black Bean Extract, Red Algae Extract (contains Astaxanthin), Vitamin E',
+        },
+        {
+            item: 'Life Flexible Jelly',
+            nutrients:
+                'Pineapple Extract (contains Bromelain), Malic Acid, Citric Acid, Licorice Extract, Turmeric Extract',
+        },
+        {
+            item: 'Super Phoschol+',
+            nutrients:
+                'Phosphatidylcholine, Vitamin B1, Vitamin B2, Vitamin B3, Vitamin B6, Vitamin B12, Turmeric Extract',
+        },
+        {
+            item: 'Life Berries',
+            nutrients:
+                'Probiotics(multiple strains), Brewer’s Yeast, Water-soluble Fiber, Vit.B complex , Yeast Ferment Extract, Pimola Extract , Elderberry Extract , Perilla Extract , Gold Colostrum Powder , Lactoferrin , Soy Peptide',
+        },
+        {
+            item: 'NuTriShake Chocolate/Vanilla',
+            nutrients:
+                'Probiotics(multiple strains), Brewer’s Yeast, Water-soluble Fiber, Vit.B complex , Yeast Ferment Extract, Pimola Extract , Elderberry Extract , Perilla Extract , Gold Colostrum Powder , Lactoferrin , Soy Peptide',
+        },
+        {
+            item: 'Moringa Pep',
+            nutrients:
+                'Probiotics(multiple strains), Brewer’s Yeast, Water-soluble Fiber, Vit.B complex , Yeast Ferment Extract, Pimola Extract , Elderberry Extract , Perilla Extract , Gold Colostrum Powder , Lactoferrin , Soy Peptide',
+        },
+        {
+            item: 'Reinsure',
+            nutrients:
+                'Probiotics(multiple strains), Brewer’s Yeast, Water-soluble Fiber, Vit.B complex , Yeast Ferment Extract, Pimola Extract , Elderberry Extract , Perilla Extract , Gold Colostrum Powder , Lactoferrin , Soy Peptide',
+        },
+    ]
     return (
         <ThemeProvider theme={theme}>
             <Routes>
@@ -169,7 +244,10 @@ function App() {
                     path={PHONE_CONSULTATION_DISTRIBUTE_PAGE}
                     element={<PhoneConsultationDistribute />}
                 />
-                {/* <Route path={TEST_PDPA_PAGE} element={<TestPDPAPage />} /> */}
+                <Route
+                    path={MAIN_INGREDIENT}
+                    element={<MainIngredientProductPrintOut fakeData={data} />}
+                />
             </Routes>
         </ThemeProvider>
     )
