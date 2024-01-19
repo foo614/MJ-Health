@@ -20,7 +20,9 @@ type Props = {
     context: string | React.ReactNode
     width: false | Breakpoint | undefined //false = full width
     accept: () => void
+    acceptText?: string
     decline: () => void
+    declineText?: string
 }
 
 const ConfirmationModal: React.FC<Props> = ({
@@ -32,6 +34,8 @@ const ConfirmationModal: React.FC<Props> = ({
     accept,
     decline,
     context,
+    acceptText,
+    declineText,
 }: Props) => {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
@@ -70,7 +74,7 @@ const ConfirmationModal: React.FC<Props> = ({
                                     fullWidth
                                     onClick={decline}
                                 >
-                                    No
+                                    {declineText ?? 'No'}
                                 </Button>
                             </Grid>
                             <Grid item md={6} xs={12}>
@@ -80,7 +84,7 @@ const ConfirmationModal: React.FC<Props> = ({
                                     fullWidth
                                     onClick={accept}
                                 >
-                                    Yes
+                                    {acceptText ?? 'Yes'}
                                 </Button>
                             </Grid>
                         </Grid>

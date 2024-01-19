@@ -26,6 +26,8 @@ import {
     STAFF_PROFILE_NEW_PAGE,
     STAFF_PROFILE_PAGE,
     STICKER_PRINTING_PAGE,
+    PHONE_CONSULTATION_PAGE,
+    PHONE_CONSULTATION_DISTRIBUTE_PAGE,
 } from 'constant'
 import Dashboard from 'pages/Dashboard'
 import Dining from 'pages/Dining'
@@ -61,6 +63,8 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
+import PhoneConsultation from 'pages/Phone-Consultation'
+import PhoneConsultationDistribute from 'pages/Phone-Consultation-Distribute'
 function App() {
     return (
         <ThemeProvider theme={theme}>
@@ -156,6 +160,14 @@ function App() {
                 <Route
                     path={MUL_REPORT_PAGE + '/:id' + '/:reportId'}
                     element={<MULReportDetailTable />}
+                />
+                <Route
+                    path={PHONE_CONSULTATION_PAGE}
+                    element={<PhoneConsultation />}
+                />
+                <Route
+                    path={PHONE_CONSULTATION_DISTRIBUTE_PAGE}
+                    element={<PhoneConsultationDistribute />}
                 />
                 {/* <Route path={TEST_PDPA_PAGE} element={<TestPDPAPage />} /> */}
             </Routes>

@@ -1,0 +1,83 @@
+@use '../../../../styles/variables' as *;
+
+.headerTabCount {
+    cursor: pointer;
+    color: var(--mj-deep-green) !important;
+    text-align: center;
+    // font-size: 70px;
+    font-weight: 600;
+    border-radius: 10px 0px 0px 10px;
+    background: linear-gradient(
+        231deg,
+        var(--color-white) 8.64%,
+        var(--color-lightgray) 91.7%
+    );
+}
+
+.headerTabLabel {
+    cursor: pointer;
+    color: var(--color-white) !important;
+    // font-size: 24px;
+    font-weight: 600;
+    border-radius: 0px 10px 10px 0px;
+    background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.2) 0%,
+            rgba(0, 0, 0, 0.2) 100%
+        ),
+        linear-gradient(288deg, var(--mj-light-green) 7.49%, #00aee9 94.29%);
+}
+
+.dataTable {
+    // max-height: calc(100vh - 230px);
+    text-align: center !important;
+}
+
+.dataTable::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.dataTable::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.dataTableHeadTitle {
+    font-weight: 500 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--color-white) !important;
+}
+
+.dataTableHead * {
+    background-color: var(--mj-deep-green) !important;
+    // position: sticky;
+    // top: 0;
+    // z-index: 3;
+}
+
+.tableCellBoldValue {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color);
+}
+
+.tableCellValue {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color);
+    text-align: left;
+}
+
+.tableActionButton {
+    border-radius: 3px;
+    background: var(--MJ-Light-Green);
+    color: var(--color-white) !important;
+    min-width: 100px !important;
+}
+
+.tableActionButton:disabled {
+    background: var(--label-color) !important;
+}

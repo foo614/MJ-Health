@@ -666,7 +666,7 @@ const StaffProfile = () => {
                         title="STAFF PROFILE"
                     />
 
-                    <Container maxWidth="lg" style={{ marginTop: '1rem' }}>
+                    <Container maxWidth="xl" style={{ marginTop: '1rem' }}>
                         <Card
                             className={styles.card}
                             sx={

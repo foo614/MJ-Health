@@ -1,0 +1,13 @@
+@use '../../styles/variables' as *;
+
+.tabButton {
+    background-color: var(--color-whitesmoke-300) !important;
+    color: var(--Label-Color, #5a567b) !important;
+    font-weight: 500;
+}
+
+.tabButton.active {
+    background-color: var(--mj-deep-green) !important;
+    color: var(--color-white, #5a567b) !important;
+    font-weight: 700;
+}

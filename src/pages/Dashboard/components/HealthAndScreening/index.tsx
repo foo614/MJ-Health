@@ -2,6 +2,7 @@ import Grid from '@mui/material/Grid'
 import Stack from '@mui/material/Stack'
 import {
     MONITOR_SYSTEM_PAGE,
+    PHONE_CONSULTATION_PAGE,
     QUEUE_MANAGEMENT_PAGE,
     RADIOLOGY_REPORTING_PAGE,
 } from 'constant'
@@ -93,6 +94,7 @@ const HealthAndScreening = () => {
                     <CustomBoxButton
                         image={PhoneIcon}
                         label="Phone Consultation"
+                        onClick={() => navigate(PHONE_CONSULTATION_PAGE)}
                     />
                 </Stack>
             </Grid>

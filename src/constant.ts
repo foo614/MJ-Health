@@ -28,3 +28,6 @@ export const HEALTH_MANAGEMENT_CONSULTATION_PAGE =
 export const HEALTH_MANAGEMENT_CONSULTATION_INFO_PAGE =
     '/health-management-consultation-info'
 export const MUL_REPORT_PAGE = '/MUL-report'
+export const PHONE_CONSULTATION_PAGE = '/phone-consultation'
+export const PHONE_CONSULTATION_DISTRIBUTE_PAGE =
+    '/phone-consultation-distribute'

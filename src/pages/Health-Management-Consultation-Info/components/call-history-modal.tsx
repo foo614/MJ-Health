@@ -19,8 +19,18 @@ import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import DialogActions from '@mui/material/DialogActions'
 import Stack from '@mui/material/Stack'
+import ConfirmIcon from 'images/reject.png'
 
-import { FormControl, Select, MenuItem, TextField } from '@mui/material'
+import {
+    FormControl,
+    Select,
+    MenuItem,
+    TextField,
+    Box,
+    Typography,
+} from '@mui/material'
+import { useState } from 'react'
+import ConfirmationModal from 'components/ConfirmationModal'
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
         children: React.ReactElement<any, any>
@@ -39,45 +49,55 @@ const CallHistoryModal: React.FC<Props> = ({ setOpen, open }: Props) => {
     const theme = useTheme()
     const lgUp = useMediaQuery(theme.breakpoints.up('lg'))
     const mdUp = useMediaQuery(theme.breakpoints.up('md'))
+
+    const [rowSpanId, setRowSpanId] = useState<number>()
+    const [openConfirmationModal, setOpenConfirmationModal] =
+        useState<boolean>(false)
+
     const handleClose = () => {
         setOpen(false)
     }
 
     const listData = [
         {
+            id: 1,
             date: '03-03-2023',
-            relative: 'Daughter',
+            relative: 1,
             remark: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
             pic: 'MYJB-0001',
-            status: 'Call Again',
+            status: 1,
         },
         {
+            id: 2,
             date: '03-03-2023',
-            relative: 'Daughter',
+            relative: 2,
             remark: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
             pic: 'MYJB-0001',
-            status: 'Call Again',
+            status: 4,
         },
         {
+            id: 3,
             date: '03-03-2023',
-            relative: 'Daughter',
+            relative: 1,
             remark: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
             pic: 'MYJB-0001',
-            status: 'Call Again',
+            status: 4,
         },
         {
+            id: 4,
             date: '03-03-2023',
-            relative: 'Daughter',
+            relative: 1,
             remark: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
             pic: 'MYJB-0001',
-            status: 'Call Again',
+            status: 4,
         },
         {
+            id: 5,
             date: '03-03-2023',
-            relative: 'Son',
+            relative: 2,
             remark: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
             pic: 'MYJB-0001',
-            status: 'Call Again',
+            status: 4,
         },
     ]
 
@@ -93,10 +113,10 @@ const CallHistoryModal: React.FC<Props> = ({ setOpen, open }: Props) => {
     ]
 
     const statusOption = [
-        {
-            id: 1,
-            label: 'Call Again',
-        },
+        { id: 1, label: 'Call Again' },
+        { id: 2, label: 'No Answer' },
+        { id: 3, label: 'Follow Up' },
+        { id: 4, label: 'Closed' },
     ]
 
     return (
@@ -183,28 +203,352 @@ const CallHistoryModal: React.FC<Props> = ({ setOpen, open }: Props) => {
                             <TableBody>
                                 {listData.map((item: any, index: number) => {
                                     return (
-                                        <TableRow key={index}>
-                                            <TableCell>
-                                                <div>
-                                                    <p
-                                                        className={
-                                                            styles.callHistoryTableValueDate
+                                        <>
+                                            {rowSpanId == item.id && (
+                                                <TableRow
+                                                    key={'rowspan' + index}
+                                                >
+                                                    <TableCell
+                                                        rowSpan={
+                                                            rowSpanId == item.id
+                                                                ? 2
+                                                                : 1
                                                         }
-                                                        style={{
-                                                            textAlign: 'center',
+                                                    >
+                                                        <div>
+                                                            <p
+                                                                className={
+                                                                    styles.callHistoryTableValueDate
+                                                                }
+                                                                style={{
+                                                                    textAlign:
+                                                                        'center',
+                                                                }}
+                                                            >
+                                                                {item.date}
+                                                            </p>
+                                                        </div>
+                                                    </TableCell>
+                                                    <TableCell
+                                                        sx={{
+                                                            borderLeft:
+                                                                '2px solid #ededed',
                                                         }}
                                                     >
-                                                        {item.date}
+                                                        <div>
+                                                            <FormControl
+                                                                fullWidth
+                                                                size="small"
+                                                                className={
+                                                                    styles.callHistorySelect
+                                                                }
+                                                            >
+                                                                <Select
+                                                                    className={
+                                                                        styles.inputField
+                                                                    }
+                                                                    name="relativeList"
+                                                                    // value={''}
+                                                                    displayEmpty
+                                                                    // value={currentSelectedOption}
+                                                                    // onChange={handleChange}
+                                                                >
+                                                                    <MenuItem value="">
+                                                                        -
+                                                                    </MenuItem>
+                                                                    {listOption.map(
+                                                                        (
+                                                                            item: any,
+                                                                            index: number
+                                                                        ) => {
+                                                                            return (
+                                                                                <MenuItem
+                                                                                    value={
+                                                                                        item.id
+                                                                                    }
+                                                                                    key={
+                                                                                        index
+                                                                                    }
+                                                                                    className={
+                                                                                        styles.inputField
+                                                                                    }
+                                                                                >
+                                                                                    {
+                                                                                        item.label
+                                                                                    }
+                                                                                </MenuItem>
+                                                                            )
+                                                                        }
+                                                                    )}
+                                                                </Select>
+                                                            </FormControl>
+                                                        </div>
+                                                    </TableCell>
+                                                    <TableCell
+                                                        sx={{
+                                                            borderLeft:
+                                                                '2px solid #ededed',
+                                                        }}
+                                                    >
+                                                        <TextField
+                                                            variant="outlined"
+                                                            margin="dense"
+                                                            size="small"
+                                                            fullWidth
+                                                            InputProps={{
+                                                                className:
+                                                                    styles.callHistorySelect,
+                                                                classes: {
+                                                                    input: styles.inputField,
+                                                                },
+                                                            }}
+                                                            rows={5}
+                                                            multiline
+                                                        />
+                                                        <p
+                                                            style={{
+                                                                margin: 'auto',
+                                                            }}
+                                                        >
+                                                            <span
+                                                                className={
+                                                                    styles.personalComplaintModalBottomText
+                                                                }
+                                                            >
+                                                                last update:
+                                                            </span>
+                                                            <span
+                                                                className={
+                                                                    styles.personalComplaintModalBottomValue
+                                                                }
+                                                            >
+                                                                -
+                                                            </span>
+                                                        </p>
+                                                    </TableCell>
+                                                    <TableCell
+                                                        sx={{
+                                                            borderLeft:
+                                                                '2px solid #ededed',
+                                                        }}
+                                                    >
+                                                        <TextField
+                                                            variant="outlined"
+                                                            margin="dense"
+                                                            size="small"
+                                                            fullWidth
+                                                            InputProps={{
+                                                                className:
+                                                                    styles.callHistorySelect,
+                                                                classes: {
+                                                                    input: styles.inputField,
+                                                                },
+                                                            }}
+                                                        />
+                                                    </TableCell>
+                                                    <TableCell
+                                                        sx={{
+                                                            borderLeft:
+                                                                '2px solid #ededed',
+                                                        }}
+                                                    >
+                                                        <FormControl
+                                                            fullWidth
+                                                            size="small"
+                                                            className={
+                                                                styles.callHistorySelect
+                                                            }
+                                                        >
+                                                            <Select
+                                                                className={
+                                                                    styles.inputField
+                                                                }
+                                                                name="statusList"
+                                                                // value={currentSelectedOption}
+                                                                // onChange={handleChange}
+                                                            >
+                                                                {statusOption.map(
+                                                                    (
+                                                                        item: any,
+                                                                        index: number
+                                                                    ) => {
+                                                                        return (
+                                                                            <MenuItem
+                                                                                value={
+                                                                                    item.id
+                                                                                }
+                                                                                key={
+                                                                                    index
+                                                                                }
+                                                                                className={
+                                                                                    styles.inputField
+                                                                                }
+                                                                            >
+                                                                                {
+                                                                                    item.label
+                                                                                }
+                                                                            </MenuItem>
+                                                                        )
+                                                                    }
+                                                                )}
+                                                            </Select>
+                                                        </FormControl>
+                                                    </TableCell>
+                                                </TableRow>
+                                            )}
+                                            <TableRow key={index}>
+                                                {rowSpanId != item.id && (
+                                                    <TableCell
+                                                        rowSpan={
+                                                            rowSpanId == item.id
+                                                                ? 2
+                                                                : 1
+                                                        }
+                                                    >
+                                                        <div>
+                                                            <p
+                                                                className={
+                                                                    styles.callHistoryTableValueDate
+                                                                }
+                                                                style={{
+                                                                    textAlign:
+                                                                        'center',
+                                                                }}
+                                                            >
+                                                                {item.date}
+                                                            </p>
+                                                        </div>
+                                                    </TableCell>
+                                                )}
+
+                                                <TableCell
+                                                    sx={{
+                                                        borderLeft:
+                                                            '2px solid #ededed',
+                                                    }}
+                                                >
+                                                    <div>
+                                                        <FormControl
+                                                            fullWidth
+                                                            size="small"
+                                                            className={
+                                                                styles.callHistorySelect
+                                                            }
+                                                            disabled
+                                                        >
+                                                            <Select
+                                                                className={
+                                                                    styles.inputField
+                                                                }
+                                                                name="relativeList"
+                                                                value={
+                                                                    item.relative
+                                                                }
+                                                                // value={currentSelectedOption}
+                                                                // onChange={handleChange}
+                                                            >
+                                                                {listOption.map(
+                                                                    (
+                                                                        item: any,
+                                                                        index: number
+                                                                    ) => {
+                                                                        return (
+                                                                            <MenuItem
+                                                                                value={
+                                                                                    item.id
+                                                                                }
+                                                                                key={
+                                                                                    index
+                                                                                }
+                                                                                className={
+                                                                                    styles.inputField
+                                                                                }
+                                                                            >
+                                                                                {
+                                                                                    item.label
+                                                                                }
+                                                                            </MenuItem>
+                                                                        )
+                                                                    }
+                                                                )}
+                                                            </Select>
+                                                        </FormControl>
+                                                    </div>
+                                                </TableCell>
+                                                <TableCell
+                                                    sx={{
+                                                        borderLeft:
+                                                            '2px solid #ededed',
+                                                    }}
+                                                >
+                                                    <TextField
+                                                        variant="outlined"
+                                                        margin="dense"
+                                                        size="small"
+                                                        fullWidth
+                                                        InputProps={{
+                                                            className:
+                                                                styles.callHistorySelect,
+                                                            classes: {
+                                                                input: styles.inputField,
+                                                            },
+                                                        }}
+                                                        rows={5}
+                                                        multiline
+                                                        value={item.remark}
+                                                        disabled
+                                                    />
+                                                    <p
+                                                        style={{
+                                                            margin: 'auto',
+                                                        }}
+                                                    >
+                                                        <span
+                                                            className={
+                                                                styles.personalComplaintModalBottomText
+                                                            }
+                                                        >
+                                                            last update:
+                                                        </span>
+                                                        <span
+                                                            className={
+                                                                styles.personalComplaintModalBottomValue
+                                                            }
+                                                        >
+                                                            11:11 22-09-2022
+                                                        </span>
                                                     </p>
-                                                </div>
-                                            </TableCell>
-                                            <TableCell
-                                                sx={{
-                                                    borderLeft:
-                                                        '2px solid #ededed',
-                                                }}
-                                            >
-                                                <div>
+                                                </TableCell>
+                                                <TableCell
+                                                    sx={{
+                                                        borderLeft:
+                                                            '2px solid #ededed',
+                                                    }}
+                                                >
+                                                    <TextField
+                                                        variant="outlined"
+                                                        margin="dense"
+                                                        size="small"
+                                                        fullWidth
+                                                        InputProps={{
+                                                            className:
+                                                                styles.callHistorySelect,
+                                                            classes: {
+                                                                input: styles.inputField,
+                                                            },
+                                                        }}
+                                                        value={item.pic}
+                                                        disabled
+                                                    />
+                                                </TableCell>
+                                                <TableCell
+                                                    sx={{
+                                                        borderLeft:
+                                                            '2px solid #ededed',
+                                                        position: 'relative',
+                                                        verticalAlign: 'top',
+                                                    }}
+                                                >
                                                     <FormControl
                                                         fullWidth
                                                         size="small"
@@ -217,12 +561,12 @@ const CallHistoryModal: React.FC<Props> = ({ setOpen, open }: Props) => {
                                                             className={
                                                                 styles.inputField
                                                             }
-                                                            name="relativeList"
-                                                            value={1}
+                                                            name="statusList"
+                                                            value={item.status}
                                                             // value={currentSelectedOption}
                                                             // onChange={handleChange}
                                                         >
-                                                            {listOption.map(
+                                                            {statusOption.map(
                                                                 (
                                                                     item: any,
                                                                     index: number
@@ -248,121 +592,70 @@ const CallHistoryModal: React.FC<Props> = ({ setOpen, open }: Props) => {
                                                             )}
                                                         </Select>
                                                     </FormControl>
-                                                </div>
-                                            </TableCell>
-                                            <TableCell
-                                                sx={{
-                                                    borderLeft:
-                                                        '2px solid #ededed',
-                                                }}
-                                            >
-                                                <TextField
-                                                    variant="outlined"
-                                                    margin="dense"
-                                                    size="small"
-                                                    fullWidth
-                                                    InputProps={{
-                                                        className:
-                                                            styles.callHistorySelect,
-                                                        classes: {
-                                                            input: styles.inputField,
-                                                        },
-                                                    }}
-                                                    rows={5}
-                                                    multiline
-                                                    value={item.remark}
-                                                    disabled
-                                                />
-                                                <p style={{ margin: 'auto' }}>
-                                                    <span
-                                                        className={
-                                                            styles.personalComplaintModalBottomText
-                                                        }
+
+                                                    <Box
+                                                        sx={{
+                                                            position:
+                                                                'absolute',
+                                                            bottom: '0',
+                                                            width: 'calc(100% - 2rem)',
+                                                        }}
+                                                        mb={1}
                                                     >
-                                                        last update:
-                                                    </span>
-                                                    <span
-                                                        className={
-                                                            styles.personalComplaintModalBottomValue
-                                                        }
-                                                    >
-                                                        11:11 22-09-2022
-                                                    </span>
-                                                </p>
-                                            </TableCell>
-                                            <TableCell
-                                                sx={{
-                                                    borderLeft:
-                                                        '2px solid #ededed',
-                                                }}
-                                            >
-                                                <TextField
-                                                    variant="outlined"
-                                                    margin="dense"
-                                                    size="small"
-                                                    fullWidth
-                                                    InputProps={{
-                                                        className:
-                                                            styles.callHistorySelect,
-                                                        classes: {
-                                                            input: styles.inputField,
-                                                        },
-                                                    }}
-                                                    value={item.pic}
-                                                    disabled
-                                                />
-                                            </TableCell>
-                                            <TableCell
-                                                sx={{
-                                                    borderLeft:
-                                                        '2px solid #ededed',
-                                                }}
-                                            >
-                                                <FormControl
-                                                    fullWidth
-                                                    size="small"
-                                                    className={
-                                                        styles.callHistorySelect
-                                                    }
-                                                    disabled
-                                                >
-                                                    <Select
-                                                        className={
-                                                            styles.inputField
-                                                        }
-                                                        name="statusList"
-                                                        value={1}
-                                                        // value={currentSelectedOption}
-                                                        // onChange={handleChange}
-                                                    >
-                                                        {statusOption.map(
-                                                            (
-                                                                item: any,
-                                                                index: number
-                                                            ) => {
-                                                                return (
-                                                                    <MenuItem
-                                                                        value={
-                                                                            item.id
-                                                                        }
-                                                                        key={
-                                                                            index
-                                                                        }
-                                                                        className={
-                                                                            styles.inputField
-                                                                        }
-                                                                    >
-                                                                        {
-                                                                            item.label
-                                                                        }
-                                                                    </MenuItem>
-                                                                )
-                                                            }
-                                                        )}
-                                                    </Select>
-                                                </FormControl>
-                                            </TableCell>
-                                        </TableRow>
+                                                        <Stack
+                                                            justifyContent="space-between"
+                                                            alignItems="center"
+                                                            spacing={1}
+                                                        >
+                                                            {item.status ==
+                                                                1 && (
+                                                                <>
+                                                                    {rowSpanId !=
+                                                                    item.id ? (
+                                                                        <Button
+                                                                            fullWidth
+                                                                            variant="contained"
+                                                                            onClick={() =>
+                                                                                setRowSpanId(
+                                                                                    item.id
+                                                                                )
+                                                                            }
+                                                                        >
+                                                                            Create
+                                                                        </Button>
+                                                                    ) : (
+                                                                        <>
+                                                                            <Button
+                                                                                fullWidth
+                                                                                variant="contained"
+                                                                                onClick={() =>
+                                                                                    setOpenConfirmationModal(
+                                                                                        true
+                                                                                    )
+                                                                                }
+                                                                            >
+                                                                                Confirm
+                                                                            </Button>
+                                                                            <Button
+                                                                                fullWidth
+                                                                                variant="contained"
+                                                                                onClick={() =>
+                                                                                    setRowSpanId(
+                                                                                        undefined
+                                                                                    )
+                                                                                }
+                                                                            >
+                                                                                Cancel
+                                                                            </Button>
+                                                                        </>
+                                                                    )}
+                                                                </>
+                                                            )}
+                                                        </Stack>
+                                                    </Box>
+                                                </TableCell>
+                                            </TableRow>
+                                        </>
                                     )
                                 })}
                             </TableBody>
@@ -429,6 +722,32 @@ const CallHistoryModal: React.FC<Props> = ({ setOpen, open }: Props) => {
                     </Stack>
                 </DialogActions>
             </Dialog>
+
+            <ConfirmationModal
+                title={'Confirm Data'}
+                context={
+                    <Typography>
+                        You are about to save this phone consultation call
+                        remarks. Saved data{' '}
+                        <strong style={{ color: 'var(--color-red)' }}>
+                            cannot be edited
+                        </strong>{' '}
+                        and will be{' '}
+                        <strong style={{ color: 'var(--color-red)' }}>
+                            permanently saved
+                        </strong>
+                        .
+                    </Typography>
+                }
+                image={ConfirmIcon}
+                decline={() => setOpenConfirmationModal(false)}
+                accept={() => setOpenConfirmationModal(false)}
+                setOpen={setOpenConfirmationModal}
+                open={openConfirmationModal}
+                width="md"
+                acceptText="YES, CONFIRM."
+                declineText="CHECK AGAIN."
+            />
         </React.Fragment>
     )
 }
