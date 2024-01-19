@@ -28,6 +28,7 @@ import {
     STICKER_PRINTING_PAGE,
     DIETARY_LIFE_STYLE_PAGE,
     MAIN_INGREDIENT,
+    NUTRIENT,
 } from 'constant'
 import Dashboard from 'pages/Dashboard'
 import Dining from 'pages/Dining'
@@ -64,6 +65,7 @@ import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
 import { MainIngredientProductPrintOut } from 'pages/Health-Management-Consultation-Info/components/hmc-modal-components/main-ingredient-product-pdf'
+import { NutrientPrintOut } from 'pages/Health-Management-Consultation-Info/components/hmc-modal-components/nutrients-pdf'
 function App() {
     const data = [
         {
@@ -234,7 +236,6 @@ function App() {
                     path={MAIN_INGREDIENT}
                     element={<MainIngredientProductPrintOut fakeData={data} />}
                 />
-                {/* <Route path={TEST_PDPA_PAGE} element={<TestPDPAPage />} /> */}
             </Routes>
         </ThemeProvider>
     )

@@ -30,3 +30,4 @@ export const HEALTH_MANAGEMENT_CONSULTATION_INFO_PAGE =
 export const MUL_REPORT_PAGE = '/MUL-report'
 export const DIETARY_LIFE_STYLE_PAGE = "/dietary-life-style"
 export const MAIN_INGREDIENT = "/main-ingredient"
+export const NUTRIENT = "/nutrient"
