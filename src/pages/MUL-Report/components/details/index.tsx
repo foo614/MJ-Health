@@ -165,7 +165,7 @@ const MULReportDetail = () => {
                                                         onClick={() =>
                                                             navigate(
                                                                 MUL_REPORT_PAGE +
-                                                                    '/1'
+                                                                    '/1/1'
                                                             )
                                                         }
                                                     >
