@@ -20,7 +20,8 @@ import Grid from '@mui/material/Unstable_Grid2'
 import { styled } from '@mui/material/styles'
 import ResponsiveAppBar from 'components/AppBar'
 import CustomModal from 'components/Modal'
-import { useState } from 'react'
+import EditIcon from 'images/member-edit.png'
+import { Dispatch, SetStateAction, useState } from 'react'
 import UserHeader from '../../../../components/UserHeader'
 import ButtonCard from '../../../Radiology-Reporting/components/details/buttonCard'
 import Header from '../../../Radiology-Reporting/components/details/header'
@@ -140,10 +141,11 @@ function MULReportDetailTable() {
     const [currentIndex, setCurrentIndex] = useState(0)
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
-
+    const [isEdit, setIsEdit] = useState(false)
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setCurrentIndex(newValue)
         setSelectedType('report')
+        setIsEdit(false)
     }
 
     const [selectedType, setSelectedType] = useState('report')
@@ -164,56 +166,108 @@ function MULReportDetailTable() {
         setMammography(event.target.value)
     }
 
-    const RowButtonOptions = ({ index }: { index: number }) => {
+    const RowButtonOptions = ({
+        index,
+        setIsEdit,
+        isEdit,
+    }: {
+        index: number
+        setIsEdit: Dispatch<SetStateAction<boolean>>
+        isEdit: boolean
+    }) => {
         return (
-            <Grid xs={12}>
-                <Button
-                    variant="contained"
-                    size={matches ? 'medium' : 'small'}
-                    sx={{
-                        background:
-                            selectedType === 'report' ? '#fff' : '#EDEDED',
-                        boxShadow: '0px 3px 6px rgba(0, 0, 0, 0.10) !important',
-                        borderRadius: '5px',
-                        color:
-                            selectedType === 'report' ? '#211D4E' : '#5A567B',
-                        fontWeight: 600,
-                        marginRight: '1em',
-                        '&:hover': {
-                            color: '#fff', // Change font color to white on hover
-                        },
-                    }}
-                    onClick={() => handleButtonChange('report')}
-                >
-                    Exam. Report
-                </Button>
-                {index === 0 && (
-                    <Button
-                        variant="contained"
-                        size={matches ? 'medium' : 'small'}
-                        sx={{
-                            background:
-                                selectedType === 'comment' ? '#fff' : '#EDEDED',
-                            boxShadow:
-                                '0px 3px 6px rgba(0, 0, 0, 0.10) !important',
-                            borderRadius: '5px',
-                            color:
-                                selectedType === 'comment'
-                                    ? '#211D4E'
-                                    : '#5A567B',
-                            fontWeight: 600,
-                            '&:hover': {
-                                color: '#fff', // Change font color to white on hover
-                            },
-                        }}
-                        onClick={() => handleButtonChange('comment')}
-                    >
-                        Comment & Suggestion
-                    </Button>
-                )}
-
-                <Divider light sx={{ my: 3 }} />
-            </Grid>
+            <>
+                <Grid container sx={{ flexGrow: 1, mb: 2 }} spacing={2}>
+                    <Grid xs md={'auto'}>
+                        <Button
+                            variant="contained"
+                            size={matches ? 'medium' : 'small'}
+                            sx={{
+                                background:
+                                    selectedType === 'report'
+                                        ? '#fff'
+                                        : '#EDEDED',
+                                boxShadow:
+                                    '0px 3px 6px rgba(0, 0, 0, 0.10) !important',
+                                borderRadius: '5px',
+                                color:
+                                    selectedType === 'report'
+                                        ? '#211D4E'
+                                        : '#5A567B',
+                                fontWeight: 600,
+                                marginRight: '1em',
+                                '&:hover': {
+                                    color: '#fff', // Change font color to white on hover
+                                },
+                            }}
+                            onClick={() => handleButtonChange('report')}
+                        >
+                            Exam. Report
+                        </Button>
+                    </Grid>
+                    <Grid xs>
+                        {index === 0 && (
+                            <Button
+                                variant="contained"
+                                size={matches ? 'medium' : 'small'}
+                                sx={{
+                                    background:
+                                        selectedType === 'comment'
+                                            ? '#fff'
+                                            : '#EDEDED',
+                                    boxShadow:
+                                        '0px 3px 6px rgba(0, 0, 0, 0.10) !important',
+                                    borderRadius: '5px',
+                                    color:
+                                        selectedType === 'comment'
+                                            ? '#211D4E'
+                                            : '#5A567B',
+                                    fontWeight: 600,
+                                    '&:hover': {
+                                        color: '#fff', // Change font color to white on hover
+                                    },
+                                }}
+                                onClick={() => handleButtonChange('comment')}
+                            >
+                                Comment & Suggestion
+                            </Button>
+                        )}
+                    </Grid>
+                    <Grid xs md={3} mdOffset={2}>
+                        {isEdit ? (
+                            <Button
+                                variant="contained"
+                                size={matches ? 'medium' : 'small'}
+                                onClick={() => setIsEdit(!isEdit)}
+                                sx={{
+                                    fontWeight: 600,
+                                    marginLeft: '1em',
+                                    float: 'right',
+                                }}
+                            >
+                                Confirm Changes
+                            </Button>
+                        ) : (
+                            <Button
+                                variant="text"
+                                size={matches ? 'medium' : 'small'}
+                                sx={{ float: 'right' }}
+                                endIcon={
+                                    <img
+                                        src={EditIcon}
+                                        height={matches ? 25 : 15}
+                                        width={matches ? 25 : 15}
+                                    />
+                                }
+                                onClick={() => setIsEdit(!isEdit)}
+                            >
+                                Edit
+                            </Button>
+                        )}
+                    </Grid>
+                    <Divider light sx={{ my: 3 }} />
+                </Grid>
+            </>
         )
     }
 
@@ -247,15 +301,15 @@ function MULReportDetailTable() {
 
     const ItemCard = ({
         label,
-        isCurrent,
+        isEdit,
     }: {
         label: string
-        isCurrent: boolean
+        isEdit: boolean
     }) => {
         return (
             <Box
                 sx={{
-                    background: isCurrent ? '#DDDDDD' : '#F9F9F9',
+                    background: isEdit ? '#DDDDDD' : '#F9F9F9',
                     borderRadius: '8px',
                 }}
             >
@@ -297,6 +351,7 @@ function MULReportDetailTable() {
                                         background: '#fff',
                                     }}
                                     placeholder="Normal"
+                                    disabled={!isEdit}
                                 >
                                     <MenuItem value="">
                                         <em>None</em>
@@ -313,15 +368,15 @@ function MULReportDetailTable() {
 
     const ItemCard2 = ({
         label,
-        isCurrent,
+        isEdit,
     }: {
         label: string
-        isCurrent: boolean
+        isEdit: boolean
     }) => {
         return (
             <Box
                 sx={{
-                    background: isCurrent ? '#DDDDDD' : '#F9F9F9',
+                    background: isEdit ? '#DDDDDD' : '#F9F9F9',
                     borderRadius: '8px',
                 }}
             >
@@ -429,15 +484,15 @@ function MULReportDetailTable() {
 
     const ItemCard3 = ({
         label,
-        isCurrent,
+        isEdit,
     }: {
         label: string
-        isCurrent: boolean
+        isEdit: boolean
     }) => {
         return (
             <Box
                 sx={{
-                    background: isCurrent ? '#DDDDDD' : '#F9F9F9',
+                    background: isEdit ? '#DDDDDD' : '#F9F9F9',
                     borderRadius: '8px',
                 }}
             >
@@ -546,7 +601,13 @@ function MULReportDetailTable() {
         )
     }
 
-    const RowItemCard = ({ name }: { name: string }) => {
+    const RowItemCard = ({
+        name,
+        isEdit,
+    }: {
+        name: string
+        isEdit: boolean
+    }) => {
         if (name == 'ENT Examination' || name == 'X-Ray') {
             return (
                 <Grid xs={12}>
@@ -598,19 +659,13 @@ function MULReportDetailTable() {
                                 </>
                             </Grid>
                             <Grid xs={12} md={3}>
-                                <ItemCard label="Current" isCurrent={true} />
+                                <ItemCard label="Current" isEdit={isEdit} />
                             </Grid>
                             <Grid xs={12} md={3}>
-                                <ItemCard
-                                    label="22-09-2020"
-                                    isCurrent={false}
-                                />
+                                <ItemCard label="22-09-2020" isEdit={false} />
                             </Grid>
                             <Grid xs={12} md={3}>
-                                <ItemCard
-                                    label="22-09-2018"
-                                    isCurrent={false}
-                                />
+                                <ItemCard label="22-09-2018" isEdit={false} />
                             </Grid>
                         </Grid>
                     </div>
@@ -673,19 +728,19 @@ function MULReportDetailTable() {
                                 <Grid xs={12} md={3}>
                                     <ItemCard2
                                         label="Current"
-                                        isCurrent={true}
+                                        isEdit={isEdit}
                                     />
                                 </Grid>
                                 <Grid xs={12} md={3}>
                                     <ItemCard2
                                         label="22-09-2020"
-                                        isCurrent={false}
+                                        isEdit={false}
                                     />
                                 </Grid>
                                 <Grid xs={12} md={3}>
                                     <ItemCard2
                                         label="22-09-2018"
-                                        isCurrent={false}
+                                        isEdit={false}
                                     />
                                 </Grid>
                             </Grid>
@@ -899,19 +954,19 @@ function MULReportDetailTable() {
                                 <Grid xs={12} md={3}>
                                     <ItemCard3
                                         label="Current"
-                                        isCurrent={true}
+                                        isEdit={isEdit}
                                     />
                                 </Grid>
                                 <Grid xs={12} md={3}>
                                     <ItemCard3
                                         label="22-09-2020"
-                                        isCurrent={false}
+                                        isEdit={false}
                                     />
                                 </Grid>
                                 <Grid xs={12} md={3}>
                                     <ItemCard3
                                         label="22-09-2018"
-                                        isCurrent={false}
+                                        isEdit={false}
                                     />
                                 </Grid>
                             </Grid>
@@ -1069,11 +1124,18 @@ function MULReportDetailTable() {
                             <Box sx={{ p: 3, bgcolor: '#fff' }}>
                                 <TabPanel value={currentIndex} index={0}>
                                     <Grid container>
-                                        <RowButtonOptions index={0} />
+                                        <RowButtonOptions
+                                            index={0}
+                                            setIsEdit={setIsEdit}
+                                            isEdit={isEdit}
+                                        />
                                         {selectedType === 'report' && (
-                                            <RowItemCard name="ENT Examination" />
+                                            <RowItemCard
+                                                name="ENT Examination"
+                                                isEdit={isEdit}
+                                            />
                                         )}
-                                        {selectedType === 'report' && (
+                                        {/* {selectedType === 'report' && (
                                             <Grid xs={12} md={2} mdOffset={10}>
                                                 <Button
                                                     size="small"
@@ -1084,7 +1146,7 @@ function MULReportDetailTable() {
                                                     Save
                                                 </Button>
                                             </Grid>
-                                        )}
+                                        )} */}
                                         {selectedType === 'comment' && (
                                             <CommentSuggestionList />
                                         )}
@@ -1092,12 +1154,19 @@ function MULReportDetailTable() {
                                 </TabPanel>
                                 <TabPanel value={currentIndex} index={1}>
                                     <Grid container>
-                                        <RowButtonOptions index={1} />
+                                        <RowButtonOptions
+                                            index={1}
+                                            setIsEdit={setIsEdit}
+                                            isEdit={isEdit}
+                                        />
                                         {selectedType === 'report' && (
-                                            <RowItemCard name="Lung Funtion Test" />
+                                            <RowItemCard
+                                                name="Lung Funtion Test"
+                                                isEdit={isEdit}
+                                            />
                                         )}
 
-                                        {selectedType === 'report' && (
+                                        {/* {selectedType === 'report' && (
                                             <Grid xs={12} md={2} mdOffset={10}>
                                                 <Button
                                                     size="small"
@@ -1108,19 +1177,26 @@ function MULReportDetailTable() {
                                                     Save
                                                 </Button>
                                             </Grid>
-                                        )}
+                                        )} */}
                                         {selectedType === 'comment' && (
                                             <CommentSuggestionList />
                                         )}
                                     </Grid>
                                 </TabPanel>
                                 <TabPanel value={currentIndex} index={2}>
-                                    <RowButtonOptions index={2} />
+                                    <RowButtonOptions
+                                        index={2}
+                                        setIsEdit={setIsEdit}
+                                        isEdit={isEdit}
+                                    />
                                     {selectedType === 'report' && (
-                                        <RowItemCard name="Peripheral Vascular Screening" />
+                                        <RowItemCard
+                                            name="Peripheral Vascular Screening"
+                                            isEdit={isEdit}
+                                        />
                                     )}
 
-                                    {selectedType === 'report' && (
+                                    {/* {selectedType === 'report' && (
                                         <Grid xs={12} md={2} mdOffset={10}>
                                             <Button
                                                 size="small"
@@ -1131,15 +1207,22 @@ function MULReportDetailTable() {
                                                 Save
                                             </Button>
                                         </Grid>
-                                    )}
+                                    )} */}
                                     {selectedType === 'comment' && (
                                         <CommentSuggestionList />
                                     )}
                                 </TabPanel>
                                 <TabPanel value={currentIndex} index={3}>
-                                    <RowButtonOptions index={3} />
+                                    <RowButtonOptions
+                                        index={3}
+                                        setIsEdit={setIsEdit}
+                                        isEdit={isEdit}
+                                    />
                                     {selectedType === 'report' && (
-                                        <RowItemCard name="X-Ray" />
+                                        <RowItemCard
+                                            name="X-Ray"
+                                            isEdit={isEdit}
+                                        />
                                     )}
 
                                     {selectedType === 'report' && (
@@ -1171,7 +1254,7 @@ function MULReportDetailTable() {
                                                     defaultValue="Type in your message & recommendation."
                                                 />
                                             </Grid> */}
-                                            <Grid xs={12} md={2} mdOffset={10}>
+                                            {/* <Grid xs={12} md={2} mdOffset={10}>
                                                 <Button
                                                     size="small"
                                                     variant="contained"
@@ -1180,7 +1263,7 @@ function MULReportDetailTable() {
                                                 >
                                                     Save
                                                 </Button>
-                                            </Grid>
+                                            </Grid> */}
                                         </>
                                     )}
                                     {selectedType === 'comment' && (
