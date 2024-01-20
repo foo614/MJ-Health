@@ -70,3 +70,10 @@
 .tableActionButton:disabled {
     background: var(--label-color) !important;
 }
+
+.createModalInputLabel {
+    color: var(--mj-deep-green);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}

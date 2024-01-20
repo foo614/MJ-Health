@@ -23,6 +23,7 @@ const CustomModal = ({ title, setOpen, open, children, width }: Props) => {
                 keepMounted
                 classes={{ paper: styles.infoModal }}
                 maxWidth={width}
+                fullWidth={!!width}
             >
                 <DialogTitle className={styles.infoModalColor}>
                     <p className={styles.infoModalTitle}>{title}</p>
