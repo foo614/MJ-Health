@@ -4,6 +4,7 @@ import {
     IT_MONITOR_ROOM_PAGE,
     IT_ROOM_PRINTING_PAGE,
     MUL_REPORT_PAGE,
+    ROOM_MANAGEMENT_PAGE,
     STAFF_MANAGEMENT_PAGE,
 } from 'constant'
 import Group1 from 'images/group-1@2x.png'
@@ -50,7 +51,11 @@ const OtherFunction = () => {
                         onClick={() => navigate(MUL_REPORT_PAGE)}
                     />
                     <CustomBoxButton image={WorldBankIcon} label="Word Bank" />
-                    <CustomBoxButton image={RoomIcon} label="Room Management" />
+                    <CustomBoxButton
+                        image={RoomIcon}
+                        label="Room Management"
+                        onClick={() => navigate(ROOM_MANAGEMENT_PAGE)}
+                    />
                     <CustomBoxButton image={GroupIcon} label="Final Report" />
                 </Stack>
             </Grid>

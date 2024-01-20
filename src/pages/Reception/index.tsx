@@ -7,6 +7,7 @@ import InputAdornment from '@mui/material/InputAdornment'
 import SearchIcon from '@mui/icons-material/Search'
 import { Box } from '@mui/system'
 import ReceptionTable from './components/reception-table'
+import SearchButtonHeader from 'components/SearchButtonHeader'
 const Reception = () => {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('md'))
@@ -219,70 +220,12 @@ const Reception = () => {
     return (
         <>
             <ResponsiveAppBar />
-            <div
-                className={styles.receptionHeader}
-                style={
-                    lgUp ? { paddingLeft: '3rem', paddingRight: '3rem' } : {}
-                }
-            >
-                {lgUp ? (
-                    <>
-                        <div className={styles.receptionSearchDiv}>
-                            <TextField
-                                InputProps={{
-                                    startAdornment: (
-                                        <InputAdornment position="start">
-                                            <SearchIcon
-                                                className={styles.searchIcon}
-                                            />
-                                        </InputAdornment>
-                                    ),
-                                }}
-                                variant="outlined"
-                                size="small"
-                                margin="dense"
-                                placeholder="Search..."
-                                className={styles.receptionSearchInput}
-                            />
-                        </div>
-                        <div>
-                            <p className={styles.receptionHeaderTitle}>
-                                RECEPTION COUNTER
-                            </p>
-                        </div>
-                    </>
-                ) : (
-                    <>
-                        <div>
-                            <p className={styles.receptionHeaderTitle}>
-                                RECEPTION COUNTER
-                            </p>
-                            <div style={{ textAlign: 'center' }}>
-                                <TextField
-                                    InputProps={{
-                                        startAdornment: (
-                                            <InputAdornment position="start">
-                                                <SearchIcon
-                                                    className={
-                                                        styles.searchIcon
-                                                    }
-                                                />
-                                            </InputAdornment>
-                                        ),
-                                    }}
-                                    variant="outlined"
-                                    size="small"
-                                    margin="dense"
-                                    placeholder="Search..."
-                                    className={
-                                        styles.receptionSearchInputMobile
-                                    }
-                                />
-                            </div>
-                        </div>
-                    </>
-                )}
-            </div>
+            <SearchButtonHeader
+                title="RECEPTION COUNTER"
+                isSearchInput={true}
+                setOpenModal={undefined}
+                buttonText=''
+            />
             <Box
                 sx={{
                     paddingLeft: '3rem',

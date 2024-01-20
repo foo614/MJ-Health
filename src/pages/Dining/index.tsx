@@ -13,6 +13,7 @@ import styles from './_dining.module.scss'
 import CheckOutListTable from './components/checkout-list-table'
 import PrintModal from './components/print-modal'
 import WaitingListTable from './components/waiting-list-table'
+import SearchButtonHeader from 'components/SearchButtonHeader'
 const Dining = () => {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('md'))
@@ -234,64 +235,12 @@ const Dining = () => {
     return (
         <>
             <ResponsiveAppBar />
-            <div
-                className={styles.diningHeader}
-                style={
-                    matches ? { paddingLeft: '3rem', paddingRight: '3rem' } : {}
-                }
-            >
-                {matches ? (
-                    <>
-                        <div className={styles.diningSearchDiv}>
-                            <TextField
-                                InputProps={{
-                                    startAdornment: (
-                                        <InputAdornment position="start">
-                                            <SearchIcon
-                                                className={styles.searchIcon}
-                                            />
-                                        </InputAdornment>
-                                    ),
-                                }}
-                                variant="outlined"
-                                size="small"
-                                margin="dense"
-                                placeholder="Search..."
-                                className={styles.diningSearchInput}
-                            />
-                        </div>
-                        <div>
-                            <p className={styles.diningHeaderTitle}>DINING</p>
-                        </div>
-                    </>
-                ) : (
-                    <>
-                        <div>
-                            <p className={styles.diningHeaderTitle}>DINING</p>
-                            <div style={{ textAlign: 'center' }}>
-                                <TextField
-                                    InputProps={{
-                                        startAdornment: (
-                                            <InputAdornment position="start">
-                                                <SearchIcon
-                                                    className={
-                                                        styles.searchIcon
-                                                    }
-                                                />
-                                            </InputAdornment>
-                                        ),
-                                    }}
-                                    variant="outlined"
-                                    size="small"
-                                    margin="dense"
-                                    placeholder="Search..."
-                                    className={styles.diningSearchInputMobile}
-                                />
-                            </div>
-                        </div>
-                    </>
-                )}
-            </div>
+            <SearchButtonHeader
+                title="DINING"
+                isSearchInput={true}
+                setOpenModal={undefined}
+                buttonText=""
+            />
             <Container maxWidth="xl" style={{ marginTop: '1rem' }}>
                 <Grid container>
                     <Grid item md={9} xs={12}>
@@ -308,6 +257,7 @@ const Dining = () => {
                                     className={styles.diningButton}
                                     size="small"
                                     fullWidth={matches ? false : true}
+                                    sx={{ height: '70px' }}
                                 >
                                     <div>
                                         <span
@@ -333,6 +283,7 @@ const Dining = () => {
                                     className={styles.diningButton}
                                     size="small"
                                     fullWidth={matches ? false : true}
+                                    sx={{ height: '70px' }}
                                 >
                                     <div>
                                         <span
@@ -358,6 +309,7 @@ const Dining = () => {
                                     className={styles.diningEarlyMealButton}
                                     size="small"
                                     fullWidth={matches ? false : true}
+                                    sx={{ height: '70px' }}
                                 >
                                     <div>
                                         <span
@@ -399,6 +351,7 @@ const Dining = () => {
                                     onClick={() =>
                                         navigate(DINING_MEAL_SETUP_PAGE)
                                     }
+                                    sx={{ height: '70px' }}
                                 >
                                     <span
                                         className={styles.mealSetupButtonText}

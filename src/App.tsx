@@ -31,6 +31,7 @@ import {
     NUTRIENT,
     PHONE_CONSULTATION_PAGE,
     PHONE_CONSULTATION_DISTRIBUTE_PAGE,
+    ROOM_MANAGEMENT_PAGE,
 } from 'constant'
 import Dashboard from 'pages/Dashboard'
 import Dining from 'pages/Dining'
@@ -70,6 +71,7 @@ import { MainIngredientProductPrintOut } from 'pages/Health-Management-Consultat
 import { NutrientPrintOut } from 'pages/Health-Management-Consultation-Info/components/hmc-modal-components/nutrients-pdf'
 import PhoneConsultation from 'pages/Phone-Consultation'
 import PhoneConsultationDistribute from 'pages/Phone-Consultation-Distribute'
+import RoomManagement from 'pages/Room-Management'
 function App() {
     const data = [
         {
@@ -247,6 +249,10 @@ function App() {
                 <Route
                     path={MAIN_INGREDIENT}
                     element={<MainIngredientProductPrintOut fakeData={data} />}
+                />
+                <Route
+                    path={ROOM_MANAGEMENT_PAGE}
+                    element={<RoomManagement />}
                 />
             </Routes>
         </ThemeProvider>

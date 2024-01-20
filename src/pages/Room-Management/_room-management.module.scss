@@ -1,0 +1,406 @@
+@use '../../styles/variables' as *;
+
+.leftSideBttn {
+    background-color: var(--color-white) !important;
+    color: var(--label-color) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    height: 80px !important;
+    width: 300px !important;
+}
+
+.buttonOuterDiv {
+    background-color: var(--color-white) !important;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.buttonDiv {
+    background-color: var(--color-whitesmoke-100);
+    padding: 20px;
+    border-radius: 10px;
+    height: 600px;
+    overflow: auto;
+}
+
+.buttonDiv::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.buttonDiv::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.roomManagementTableHead {
+    background-color: var(--mj-deep-green) !important;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+.roomManagementTableHeadTitle {
+    font-weight: 500 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--color-white) !important;
+}
+
+.tableCellValue {
+    color: var(--title-color);
+    font-weight: 500;
+    font-size: var(--font-size-base);
+    text-align: center;
+}
+
+.tableCellBoldValue {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.room_management_table_remove_bttn {
+    /* Label Color */
+    background: var(--label-color) !important;
+    opacity: 0.5;
+    border-radius: 3px !important;
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    width: 170px !important;
+    color: var(--color-white) !important;
+}
+
+.room_management_table_edit_bttn {
+    background: var(--mj-light-green) !important;
+    border-radius: 3px !important;
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--color-white) !important;
+    width: 170px !important;
+}
+
+.room_management_table_add_bttn {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
+    background-color: var(--color-white) !important;
+}
+.add_room_modal {
+    width: 610px !important;
+    max-width: unset !important;
+    border-radius: 10px !important;
+    background-color: var(--color-white) !important;
+}
+
+.add_room_modal_textfield_title {
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    color: var(--title-color) !important;
+}
+
+.add_new_room_modal_cancel_bttn {
+    width: 150px !important;
+    background-color: var(--color-whitesmoke-300) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-lg) !important;
+    text-align: center;
+    color: var(--color-lightslategray) !important;
+}
+
+.add_new_room_modal_cancel_bttn_remove_state {
+    width: 150px !important;
+    background-color: var(--color-turquoise) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-lg) !important;
+    text-align: center;
+    color: var(--color-white) !important;
+}
+
+.add_new_room_modal_add_bttn {
+    width: 150px !important;
+    background-color: var(--color-turquoise) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-lg) !important;
+    text-align: center;
+    color: var(--color-white) !important;
+}
+
+.add_new_room_modal_dialog_action {
+    // margin-top: 15px;
+    // margin-bottom: 15px;
+    padding: 24px !important;
+    column-gap: 15px;
+    margin-right: 25px;
+}
+
+.remove_room_modal {
+    width: 650px !important;
+    max-width: unset !important;
+    background: var(--color-white) !important;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 25px !important;
+}
+
+.delete_room_title {
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+    color: var(--title-color) !important;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.delete_room_sub_title {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--label-color) !important;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.remove_room_modal_divider_mobile {
+    width: 100%;
+    height: 8px;
+    background-color: var(--color-turquoise);
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.remove_room_modal_bttn_div {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.remove_room_modal_delete_bttn {
+    background: var(--color-turquoise) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+    color: var(--color-white) !important;
+    box-shadow: unset !important;
+}
+
+.remove_room_modal_yes_bttn {
+    background: #de4e3a !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+    color: var(--color-white) !important;
+    box-shadow: unset !important;
+}
+
+.room_management_table_cancel_bttn {
+    width: 170px !important;
+    background-color: var(--color-whitesmoke-300) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-lg) !important;
+    text-align: center;
+    color: var(--color-lightslategray) !important;
+}
+
+.header {
+    position: relative;
+    padding-bottom: 15px;
+    background-color: var(--color-white) !important;
+    padding-top: 10px;
+}
+
+.header_right_content {
+    position: absolute;
+    right: 0;
+}
+
+.manage_area_button_active {
+    background: var(--mj-light-green) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-lg) !important;
+    text-align: center;
+    margin-right: 3rem !important;
+    color: var(--color-white) !important;
+    width: 200px !important;
+}
+
+.manage_area_button_inactive {
+    background: var(--color-whitesmoke-100) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-lg) !important;
+    text-align: center;
+    margin-right: 3rem !important;
+    color: #dddddd !important;
+    width: 200px !important;
+}
+
+.headerTitle {
+    text-align: center;
+    font-size: 28px;
+    color: var(--mj-deep-green);
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+}
+
+.inputField {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--title-color) !important;
+}
+
+.textFieldProps {
+    border-radius: 3px !important;
+    background-color: var(--color-white) !important;
+    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.manage_room_modal {
+    width: 1140px !important;
+    max-width: unset !important;
+    background-color: var(--color-white) !important;
+    border-radius: var(--br-3xs) !important;
+}
+
+.closeIcon {
+    cursor: pointer;
+    color: var(--label-color) !important;
+}
+
+.manage_room_area_title {
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+    color: var(--title-color) !important;
+}
+
+.modal_divider {
+    width: 300px;
+    height: 8px;
+    background-color: var(--color-turquoise);
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.manage_area_status {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    align-items: center;
+    color: var(--title-color) !important;
+}
+
+.active_icon {
+    font-size: 12px !important;
+    color: var(--color-turquoise) !important;
+}
+
+.inactive_icon {
+    font-size: 12px !important;
+    color: #dddddd !important;
+}
+
+.manage_area_edit_textfield {
+    background-color: var(--color-turquoise);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 60px !important;
+    width: 100px;
+    border-radius: 0px 10px 10px 0px !important;
+    cursor: pointer;
+}
+
+.manage_area_edit_textfield_remove_state {
+    background-color: var(--color-whitesmoke-100);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 60px !important;
+    width: 100px;
+    border-radius: 0px 10px 10px 0px !important;
+    cursor: pointer;
+}
+
+.input_field_manage_area_edit {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--title-color) !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    border-radius: 10px;
+}
+
+.adornedEnd {
+    padding-right: 0 !important;
+}
+
+.manage_area_edit_text {
+    font-weight: 500 !important;
+    font-size: var(--font-size-xs) !important;
+    color: var(--color-white) !important;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.manage_area_edit_text_remove_state {
+    font-weight: 500 !important;
+    font-size: var(--font-size-xs) !important;
+    color: #dddddd !important;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.manage_area_add_new_area_text {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
+    margin-top: 10px;
+}
+
+.manage_area_add_new_area_div {
+    background: var(--color-white) !important;
+    border: 1px dashed #dddddd !important;
+    border-radius: var(--br-3xs) !important;
+    padding: 10px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.manage_area_remove_bttn {
+    background: var(--label-color) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-lg) !important;
+    text-align: center;
+    color: var(--color-white) !important;
+    width: 150px !important;
+}
+
+.manage_area_save_disabled_bttn {
+    background: var(--color-whitesmoke-100) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-lg) !important;
+    text-align: center;
+    color: #dddddd !important;
+    width: 150px !important;
+}
+
+.manage_area_edit_area_div {
+    background: var(--color-white) !important;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1) !important;
+    border-radius: var(--br-3xs) !important;
+    padding: 10px;
+    height: 60px;
+}

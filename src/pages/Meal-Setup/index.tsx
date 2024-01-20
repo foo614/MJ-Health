@@ -64,6 +64,7 @@ const MealSetup = () => {
                                 variant="contained"
                                 fullWidth
                                 className={styles.vegetarianBttn}
+                                sx={{ height: '50px' }}
                             >
                                 Vegetarian
                             </Button>
@@ -73,6 +74,7 @@ const MealSetup = () => {
                                 variant="contained"
                                 fullWidth
                                 className={styles.nonVegetarianBttn}
+                                sx={{ height: '50px' }}
                             >
                                 Non-Vegetarian
                             </Button>
