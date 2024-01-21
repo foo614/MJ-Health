@@ -9,11 +9,12 @@ import TableRow from '@mui/material/TableRow'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import ResponsiveAppBar from 'components/AppBar'
+import CustomHeader from 'components/CustomHeader'
+import CustomHeaderSearchInput from 'components/CustomHeader/EndAdornment/SearchInput'
 import { MUL_REPORT_PAGE } from 'constant'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './_mul-report.module.scss'
-import Header from './components/header'
 
 const MULReport = () => {
     const theme = useTheme()
@@ -224,7 +225,12 @@ const MULReport = () => {
     return (
         <>
             <ResponsiveAppBar />
-            <Header title="MUL Report" hasSearch to="" />
+            <CustomHeader
+                title="MUL REPORT"
+                endAdornment={
+                    <CustomHeaderSearchInput placeholder="Search..." />
+                }
+            />
             <div className={styles.monitorSystemDiv}>
                 <div style={{ marginTop: '1rem' }}>
                     <TableContainer

@@ -1,8 +1,9 @@
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import ResponsiveAppBar from 'components/AppBar'
+import CustomHeader from 'components/CustomHeader'
+import CustomHeaderSearchInput from 'components/CustomHeader/EndAdornment/SearchInput'
 import CompleteTable from './components/complete-table'
-import Header from './components/header'
 import MemberTable from './components/member-table'
 
 function RadiologyReport() {
@@ -12,7 +13,12 @@ function RadiologyReport() {
     return (
         <>
             <ResponsiveAppBar />
-            <Header />
+            <CustomHeader
+                title="RADIOLOGY REPORTING"
+                endAdornment={
+                    <CustomHeaderSearchInput placeholder="Search Member Seq No..." />
+                }
+            />
             <MemberTable />
             <CompleteTable />
         </>

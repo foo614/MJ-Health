@@ -21,12 +21,13 @@ import TableRow from '@mui/material/TableRow'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import ResponsiveAppBar from 'components/AppBar'
+import CustomHeader from 'components/CustomHeader'
+import CustomHeaderSearchInput from 'components/CustomHeader/EndAdornment/SearchInput'
 import { MUL_REPORT_PAGE } from 'constant'
 import Doctor from 'images/group-712@2x.png'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from '../../_mul-report.module.scss'
-import Header from '../header'
 
 const MULReportDetail = () => {
     const theme = useTheme()
@@ -108,7 +109,12 @@ const MULReportDetail = () => {
     return (
         <>
             <ResponsiveAppBar />
-            <Header title="MUL Report" hasSearch to="" />
+            <CustomHeader
+                title="MUL REPORT"
+                endAdornment={
+                    <CustomHeaderSearchInput placeholder="Search..." />
+                }
+            />
             <Box sx={{ p: 3, height: '100vh' }}>
                 <Grid container spacing={2}>
                     <Grid item md={6} xs={12}>

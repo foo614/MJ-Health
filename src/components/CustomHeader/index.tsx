@@ -1,55 +1,58 @@
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
-import { Button, Grid } from '@mui/material'
+import { Typography } from '@mui/material'
+import Button from '@mui/material/Button'
+import Grid from '@mui/material/Grid'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
-import SwitchBranch from 'pages/Setting/components/switch-branch'
-import { useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import styles from './_custom-header.module.scss'
-
 type Props = {
-    to: string
+    to?: string
     title: string
+    endAdornment?: React.ReactNode
 }
-const CustomHeader: React.FC<Props> = ({ to, title }: Props) => {
+
+const CustomHeader: React.FC<Props> = ({ to, title, endAdornment }: Props) => {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
-    const [open, setOpen] = useState(false)
     const navigate = useNavigate()
-    const location = useLocation()
-    const { pathname } = location
+
     return (
-        <div className={styles.header}>
-            <Grid xs container justifyContent={'space-between'}>
-                <Grid item>
+        <>
+            <Grid container className={styles.header} sx={{ px: 3, py: 1 }}>
+                <Grid item xs={4} md={3}>
                     {to && (
                         <Button
                             variant="text"
                             className={styles.backButton}
-                            startIcon={<ChevronLeftIcon fontSize={'large'} />}
-                            onClick={() => navigate(to)}
+                            startIcon={
+                                <ChevronLeftIcon
+                                    fontSize={matches ? 'large' : 'small'}
+                                />
+                            }
+                            onClick={() => navigate(to || '')}
                         >
-                            <span style={{ marginLeft: '-5px' }}>Back</span>
+                            <Typography className={styles.backButtonText}>
+                                Back
+                            </Typography>
                         </Button>
                     )}
                 </Grid>
-                <Grid item className={styles.headerTitle}>
+
+                <Grid
+                    item
+                    xs={to ? 8 : 4}
+                    md={6}
+                    className={styles.headerTitle}
+                >
                     {title}
                 </Grid>
-                <Grid item>
-                    {pathname.includes('setting') && (
-                        <Button
-                            variant="contained"
-                            size="small"
-                            onClick={() => setOpen(true)}
-                        >
-                            {!matches ? 'Branch' : 'Switch Branch'}
-                        </Button>
-                    )}
+
+                <Grid item xs={4} md={3} textAlign={'right'}>
+                    {endAdornment && endAdornment}
                 </Grid>
             </Grid>
-            {open && <SwitchBranch open={open} setOpen={setOpen} />}
-        </div>
+        </>
     )
 }
 

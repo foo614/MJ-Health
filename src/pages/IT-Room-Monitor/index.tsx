@@ -1,7 +1,8 @@
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import ResponsiveAppBar from 'components/AppBar'
-import Header from './components/header'
+import CustomHeader from 'components/CustomHeader'
+import CustomHeaderSearchInput from 'components/CustomHeader/EndAdornment/SearchInput'
 import CustomTable from './components/table'
 
 function ITRoomMonitor() {
@@ -11,7 +12,12 @@ function ITRoomMonitor() {
     return (
         <>
             <ResponsiveAppBar />
-            <Header />
+            <CustomHeader
+                title="IT ROOM MONITOR"
+                endAdornment={
+                    <CustomHeaderSearchInput placeholder="Search..." />
+                }
+            />
             <CustomTable />
         </>
     )

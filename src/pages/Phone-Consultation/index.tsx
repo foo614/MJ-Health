@@ -44,7 +44,7 @@ const PhoneConsultation = () => {
         <>
             <ResponsiveAppBar />
 
-            <CustomHeader title="PHONE CONSULTATION" to={''} />
+            <CustomHeader title="PHONE CONSULTATION" />
 
             <Container
                 maxWidth="xl"

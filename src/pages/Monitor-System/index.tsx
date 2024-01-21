@@ -1,10 +1,9 @@
-import SearchIcon from '@mui/icons-material/Search'
 import { Button, Grid, Stack } from '@mui/material'
-import InputAdornment from '@mui/material/InputAdornment'
-import TextField from '@mui/material/TextField'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import ResponsiveAppBar from 'components/AppBar'
+import CustomHeader from 'components/CustomHeader'
+import CustomHeaderSearchInput from 'components/CustomHeader/EndAdornment/SearchInput'
 import { useState } from 'react'
 import styles from './_monitor-system.module.scss'
 import ChangeStationModal from './components/change-station-modal'
@@ -222,70 +221,12 @@ const MonitorSystem = () => {
     return (
         <>
             <ResponsiveAppBar />
-            <div
-                className={styles.monitorSystemHeader}
-                style={
-                    lgUp ? { paddingLeft: '3rem', paddingRight: '3rem' } : {}
+            <CustomHeader
+                title="MONITOR SYSTEM"
+                endAdornment={
+                    <CustomHeaderSearchInput placeholder="Search Member Seq No..." />
                 }
-            >
-                {lgUp ? (
-                    <>
-                        <div className={styles.monitorSearchDiv}>
-                            <TextField
-                                InputProps={{
-                                    startAdornment: (
-                                        <InputAdornment position="start">
-                                            <SearchIcon
-                                                className={styles.searchIcon}
-                                            />
-                                        </InputAdornment>
-                                    ),
-                                }}
-                                variant="outlined"
-                                size="small"
-                                margin="dense"
-                                placeholder="Search Member Seq No..."
-                                className={styles.monitorSystemSearchInput}
-                            />
-                        </div>
-                        <div>
-                            <p className={styles.monitorSystemHeaderTitle}>
-                                MONITOR SYSTEM
-                            </p>
-                        </div>
-                    </>
-                ) : (
-                    <>
-                        <div>
-                            <p className={styles.monitorSystemHeaderTitle}>
-                                MONITOR SYSTEM
-                            </p>
-                            <div style={{ textAlign: 'center' }}>
-                                <TextField
-                                    InputProps={{
-                                        startAdornment: (
-                                            <InputAdornment position="start">
-                                                <SearchIcon
-                                                    className={
-                                                        styles.searchIcon
-                                                    }
-                                                />
-                                            </InputAdornment>
-                                        ),
-                                    }}
-                                    variant="outlined"
-                                    size="small"
-                                    margin="dense"
-                                    placeholder="Search..."
-                                    className={
-                                        styles.monitorSystemSearchInputMobile
-                                    }
-                                />
-                            </div>
-                        </div>
-                    </>
-                )}
-            </div>
+            />
             <div className={styles.monitorSystemDiv}>
                 <Grid container columnSpacing={2}>
                     <Grid item md={2} sx={{ marginBottom: '15px' }} xs={12}>

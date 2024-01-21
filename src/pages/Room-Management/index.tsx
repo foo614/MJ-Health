@@ -1,11 +1,12 @@
 import { Button, Grid, Stack } from '@mui/material'
-import ResponsiveAppBar from 'components/AppBar'
-import { useState } from 'react'
-import styles from './_room-management.module.scss'
-import RoomManagementTable from './components/table'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import ResponsiveAppBar from 'components/AppBar'
+import CustomHeader from 'components/CustomHeader'
+import { useState } from 'react'
+import styles from './_room-management.module.scss'
 import ManageAreaModal from './components/manage-area-modal'
+import RoomManagementTable from './components/table'
 
 const RoomManagement = () => {
     const [openManageAreaModal, setOpenManageAreaModal] =
@@ -18,62 +19,24 @@ const RoomManagement = () => {
     return (
         <>
             <ResponsiveAppBar />
-            <div
-                className={styles.header}
-                style={
-                    lgUp ? { paddingLeft: '3rem', paddingRight: '3rem' } : {}
+            <CustomHeader
+                title="ROOM MANAGEMENT"
+                endAdornment={
+                    <Button
+                        variant="contained"
+                        size="small"
+                        className={
+                            currentEditItem === 0
+                                ? styles.manage_area_button_active
+                                : styles.manage_area_button_inactive
+                        }
+                        disabled={currentEditItem === 0 ? false : true}
+                        onClick={() => setOpenManageAreaModal(true)}
+                    >
+                        Manage Area
+                    </Button>
                 }
-            >
-                {lgUp ? (
-                    <>
-                        <div className={styles.header_right_content}>
-                            <Button
-                                variant="contained"
-                                size="small"
-                                className={
-                                    currentEditItem === 0
-                                        ? styles.manage_area_button_active
-                                        : styles.manage_area_button_inactive
-                                }
-                                disabled={currentEditItem === 0 ? false : true}
-                                onClick={() => setOpenManageAreaModal(true)}
-                            >
-                                Manage Area
-                            </Button>
-                        </div>
-                        <div>
-                            <p className={styles.headerTitle}>
-                                ROOM MANAGEMENT
-                            </p>
-                        </div>
-                    </>
-                ) : (
-                    <>
-                        <div>
-                            <p className={styles.headerTitle}>
-                                ROOM MANAGEMENT
-                            </p>
-                            <div style={{ textAlign: 'center' }}>
-                                <Button
-                                    variant="contained"
-                                    size="small"
-                                    className={
-                                        currentEditItem === 0
-                                            ? styles.manage_area_button_active
-                                            : styles.manage_area_button_inactive
-                                    }
-                                    disabled={
-                                        currentEditItem === 0 ? false : true
-                                    }
-                                    onClick={() => setOpenManageAreaModal(true)}
-                                >
-                                    Manage Area
-                                </Button>
-                            </div>
-                        </div>
-                    </>
-                )}
-            </div>
+            />
             <Grid container spacing={2}>
                 <Grid
                     item

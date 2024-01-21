@@ -21,6 +21,7 @@ import { DASHBOARD_PAGE } from 'constant'
 import { Dayjs } from 'dayjs'
 import { useState } from 'react'
 import styles from './_setting.module.scss'
+import SwitchBranch from './components/switch-branch'
 
 function Setting() {
     const theme = useTheme()
@@ -32,11 +33,25 @@ function Setting() {
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setValue((event.target as HTMLInputElement).value)
     }
+    const [open, setOpen] = useState(false)
 
     return (
         <>
             <ResponsiveAppBar />
-            <CustomHeader to={DASHBOARD_PAGE} title="ACCOUNT SETTING" />
+            <CustomHeader
+                to={DASHBOARD_PAGE}
+                title="ACCOUNT SETTING"
+                endAdornment={
+                    <Button
+                        variant="contained"
+                        size="small"
+                        onClick={() => setOpen(true)}
+                    >
+                        {!matches ? 'Branch' : 'Switch Branch'}
+                    </Button>
+                }
+            />
+            <SwitchBranch open={open} setOpen={setOpen} />
             <Box
                 sx={{
                     minHeight: 'calc(100vh - 170px)',
