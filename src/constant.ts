@@ -34,3 +34,4 @@ export const PHONE_CONSULTATION_DISTRIBUTE_PAGE =
 export const DIETARY_LIFE_STYLE_PAGE = '/dietary-life-style'
 export const MAIN_INGREDIENT = '/main-ingredient'
 export const NUTRIENT = '/nutrient'
+export const ROOM_MANAGEMENT_PAGE = '/room-management'

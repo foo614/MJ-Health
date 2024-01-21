@@ -1,0 +1,52 @@
+@use '../../styles/variables' as *;
+.header {
+    position: relative;
+    padding-bottom: 15px;
+    background-color: var(--color-white) !important;
+    padding-top: 10px;
+}
+
+.rightContent {
+    position: absolute;
+    right: 0;
+}
+
+.searchIcon {
+    color: var(--mj-deep-green);
+}
+
+.searchInput {
+    border: 1px solid var(--color-whitesmoke-300) !important;
+    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+    border-radius: var(--br-8xs) !important;
+    width: 300px;
+    margin-top: 0px !important;
+    margin-right: 3rem !important;
+}
+
+.headerTitle {
+    text-align: center;
+    font-size: 28px;
+    color: var(--mj-deep-green);
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+}
+
+.searchInputMobile {
+    border: 1px solid var(--color-whitesmoke-300) !important;
+    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+    border-radius: var(--br-8xs) !important;
+}
+
+.buttonClass {
+    background: var(--mj-light-green) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-lg) !important;
+    text-align: center;
+    margin-right: 3rem !important;
+    color: var(--color-white) !important;
+    width: 200px !important;
+}
+
+

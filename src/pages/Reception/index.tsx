@@ -2,8 +2,7 @@ import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { Box } from '@mui/system'
 import ResponsiveAppBar from 'components/AppBar'
-import CustomHeader from 'components/CustomHeader'
-import CustomHeaderSearchInput from 'components/CustomHeader/EndAdornment/SearchInput'
+import SearchButtonHeader from 'components/SearchButtonHeader'
 import ReceptionTable from './components/reception-table'
 const Reception = () => {
     const theme = useTheme()
@@ -217,11 +216,11 @@ const Reception = () => {
     return (
         <>
             <ResponsiveAppBar />
-            <CustomHeader
+            <SearchButtonHeader
                 title="RECEPTION COUNTER"
-                endAdornment={
-                    <CustomHeaderSearchInput placeholder="Search..." />
-                }
+                isSearchInput={true}
+                setOpenModal={undefined}
+                buttonText=""
             />
             <Box
                 sx={{

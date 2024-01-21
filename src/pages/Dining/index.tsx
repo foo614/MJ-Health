@@ -3,8 +3,7 @@ import Box, { BoxProps } from '@mui/material/Box'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import ResponsiveAppBar from 'components/AppBar'
-import CustomHeader from 'components/CustomHeader'
-import CustomHeaderSearchInput from 'components/CustomHeader/EndAdornment/SearchInput'
+import SearchButtonHeader from 'components/SearchButtonHeader'
 import { DINING_MEAL_SETUP_PAGE } from 'constant'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -233,11 +232,11 @@ const Dining = () => {
     return (
         <>
             <ResponsiveAppBar />
-            <CustomHeader
+            <SearchButtonHeader
                 title="DINING"
-                endAdornment={
-                    <CustomHeaderSearchInput placeholder="Search..." />
-                }
+                isSearchInput={true}
+                setOpenModal={undefined}
+                buttonText=""
             />
             <Container maxWidth="xl" style={{ marginTop: '1rem' }}>
                 <Grid container>
@@ -255,6 +254,7 @@ const Dining = () => {
                                     className={styles.diningButton}
                                     size="small"
                                     fullWidth={matches ? false : true}
+                                    sx={{ height: '70px' }}
                                 >
                                     <div>
                                         <span
@@ -280,6 +280,7 @@ const Dining = () => {
                                     className={styles.diningButton}
                                     size="small"
                                     fullWidth={matches ? false : true}
+                                    sx={{ height: '70px' }}
                                 >
                                     <div>
                                         <span
@@ -305,6 +306,7 @@ const Dining = () => {
                                     className={styles.diningEarlyMealButton}
                                     size="small"
                                     fullWidth={matches ? false : true}
+                                    sx={{ height: '70px' }}
                                 >
                                     <div>
                                         <span
@@ -346,6 +348,7 @@ const Dining = () => {
                                     onClick={() =>
                                         navigate(DINING_MEAL_SETUP_PAGE)
                                     }
+                                    sx={{ height: '70px' }}
                                 >
                                     <span
                                         className={styles.mealSetupButtonText}
