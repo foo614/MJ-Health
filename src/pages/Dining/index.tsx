@@ -1,11 +1,10 @@
-import SearchIcon from '@mui/icons-material/Search'
 import { Button, Container, Grid } from '@mui/material'
 import Box, { BoxProps } from '@mui/material/Box'
-import InputAdornment from '@mui/material/InputAdornment'
-import TextField from '@mui/material/TextField'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import ResponsiveAppBar from 'components/AppBar'
+import CustomHeader from 'components/CustomHeader'
+import CustomHeaderSearchInput from 'components/CustomHeader/EndAdornment/SearchInput'
 import { DINING_MEAL_SETUP_PAGE } from 'constant'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -234,64 +233,12 @@ const Dining = () => {
     return (
         <>
             <ResponsiveAppBar />
-            <div
-                className={styles.diningHeader}
-                style={
-                    matches ? { paddingLeft: '3rem', paddingRight: '3rem' } : {}
+            <CustomHeader
+                title="DINING"
+                endAdornment={
+                    <CustomHeaderSearchInput placeholder="Search..." />
                 }
-            >
-                {matches ? (
-                    <>
-                        <div className={styles.diningSearchDiv}>
-                            <TextField
-                                InputProps={{
-                                    startAdornment: (
-                                        <InputAdornment position="start">
-                                            <SearchIcon
-                                                className={styles.searchIcon}
-                                            />
-                                        </InputAdornment>
-                                    ),
-                                }}
-                                variant="outlined"
-                                size="small"
-                                margin="dense"
-                                placeholder="Search..."
-                                className={styles.diningSearchInput}
-                            />
-                        </div>
-                        <div>
-                            <p className={styles.diningHeaderTitle}>DINING</p>
-                        </div>
-                    </>
-                ) : (
-                    <>
-                        <div>
-                            <p className={styles.diningHeaderTitle}>DINING</p>
-                            <div style={{ textAlign: 'center' }}>
-                                <TextField
-                                    InputProps={{
-                                        startAdornment: (
-                                            <InputAdornment position="start">
-                                                <SearchIcon
-                                                    className={
-                                                        styles.searchIcon
-                                                    }
-                                                />
-                                            </InputAdornment>
-                                        ),
-                                    }}
-                                    variant="outlined"
-                                    size="small"
-                                    margin="dense"
-                                    placeholder="Search..."
-                                    className={styles.diningSearchInputMobile}
-                                />
-                            </div>
-                        </div>
-                    </>
-                )}
-            </div>
+            />
             <Container maxWidth="xl" style={{ marginTop: '1rem' }}>
                 <Grid container>
                     <Grid item md={9} xs={12}>
