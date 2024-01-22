@@ -5,7 +5,13 @@ import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import styles from '../_custom-header.module.scss'
 
-function CustomHeaderSearchInput({ placeholder }: { placeholder: string }) {
+function CustomHeaderSearchInput({
+    placeholder,
+    fullWidth,
+}: {
+    placeholder: string
+    fullWidth?: boolean
+}) {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
     return (
@@ -25,6 +31,7 @@ function CustomHeaderSearchInput({ placeholder }: { placeholder: string }) {
             margin="dense"
             placeholder={placeholder}
             className={styles.searchInput}
+            fullWidth={!!fullWidth}
         />
     )
 }

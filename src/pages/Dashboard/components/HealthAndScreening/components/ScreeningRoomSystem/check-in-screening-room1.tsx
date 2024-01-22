@@ -11,6 +11,7 @@ import Paper from '@mui/material/Paper'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './_check-in-screening-room1.module.scss'
+import { BONE_MINERAL_DENSITY_PAGE, INTERVIEW_PAGE } from 'constant'
 
 type Props = {
     onClose: () => void
@@ -21,7 +22,7 @@ const CheckInScreeningRoom1 = (props: Props) => {
     const [room, setRoom] = useState('')
 
     const handleChange = (event: SelectChangeEvent) => {
-        setRoom(event.target.value as string)
+        setRoom(event.target.value.toString())
     }
 
     const handleCancel = () => {
@@ -29,7 +30,16 @@ const CheckInScreeningRoom1 = (props: Props) => {
     }
 
     const handleConfirm = () => {
-        props.onClose()
+        switch (room) {
+            case '1':
+                navigate(INTERVIEW_PAGE)
+                break
+            case '3':
+                navigate(BONE_MINERAL_DENSITY_PAGE)
+                break
+            default:
+                props.onClose()
+        }
     }
 
     return (

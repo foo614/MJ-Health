@@ -34,6 +34,7 @@ import {
     ROOM_MANAGEMENT_PAGE,
     INTERVIEW_PAGE,
     INTERVIEW_INFO_PAGE,
+    BONE_MINERAL_DENSITY_PAGE,
 } from 'constant'
 import Dashboard from 'pages/Dashboard'
 import Dining from 'pages/Dining'
@@ -76,6 +77,7 @@ import PhoneConsultationDistribute from 'pages/Phone-Consultation-Distribute'
 import RoomManagement from 'pages/Room-Management'
 import Interview from 'pages/Interview'
 import InterviewInfo from 'pages/Interview-Info'
+import BoneMineralDensity from 'pages/Bone-Mineral-Density'
 function App() {
     const data = [
         {
@@ -262,6 +264,10 @@ function App() {
                 <Route
                     path={INTERVIEW_INFO_PAGE + '/:id'}
                     element={<InterviewInfo />}
+                />
+                <Route
+                    path={BONE_MINERAL_DENSITY_PAGE}
+                    element={<BoneMineralDensity />}
                 />
             </Routes>
         </ThemeProvider>
