@@ -3,7 +3,7 @@ import ResponsiveAppBar from 'components/AppBar'
 import ScreeningRoomCheckoutListTable from 'components/ScreeningRoom/ScreeningRoomCheckoutListTable'
 import ScreeningRoomHeader from 'components/ScreeningRoom/ScreeningRoomHeader'
 import ScreeningRoomWaitingListTable from 'components/ScreeningRoom/ScreeningRoomWaitingListTable'
-import { BONE_MINERAL_DENSITY_INFO_PAGE } from 'constant'
+import { BONE_MINERAL_DENSITY_PAGE } from 'constant'
 import { CheckoutListData } from 'types/ScreeningRoom/CheckoutListData'
 import { WaitingListData } from 'types/ScreeningRoom/WaitingListData'
 
@@ -126,13 +126,13 @@ const BoneMineralDensity = () => {
                 <div>
                     <ScreeningRoomWaitingListTable
                         data={waitingListData}
-                        redirectBasePath={BONE_MINERAL_DENSITY_INFO_PAGE}
+                        redirectBasePath={BONE_MINERAL_DENSITY_PAGE}
                     />
                 </div>
                 <div style={{ marginTop: '2rem' }}>
                     <ScreeningRoomCheckoutListTable
                         data={checkoutList}
-                        redirectBasePath={BONE_MINERAL_DENSITY_INFO_PAGE}
+                        redirectBasePath={BONE_MINERAL_DENSITY_PAGE}
                     />
                 </div>
             </Container>
