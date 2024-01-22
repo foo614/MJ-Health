@@ -32,6 +32,8 @@ import {
     PHONE_CONSULTATION_PAGE,
     PHONE_CONSULTATION_DISTRIBUTE_PAGE,
     ROOM_MANAGEMENT_PAGE,
+    INTERVIEW_PAGE,
+    INTERVIEW_INFO_PAGE,
 } from 'constant'
 import Dashboard from 'pages/Dashboard'
 import Dining from 'pages/Dining'
@@ -72,6 +74,8 @@ import { NutrientPrintOut } from 'pages/Health-Management-Consultation-Info/comp
 import PhoneConsultation from 'pages/Phone-Consultation'
 import PhoneConsultationDistribute from 'pages/Phone-Consultation-Distribute'
 import RoomManagement from 'pages/Room-Management'
+import Interview from 'pages/Interview'
+import InterviewInfo from 'pages/Interview-Info'
 function App() {
     const data = [
         {
@@ -253,6 +257,11 @@ function App() {
                 <Route
                     path={ROOM_MANAGEMENT_PAGE}
                     element={<RoomManagement />}
+                />
+                <Route path={INTERVIEW_PAGE} element={<Interview />} />
+                <Route
+                    path={INTERVIEW_INFO_PAGE + '/:id'}
+                    element={<InterviewInfo />}
                 />
             </Routes>
         </ThemeProvider>

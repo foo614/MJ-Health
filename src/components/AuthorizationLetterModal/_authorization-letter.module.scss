@@ -1,0 +1,111 @@
+@use '../../styles/variables' as *;
+
+.infoModal {
+    width: 1200px !important;
+    max-width: unset !important;
+    border-radius: 8px !important;
+    background-color: var(--color-white) !important;
+    max-height: 800px;
+    overflow: auto;
+}
+
+.infoModalColor {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(90deg, #3adebb -0.18%, #00aee9 99.82%);
+
+    border-bottom: 2px solid #ededed !important;
+    padding: 20px 35px !important;
+    overflow-y: unset !important;
+}
+
+.infoModalTitle {
+    font-weight: 600 !important;
+    font-size: var(--font-size-5xl) !important;
+    color: var(--color-white) !important;
+}
+
+.closeIcon {
+    color: var(--color-white) !important;
+}
+
+.modalDialogContent {
+    max-height: 700px;
+    padding: 20px 35px !important;
+}
+
+.modalDialogContent::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.modalDialogContent::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.infoModalTopText {
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    text-align: justify;
+    color: var(--title-color);
+}
+
+.infoModalRestText {
+    font-weight: 500;
+    font-size: var(--font-size-base);
+    text-align: justify;
+    color: var(--title-color);
+}
+
+.inputField {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--title-color) !important;
+}
+
+.modalFormField {
+    background: var(--color-whitesmoke-100) !important;
+    box-shadow: inset 0px 1.07462px 1.07462px 0.537312px rgba(0, 0, 0, 0.03) !important;
+    border-radius: 2px !important;
+}
+
+.signatureDiv {
+    height: 300px;
+    background-color: var(--color-whitesmoke-100);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.signatureTitleDiv {
+    height: 40px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: var(--title-color);
+}
+
+.signatureTitle {
+    font-weight: 600;
+    font-size: var(--font-size-base) !important;
+    color: var(--color-white) !important;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.addCircleIcon {
+    color: var(--color-whitesmoke-300) !important;
+    font-size: 7rem !important;
+}
+
+.saveBttn {
+    background: var(--color-turquoise) !important;
+    box-shadow: 0px 3px 15px rgba(33, 155, 142, 0.25) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    text-align: center;
+    color: var(--color-white) !important;
+    text-transform: unset !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}

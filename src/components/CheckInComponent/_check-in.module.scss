@@ -1,0 +1,29 @@
+@use '../../styles/variables' as *;
+
+.checkInComponentWithValueBttn {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    background-color: #88ffe6 !important;
+    border-radius: 3px;
+}
+
+.checkInComponentWithValueText {
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    color: var(--mj-deep-green);
+}
+
+.checkInComponentWithoutValueBttn {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    background: rgba(136, 255, 230, 0.2) !important;
+    border-radius: 3px;
+}
+
+.checkInComponentWithoutValueText {
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    color: #a8a8a8;
+}

@@ -1,0 +1,105 @@
+
+@use '../../styles/variables' as *;
+
+.callHistoryModal {
+    width: 1400px;
+    max-width: unset !important;
+    background: var(--color-white) !important;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 10px !important;
+}
+
+.infoModalColor {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(90deg, #3adebb -0.18%, #00aee9 99.82%);
+
+    border-bottom: 2px solid #ededed !important;
+    padding: 20px 35px !important;
+    overflow-y: unset !important;
+}
+
+.infoModalTitle {
+    font-weight: 600 !important;
+    font-size: var(--font-size-5xl) !important;
+    color: var(--color-white) !important;
+}
+
+.closeIcon {
+    color: var(--color-white) !important;
+}
+
+.callHistoryModalDialogContent {
+    padding: 0 !important;
+}
+
+.callHistoryTable {
+    height: 500px;
+    overflow: auto;
+}
+
+.callHistoryTable::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.callHistoryTable::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.callHistoryTableCell {
+    font-weight: 700 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--label-color) !important;
+}
+
+.callHistoryTableValueDate {
+    font-weight: 700 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--color-darkgray-100) !important;
+}
+
+.callHistorySelect {
+    background: #fdfdfd !important;
+    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+    border-radius: var(--br-8xs) !important;
+}
+
+.inputField {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--title-color) !important;
+}
+
+.callHistoryModalBottomText {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
+}
+
+.callHistoryModalBottomValue {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
+    padding-left: 15px;
+}
+
+.callHistoryDialogAction {
+    background-color: var(--color-whitesmoke-100) !important;
+    display: block !important;
+}
+
+.callHistoryDialogActionText {
+    font-weight: 600 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--title-color) !important;
+}
+
+.callHistoryDialogActionValue {
+    margin-top: 5px;
+    font-weight: 700 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}

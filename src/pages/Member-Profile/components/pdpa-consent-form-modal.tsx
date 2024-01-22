@@ -12,7 +12,7 @@ import IconButton from '@mui/material/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
 import { Box, Divider, Grid, Stack } from '@mui/material'
 import AddCircleIcon from '@mui/icons-material/AddCircle'
-import SignatureModal from './signature-modal'
+import SignatureModal from 'components/SignatureModal'
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
         children: React.ReactElement<any, any>

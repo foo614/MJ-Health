@@ -35,9 +35,9 @@ import SaveAppointmentModal from './components/save-appointment-modal'
 import Autocomplete from '@mui/material/Autocomplete'
 import OptionalItemModal from './components/optional-item-modal'
 import MemberEditDisabledIcon from '../../images/member-edit-disabled.png'
-import HIVConsentFormModal from './components/hiv-consent-form-modal'
+import HIVConsentFormModal from 'components/HIVConsentModal'
 import PDPAConsentFormModal from './components/pdpa-consent-form-modal'
-import LetterAuthorizationModal from './components/letter-authorization-modal'
+import LetterAuthorizationModal from 'components/AuthorizationLetterModal'
 import ViewDocumentModal from './components/view-document-modal'
 const MemberProfile = () => {
     const [isEdit, setIsEdit] = React.useState<boolean>(false)

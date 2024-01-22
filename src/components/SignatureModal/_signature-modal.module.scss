@@ -1,0 +1,96 @@
+@use '../../styles/variables' as *;
+
+.signatureModal {
+    width: 1000px !important;
+    max-width: unset !important;
+    border-radius: 20px !important;
+    background-color: var(--color-white) !important;
+}
+
+.infoModalColor {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(90deg, #3adebb -0.18%, #00aee9 99.82%);
+
+    border-bottom: 2px solid #ededed !important;
+    padding: 20px 35px !important;
+    overflow-y: unset !important;
+}
+
+.infoModalTitle {
+    font-weight: 600 !important;
+    font-size: var(--font-size-5xl) !important;
+    color: var(--color-white) !important;
+}
+
+.closeIcon {
+    color: var(--color-white) !important;
+}
+
+.modalDialogContent {
+    max-height: 700px;
+    padding: 20px 35px !important;
+}
+
+.modalDialogContent::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.modalDialogContent::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.signatureModalDiv {
+    height: 500px;
+    border: 2px dashed #d9d9d9;
+    z-index: 99999;
+    position: relative;
+}
+
+.signaturePad {
+    width: 100%;
+    height: 100%;
+}
+
+.watermarkDiv {
+    position: absolute;
+    top: 45%;
+    left: 35%;
+    z-index: -1 !important;
+    pointer-events: none;
+}
+
+.watermarkText {
+    font-weight: 600 !important;
+    font-size: 50px !important;
+    color: #d9d9d9 !important;
+}
+
+.signatureModalDialogActions {
+    padding: 10px 35px !important;
+    background-color: var(--color-whitesmoke-100) !important;
+}
+
+.signatureModalDialogActionsText {
+    font-size: var(--font-size-xs) !important;
+    color: #999999;
+}
+
+.signatureModalRetryBttn {
+    font-weight: 600;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+    background-color: var(--color-whitesmoke-300) !important;
+    color: var(--color-lightslategray) !important;
+}
+
+.signatureModalSaveBttn {
+    font-weight: 600;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+    background-color: var(--color-turquoise) !important;
+    color: var(--color-white) !important;
+}

@@ -7,12 +7,12 @@ import DialogTitle from '@mui/material/DialogTitle'
 import DialogActions from '@mui/material/DialogActions'
 import Slide from '@mui/material/Slide'
 import { TransitionProps } from '@mui/material/transitions'
-import styles from '../_member-profile.module.scss'
+import styles from './_hiv-consent-modal.module.scss'
 import IconButton from '@mui/material/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
 import { Box, Divider, Grid, Stack } from '@mui/material'
 import AddCircleIcon from '@mui/icons-material/AddCircle'
-import SignatureModal from './signature-modal'
+import SignatureModal from '../SignatureModal'
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
         children: React.ReactElement<any, any>

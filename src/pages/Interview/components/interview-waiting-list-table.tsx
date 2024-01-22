@@ -1,0 +1,149 @@
+import Table from '@mui/material/Table'
+import TableBody from '@mui/material/TableBody'
+import TableCell from '@mui/material/TableCell'
+import TableContainer from '@mui/material/TableContainer'
+import TableHead from '@mui/material/TableHead'
+import TableRow from '@mui/material/TableRow'
+import Paper from '@mui/material/Paper'
+import CheckInComponent from 'components/CheckInComponent'
+import styles from '../_interview.module.scss'
+import { Button } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { INTERVIEW_INFO_PAGE } from 'constant'
+type WaitingListTableProps = {
+    fakeData: any
+    // setOpen: any
+}
+
+const InterviewWaitingListTable: React.FC<WaitingListTableProps> = ({
+    fakeData,
+}: WaitingListTableProps) => {
+    const navigate = useNavigate()
+    const [openViewPDFModal, setOpenViewPDFModal] = useState<boolean>(false)
+    return (
+        <>
+            <TableContainer component={Paper} className={styles.interviewTable}>
+                <Table>
+                    <TableHead className={styles.waitingListTableHeader}>
+                        <TableRow>
+                            <TableCell
+                                colSpan={10}
+                                className={styles.waitingListCell}
+                            >
+                                <p className={styles.waitingListTitle}>
+                                    WAITING LIST
+                                </p>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <p className={styles.tableCellText}>Seq.No</p>
+                            </TableCell>
+                            <TableCell sx={{ width: '20%' }}>
+                                <p className={styles.tableCellNameText}>Name</p>
+                            </TableCell>
+                            <TableCell>
+                                <p className={styles.tableCellText}>Age</p>
+                            </TableCell>
+                            <TableCell>
+                                <p className={styles.tableCellText}>Gender</p>
+                            </TableCell>
+                            <TableCell>
+                                <p className={styles.tableCellText}>Package</p>
+                            </TableCell>
+                            <TableCell width="10%">
+                                <p className={styles.tableCellText}>
+                                    Waiting At
+                                </p>
+                            </TableCell>
+                            <TableCell width="10%">
+                                <p className={styles.tableCellText}>
+                                    Check In At
+                                </p>
+                            </TableCell>
+                            <TableCell width="12%"></TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {fakeData.map((item: any, index: number) => {
+                            return (
+                                <TableRow key={index}>
+                                    <TableCell size="small">
+                                        <p className={styles.tableCellValue}>
+                                            {item.seqNo}
+                                        </p>
+                                    </TableCell>
+                                    <TableCell
+                                        size="small"
+                                        onClick={() =>
+                                            navigate(
+                                                `${INTERVIEW_INFO_PAGE}/${item.id}`
+                                            )
+                                        }
+                                        sx={{ cursor: 'pointer' }}
+                                    >
+                                        <p
+                                            className={
+                                                styles.tableCellNameValue
+                                            }
+                                        >
+                                            {item.name}
+                                        </p>
+                                    </TableCell>
+                                    <TableCell size="small">
+                                        <p className={styles.tableCellValue}>
+                                            {item.age}
+                                        </p>
+                                    </TableCell>
+                                    <TableCell size="small">
+                                        <p className={styles.tableCellValue}>
+                                            {item.gender}
+                                        </p>
+                                    </TableCell>
+                                    <TableCell size="small">
+                                        <p className={styles.tableCellValue}>
+                                            {item.package}
+                                        </p>
+                                    </TableCell>
+                                    <TableCell size="small">
+                                        <CheckInComponent
+                                            isEmpty={
+                                                item.waitingAt ? false : true
+                                            }
+                                            value={item.waitingAt}
+                                        />
+                                    </TableCell>
+                                    <TableCell size="small">
+                                        <CheckInComponent
+                                            isEmpty={
+                                                item.checkInAt ? false : true
+                                            }
+                                            value={item.checkInAt}
+                                        />
+                                    </TableCell>
+                                    <TableCell size="small">
+                                        <Button
+                                            variant="contained"
+                                            className={styles.checkInBttn}
+                                            fullWidth
+                                            onClick={() =>
+                                                navigate(
+                                                    `${INTERVIEW_INFO_PAGE}/${item.id}`
+                                                )
+                                            }
+                                        >
+                                            Check In
+                                        </Button>
+                                    </TableCell>
+                                </TableRow>
+                            )
+                        })}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        </>
+    )
+}
+
+export default InterviewWaitingListTable
