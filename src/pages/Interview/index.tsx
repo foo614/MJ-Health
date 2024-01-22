@@ -1,20 +1,15 @@
-import ResponsiveAppBar from 'components/AppBar'
-import {
-    Grid,
-    Button,
-    TextField,
-    InputAdornment,
-    Container,
-} from '@mui/material'
 import LogoutIcon from '@mui/icons-material/Logout'
-import SearchIcon from '@mui/icons-material/Search'
+import { Button, Container } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
-import styles from './_interview.module.scss'
+import ResponsiveAppBar from 'components/AppBar'
 import CheckOutModal from 'components/CheckOutModal'
+import CustomHeader from 'components/CustomHeader'
+import CustomHeaderSearchInput from 'components/CustomHeader/EndAdornment/SearchInput'
 import { useState } from 'react'
-import InterviewWaitingListTable from './components/interview-waiting-list-table'
+import styles from './_interview.module.scss'
 import InterviewCheckOutListTable from './components/interview-checkout-list-table'
+import InterviewWaitingListTable from './components/interview-waiting-list-table'
 const Interview = () => {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('md'))
@@ -209,8 +204,9 @@ const Interview = () => {
     return (
         <>
             <ResponsiveAppBar />
-            <Grid container className={styles.header}>
-                <Grid xs={12} md={3} textAlign={matches ? 'center' : 'start'}>
+            <CustomHeader
+                title="INTERVIEW"
+                startAdornment={
                     <Button
                         variant="contained"
                         className={styles.viewPDFBttn}
@@ -219,32 +215,13 @@ const Interview = () => {
                     >
                         Check Out
                     </Button>
-                </Grid>
-                <Grid xs={3} md={6} className={styles.headerTitle}>
-                    INTERVIEW
-                </Grid>
-                <Grid xs={12} md={3}>
-                    <div style={{ paddingRight: '30px', paddingLeft: '30px' }}>
-                        <TextField
-                            InputProps={{
-                                startAdornment: (
-                                    <InputAdornment position="start">
-                                        <SearchIcon
-                                            className={styles.searchIcon}
-                                        />
-                                    </InputAdornment>
-                                ),
-                            }}
-                            variant="outlined"
-                            size="small"
-                            margin="dense"
-                            fullWidth
-                            placeholder="Search..."
-                            className={styles.headerSearchInput}
-                        />
-                    </div>
-                </Grid>
-            </Grid>
+                }
+                endAdornment={
+                    <CustomHeaderSearchInput
+                        placeholder={'Search Member Seq No...'}
+                    />
+                }
+            />
             <Container maxWidth="xl" style={{ marginTop: '1rem' }}>
                 <div>
                     <InterviewWaitingListTable fakeData={fakeWaitingListData} />

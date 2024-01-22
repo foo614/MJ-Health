@@ -43,22 +43,7 @@ const CustomHeader: React.FC<Props> = ({
                             </Typography>
                         </Button>
                     )}
-                    {startAdornment && (
-                        <Button
-                            variant="contained"
-                            className={styles.customButton}
-                            startIcon={
-                                <ChevronLeftIcon
-                                    fontSize={matches ? 'large' : 'small'}
-                                />
-                            }
-                            onClick={() => navigate(to || '')}
-                        >
-                            <Typography className={styles.backButtonText}>
-                                Back
-                            </Typography>
-                        </Button>
-                    )}
+                    {startAdornment && startAdornment}
                 </Grid>
 
                 <Grid
