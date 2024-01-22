@@ -1,15 +1,20 @@
 @use '../../styles/variables' as *;
 
 .padding25PX {
-    padding: 25px;
+    position: 'absolute';
+    right: 8;
+    top: 8;
 }
 
 .gradientBackground {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-        linear-gradient(90deg, #3adebb -0.18%, #00aee9 99.82%);
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
+        linear-gradient(90deg, #3adebb -0.18%, #00aee9 99.82%) !important;
+    border-top-right-radius: 8px !important;
+    border-top-left-radius: 8px !important;
     padding: 20px;
+    @media screen and (max-width: 600px) {
+        padding: 0.75rem;
+    }
 }
 
 .modalFlex {
@@ -17,32 +22,53 @@
 }
 
 .doctorInfoDiv {
-    margin-left: 15px;
-    margin-top: 3px;
+    margin-top: 4px;
+    line-height: 1.3em;
+    @media screen and (max-width: 600px) {
+        margin-top: 0px;
+        line-height: 1em;
+        margin-top: 0px;
+    }
 }
 
 .doctorOnShiftText {
-    font-weight: 500 !important;
-    font-size: var(--font-size-lg) !important;
-    color: var(--color-white) !important;
+    font-weight: 500;
+    font-size: var(--font-size-base);
+    color: var(--color-white);
+    @media screen and (max-width: 600px) {
+        font-size: var(--font-size-xs);
+    }
 }
 
 .doctorName {
-    font-weight: 700 !important;
-    font-size: 20px !important;
-    color: var(--color-white) !important;
+    font-weight: 700;
+    font-size: var(--font-size-lg);
+    color: var(--color-white);
+    @media screen and (max-width: 600px) {
+        font-size: var(--font-size-xs);
+    }
 }
 
 .time {
-    font-weight: 600 !important;
-    font-size: 24px !important;
-    color: var(--color-white) !important;
+    font-weight: 600;
+    font-size: 28px;
+    color: var(--color-white);
+    letter-spacing: 4.2px;
+    @media screen and (max-width: 600px) {
+        font-size: var(--font-size-xs);
+        letter-spacing: 4.5px;
+    }
 }
 
 .date {
-    font-weight: 600 !important;
-    font-size: 20px !important;
-    color: var(--color-white) !important;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--color-white);
+    letter-spacing: 4.8px;
+    @media screen and (max-width: 600px) {
+        font-size: var(--font-size-xs);
+        letter-spacing: 1px;
+    }
 }
 
 .marginLeft15PX {
@@ -51,7 +77,7 @@
 
 .closeIcon {
     cursor: pointer;
-    color: var(--color-white) !important;
+    color: var(--color-white);
 }
 
 .modalPadding {
@@ -59,28 +85,50 @@
 }
 
 .checkOutModal {
-    width: 800px;
+    min-width: 50%;
     max-width: unset;
+    border-radius: 8px !important;
+    @media screen and (max-width: 600px) {
+        width: 100%;
+    }
 }
 
 .checkoutButton {
-    font-weight: 700 !important;
-    font-size: 20px !important;
+    font-weight: 700;
+    font-size: 20px;
     text-align: center;
-
-    color: var(--color-white) !important;
-    background-color: #5a567b !important;
-    margin-left: auto !important;
+    color: var(--color-white);
+    background-color: #5a567b;
+    margin-left: auto;
 }
 
 .checkInTimeTitle {
-    font-weight: 700 !important;
-    font-size: 20px !important;
-    color: var(--mj-deep-green) !important;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--mj-deep-green);
+    @media screen and (max-width: 600px) {
+        font-size: var(--font-size-sm);
+    }
 }
 
 .checkInTime {
-    font-weight: 600 !important;
-    font-size: 20px !important;
-    color: var(--color-lightslategray) !important;
+    font-weight: 600;
+    font-size: 14.84px;
+    color: var(--color-lightslategray);
+    letter-spacing: 4.45px;
+    margin-top: 8px;
+    @media screen and (max-width: 600px) {
+        font-size: var(--font-size-xs);
+        letter-spacing: 1px;
+    }
+}
+
+.checkOutText {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 1rem;
+    @media screen and (max-width: 600px) {
+        font-size: var(--font-size-xs) !important;
+    }
 }

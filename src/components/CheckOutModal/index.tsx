@@ -1,19 +1,15 @@
-import * as React from 'react'
-import Box from '@mui/material/Box'
-import Modal from '@mui/material/Modal'
-import { Grid, Stack } from '@mui/material'
-import styles from './_check-out-modal.module.scss'
 import CloseIcon from '@mui/icons-material/Close'
+import { Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
 import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
-import { useNavigate } from 'react-router-dom'
-import { DASHBOARD_PAGE } from 'constant'
-import Slide from '@mui/material/Slide'
-import { TransitionProps } from '@mui/material/transitions'
-import IconButton from '@mui/material/IconButton'
-import DialogTitle from '@mui/material/DialogTitle'
 import Dialog from '@mui/material/Dialog'
 import DialogContent from '@mui/material/DialogContent'
+import Slide from '@mui/material/Slide'
+import { TransitionProps } from '@mui/material/transitions'
+import { DASHBOARD_PAGE } from 'constant'
+import * as React from 'react'
+import { useNavigate } from 'react-router-dom'
+import styles from './_check-out-modal.module.scss'
 
 type CheckoutModalProps = {
     open: boolean
@@ -34,18 +30,10 @@ const CheckOutModal: React.FC<CheckoutModalProps> = ({
 }: CheckoutModalProps) => {
     const handleClose = () => setOpen(false)
     const navigate = useNavigate()
-
+    const theme = useTheme()
+    const matches = useMediaQuery(theme.breakpoints.up('sm'))
     const handleRedirectToHome = () => {
         navigate(DASHBOARD_PAGE)
-    }
-    const style = {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: 850,
-        boxShadow: 24,
-        borderRadius: '5px',
     }
 
     return (
@@ -56,16 +44,26 @@ const CheckOutModal: React.FC<CheckoutModalProps> = ({
                 keepMounted
                 classes={{ paper: styles.checkOutModal }}
             >
-                <Stack direction="row" className={styles.gradientBackground}>
+                <Stack direction={'row'} className={styles.gradientBackground}>
                     <div className={styles.modalFlex}>
                         <div>
-                            <Avatar sx={{ width: 60, height: 60 }}>H</Avatar>
+                            <Avatar
+                                sx={{
+                                    width: matches ? 48 : 32,
+                                    height: matches ? 48 : 32,
+                                    mr: matches ? 2 : 0.5,
+                                }}
+                            >
+                                H
+                            </Avatar>
                         </div>
                         <div className={styles.doctorInfoDiv}>
                             <p className={styles.doctorOnShiftText}>
                                 Doctor On Shift
                             </p>
-                            <p className={styles.doctorName}>Dr.Tan Rui Kang</p>
+                            <p className={styles.doctorName}>
+                                Dr. Tan Rui Kang
+                            </p>
                         </div>
                     </div>
                     <Stack direction="row" sx={{ marginLeft: 'auto' }}>
@@ -81,8 +79,8 @@ const CheckOutModal: React.FC<CheckoutModalProps> = ({
                         </div>
                     </Stack>
                 </Stack>
-                <DialogContent>
-                    <Stack direction="row">
+                <DialogContent sx={{ p: matches ? '20px 24px' : '1rem' }}>
+                    <Stack direction="row" justifyContent={'space-between'}>
                         <div>
                             <p className={styles.checkInTimeTitle}>
                                 Check In Time:
@@ -95,8 +93,11 @@ const CheckOutModal: React.FC<CheckoutModalProps> = ({
                             variant="contained"
                             className={styles.checkoutButton}
                             onClick={handleRedirectToHome}
+                            size="small"
                         >
-                            Check Out
+                            <Typography className={styles.checkOutText}>
+                                Check Out
+                            </Typography>
                         </Button>
                     </Stack>
                 </DialogContent>

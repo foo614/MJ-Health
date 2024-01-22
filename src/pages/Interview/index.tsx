@@ -210,6 +210,7 @@ const Interview = () => {
                     <Button
                         variant="contained"
                         className={styles.viewPDFBttn}
+                        size={matches ? 'medium' : 'small'}
                         startIcon={<LogoutIcon />}
                         onClick={() => setOpenCheckOutModal(true)}
                     >

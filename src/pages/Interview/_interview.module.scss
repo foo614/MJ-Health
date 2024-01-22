@@ -18,6 +18,9 @@
     font-size: var(--font-size-base) !important;
     text-align: center;
     color: var(--color-white) !important;
+    @media screen and (max-width: 600px) {
+        font-size: var(--font-size-xs) !important;
+    }
 }
 
 .headerTitle {
