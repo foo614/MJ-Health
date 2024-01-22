@@ -89,6 +89,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
+import BoneMineralDensityInfo from 'pages/Bone-Mineral-Density-Info'
 function App() {
     const data = [
         {
@@ -282,7 +283,7 @@ function App() {
                 />
                 <Route
                     path={BONE_MINERAL_DENSITY_PAGE + '/:id'}
-                    element={<BoneMineralDensity />}
+                    element={<BoneMineralDensityInfo />}
                 />
                 <Route path={SONOGRAPHY_PAGE} element={<Sonography />} />
                 <Route
