@@ -260,7 +260,6 @@ const InterviewInfo = () => {
                                 </div>
                                 <Divider className={styles.divLine} />
                             </div>
-
                             {displayCurrentSection()}
                         </Card>
                     </Grid>

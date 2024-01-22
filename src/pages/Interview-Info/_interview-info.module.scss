@@ -66,6 +66,7 @@
     // padding: 25px 35px !important;
     border-radius: var(--br-3xs) !important;
     height: 100%;
+    padding-bottom: 20px;
 }
 
 .selectedBttn {
@@ -299,5 +300,220 @@
     font-size: var(--font-size-5xl) !important;
     text-align: center;
     background-color: var(--color-turquoise) !important;
+    color: var(--color-white) !important;
+}
+
+.medical_content_title {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--mj-deep-green) !important;
+}
+
+.medical_content_item {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.medical_content_div {
+    border-right: 2px solid #ededed;
+    padding-right: 15px;
+}
+
+.deleteBttn {
+    font-weight: 500 !important;
+    font-size: var(--font-size-xs) !important;
+    color: var(--mj-deep-green) !important;
+}
+
+.addBttn {
+    background: var(--color-turquoise) !important;
+    box-shadow: 0px 3px 15px rgba(33, 155, 142, 0.25) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--color-white) !important;
+}
+
+.medical_history_content_div {
+    height: 150px;
+    overflow: auto;
+}
+
+.medical_history_content_div::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.medical_history_content_div::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.tableHeadCellText {
+    font-weight: 500 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--label-color) !important;
+}
+
+.tableCellValue {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
+}
+
+.editBttn {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--color-turquoise) !important;
+}
+
+.health_condition_delete_bttn {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: #de4e3a !important;
+}
+
+.health_condition_table {
+    height: 300px;
+    overflow: auto;
+    margin-top: 15px;
+}
+
+.health_condition_table::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.health_condition_table::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.health_conditon_other_comment_div {
+    background: var(--color-white) !important;
+    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 8px 8px 0px 0px !important;
+    padding: 15px;
+}
+
+.currentTableEditModal {
+    width: 1200px;
+    max-width: unset !important;
+    background: var(--color-white) !important;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 10px !important;
+}
+
+.currentTableEditModalDialogContent {
+    padding: 15px !important;
+}
+
+.callHistorySelect {
+    background: #fdfdfd !important;
+    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+    border-radius: var(--br-8xs) !important;
+}
+
+.currentTableEditTable {
+    height: 250px;
+    overflow: auto;
+    border-radius: 0px !important;
+}
+
+.currentTableEditTable::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.currentTableEditTable::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.currentTableEditTableCell {
+    background-color: var(--color-whitesmoke-100) !important;
+}
+
+.callHistoryTableCell {
+    font-weight: 700 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--label-color) !important;
+}
+
+.overviewDiv {
+    background-color: var(--color-whitesmoke-100);
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+    padding-top: 6px;
+    position: relative;
+}
+
+.overviewInnerDiv {
+    background-color: var(--color-white) !important;
+    border-radius: 4px;
+    border: 2px solid #ededed;
+    margin-top: 10px;
+    padding: 10px;
+    height: 380px;
+}
+
+.overviewDivBttnStackAbsolute {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 15px;
+}
+
+.overviewDivBttnStackRelative {
+    position: relative;
+}
+
+.currentTableEditModalConfirmBttn {
+    font-size: var(--font-size-5xl) !important;
+    font-weight: 700 !important;
+    color: var(--color-white) !important;
+    background-color: var(--color-turquoise) !important;
+    box-shadow: unset !important;
+}
+
+.currentTableEditModalCancelBttn {
+    font-size: var(--font-size-5xl) !important;
+    font-weight: 700 !important;
+    color: var(--color-lightslategray) !important;
+    background-color: var(--color-whitesmoke-300) !important;
+    box-shadow: unset !important;
+}
+
+.questionnaireBttn {
+    background: var(--label-color) !important;
+    box-shadow: 0px 3px 15px rgba(33, 155, 142, 0.25) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 700 !important;
+    font-size: 22px !important;
+    text-align: center;
+    color: var(--color-white) !important;
+    line-height: unset !important;
+}
+
+.interview_info_save_bttn {
+    /* MJ Light Green */
+    background: var(--color-turquoise) !important;
+    box-shadow: 0px 3px 15px rgba(33, 155, 142, 0.25) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+
     color: var(--color-white) !important;
 }

@@ -1,7 +1,14 @@
+import HealthCondition from './components/health-condition'
+import MedicalHistoryContent from './components/medical-history-content'
+import SummaryRecord from './components/summary-record'
+
 const ConditionHistory = () => {
     return (
         <>
-            <p>Condition History</p>
+            <MedicalHistoryContent />
+            <HealthCondition />
+            <SummaryRecord />
+            
         </>
     )
 }
