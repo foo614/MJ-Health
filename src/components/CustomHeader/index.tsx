@@ -9,10 +9,16 @@ import styles from './_custom-header.module.scss'
 type Props = {
     to?: string
     title: string
+    startAdornment?: React.ReactNode
     endAdornment?: React.ReactNode
 }
 
-const CustomHeader: React.FC<Props> = ({ to, title, endAdornment }: Props) => {
+const CustomHeader: React.FC<Props> = ({
+    to,
+    title,
+    endAdornment,
+    startAdornment,
+}: Props) => {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
     const navigate = useNavigate()
@@ -25,6 +31,22 @@ const CustomHeader: React.FC<Props> = ({ to, title, endAdornment }: Props) => {
                         <Button
                             variant="text"
                             className={styles.backButton}
+                            startIcon={
+                                <ChevronLeftIcon
+                                    fontSize={matches ? 'large' : 'small'}
+                                />
+                            }
+                            onClick={() => navigate(to || '')}
+                        >
+                            <Typography className={styles.backButtonText}>
+                                Back
+                            </Typography>
+                        </Button>
+                    )}
+                    {startAdornment && (
+                        <Button
+                            variant="contained"
+                            className={styles.customButton}
                             startIcon={
                                 <ChevronLeftIcon
                                     fontSize={matches ? 'large' : 'small'}

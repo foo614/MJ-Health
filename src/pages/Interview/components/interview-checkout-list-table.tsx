@@ -1,15 +1,15 @@
+import { Button } from '@mui/material'
+import Paper from '@mui/material/Paper'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import Paper from '@mui/material/Paper'
-import styles from '../_interview.module.scss'
 import CheckInComponent from 'components/CheckInComponent'
-import { Button } from '@mui/material'
+import { INTERVIEW_PAGE } from 'constant'
 import { useNavigate } from 'react-router-dom'
-import { INTERVIEW_INFO_PAGE } from 'constant'
+import styles from '../_interview.module.scss'
 
 type WaitingListTableProps = {
     fakeData: any
@@ -74,9 +74,7 @@ const InterviewCheckOutListTable: React.FC<WaitingListTableProps> = ({
                                 <TableCell
                                     size="small"
                                     onClick={() =>
-                                        navigate(
-                                            `${INTERVIEW_INFO_PAGE}/${item.id}`
-                                        )
+                                        navigate(`${INTERVIEW_PAGE}/${item.id}`)
                                     }
                                     sx={{ cursor: 'pointer' }}
                                 >

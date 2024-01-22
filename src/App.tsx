@@ -1,11 +1,18 @@
 import { ThemeProvider } from '@mui/material/styles'
 import {
+    AUDIOMETRY_PAGE,
+    BONE_MINERAL_DENSITY_PAGE,
+    CT_SCAN_PAGE,
     DASHBOARD_PAGE,
     DINING_CHECK_IN_PAGE,
     DINING_MEAL_SETUP_PAGE,
     DINING_PAGE,
+    ELECTROCARDIOGRAM_PAGE,
+    ENT_EXAMINATION_PAGE,
+    GENERAL_MEASUREMENT_PAGE,
     HEALTH_MANAGEMENT_CONSULTATION_INFO_PAGE,
     HEALTH_MANAGEMENT_CONSULTATION_PAGE,
+    INTERVIEW_PAGE,
     IT_MONITOR_ROOM_PAGE,
     IT_ROOM_PRINTING_PAGE,
     KIOSK_PAGE,
@@ -13,36 +20,44 @@ import {
     LAB_TEST_PAGE,
     LAB_TEST_SINGLE_ITEM_PAGE,
     LOGIN_PAGE,
+    LUNG_FUNCTION_TEST_PAGE,
+    MAIN_INGREDIENT,
+    MAMMOGRAPHY_PAGE,
     MEMBER_PROFILE_PAGE,
     MONITOR_SYSTEM_PAGE,
     MUL_REPORT_PAGE,
+    PAPS_SMEAR_PAGE,
+    PERIPHERAL_VASCULAR_SCREENING_PAGE,
+    PHONE_CONSULTATION_DISTRIBUTE_PAGE,
+    PHONE_CONSULTATION_PAGE,
     PHYSICIAN_CONSULTATION_INFO_PAGE,
     PHYSICIAN_CONSULTATION_PAGE,
     QUEUE_MANAGEMENT_PAGE,
     RADIOLOGY_REPORTING_PAGE,
     RECEPTION_PAGE,
+    RETINOGRAPHY_PAGE,
+    ROOM_MANAGEMENT_PAGE,
     SETTING_PAGE,
+    SONOGRAPHY_PAGE,
     STAFF_MANAGEMENT_PAGE,
     STAFF_PROFILE_NEW_PAGE,
     STAFF_PROFILE_PAGE,
     STICKER_PRINTING_PAGE,
-    DIETARY_LIFE_STYLE_PAGE,
-    MAIN_INGREDIENT,
-    NUTRIENT,
-    PHONE_CONSULTATION_PAGE,
-    PHONE_CONSULTATION_DISTRIBUTE_PAGE,
-    ROOM_MANAGEMENT_PAGE,
-    INTERVIEW_PAGE,
-    INTERVIEW_INFO_PAGE,
-    BONE_MINERAL_DENSITY_PAGE,
+    VIEW_COMMENT_PAGE,
+    VISION_AND_OCULAR_TENSION_TEST_PAGE,
+    X_RAY_PAGE,
 } from 'constant'
+import BoneMineralDensity from 'pages/Bone-Mineral-Density'
 import Dashboard from 'pages/Dashboard'
 import Dining from 'pages/Dining'
 import DiningCheckIn from 'pages/Dining-Check-In'
 import HealthManagementConsultation from 'pages/Health-Management-Consultation'
 import HealthManagementConsultationInfo from 'pages/Health-Management-Consultation-Info'
+import { MainIngredientProductPrintOut } from 'pages/Health-Management-Consultation-Info/components/hmc-modal-components/main-ingredient-product-pdf'
 import ITRoomMonitor from 'pages/IT-Room-Monitor'
 import ITRoomPrintingPage from 'pages/IT-Room-Printing'
+import Interview from 'pages/Interview'
+import InterviewInfo from 'pages/Interview-Info'
 import Kiosk from 'pages/Kiosk'
 import LabPage from 'pages/Lab'
 import LabInfo from 'pages/Lab/lab-info'
@@ -54,6 +69,8 @@ import MULReportDetailTable from 'pages/MUL-Report/components/report'
 import MealSetup from 'pages/Meal-Setup'
 import MemberProfile from 'pages/Member-Profile'
 import MonitorSystem from 'pages/Monitor-System'
+import PhoneConsultation from 'pages/Phone-Consultation'
+import PhoneConsultationDistribute from 'pages/Phone-Consultation-Distribute'
 import PhysicianConsultation from 'pages/Physician-Consultation'
 import PhysicianConsultationInfo from 'pages/Physician-Consultation-Info'
 import QueueManagement from 'pages/Queue-Management'
@@ -61,6 +78,8 @@ import QueueManagementList from 'pages/Queue-Management/components/queue-list'
 import RadiologyReport from 'pages/Radiology-Reporting'
 import RadiologyReportDetail from 'pages/Radiology-Reporting/components/details'
 import Reception from 'pages/Reception'
+import RoomManagement from 'pages/Room-Management'
+import Sonography from 'pages/Screening-Room-System/Sonography'
 import Setting from 'pages/Setting'
 import StaffManagement from 'pages/Staff-Management'
 import StaffProfile from 'pages/Staff-Profile'
@@ -70,14 +89,6 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
-import { MainIngredientProductPrintOut } from 'pages/Health-Management-Consultation-Info/components/hmc-modal-components/main-ingredient-product-pdf'
-import { NutrientPrintOut } from 'pages/Health-Management-Consultation-Info/components/hmc-modal-components/nutrients-pdf'
-import PhoneConsultation from 'pages/Phone-Consultation'
-import PhoneConsultationDistribute from 'pages/Phone-Consultation-Distribute'
-import RoomManagement from 'pages/Room-Management'
-import Interview from 'pages/Interview'
-import InterviewInfo from 'pages/Interview-Info'
-import BoneMineralDensity from 'pages/Bone-Mineral-Density'
 function App() {
     const data = [
         {
@@ -262,13 +273,68 @@ function App() {
                 />
                 <Route path={INTERVIEW_PAGE} element={<Interview />} />
                 <Route
-                    path={INTERVIEW_INFO_PAGE + '/:id'}
+                    path={INTERVIEW_PAGE + '/:id'}
                     element={<InterviewInfo />}
                 />
                 <Route
                     path={BONE_MINERAL_DENSITY_PAGE}
                     element={<BoneMineralDensity />}
                 />
+                <Route
+                    path={BONE_MINERAL_DENSITY_PAGE + '/:id'}
+                    element={<BoneMineralDensity />}
+                />
+                <Route path={SONOGRAPHY_PAGE} element={<Sonography />} />
+                <Route
+                    path={SONOGRAPHY_PAGE + '/:id'}
+                    element={<Sonography />}
+                />
+                <Route path={SONOGRAPHY_PAGE} element={<></>} />
+                <Route path={SONOGRAPHY_PAGE + '/:id'} element={<></>} />
+                <Route path={AUDIOMETRY_PAGE} element={<></>} />
+                <Route path={AUDIOMETRY_PAGE + '/:id'} element={<></>} />
+                <Route path={CT_SCAN_PAGE} element={<></>} />
+                <Route path={CT_SCAN_PAGE + '/:id'} element={<></>} />
+                <Route path={ELECTROCARDIOGRAM_PAGE} element={<></>} />
+                <Route path={ELECTROCARDIOGRAM_PAGE + '/:id'} element={<></>} />
+                <Route path={ENT_EXAMINATION_PAGE} element={<></>} />
+                <Route path={ENT_EXAMINATION_PAGE + '/:id'} element={<></>} />
+                <Route path={GENERAL_MEASUREMENT_PAGE} element={<></>} />
+                <Route
+                    path={GENERAL_MEASUREMENT_PAGE + '/:id'}
+                    element={<></>}
+                />
+                <Route path={LUNG_FUNCTION_TEST_PAGE} element={<></>} />
+                <Route
+                    path={LUNG_FUNCTION_TEST_PAGE + '/:id'}
+                    element={<></>}
+                />{' '}
+                <Route path={MAMMOGRAPHY_PAGE} element={<></>} />
+                <Route path={MAMMOGRAPHY_PAGE + '/:id'} element={<></>} />
+                <Route
+                    path={PERIPHERAL_VASCULAR_SCREENING_PAGE}
+                    element={<></>}
+                />
+                <Route
+                    path={PERIPHERAL_VASCULAR_SCREENING_PAGE + '/:id'}
+                    element={<></>}
+                />
+                <Route path={PAPS_SMEAR_PAGE} element={<></>} />
+                <Route path={PAPS_SMEAR_PAGE + '/:id'} element={<></>} />
+                <Route path={RETINOGRAPHY_PAGE} element={<></>} />
+                <Route path={RETINOGRAPHY_PAGE + '/:id'} element={<></>} />
+                <Route
+                    path={VISION_AND_OCULAR_TENSION_TEST_PAGE}
+                    element={<></>}
+                />
+                <Route
+                    path={VISION_AND_OCULAR_TENSION_TEST_PAGE + '/:id'}
+                    element={<></>}
+                />
+                <Route path={X_RAY_PAGE} element={<></>} />
+                <Route path={X_RAY_PAGE + '/:id'} element={<></>} />
+                <Route path={VIEW_COMMENT_PAGE} element={<></>} />
+                <Route path={VIEW_COMMENT_PAGE + '/:id'} element={<></>} />
             </Routes>
         </ThemeProvider>
     )

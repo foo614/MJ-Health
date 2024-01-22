@@ -35,6 +35,28 @@ export const DIETARY_LIFE_STYLE_PAGE = '/dietary-life-style'
 export const MAIN_INGREDIENT = '/main-ingredient'
 export const NUTRIENT = '/nutrient'
 export const ROOM_MANAGEMENT_PAGE = '/room-management'
-export const INTERVIEW_PAGE = '/interview'
-export const INTERVIEW_INFO_PAGE = '/interview-info'
-export const BONE_MINERAL_DENSITY_PAGE = '/bone-mineral-density'
+
+const SCREENING_ROOM_SYSTEM_PAGE = '/screening-room-system'
+export const SONOGRAPHY_PAGE = SCREENING_ROOM_SYSTEM_PAGE + '/sonography'
+export const BONE_MINERAL_DENSITY_PAGE =
+    SCREENING_ROOM_SYSTEM_PAGE + '/bone-mineral-density'
+export const INTERVIEW_PAGE = SCREENING_ROOM_SYSTEM_PAGE + '/interview'
+export const AUDIOMETRY_PAGE = SCREENING_ROOM_SYSTEM_PAGE + '/audiometry'
+export const CT_SCAN_PAGE = SCREENING_ROOM_SYSTEM_PAGE + '/ct-scan'
+export const ELECTROCARDIOGRAM_PAGE =
+    SCREENING_ROOM_SYSTEM_PAGE + '/electrocardiogram'
+export const ENT_EXAMINATION_PAGE =
+    SCREENING_ROOM_SYSTEM_PAGE + '/ent-examination'
+export const GENERAL_MEASUREMENT_PAGE =
+    SCREENING_ROOM_SYSTEM_PAGE + '/general-measurement'
+export const LUNG_FUNCTION_TEST_PAGE =
+    SCREENING_ROOM_SYSTEM_PAGE + '/lung-function-test'
+export const MAMMOGRAPHY_PAGE = SCREENING_ROOM_SYSTEM_PAGE + '/mammography'
+export const PERIPHERAL_VASCULAR_SCREENING_PAGE =
+    SCREENING_ROOM_SYSTEM_PAGE + '/peripheral-vascular-screening'
+export const PAPS_SMEAR_PAGE = SCREENING_ROOM_SYSTEM_PAGE + '/paps-smear'
+export const RETINOGRAPHY_PAGE = SCREENING_ROOM_SYSTEM_PAGE + '/retinography'
+export const VISION_AND_OCULAR_TENSION_TEST_PAGE =
+    SCREENING_ROOM_SYSTEM_PAGE + '/vision-and-ocular-tension-test'
+export const X_RAY_PAGE = SCREENING_ROOM_SYSTEM_PAGE + '/x-ray'
+export const VIEW_COMMENT_PAGE = SCREENING_ROOM_SYSTEM_PAGE + '/view-comment'

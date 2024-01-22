@@ -1,16 +1,16 @@
+import { Button } from '@mui/material'
+import Paper from '@mui/material/Paper'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import Paper from '@mui/material/Paper'
 import CheckInComponent from 'components/CheckInComponent'
-import styles from '../_interview.module.scss'
-import { Button } from '@mui/material'
-import { useNavigate } from 'react-router-dom'
+import { INTERVIEW_PAGE } from 'constant'
 import { useState } from 'react'
-import { INTERVIEW_INFO_PAGE } from 'constant'
+import { useNavigate } from 'react-router-dom'
+import styles from '../_interview.module.scss'
 type WaitingListTableProps = {
     fakeData: any
     // setOpen: any
@@ -78,7 +78,7 @@ const InterviewWaitingListTable: React.FC<WaitingListTableProps> = ({
                                         size="small"
                                         onClick={() =>
                                             navigate(
-                                                `${INTERVIEW_INFO_PAGE}/${item.id}`
+                                                `${INTERVIEW_PAGE}/${item.id}`
                                             )
                                         }
                                         sx={{ cursor: 'pointer' }}
@@ -129,7 +129,7 @@ const InterviewWaitingListTable: React.FC<WaitingListTableProps> = ({
                                             fullWidth
                                             onClick={() =>
                                                 navigate(
-                                                    `${INTERVIEW_INFO_PAGE}/${item.id}`
+                                                    `${INTERVIEW_PAGE}/${item.id}`
                                                 )
                                             }
                                         >
