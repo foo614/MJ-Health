@@ -69,6 +69,15 @@ let theme = createTheme({
                 },
             },
         },
+        MuiFormControlLabel: {
+            styleOverrides: {
+                label: {
+                    fontWeight: '500 !important',
+                    fontSize: '18px !important',
+                    color: '#5A567B !important',
+                },
+            },
+        },
     },
 })
 

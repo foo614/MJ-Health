@@ -45,6 +45,7 @@ const OptionalItemModal: React.FC<Props> = ({
             setCheckItem(filterArray)
         }
     }
+    
     return (
         <>
             <Dialog

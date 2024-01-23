@@ -13,8 +13,7 @@ import OptionalItemModal from './optional-item-modal'
 
 const AddOnService = () => {
     const [openSignatureModal, setOpenSignatureModal] = useState<boolean>(false)
-    const [openOptionalItemModal, setOpenOptionalItemModal] =
-        useState<boolean>(false)
+    const [openOptionalItemModal,setOpenOptionalItemModal] = useState<boolean>(false)
     const fake_data = [
         {
             id: 1,
@@ -251,13 +250,7 @@ const AddOnService = () => {
                     title="Digital Sign"
                 />
             ) : null}
-            {openOptionalItemModal ? (
-                <OptionalItemModal
-                    open={openOptionalItemModal}
-                    setOpen={setOpenOptionalItemModal}
-                    optionalItems={fake_data}
-                />
-            ) : null}
+            {openOptionalItemModal ? <OptionalItemModal open={openOptionalItemModal} setOpen={setOpenOptionalItemModal} optionalItems={fake_data} /> : null}
         </>
     )
 }

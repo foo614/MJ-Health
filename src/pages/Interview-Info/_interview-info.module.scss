@@ -643,6 +643,53 @@
     color: var(--color-darkgray-100) !important;
 }
 
-.optionalItemModalDialogContent{
-    background-color: #F5F5F5;
+.optionalItemModalDialogContent {
+    background-color: #f5f5f5;
+}
+
+.textFieldProps {
+    border-radius: 3px !important;
+    background-color: var(--color-white) !important;
+    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.personal_status_mcq_small_text {
+    font-weight: 500 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--mj-deep-green) !important;
+}
+
+.screening_flow_grid_title {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--label-color) !important;
+}
+
+.screening_flow_grid_item {
+    border-right: 2px solid #ededed;
+    padding: 10px;
+    border-bottom: 2px solid #ededed;
+}
+
+.screening_flow_grid_item:nth-child(3n) {
+    border-right: unset;
+}
+
+.screening_flow_grid_item:nth-last-child(-n + 2) {
+    border-bottom: unset;
+}
+
+.screening_flow_print_bttn {
+    /* MJ Light Green */
+    background: var(--mj-deep-green) !important;
+    box-shadow: 0px 3px 15px rgba(33, 155, 142, 0.25) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+
+    color: var(--color-white) !important;
 }
