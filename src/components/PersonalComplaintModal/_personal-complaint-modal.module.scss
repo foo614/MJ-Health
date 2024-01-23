@@ -1,0 +1,23 @@
+@use '../../styles/variables' as *;
+
+.editButton,
+.cancelButton,
+.saveButton {
+    width: 140px;
+    font-weight: 600;
+    font-size: var(--font-size-base) !important;
+}
+
+.editButton {
+    background-color: var(--label-color) !important;
+}
+
+.cancelButton {
+    background-color: var(--color-whitesmoke-300) !important;
+    color: var(--color-lightslategray) !important;
+}
+
+.saveButton:disabled {
+    background-color: var(--color-whitesmoke-100) !important;
+    color: #ddd !important;
+}
