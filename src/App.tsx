@@ -46,6 +46,7 @@ import {
     VIEW_COMMENT_PAGE,
     VISION_AND_OCULAR_TENSION_TEST_PAGE,
     X_RAY_PAGE,
+    INTERVIEW_INFO_PAGE,
 } from 'constant'
 import BoneMineralDensity from 'pages/Bone-Mineral-Density'
 import Dashboard from 'pages/Dashboard'
@@ -274,7 +275,7 @@ function App() {
                 />
                 <Route path={INTERVIEW_PAGE} element={<Interview />} />
                 <Route
-                    path={INTERVIEW_PAGE + '/:id'}
+                    path={INTERVIEW_INFO_PAGE + '/:id'}
                     element={<InterviewInfo />}
                 />
                 <Route

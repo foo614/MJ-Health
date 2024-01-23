@@ -41,6 +41,7 @@ export const SONOGRAPHY_PAGE = SCREENING_ROOM_SYSTEM_PAGE + '/sonography'
 export const BONE_MINERAL_DENSITY_PAGE =
     SCREENING_ROOM_SYSTEM_PAGE + '/bone-mineral-density'
 export const INTERVIEW_PAGE = SCREENING_ROOM_SYSTEM_PAGE + '/interview'
+export const INTERVIEW_INFO_PAGE = INTERVIEW_PAGE + '/interview-info'
 export const AUDIOMETRY_PAGE = SCREENING_ROOM_SYSTEM_PAGE + '/audiometry'
 export const CT_SCAN_PAGE = SCREENING_ROOM_SYSTEM_PAGE + '/ct-scan'
 export const ELECTROCARDIOGRAM_PAGE =
