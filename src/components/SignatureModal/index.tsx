@@ -22,14 +22,12 @@ const Transition = React.forwardRef(function Transition(
 })
 
 type Props = {
-    matches: any
     setOpen: any
     open: any
     title: string
 }
 
 const SignatureModal: React.FC<Props> = ({
-    matches,
     setOpen,
     open,
     title,

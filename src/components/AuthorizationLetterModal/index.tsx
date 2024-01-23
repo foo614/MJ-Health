@@ -291,7 +291,6 @@ const LetterAuthorizationModal: React.FC<Props> = ({
                         <SignatureModal
                             open={openSignatureModal}
                             setOpen={setOpenSignatureModal}
-                            matches={matches}
                             title={title}
                         />
                     ) : null}

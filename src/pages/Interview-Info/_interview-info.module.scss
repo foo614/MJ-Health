@@ -517,3 +517,132 @@
 
     color: var(--color-white) !important;
 }
+
+.adornedEndCss {
+    padding-right: 0px !important;
+}
+
+.add_on_service_div {
+    border-radius: 10px;
+    border: 2px solid #ededed;
+    margin-top: 15px;
+}
+
+.add_on_service_op_item_div {
+    padding: 10px;
+    background: #fbfbfb;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.add_on_service_op_item_text {
+    font-weight: 500 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--label-color) !important;
+}
+
+.add_on_service_table_value {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.add_on_service_table_delete_bttn {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--mj-deep-green) !important;
+}
+
+.add_on_service_table_total_item {
+    font-weight: 700 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.add_on_service_table {
+    height: 300px;
+    overflow: auto;
+}
+
+.add_on_service_table::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.add_on_service_table::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.add_on_service_table_head {
+    font-weight: 500 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--label-color) !important;
+}
+
+.optionalItemModal {
+    background: var(--color-whitesmoke-200) !important;
+    width: 1040px !important;
+    max-width: unset !important;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 10px !important;
+}
+
+.optionalItemTitle {
+    font-weight: 500 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--label-color) !important;
+}
+
+.searchInputField {
+    font-weight: 500 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--label-color) !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.optionalModalTable {
+    max-height: 250px;
+}
+.optionalModalTable::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.optionalModalTable::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.optionalItemTableHeader {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+.memberProfileFieldTitle {
+    font-weight: 500 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--label-color) !important;
+    margin-top: 15px !important;
+}
+
+.tableValue {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--title-color) !important;
+}
+
+.optionalItemModalBottomText {
+    font-weight: 500 !important;
+    font-size: var(--font-size-sm) !important;
+    color: var(--color-darkgray-100) !important;
+}
+
+.optionalItemModalDialogContent{
+    background-color: #F5F5F5;
+}
