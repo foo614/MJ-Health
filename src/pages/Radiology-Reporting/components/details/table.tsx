@@ -109,20 +109,24 @@ const rows = [
     ),
 ]
 
-export default function CustomizedTables() {
+export default function CustomizedTables({
+    footer,
+}: {
+    footer?: React.ReactNode
+}) {
     return (
         <TableContainer
             component={Paper}
             sx={{
                 mt: 3,
                 borderRadius: '8px !important',
+                boxShadow: '0px 2px 2px 1px rgba(0, 0, 0, 0.05) inset',
             }}
         >
             <Table
                 size="small"
                 stickyHeader
                 sx={{
-                    boxShadow: '0px 2px 2px 1px rgba(0, 0, 0, 0.05) inset',
                     position: 'sticky',
                     top: 0,
                 }}
@@ -137,7 +141,7 @@ export default function CustomizedTables() {
                 </TableHead>
             </Table>
             <Box
-                sx={{ height: '300px', overflow: 'auto' }}
+                sx={{ height: '400px', overflow: 'auto' }}
                 className={styles.tableContainer}
             >
                 <Table>
@@ -165,6 +169,7 @@ export default function CustomizedTables() {
                     </TableBody>
                 </Table>
             </Box>
+            {footer && footer}
         </TableContainer>
     )
 }

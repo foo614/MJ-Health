@@ -1,8 +1,10 @@
+import AddCircle from '@mui/icons-material/AddCircle'
 import {
     Box,
     Button,
     Divider,
     FormControl,
+    Grid as Grid2,
     InputBase,
     MenuItem,
     Select,
@@ -50,7 +52,7 @@ const CommentSuggestionList = () => {
                         padding: '10px 15px',
                     }}
                 />
-                <CustomizedTables />
+                <CustomizedTables footer />
             </Grid>
             <Grid xs={12} md={2} mdOffset={10}>
                 <Button
@@ -173,7 +175,7 @@ const SonographyDetail = () => {
     }: {
         label: string
         isEdit: boolean
-        arrayField: string[]
+        arrayField: any
     }) => {
         return (
             <Box
@@ -197,48 +199,51 @@ const SonographyDetail = () => {
                             {label}
                         </Typography>
                     </Grid>
-                    {arrayField.map((x, key) => (
-                        <Grid xs={12} key={key}>
-                            <FormControl
-                                sx={{
-                                    px: 3,
-                                    pb: key + 1 == arrayField.length ? 3 : 1,
-                                    pt: key == 0 ? 2 : 0,
-                                }}
-                                size="small"
-                                fullWidth
-                            >
-                                <Select
-                                    labelId="demo-select-small-label"
-                                    id="demo-select-small"
-                                    value={mammography}
-                                    onChange={handleMammography}
-                                    sx={{
-                                        background: '#fff',
-                                    }}
-                                    placeholder="Normal"
-                                    disabled={!isEdit}
-                                >
-                                    <MenuItem value="">
-                                        <em>None</em>
-                                    </MenuItem>
-                                    <MenuItem value={'Normal'}>Normal</MenuItem>
-                                </Select>
-                            </FormControl>
-                        </Grid>
-                    ))}
+                    {arrayField.map(
+                        (x: any, key: any) =>
+                            x.list?.map((y: any, key2: any, array: any) => (
+                                <Grid xs={12} key={key2}>
+                                    <FormControl
+                                        sx={{
+                                            px: 3,
+                                            pb:
+                                                key2 + 1 === array.length
+                                                    ? 3
+                                                    : 1,
+                                            pt: 1,
+                                            // pb:
+                                        }}
+                                        size="small"
+                                        fullWidth
+                                    >
+                                        <Select
+                                            labelId="demo-select-small-label"
+                                            id="demo-select-small"
+                                            value={mammography}
+                                            onChange={handleMammography}
+                                            sx={{
+                                                background: '#fff',
+                                            }}
+                                            placeholder="Normal"
+                                            disabled={!isEdit}
+                                        >
+                                            <MenuItem value="">
+                                                <em>None</em>
+                                            </MenuItem>
+                                            <MenuItem value={'Normal'}>
+                                                Normal
+                                            </MenuItem>
+                                        </Select>
+                                    </FormControl>
+                                </Grid>
+                            ))
+                    )}
                 </Grid>
             </Box>
         )
     }
 
-    const RowItemCard = ({
-        name,
-        arrayField,
-    }: {
-        name: string
-        arrayField: string[]
-    }) => {
+    const RowItemCard = ({ arrayField }: { arrayField: any }) => {
         return (
             <Grid xs={12}>
                 <Box sx={{ p: 3 }}>
@@ -246,44 +251,48 @@ const SonographyDetail = () => {
                         <Grid xs={12} md={3}>
                             <>
                                 <Grid container>
-                                    <Grid xs={12}>
-                                        <Typography
-                                            variant="h6"
-                                            sx={{
-                                                color: '#219B8E',
-                                                fontSize: '20px',
-                                                fontWeight: 600,
-                                            }}
-                                        >
-                                            {name}
-                                        </Typography>
-                                    </Grid>
-                                    <Grid xs={12}>
-                                        <Box
-                                            sx={{
-                                                my: 3,
-                                            }}
-                                        />
-                                    </Grid>
-                                    {arrayField.map((x, key) => (
-                                        <Grid xs={12} key={key}>
-                                            <Typography
-                                                variant="body1"
-                                                sx={{
-                                                    color: '#211D4E',
-                                                    fontSize: '16px',
-                                                    fontWeight: 600,
-                                                    mb: 1,
-                                                }}
-                                            >
-                                                {x}
-                                            </Typography>
-                                            <Divider
-                                                sx={{
-                                                    mb: 2,
-                                                }}
-                                            />
-                                        </Grid>
+                                    {arrayField.map((x: any, key: any) => (
+                                        <>
+                                            <Grid xs={12}>
+                                                <Typography
+                                                    variant="h6"
+                                                    sx={{
+                                                        color: '#219B8E',
+                                                        fontSize: '20px',
+                                                        fontWeight: 600,
+                                                    }}
+                                                >
+                                                    {x.name}
+                                                </Typography>
+                                            </Grid>
+                                            <Grid xs={12}>
+                                                <Box
+                                                    sx={{
+                                                        my: 3,
+                                                    }}
+                                                />
+                                            </Grid>
+                                            {x.list.map((y: any, key2: any) => (
+                                                <Grid xs={12} key={key2}>
+                                                    <Typography
+                                                        variant="body1"
+                                                        sx={{
+                                                            color: '#211D4E',
+                                                            fontSize: '16px',
+                                                            fontWeight: 600,
+                                                            mb: 1,
+                                                        }}
+                                                    >
+                                                        {y}
+                                                    </Typography>
+                                                    <Divider
+                                                        sx={{
+                                                            mb: 2,
+                                                        }}
+                                                    />
+                                                </Grid>
+                                            ))}
+                                        </>
                                     ))}
                                 </Grid>
                             </>
@@ -329,30 +338,57 @@ const SonographyDetail = () => {
     ]
 
     const abdomenData = [
-        'Liver',
-        'Intrahepatic Bile Duct',
-        'Common Bile Duct',
-        'Gall Bladdar',
-        'Right Kidney',
-        'Left Kidney',
-        'Hapatic Portal Vein',
-        'Pancreas',
-        'Spleen and Others',
+        {
+            name: 'Abdomen',
+            list: [
+                'Liver',
+                'Intrahepatic Bile Duct',
+                'Common Bile Duct',
+                'Gall Bladdar',
+                'Right Kidney',
+                'Left Kidney',
+                'Hapatic Portal Vein',
+                'Pancreas',
+                'Spleen and Others',
+            ],
+        },
     ]
 
-    const sampleData = ['Sample', 'Sample', 'Sample', 'Sample']
+    const carotidData = [
+        {
+            name: 'Gray Scale Imaging',
+            list: ['Mean Intima-media', 'Plaque/ Others'],
+        },
+        {
+            name: 'Doppler Measurement',
+            list: [
+                'CCA-PSV (CM/S)',
+                'ICA-PSV (CM/S)',
+                'CIA-EDV (CM/S)',
+                'ICA/CCA PSV ratio',
+                'VA PSV (CM/S)',
+            ],
+        },
+    ]
+
+    const sampleData = [
+        {
+            name: 'Sample',
+            list: ['Sample', 'Sample', 'Sample', 'Sample'],
+        },
+    ]
 
     const handleDisplay = (index: number) => {
         if (index == 0) {
-            return <RowItemCard name="Abdomen" arrayField={abdomenData} />
+            return <RowItemCard arrayField={abdomenData} />
         } else if (index == 1) {
             return <CommentTable />
         } else if (index == 2) {
-            return <RowItemCard name="Carotid" arrayField={abdomenData} />
+            return <RowItemCard arrayField={carotidData} />
         } else if (index == 3 || index == 4) {
-            return <RowItemCard name="Sample" arrayField={sampleData} />
+            return <RowItemCard arrayField={sampleData} />
         } else {
-            return <RowItemCard name="B" arrayField={abdomenData} />
+            return <RowItemCard arrayField={abdomenData} />
         }
     }
 
@@ -372,12 +408,58 @@ const SonographyDetail = () => {
                     </Typography>
                 </Grid>
                 <Grid xs={12}>
-                    <CustomizedTables />
+                    <CustomizedTables footer={<TableFooter />} />
                 </Grid>
             </Box>
         )
     }
-
+    const TableFooter = () => {
+        return (
+            <Grid2
+                container
+                spacing={3}
+                sx={{
+                    px: 2,
+                    pb: 2,
+                    backgroundColor: '#F1F1F1',
+                    zIndex: 9999999,
+                }}
+            >
+                <Grid2 item xs>
+                    <Button
+                        variant="outlined"
+                        startIcon={<AddCircle />}
+                        sx={{
+                            borderRadius: '5px',
+                            boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.15)',
+                            background: '#fff',
+                        }}
+                        fullWidth
+                    >
+                        <Typography color={'#5A567B'} sx={{ fontWeight: 600 }}>
+                            Add New Comment
+                        </Typography>
+                    </Button>
+                </Grid2>
+                <Grid2 item xs>
+                    <Button
+                        variant="outlined"
+                        startIcon={<AddCircle />}
+                        sx={{
+                            borderRadius: '5px',
+                            boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.15)',
+                            background: '#fff',
+                        }}
+                        fullWidth
+                    >
+                        <Typography color={'#5A567B'} sx={{ fontWeight: 600 }}>
+                            Add New Axillary
+                        </Typography>
+                    </Button>
+                </Grid2>
+            </Grid2>
+        )
+    }
     const RowButton = () => {
         return (
             <Grid xs={12}>
@@ -468,7 +550,7 @@ const SonographyDetail = () => {
                                         handleDisplay(currentIndex)}
                                     {selectedType === 'report' && (
                                         <Grid xs={12} sx={{ p: 3 }}>
-                                            <Grid xs={12} sx={{ mt: 5 }}>
+                                            <Grid xs={12}>
                                                 <Typography
                                                     variant="h6"
                                                     sx={{
