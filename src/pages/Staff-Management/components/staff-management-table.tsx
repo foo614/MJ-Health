@@ -26,10 +26,12 @@ const StaffManagementTable = ({ fakeData }: Props) => {
                 component={Paper}
                 className={styles.staffManagementTable}
             >
-                <Table>
-                    <TableHead className={styles.staffManagementTableHead}>
+                <Table stickyHeader>
+                    <TableHead>
                         <TableRow>
-                            <TableCell>
+                            <TableCell
+                                className={styles.staffManagementTableHead}
+                            >
                                 <p
                                     className={
                                         styles.staffManagementTableHeadTitle
@@ -38,7 +40,9 @@ const StaffManagementTable = ({ fakeData }: Props) => {
                                     Staff ID
                                 </p>
                             </TableCell>
-                            <TableCell>
+                            <TableCell
+                                className={styles.staffManagementTableHead}
+                            >
                                 <p
                                     className={
                                         styles.staffManagementTableHeadTitle
@@ -47,7 +51,9 @@ const StaffManagementTable = ({ fakeData }: Props) => {
                                     Name
                                 </p>
                             </TableCell>
-                            <TableCell>
+                            <TableCell
+                                className={styles.staffManagementTableHead}
+                            >
                                 <p
                                     className={
                                         styles.staffManagementTableHeadTitle
@@ -56,7 +62,9 @@ const StaffManagementTable = ({ fakeData }: Props) => {
                                     Gender
                                 </p>
                             </TableCell>
-                            <TableCell>
+                            <TableCell
+                                className={styles.staffManagementTableHead}
+                            >
                                 <p
                                     className={
                                         styles.staffManagementTableHeadTitle
@@ -65,8 +73,9 @@ const StaffManagementTable = ({ fakeData }: Props) => {
                                     IC No.
                                 </p>
                             </TableCell>
-
-                            <TableCell>
+                            <TableCell
+                                className={styles.staffManagementTableHead}
+                            >
                                 <p
                                     className={
                                         styles.staffManagementTableHeadTitle
@@ -75,7 +84,9 @@ const StaffManagementTable = ({ fakeData }: Props) => {
                                     Position
                                 </p>
                             </TableCell>
-                            <TableCell>
+                            <TableCell
+                                className={styles.staffManagementTableHead}
+                            >
                                 <p
                                     className={
                                         styles.staffManagementTableHeadTitle
