@@ -15,7 +15,7 @@ import {
 } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 import ResponsiveAppBar from 'components/AppBar'
-import ScreeningRoomInfoHeader from 'components/ScreeningRoom/ScreeningRoomInfoHeader'
+import ScreeningRoomInfoHeader from 'components/ScreeningRoom/InfoHeader'
 import UserHeader from 'components/UserHeader'
 import { SONOGRAPHY_PAGE } from 'constant'
 import ButtonCard from 'pages/Radiology-Reporting/components/details/buttonCard'
