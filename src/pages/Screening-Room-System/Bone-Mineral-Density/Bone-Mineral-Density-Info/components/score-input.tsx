@@ -1,6 +1,6 @@
 import FormControl from '@mui/material/FormControl'
 import TextField from '@mui/material/TextField'
-import styles from '../../_bone-mineral-density-info.module.scss'
+import styles from '../_bone-mineral-density-info.module.scss'
 
 type Props = {
     value?: string | number

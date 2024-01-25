@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import useTheme from '@mui/material/styles/useTheme'
-import styles from '../../_bone-mineral-density-info.module.scss'
+import styles from '../_bone-mineral-density-info.module.scss'
 
 type Props = {
     onClick: () => void

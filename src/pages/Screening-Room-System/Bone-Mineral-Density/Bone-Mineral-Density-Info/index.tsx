@@ -14,8 +14,8 @@ import PersonalComplaintModal from 'pages/Health-Management-Consultation-Info/co
 import ScreeningRoomPersonalComplaintModal from 'components/PersonalComplaintModal'
 import MedicalHistoryModal from 'pages/Physician-Consultation-Info/components/medical-history-modal'
 import { Card, useMediaQuery, useTheme } from '@mui/material'
-import BoneMineralDensityExamReport from './components/Exam-Report'
-import ButtonCard from './components/Exam-Report/button-card'
+import BoneMineralDensityExamReport from './components/exam-report'
+import ButtonCard from './components/button-card'
 import AddOnService from 'components/ScreeningRoom/AddOnService'
 
 const BoneMineralDensityInfo = () => {

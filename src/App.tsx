@@ -48,8 +48,8 @@ import {
     VISION_AND_OCULAR_TENSION_TEST_PAGE,
     X_RAY_PAGE,
 } from 'constant'
-import BoneMineralDensity from 'pages/Bone-Mineral-Density'
-import BoneMineralDensityInfo from 'pages/Bone-Mineral-Density-Info'
+import BoneMineralDensity from 'pages/Screening-Room-System/Bone-Mineral-Density'
+import BoneMineralDensityInfo from 'pages/Screening-Room-System/Bone-Mineral-Density/Bone-Mineral-Density-Info'
 import Dashboard from 'pages/Dashboard'
 import Dining from 'pages/Dining'
 import DiningCheckIn from 'pages/Dining-Check-In'

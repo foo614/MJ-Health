@@ -1,7 +1,7 @@
 import TableCell from '@mui/material/TableCell'
 import TableRow from '@mui/material/TableRow'
 import TableCellSeparator from './table-cell-separator'
-import styles from '../../_bone-mineral-density-info.module.scss'
+import styles from '../_bone-mineral-density-info.module.scss'
 
 type Props = {
     lastRow?: boolean

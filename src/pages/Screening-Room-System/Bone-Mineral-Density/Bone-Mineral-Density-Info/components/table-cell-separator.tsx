@@ -1,5 +1,5 @@
 import TableCell from '@mui/material/TableCell'
-import styles from '../../_bone-mineral-density-info.module.scss'
+import styles from '../_bone-mineral-density-info.module.scss'
 
 const TableCellSeparator = () => {
     return (

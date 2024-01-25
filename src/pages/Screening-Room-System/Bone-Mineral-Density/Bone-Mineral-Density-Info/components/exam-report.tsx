@@ -13,7 +13,7 @@ import ScoreInput from './score-input'
 import TableRowSeparator from './table-row-separator'
 import InputAdornment from '@mui/material/InputAdornment'
 import Button from '@mui/material/Button'
-import styles from '../../_bone-mineral-density-info.module.scss'
+import styles from '../_bone-mineral-density-info.module.scss'
 
 const BoneMineralDensityExamReport = () => {
     const options = [
