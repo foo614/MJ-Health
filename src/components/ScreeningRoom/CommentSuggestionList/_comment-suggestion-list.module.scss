@@ -1,0 +1,46 @@
+@use 'styles/variables' as *;
+
+.tableContainer::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.tableContainer::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+table {
+    min-width: 650;
+}
+
+.tableContainer {
+    max-height: 400 !important;
+    overflow-y: auto !important;
+}
+
+.stickyHeader {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1;
+}
+
+.stickyFooter {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    z-index: 1;
+}
+
+.saveButton {
+    color: var(--color-white);
+    font-size: var(--font-size-5xl) !important;
+    font-weight: 700 !important;
+    width: 220px;
+    height: 64px;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}

@@ -96,6 +96,8 @@ import Audiometry from 'pages/Screening-Room-System/Audiometry'
 import AudiometryDetail from 'pages/Screening-Room-System/Audiometry/detail'
 import Electrocardiogram from 'pages/Screening-Room-System/Electrocardiogram'
 import ElectrocardiogramDetail from 'pages/Screening-Room-System/Electrocardiogram/detail'
+import ENTExamination from 'pages/Screening-Room-System/ENT-Examination'
+import ENTExaminationDetail from 'pages/Screening-Room-System/ENT-Examination/detail'
 function App() {
     const data = [
         {
@@ -311,8 +313,14 @@ function App() {
                     path={ELECTROCARDIOGRAM_PAGE + '/:id'}
                     element={<ElectrocardiogramDetail />}
                 />
-                <Route path={ENT_EXAMINATION_PAGE} element={<></>} />
-                <Route path={ENT_EXAMINATION_PAGE + '/:id'} element={<></>} />
+                <Route
+                    path={ENT_EXAMINATION_PAGE}
+                    element={<ENTExamination />}
+                />
+                <Route
+                    path={ENT_EXAMINATION_PAGE + '/:id'}
+                    element={<ENTExaminationDetail />}
+                />
                 <Route path={GENERAL_MEASUREMENT_PAGE} element={<></>} />
                 <Route
                     path={GENERAL_MEASUREMENT_PAGE + '/:id'}
