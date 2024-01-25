@@ -94,6 +94,8 @@ import './styles/main.scss'
 import theme from './styles/theme'
 import Audiometry from 'pages/Screening-Room-System/Audiometry'
 import AudiometryDetail from 'pages/Screening-Room-System/Audiometry/detail'
+import Electrocardiogram from 'pages/Screening-Room-System/Electrocardiogram'
+import ElectrocardiogramDetail from 'pages/Screening-Room-System/Electrocardiogram/detail'
 function App() {
     const data = [
         {
@@ -301,8 +303,14 @@ function App() {
                 />
                 <Route path={CT_SCAN_PAGE} element={<></>} />
                 <Route path={CT_SCAN_PAGE + '/:id'} element={<></>} />
-                <Route path={ELECTROCARDIOGRAM_PAGE} element={<></>} />
-                <Route path={ELECTROCARDIOGRAM_PAGE + '/:id'} element={<></>} />
+                <Route
+                    path={ELECTROCARDIOGRAM_PAGE}
+                    element={<Electrocardiogram />}
+                />
+                <Route
+                    path={ELECTROCARDIOGRAM_PAGE + '/:id'}
+                    element={<ElectrocardiogramDetail />}
+                />
                 <Route path={ENT_EXAMINATION_PAGE} element={<></>} />
                 <Route path={ENT_EXAMINATION_PAGE + '/:id'} element={<></>} />
                 <Route path={GENERAL_MEASUREMENT_PAGE} element={<></>} />
