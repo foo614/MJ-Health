@@ -92,6 +92,8 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
+import Audiometry from 'pages/Screening-Room-System/Audiometry'
+import AudiometryDetail from 'pages/Screening-Room-System/Audiometry/detail'
 function App() {
     const data = [
         {
@@ -292,8 +294,11 @@ function App() {
                     path={SONOGRAPHY_PAGE + '/:id'}
                     element={<SonographyDetail />}
                 />
-                <Route path={AUDIOMETRY_PAGE} element={<></>} />
-                <Route path={AUDIOMETRY_PAGE + '/:id'} element={<></>} />
+                <Route path={AUDIOMETRY_PAGE} element={<Audiometry />} />
+                <Route
+                    path={AUDIOMETRY_PAGE + '/:id'}
+                    element={<AudiometryDetail />}
+                />
                 <Route path={CT_SCAN_PAGE} element={<></>} />
                 <Route path={CT_SCAN_PAGE + '/:id'} element={<></>} />
                 <Route path={ELECTROCARDIOGRAM_PAGE} element={<></>} />
