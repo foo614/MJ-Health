@@ -47,6 +47,7 @@ import {
     VIEW_COMMENT_PAGE,
     VISION_AND_OCULAR_TENSION_TEST_PAGE,
     X_RAY_PAGE,
+    INTERVIEW_QUESTIONAIRE_PAGE,
 } from 'constant'
 import BoneMineralDensity from 'pages/Screening-Room-System/Bone-Mineral-Density'
 import BoneMineralDensityInfo from 'pages/Screening-Room-System/Bone-Mineral-Density/Bone-Mineral-Density-Info'
@@ -100,6 +101,8 @@ import ENTExamination from 'pages/Screening-Room-System/ENT-Examination'
 import ENTExaminationDetail from 'pages/Screening-Room-System/ENT-Examination/detail'
 import GeneralMeasurement from 'pages/Screening-Room-System/General-Measurement'
 import GeneralMeasurementDetail from 'pages/Screening-Room-System/General-Measurement/detail'
+import InterviewQuestionaire from 'pages/Interview-Questionaire'
+
 function App() {
     const data = [
         {
@@ -362,6 +365,14 @@ function App() {
                 <Route path={X_RAY_PAGE + '/:id'} element={<></>} />
                 <Route path={VIEW_COMMENT_PAGE} element={<></>} />
                 <Route path={VIEW_COMMENT_PAGE + '/:id'} element={<></>} />
+                <Route
+                    path={
+                        INTERVIEW_INFO_PAGE +
+                        '/:id' +
+                        INTERVIEW_QUESTIONAIRE_PAGE
+                    }
+                    element={<InterviewQuestionaire />}
+                />
             </Routes>
         </ThemeProvider>
     )
