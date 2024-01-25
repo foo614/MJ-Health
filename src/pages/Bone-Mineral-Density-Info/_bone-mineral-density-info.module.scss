@@ -65,7 +65,8 @@
     }
 }
 
-.examReportTableHeaderLabel {
+.examReportTableHeaderLabel,
+.tabPageTitle {
     color: var(--mj-deep-green);
     font-size: 1.25rem !important;
     font-weight: 600 !important;
@@ -91,6 +92,19 @@
     background-color: var(--color-white);
 }
 
+.examReportTableSelectInput {
+    min-width: 200px;
+}
+
 .tableRowSeparatorCell {
-    padding-bottom: 25px;
+    padding-bottom: 30px !important;
+}
+
+.saveButton {
+    color: var(--color-white);
+    font-size: var(--font-size-5xl) !important;
+    font-weight: 700 !important;
+    width: 220px;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
 }

@@ -10,7 +10,7 @@ const ScoreInput = ({ value }: Props) => {
     return (
         <FormControl
             className={styles.examReportTableInput}
-            sx={{ width: '80px' }}
+            // sx={{ width: '80px !important', minWidth: '60px' }}
         >
             <TextField
                 size="small"
@@ -19,6 +19,7 @@ const ScoreInput = ({ value }: Props) => {
                     style: {
                         paddingLeft: '8px',
                         paddingRight: '8px',
+                        width: '80px',
                     },
                 }}
             />

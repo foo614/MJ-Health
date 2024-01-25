@@ -16,6 +16,7 @@ import MedicalHistoryModal from 'pages/Physician-Consultation-Info/components/me
 import { Card, useMediaQuery, useTheme } from '@mui/material'
 import BoneMineralDensityExamReport from './components/Exam-Report'
 import ButtonCard from './components/Exam-Report/button-card'
+import AddOnService from 'components/ScreeningRoom/AddOnService'
 
 const BoneMineralDensityInfo = () => {
     const theme = useTheme()
@@ -104,6 +105,8 @@ const BoneMineralDensityInfo = () => {
                             {tabPage == 'examReport' && (
                                 <BoneMineralDensityExamReport />
                             )}
+
+                            {tabPage == 'addonService' && <AddOnService />}
                         </Card>
                     </Grid>
                 </Grid>

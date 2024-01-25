@@ -8,6 +8,7 @@ const TableCellSeparator = () => {
             sx={{
                 backgroundColor: 'transaparent',
                 padding: '0',
+                minWidth: '10px',
             }}
             className={styles.tableCell}
         ></TableCell>

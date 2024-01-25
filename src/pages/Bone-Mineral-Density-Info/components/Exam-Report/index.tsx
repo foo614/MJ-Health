@@ -1,5 +1,4 @@
 import Box from '@mui/material/Box'
-import Grid from '@mui/material/Grid'
 import Table from '@mui/material/Table'
 import TableCell from '@mui/material/TableCell'
 import TableRow from '@mui/material/TableRow'
@@ -10,10 +9,11 @@ import TextField from '@mui/material/TextField'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
-import styles from '../../_bone-mineral-density-info.module.scss'
 import ScoreInput from './score-input'
 import TableRowSeparator from './table-row-separator'
 import InputAdornment from '@mui/material/InputAdornment'
+import Button from '@mui/material/Button'
+import styles from '../../_bone-mineral-density-info.module.scss'
 
 const BoneMineralDensityExamReport = () => {
     const options = [
@@ -41,7 +41,7 @@ const BoneMineralDensityExamReport = () => {
 
     return (
         <>
-            <TableContainer>
+            <TableContainer style={{ overflow: 'auto' }}>
                 <Table size="small" className={styles.examReportTable}>
                     <TableRow>
                         <TableCell
@@ -75,14 +75,10 @@ const BoneMineralDensityExamReport = () => {
 
                     {/* T-score */}
                     <TableRow>
-                        <TableCell
-                            align="left"
-                            className={styles.examReportTableLabel}
-                        >
+                        <TableCell className={styles.examReportTableLabel}>
                             T-score
                         </TableCell>
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.current}`}
                         >
                             <Stack
@@ -93,9 +89,15 @@ const BoneMineralDensityExamReport = () => {
                                 <ScoreInput value="-0.90" />
                                 <FormControl
                                     fullWidth
-                                    className={styles.examReportTableInput}
+                                    className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <Select size="small" value={1}>
+                                    <Select
+                                        size="small"
+                                        value={1}
+                                        inputProps={{
+                                            style: { minWidth: '150px' },
+                                        }}
+                                    >
                                         <MenuItem value={0}>-</MenuItem>
                                         {options.map((item) => (
                                             <MenuItem
@@ -111,7 +113,6 @@ const BoneMineralDensityExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.backDate}`}
                         >
                             <Stack
@@ -122,9 +123,14 @@ const BoneMineralDensityExamReport = () => {
                                 <ScoreInput />
                                 <FormControl
                                     fullWidth
-                                    className={styles.examReportTableInput}
+                                    className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <Select size="small">
+                                    <Select
+                                        size="small"
+                                        inputProps={{
+                                            style: { minWidth: '150px' },
+                                        }}
+                                    >
                                         <MenuItem value={0}>-</MenuItem>
                                         {options.map((item) => (
                                             <MenuItem
@@ -140,7 +146,6 @@ const BoneMineralDensityExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.backDate}`}
                         >
                             <Stack
@@ -151,9 +156,14 @@ const BoneMineralDensityExamReport = () => {
                                 <ScoreInput />
                                 <FormControl
                                     fullWidth
-                                    className={styles.examReportTableInput}
+                                    className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <Select size="small">
+                                    <Select
+                                        size="small"
+                                        inputProps={{
+                                            style: { minWidth: '150px' },
+                                        }}
+                                    >
                                         <MenuItem value={0}>-</MenuItem>
                                         {options.map((item) => (
                                             <MenuItem
@@ -170,14 +180,10 @@ const BoneMineralDensityExamReport = () => {
                     </TableRow>
 
                     <TableRow>
-                        <TableCell
-                            align="left"
-                            className={styles.examReportTableLabel}
-                        >
+                        <TableCell className={styles.examReportTableLabel}>
                             T-score
                         </TableCell>
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.current}`}
                         >
                             <Stack
@@ -188,9 +194,14 @@ const BoneMineralDensityExamReport = () => {
                                 <ScoreInput />
                                 <FormControl
                                     fullWidth
-                                    className={styles.examReportTableInput}
+                                    className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <Select size="small">
+                                    <Select
+                                        size="small"
+                                        inputProps={{
+                                            style: { minWidth: '150px' },
+                                        }}
+                                    >
                                         <MenuItem value={0}>-</MenuItem>
                                         {options.map((item) => (
                                             <MenuItem
@@ -206,7 +217,6 @@ const BoneMineralDensityExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.backDate}`}
                         >
                             <Stack
@@ -217,9 +227,14 @@ const BoneMineralDensityExamReport = () => {
                                 <ScoreInput />
                                 <FormControl
                                     fullWidth
-                                    className={styles.examReportTableInput}
+                                    className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <Select size="small">
+                                    <Select
+                                        size="small"
+                                        inputProps={{
+                                            style: { minWidth: '150px' },
+                                        }}
+                                    >
                                         <MenuItem value={0}>-</MenuItem>
                                         {options.map((item) => (
                                             <MenuItem
@@ -235,7 +250,6 @@ const BoneMineralDensityExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.backDate}`}
                         >
                             <Stack
@@ -246,9 +260,14 @@ const BoneMineralDensityExamReport = () => {
                                 <ScoreInput />
                                 <FormControl
                                     fullWidth
-                                    className={styles.examReportTableInput}
+                                    className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <Select size="small">
+                                    <Select
+                                        size="small"
+                                        inputProps={{
+                                            style: { minWidth: '150px' },
+                                        }}
+                                    >
                                         <MenuItem value={0}>-</MenuItem>
                                         {options.map((item) => (
                                             <MenuItem
@@ -265,14 +284,10 @@ const BoneMineralDensityExamReport = () => {
                     </TableRow>
 
                     <TableRow>
-                        <TableCell
-                            align="left"
-                            className={styles.examReportTableLabel}
-                        >
+                        <TableCell className={styles.examReportTableLabel}>
                             T-score
                         </TableCell>
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.current}`}
                         >
                             <Stack
@@ -283,9 +298,14 @@ const BoneMineralDensityExamReport = () => {
                                 <ScoreInput />
                                 <FormControl
                                     fullWidth
-                                    className={styles.examReportTableInput}
+                                    className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <Select size="small">
+                                    <Select
+                                        size="small"
+                                        inputProps={{
+                                            style: { minWidth: '150px' },
+                                        }}
+                                    >
                                         <MenuItem value={0}>-</MenuItem>
                                         {options.map((item) => (
                                             <MenuItem
@@ -301,7 +321,6 @@ const BoneMineralDensityExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.backDate}`}
                         >
                             <Stack
@@ -312,9 +331,14 @@ const BoneMineralDensityExamReport = () => {
                                 <ScoreInput />
                                 <FormControl
                                     fullWidth
-                                    className={styles.examReportTableInput}
+                                    className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <Select size="small">
+                                    <Select
+                                        size="small"
+                                        inputProps={{
+                                            style: { minWidth: '150px' },
+                                        }}
+                                    >
                                         <MenuItem value={0}>-</MenuItem>
                                         {options.map((item) => (
                                             <MenuItem
@@ -330,7 +354,6 @@ const BoneMineralDensityExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.backDate}`}
                         >
                             <Stack
@@ -341,9 +364,14 @@ const BoneMineralDensityExamReport = () => {
                                 <ScoreInput />
                                 <FormControl
                                     fullWidth
-                                    className={styles.examReportTableInput}
+                                    className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <Select size="small">
+                                    <Select
+                                        size="small"
+                                        inputProps={{
+                                            style: { minWidth: '150px' },
+                                        }}
+                                    >
                                         <MenuItem value={0}>-</MenuItem>
                                         {options.map((item) => (
                                             <MenuItem
@@ -363,14 +391,10 @@ const BoneMineralDensityExamReport = () => {
 
                     {/* Z-score */}
                     <TableRow>
-                        <TableCell
-                            align="left"
-                            className={styles.examReportTableLabel}
-                        >
+                        <TableCell className={styles.examReportTableLabel}>
                             Z-score
                         </TableCell>
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.current}`}
                         >
                             <Stack
@@ -381,9 +405,15 @@ const BoneMineralDensityExamReport = () => {
                                 <ScoreInput value="-0.90" />
                                 <FormControl
                                     fullWidth
-                                    className={styles.examReportTableInput}
+                                    className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <Select size="small" value={1}>
+                                    <Select
+                                        size="small"
+                                        value={1}
+                                        inputProps={{
+                                            style: { minWidth: '150px' },
+                                        }}
+                                    >
                                         <MenuItem value={0}>-</MenuItem>
                                         {options.map((item) => (
                                             <MenuItem
@@ -399,7 +429,6 @@ const BoneMineralDensityExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.backDate}`}
                         >
                             <Stack
@@ -410,9 +439,14 @@ const BoneMineralDensityExamReport = () => {
                                 <ScoreInput />
                                 <FormControl
                                     fullWidth
-                                    className={styles.examReportTableInput}
+                                    className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <Select size="small">
+                                    <Select
+                                        size="small"
+                                        inputProps={{
+                                            style: { minWidth: '150px' },
+                                        }}
+                                    >
                                         <MenuItem value={0}>-</MenuItem>
                                         {options.map((item) => (
                                             <MenuItem
@@ -428,7 +462,6 @@ const BoneMineralDensityExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.backDate}`}
                         >
                             <Stack
@@ -439,9 +472,14 @@ const BoneMineralDensityExamReport = () => {
                                 <ScoreInput />
                                 <FormControl
                                     fullWidth
-                                    className={styles.examReportTableInput}
+                                    className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <Select size="small">
+                                    <Select
+                                        size="small"
+                                        inputProps={{
+                                            style: { minWidth: '150px' },
+                                        }}
+                                    >
                                         <MenuItem value={0}>-</MenuItem>
                                         {options.map((item) => (
                                             <MenuItem
@@ -458,14 +496,10 @@ const BoneMineralDensityExamReport = () => {
                     </TableRow>
 
                     <TableRow>
-                        <TableCell
-                            align="left"
-                            className={styles.examReportTableLabel}
-                        >
+                        <TableCell className={styles.examReportTableLabel}>
                             Z-score
                         </TableCell>
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.current}`}
                         >
                             <Stack
@@ -476,9 +510,14 @@ const BoneMineralDensityExamReport = () => {
                                 <ScoreInput />
                                 <FormControl
                                     fullWidth
-                                    className={styles.examReportTableInput}
+                                    className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <Select size="small">
+                                    <Select
+                                        size="small"
+                                        inputProps={{
+                                            style: { minWidth: '150px' },
+                                        }}
+                                    >
                                         <MenuItem value={0}>-</MenuItem>
                                         {options.map((item) => (
                                             <MenuItem
@@ -494,7 +533,6 @@ const BoneMineralDensityExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.backDate}`}
                         >
                             <Stack
@@ -505,9 +543,14 @@ const BoneMineralDensityExamReport = () => {
                                 <ScoreInput />
                                 <FormControl
                                     fullWidth
-                                    className={styles.examReportTableInput}
+                                    className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <Select size="small">
+                                    <Select
+                                        size="small"
+                                        inputProps={{
+                                            style: { minWidth: '150px' },
+                                        }}
+                                    >
                                         <MenuItem value={0}>-</MenuItem>
                                         {options.map((item) => (
                                             <MenuItem
@@ -523,7 +566,6 @@ const BoneMineralDensityExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.backDate}`}
                         >
                             <Stack
@@ -534,9 +576,14 @@ const BoneMineralDensityExamReport = () => {
                                 <ScoreInput />
                                 <FormControl
                                     fullWidth
-                                    className={styles.examReportTableInput}
+                                    className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <Select size="small">
+                                    <Select
+                                        size="small"
+                                        inputProps={{
+                                            style: { minWidth: '150px' },
+                                        }}
+                                    >
                                         <MenuItem value={0}>-</MenuItem>
                                         {options.map((item) => (
                                             <MenuItem
@@ -553,14 +600,10 @@ const BoneMineralDensityExamReport = () => {
                     </TableRow>
 
                     <TableRow>
-                        <TableCell
-                            align="left"
-                            className={styles.examReportTableLabel}
-                        >
+                        <TableCell className={styles.examReportTableLabel}>
                             Z-score
                         </TableCell>
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.current}`}
                         >
                             <Stack
@@ -571,9 +614,14 @@ const BoneMineralDensityExamReport = () => {
                                 <ScoreInput />
                                 <FormControl
                                     fullWidth
-                                    className={styles.examReportTableInput}
+                                    className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <Select size="small">
+                                    <Select
+                                        size="small"
+                                        inputProps={{
+                                            style: { minWidth: '150px' },
+                                        }}
+                                    >
                                         <MenuItem value={0}>-</MenuItem>
                                         {options.map((item) => (
                                             <MenuItem
@@ -589,7 +637,6 @@ const BoneMineralDensityExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.backDate}`}
                         >
                             <Stack
@@ -600,9 +647,14 @@ const BoneMineralDensityExamReport = () => {
                                 <ScoreInput />
                                 <FormControl
                                     fullWidth
-                                    className={styles.examReportTableInput}
+                                    className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <Select size="small">
+                                    <Select
+                                        size="small"
+                                        inputProps={{
+                                            style: { minWidth: '150px' },
+                                        }}
+                                    >
                                         <MenuItem value={0}>-</MenuItem>
                                         {options.map((item) => (
                                             <MenuItem
@@ -618,7 +670,6 @@ const BoneMineralDensityExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.backDate}`}
                         >
                             <Stack
@@ -629,9 +680,14 @@ const BoneMineralDensityExamReport = () => {
                                 <ScoreInput />
                                 <FormControl
                                     fullWidth
-                                    className={styles.examReportTableInput}
+                                    className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <Select size="small">
+                                    <Select
+                                        size="small"
+                                        inputProps={{
+                                            style: { minWidth: '150px' },
+                                        }}
+                                    >
                                         <MenuItem value={0}>-</MenuItem>
                                         {options.map((item) => (
                                             <MenuItem
@@ -651,21 +707,20 @@ const BoneMineralDensityExamReport = () => {
 
                     {/* Android */}
                     <TableRow>
-                        <TableCell
-                            align="left"
-                            className={styles.examReportTableLabel}
-                        >
+                        <TableCell className={styles.examReportTableLabel}>
                             Android
                         </TableCell>
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.current}`}
                         >
                             <FormControl
                                 fullWidth
-                                className={styles.examReportTableInput}
+                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                             >
                                 <TextField
+                                    inputProps={{
+                                        style: { minWidth: '150px' },
+                                    }}
                                     size="small"
                                     InputProps={{
                                         endAdornment: (
@@ -679,14 +734,16 @@ const BoneMineralDensityExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.backDate}`}
                         >
                             <FormControl
                                 fullWidth
-                                className={styles.examReportTableInput}
+                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                             >
                                 <TextField
+                                    inputProps={{
+                                        style: { minWidth: '150px' },
+                                    }}
                                     size="small"
                                     InputProps={{
                                         endAdornment: (
@@ -700,14 +757,16 @@ const BoneMineralDensityExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.backDate}`}
                         >
                             <FormControl
                                 fullWidth
-                                className={styles.examReportTableInput}
+                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                             >
                                 <TextField
+                                    inputProps={{
+                                        style: { minWidth: '150px' },
+                                    }}
                                     size="small"
                                     InputProps={{
                                         endAdornment: (
@@ -723,21 +782,20 @@ const BoneMineralDensityExamReport = () => {
 
                     {/* Gynoid */}
                     <TableRow>
-                        <TableCell
-                            align="left"
-                            className={styles.examReportTableLabel}
-                        >
+                        <TableCell className={styles.examReportTableLabel}>
                             Gynoid
                         </TableCell>
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.current}`}
                         >
                             <FormControl
                                 fullWidth
-                                className={styles.examReportTableInput}
+                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                             >
                                 <TextField
+                                    inputProps={{
+                                        style: { minWidth: '150px' },
+                                    }}
                                     size="small"
                                     InputProps={{
                                         endAdornment: (
@@ -751,14 +809,16 @@ const BoneMineralDensityExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.backDate}`}
                         >
                             <FormControl
                                 fullWidth
-                                className={styles.examReportTableInput}
+                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                             >
                                 <TextField
+                                    inputProps={{
+                                        style: { minWidth: '150px' },
+                                    }}
                                     size="small"
                                     InputProps={{
                                         endAdornment: (
@@ -772,14 +832,16 @@ const BoneMineralDensityExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.backDate}`}
                         >
                             <FormControl
                                 fullWidth
-                                className={styles.examReportTableInput}
+                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                             >
                                 <TextField
+                                    inputProps={{
+                                        style: { minWidth: '150px' },
+                                    }}
                                     size="small"
                                     InputProps={{
                                         endAdornment: (
@@ -795,66 +857,74 @@ const BoneMineralDensityExamReport = () => {
 
                     {/* A/G Ratio */}
                     <TableRow>
-                        <TableCell
-                            align="left"
-                            className={styles.examReportTableLabel}
-                        >
+                        <TableCell className={styles.examReportTableLabel}>
                             A/G Ratio
                         </TableCell>
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.current}`}
                         >
                             <FormControl
                                 fullWidth
-                                className={styles.examReportTableInput}
+                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                             >
-                                <TextField size="small" />
+                                <TextField
+                                    size="small"
+                                    inputProps={{
+                                        style: { minWidth: '150px' },
+                                    }}
+                                />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.backDate}`}
                         >
                             <FormControl
                                 fullWidth
-                                className={styles.examReportTableInput}
+                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                             >
-                                <TextField size="small" />
+                                <TextField
+                                    size="small"
+                                    inputProps={{
+                                        style: { minWidth: '150px' },
+                                    }}
+                                />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.backDate}`}
                         >
                             <FormControl
                                 fullWidth
-                                className={styles.examReportTableInput}
+                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                             >
-                                <TextField size="small" />
+                                <TextField
+                                    size="small"
+                                    inputProps={{
+                                        style: { minWidth: '150px' },
+                                    }}
+                                />
                             </FormControl>
                         </TableCell>
                     </TableRow>
 
                     {/* Total Body */}
                     <TableRow>
-                        <TableCell
-                            align="left"
-                            className={styles.examReportTableLabel}
-                        >
+                        <TableCell className={styles.examReportTableLabel}>
                             Total Body
                         </TableCell>
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.current}`}
                         >
                             <FormControl
                                 fullWidth
-                                className={styles.examReportTableInput}
+                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                             >
                                 <TextField
+                                    inputProps={{
+                                        style: { minWidth: '150px' },
+                                    }}
                                     size="small"
                                     InputProps={{
                                         endAdornment: (
@@ -868,14 +938,16 @@ const BoneMineralDensityExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.backDate}`}
                         >
                             <FormControl
                                 fullWidth
-                                className={styles.examReportTableInput}
+                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                             >
                                 <TextField
+                                    inputProps={{
+                                        style: { minWidth: '150px' },
+                                    }}
                                     size="small"
                                     InputProps={{
                                         endAdornment: (
@@ -889,14 +961,16 @@ const BoneMineralDensityExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            align="center"
                             className={`${styles.tableCell} ${styles.backDate}`}
                         >
                             <FormControl
                                 fullWidth
-                                className={styles.examReportTableInput}
+                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                             >
                                 <TextField
+                                    inputProps={{
+                                        style: { minWidth: '150px' },
+                                    }}
                                     size="small"
                                     InputProps={{
                                         endAdornment: (
@@ -911,8 +985,72 @@ const BoneMineralDensityExamReport = () => {
                     </TableRow>
 
                     <TableRowSeparator lastRow />
+                    <TableRowSeparator noBackground />
+
+                    <TableRow>
+                        <TableCell className={styles.examReportTableLabel}>
+                            Height
+                        </TableCell>
+                        <TableCell>
+                            <FormControl
+                                fullWidth
+                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
+                            >
+                                <TextField
+                                    inputProps={{
+                                        style: { minWidth: '150px' },
+                                    }}
+                                    size="small"
+                                    InputProps={{
+                                        endAdornment: (
+                                            <InputAdornment position="end">
+                                                <small>Meter (s)</small>
+                                            </InputAdornment>
+                                        ),
+                                    }}
+                                />
+                            </FormControl>
+                        </TableCell>
+                    </TableRow>
+
+                    <TableRow>
+                        <TableCell className={styles.examReportTableLabel}>
+                            Weight
+                        </TableCell>
+                        <TableCell>
+                            <FormControl
+                                fullWidth
+                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
+                            >
+                                <TextField
+                                    inputProps={{
+                                        style: { minWidth: '150px' },
+                                    }}
+                                    size="small"
+                                    InputProps={{
+                                        endAdornment: (
+                                            <InputAdornment position="end">
+                                                <small>Kilogram (s)</small>
+                                            </InputAdornment>
+                                        ),
+                                    }}
+                                />
+                            </FormControl>
+                        </TableCell>
+                    </TableRow>
                 </Table>
             </TableContainer>
+
+            <Box
+                sx={{
+                    float: 'right',
+                    marginTop: '1.5rem',
+                }}
+            >
+                <Button variant="contained" className={styles.saveButton}>
+                    Save
+                </Button>
+            </Box>
         </>
     )
 }

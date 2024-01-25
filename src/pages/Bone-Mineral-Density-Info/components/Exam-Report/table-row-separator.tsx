@@ -5,9 +5,10 @@ import styles from '../../_bone-mineral-density-info.module.scss'
 
 type Props = {
     lastRow?: boolean
+    noBackground?: boolean
 }
 
-const TableRowSeparator = ({ lastRow }: Props) => {
+const TableRowSeparator = ({ lastRow, noBackground }: Props) => {
     return (
         <TableRow>
             <TableCell
@@ -17,21 +18,39 @@ const TableRowSeparator = ({ lastRow }: Props) => {
                 width="26%"
                 className={`${styles.tableRowSeparatorCell} ${
                     styles.tableCell
-                } ${lastRow ? styles.currentBottom : styles.current}`}
+                } ${
+                    noBackground
+                        ? ''
+                        : lastRow
+                          ? styles.currentBottom
+                          : styles.current
+                }`}
             ></TableCell>
             <TableCellSeparator />
             <TableCell
                 width="26%"
                 className={`${styles.tableRowSeparatorCell} ${
                     styles.tableCell
-                } ${lastRow ? styles.backDateBottom : styles.backDate}`}
+                } ${
+                    noBackground
+                        ? ''
+                        : lastRow
+                          ? styles.backDateBottom
+                          : styles.backDate
+                }`}
             ></TableCell>
             <TableCellSeparator />
             <TableCell
                 width="26%"
                 className={`${styles.tableRowSeparatorCell} ${
                     styles.tableCell
-                } ${lastRow ? styles.backDateBottom : styles.backDate}`}
+                } ${
+                    noBackground
+                        ? ''
+                        : lastRow
+                          ? styles.backDateBottom
+                          : styles.backDate
+                }`}
             ></TableCell>
         </TableRow>
     )
