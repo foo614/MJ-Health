@@ -98,6 +98,8 @@ import Electrocardiogram from 'pages/Screening-Room-System/Electrocardiogram'
 import ElectrocardiogramDetail from 'pages/Screening-Room-System/Electrocardiogram/detail'
 import ENTExamination from 'pages/Screening-Room-System/ENT-Examination'
 import ENTExaminationDetail from 'pages/Screening-Room-System/ENT-Examination/detail'
+import GeneralMeasurement from 'pages/Screening-Room-System/General-Measurement'
+import GeneralMeasurementDetail from 'pages/Screening-Room-System/General-Measurement/detail'
 function App() {
     const data = [
         {
@@ -321,10 +323,13 @@ function App() {
                     path={ENT_EXAMINATION_PAGE + '/:id'}
                     element={<ENTExaminationDetail />}
                 />
-                <Route path={GENERAL_MEASUREMENT_PAGE} element={<></>} />
+                <Route
+                    path={GENERAL_MEASUREMENT_PAGE}
+                    element={<GeneralMeasurement />}
+                />
                 <Route
                     path={GENERAL_MEASUREMENT_PAGE + '/:id'}
-                    element={<></>}
+                    element={<GeneralMeasurementDetail />}
                 />
                 <Route path={LUNG_FUNCTION_TEST_PAGE} element={<></>} />
                 <Route
