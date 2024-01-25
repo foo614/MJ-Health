@@ -208,3 +208,26 @@
         font-size: var(--font-size-xs);
     }
 }
+
+table {
+    min-width: 650;
+}
+
+.tableContainer {
+    max-height: 400 !important;
+    overflow-y: auto !important;
+}
+
+.stickyHeader {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1;
+}
+
+.stickyFooter {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    z-index: 1;
+}

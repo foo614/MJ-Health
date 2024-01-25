@@ -1,4 +1,4 @@
-import Button from '@mui/material/Button'
+import { Box, Button } from '@mui/material'
 import Paper from '@mui/material/Paper'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
@@ -8,7 +8,6 @@ import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import { styled } from '@mui/material/styles'
 import styles from '../../_radiology-reporting.module.scss'
-
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
         backgroundColor: '#fff',
@@ -117,46 +116,110 @@ export default function CustomizedTables() {
             sx={{
                 mt: 3,
                 borderRadius: '8px !important',
-                maxHeight: '300px',
             }}
-            className={styles.tableContainer}
         >
             <Table
-                aria-label="customized table"
                 size="small"
                 stickyHeader
                 sx={{
-                    minWidth: 700,
                     boxShadow: '0px 2px 2px 1px rgba(0, 0, 0, 0.05) inset',
+                    position: 'sticky',
+                    top: 0,
                 }}
             >
                 <TableHead sx={{ borderBottom: 'none' }}>
-                    <TableRow>
+                    <TableRow className={styles.stickyHeader}>
                         <StyledTableCell>No.</StyledTableCell>
-                        <StyledTableCell>Content</StyledTableCell>
+                        <StyledTableCell align="left">Content</StyledTableCell>
                         <StyledTableCell></StyledTableCell>
                         <StyledTableCell></StyledTableCell>
                     </TableRow>
                 </TableHead>
-                <TableBody>
-                    {rows.map((row) => (
-                        <StyledTableRow key={row.number}>
-                            <StyledTableCell component="th" scope="row">
-                                {row.number}
-                            </StyledTableCell>
-                            <StyledTableCell>{row.content}</StyledTableCell>
-                            <StyledTableCell>
-                                <Button variant="text">Edit</Button>
-                            </StyledTableCell>
-                            <StyledTableCell>
-                                <Button variant="text" sx={{ color: 'red' }}>
-                                    Delete
-                                </Button>
-                            </StyledTableCell>
-                        </StyledTableRow>
-                    ))}
-                </TableBody>
             </Table>
+            <Box
+                sx={{ height: '300px', overflow: 'auto' }}
+                className={styles.tableContainer}
+            >
+                <Table>
+                    <TableBody>
+                        {rows.map((row) => (
+                            <StyledTableRow key={row.number}>
+                                <StyledTableCell>{row.number}</StyledTableCell>
+                                <StyledTableCell>{row.content}</StyledTableCell>
+                                <StyledTableCell>
+                                    <Button size="small" variant="text">
+                                        Edit
+                                    </Button>
+                                </StyledTableCell>
+                                <StyledTableCell>
+                                    <Button
+                                        size="small"
+                                        variant="text"
+                                        sx={{ color: 'red' }}
+                                    >
+                                        Delete
+                                    </Button>
+                                </StyledTableCell>
+                            </StyledTableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </Box>
         </TableContainer>
+        // <TableContainer
+        //     component={Paper}
+        //     // sx={{
+        //     //     mt: 3,
+        //     //     borderRadius: '8px !important',
+        //     //     maxHeight: '300px',
+        //     // }}
+        //     // className={styles.tableContainer}
+        //     className={styles.tableContainer}
+        // >
+        //     <Table
+        //         aria-label="customized table"
+        //         // size="small"
+        //         // stickyHeader
+        //         // sx={{
+        //         //     minWidth: 700,
+        //         //     boxShadow: '0px 2px 2px 1px rgba(0, 0, 0, 0.05) inset',
+        //         // }}
+        //         className={styles.table}
+        //     >
+        //         <TableHead sx={{ borderBottom: 'none' }}>
+        //             <TableRow className={styles.stickyHeader}>
+        //                 <StyledTableCell>No.</StyledTableCell>
+        //                 <StyledTableCell>Content</StyledTableCell>
+        //                 <StyledTableCell></StyledTableCell>
+        //                 <StyledTableCell></StyledTableCell>
+        //             </TableRow>
+        //         </TableHead>
+        //         <TableBody>
+        //             {rows.map((row) => (
+        //                 <StyledTableRow key={row.number}>
+        //                     <StyledTableCell component="th" scope="row">
+        //                         {row.number}
+        //                     </StyledTableCell>
+        //                     <StyledTableCell>{row.content}</StyledTableCell>
+        //                     <StyledTableCell>
+        //                         <Button variant="text">Edit</Button>
+        //                     </StyledTableCell>
+        //                     <StyledTableCell>
+        //                         <Button variant="text" sx={{ color: 'red' }}>
+        //                             Delete
+        //                         </Button>
+        //                     </StyledTableCell>
+        //                 </StyledTableRow>
+        //             ))}
+        //         </TableBody>
+        //         <TableFooter>
+        //             <TableRow className={styles.stickyFooter}>
+        //                 <TableCell>Footer 1</TableCell>
+        //                 <TableCell>Footer 2</TableCell>
+        //                 {/* Add more table footer cells as needed */}
+        //             </TableRow>
+        //         </TableFooter>
+        //     </Table>
+        // </TableContainer>
     )
 }

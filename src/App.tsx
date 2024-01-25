@@ -12,6 +12,7 @@ import {
     GENERAL_MEASUREMENT_PAGE,
     HEALTH_MANAGEMENT_CONSULTATION_INFO_PAGE,
     HEALTH_MANAGEMENT_CONSULTATION_PAGE,
+    INTERVIEW_INFO_PAGE,
     INTERVIEW_PAGE,
     IT_MONITOR_ROOM_PAGE,
     IT_ROOM_PRINTING_PAGE,
@@ -46,9 +47,9 @@ import {
     VIEW_COMMENT_PAGE,
     VISION_AND_OCULAR_TENSION_TEST_PAGE,
     X_RAY_PAGE,
-    INTERVIEW_INFO_PAGE,
 } from 'constant'
 import BoneMineralDensity from 'pages/Bone-Mineral-Density'
+import BoneMineralDensityInfo from 'pages/Bone-Mineral-Density-Info'
 import Dashboard from 'pages/Dashboard'
 import Dining from 'pages/Dining'
 import DiningCheckIn from 'pages/Dining-Check-In'
@@ -81,6 +82,7 @@ import RadiologyReportDetail from 'pages/Radiology-Reporting/components/details'
 import Reception from 'pages/Reception'
 import RoomManagement from 'pages/Room-Management'
 import Sonography from 'pages/Screening-Room-System/Sonography'
+import SonographyDetail from 'pages/Screening-Room-System/Sonography/detail'
 import Setting from 'pages/Setting'
 import StaffManagement from 'pages/Staff-Management'
 import StaffProfile from 'pages/Staff-Profile'
@@ -90,7 +92,6 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
-import BoneMineralDensityInfo from 'pages/Bone-Mineral-Density-Info'
 function App() {
     const data = [
         {
@@ -289,10 +290,8 @@ function App() {
                 <Route path={SONOGRAPHY_PAGE} element={<Sonography />} />
                 <Route
                     path={SONOGRAPHY_PAGE + '/:id'}
-                    element={<Sonography />}
+                    element={<SonographyDetail />}
                 />
-                <Route path={SONOGRAPHY_PAGE} element={<></>} />
-                <Route path={SONOGRAPHY_PAGE + '/:id'} element={<></>} />
                 <Route path={AUDIOMETRY_PAGE} element={<></>} />
                 <Route path={AUDIOMETRY_PAGE + '/:id'} element={<></>} />
                 <Route path={CT_SCAN_PAGE} element={<></>} />
