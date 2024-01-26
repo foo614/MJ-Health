@@ -16,6 +16,7 @@ import HIVConsentFormModal from 'components/HIVConsentModal'
 import LetterAuthorizationModal from 'components/AuthorizationLetterModal'
 import CallHistoryModal from 'components/CallHistoryModal'
 import PregnancyWaiverForm from './components/pregnancy-waiver-form'
+import ExitStationModal from './components/exit-station-modal'
 const InterviewInfo = () => {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
@@ -29,6 +30,9 @@ const InterviewInfo = () => {
         useState<boolean>(false)
 
     const [openPregnancyWaiverFormModal, setOpenPregnancyWaiverFormModal] =
+        useState<boolean>(false)
+
+    const [openExitStationModal, setOpenExitStationModal] =
         useState<boolean>(false)
 
     const handleDisplayCurrentSection = (section: number) => {
@@ -133,6 +137,7 @@ const InterviewInfo = () => {
                     <Button
                         variant="contained"
                         className={styles.exitStationBttn}
+                        onClick={() => setOpenExitStationModal(true)}
                     >
                         Exit Station
                     </Button>
@@ -295,6 +300,12 @@ const InterviewInfo = () => {
                     setOpen={setOpenPregnancyWaiverFormModal}
                     matches={matches}
                     mdUp={mdUp}
+                />
+            ) : null}
+            {openExitStationModal ? (
+                <ExitStationModal
+                    open={openExitStationModal}
+                    setOpen={setOpenExitStationModal}
                 />
             ) : null}
         </>

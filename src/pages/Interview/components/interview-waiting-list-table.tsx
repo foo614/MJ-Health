@@ -7,7 +7,7 @@ import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import CheckInComponent from 'components/CheckInComponent'
-import { INTERVIEW_PAGE } from 'constant'
+import { INTERVIEW_INFO_PAGE } from 'constant'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from '../_interview.module.scss'
@@ -78,7 +78,7 @@ const InterviewWaitingListTable: React.FC<WaitingListTableProps> = ({
                                         size="small"
                                         onClick={() =>
                                             navigate(
-                                                `${INTERVIEW_PAGE}/${item.id}`
+                                                `${INTERVIEW_INFO_PAGE}/${item.id}`
                                             )
                                         }
                                         sx={{ cursor: 'pointer' }}
@@ -129,7 +129,7 @@ const InterviewWaitingListTable: React.FC<WaitingListTableProps> = ({
                                             fullWidth
                                             onClick={() =>
                                                 navigate(
-                                                    `${INTERVIEW_PAGE}/${item.id}`
+                                                    `${INTERVIEW_INFO_PAGE}/${item.id}`
                                                 )
                                             }
                                         >

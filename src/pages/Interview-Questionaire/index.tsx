@@ -1,7 +1,7 @@
 import { Box, Card, Container, Button } from '@mui/material'
 import ResponsiveAppBar from 'components/AppBar'
 import CustomHeader from 'components/CustomHeader'
-import { DASHBOARD_PAGE } from 'constant'
+import { DASHBOARD_PAGE, INTERVIEW_PAGE } from 'constant'
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
 import BasicInfo from './components/basic-info'
@@ -61,7 +61,7 @@ const InterviewQuestionaire = () => {
     return (
         <>
             <ResponsiveAppBar />
-            <CustomHeader to={DASHBOARD_PAGE} title="INTERVIEW" />
+            <CustomHeader to={INTERVIEW_PAGE} title="INTERVIEW" />
             <Container maxWidth="xl" sx={{ marginTop: '25px' }}>
                 <Card sx={{ padding: '25px' }}>
                     <Box>

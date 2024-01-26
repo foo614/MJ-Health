@@ -55,3 +55,15 @@
     font-size: var(--font-size-base) !important;
     color: var(--label-color) !important;
 }
+
+.tableHead {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
+}
+
+
+
+.tableCell:last-child {
+    border-bottom: 4px solid #d9d9d9;
+}

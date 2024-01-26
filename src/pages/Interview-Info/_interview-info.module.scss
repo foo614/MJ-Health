@@ -693,3 +693,95 @@
 
     color: var(--color-white) !important;
 }
+
+.gradientBackground {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(90deg, #3adebb -0.18%, #00aee9 99.82%) !important;
+    border-top-right-radius: 8px !important;
+    border-top-left-radius: 8px !important;
+    padding: 20px;
+    @media screen and (max-width: 600px) {
+        padding: 0.75rem;
+    }
+}
+
+.exitStationModal {
+    min-width: 50%;
+    max-width: unset;
+    border-radius: 8px !important;
+    @media screen and (max-width: 600px) {
+        width: 100%;
+    }
+}
+
+.exit_station_modal_next_station {
+    font-weight: 500 !important;
+    font-size: var(--font-size-5xl) !important;
+    color: var(--color-white) !important;
+}
+
+.exit_station_modal_next_station_value {
+    font-weight: 700 !important;
+    font-size: 36px !important;
+    color: var(--color-white) !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.exit_station_modal_current_waiting {
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    color: var(--label-color) !important;
+}
+
+.exit_station_modal_current_waiting_value {
+    font-weight: 700 !important;
+    font-size: 30px !important;
+    color: var(--color-turquoise) !important;
+}
+
+.exit_station_modal_cancel_bttn {
+    background: var(--color-whitesmoke-300) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+    color: var(--color-lightslategray) !important;
+    width: 200px !important;
+    height: 56px !important;
+}
+
+.exit_station_modal_exit_bttn {
+    background: var(--color-turquoise) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    color: var(--color-white) !important;
+    width: 200px !important;
+    height: 56px !important;
+}
+
+.exit_station_modal_current_shift {
+    font-weight: 500 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--label-color) !important;
+}
+
+.exit_station_modal_current_shift_value {
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    color: var(--label-color) !important;
+}
+
+.exit_station_avatar_mdUp {
+    position: absolute !important;
+    right: 20px !important;
+    top: 30px !important;
+    width: 190px !important;
+    height: 190px !important;
+}
+
+.exit_station_avatar_smDown {
+    width: 120px !important;
+    height: 120px !important;
+}
