@@ -17,12 +17,16 @@ import {
 } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 import ResponsiveAppBar from 'components/AppBar'
+import CustomModal from 'components/Modal'
 import ScreeningRoomInfoHeader from 'components/ScreeningRoom/InfoHeader'
+import ViewCommentModal from 'components/ScreeningRoom/ViewCommentModal'
 import UserHeader from 'components/UserHeader'
 import { SONOGRAPHY_PAGE } from 'constant'
 import ButtonCard from 'pages/Radiology-Reporting/components/details/buttonCard'
 import CustomizedTables from 'pages/Radiology-Reporting/components/details/table'
 import { useState } from 'react'
+import styles from './_sonography-detail.module.scss'
+import CommentDialog from './components/comment-doalog'
 
 const CommentSuggestionList = () => {
     return (
@@ -74,9 +78,13 @@ const SonographyDetail = () => {
     const [openMedicalHistory, setOpenMedicalHistory] = useState<boolean>(false)
     const [openAllergyDrugHx, setOpenAllergyDrugHx] = useState<boolean>(false)
     const [openViewComment, setOpenViewComment] = useState<boolean>(false)
+    const [openPersonalComplaint, setOpenPersonalComplaint] =
+        useState<boolean>(false)
     const [currentIndex, setCurrentIndex] = useState(0)
     const [selectedType, setSelectedType] = useState('report')
     const [mammography, setMammography] = useState('')
+    const [openBreastComment, setOpenBreastComment] = useState(false)
+    const [editMode, setEditMode] = useState<boolean>(false)
 
     const handleMammography = (event: SelectChangeEvent) => {
         setMammography(event.target.value)
@@ -436,7 +444,11 @@ const SonographyDetail = () => {
                         }}
                         fullWidth
                     >
-                        <Typography color={'#5A567B'} sx={{ fontWeight: 600 }}>
+                        <Typography
+                            color={'#5A567B'}
+                            onClick={() => setOpenBreastComment(true)}
+                            sx={{ fontWeight: 600 }}
+                        >
                             Add New Comment
                         </Typography>
                     </Button>
@@ -505,10 +517,7 @@ const SonographyDetail = () => {
         <>
             <ResponsiveAppBar />
             <UserHeader />
-            <ScreeningRoomInfoHeader
-                title="BONE MINERAL DENSITY"
-                to={SONOGRAPHY_PAGE}
-            />
+            <ScreeningRoomInfoHeader title="SONOGRAPHY" to={SONOGRAPHY_PAGE} />
             <Grid container sx={{ background: '#EDEDED' }}>
                 <Grid xs={12} md={2} sx={{ mt: matches ? 4 : 2 }}>
                     <Stack
@@ -520,22 +529,22 @@ const SonographyDetail = () => {
                             xs: 1,
                         }}
                     >
-                        <>
-                            <ButtonCard
-                                label="Medical History"
-                                onClick={() => setOpenMedicalHistory(true)}
-                            />
-                            <ButtonCard
-                                label="Allergy/ Drug Hx"
-                                onClick={() => setOpenAllergyDrugHx(true)}
-                            />
-                        </>
-                        <Box sx={{ py: matches ? 8 : 0 }}>
-                            <ButtonCard
-                                label="View Comment"
-                                onClick={() => setOpenViewComment(true)}
-                            />
-                        </Box>
+                        <ButtonCard
+                            label="Medical History"
+                            onClick={() => setOpenMedicalHistory(true)}
+                        />
+                        <ButtonCard
+                            label="Allergy/ Drug Hx"
+                            onClick={() => setOpenAllergyDrugHx(true)}
+                        />
+                        <ButtonCard
+                            label="Personal Complaint"
+                            onClick={() => setOpenPersonalComplaint(true)}
+                        />
+                        <ButtonCard
+                            label="View Comment"
+                            onClick={() => setOpenViewComment(true)}
+                        />
                     </Stack>
                 </Grid>
                 <Grid md={10}>
@@ -614,6 +623,285 @@ const SonographyDetail = () => {
                     </Box>
                 </Grid>
             </Grid>
+
+            {openBreastComment && (
+                <CommentDialog
+                    open={openBreastComment}
+                    setOpen={setOpenBreastComment}
+                />
+            )}
+            {openMedicalHistory && (
+                <CustomModal
+                    open={openMedicalHistory}
+                    setOpen={setOpenMedicalHistory}
+                    title="Medical History"
+                    width="md"
+                >
+                    <Grid container>
+                        <Grid xs={12}>
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    color: '#219B8E',
+                                    fontSize: '20px',
+                                    fontWeight: 600,
+                                }}
+                            >
+                                Medical History
+                            </Typography>
+                        </Grid>
+                        <Grid
+                            xs={12}
+                            sx={{
+                                pl: 5,
+                                mt: 1,
+                                lineHeight: '2em',
+                                fontWeight: 600,
+                            }}
+                        >
+                            <ul>
+                                <li>Diabetes</li>
+                                <li>Uraemia</li>
+                            </ul>
+                        </Grid>
+                        <Grid xs={12}>
+                            <Divider sx={{ my: 2 }} />
+                        </Grid>
+                        <Grid xs={12}>
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    color: '#219B8E',
+                                    fontSize: '20px',
+                                    fontWeight: 600,
+                                }}
+                            >
+                                Previous Surgery
+                            </Typography>
+                        </Grid>
+                        <Grid
+                            xs={12}
+                            sx={{
+                                pl: 5,
+                                mt: 1,
+                                lineHeight: '2em',
+                                fontWeight: 600,
+                            }}
+                        >
+                            <ul>
+                                <li>Kidney Surgery</li>
+                            </ul>
+                        </Grid>
+                        <Grid xs={12}>
+                            <Divider sx={{ my: 2 }} />
+                        </Grid>
+                        <Grid xs={12}>
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    color: '#219B8E',
+                                    fontSize: '20px',
+                                    fontWeight: 600,
+                                }}
+                            >
+                                Family Medical History
+                            </Typography>
+                        </Grid>
+                        <Grid
+                            xs={12}
+                            sx={{
+                                pl: 5,
+                                mt: 1,
+                                lineHeight: '2em',
+                                fontWeight: 600,
+                            }}
+                        >
+                            <ul>
+                                <li>High Blood Pressure</li>
+                                <li>Type 2 Diabetes</li>
+                                <li>Cardiovascular Disease</li>
+                                <li>Obesity</li>
+                                <li>Myocarditis</li>
+                                <li>High Blood Pressure</li>
+                                <li>Type 2 Diabetes</li>
+                                <li>Cardiovascular Disease</li>
+                                <li>Obesity</li>
+                                <li>Myocarditis</li>
+                                <li>High Blood Pressure</li>
+                                <li>Type 2 Diabetes</li>
+                                <li>Cardiovascular Disease</li>
+                                <li>Obesity</li>
+                                <li>Myocarditis</li>
+                            </ul>
+                        </Grid>
+                    </Grid>
+                </CustomModal>
+            )}
+
+            {openAllergyDrugHx && (
+                <CustomModal
+                    open={openAllergyDrugHx}
+                    setOpen={setOpenAllergyDrugHx}
+                    title="Allergy/Drug Hx"
+                    width="md"
+                >
+                    <Grid container>
+                        <Grid xs={12}>
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    color: '#219B8E',
+                                    fontSize: '20px',
+                                    fontWeight: 600,
+                                }}
+                            >
+                                Medication
+                            </Typography>
+                        </Grid>
+                        <Grid
+                            xs={12}
+                            sx={{
+                                pl: 5,
+                                mt: 1,
+                                lineHeight: '2em',
+                                fontWeight: 600,
+                            }}
+                        >
+                            <ul>
+                                <li>Calories Control</li>
+                                <li>Blood Pressure Control</li>
+                                <li>Glycemia Manager</li>
+                            </ul>
+                        </Grid>
+                        <Grid xs={12}>
+                            <Divider sx={{ my: 2 }} />
+                        </Grid>
+                        <Grid xs={12}>
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    color: '#219B8E',
+                                    fontSize: '20px',
+                                    fontWeight: 600,
+                                }}
+                            >
+                                Allergy History
+                            </Typography>
+                        </Grid>
+                        <Grid
+                            xs={12}
+                            sx={{
+                                pl: 5,
+                                mt: 1,
+                                lineHeight: '2em',
+                                fontWeight: 600,
+                            }}
+                        >
+                            <ul>
+                                <li>Milk sensitization reaction</li>
+                                <li>Logan pulp sensitization reaction</li>
+                                <li>
+                                    Severe snow fungus sensitization reaction
+                                </li>
+                            </ul>
+                        </Grid>
+                    </Grid>
+                </CustomModal>
+            )}
+
+            {openPersonalComplaint && (
+                <CustomModal
+                    open={openPersonalComplaint}
+                    setOpen={setOpenPersonalComplaint}
+                    title="Personal Complaints"
+                    width="md"
+                >
+                    <Grid container>
+                        <Grid xs={12}>
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    color: '#219B8E',
+                                    fontSize: '20px',
+                                    fontWeight: 600,
+                                }}
+                            >
+                                Personal Complaints
+                            </Typography>
+                        </Grid>
+                        <Grid
+                            xs={12}
+                            sx={{
+                                mt: 1,
+                                lineHeight: '2em',
+                                fontWeight: 600,
+                            }}
+                        >
+                            <TextField
+                                variant="outlined"
+                                size="small"
+                                margin="dense"
+                                multiline
+                                rows={8}
+                                name="complaint"
+                                fullWidth
+                                InputProps={{
+                                    readOnly: !editMode,
+                                }}
+                                value="lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et"
+                            />
+                        </Grid>
+                        <Grid2
+                            container
+                            justifyContent="space-between"
+                            alignItems="center"
+                        >
+                            <Grid2 item>
+                                <Stack spacing={2} direction={'row'}>
+                                    <Typography variant="caption">
+                                        <b>last update:</b> {'11:11 22-09-2022'}
+                                    </Typography>
+                                    <Typography variant="caption">
+                                        <b>Staff ID:</b> {'0000-0000-0000-0000'}
+                                    </Typography>
+                                </Stack>
+                            </Grid2>
+                            <Grid2 item>
+                                <Stack spacing={2} direction={'row'}>
+                                    <Button
+                                        variant="contained"
+                                        className={
+                                            editMode
+                                                ? styles.cancelButton
+                                                : styles.editButton
+                                        }
+                                        onClick={() => setEditMode(!editMode)}
+                                    >
+                                        {editMode ? 'Cancel' : 'Edit'}
+                                    </Button>
+                                    <Button
+                                        variant="contained"
+                                        className={styles.saveButton}
+                                        disabled={!editMode}
+                                        onClick={() =>
+                                            setOpenPersonalComplaint(false)
+                                        }
+                                    >
+                                        Save
+                                    </Button>
+                                </Stack>
+                            </Grid2>
+                        </Grid2>
+                    </Grid>
+                </CustomModal>
+            )}
+
+            {openViewComment && (
+                <ViewCommentModal
+                    open={openViewComment}
+                    handleClose={() => setOpenViewComment(false)}
+                />
+            )}
         </>
     )
 }
