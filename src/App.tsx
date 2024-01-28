@@ -104,6 +104,10 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
+import Mammography from 'pages/Screening-Room-System/Mammography'
+import MammographyDetail from 'pages/Screening-Room-System/Mammography/detail'
+import PeripheralVascularScreening from 'pages/Screening-Room-System/Peripheral-Vascular-Screening'
+import PeripheralVascularScreeningDetail from 'pages/Screening-Room-System/Peripheral-Vascular-Screening/detail'
 
 function App() {
     const data = [
@@ -344,15 +348,18 @@ function App() {
                     path={LUNG_FUNCTION_TEST_PAGE + '/:id'}
                     element={<></>}
                 />{' '}
-                <Route path={MAMMOGRAPHY_PAGE} element={<></>} />
-                <Route path={MAMMOGRAPHY_PAGE + '/:id'} element={<></>} />
+                <Route path={MAMMOGRAPHY_PAGE} element={<Mammography />} />
+                <Route
+                    path={MAMMOGRAPHY_PAGE + '/:id'}
+                    element={<MammographyDetail />}
+                />
                 <Route
                     path={PERIPHERAL_VASCULAR_SCREENING_PAGE}
-                    element={<></>}
+                    element={<PeripheralVascularScreening />}
                 />
                 <Route
                     path={PERIPHERAL_VASCULAR_SCREENING_PAGE + '/:id'}
-                    element={<></>}
+                    element={<PeripheralVascularScreeningDetail />}
                 />
                 <Route path={PAPS_SMEAR_PAGE} element={<></>} />
                 <Route path={PAPS_SMEAR_PAGE + '/:id'} element={<></>} />

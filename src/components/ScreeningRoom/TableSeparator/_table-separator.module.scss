@@ -1,0 +1,57 @@
+@use 'styles/variables' as *;
+
+.headerLabel {
+    color: var(--mj-deep-green);
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    text-align: left !important;
+}
+
+.examReportTable .tableCellDateLabel {
+    color: var(--title-color);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.examReportTableLabel {
+    color: var(--title-color);
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    text-align: left !important;
+}
+
+.tableRowSeparatorCell {
+    padding-bottom: 30px !important;
+}
+
+.tableRowSeparatorCell.headerLabel {
+    padding-top: 30px !important;
+}
+
+.tableCell {
+    border-bottom: none !important;
+    text-align: center;
+}
+
+.tableCell.current,
+.tableCell.currentTop,
+.tableCell.currentBottom {
+    background-color: #ddd;
+}
+
+.tableCell.backDate,
+.tableCell.backDateTop,
+.tableCell.backDateBottom {
+    background-color: var(--color-lightgray);
+}
+
+.tableCell.currentTop,
+.tableCell.backDateTop {
+    border-radius: 8px 8px 0 0;
+}
+
+.tableCell.currentBottom,
+.tableCell.backDateBottom {
+    border-radius: 0 0 8px 8px;
+}
