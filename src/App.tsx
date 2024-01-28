@@ -108,6 +108,8 @@ import Mammography from 'pages/Screening-Room-System/Mammography'
 import MammographyDetail from 'pages/Screening-Room-System/Mammography/detail'
 import PeripheralVascularScreening from 'pages/Screening-Room-System/Peripheral-Vascular-Screening'
 import PeripheralVascularScreeningDetail from 'pages/Screening-Room-System/Peripheral-Vascular-Screening/detail'
+import PapsSmear from 'pages/Screening-Room-System/Paps-Smear'
+import PapsSmearDetail from 'pages/Screening-Room-System/Paps-Smear/detail'
 
 function App() {
     const data = [
@@ -361,8 +363,11 @@ function App() {
                     path={PERIPHERAL_VASCULAR_SCREENING_PAGE + '/:id'}
                     element={<PeripheralVascularScreeningDetail />}
                 />
-                <Route path={PAPS_SMEAR_PAGE} element={<></>} />
-                <Route path={PAPS_SMEAR_PAGE + '/:id'} element={<></>} />
+                <Route path={PAPS_SMEAR_PAGE} element={<PapsSmear />} />
+                <Route
+                    path={PAPS_SMEAR_PAGE + '/:id'}
+                    element={<PapsSmearDetail />}
+                />
                 <Route path={RETINOGRAPHY_PAGE} element={<></>} />
                 <Route path={RETINOGRAPHY_PAGE + '/:id'} element={<></>} />
                 <Route
