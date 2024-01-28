@@ -1,0 +1,54 @@
+@use '../../../../styles/variables' as *;
+
+.editButton,
+.cancelButton,
+.saveButton {
+    width: 140px;
+    font-weight: 600;
+    font-size: var(--font-size-base) !important;
+}
+
+.editButton {
+    background-color: var(--label-color) !important;
+}
+
+.cancelButton {
+    background-color: var(--color-whitesmoke-300) !important;
+    color: var(--color-lightslategray) !important;
+}
+
+.saveButton:disabled {
+    background-color: var(--color-whitesmoke-100) !important;
+    color: #ddd !important;
+}
+.modalDialogContent {
+    max-height: 700px;
+    padding: 20px 35px !important;
+}
+
+.modalDialogContent::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.modalDialogContent::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+.infoModal {
+    border-radius: 8px !important;
+    background-color: var(--color-white) !important;
+}
+.tableContainer::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.tableContainer::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
