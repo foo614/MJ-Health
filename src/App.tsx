@@ -106,6 +106,8 @@ import './styles/main.scss'
 import theme from './styles/theme'
 import Mammography from 'pages/Screening-Room-System/Mammography'
 import MammographyDetail from 'pages/Screening-Room-System/Mammography/detail'
+import PeripheralVascularScreening from 'pages/Screening-Room-System/Peripheral-Vascular-Screening'
+import PeripheralVascularScreeningDetail from 'pages/Screening-Room-System/Peripheral-Vascular-Screening/detail'
 
 function App() {
     const data = [
@@ -353,11 +355,11 @@ function App() {
                 />
                 <Route
                     path={PERIPHERAL_VASCULAR_SCREENING_PAGE}
-                    element={<></>}
+                    element={<PeripheralVascularScreening />}
                 />
                 <Route
                     path={PERIPHERAL_VASCULAR_SCREENING_PAGE + '/:id'}
-                    element={<></>}
+                    element={<PeripheralVascularScreeningDetail />}
                 />
                 <Route path={PAPS_SMEAR_PAGE} element={<></>} />
                 <Route path={PAPS_SMEAR_PAGE + '/:id'} element={<></>} />
