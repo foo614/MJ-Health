@@ -14,6 +14,7 @@ import {
     HEALTH_MANAGEMENT_CONSULTATION_PAGE,
     INTERVIEW_INFO_PAGE,
     INTERVIEW_PAGE,
+    INTERVIEW_QUESTIONAIRE_PAGE,
     IT_MONITOR_ROOM_PAGE,
     IT_ROOM_PRINTING_PAGE,
     KIOSK_PAGE,
@@ -47,10 +48,7 @@ import {
     VIEW_COMMENT_PAGE,
     VISION_AND_OCULAR_TENSION_TEST_PAGE,
     X_RAY_PAGE,
-    INTERVIEW_QUESTIONAIRE_PAGE,
 } from 'constant'
-import BoneMineralDensity from 'pages/Screening-Room-System/Bone-Mineral-Density'
-import BoneMineralDensityInfo from 'pages/Screening-Room-System/Bone-Mineral-Density/Bone-Mineral-Density-Info'
 import Dashboard from 'pages/Dashboard'
 import Dining from 'pages/Dining'
 import DiningCheckIn from 'pages/Dining-Check-In'
@@ -61,6 +59,7 @@ import ITRoomMonitor from 'pages/IT-Room-Monitor'
 import ITRoomPrintingPage from 'pages/IT-Room-Printing'
 import Interview from 'pages/Interview'
 import InterviewInfo from 'pages/Interview-Info'
+import InterviewQuestionaire from 'pages/Interview-Questionaire'
 import Kiosk from 'pages/Kiosk'
 import LabPage from 'pages/Lab'
 import LabInfo from 'pages/Lab/lab-info'
@@ -82,6 +81,18 @@ import RadiologyReport from 'pages/Radiology-Reporting'
 import RadiologyReportDetail from 'pages/Radiology-Reporting/components/details'
 import Reception from 'pages/Reception'
 import RoomManagement from 'pages/Room-Management'
+import Audiometry from 'pages/Screening-Room-System/Audiometry'
+import AudiometryDetail from 'pages/Screening-Room-System/Audiometry/detail'
+import BoneMineralDensity from 'pages/Screening-Room-System/Bone-Mineral-Density'
+import BoneMineralDensityInfo from 'pages/Screening-Room-System/Bone-Mineral-Density/Bone-Mineral-Density-Info'
+import CTScan from 'pages/Screening-Room-System/CT-Scan'
+import CTScanDetail from 'pages/Screening-Room-System/CT-Scan/details'
+import ENTExamination from 'pages/Screening-Room-System/ENT-Examination'
+import ENTExaminationDetail from 'pages/Screening-Room-System/ENT-Examination/detail'
+import Electrocardiogram from 'pages/Screening-Room-System/Electrocardiogram'
+import ElectrocardiogramDetail from 'pages/Screening-Room-System/Electrocardiogram/detail'
+import GeneralMeasurement from 'pages/Screening-Room-System/General-Measurement'
+import GeneralMeasurementDetail from 'pages/Screening-Room-System/General-Measurement/detail'
 import Sonography from 'pages/Screening-Room-System/Sonography'
 import SonographyDetail from 'pages/Screening-Room-System/Sonography/detail'
 import Setting from 'pages/Setting'
@@ -93,15 +104,6 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
-import Audiometry from 'pages/Screening-Room-System/Audiometry'
-import AudiometryDetail from 'pages/Screening-Room-System/Audiometry/detail'
-import Electrocardiogram from 'pages/Screening-Room-System/Electrocardiogram'
-import ElectrocardiogramDetail from 'pages/Screening-Room-System/Electrocardiogram/detail'
-import ENTExamination from 'pages/Screening-Room-System/ENT-Examination'
-import ENTExaminationDetail from 'pages/Screening-Room-System/ENT-Examination/detail'
-import GeneralMeasurement from 'pages/Screening-Room-System/General-Measurement'
-import GeneralMeasurementDetail from 'pages/Screening-Room-System/General-Measurement/detail'
-import InterviewQuestionaire from 'pages/Interview-Questionaire'
 
 function App() {
     const data = [
@@ -308,8 +310,11 @@ function App() {
                     path={AUDIOMETRY_PAGE + '/:id'}
                     element={<AudiometryDetail />}
                 />
-                <Route path={CT_SCAN_PAGE} element={<></>} />
-                <Route path={CT_SCAN_PAGE + '/:id'} element={<></>} />
+                <Route path={CT_SCAN_PAGE} element={<CTScan />} />
+                <Route
+                    path={CT_SCAN_PAGE + '/:id'}
+                    element={<CTScanDetail />}
+                />
                 <Route
                     path={ELECTROCARDIOGRAM_PAGE}
                     element={<Electrocardiogram />}
