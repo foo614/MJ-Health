@@ -861,7 +861,7 @@ const StaffProfile = () => {
                                         sx={{
                                             height: '1px',
                                             background:
-                                                'var(--color-whitesmoke-300',
+                                                'var(--color-whitesmoke-300)',
                                             marginTop: '2rem',
                                             marginBottom: '2rem',
                                         }}
@@ -921,7 +921,7 @@ const StaffProfile = () => {
                                         sx={{
                                             height: '1px',
                                             background:
-                                                'var(--color-whitesmoke-300',
+                                                'var(--color-whitesmoke-300)',
                                             marginTop: '2rem',
                                             marginBottom: '2rem',
                                         }}
@@ -1049,7 +1049,7 @@ const StaffProfile = () => {
                                         sx={{
                                             height: '1px',
                                             background:
-                                                'var(--color-whitesmoke-300',
+                                                'var(--color-whitesmoke-300)',
                                             marginTop: '2rem',
                                             marginBottom: '2rem',
                                         }}
@@ -1118,7 +1118,7 @@ const StaffProfile = () => {
                                         sx={{
                                             height: '1px',
                                             background:
-                                                'var(--color-whitesmoke-300',
+                                                'var(--color-whitesmoke-300)',
                                             marginTop: '2rem',
                                             marginBottom: '2rem',
                                         }}
@@ -1186,7 +1186,7 @@ const StaffProfile = () => {
                                         sx={{
                                             height: '1px',
                                             background:
-                                                'var(--color-whitesmoke-300',
+                                                'var(--color-whitesmoke-300)',
                                             marginTop: '2rem',
                                             marginBottom: '2rem',
                                         }}

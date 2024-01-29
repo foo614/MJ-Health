@@ -127,7 +127,7 @@ const PapsSmearDetail = () => {
                             <Divider
                                 sx={{
                                     height: '1px',
-                                    background: 'var(--color-whitesmoke-300',
+                                    background: 'var(--color-whitesmoke-300)',
                                     marginTop: '1.5rem',
                                     marginBottom: '1.5rem',
                                 }}
