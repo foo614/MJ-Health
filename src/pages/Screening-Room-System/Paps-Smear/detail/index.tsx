@@ -8,20 +8,21 @@ import UserHeader from 'components/UserHeader'
 import { PAPS_SMEAR_PAGE } from 'constant'
 import styles from './_paps-smear.module.scss'
 import AllergyModal from 'pages/Physician-Consultation-Info/components/allergy-modal'
-import { useState } from 'react'
+import { SetStateAction, useState } from 'react'
 import ScreeningRoomPersonalComplaintModal from 'components/PersonalComplaintModal'
 import MedicalHistoryModal from 'pages/Physician-Consultation-Info/components/medical-history-modal'
-import { Card, useMediaQuery, useTheme } from '@mui/material'
+import { Card, Divider, useMediaQuery, useTheme } from '@mui/material'
 import PapsSmearExamReport from './components/exam-report'
 import ButtonCard from './components/button-card'
 import AddOnService from 'components/ScreeningRoom/AddOnService'
 import ViewCommentModal from 'components/ScreeningRoom/ViewCommentModal'
 import CommentSuggestionList from 'components/ScreeningRoom/CommentSuggestionList'
+import PapsSmearConsentModal from 'components/PapsSmearConsentModal'
 
 const PapsSmearDetail = () => {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
-    const matchesMd = useMediaQuery(theme.breakpoints.up('md'))
+    const mdUp = useMediaQuery(theme.breakpoints.up('md'))
 
     const [tabPage, setTabPage] = useState<string>('examReport')
     const [openMedicalHistoryModal, setOpenMedicalHistoryModal] =
@@ -30,6 +31,8 @@ const PapsSmearDetail = () => {
     const [openPersonalComplaintModal, setOpenPersonalComplaintModal] =
         useState<boolean>(false)
     const [openViewCommentModal, setOpenViewCommentModal] =
+        useState<boolean>(false)
+    const [openConsentFormModal, setOpenConsentFormModal] =
         useState<boolean>(false)
 
     return (
@@ -40,16 +43,17 @@ const PapsSmearDetail = () => {
 
             <Box
                 sx={{
-                    marginLeft: matchesMd ? '3rem' : '1.5rem',
-                    marginRight: matchesMd ? '3rem' : '1.5rem',
+                    marginLeft: mdUp ? '3rem' : '1.5rem',
+                    marginRight: mdUp ? '3rem' : '1.5rem',
                     marginTop: '2rem',
                 }}
             >
                 <Grid container spacing={5} columns={14}>
                     <Grid item md={2} xs={14}>
                         <Stack
-                            direction={matchesMd ? 'column' : 'row'}
+                            direction={mdUp ? 'column' : 'row'}
                             spacing={2}
+                            sx={{ overflow: 'auto' }}
                         >
                             <ButtonCard
                                 onClick={() => setOpenMedicalHistoryModal(true)}
@@ -69,6 +73,15 @@ const PapsSmearDetail = () => {
                                 onClick={() => setOpenViewCommentModal(true)}
                                 label="View Comment"
                             />
+
+                            {!matches && (
+                                <ButtonCard
+                                    onClick={() =>
+                                        setOpenConsentFormModal(true)
+                                    }
+                                    label="Pap’s Smear Consent Form"
+                                />
+                            )}
                         </Stack>
                     </Grid>
                     <Grid item md={10} xs={14}>
@@ -111,10 +124,12 @@ const PapsSmearDetail = () => {
                                 </Button>
                             </Stack>
 
-                            <hr
-                                style={{
-                                    margin: '1.5rem 0',
-                                    border: '1px solid var(--color-whitesmoke-300',
+                            <Divider
+                                sx={{
+                                    height: '1px',
+                                    background: 'var(--color-whitesmoke-300',
+                                    marginTop: '1.5rem',
+                                    marginBottom: '1.5rem',
                                 }}
                             />
 
@@ -127,16 +142,15 @@ const PapsSmearDetail = () => {
                             )}
                         </Card>
                     </Grid>
-                    <Grid item md={2} xs={14}>
-                        <ButtonCard
-                            onClick={() =>
-                                alert(
-                                    'Pap’s Smear Consent Form pending development'
-                                )
-                            }
-                            label="Pap’s Smear Consent Form"
-                        />
-                    </Grid>
+
+                    {matches && (
+                        <Grid item md={2} xs={14}>
+                            <ButtonCard
+                                onClick={() => setOpenConsentFormModal(true)}
+                                label="Pap’s Smear Consent Form"
+                            />
+                        </Grid>
+                    )}
                 </Grid>
             </Box>
 
@@ -161,6 +175,11 @@ const PapsSmearDetail = () => {
             <ViewCommentModal
                 open={openViewCommentModal}
                 handleClose={() => setOpenViewCommentModal(false)}
+            />
+
+            <PapsSmearConsentModal
+                open={openConsentFormModal}
+                setOpen={setOpenConsentFormModal}
             />
         </>
     )

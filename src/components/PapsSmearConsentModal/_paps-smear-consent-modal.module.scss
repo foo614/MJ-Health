@@ -1,0 +1,49 @@
+@use 'styles/variables' as *;
+
+.paragraphHeader,
+.paragraphText {
+    line-height: 22px;
+}
+
+.paragraphText {
+    margin-bottom: 20px;
+}
+
+.input {
+    padding: 10px !important;
+}
+
+.signatureDiv {
+    height: 300px;
+    background-color: var(--color-whitesmoke-100);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.signatureTitleDiv {
+    height: 40px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: var(--title-color);
+}
+
+.signatureTitle {
+    font-weight: 600;
+    font-size: var(--font-size-base) !important;
+    color: var(--color-white) !important;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.addCircleIcon {
+    color: var(--color-whitesmoke-300) !important;
+    font-size: 7rem !important;
+}
+
+.saveButton {
+    color: var(--color-white);
+    font-size: var(--font-size-5xl) !important;
+    font-weight: 700 !important;
+    width: 220px;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
