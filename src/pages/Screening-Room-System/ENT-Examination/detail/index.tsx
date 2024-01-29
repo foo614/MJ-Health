@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
+import Divider from '@mui/material/Divider'
 import Grid from '@mui/material/Grid'
 import Stack from '@mui/material/Stack'
 import ResponsiveAppBar from 'components/AppBar'
@@ -114,10 +115,12 @@ const ENTExaminationDetail = () => {
                                 </Button>
                             </Stack>
 
-                            <hr
-                                style={{
-                                    margin: '1.5rem 0',
-                                    border: '1px solid var(--color-whitesmoke-300',
+                            <Divider
+                                sx={{
+                                    height: '1px',
+                                    background: 'var(--color-whitesmoke-300',
+                                    marginTop: '1.5rem',
+                                    marginBottom: '1.5rem',
                                 }}
                             />
 
