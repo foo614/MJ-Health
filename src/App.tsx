@@ -9,6 +9,7 @@ import {
     DINING_PAGE,
     ELECTROCARDIOGRAM_PAGE,
     ENT_EXAMINATION_PAGE,
+    FINAL_REPORT,
     GENERAL_MEASUREMENT_PAGE,
     HEALTH_MANAGEMENT_CONSULTATION_INFO_PAGE,
     HEALTH_MANAGEMENT_CONSULTATION_PAGE,
@@ -110,6 +111,7 @@ import PeripheralVascularScreening from 'pages/Screening-Room-System/Peripheral-
 import PeripheralVascularScreeningDetail from 'pages/Screening-Room-System/Peripheral-Vascular-Screening/detail'
 import PapsSmear from 'pages/Screening-Room-System/Paps-Smear'
 import PapsSmearDetail from 'pages/Screening-Room-System/Paps-Smear/detail'
+import FinalReport from 'pages/Final-Report'
 
 function App() {
     const data = [
@@ -390,6 +392,7 @@ function App() {
                     }
                     element={<InterviewQuestionaire />}
                 />
+                <Route path={FINAL_REPORT} element={<FinalReport />} />
             </Routes>
         </ThemeProvider>
     )
