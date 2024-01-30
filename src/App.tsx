@@ -53,6 +53,7 @@ import {
 import Dashboard from 'pages/Dashboard'
 import Dining from 'pages/Dining'
 import DiningCheckIn from 'pages/Dining-Check-In'
+import FinalReport from 'pages/Final-Report'
 import HealthManagementConsultation from 'pages/Health-Management-Consultation'
 import HealthManagementConsultationInfo from 'pages/Health-Management-Consultation-Info'
 import { MainIngredientProductPrintOut } from 'pages/Health-Management-Consultation-Info/components/hmc-modal-components/main-ingredient-product-pdf'
@@ -94,6 +95,16 @@ import Electrocardiogram from 'pages/Screening-Room-System/Electrocardiogram'
 import ElectrocardiogramDetail from 'pages/Screening-Room-System/Electrocardiogram/detail'
 import GeneralMeasurement from 'pages/Screening-Room-System/General-Measurement'
 import GeneralMeasurementDetail from 'pages/Screening-Room-System/General-Measurement/detail'
+import LungFuntionTest from 'pages/Screening-Room-System/Lung-Function-Test'
+import LungFunctionTestDetail from 'pages/Screening-Room-System/Lung-Function-Test/detail'
+import Mammography from 'pages/Screening-Room-System/Mammography'
+import MammographyDetail from 'pages/Screening-Room-System/Mammography/detail'
+import PapsSmear from 'pages/Screening-Room-System/Paps-Smear'
+import PapsSmearDetail from 'pages/Screening-Room-System/Paps-Smear/detail'
+import PeripheralVascularScreening from 'pages/Screening-Room-System/Peripheral-Vascular-Screening'
+import PeripheralVascularScreeningDetail from 'pages/Screening-Room-System/Peripheral-Vascular-Screening/detail'
+import Retinography from 'pages/Screening-Room-System/Retinography'
+import RetinographyDetail from 'pages/Screening-Room-System/Retinography/detail'
 import Sonography from 'pages/Screening-Room-System/Sonography'
 import SonographyDetail from 'pages/Screening-Room-System/Sonography/detail'
 import Setting from 'pages/Setting'
@@ -105,13 +116,6 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
-import Mammography from 'pages/Screening-Room-System/Mammography'
-import MammographyDetail from 'pages/Screening-Room-System/Mammography/detail'
-import PeripheralVascularScreening from 'pages/Screening-Room-System/Peripheral-Vascular-Screening'
-import PeripheralVascularScreeningDetail from 'pages/Screening-Room-System/Peripheral-Vascular-Screening/detail'
-import PapsSmear from 'pages/Screening-Room-System/Paps-Smear'
-import PapsSmearDetail from 'pages/Screening-Room-System/Paps-Smear/detail'
-import FinalReport from 'pages/Final-Report'
 
 function App() {
     const data = [
@@ -347,10 +351,13 @@ function App() {
                     path={GENERAL_MEASUREMENT_PAGE + '/:id'}
                     element={<GeneralMeasurementDetail />}
                 />
-                <Route path={LUNG_FUNCTION_TEST_PAGE} element={<></>} />
+                <Route
+                    path={LUNG_FUNCTION_TEST_PAGE}
+                    element={<LungFuntionTest />}
+                />
                 <Route
                     path={LUNG_FUNCTION_TEST_PAGE + '/:id'}
-                    element={<></>}
+                    element={<LungFunctionTestDetail />}
                 />{' '}
                 <Route path={MAMMOGRAPHY_PAGE} element={<Mammography />} />
                 <Route
@@ -370,8 +377,11 @@ function App() {
                     path={PAPS_SMEAR_PAGE + '/:id'}
                     element={<PapsSmearDetail />}
                 />
-                <Route path={RETINOGRAPHY_PAGE} element={<></>} />
-                <Route path={RETINOGRAPHY_PAGE + '/:id'} element={<></>} />
+                <Route path={RETINOGRAPHY_PAGE} element={<Retinography />} />
+                <Route
+                    path={RETINOGRAPHY_PAGE + '/:id'}
+                    element={<RetinographyDetail />}
+                />
                 <Route
                     path={VISION_AND_OCULAR_TENSION_TEST_PAGE}
                     element={<></>}
