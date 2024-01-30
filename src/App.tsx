@@ -10,6 +10,7 @@ import {
     ELECTROCARDIOGRAM_PAGE,
     ENT_EXAMINATION_PAGE,
     FINAL_REPORT,
+    FINAL_REPORT_HMP_BROCHURE,
     FINAL_REPORT_INTERVIEW_PAGE,
     GENERAL_MEASUREMENT_PAGE,
     HEALTH_MANAGEMENT_CONSULTATION_INFO_PAGE,
@@ -122,6 +123,7 @@ import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
 import FinalReportInterview from 'pages/Final-Report/Interview'
+import HMPBrochure from 'pages/Final-Report/HMC-Brochure'
 
 function App() {
     const data = [
@@ -412,6 +414,10 @@ function App() {
                 <Route
                     path={FINAL_REPORT_INTERVIEW_PAGE}
                     element={<FinalReportInterview />}
+                />
+                <Route
+                    path={FINAL_REPORT_HMP_BROCHURE}
+                    element={<HMPBrochure />}
                 />
             </Routes>
         </ThemeProvider>
