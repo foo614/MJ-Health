@@ -9,8 +9,18 @@ import TableRow from '@mui/material/TableRow'
 import { useState } from 'react'
 import styles from '../_final-report.module.scss'
 import ViewFinalReportModal from './view-final-report-modal'
+import ReportFollowedModal from './report-followed-modal'
+import RFSupplementaryModal from './rf-supplementary-report-modal'
+import RFSupplementaryConfirmModal from './rf-supplementary-report-confirm-modal'
 const FinalReportTable = () => {
     const [openViewFinalReportModal, setOpenViewFinalReportModal] =
+        useState<boolean>(false)
+
+    const [openReportFollowedModal, setOpenReportFollowedModal] =
+        useState<boolean>(false)
+
+    const [openRFModal, setOpenRFModal] = useState<boolean>(false)
+    const [openRFConfirmationModal, setOpenRFConfirmationModal] =
         useState<boolean>(false)
     const data = [
         {
@@ -292,6 +302,32 @@ const FinalReportTable = () => {
                 <ViewFinalReportModal
                     open={openViewFinalReportModal}
                     setOpen={setOpenViewFinalReportModal}
+                    setOpenReportFollowedModal={setOpenReportFollowedModal}
+                />
+            ) : null}
+            {openReportFollowedModal ? (
+                <ReportFollowedModal
+                    open={openReportFollowedModal}
+                    setOpen={setOpenReportFollowedModal}
+                    setOpenViewFinalReportModal={setOpenViewFinalReportModal}
+                    setOpenRFModal={setOpenRFModal}
+                />
+            ) : null}
+            {openRFModal ? (
+                <RFSupplementaryModal
+                    open={openRFModal}
+                    setOpen={setOpenRFModal}
+                    matches={true}
+                    setOpenViewFinalReportModal={setOpenViewFinalReportModal}
+                    setOpenReportFollowedModal={setOpenReportFollowedModal}
+                    setOpenRFConfirmationModal={setOpenRFConfirmationModal}
+                />
+            ) : null}
+            {openRFConfirmationModal ? (
+                <RFSupplementaryConfirmModal
+                    open={openRFConfirmationModal}
+                    setOpen={setOpenRFConfirmationModal}
+                    setOpenReportFollowedModal={setOpenReportFollowedModal}
                 />
             ) : null}
         </>

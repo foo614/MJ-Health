@@ -8,7 +8,13 @@ import styles from '../_final-report.module.scss'
 import IconButton from '@mui/material/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
 import DialogTitle from '@mui/material/DialogTitle'
-import { FormControl, Select, MenuItem } from '@mui/material'
+import {
+    FormControl,
+    Select,
+    MenuItem,
+    DialogActions,
+    Stack,
+} from '@mui/material'
 import { SelectChangeEvent } from '@mui/material/Select'
 
 const Transition = React.forwardRef(function Transition(
@@ -23,10 +29,16 @@ const Transition = React.forwardRef(function Transition(
 type Props = {
     setOpen: any
     open: any
+    setOpenReportFollowedModal: any
 }
 
-const ViewFinalReportModal: React.FC<Props> = ({ setOpen, open }: Props) => {
+const ViewFinalReportModal: React.FC<Props> = ({
+    setOpen,
+    open,
+    setOpenReportFollowedModal,
+}: Props) => {
     const [selectedReport, setSelectedReport] = React.useState<string>('')
+
     const [
         selectedHealthManagementSection,
         setSelectedHealthManagementSection,
@@ -219,7 +231,55 @@ const ViewFinalReportModal: React.FC<Props> = ({ setOpen, open }: Props) => {
                                 </FormControl>
                             </div>
                         ) : null}
+                        <Stack
+                            direction="row"
+                            alignItems="center"
+                            justifyContent="center"
+                            spacing={3}
+                            sx={{ marginTop: '15px', cursor: 'pointer' }}
+                            onClick={() => setOpenReportFollowedModal(true)}
+                        >
+                            <div>
+                                <p
+                                    className={styles.date_remaining_text}
+                                    style={{ fontWeight: '500' }}
+                                >
+                                    Date Remaining:
+                                </p>
+                            </div>
+                            <div>
+                                <p
+                                    className={styles.date_remaining_text}
+                                    style={{ fontWeight: '600' }}
+                                >
+                                    RF:6
+                                </p>
+                            </div>
+                            <div>
+                                <p
+                                    className={styles.date_remaining_text}
+                                    style={{ fontWeight: '600' }}
+                                >
+                                    RF:4
+                                </p>
+                            </div>
+                        </Stack>
                     </DialogContent>
+                    <DialogActions
+                        className={styles.view_final_report_dialog_action}
+                    >
+                        <Button
+                            variant="contained"
+                            className={
+                                selectedReport
+                                    ? styles.view_final_report_confirm_bttn
+                                    : styles.view_final_report_confirm_disabed_bttn
+                            }
+                            disabled={selectedReport ? false : true}
+                        >
+                            Confirm
+                        </Button>
+                    </DialogActions>
                 </Dialog>
             </>
         )
