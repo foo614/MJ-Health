@@ -14,6 +14,7 @@ import {
     useMediaQuery,
     useTheme,
 } from '@mui/material'
+import Divider from '@mui/material/Divider'
 import ResponsiveAppBar from 'components/AppBar'
 import CustomHeader from 'components/CustomHeader'
 import { STAFF_MANAGEMENT_PAGE } from 'constant'
@@ -855,12 +856,17 @@ const StaffProfile = () => {
                                             </Grid>
                                         </Grid>
                                     </Grid>
-                                    <hr
-                                        style={{
+
+                                    <Divider
+                                        sx={{
+                                            height: '1px',
+                                            background:
+                                                'var(--color-whitesmoke-300)',
                                             marginTop: '2rem',
                                             marginBottom: '2rem',
                                         }}
                                     />
+
                                     <Grid container px={3}>
                                         <Grid container spacing={2}>
                                             <Grid item xs={12} md={5}>
@@ -911,8 +917,11 @@ const StaffProfile = () => {
                                             </Grid>
                                         </Grid>
                                     </Grid>
-                                    <hr
-                                        style={{
+                                    <Divider
+                                        sx={{
+                                            height: '1px',
+                                            background:
+                                                'var(--color-whitesmoke-300)',
                                             marginTop: '2rem',
                                             marginBottom: '2rem',
                                         }}
@@ -1036,8 +1045,11 @@ const StaffProfile = () => {
                                             </Grid>
                                         </Grid>
                                     </Grid>
-                                    <hr
-                                        style={{
+                                    <Divider
+                                        sx={{
+                                            height: '1px',
+                                            background:
+                                                'var(--color-whitesmoke-300)',
                                             marginTop: '2rem',
                                             marginBottom: '2rem',
                                         }}
@@ -1102,8 +1114,11 @@ const StaffProfile = () => {
 
                             {tabPage == 2 && (
                                 <>
-                                    <hr
-                                        style={{
+                                    <Divider
+                                        sx={{
+                                            height: '1px',
+                                            background:
+                                                'var(--color-whitesmoke-300)',
                                             marginTop: '2rem',
                                             marginBottom: '2rem',
                                         }}
@@ -1167,8 +1182,11 @@ const StaffProfile = () => {
                                         </Grid>
                                     </Grid>
 
-                                    <hr
-                                        style={{
+                                    <Divider
+                                        sx={{
+                                            height: '1px',
+                                            background:
+                                                'var(--color-whitesmoke-300)',
                                             marginTop: '2rem',
                                             marginBottom: '2rem',
                                         }}

@@ -11,7 +11,7 @@ import AllergyModal from 'pages/Physician-Consultation-Info/components/allergy-m
 import { useState } from 'react'
 import ScreeningRoomPersonalComplaintModal from 'components/PersonalComplaintModal'
 import MedicalHistoryModal from 'pages/Physician-Consultation-Info/components/medical-history-modal'
-import { Card, useMediaQuery, useTheme } from '@mui/material'
+import { Card, Divider, useMediaQuery, useTheme } from '@mui/material'
 import MammographyExamReport from './components/exam-report'
 import ButtonCard from './components/button-card'
 import AddOnService from 'components/ScreeningRoom/AddOnService'
@@ -114,10 +114,12 @@ const MammographyDetail = () => {
                                 </Button>
                             </Stack>
 
-                            <hr
-                                style={{
-                                    margin: '1.5rem 0',
-                                    border: '1px solid var(--color-whitesmoke-300',
+                            <Divider
+                                sx={{
+                                    height: '1px',
+                                    background: 'var(--color-whitesmoke-300)',
+                                    marginTop: '1.5rem',
+                                    marginBottom: '1.5rem',
                                 }}
                             />
 

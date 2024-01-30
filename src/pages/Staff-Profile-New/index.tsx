@@ -20,6 +20,7 @@ import {
     useMediaQuery,
     useTheme,
 } from '@mui/material'
+import Divider from '@mui/material/Divider'
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import CustomHeader from 'components/CustomHeader'
@@ -495,8 +496,13 @@ const StaffProfileNew = () => {
                             </Grid>
                         </Grid>
 
-                        <hr
-                            style={{ marginTop: '2rem', marginBottom: '2rem' }}
+                        <Divider
+                            sx={{
+                                height: '1px',
+                                background: 'var(--color-whitesmoke-300)',
+                                marginTop: '2rem',
+                                marginBottom: '2rem',
+                            }}
                         />
 
                         <p
@@ -865,8 +871,13 @@ const StaffProfileNew = () => {
                             </Grid>
                         </Grid>
 
-                        <hr
-                            style={{ marginTop: '2rem', marginBottom: '2rem' }}
+                        <Divider
+                            sx={{
+                                height: '1px',
+                                background: 'var(--color-whitesmoke-300)',
+                                marginTop: '2rem',
+                                marginBottom: '2rem',
+                            }}
                         />
 
                         <p
@@ -948,8 +959,13 @@ const StaffProfileNew = () => {
                             </Grid>
                         </Grid>
 
-                        <hr
-                            style={{ marginTop: '2rem', marginBottom: '2rem' }}
+                        <Divider
+                            sx={{
+                                height: '1px',
+                                background: 'var(--color-whitesmoke-300)',
+                                marginTop: '2rem',
+                                marginBottom: '2rem',
+                            }}
                         />
 
                         <AuthorizationModule

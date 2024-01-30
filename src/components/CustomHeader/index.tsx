@@ -48,7 +48,8 @@ const CustomHeader: React.FC<Props> = ({
 
                 <Grid
                     item
-                    xs={to ? 8 : 4}
+                    // xs={to ? 8 : 4}
+                    xs={4}
                     md={6}
                     className={styles.headerTitle}
                 >

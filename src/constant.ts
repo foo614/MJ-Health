@@ -62,3 +62,4 @@ export const VISION_AND_OCULAR_TENSION_TEST_PAGE =
 export const X_RAY_PAGE = SCREENING_ROOM_SYSTEM_PAGE + '/x-ray'
 export const VIEW_COMMENT_PAGE = SCREENING_ROOM_SYSTEM_PAGE + '/view-comment'
 export const INTERVIEW_QUESTIONAIRE_PAGE = '/questionaire'
+export const FINAL_REPORT = '/final-report'
