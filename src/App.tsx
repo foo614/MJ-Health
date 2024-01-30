@@ -107,6 +107,10 @@ import Retinography from 'pages/Screening-Room-System/Retinography'
 import RetinographyDetail from 'pages/Screening-Room-System/Retinography/detail'
 import Sonography from 'pages/Screening-Room-System/Sonography'
 import SonographyDetail from 'pages/Screening-Room-System/Sonography/detail'
+import VisualAndOcularTension from 'pages/Screening-Room-System/Visual-And-Ocular-Tension-Test'
+import VisualAndOcularTensionDetail from 'pages/Screening-Room-System/Visual-And-Ocular-Tension-Test/detail'
+import XRay from 'pages/Screening-Room-System/X-Ray'
+import XRayDetail from 'pages/Screening-Room-System/X-Ray/detail'
 import Setting from 'pages/Setting'
 import StaffManagement from 'pages/Staff-Management'
 import StaffProfile from 'pages/Staff-Profile'
@@ -384,14 +388,14 @@ function App() {
                 />
                 <Route
                     path={VISION_AND_OCULAR_TENSION_TEST_PAGE}
-                    element={<></>}
+                    element={<VisualAndOcularTension />}
                 />
                 <Route
                     path={VISION_AND_OCULAR_TENSION_TEST_PAGE + '/:id'}
-                    element={<></>}
+                    element={<VisualAndOcularTensionDetail />}
                 />
-                <Route path={X_RAY_PAGE} element={<></>} />
-                <Route path={X_RAY_PAGE + '/:id'} element={<></>} />
+                <Route path={X_RAY_PAGE} element={<XRay />} />
+                <Route path={X_RAY_PAGE + '/:id'} element={<XRayDetail />} />
                 <Route path={VIEW_COMMENT_PAGE} element={<></>} />
                 <Route path={VIEW_COMMENT_PAGE + '/:id'} element={<></>} />
                 <Route
