@@ -7,7 +7,8 @@ import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import { styled } from '@mui/material/styles'
-import styles from '../../_radiology-reporting.module.scss'
+import styles from './_customTable.module.scss'
+
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
         backgroundColor: '#fff',
@@ -109,11 +110,7 @@ const rows = [
     ),
 ]
 
-export default function CustomizedTables({
-    footer,
-}: {
-    footer?: React.ReactNode
-}) {
+export default function CustomTable({ footer }: { footer?: React.ReactNode }) {
     return (
         <TableContainer
             component={Paper}
@@ -142,7 +139,7 @@ export default function CustomizedTables({
             </Table>
             <Box
                 sx={{ height: '400px', overflow: 'auto' }}
-                className={'tableContainer'}
+                className="tableContainer"
             >
                 <Table>
                     <TableBody>

@@ -6,23 +6,12 @@ import {
     FormControl,
     Grid as Grid2,
     InputAdornment,
-    InputBase,
     MenuItem,
-    Paper,
     Select,
     SelectChangeEvent,
     Stack,
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableFooter,
-    TableHead,
-    TableRow,
     TextField,
     Typography,
-    styled,
-    tableCellClasses,
     useMediaQuery,
     useTheme,
 } from '@mui/material'
@@ -33,280 +22,15 @@ import ScreeningRoomInfoHeader from 'components/ScreeningRoom/InfoHeader'
 import ViewCommentModal from 'components/ScreeningRoom/ViewCommentModal'
 import UserHeader from 'components/UserHeader'
 import { SONOGRAPHY_PAGE } from 'constant'
-import Search from 'images/preview.png'
+
+import AddOnService from 'components/AddonService'
+import CommentAndSuggestion from 'components/CommentAndSuggestion'
+import CustomTable from 'components/CustomTable'
 import ButtonCard from 'pages/Radiology-Reporting/components/details/buttonCard'
-import CustomizedTables from 'pages/Radiology-Reporting/components/details/table'
 import { useState } from 'react'
 import styles from './_sonography-detail.module.scss'
 import AxillaryDialog from './components/axillary-dialog'
 import CommentDialog from './components/comment-dialog'
-
-const CommentSuggestionList = () => {
-    return (
-        <Box sx={{ px: 3, mb: 1 }}>
-            <Divider component="div" />
-            <Grid xs={12} sx={{ py: 2 }}>
-                <Typography
-                    variant="h6"
-                    sx={{
-                        color: '#219B8E',
-                        fontSize: '20px',
-                        fontWeight: 600,
-                    }}
-                >
-                    Overview
-                </Typography>
-            </Grid>
-            <Grid xs={12}>
-                <InputBase
-                    id="outlined-search"
-                    placeholder="Search..."
-                    type="search"
-                    sx={{
-                        background: '#F9F9F9',
-                        boxShadow: '0px 2px 2px 1px rgba(0, 0, 0, 0.05) inset',
-                        borderRadius: '5px',
-                        minWidth: '100%',
-                        padding: '10px 15px',
-                    }}
-                />
-                <CustomizedTables footer />
-            </Grid>
-            <Grid xs={12} md={2} mdOffset={10}>
-                <Button
-                    size="small"
-                    variant="contained"
-                    fullWidth
-                    sx={{ mt: 3 }}
-                >
-                    Save
-                </Button>
-            </Grid>
-        </Box>
-    )
-}
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-    [`&.${tableCellClasses.head}`]: {
-        // backgroundColor: '#fff',
-        // color: '#5A567B',
-    },
-    [`&.${tableCellClasses.body}`]: {
-        fontSize: 14,
-        color: '#211D4E',
-        fontWeight: 600,
-        background: '#fff',
-        borderBottom: 'none',
-    },
-    [`&.${tableCellClasses.footer}`]: {
-        fontSize: 14,
-        color: '#211D4E',
-        fontWeight: 700,
-        background: '#fff',
-        borderBottom: 'none',
-    },
-}))
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-    '&:nth-of-type(odd)': {
-        backgroundColor: theme.palette.action.hover,
-    },
-    // hide last border
-    '&:last-child td, &:last-child th': {
-        border: 0,
-    },
-}))
-function createData(item: string, price: number) {
-    return { item, price }
-}
-
-const rows = [
-    createData('Gynecological Sonography', 120),
-    createData('Body Composition Test', 150),
-    createData('CA15-3', 60),
-    createData('CA125', 60),
-    createData('Homocysteine', 78),
-    createData('Gynecological Sonography', 120),
-    createData('Body Composition Test', 150),
-    createData('CA15-3', 60),
-    createData('CA125', 60),
-    createData('Homocysteine', 78),
-    createData('Gynecological Sonography', 120),
-    createData('Body Composition Test', 150),
-    createData('CA15-3', 60),
-    createData('CA125', 60),
-    createData('Homocysteine', 78),
-]
-
-const AddOnList = () => {
-    return (
-        <Box sx={{ px: 3, mb: 1 }}>
-            <Divider component="div" />
-            <Grid xs={12} sx={{ py: 2 }}>
-                <Typography
-                    variant="h6"
-                    sx={{
-                        color: '#219B8E',
-                        fontSize: '20px',
-                        fontWeight: 600,
-                    }}
-                >
-                    Add On Service
-                </Typography>
-            </Grid>
-            <Grid xs={12}>
-                <div>
-                    <Grid
-                        container
-                        sx={{
-                            border: '2px #EDEDED solid',
-                            borderTopLeftRadius: 10,
-                            borderTopRightRadius: 10,
-                        }}
-                    >
-                        <Grid
-                            xs={12}
-                            sx={{
-                                background: '#FBFBFB',
-                                borderTopLeftRadius: 10,
-                                borderTopRightRadius: 10,
-                            }}
-                        >
-                            <Typography
-                                sx={{
-                                    color: '#5A567B',
-                                    fontSize: 16,
-                                    px: '25px',
-                                    py: '13px',
-                                }}
-                            >
-                                Optional Items
-                            </Typography>
-                        </Grid>
-                        <Grid xs={12} sx={{ p: 3 }}>
-                            <InputBase
-                                id="outlined-search"
-                                placeholder="Search..."
-                                type="search"
-                                sx={{
-                                    background: '#F9F9F9',
-                                    boxShadow:
-                                        '0px 2px 2px 1px rgba(0, 0, 0, 0.05) inset',
-                                    borderRadius: '5px',
-                                    minWidth: '100%',
-                                    paddingLeft: 2,
-                                    // padding: '10px 15px',
-                                }}
-                                endAdornment={
-                                    <Button
-                                        variant="contained"
-                                        aria-label="toggle password visibility"
-                                        component="label"
-                                        sx={{ px: 5 }}
-                                    >
-                                        <img src={Search} width={'25px'} />
-                                    </Button>
-                                }
-                            />
-                        </Grid>
-                        <Grid xs={12} sx={{ px: 3, mb: 3 }}>
-                            <TableContainer
-                                component={Paper}
-                                sx={{ boxShadow: 'none' }}
-                            >
-                                <Table
-                                    size="small"
-                                    stickyHeader
-                                    sx={{
-                                        position: 'sticky',
-                                        top: 0,
-                                        background: '#FDFDFD',
-                                    }}
-                                >
-                                    <TableHead>
-                                        <TableRow>
-                                            <StyledTableCell>
-                                                Items
-                                            </StyledTableCell>
-                                            <StyledTableCell align="right">
-                                                Price (RM)
-                                            </StyledTableCell>
-                                            <StyledTableCell></StyledTableCell>
-                                            <StyledTableCell></StyledTableCell>
-                                        </TableRow>
-                                    </TableHead>
-                                </Table>
-                                <Box
-                                    className={styles.tableContainer}
-                                    sx={{
-                                        height: '200px',
-                                        overflow: 'auto',
-                                    }}
-                                >
-                                    <Table size="small">
-                                        <TableBody>
-                                            {rows.map((row) => (
-                                                <StyledTableRow key={row.item}>
-                                                    <StyledTableCell>
-                                                        {row.item}
-                                                    </StyledTableCell>
-                                                    <StyledTableCell align="right">
-                                                        {row.price}
-                                                    </StyledTableCell>
-                                                    <StyledTableCell align="right">
-                                                        <Button
-                                                            size="small"
-                                                            variant="text"
-                                                        >
-                                                            Delete
-                                                        </Button>
-                                                    </StyledTableCell>
-                                                </StyledTableRow>
-                                            ))}
-                                        </TableBody>
-                                    </Table>
-                                </Box>
-                                <Table
-                                    size="small"
-                                    stickyHeader
-                                    sx={{
-                                        position: 'sticky',
-                                        top: 0,
-                                        borderTop: '2px solid #EDEDED',
-                                    }}
-                                >
-                                    <TableFooter>
-                                        <TableRow
-                                            className={styles.stickyHeader}
-                                        >
-                                            <StyledTableCell>
-                                                Total Item Selected: 12
-                                            </StyledTableCell>
-                                            <StyledTableCell align="center">
-                                                Total Amount: 660
-                                            </StyledTableCell>
-                                            <StyledTableCell></StyledTableCell>
-                                            <StyledTableCell></StyledTableCell>
-                                        </TableRow>
-                                    </TableFooter>
-                                </Table>
-                            </TableContainer>
-                        </Grid>
-                    </Grid>
-                </div>
-            </Grid>
-            <Divider sx={{ color: '#EDEDED' }} />
-            <Grid xs={12} md={2} mdOffset={10}>
-                <Button
-                    size="small"
-                    variant="contained"
-                    fullWidth
-                    sx={{ mt: 3 }}
-                >
-                    Save
-                </Button>
-            </Grid>
-        </Box>
-    )
-}
 
 const SonographyDetail = () => {
     const theme = useTheme()
@@ -1458,7 +1182,7 @@ const SonographyDetail = () => {
                     </Typography>
                 </Grid>
                 <Grid xs={12}>
-                    <CustomizedTables footer={<TableFooter />} />
+                    <CustomTable footer={<TableFooter />} />
                 </Grid>
             </Box>
         )
@@ -1656,9 +1380,9 @@ const SonographyDetail = () => {
                                     </Grid>
                                 </Grid>
                             )}
-                            {selectedType === 'addon' && <AddOnList />}
+                            {selectedType === 'addon' && <AddOnService />}
                             {selectedType === 'comment' && (
-                                <CommentSuggestionList />
+                                <CommentAndSuggestion />
                             )}
                         </Grid>
                     </Box>

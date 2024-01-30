@@ -77,18 +77,6 @@
     text-align: center;
     color: var(--color-white) !important;
 }
-.tableContainer::-webkit-scrollbar {
-    width: 8px;
-    height: 5px;
-    border-radius: 10px;
-    background-color: #ebebeb; /* or add it to the track */
-}
-
-.tableContainer::-webkit-scrollbar-thumb {
-    background: #aaa;
-    border-radius: 10px;
-}
-
 .view_final_report_modal {
     width: 540px;
     max-width: unset !important;

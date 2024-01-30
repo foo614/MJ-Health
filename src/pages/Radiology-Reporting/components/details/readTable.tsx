@@ -5,7 +5,6 @@ import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import styles from '../../_radiology-reporting.module.scss'
 
 function createData(number: string, content: string) {
     return { number, content }
@@ -84,7 +83,7 @@ export default function ReadTable() {
                 maxHeight: '300px',
                 background: '#F9F9F9',
             }}
-            className={styles.tableContainer}
+            className={'tableContainer'}
         >
             <Table
                 sx={{

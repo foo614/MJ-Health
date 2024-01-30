@@ -270,9 +270,7 @@ const CommentDialog = ({ setOpen, open }: Props) => {
                                                         height: '200px',
                                                         overflow: 'auto',
                                                     }}
-                                                    className={
-                                                        styles.tableContainer
-                                                    }
+                                                    className={'tableContainer'}
                                                 >
                                                     <Table>
                                                         <TableBody>
@@ -337,9 +335,7 @@ const CommentDialog = ({ setOpen, open }: Props) => {
                                                         height: '200px',
                                                         overflow: 'auto',
                                                     }}
-                                                    className={
-                                                        styles.tableContainer
-                                                    }
+                                                    className={'tableContainer'}
                                                 >
                                                     <Table>
                                                         <TableBody>

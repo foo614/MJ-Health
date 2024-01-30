@@ -142,7 +142,7 @@ export default function CustomizedTables({
             </Table>
             <Box
                 sx={{ height: '400px', overflow: 'auto' }}
-                className={styles.tableContainer}
+                className={'tableContainer'}
             >
                 <Table>
                     <TableBody>
