@@ -2,13 +2,20 @@ import HealthCondition from './components/health-condition'
 import MedicalHistoryContent from './components/medical-history-content'
 import SummaryRecord from './components/summary-record'
 
-const ConditionHistory = () => {
+type Props = {
+    questionnaireAction: () => void
+    readonly?: boolean
+}
+
+const ConditionHistory = ({ questionnaireAction, readonly }: Props) => {
     return (
         <>
-            <MedicalHistoryContent />
-            <HealthCondition />
-            <SummaryRecord />
-            
+            <MedicalHistoryContent readonly={readonly} />
+            <HealthCondition readonly={readonly} />
+            <SummaryRecord
+                questionnaireAction={questionnaireAction}
+                readonly={readonly}
+            />
         </>
     )
 }

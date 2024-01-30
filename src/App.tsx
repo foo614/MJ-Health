@@ -10,6 +10,7 @@ import {
     ELECTROCARDIOGRAM_PAGE,
     ENT_EXAMINATION_PAGE,
     FINAL_REPORT,
+    FINAL_REPORT_INTERVIEW_PAGE,
     GENERAL_MEASUREMENT_PAGE,
     HEALTH_MANAGEMENT_CONSULTATION_INFO_PAGE,
     HEALTH_MANAGEMENT_CONSULTATION_PAGE,
@@ -120,6 +121,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import './i18n'
 import './styles/main.scss'
 import theme from './styles/theme'
+import FinalReportInterview from 'pages/Final-Report/Interview'
 
 function App() {
     const data = [
@@ -407,6 +409,10 @@ function App() {
                     element={<InterviewQuestionaire />}
                 />
                 <Route path={FINAL_REPORT} element={<FinalReport />} />
+                <Route
+                    path={FINAL_REPORT_INTERVIEW_PAGE}
+                    element={<FinalReportInterview />}
+                />
             </Routes>
         </ThemeProvider>
     )

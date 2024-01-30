@@ -1,7 +1,12 @@
 import { Grid, Stack, Button, TextField, Divider } from '@mui/material'
 import styles from '../../../_interview-info.module.scss'
 import React from 'react'
-const MedicalHistoryContent = () => {
+
+type Props = {
+    readonly?: boolean
+}
+
+const MedicalHistoryContent = ({ readonly }: Props) => {
     const medical_history_content = [
         {
             id: 1,
@@ -114,18 +119,20 @@ const MedicalHistoryContent = () => {
                                                             >
                                                                 {sub_item.title}
                                                             </p>
-                                                            <Button
-                                                                variant="text"
-                                                                className={
-                                                                    styles.deleteBttn
-                                                                }
-                                                                sx={{
-                                                                    marginLeft:
-                                                                        'auto',
-                                                                }}
-                                                            >
-                                                                Delete
-                                                            </Button>
+                                                            {!readonly && (
+                                                                <Button
+                                                                    variant="text"
+                                                                    className={
+                                                                        styles.deleteBttn
+                                                                    }
+                                                                    sx={{
+                                                                        marginLeft:
+                                                                            'auto',
+                                                                    }}
+                                                                >
+                                                                    Delete
+                                                                </Button>
+                                                            )}
                                                         </Stack>
                                                     )
                                                 }
@@ -143,6 +150,7 @@ const MedicalHistoryContent = () => {
                                                     classes: {
                                                         input: styles.inputField,
                                                     },
+                                                    readOnly: readonly,
                                                 }}
                                                 fullWidth
                                                 className={
@@ -152,6 +160,7 @@ const MedicalHistoryContent = () => {
                                             />
                                             <Button
                                                 variant="contained"
+                                                disabled={readonly}
                                                 size="small"
                                                 className={styles.addBttn}
                                             >

@@ -1,0 +1,21 @@
+@use 'styles/variables' as *;
+
+.cardTitle {
+    color: var(--title-color);
+    font-size: var(--font-size-5xl);
+    font-weight: 600;
+}
+
+.tabButton {
+    background-color: var(--color-whitesmoke-300) !important;
+    color: var(--label-color) !important;
+    font-weight: 500;
+    width: 250px;
+    height: 50px;
+}
+
+.tabButton.active {
+    background-color: var(--color-white) !important;
+    color: var(--title-color) !important;
+    font-weight: 600;
+}

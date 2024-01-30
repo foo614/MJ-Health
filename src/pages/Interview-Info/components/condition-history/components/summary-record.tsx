@@ -9,7 +9,13 @@ import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
 import { useNavigate } from 'react-router-dom'
 import { INTERVIEW_QUESTIONAIRE_PAGE, INTERVIEW_INFO_PAGE } from 'constant'
-const SummaryRecord = () => {
+
+type Props = {
+    questionnaireAction: () => void
+    readonly?: boolean
+}
+
+const SummaryRecord = ({ questionnaireAction, readonly }: Props) => {
     const navigate = useNavigate()
     const bottomTableData = [
         {
@@ -268,21 +274,20 @@ const SummaryRecord = () => {
                     variant="contained"
                     className={styles.questionnaireBttn}
                     sx={{ width: '220px', height: '64px' }}
-                    onClick={() =>
-                        navigate(
-                            `${INTERVIEW_INFO_PAGE}/1${INTERVIEW_QUESTIONAIRE_PAGE}`
-                        )
-                    }
+                    onClick={questionnaireAction}
                 >
                     Questionnaire
                 </Button>
-                <Button
-                    variant="contained"
-                    className={styles.interview_info_save_bttn}
-                    sx={{ width: '220px', height: '64px' }}
-                >
-                    Save
-                </Button>
+
+                {!readonly && (
+                    <Button
+                        variant="contained"
+                        className={styles.interview_info_save_bttn}
+                        sx={{ width: '220px', height: '64px' }}
+                    >
+                        Save
+                    </Button>
+                )}
             </Stack>
         </>
     )

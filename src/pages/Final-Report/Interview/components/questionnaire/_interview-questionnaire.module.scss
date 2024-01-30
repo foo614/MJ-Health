@@ -1,0 +1,12 @@
+@use 'styles/variables' as *;
+
+.tabButton {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
+    text-transform: unset !important;
+}

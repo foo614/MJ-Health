@@ -4,7 +4,11 @@ import { Grid, Button, Stack, Card, Divider } from '@mui/material'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
-import { INTERVIEW_PAGE } from 'constant'
+import {
+    INTERVIEW_INFO_PAGE,
+    INTERVIEW_PAGE,
+    INTERVIEW_QUESTIONAIRE_PAGE,
+} from 'constant'
 import { useNavigate } from 'react-router-dom'
 import styles from './_interview-info.module.scss'
 import { useState } from 'react'
@@ -42,7 +46,15 @@ const InterviewInfo = () => {
     const displayCurrentSection = () => {
         switch (currentSection) {
             case 1:
-                return <ConditionHistory />
+                return (
+                    <ConditionHistory
+                        questionnaireAction={() =>
+                            navigate(
+                                `${INTERVIEW_INFO_PAGE}/1${INTERVIEW_QUESTIONAIRE_PAGE}`
+                            )
+                        }
+                    />
+                )
             case 2:
                 return <PersonalComplaint />
             case 3:

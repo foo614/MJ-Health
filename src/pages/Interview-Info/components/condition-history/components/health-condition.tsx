@@ -10,7 +10,11 @@ import Paper from '@mui/material/Paper'
 import { useState } from 'react'
 import CurrentTableEditModal from './comment-suggestion-modal'
 
-const HealthCondition = () => {
+type Props = {
+    readonly?: boolean
+}
+
+const HealthCondition = ({ readonly }: Props) => {
     const [openCommentSectionModal, setOpenCommentSectionModal] =
         useState<boolean>()
     const bottomTableData = [
@@ -80,22 +84,25 @@ const HealthCondition = () => {
                 </p>
                 <Grid container spacing={2}>
                     <Grid item md={12} xs={12} sm={12} lg={6} xl={6}>
-                        <TextField
-                            margin="dense"
-                            variant="outlined"
-                            size="small"
-                            InputProps={{
-                                classes: {
-                                    input: styles.inputField,
-                                },
-                                readOnly: true,
-                            }}
-                            onClick={() => setOpenCommentSectionModal(true)}
-                            fullWidth
-                            className={styles.modalFormField}
-                            placeholder="Search"
-                            sx={{ cursor: 'pointer' }}
-                        />
+                        {!readonly && (
+                            <TextField
+                                margin="dense"
+                                variant="outlined"
+                                size="small"
+                                InputProps={{
+                                    classes: {
+                                        input: styles.inputField,
+                                    },
+                                    readOnly: true,
+                                }}
+                                onClick={() => setOpenCommentSectionModal(true)}
+                                fullWidth
+                                className={styles.modalFormField}
+                                placeholder="Search"
+                                sx={{ cursor: 'pointer' }}
+                            />
+                        )}
+
                         <TableContainer
                             component={Paper}
                             className={styles.health_condition_table}
@@ -171,36 +178,38 @@ const HealthCondition = () => {
                                                                 </p>
                                                             </div>
 
-                                                            <Stack
-                                                                direction="row"
-                                                                sx={{
-                                                                    marginLeft:
-                                                                        'auto',
-                                                                }}
-                                                                spacing={2}
-                                                            >
-                                                                <Button
-                                                                    variant="text"
-                                                                    className={
-                                                                        styles.editBttn
-                                                                    }
-                                                                    onClick={() =>
-                                                                        setOpenCommentSectionModal(
-                                                                            true
-                                                                        )
-                                                                    }
+                                                            {!readonly && (
+                                                                <Stack
+                                                                    direction="row"
+                                                                    sx={{
+                                                                        marginLeft:
+                                                                            'auto',
+                                                                    }}
+                                                                    spacing={2}
                                                                 >
-                                                                    Edit
-                                                                </Button>
-                                                                <Button
-                                                                    variant="text"
-                                                                    className={
-                                                                        styles.health_condition_delete_bttn
-                                                                    }
-                                                                >
-                                                                    Delete
-                                                                </Button>
-                                                            </Stack>
+                                                                    <Button
+                                                                        variant="text"
+                                                                        className={
+                                                                            styles.editBttn
+                                                                        }
+                                                                        onClick={() =>
+                                                                            setOpenCommentSectionModal(
+                                                                                true
+                                                                            )
+                                                                        }
+                                                                    >
+                                                                        Edit
+                                                                    </Button>
+                                                                    <Button
+                                                                        variant="text"
+                                                                        className={
+                                                                            styles.health_condition_delete_bttn
+                                                                        }
+                                                                    >
+                                                                        Delete
+                                                                    </Button>
+                                                                </Stack>
+                                                            )}
                                                         </Stack>
                                                     </TableCell>
                                                 </TableRow>
@@ -231,12 +240,13 @@ const HealthCondition = () => {
                                         classes: {
                                             input: styles.inputField,
                                         },
+                                        readOnly: readonly,
                                     }}
                                     onClick={() => console.log('open')}
                                     fullWidth
                                     className={styles.modalFormField}
                                     // sx={{ height: '100%' }}
-                                    rows={13}
+                                    rows={readonly ? 10 : 13}
                                     placeholder="Type in your message & recommendation."
                                     multiline
                                 />
