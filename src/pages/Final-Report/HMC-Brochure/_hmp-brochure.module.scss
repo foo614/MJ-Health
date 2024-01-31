@@ -60,3 +60,54 @@
 .paddingSection {
     padding: 20px 35px;
 }
+
+.hmp_title {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.hmp_subtitle {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
+}
+
+.outer_div_background {
+    background: var(--color-whitesmoke-100) !important;
+}
+
+.outer_div_padding {
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.table_head_cell_color {
+    background: var(--label-color) !important;
+}
+.table_head_cell {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--color-white) !important;
+}
+
+.textFieldProps {
+    border-radius: 3px !important;
+    background-color: var(--color-white) !important;
+    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.inputField {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--title-color) !important;
+}
+
+.deep_green_title {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--mj-deep-green) !important;
+}
