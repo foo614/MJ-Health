@@ -1,0 +1,51 @@
+@use '../../styles/variables' as *;
+
+.staffEditModalDialog {
+    border-radius: 8px;
+    width: 700px;
+}
+
+.staffEditModalDialogTitle {
+    font-weight: 700 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.staffEditModalLabelProps {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
+}
+
+.staffEditModalCancelBttn {
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+    background-color: #eeeeee !important;
+    color: var(--color-lightslategray) !important;
+}
+
+.staffEditModalConfirmBttn {
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+    background-color: var(--color-turquoise) !important;
+    color: var(--color-white) !important;
+}
+
+.staffEditModalSmallText {
+    font-weight: 500 !important;
+    font-size: var(--font-size-xs) !important;
+    color: #999999 !important;
+    text-align: center;
+}
+
+.textFieldLabel {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
+}
+
+.icon{
+    color: var(--color-turquoise) !important;
+}
