@@ -1,0 +1,44 @@
+@use 'styles/variables' as *;
+.card {
+    background: var(--color-white) !important;
+    border-radius: var(--br-3xs) !important;
+    // padding: 20px 35px;
+    margin-top: 20px;
+}
+
+.edit_bttn {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--mj-deep-green) !important;
+}
+
+.paddingSection {
+    padding: 20px 35px;
+}
+
+.confirm_changes_bttn {
+    background: var(--mj-deep-green) !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--color-white) !important;
+}
+
+.print_bttn {
+    width: 180px;
+    height: 40px;
+    background: var(--color-turquoise) !important;
+    border-radius: var(--br-10xs) !important;
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    text-align: center !important;
+    color: var(--color-white) !important;
+}
+
+.view_bttn{
+    width: 180px;
+    height: 40px;
+    border-radius: var(--br-10xs) !important;
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    text-align: center !important;
+}

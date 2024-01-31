@@ -12,6 +12,7 @@ import {
     FINAL_REPORT,
     FINAL_REPORT_HMP_BROCHURE,
     FINAL_REPORT_INTERVIEW_PAGE,
+    FINAL_REPORT_PAPS_SMEAR_EXAM,
     GENERAL_MEASUREMENT_PAGE,
     HEALTH_MANAGEMENT_CONSULTATION_INFO_PAGE,
     HEALTH_MANAGEMENT_CONSULTATION_PAGE,
@@ -124,6 +125,7 @@ import './styles/main.scss'
 import theme from './styles/theme'
 import FinalReportInterview from 'pages/Final-Report/Interview'
 import HMPBrochure from 'pages/Final-Report/HMC-Brochure'
+import PapsSmearExam from 'pages/Final-Report/Paps-Smear-Exam'
 
 function App() {
     const data = [
@@ -418,6 +420,10 @@ function App() {
                 <Route
                     path={FINAL_REPORT_HMP_BROCHURE}
                     element={<HMPBrochure />}
+                />
+                <Route
+                    path={FINAL_REPORT_PAPS_SMEAR_EXAM}
+                    element={<PapsSmearExam />}
                 />
             </Routes>
         </ThemeProvider>
