@@ -7,7 +7,7 @@ import {
 } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import styles from './_screening-room-header.module.scss'
-import LogoutIcon from '@mui/icons-material/Logout'
+import CheckoutIcon from 'images/checkout.png'
 import CustomHeaderSearchInput from 'components/CustomHeader/EndAdornment/SearchInput'
 
 type Props = {
@@ -26,11 +26,7 @@ const ScreeningRoomHeader = ({ title }: Props) => {
                     <Button
                         variant="contained"
                         className={styles.checkoutButton}
-                        startIcon={
-                            <LogoutIcon
-                                fontSize={matches ? 'large' : 'small'}
-                            />
-                        }
+                        startIcon={<img src={CheckoutIcon} alt="Checkout" />}
                     >
                         <Typography className={styles.checkoutButtonText}>
                             Check Out
