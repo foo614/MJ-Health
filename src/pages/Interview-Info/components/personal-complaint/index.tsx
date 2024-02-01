@@ -7,7 +7,12 @@ import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
 import { TextField, Button } from '@mui/material'
-const PersonalComplaint = () => {
+
+type Props = {
+    readonly?: boolean
+}
+
+const PersonalComplaint = ({ readonly }: Props) => {
     return (
         <>
             <div style={{ paddingLeft: '30px', paddingRight: '30px' }}>
@@ -59,6 +64,7 @@ const PersonalComplaint = () => {
                                 classes: {
                                     input: styles.inputField,
                                 },
+                                readOnly: readonly,
                             }}
                             fullWidth
                             className={styles.modalFormField}
@@ -68,15 +74,18 @@ const PersonalComplaint = () => {
                         />
                     </div>
                 </div>
-                <div style={{ marginTop: '2rem', textAlign: 'end' }}>
-                    <Button
-                        variant="contained"
-                        className={styles.interview_info_save_bttn}
-                        sx={{ width: '220px', height: '64px' }}
-                    >
-                        Save
-                    </Button>
-                </div>
+
+                {!readonly && (
+                    <div style={{ marginTop: '2rem', textAlign: 'end' }}>
+                        <Button
+                            variant="contained"
+                            className={styles.interview_info_save_bttn}
+                            sx={{ width: '220px', height: '64px' }}
+                        >
+                            Save
+                        </Button>
+                    </div>
+                )}
             </div>
         </>
     )

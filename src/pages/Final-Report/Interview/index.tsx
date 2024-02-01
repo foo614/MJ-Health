@@ -1,3 +1,4 @@
+import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -13,9 +14,12 @@ import styles from './_final-report-interview.module.scss'
 import { useState } from 'react'
 import ConditionHistory from 'pages/Interview-Info/components/condition-history'
 import FinalReportInterviewQuestionnaire from './components/questionnaire'
+import PersonalComplaint from 'pages/Interview-Info/components/personal-complaint'
+import EditIcon from 'images/member-edit.png'
 
 const FinalReportInterview = () => {
     const [tabPage, setTabPage] = useState<string>('conditionHistory')
+    const [readonly, setReadonly] = useState<boolean>(true)
 
     return (
         <>
@@ -31,7 +35,35 @@ const FinalReportInterview = () => {
             <Container maxWidth="xl" sx={{ marginTop: '30px' }}>
                 <Card>
                     <CardHeader
-                        title="Interview"
+                        title={
+                            <div>
+                                <Box sx={{ float: 'right' }}>
+                                    {readonly ? (
+                                        <Button
+                                            variant="text"
+                                            onClick={() => setReadonly(false)}
+                                        >
+                                            <Stack
+                                                direction="row"
+                                                spacing={1}
+                                                alignItems="center"
+                                            >
+                                                <span>Edit</span>
+                                                <img src={EditIcon} alt="" />
+                                            </Stack>
+                                        </Button>
+                                    ) : (
+                                        <Button
+                                            variant="contained"
+                                            onClick={() => setReadonly(true)}
+                                        >
+                                            Confirm Changes
+                                        </Button>
+                                    )}
+                                </Box>
+                                <p className={styles.cardTitle}>Interview</p>
+                            </div>
+                        }
                         titleTypographyProps={{ className: styles.cardTitle }}
                         sx={{ padding: '1rem 1.5rem' }}
                     />
@@ -89,7 +121,7 @@ const FinalReportInterview = () => {
                     <CardContent sx={{ padding: '0 1.5rem' }}>
                         {tabPage == 'conditionHistory' && (
                             <ConditionHistory
-                                readonly
+                                readonly={readonly}
                                 questionnaireAction={() => {
                                     setTabPage('questionnaire')
                                 }}
@@ -97,7 +129,13 @@ const FinalReportInterview = () => {
                         )}
 
                         {tabPage == 'questionnaire' && (
-                            <FinalReportInterviewQuestionnaire />
+                            <FinalReportInterviewQuestionnaire
+                                readonly={readonly}
+                            />
+                        )}
+
+                        {tabPage == 'personalComplaint' && (
+                            <PersonalComplaint readonly={readonly} />
                         )}
                     </CardContent>
                 </Card>

@@ -22,7 +22,11 @@ type TabPanelProps = {
     value: number
 }
 
-const FinalReportInterviewQuestionnaire = () => {
+type Props = {
+    readonly: boolean
+}
+
+const FinalReportInterviewQuestionnaire = ({ readonly }: Props) => {
     const [value, setValue] = useState<number>(0)
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -128,34 +132,34 @@ const FinalReportInterviewQuestionnaire = () => {
                 </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
-                <BasicInfo readonly />
+                <BasicInfo readonly={readonly} />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={1}>
-                <LifeStyleHabit readonly />
+                <LifeStyleHabit readonly={readonly} />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={2}>
-                <EatingHabit readonly />
+                <EatingHabit readonly={readonly} />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={3}>
-                <ExerciseHabit readonly />
+                <ExerciseHabit readonly={readonly} />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={4}>
-                <SleepQualityStress readonly />
+                <SleepQualityStress readonly={readonly} />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={5}>
-                <PhysicalSymptoms1 readonly />
+                <PhysicalSymptoms1 readonly={readonly} />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={6}>
-                <PhysicalSymptoms2 readonly />
+                <PhysicalSymptoms2 readonly={readonly} />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={7}>
-                <PersonalFamilyHistory1 readonly />
+                <PersonalFamilyHistory1 readonly={readonly} />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={8}>
-                <PersonalFamilyHistory2 readonly />
+                <PersonalFamilyHistory2 readonly={readonly} />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={9}>
-                <PersonalFamilyHistory3 readonly />
+                <PersonalFamilyHistory3 readonly={readonly} />
             </CustomTabPanel>
         </Card>
     )
