@@ -10,6 +10,7 @@ import {
     ELECTROCARDIOGRAM_PAGE,
     ENT_EXAMINATION_PAGE,
     FINAL_REPORT,
+    FINAL_REPORT_HMC_RECORD,
     FINAL_REPORT_HMP_BROCHURE,
     FINAL_REPORT_INTERVIEW_PAGE,
     FINAL_REPORT_PAPS_SMEAR_EXAM,
@@ -126,6 +127,7 @@ import theme from './styles/theme'
 import FinalReportInterview from 'pages/Final-Report/Interview'
 import HMPBrochure from 'pages/Final-Report/HMC-Brochure'
 import PapsSmearExam from 'pages/Final-Report/Paps-Smear-Exam'
+import HMCRecord from 'pages/Final-Report/HMC-Record'
 
 function App() {
     const data = [
@@ -425,6 +427,7 @@ function App() {
                     path={FINAL_REPORT_PAPS_SMEAR_EXAM}
                     element={<PapsSmearExam />}
                 />
+                <Route path={FINAL_REPORT_HMC_RECORD} element={<HMCRecord />} />
             </Routes>
         </ThemeProvider>
     )

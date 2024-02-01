@@ -1,0 +1,134 @@
+@use 'styles/variables' as *;
+
+.print_bttn {
+    height: 40px;
+    background: var(--color-turquoise) !important;
+    border-radius: var(--br-10xs) !important;
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    text-align: center !important;
+    color: var(--color-white) !important;
+}
+
+.view_bttn {
+    height: 40px;
+    border-radius: var(--br-10xs) !important;
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    text-align: center !important;
+}
+
+.card {
+    background: var(--color-white) !important;
+    border-radius: var(--br-3xs) !important;
+    // padding: 20px 35px;
+    margin-top: 20px;
+}
+
+.paddingSection {
+    padding: 20px 35px;
+}
+
+.selectedBttn {
+    background: var(--color-white) !important;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--title-color) !important;
+    width: 250px !important;
+    height: 50px !important;
+    line-height: unset !important;
+}
+
+.unSelectedBttn {
+    background: #ededed !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--label-color) !important;
+    width: 250px !important;
+    height: 50px !important;
+    line-height: unset !important;
+}
+
+.confirm_changes_bttn {
+    background: var(--mj-deep-green) !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--color-white) !important;
+}
+
+.edit_bttn {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--mj-deep-green) !important;
+}
+
+.divLine {
+    height: 2px !important;
+    background: #ededed;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+
+.dietary_lifestyle_item {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.textFieldProps {
+    border-radius: 3px !important;
+    background-color: var(--color-white) !important;
+    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.inputField {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--title-color) !important;
+}
+
+.dietary_lifestyle_suggestion_text {
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    color: var(--title-color) !important;
+}
+
+.unSelectedMealBttn {
+    background-color: var(--color-lightgray) !important;
+    color: var(--label-color) !important;
+    height: 30px !important;
+}
+
+.selectedMealBttn {
+    background-color: var(--label-color) !important;
+    color: var(--color-white) !important;
+    height: 30px !important;
+}
+
+.remark {
+    font-weight: 700 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--mj-deep-green) !important;
+}
+
+.printInText {
+    font-weight: 700 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--color-turquoise) !important;
+}
+
+.printInSelectedIcon {
+    color: var(--color-turquoise) !important;
+}
+
+.printInUnselectedIcon {
+    color: #dddddd !important;
+}
