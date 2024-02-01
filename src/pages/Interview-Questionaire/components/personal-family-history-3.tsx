@@ -19,7 +19,11 @@ import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 
-const PersonalFamilyHistory3 = () => {
+type Props = {
+    readonly?: boolean
+}
+
+const PersonalFamilyHistory3 = ({ readonly }: Props) => {
     const select_option = [
         {
             id: 1,
@@ -307,8 +311,18 @@ const PersonalFamilyHistory3 = () => {
                                                     >
                                                         <div>
                                                             <FormControlLabel
+                                                                disabled={
+                                                                    readonly
+                                                                }
                                                                 control={
-                                                                    <Checkbox />
+                                                                    <Checkbox
+                                                                        sx={{
+                                                                            '&.Mui-checked.Mui-disabled':
+                                                                                {
+                                                                                    color: 'var(--mj-light-green) !important',
+                                                                                },
+                                                                        }}
+                                                                    />
                                                                 }
                                                                 label={
                                                                     checkBoxItem.label
@@ -335,6 +349,15 @@ const PersonalFamilyHistory3 = () => {
                                                                         styles.inputField
                                                                     }
                                                                     name="meal_time_option"
+                                                                    inputProps={{
+                                                                        readOnly:
+                                                                            readonly,
+                                                                    }}
+                                                                    value={
+                                                                        readonly
+                                                                            ? select_option[0].id.toString()
+                                                                            : undefined
+                                                                    }
                                                                 >
                                                                     {select_option.map(
                                                                         (
@@ -383,6 +406,15 @@ const PersonalFamilyHistory3 = () => {
                                                                         styles.inputField
                                                                     }
                                                                     name="meal_time_option"
+                                                                    inputProps={{
+                                                                        readOnly:
+                                                                            readonly,
+                                                                    }}
+                                                                    value={
+                                                                        readonly
+                                                                            ? select_option[0].id.toString()
+                                                                            : undefined
+                                                                    }
                                                                 >
                                                                     {select_option.map(
                                                                         (
@@ -441,27 +473,82 @@ const PersonalFamilyHistory3 = () => {
                         sx={{ paddingLeft: '25px' }}
                     >
                         <FormControlLabel
-                            control={<Checkbox />}
+                            disabled={readonly}
+                            control={
+                                <Checkbox
+                                    sx={{
+                                        '&.Mui-checked.Mui-disabled': {
+                                            color: 'var(--mj-light-green) !important',
+                                        },
+                                    }}
+                                />
+                            }
                             label="Hormonal Drugs"
                         />
                         <FormControlLabel
-                            control={<Checkbox />}
+                            disabled={readonly}
+                            control={
+                                <Checkbox
+                                    sx={{
+                                        '&.Mui-checked.Mui-disabled': {
+                                            color: 'var(--mj-light-green) !important',
+                                        },
+                                    }}
+                                />
+                            }
                             label="Psychiatric Drugs"
                         />
                         <FormControlLabel
-                            control={<Checkbox />}
+                            disabled={readonly}
+                            control={
+                                <Checkbox
+                                    sx={{
+                                        '&.Mui-checked.Mui-disabled': {
+                                            color: 'var(--mj-light-green) !important',
+                                        },
+                                    }}
+                                />
+                            }
                             label="Steroids"
                         />
                         <FormControlLabel
-                            control={<Checkbox />}
+                            disabled={readonly}
+                            checked={readonly}
+                            control={
+                                <Checkbox
+                                    sx={{
+                                        '&.Mui-checked.Mui-disabled': {
+                                            color: 'var(--mj-light-green) !important',
+                                        },
+                                    }}
+                                />
+                            }
                             label="Traditional Chinese Herbs"
                         />
                         <FormControlLabel
-                            control={<Checkbox />}
+                            disabled={readonly}
+                            control={
+                                <Checkbox
+                                    sx={{
+                                        '&.Mui-checked.Mui-disabled': {
+                                            color: 'var(--mj-light-green) !important',
+                                        },
+                                    }}
+                                />
+                            }
                             label="Tranquilizers or Sleeping Pills"
                         />
                         <FormControlLabel
-                            control={<Checkbox />}
+                            disabled={readonly}
+                            control={
+                                <Checkbox
+                                    sx={{
+                                        '&.Mui-checked.Mui-disabled': {
+                                            color: 'var(--mj-light-green) !important',
+                                        },
+                                    }}
+                                />
+                            }
                             label="Uric Acid Drugs"
                         />
                     </Stack>
@@ -488,11 +575,22 @@ const PersonalFamilyHistory3 = () => {
                             marginTop: '15px',
                         }}
                     >
-                        {item_17_label.map((item: any, index: number) => {
+                        {item_17_label.map((item, index: number) => {
                             return (
                                 <Grid item md={2} key={index}>
                                     <FormControlLabel
-                                        control={<Checkbox />}
+                                        disabled={readonly}
+                                        checked={readonly && item.id == 30}
+                                        control={
+                                            <Checkbox
+                                                sx={{
+                                                    '&.Mui-checked.Mui-disabled':
+                                                        {
+                                                            color: 'var(--mj-light-green) !important',
+                                                        },
+                                                }}
+                                            />
+                                        }
                                         label={item.label}
                                     />
                                 </Grid>

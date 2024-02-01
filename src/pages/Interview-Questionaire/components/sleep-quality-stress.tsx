@@ -14,7 +14,11 @@ import React from 'react'
 import { SelectChangeEvent } from '@mui/material/Select'
 import { useState } from 'react'
 
-const SleepQualityStress = () => {
+type Props = {
+    readonly?: boolean
+}
+
+const SleepQualityStress = ({ readonly }: Props) => {
     const select_option = [
         {
             id: 1,
@@ -47,6 +51,14 @@ const SleepQualityStress = () => {
                         <Select
                             className={styles.inputField}
                             name="meal_time_option"
+                            inputProps={{
+                                readOnly: readonly,
+                            }}
+                            value={
+                                readonly
+                                    ? select_option[1].id.toString()
+                                    : undefined
+                            }
                         >
                             {select_option.map((item: any, index: number) => {
                                 return (
@@ -141,27 +153,88 @@ const SleepQualityStress = () => {
                                             }}
                                         >
                                             <FormControlLabel
-                                                control={<Checkbox />}
+                                                disabled={readonly}
+                                                checked={readonly}
+                                                control={
+                                                    <Checkbox
+                                                        sx={{
+                                                            '&.Mui-checked.Mui-disabled':
+                                                                {
+                                                                    color: 'var(--mj-light-green) !important',
+                                                                },
+                                                        }}
+                                                    />
+                                                }
                                                 label="Able To Sleep But Easily Awakened"
                                             />
                                             <FormControlLabel
-                                                control={<Checkbox />}
+                                                disabled={readonly}
+                                                control={
+                                                    <Checkbox
+                                                        sx={{
+                                                            '&.Mui-checked.Mui-disabled':
+                                                                {
+                                                                    color: 'var(--mj-light-green) !important',
+                                                                },
+                                                        }}
+                                                    />
+                                                }
                                                 label="Deep Sleep"
                                             />
                                             <FormControlLabel
-                                                control={<Checkbox />}
+                                                disabled={readonly}
+                                                control={
+                                                    <Checkbox
+                                                        sx={{
+                                                            '&.Mui-checked.Mui-disabled':
+                                                                {
+                                                                    color: 'var(--mj-light-green) !important',
+                                                                },
+                                                        }}
+                                                    />
+                                                }
                                                 label="Difficult To Sleep"
                                             />
                                             <FormControlLabel
-                                                control={<Checkbox />}
+                                                disabled={readonly}
+                                                control={
+                                                    <Checkbox
+                                                        sx={{
+                                                            '&.Mui-checked.Mui-disabled':
+                                                                {
+                                                                    color: 'var(--mj-light-green) !important',
+                                                                },
+                                                        }}
+                                                    />
+                                                }
                                                 label="Dream-Distressed Sleep"
                                             />
                                             <FormControlLabel
-                                                control={<Checkbox />}
+                                                disabled={readonly}
+                                                control={
+                                                    <Checkbox
+                                                        sx={{
+                                                            '&.Mui-checked.Mui-disabled':
+                                                                {
+                                                                    color: 'var(--mj-light-green) !important',
+                                                                },
+                                                        }}
+                                                    />
+                                                }
                                                 label="Require Sleeping Pills Or Sedatives"
                                             />
                                             <FormControlLabel
-                                                control={<Checkbox />}
+                                                disabled={readonly}
+                                                control={
+                                                    <Checkbox
+                                                        sx={{
+                                                            '&.Mui-checked.Mui-disabled':
+                                                                {
+                                                                    color: 'var(--mj-light-green) !important',
+                                                                },
+                                                        }}
+                                                    />
+                                                }
                                                 label="Woke Up Tired"
                                             />
                                         </Stack>

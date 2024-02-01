@@ -11,7 +11,12 @@ import {
 } from '@mui/material'
 import styles from '../_interview-questionaire.module.scss'
 import React from 'react'
-const BasicInfo = () => {
+
+type Props = {
+    readonly?: boolean
+}
+
+const BasicInfo = ({ readonly }: Props) => {
     const select_option = [
         {
             id: 1,
@@ -142,6 +147,14 @@ const BasicInfo = () => {
                         <Select
                             className={styles.inputField}
                             name="meal_time_option"
+                            inputProps={{
+                                readOnly: readonly,
+                            }}
+                            value={
+                                readonly
+                                    ? select_option[0].id.toString()
+                                    : undefined
+                            }
                         >
                             {select_option.map((item: any, index: number) => {
                                 return (
@@ -173,9 +186,11 @@ const BasicInfo = () => {
                             classes: {
                                 input: styles.inputField,
                             },
+                            readOnly: readonly,
                         }}
                         fullWidth
                         className={styles.textFieldProps}
+                        value={readonly && 100000}
                     />
                 </div>
             </Grid>
@@ -196,22 +211,63 @@ const BasicInfo = () => {
                     justifyContent="space-between"
                 >
                     <FormControlLabel
-                        control={<Checkbox />}
+                        control={
+                            <Checkbox
+                                sx={{
+                                    '&.Mui-checked.Mui-disabled': {
+                                        color: 'var(--mj-light-green) !important',
+                                    },
+                                }}
+                            />
+                        }
                         label="Chemical Substances"
+                        disabled={readonly}
                     />
-                    <FormControlLabel control={<Checkbox />} label="Dust" />
                     <FormControlLabel
-                        control={<Checkbox />}
+                        control={
+                            <Checkbox
+                                sx={{
+                                    '&.Mui-checked.Mui-disabled': {
+                                        color: 'var(--mj-light-green) !important',
+                                    },
+                                }}
+                            />
+                        }
+                        label="Dust"
+                        disabled={readonly}
+                        checked={readonly}
+                    />
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                sx={{
+                                    '&.Mui-checked.Mui-disabled': {
+                                        color: 'var(--mj-light-green) !important',
+                                    },
+                                }}
+                            />
+                        }
                         label="Physical Hazards"
+                        disabled={readonly}
                     />
                     <FormControlLabel
-                        control={<Checkbox />}
+                        control={
+                            <Checkbox
+                                sx={{
+                                    '&.Mui-checked.Mui-disabled': {
+                                        color: 'var(--mj-light-green) !important',
+                                    },
+                                }}
+                            />
+                        }
                         label="None Of The Above"
+                        disabled={readonly}
                     />
                 </Stack>
             </Grid>
         )
     }
+
     const fieldDisplay = (fieldType: number) => {
         switch (fieldType) {
             case 1:
@@ -250,6 +306,14 @@ const BasicInfo = () => {
                                             <Select
                                                 className={styles.inputField}
                                                 name="meal_time_option"
+                                                inputProps={{
+                                                    readOnly: readonly,
+                                                }}
+                                                value={
+                                                    readonly
+                                                        ? select_option[0].id.toString()
+                                                        : undefined
+                                                }
                                             >
                                                 {select_option.map(
                                                     (

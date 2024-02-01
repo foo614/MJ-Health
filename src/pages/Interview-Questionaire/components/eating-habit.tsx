@@ -13,7 +13,12 @@ import styles from '../_interview-questionaire.module.scss'
 import React from 'react'
 import { SelectChangeEvent } from '@mui/material/Select'
 import { useState } from 'react'
-const EatingHabit = () => {
+
+type Props = {
+    readonly?: boolean
+}
+
+const EatingHabit = ({ readonly }: Props) => {
     const [vegetarianValue, setVegetarianValue] = useState<string>('')
 
     const select_option = [
@@ -156,6 +161,14 @@ const EatingHabit = () => {
                             name="meal_time_option"
                             onChange={isVegetarian ? handleChange : undefined}
                             //value={isHabit1 ? smokeValue : ''}
+                            inputProps={{
+                                readOnly: readonly,
+                            }}
+                            value={
+                                readonly
+                                    ? select_option[0].id.toString()
+                                    : undefined
+                            }
                         >
                             {select_option.map((item: any, index: number) => {
                                 return (
@@ -187,6 +200,7 @@ const EatingHabit = () => {
                             classes: {
                                 input: styles.inputField,
                             },
+                            readOnly: readonly,
                         }}
                         fullWidth
                         className={styles.textFieldProps}
@@ -204,6 +218,7 @@ const EatingHabit = () => {
                                     : true
                                 : false
                         }
+                        value={readonly ? '10' : undefined}
                     />
                 </div>
             </Grid>
@@ -223,10 +238,58 @@ const EatingHabit = () => {
                     }}
                     spacing={2}
                 >
-                    <FormControlLabel control={<Checkbox />} label="<15%" />
-                    <FormControlLabel control={<Checkbox />} label="15-30%" />
-                    <FormControlLabel control={<Checkbox />} label="30-45%" />
-                    <FormControlLabel control={<Checkbox />} label=">45%" />
+                    <FormControlLabel
+                        disabled={readonly}
+                        control={
+                            <Checkbox
+                                sx={{
+                                    '&.Mui-checked.Mui-disabled': {
+                                        color: 'var(--mj-light-green) !important',
+                                    },
+                                }}
+                            />
+                        }
+                        label="<15%"
+                    />
+                    <FormControlLabel
+                        disabled={readonly}
+                        control={
+                            <Checkbox
+                                sx={{
+                                    '&.Mui-checked.Mui-disabled': {
+                                        color: 'var(--mj-light-green) !important',
+                                    },
+                                }}
+                            />
+                        }
+                        label="15-30%"
+                    />
+                    <FormControlLabel
+                        disabled={readonly}
+                        control={
+                            <Checkbox
+                                sx={{
+                                    '&.Mui-checked.Mui-disabled': {
+                                        color: 'var(--mj-light-green) !important',
+                                    },
+                                }}
+                            />
+                        }
+                        label="30-45%"
+                    />
+                    <FormControlLabel
+                        disabled={readonly}
+                        control={
+                            <Checkbox
+                                sx={{
+                                    '&.Mui-checked.Mui-disabled': {
+                                        color: 'var(--mj-light-green) !important',
+                                    },
+                                }}
+                            />
+                        }
+                        label=">45%"
+                    />
                 </Stack>
             </Grid>
         )
@@ -372,27 +435,82 @@ const EatingHabit = () => {
                             sx={{ paddingLeft: '20px' }}
                         >
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                checked={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Breakfast"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Morning Snack"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Lunch"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Afternoon Snack"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Dinner"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Late Night Snack"
                             />
                         </Stack>
@@ -423,31 +541,95 @@ const EatingHabit = () => {
                             sx={{ paddingLeft: '20px' }}
                         >
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                checked={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="None"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Breakfast"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Morning Snack"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Lunch"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Afternoon Snack"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Dinner"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Late Night Snack"
                             />
                         </Stack>
@@ -477,79 +659,253 @@ const EatingHabit = () => {
                             sx={{ display: 'block', paddingLeft: '25px' }}
                         >
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                checked={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="None"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Algae"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Calcium"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Chitosan"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Iron"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                checked={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Lactobacillus/Probriotics"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Lecithin"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                checked={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Multi-Vitamin"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Phytochemicals o (turmeric extract, grapeseed extract etc)"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Pollen"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Propolis"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Vegetable Fibre"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Vitamin B"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Vitamin C"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Vitamin D"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Vitamin E"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Zinc"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Fish Oil/Cod Liver oil/Flax Seed oil/Sacha Inchi Oil/Krill Oil"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Other Traditional Chinese Hers"
                             />
                         </Stack>

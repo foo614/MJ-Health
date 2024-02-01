@@ -14,7 +14,11 @@ import React from 'react'
 import { SelectChangeEvent } from '@mui/material/Select'
 import { useState } from 'react'
 
-const ExerciseHabit = () => {
+type Props = {
+    readonly?: boolean
+}
+
+const ExerciseHabit = ({ readonly }: Props) => {
     const select_option = [
         {
             id: 1,
@@ -75,6 +79,14 @@ const ExerciseHabit = () => {
                         <Select
                             className={styles.inputField}
                             name="meal_time_option"
+                            inputProps={{
+                                readOnly: readonly,
+                            }}
+                            value={
+                                readonly
+                                    ? select_option[0].id.toString()
+                                    : undefined
+                            }
                         >
                             {select_option.map((item: any, index: number) => {
                                 return (
@@ -120,25 +132,65 @@ const ExerciseHabit = () => {
                                         <div style={{ paddingLeft: '28px' }}>
                                             <div>
                                                 <FormControlLabel
-                                                    control={<Checkbox />}
+                                                    disabled={readonly}
+                                                    control={
+                                                        <Checkbox
+                                                            sx={{
+                                                                '&.Mui-checked.Mui-disabled':
+                                                                    {
+                                                                        color: 'var(--mj-light-green) !important',
+                                                                    },
+                                                            }}
+                                                        />
+                                                    }
                                                     label="Do not exercise"
                                                 />
                                             </div>
                                             <div>
                                                 <FormControlLabel
-                                                    control={<Checkbox />}
+                                                    disabled={readonly}
+                                                    control={
+                                                        <Checkbox
+                                                            sx={{
+                                                                '&.Mui-checked.Mui-disabled':
+                                                                    {
+                                                                        color: 'var(--mj-light-green) !important',
+                                                                    },
+                                                            }}
+                                                        />
+                                                    }
                                                     label="Anaerobic Exercise"
                                                 />
                                             </div>
                                             <div>
                                                 <FormControlLabel
-                                                    control={<Checkbox />}
+                                                    disabled={readonly}
+                                                    control={
+                                                        <Checkbox
+                                                            sx={{
+                                                                '&.Mui-checked.Mui-disabled':
+                                                                    {
+                                                                        color: 'var(--mj-light-green) !important',
+                                                                    },
+                                                            }}
+                                                        />
+                                                    }
                                                     label="Heavy-Aerobic (Cardiopulmonary) Exercise"
                                                 />
                                             </div>
                                             <div>
                                                 <FormControlLabel
-                                                    control={<Checkbox />}
+                                                    disabled={readonly}
+                                                    control={
+                                                        <Checkbox
+                                                            sx={{
+                                                                '&.Mui-checked.Mui-disabled':
+                                                                    {
+                                                                        color: 'var(--mj-light-green) !important',
+                                                                    },
+                                                            }}
+                                                        />
+                                                    }
                                                     label="Intensive-Aerobic (Cardiopulmonary) Exercise"
                                                 />
                                             </div>
@@ -148,19 +200,51 @@ const ExerciseHabit = () => {
                                         <div style={{ paddingLeft: '28px' }}>
                                             <div>
                                                 <FormControlLabel
-                                                    control={<Checkbox />}
+                                                    disabled={readonly}
+                                                    checked={readonly}
+                                                    control={
+                                                        <Checkbox
+                                                            sx={{
+                                                                '&.Mui-checked.Mui-disabled':
+                                                                    {
+                                                                        color: 'var(--mj-light-green) !important',
+                                                                    },
+                                                            }}
+                                                        />
+                                                    }
                                                     label="Mild-Aerobic (Cardiopulmonary) Exercise"
                                                 />
                                             </div>
                                             <div>
                                                 <FormControlLabel
-                                                    control={<Checkbox />}
+                                                    disabled={readonly}
+                                                    control={
+                                                        <Checkbox
+                                                            sx={{
+                                                                '&.Mui-checked.Mui-disabled':
+                                                                    {
+                                                                        color: 'var(--mj-light-green) !important',
+                                                                    },
+                                                            }}
+                                                        />
+                                                    }
                                                     label="Moderate-Aerobic (Cardiopulmonary) Exercise"
                                                 />
                                             </div>
                                             <div>
                                                 <FormControlLabel
-                                                    control={<Checkbox />}
+                                                    disabled={readonly}
+                                                    checked={readonly}
+                                                    control={
+                                                        <Checkbox
+                                                            sx={{
+                                                                '&.Mui-checked.Mui-disabled':
+                                                                    {
+                                                                        color: 'var(--mj-light-green) !important',
+                                                                    },
+                                                            }}
+                                                        />
+                                                    }
                                                     label="Stretching Exercise"
                                                 />
                                             </div>

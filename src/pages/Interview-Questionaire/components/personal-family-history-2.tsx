@@ -18,7 +18,11 @@ import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 
-const PersonalFamilyHistory2 = () => {
+type Props = {
+    readonly?: boolean
+}
+
+const PersonalFamilyHistory2 = ({ readonly }: Props) => {
     const select_option = [
         {
             id: 1,
@@ -257,8 +261,18 @@ const PersonalFamilyHistory2 = () => {
                                                     >
                                                         <div>
                                                             <FormControlLabel
+                                                                disabled={
+                                                                    readonly
+                                                                }
                                                                 control={
-                                                                    <Checkbox />
+                                                                    <Checkbox
+                                                                        sx={{
+                                                                            '&.Mui-checked.Mui-disabled':
+                                                                                {
+                                                                                    color: 'var(--mj-light-green) !important',
+                                                                                },
+                                                                        }}
+                                                                    />
                                                                 }
                                                                 label={
                                                                     checkBoxItem.label
@@ -285,6 +299,15 @@ const PersonalFamilyHistory2 = () => {
                                                                         styles.inputField
                                                                     }
                                                                     name="meal_time_option"
+                                                                    inputProps={{
+                                                                        readOnly:
+                                                                            readonly,
+                                                                    }}
+                                                                    value={
+                                                                        readonly
+                                                                            ? select_option[0].id.toString()
+                                                                            : undefined
+                                                                    }
                                                                 >
                                                                     {select_option.map(
                                                                         (
@@ -333,6 +356,15 @@ const PersonalFamilyHistory2 = () => {
                                                                         styles.inputField
                                                                     }
                                                                     name="meal_time_option"
+                                                                    inputProps={{
+                                                                        readOnly:
+                                                                            readonly,
+                                                                    }}
+                                                                    value={
+                                                                        readonly
+                                                                            ? select_option[0].id.toString()
+                                                                            : undefined
+                                                                    }
                                                                 >
                                                                     {select_option.map(
                                                                         (

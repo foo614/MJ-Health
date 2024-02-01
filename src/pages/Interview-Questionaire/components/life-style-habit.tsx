@@ -13,7 +13,11 @@ import styles from '../_interview-questionaire.module.scss'
 import React, { useState } from 'react'
 import { SelectChangeEvent } from '@mui/material/Select'
 
-const LifeStyleHabit = () => {
+type Props = {
+    readonly?: boolean
+}
+
+const LifeStyleHabit = ({ readonly }: Props) => {
     const [smokeValue, setSmokeValue] = useState<string>('')
 
     const select_option = [
@@ -152,6 +156,14 @@ const LifeStyleHabit = () => {
                             name="meal_time_option"
                             onChange={isHabit1 ? handleChange : undefined}
                             //value={isHabit1 ? smokeValue : ''}
+                            inputProps={{
+                                readOnly: readonly,
+                            }}
+                            value={
+                                readonly
+                                    ? select_option[0].id.toString()
+                                    : undefined
+                            }
                         >
                             {select_option.map((item: any, index: number) => {
                                 return (
@@ -183,6 +195,7 @@ const LifeStyleHabit = () => {
                             classes: {
                                 input: styles.inputField,
                             },
+                            readOnly: readonly,
                         }}
                         fullWidth
                         className={styles.textFieldProps}
@@ -200,6 +213,7 @@ const LifeStyleHabit = () => {
                                     : true
                                 : false
                         }
+                        value={readonly && '2'}
                     />
                 </div>
             </Grid>
@@ -219,10 +233,59 @@ const LifeStyleHabit = () => {
                     }}
                     spacing={2}
                 >
-                    <FormControlLabel control={<Checkbox />} label="<15%" />
-                    <FormControlLabel control={<Checkbox />} label="15-30%" />
-                    <FormControlLabel control={<Checkbox />} label="30-45%" />
-                    <FormControlLabel control={<Checkbox />} label=">45%" />
+                    <FormControlLabel
+                        disabled={readonly}
+                        checked={readonly}
+                        control={
+                            <Checkbox
+                                sx={{
+                                    '&.Mui-checked.Mui-disabled': {
+                                        color: 'var(--mj-light-green) !important',
+                                    },
+                                }}
+                            />
+                        }
+                        label="<15%"
+                    />
+                    <FormControlLabel
+                        disabled={readonly}
+                        control={
+                            <Checkbox
+                                sx={{
+                                    '&.Mui-checked.Mui-disabled': {
+                                        color: 'var(--mj-light-green) !important',
+                                    },
+                                }}
+                            />
+                        }
+                        label="15-30%"
+                    />
+                    <FormControlLabel
+                        disabled={readonly}
+                        control={
+                            <Checkbox
+                                sx={{
+                                    '&.Mui-checked.Mui-disabled': {
+                                        color: 'var(--mj-light-green) !important',
+                                    },
+                                }}
+                            />
+                        }
+                        label="30-45%"
+                    />
+                    <FormControlLabel
+                        disabled={readonly}
+                        control={
+                            <Checkbox
+                                sx={{
+                                    '&.Mui-checked.Mui-disabled': {
+                                        color: 'var(--mj-light-green) !important',
+                                    },
+                                }}
+                            />
+                        }
+                        label=">45%"
+                    />
                 </Stack>
             </Grid>
         )
@@ -293,7 +356,13 @@ const LifeStyleHabit = () => {
                     {habit_hygiene.map((item: any, index: number) => {
                         return (
                             <React.Fragment key={index}>
-                                <Grid item md={7} sm={6} xs={12} sx={{paddingLeft:"35px !important"}}>
+                                <Grid
+                                    item
+                                    md={7}
+                                    sm={6}
+                                    xs={12}
+                                    sx={{ paddingLeft: '35px !important' }}
+                                >
                                     <p className={styles.questionaire_sub_item}>
                                         {item.id}. {item.title}
                                     </p>

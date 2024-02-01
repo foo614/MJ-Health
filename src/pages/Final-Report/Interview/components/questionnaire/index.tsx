@@ -128,44 +128,35 @@ const FinalReportInterviewQuestionnaire = () => {
                 </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
-                <BasicInfo />
+                <BasicInfo readonly />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={1}>
-                <LifeStyleHabit />
+                <LifeStyleHabit readonly />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={2}>
-                <EatingHabit />
+                <EatingHabit readonly />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={3}>
-                <ExerciseHabit />
+                <ExerciseHabit readonly />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={4}>
-                <SleepQualityStress />
+                <SleepQualityStress readonly />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={5}>
-                <PhysicalSymptoms1 />
+                <PhysicalSymptoms1 readonly />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={6}>
-                <PhysicalSymptoms2 />
+                <PhysicalSymptoms2 readonly />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={7}>
-                <PersonalFamilyHistory1 />
+                <PersonalFamilyHistory1 readonly />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={8}>
-                <PersonalFamilyHistory2 />
+                <PersonalFamilyHistory2 readonly />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={9}>
-                <PersonalFamilyHistory3 />
+                <PersonalFamilyHistory3 readonly />
             </CustomTabPanel>
-            <div style={{ marginTop: '2rem', textAlign: 'end' }}>
-                <Button
-                    variant="contained"
-                    className={styles.questionaire_save_bttn}
-                    sx={{ width: '220px', height: '64px' }}
-                >
-                    Save
-                </Button>
-            </div>
         </Card>
     )
 }

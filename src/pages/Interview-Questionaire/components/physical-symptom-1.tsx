@@ -12,7 +12,11 @@ import {
 import styles from '../_interview-questionaire.module.scss'
 import React from 'react'
 
-const PhysicalSymptoms1 = () => {
+type Props = {
+    readonly?: boolean
+}
+
+const PhysicalSymptoms1 = ({ readonly }: Props) => {
     const select_option = [
         {
             id: 1,
@@ -52,6 +56,14 @@ const PhysicalSymptoms1 = () => {
                                 <Select
                                     className={styles.inputField}
                                     name="meal_time_option"
+                                    inputProps={{
+                                        readOnly: readonly,
+                                    }}
+                                    value={
+                                        readonly
+                                            ? select_option[0].id.toString()
+                                            : undefined
+                                    }
                                 >
                                     {select_option.map(
                                         (item: any, index: number) => {
@@ -89,6 +101,14 @@ const PhysicalSymptoms1 = () => {
                                 <Select
                                     className={styles.inputField}
                                     name="meal_time_option"
+                                    inputProps={{
+                                        readOnly: readonly,
+                                    }}
+                                    value={
+                                        readonly
+                                            ? select_option[0].id.toString()
+                                            : undefined
+                                    }
                                 >
                                     {select_option.map(
                                         (item: any, index: number) => {
@@ -129,31 +149,95 @@ const PhysicalSymptoms1 = () => {
                             }}
                         >
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                checked={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="No"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Drug Allergy"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Eye Allergy"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Food Allergy"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Nose Allergy"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Skin Allergy"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Other Allergy"
                             />
                         </Stack>
@@ -190,39 +274,121 @@ const PhysicalSymptoms1 = () => {
                             }}
                         >
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                checked={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="No"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Dry"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Excessive Tearing"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Flashes"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Floating Objects (Floaters)"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Itchiness"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Pain"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Reduced Vision"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Visual Distortion"
                             />
                         </Stack>
@@ -255,6 +421,14 @@ const PhysicalSymptoms1 = () => {
                                 <Select
                                     className={styles.inputField}
                                     name="meal_time_option"
+                                    inputProps={{
+                                        readOnly: readonly,
+                                    }}
+                                    value={
+                                        readonly
+                                            ? select_option[0].id.toString()
+                                            : undefined
+                                    }
                                 >
                                     {select_option.map(
                                         (item: any, index: number) => {
@@ -296,15 +470,43 @@ const PhysicalSymptoms1 = () => {
                             }}
                         >
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                checked={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="No"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Itchiness"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Retention of Fluid (Discharge)"
                             />
                         </Stack>
@@ -325,6 +527,14 @@ const PhysicalSymptoms1 = () => {
                                 <Select
                                     className={styles.inputField}
                                     name="meal_time_option"
+                                    inputProps={{
+                                        readOnly: readonly,
+                                    }}
+                                    value={
+                                        readonly
+                                            ? select_option[0].id.toString()
+                                            : undefined
+                                    }
                                 >
                                     {select_option.map(
                                         (item: any, index: number) => {
@@ -361,6 +571,14 @@ const PhysicalSymptoms1 = () => {
                                 <Select
                                     className={styles.inputField}
                                     name="meal_time_option"
+                                    inputProps={{
+                                        readOnly: readonly,
+                                    }}
+                                    value={
+                                        readonly
+                                            ? select_option[0].id.toString()
+                                            : undefined
+                                    }
                                 >
                                     {select_option.map(
                                         (item: any, index: number) => {
@@ -413,19 +631,56 @@ const PhysicalSymptoms1 = () => {
                             }}
                         >
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                checked={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="No"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Allergy"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Nose Bleed"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Other"
                             />
                         </Stack>
@@ -457,6 +712,14 @@ const PhysicalSymptoms1 = () => {
                                 <Select
                                     className={styles.inputField}
                                     name="meal_time_option"
+                                    inputProps={{
+                                        readOnly: readonly,
+                                    }}
+                                    value={
+                                        readonly
+                                            ? select_option[0].id.toString()
+                                            : undefined
+                                    }
                                 >
                                     {select_option.map(
                                         (item: any, index: number) => {
@@ -493,6 +756,14 @@ const PhysicalSymptoms1 = () => {
                                 <Select
                                     className={styles.inputField}
                                     name="meal_time_option"
+                                    inputProps={{
+                                        readOnly: readonly,
+                                    }}
+                                    value={
+                                        readonly
+                                            ? select_option[0].id.toString()
+                                            : undefined
+                                    }
                                 >
                                     {select_option.map(
                                         (item: any, index: number) => {
@@ -529,6 +800,14 @@ const PhysicalSymptoms1 = () => {
                                 <Select
                                     className={styles.inputField}
                                     name="meal_time_option"
+                                    inputProps={{
+                                        readOnly: readonly,
+                                    }}
+                                    value={
+                                        readonly
+                                            ? select_option[0].id.toString()
+                                            : undefined
+                                    }
                                 >
                                     {select_option.map(
                                         (item: any, index: number) => {
@@ -565,6 +844,14 @@ const PhysicalSymptoms1 = () => {
                                 <Select
                                     className={styles.inputField}
                                     name="meal_time_option"
+                                    inputProps={{
+                                        readOnly: readonly,
+                                    }}
+                                    value={
+                                        readonly
+                                            ? select_option[0].id.toString()
+                                            : undefined
+                                    }
                                 >
                                     {select_option.map(
                                         (item: any, index: number) => {
@@ -601,6 +888,14 @@ const PhysicalSymptoms1 = () => {
                                 <Select
                                     className={styles.inputField}
                                     name="meal_time_option"
+                                    inputProps={{
+                                        readOnly: readonly,
+                                    }}
+                                    value={
+                                        readonly
+                                            ? select_option[0].id.toString()
+                                            : undefined
+                                    }
                                 >
                                     {select_option.map(
                                         (item: any, index: number) => {
@@ -653,23 +948,69 @@ const PhysicalSymptoms1 = () => {
                             }}
                         >
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                checked={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="No"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Abnormal Colour Patches"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Neoplasm (Neoformation)"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Ulceration Or White Spots"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Ulcers That Are Difficult To Heal"
                             />
                         </Stack>
@@ -705,19 +1046,56 @@ const PhysicalSymptoms1 = () => {
                             }}
                         >
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                checked={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="No"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Enlarged Mole"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Lumps"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Unhealed Wounds"
                             />
                         </Stack>
@@ -753,15 +1131,43 @@ const PhysicalSymptoms1 = () => {
                             }}
                         >
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                checked={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="No"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Yes When Exercising"
                             />
                             <FormControlLabel
-                                control={<Checkbox />}
+                                disabled={readonly}
+                                control={
+                                    <Checkbox
+                                        sx={{
+                                            '&.Mui-checked.Mui-disabled': {
+                                                color: 'var(--mj-light-green) !important',
+                                            },
+                                        }}
+                                    />
+                                }
                                 label="Yes When At rest "
                             />
                         </Stack>
@@ -782,6 +1188,14 @@ const PhysicalSymptoms1 = () => {
                                 <Select
                                     className={styles.inputField}
                                     name="meal_time_option"
+                                    inputProps={{
+                                        readOnly: readonly,
+                                    }}
+                                    value={
+                                        readonly
+                                            ? select_option[0].id.toString()
+                                            : undefined
+                                    }
                                 >
                                     {select_option.map(
                                         (item: any, index: number) => {
@@ -818,6 +1232,14 @@ const PhysicalSymptoms1 = () => {
                                 <Select
                                     className={styles.inputField}
                                     name="meal_time_option"
+                                    inputProps={{
+                                        readOnly: readonly,
+                                    }}
+                                    value={
+                                        readonly
+                                            ? select_option[0].id.toString()
+                                            : undefined
+                                    }
                                 >
                                     {select_option.map(
                                         (item: any, index: number) => {
