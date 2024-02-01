@@ -26,7 +26,7 @@ const ScreeningRoomHeader = ({ title }: Props) => {
                     <Button
                         variant="contained"
                         className={styles.checkoutButton}
-                        startIcon={<img src={CheckoutIcon} alt="Checkout" />}
+                        startIcon={<img src={CheckoutIcon} alt="" />}
                     >
                         <Typography className={styles.checkoutButtonText}>
                             Check Out
