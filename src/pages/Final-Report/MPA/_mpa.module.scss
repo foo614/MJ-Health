@@ -1,0 +1,160 @@
+@use 'styles/variables' as *;
+
+.print_bttn {
+    height: 40px;
+    background: var(--color-turquoise) !important;
+    border-radius: var(--br-10xs) !important;
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    text-align: center !important;
+    color: var(--color-white) !important;
+}
+
+.view_bttn {
+    height: 40px;
+    border-radius: var(--br-10xs) !important;
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    text-align: center !important;
+}
+
+.card {
+    background: var(--color-white) !important;
+    border-radius: var(--br-3xs) !important;
+    // padding: 20px 35px;
+    margin-top: 20px;
+}
+
+.paddingSection {
+    padding: 20px 35px;
+}
+
+.selectedBttn {
+    background: var(--color-white) !important;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1) !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--title-color) !important;
+    width: 250px !important;
+    height: 50px !important;
+    line-height: unset !important;
+}
+
+.unSelectedBttn {
+    background: #ededed !important;
+    border-radius: var(--br-8xs) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--label-color) !important;
+    width: 250px !important;
+    height: 50px !important;
+    line-height: unset !important;
+}
+
+.confirm_changes_bttn {
+    background: var(--mj-deep-green) !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--color-white) !important;
+}
+
+.edit_bttn {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--mj-deep-green) !important;
+}
+
+.divLine {
+    height: 2px !important;
+    background: #ededed;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+
+.table_title {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--title-color) !important;
+}
+
+.table_head {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.mpaTable {
+    border-collapse: separate !important;
+    border-spacing: 10px 0px !important;
+}
+
+.textFieldProps {
+    border-radius: 3px !important;
+    background-color: var(--color-white) !important;
+    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.inputField {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--title-color) !important;
+}
+
+.mpa_table_cell {
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important ;
+    color: var(--title-color) !important;
+}
+
+.mpa_table_unit {
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important ;
+    text-align: center;
+    color: var(--label-color) !important;
+}
+
+// .mpa_table_background {
+//     background: #fdfdfd !important;
+//     border: 2px solid #ededed !important;
+//     border-radius: 8px !important;
+// }
+
+.mpa_table_cell_first {
+    background: #fdfdfd !important;
+    border-top: 2px solid #ededed !important;
+    border-left: 2px solid #ededed !important;
+    border-right: 2px solid #ededed !important;
+    border-bottom: 0 !important;
+    border-radius: 8px 8px 0px 0px !important;
+}
+
+.mpa_table_cell_middle {
+    background: #fdfdfd;
+    border-left: 2px solid #ededed !important;
+    border-right: 2px solid #ededed !important;
+    border-bottom: 0 !important;
+}
+
+.mpa_table_cell_last {
+    background: #fdfdfd;
+    border-left: 2px solid #ededed !important;
+    border-right: 2px solid #ededed !important;
+    border-bottom: 2px solid #ededed !important;
+    border-radius: 0px 0px 8px 8px !important;
+}
+
+.mpa_table_view_bttn {
+    background: var(--label-color) !important;
+    box-shadow: 0px 4px 16px rgba(90, 86, 123, 0.15) !important;
+    border-radius: var(--br-10xs) !important;
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--color-white) !important;
+}

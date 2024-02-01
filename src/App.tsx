@@ -13,6 +13,7 @@ import {
     FINAL_REPORT_HMC_RECORD,
     FINAL_REPORT_HMP_BROCHURE,
     FINAL_REPORT_INTERVIEW_PAGE,
+    FINAL_REPORT_MPA,
     FINAL_REPORT_PAPS_SMEAR_EXAM,
     GENERAL_MEASUREMENT_PAGE,
     HEALTH_MANAGEMENT_CONSULTATION_INFO_PAGE,
@@ -128,6 +129,7 @@ import FinalReportInterview from 'pages/Final-Report/Interview'
 import HMPBrochure from 'pages/Final-Report/HMC-Brochure'
 import PapsSmearExam from 'pages/Final-Report/Paps-Smear-Exam'
 import HMCRecord from 'pages/Final-Report/HMC-Record'
+import MPA from 'pages/Final-Report/MPA'
 
 function App() {
     const data = [
@@ -428,6 +430,7 @@ function App() {
                     element={<PapsSmearExam />}
                 />
                 <Route path={FINAL_REPORT_HMC_RECORD} element={<HMCRecord />} />
+                <Route path={FINAL_REPORT_MPA} element={<MPA />} />
             </Routes>
         </ThemeProvider>
     )

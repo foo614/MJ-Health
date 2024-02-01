@@ -67,3 +67,4 @@ export const FINAL_REPORT_INTERVIEW_PAGE = FINAL_REPORT + '/interview'
 export const FINAL_REPORT_HMP_BROCHURE = FINAL_REPORT + '/hmp-brochure'
 export const FINAL_REPORT_PAPS_SMEAR_EXAM = FINAL_REPORT + '/paps-smear-exam'
 export const FINAL_REPORT_HMC_RECORD = FINAL_REPORT + "/hmc-record"
+export const FINAL_REPORT_MPA = FINAL_REPORT + "/mpa"
