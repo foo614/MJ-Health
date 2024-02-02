@@ -7,9 +7,15 @@ type Props = {
     headerLabel?: string
     lastRow?: boolean
     noBackground?: boolean
+    readonly?: boolean
 }
 
-const TableRowSeparator = ({ headerLabel, lastRow, noBackground }: Props) => {
+const TableRowSeparator = ({
+    headerLabel,
+    lastRow,
+    noBackground,
+    readonly,
+}: Props) => {
     return (
         <TableRow>
             <TableCell
@@ -29,7 +35,7 @@ const TableRowSeparator = ({ headerLabel, lastRow, noBackground }: Props) => {
                         : lastRow
                           ? styles.currentBottom
                           : styles.current
-                }`}
+                } ${readonly ? styles.readonly : ''}`}
             ></TableCell>
             <TableCellSeparator />
             <TableCell
@@ -42,7 +48,7 @@ const TableRowSeparator = ({ headerLabel, lastRow, noBackground }: Props) => {
                         : lastRow
                           ? styles.backDateBottom
                           : styles.backDate
-                }`}
+                } ${readonly ? styles.readonly : ''}`}
             ></TableCell>
             <TableCellSeparator />
             <TableCell
@@ -55,7 +61,7 @@ const TableRowSeparator = ({ headerLabel, lastRow, noBackground }: Props) => {
                         : lastRow
                           ? styles.backDateBottom
                           : styles.backDate
-                }`}
+                } ${readonly ? styles.readonly : ''}`}
             ></TableCell>
         </TableRow>
     )

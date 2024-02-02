@@ -3,19 +3,25 @@ import Table from '@mui/material/Table'
 import TableCell from '@mui/material/TableCell'
 import TableRow from '@mui/material/TableRow'
 import TableContainer from '@mui/material/TableContainer'
-import TableCellSeparator from './table-cell-separator'
 import Stack from '@mui/material/Stack'
 import TextField from '@mui/material/TextField'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 import ScoreInput from './score-input'
-import TableRowSeparator from './table-row-separator'
 import InputAdornment from '@mui/material/InputAdornment'
 import Button from '@mui/material/Button'
 import styles from '../_audiometry-detail.module.scss'
+import Grid from '@mui/material/Grid'
+import TableRowSeparator from 'components/ScreeningRoom/TableSeparator/table-row-separator'
+import TableCellSeparator from 'components/ScreeningRoom/TableSeparator/table-cell-separator'
 
-const AudiometryExamReport = () => {
+type Props = {
+    readonly?: boolean
+    saveButton?: boolean
+}
+
+const AudiometryExamReport = ({ readonly, saveButton }: Props) => {
     const options = [
         {
             id: 1,
@@ -29,33 +35,47 @@ const AudiometryExamReport = () => {
                 <Table size="small" className={styles.examReportTable}>
                     <TableRow>
                         <TableCell
-                            className={`${styles.examReportTableHeaderLabel} ${styles.tableCell}`}
+                            className={`${styles.examReportTableHeaderLabel} ${
+                                styles.tableCell
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             Items
                         </TableCell>
                         <TableCell
                             width="26%"
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.currentTop}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.currentTop} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             Current
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
                             width="26%"
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.backDateTop}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.backDateTop} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             22-09-2020
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
                             width="26%"
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.backDateTop}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.backDateTop} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             22-09-2018
                         </TableCell>
                     </TableRow>
 
-                    <TableRowSeparator />
+                    <TableRowSeparator readonly={readonly} />
 
                     {/* Right Ear */}
                     <TableRow>
@@ -63,14 +83,16 @@ const AudiometryExamReport = () => {
                             Right Ear
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <Stack
                                 direction="row"
                                 spacing={1}
                                 justifyContent="space-between"
                             >
-                                <ScoreInput value="[CNT]" />
+                                <ScoreInput readonly={readonly} value="[CNT]" />
                                 <FormControl
                                     fullWidth
                                     className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
@@ -80,6 +102,7 @@ const AudiometryExamReport = () => {
                                         value={1}
                                         inputProps={{
                                             style: { minWidth: '150px' },
+                                            readOnly: readonly,
                                         }}
                                     >
                                         <MenuItem value={0}>-</MenuItem>
@@ -97,14 +120,16 @@ const AudiometryExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <Stack
                                 direction="row"
                                 spacing={1}
                                 justifyContent="space-between"
                             >
-                                <ScoreInput />
+                                <ScoreInput readonly={readonly} />
                                 <FormControl
                                     fullWidth
                                     className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
@@ -113,6 +138,7 @@ const AudiometryExamReport = () => {
                                         size="small"
                                         inputProps={{
                                             style: { minWidth: '150px' },
+                                            readOnly: readonly,
                                         }}
                                     >
                                         <MenuItem value={0}>-</MenuItem>
@@ -130,14 +156,16 @@ const AudiometryExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <Stack
                                 direction="row"
                                 spacing={1}
                                 justifyContent="space-between"
                             >
-                                <ScoreInput />
+                                <ScoreInput readonly={readonly} />
                                 <FormControl
                                     fullWidth
                                     className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
@@ -146,6 +174,7 @@ const AudiometryExamReport = () => {
                                         size="small"
                                         inputProps={{
                                             style: { minWidth: '150px' },
+                                            readOnly: readonly,
                                         }}
                                     >
                                         <MenuItem value={0}>-</MenuItem>
@@ -169,14 +198,16 @@ const AudiometryExamReport = () => {
                             Left Ear
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <Stack
                                 direction="row"
                                 spacing={1}
                                 justifyContent="space-between"
                             >
-                                <ScoreInput />
+                                <ScoreInput readonly={readonly} />
                                 <FormControl
                                     fullWidth
                                     className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
@@ -185,6 +216,7 @@ const AudiometryExamReport = () => {
                                         size="small"
                                         inputProps={{
                                             style: { minWidth: '150px' },
+                                            readOnly: readonly,
                                         }}
                                     >
                                         <MenuItem value={0}>-</MenuItem>
@@ -202,14 +234,16 @@ const AudiometryExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <Stack
                                 direction="row"
                                 spacing={1}
                                 justifyContent="space-between"
                             >
-                                <ScoreInput />
+                                <ScoreInput readonly={readonly} />
                                 <FormControl
                                     fullWidth
                                     className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
@@ -218,6 +252,7 @@ const AudiometryExamReport = () => {
                                         size="small"
                                         inputProps={{
                                             style: { minWidth: '150px' },
+                                            readOnly: readonly,
                                         }}
                                     >
                                         <MenuItem value={0}>-</MenuItem>
@@ -235,14 +270,16 @@ const AudiometryExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <Stack
                                 direction="row"
                                 spacing={1}
                                 justifyContent="space-between"
                             >
-                                <ScoreInput />
+                                <ScoreInput readonly={readonly} />
                                 <FormControl
                                     fullWidth
                                     className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
@@ -251,6 +288,7 @@ const AudiometryExamReport = () => {
                                         size="small"
                                         inputProps={{
                                             style: { minWidth: '150px' },
+                                            readOnly: readonly,
                                         }}
                                     >
                                         <MenuItem value={0}>-</MenuItem>
@@ -268,20 +306,26 @@ const AudiometryExamReport = () => {
                         </TableCell>
                     </TableRow>
 
-                    <TableRowSeparator lastRow />
+                    <TableRowSeparator readonly={readonly} lastRow />
                 </Table>
             </TableContainer>
 
-            <Box
-                sx={{
-                    float: 'right',
-                    marginTop: '1.5rem',
-                }}
-            >
-                <Button variant="contained" className={styles.saveButton}>
-                    Save
-                </Button>
-            </Box>
+            {saveButton && (
+                <Box
+                    sx={{
+                        marginTop: '1.5rem',
+                    }}
+                >
+                    <Grid container justifyContent="flex-end">
+                        <Button
+                            variant="contained"
+                            className={styles.saveButton}
+                        >
+                            Save
+                        </Button>
+                    </Grid>
+                </Box>
+            )}
         </>
     )
 }

@@ -10,6 +10,7 @@ import {
     ELECTROCARDIOGRAM_PAGE,
     ENT_EXAMINATION_PAGE,
     FINAL_REPORT,
+    FINAL_REPORT_AUDIOMETRY,
     FINAL_REPORT_HMC_RECORD,
     FINAL_REPORT_HMP_BROCHURE,
     FINAL_REPORT_INTERVIEW_PAGE,
@@ -130,6 +131,7 @@ import HMPBrochure from 'pages/Final-Report/HMC-Brochure'
 import PapsSmearExam from 'pages/Final-Report/Paps-Smear-Exam'
 import HMCRecord from 'pages/Final-Report/HMC-Record'
 import MPA from 'pages/Final-Report/MPA'
+import FinalReportAudiometry from 'pages/Final-Report/Audiometry'
 
 function App() {
     const data = [
@@ -431,6 +433,10 @@ function App() {
                 />
                 <Route path={FINAL_REPORT_HMC_RECORD} element={<HMCRecord />} />
                 <Route path={FINAL_REPORT_MPA} element={<MPA />} />
+                <Route
+                    path={FINAL_REPORT_AUDIOMETRY}
+                    element={<FinalReportAudiometry />}
+                />
             </Routes>
         </ThemeProvider>
     )

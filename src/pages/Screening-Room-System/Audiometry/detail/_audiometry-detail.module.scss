@@ -36,6 +36,10 @@
     font-weight: 600;
 }
 
+.examReportTable {
+    border-collapse: separate !important;
+}
+
 .examReportTable .tableCell {
     border-bottom: none !important;
     text-align: center;
@@ -63,6 +67,27 @@
     .tableCell.backDateBottom {
         border-radius: 0 0 8px 8px;
     }
+
+    .tableCell.readonly.current,
+    .tableCell.readonly.currentTop,
+    .tableCell.readonly.backDateTop,
+    .tableCell.readonly.backDate,
+    .tableCell.readonly.backDateTop,
+    .tableCell.readonly.backDateBottom {
+        background-color: #fdfdfd;
+        border-left: 1px solid #ededed;
+        border-right: 1px solid #ededed;
+    }
+
+    .tableCell.readonly.currentTop,
+    .tableCell.readonly.backDateTop {
+        border-top: 1px solid #ededed;
+    }
+
+    .tableCell.readonly.currentBottom,
+    .tableCell.readonly.backDateBottom {
+        border-bottom: 1px solid #ededed;
+    }
 }
 
 .examReportTableHeaderLabel,
@@ -71,6 +96,10 @@
     font-size: 1.25rem !important;
     font-weight: 600 !important;
     text-align: left !important;
+}
+
+.examReportTableHeaderLabel.readonly {
+    color: var(--title-color);
 }
 
 .examReportTable .tableCellDateLabel {

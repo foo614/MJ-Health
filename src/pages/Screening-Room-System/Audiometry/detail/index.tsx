@@ -100,7 +100,7 @@ const AudiometryDetail = () => {
                             />
 
                             {tabPage == 'examReport' && (
-                                <AudiometryExamReport />
+                                <AudiometryExamReport saveButton />
                             )}
 
                             {tabPage == 'addonService' && <AddOnService />}

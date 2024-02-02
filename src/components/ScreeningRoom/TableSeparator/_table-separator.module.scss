@@ -55,3 +55,24 @@
 .tableCell.backDateBottom {
     border-radius: 0 0 8px 8px;
 }
+
+.tableCell.readonly.current,
+.tableCell.readonly.currentTop,
+.tableCell.readonly.currentBottom,
+.tableCell.readonly.backDate,
+.tableCell.readonly.backDateTop,
+.tableCell.readonly.backDateBottom {
+    background-color: #fdfdfd;
+    border-left: 1px solid #ededed;
+    border-right: 1px solid #ededed;
+}
+
+.tableCell.readonly.currentTop,
+.tableCell.readonly.backDateTop {
+    border-top: 1px solid #ededed;
+}
+
+.tableCell.readonly.currentBottom,
+.tableCell.readonly.backDateBottom {
+    border-bottom: 1px solid #ededed !important;
+}

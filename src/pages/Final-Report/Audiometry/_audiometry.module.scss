@@ -1,0 +1,7 @@
+@use 'styles/variables' as *;
+
+.cardTitle {
+    color: var(--title-color);
+    font-size: var(--font-size-5xl);
+    font-weight: 600;
+}

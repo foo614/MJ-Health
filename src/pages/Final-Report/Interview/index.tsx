@@ -74,7 +74,7 @@ const FinalReportInterview = () => {
                         }}
                     />
 
-                    <CardContent sx={{ padding: '0 1.5rem' }}>
+                    <CardContent sx={{ padding: '0 1.5rem 1.5rem' }}>
                         <Stack direction="row" spacing={2}>
                             <Button
                                 variant="contained"
