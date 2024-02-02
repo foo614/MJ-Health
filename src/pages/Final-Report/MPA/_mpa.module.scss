@@ -126,7 +126,7 @@
 // }
 
 .mpa_table_cell_first {
-    background: #fdfdfd !important;
+    background: var(--color-whitesmoke-100);
     border-top: 2px solid #ededed !important;
     border-left: 2px solid #ededed !important;
     border-right: 2px solid #ededed !important;
@@ -135,14 +135,14 @@
 }
 
 .mpa_table_cell_middle {
-    background: #fdfdfd;
+    background: var(--color-whitesmoke-100);
     border-left: 2px solid #ededed !important;
     border-right: 2px solid #ededed !important;
     border-bottom: 0 !important;
 }
 
 .mpa_table_cell_last {
-    background: #fdfdfd;
+    background: var(--color-whitesmoke-100);
     border-left: 2px solid #ededed !important;
     border-right: 2px solid #ededed !important;
     border-bottom: 2px solid #ededed !important;
@@ -157,4 +157,11 @@
     font-size: var(--font-size-base) !important;
     text-align: center;
     color: var(--color-white) !important;
+}
+
+.view_modal_text {
+    font-weight: 500 !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+    color: var(--label-color) !important;
 }

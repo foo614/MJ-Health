@@ -6,7 +6,11 @@ import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import styles from '../_mpa.module.scss'
 import { TextField, Stack } from '@mui/material'
-const Metabolic = () => {
+
+type Props = {
+    editMode: boolean
+}
+const Metabolic: React.FC<Props> = ({ editMode }: Props) => {
     const metabolic_data = [
         {
             id: 1,
@@ -103,6 +107,9 @@ const Metabolic = () => {
                                 </TableCell>
                                 <TableCell
                                     className={styles.mpa_table_cell_first}
+                                    sx={{
+                                        background: editMode ? '#DDDDDD' : '',
+                                    }}
                                 >
                                     <p
                                         className={styles.table_head}
@@ -220,6 +227,11 @@ const Metabolic = () => {
                                             className={
                                                 styles.mpa_table_cell_middle
                                             }
+                                            sx={{
+                                                background: editMode
+                                                    ? '#DDDDDD'
+                                                    : '',
+                                            }}
                                         >
                                             <Stack
                                                 direction="row"
@@ -374,6 +386,9 @@ const Metabolic = () => {
                                 ></TableCell>
                                 <TableCell
                                     className={styles.mpa_table_cell_last}
+                                    sx={{
+                                        background: editMode ? '#DDDDDD' : '',
+                                    }}
                                 ></TableCell>
                                 <TableCell
                                     sx={{ borderBottom: '0' }}

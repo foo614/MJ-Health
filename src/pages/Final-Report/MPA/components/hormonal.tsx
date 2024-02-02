@@ -6,8 +6,15 @@ import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import styles from '../_mpa.module.scss'
 import { TextField, Stack, Button } from '@mui/material'
+import { useState } from 'react'
+import ViewModal from './view-modal'
 
-const Hormonal = () => {
+type Props = {
+    editMode: boolean
+}
+
+const Hormonal: React.FC<Props> = ({ editMode }: Props) => {
+    const [openViewModal, setViewModal] = useState<boolean>(false)
     const hormonal_data = [
         {
             id: 1,
@@ -114,6 +121,9 @@ const Hormonal = () => {
                                 </TableCell>
                                 <TableCell
                                     className={styles.mpa_table_cell_first}
+                                    sx={{
+                                        background: editMode ? '#DDDDDD' : '',
+                                    }}
                                 >
                                     <p
                                         className={styles.table_head}
@@ -231,6 +241,11 @@ const Hormonal = () => {
                                             className={
                                                 styles.mpa_table_cell_middle
                                             }
+                                            sx={{
+                                                background: editMode
+                                                    ? '#DDDDDD'
+                                                    : '',
+                                            }}
                                         >
                                             <Stack
                                                 direction="row"
@@ -340,6 +355,9 @@ const Hormonal = () => {
                                                     className={
                                                         styles.mpa_table_view_bttn
                                                     }
+                                                    onClick={() =>
+                                                        setViewModal(true)
+                                                    }
                                                 >
                                                     View
                                                 </Button>
@@ -372,6 +390,9 @@ const Hormonal = () => {
                                                     fullWidth
                                                     className={
                                                         styles.mpa_table_view_bttn
+                                                    }
+                                                    onClick={() =>
+                                                        setViewModal(true)
                                                     }
                                                 >
                                                     View
@@ -409,6 +430,9 @@ const Hormonal = () => {
                                 ></TableCell>
                                 <TableCell
                                     className={styles.mpa_table_cell_last}
+                                    sx={{
+                                        background: editMode ? '#DDDDDD' : '',
+                                    }}
                                 ></TableCell>
                                 <TableCell
                                     sx={{ borderBottom: '0' }}
@@ -424,6 +448,9 @@ const Hormonal = () => {
                     </Table>
                 </TableContainer>
             </div>
+            {openViewModal ? (
+                <ViewModal open={openViewModal} setOpen={setViewModal} />
+            ) : null}
         </>
     )
 }

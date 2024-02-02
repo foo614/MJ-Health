@@ -39,7 +39,7 @@ const HMCRecord = () => {
             <ResponsiveAppBar />
             <UserHeader />
             <CustomHeader
-                title="HMP BROCHURE - FINAL REPORT"
+                title="HMC RECORD - FINAL REPORT"
                 to={FINAL_REPORT}
                 endAdornment={
                     editMode ? (

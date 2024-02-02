@@ -23,11 +23,11 @@ const MPA = () => {
     const displaySection = () => {
         switch (selectedSection) {
             case 1:
-                return <Metabolic />
+                return <Metabolic editMode={editMode} />
             case 2:
-                return <Inflammation />
+                return <Inflammation editMode={editMode} />
             case 3:
-                return <Hormonal />
+                return <Hormonal editMode={editMode} />
             default:
                 return null
         }
@@ -149,6 +149,14 @@ const MPA = () => {
                     </div>
                 </Card>
             </Container>
+            {openEditModal ? (
+                <StaffEditModal
+                    open={openEditModal}
+                    setOpen={setOpenEditModal}
+                    title="Edit Report Data"
+                    handleConfirmEdit={handleConfirmEdit}
+                />
+            ) : null}
         </>
     )
 }

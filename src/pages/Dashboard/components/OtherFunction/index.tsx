@@ -1,6 +1,7 @@
 import Grid from '@mui/material/Grid'
 import Stack from '@mui/material/Stack'
 import {
+    FINAL_REPORT,
     IT_MONITOR_ROOM_PAGE,
     IT_ROOM_PRINTING_PAGE,
     MUL_REPORT_PAGE,
@@ -55,7 +56,11 @@ const OtherFunction = () => {
                         label="Room Management"
                         onClick={() => navigate(ROOM_MANAGEMENT_PAGE)}
                     />
-                    <CustomBoxButton image={GroupIcon} label="Final Report" />
+                    <CustomBoxButton
+                        image={GroupIcon}
+                        label="Final Report"
+                        onClick={() => navigate(FINAL_REPORT)}
+                    />
                 </Stack>
             </Grid>
         </Grid>

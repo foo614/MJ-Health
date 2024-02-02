@@ -7,7 +7,11 @@ import TableRow from '@mui/material/TableRow'
 import styles from '../_mpa.module.scss'
 import { TextField, Stack } from '@mui/material'
 
-const Inflammation = () => {
+type Props = {
+    editMode: boolean
+}
+
+const Inflammation: React.FC<Props> = ({ editMode }: Props) => {
     const inflammation_data = [
         {
             id: 1,
@@ -79,6 +83,9 @@ const Inflammation = () => {
                                 </TableCell>
                                 <TableCell
                                     className={styles.mpa_table_cell_first}
+                                    sx={{
+                                        background: editMode ? '#DDDDDD' : '',
+                                    }}
                                 >
                                     <p
                                         className={styles.table_head}
@@ -197,6 +204,11 @@ const Inflammation = () => {
                                                 className={
                                                     styles.mpa_table_cell_middle
                                                 }
+                                                sx={{
+                                                    background: editMode
+                                                        ? '#DDDDDD'
+                                                        : '',
+                                                }}
                                             >
                                                 <Stack
                                                     direction="row"
@@ -352,6 +364,9 @@ const Inflammation = () => {
                                 ></TableCell>
                                 <TableCell
                                     className={styles.mpa_table_cell_last}
+                                    sx={{
+                                        background: editMode ? '#DDDDDD' : '',
+                                    }}
                                 ></TableCell>
                                 <TableCell
                                     sx={{ borderBottom: '0' }}
