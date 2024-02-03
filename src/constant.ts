@@ -72,5 +72,7 @@ export const FINAL_REPORT_AUDIOMETRY = FINAL_REPORT + '/audiometry'
 export const FINAL_REPORT_BONE_MINERAL_DENSITY =
     FINAL_REPORT + '/bone-mineral-density'
 export const FINAL_REPORT_ENT_EXAMINATION = FINAL_REPORT + '/ent-examination'
+export const FINAL_REPORT_ELECTROCARDIOGRAM =
+    FINAL_REPORT + '/electrocardiogram'
 export const FINAL_REPORT_GENERAL_MEASUREMENT =
     FINAL_REPORT + '/general-measurement'

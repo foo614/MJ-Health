@@ -103,7 +103,7 @@ const ElectrocardiogramDetail = () => {
                             />
 
                             {tabPage == 'examReport' && (
-                                <ElectrocardiogramExamReport />
+                                <ElectrocardiogramExamReport saveButton />
                             )}
 
                             {tabPage == 'addonService' && <AddOnService />}

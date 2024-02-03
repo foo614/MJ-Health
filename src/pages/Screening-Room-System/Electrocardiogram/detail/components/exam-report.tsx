@@ -1,53 +1,70 @@
 import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Grid from '@mui/material/Grid'
+import InputAdornment from '@mui/material/InputAdornment'
 import Table from '@mui/material/Table'
 import TableCell from '@mui/material/TableCell'
 import TableRow from '@mui/material/TableRow'
 import TableContainer from '@mui/material/TableContainer'
-import TableCellSeparator from './table-cell-separator'
-import Stack from '@mui/material/Stack'
 import TextField from '@mui/material/TextField'
 import FormControl from '@mui/material/FormControl'
-import Select from '@mui/material/Select'
-import MenuItem from '@mui/material/MenuItem'
-import TableRowSeparator from './table-row-separator'
-import InputAdornment from '@mui/material/InputAdornment'
-import Button from '@mui/material/Button'
 import styles from '../_electrocardiogram-detail.module.scss'
+import TableCellSeparator from 'components/ScreeningRoom/TableSeparator/table-cell-separator'
+import TableRowSeparator from 'components/ScreeningRoom/TableSeparator/table-row-separator'
 
-const ElectrocardiogramExamReport = () => {
+type Props = {
+    readonly?: boolean
+    saveButton?: boolean
+}
+
+const ElectrocardiogramExamReport = ({ readonly, saveButton }: Props) => {
     return (
         <>
             <TableContainer style={{ overflow: 'auto' }}>
                 <Table size="small" className={styles.examReportTable}>
                     <TableRow>
                         <TableCell
-                            className={`${styles.examReportTableHeaderLabel} ${styles.tableCell}`}
+                            className={`${styles.examReportTableHeaderLabel} ${
+                                styles.tableCell
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             Items
                         </TableCell>
                         <TableCell
                             width="26%"
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.currentTop}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.currentTop} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             Current
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
                             width="26%"
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.backDateTop}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.backDateTop} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             22-09-2020
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
                             width="26%"
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.backDateTop}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.backDateTop} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             22-09-2018
                         </TableCell>
                     </TableRow>
 
-                    <TableRowSeparator />
+                    <TableRowSeparator readonly={readonly} />
 
                     {/* Chest Circumference */}
                     <TableRow>
@@ -55,7 +72,9 @@ const ElectrocardiogramExamReport = () => {
                             Chest Circumference
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -72,13 +91,16 @@ const ElectrocardiogramExamReport = () => {
                                                 <small>Centimeter (s)</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -95,13 +117,16 @@ const ElectrocardiogramExamReport = () => {
                                                 <small>Centimeter (s)</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -118,6 +143,7 @@ const ElectrocardiogramExamReport = () => {
                                                 <small>Centimeter (s)</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
@@ -130,7 +156,9 @@ const ElectrocardiogramExamReport = () => {
                             Chest Circumference (Inspiration)
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -147,13 +175,16 @@ const ElectrocardiogramExamReport = () => {
                                                 <small>Centimeter (s)</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -170,13 +201,16 @@ const ElectrocardiogramExamReport = () => {
                                                 <small>Centimeter (s)</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -193,6 +227,7 @@ const ElectrocardiogramExamReport = () => {
                                                 <small>Centimeter (s)</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
@@ -205,7 +240,9 @@ const ElectrocardiogramExamReport = () => {
                             Waist Circumference
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -222,13 +259,16 @@ const ElectrocardiogramExamReport = () => {
                                                 <small>Centimeter (s)</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -245,13 +285,16 @@ const ElectrocardiogramExamReport = () => {
                                                 <small>Centimeter (s)</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -268,6 +311,7 @@ const ElectrocardiogramExamReport = () => {
                                                 <small>Centimeter (s)</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
@@ -280,7 +324,9 @@ const ElectrocardiogramExamReport = () => {
                             Hip Circumference
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -297,13 +343,16 @@ const ElectrocardiogramExamReport = () => {
                                                 <small>Centimeter (s)</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -320,13 +369,16 @@ const ElectrocardiogramExamReport = () => {
                                                 <small>Centimeter (s)</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -343,6 +395,7 @@ const ElectrocardiogramExamReport = () => {
                                                 <small>Centimeter (s)</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
@@ -355,7 +408,9 @@ const ElectrocardiogramExamReport = () => {
                             Waist/Hip Ratio
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -366,12 +421,17 @@ const ElectrocardiogramExamReport = () => {
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
+                                    InputProps={{
+                                        readOnly: readonly,
+                                    }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -382,12 +442,17 @@ const ElectrocardiogramExamReport = () => {
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
+                                    InputProps={{
+                                        readOnly: readonly,
+                                    }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -397,6 +462,9 @@ const ElectrocardiogramExamReport = () => {
                                     size="small"
                                     inputProps={{
                                         style: { minWidth: '150px' },
+                                    }}
+                                    InputProps={{
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
@@ -409,7 +477,9 @@ const ElectrocardiogramExamReport = () => {
                             Pulse Rate
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -426,13 +496,16 @@ const ElectrocardiogramExamReport = () => {
                                                 <small>/Minute</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -449,13 +522,16 @@ const ElectrocardiogramExamReport = () => {
                                                 <small>/Minute</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -472,6 +548,7 @@ const ElectrocardiogramExamReport = () => {
                                                 <small>/Minute</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
@@ -484,7 +561,9 @@ const ElectrocardiogramExamReport = () => {
                             Respiration Rate
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -501,13 +580,16 @@ const ElectrocardiogramExamReport = () => {
                                                 <small>/Minute</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -524,13 +606,16 @@ const ElectrocardiogramExamReport = () => {
                                                 <small>/Minute</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -547,26 +632,33 @@ const ElectrocardiogramExamReport = () => {
                                                 <small>/Minute</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                     </TableRow>
 
-                    <TableRowSeparator lastRow />
+                    <TableRowSeparator readonly={readonly} lastRow />
                 </Table>
             </TableContainer>
 
-            <Box
-                sx={{
-                    float: 'right',
-                    marginTop: '1.5rem',
-                }}
-            >
-                <Button variant="contained" className={styles.saveButton}>
-                    Save
-                </Button>
-            </Box>
+            {saveButton && (
+                <Box
+                    sx={{
+                        marginTop: '1.5rem',
+                    }}
+                >
+                    <Grid container justifyContent="flex-end">
+                        <Button
+                            variant="contained"
+                            className={styles.saveButton}
+                        >
+                            Save
+                        </Button>
+                    </Grid>
+                </Box>
+            )}
         </>
     )
 }

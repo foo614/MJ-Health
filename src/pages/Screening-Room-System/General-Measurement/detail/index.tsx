@@ -104,7 +104,7 @@ const GeneralMeasurementDetail = () => {
                             />
 
                             {tabPage == 'examReport' && (
-                                <GeneralMeasurementExamReport />
+                                <GeneralMeasurementExamReport saveButton />
                             )}
 
                             {tabPage == 'addonService' && <AddOnService />}
