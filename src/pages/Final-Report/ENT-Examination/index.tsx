@@ -15,6 +15,7 @@ import EditIcon from 'images/member-edit.png'
 import styles from './_ent-examination.module.scss'
 import ENTExaminationExamReport from 'pages/Screening-Room-System/ENT-Examination/detail/components/exam-report'
 import CommentSuggestionList from 'components/ScreeningRoom/CommentSuggestionList'
+import Grid from '@mui/material/Grid'
 
 const FinalReportENTExamination = () => {
     const [readonly, setReadonly] = useState<boolean>(true)
@@ -34,35 +35,50 @@ const FinalReportENTExamination = () => {
                 <Card>
                     <CardHeader
                         title={
-                            <div>
-                                <Box sx={{ float: 'right' }}>
-                                    {readonly ? (
-                                        <Button
-                                            variant="text"
-                                            onClick={() => setReadonly(false)}
-                                        >
-                                            <Stack
-                                                direction="row"
-                                                spacing={1}
-                                                alignItems="center"
+                            <Grid
+                                container
+                                justifyContent="space-between"
+                                alignItems="center"
+                            >
+                                <Grid>
+                                    <p className={styles.cardTitle}>
+                                        ENT Examination
+                                    </p>
+                                </Grid>
+                                <Grid>
+                                    <Box>
+                                        {readonly ? (
+                                            <Button
+                                                variant="text"
+                                                onClick={() =>
+                                                    setReadonly(false)
+                                                }
                                             >
-                                                <span>Edit</span>
-                                                <img src={EditIcon} alt="" />
-                                            </Stack>
-                                        </Button>
-                                    ) : (
-                                        <Button
-                                            variant="contained"
-                                            onClick={() => setReadonly(true)}
-                                        >
-                                            Confirm Changes
-                                        </Button>
-                                    )}
-                                </Box>
-                                <p className={styles.cardTitle}>
-                                    ENT Examination
-                                </p>
-                            </div>
+                                                <Stack
+                                                    direction="row"
+                                                    spacing={1}
+                                                    alignItems="center"
+                                                >
+                                                    <span>Edit</span>
+                                                    <img
+                                                        src={EditIcon}
+                                                        alt=""
+                                                    />
+                                                </Stack>
+                                            </Button>
+                                        ) : (
+                                            <Button
+                                                variant="contained"
+                                                onClick={() =>
+                                                    setReadonly(true)
+                                                }
+                                            >
+                                                Confirm Changes
+                                            </Button>
+                                        )}
+                                    </Box>
+                                </Grid>
+                            </Grid>
                         }
                         titleTypographyProps={{ className: styles.cardTitle }}
                         sx={{ padding: '1rem 1.5rem' }}

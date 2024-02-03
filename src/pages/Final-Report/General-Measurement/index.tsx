@@ -12,11 +12,11 @@ import UserHeader from 'components/UserHeader'
 import { FINAL_REPORT } from 'constant'
 import { useState } from 'react'
 import EditIcon from 'images/member-edit.png'
-import styles from './_bone-mineral-density.module.scss'
-import BoneMineralDensityExamReport from 'pages/Screening-Room-System/Bone-Mineral-Density/Bone-Mineral-Density-Info/components/exam-report'
+import styles from './_general-measurement.module.scss'
+import GeneralMeasurementExamReport from 'pages/Screening-Room-System/General-Measurement/detail/components/exam-report'
 import Grid from '@mui/material/Grid'
 
-const FinalReportBoneMineralDensity = () => {
+const FinalReportGeneralMeasurement = () => {
     const [readonly, setReadonly] = useState<boolean>(true)
 
     return (
@@ -41,7 +41,7 @@ const FinalReportBoneMineralDensity = () => {
                             >
                                 <Grid>
                                     <p className={styles.cardTitle}>
-                                        Bone Mineral Density
+                                        General Measurement
                                     </p>
                                 </Grid>
                                 <Grid>
@@ -90,7 +90,7 @@ const FinalReportBoneMineralDensity = () => {
                     />
 
                     <CardContent sx={{ padding: '0 1.5rem' }}>
-                        <BoneMineralDensityExamReport readonly={readonly} />
+                        <GeneralMeasurementExamReport readonly={readonly} />
                     </CardContent>
                 </Card>
             </Container>
@@ -98,4 +98,4 @@ const FinalReportBoneMineralDensity = () => {
     )
 }
 
-export default FinalReportBoneMineralDensity
+export default FinalReportGeneralMeasurement

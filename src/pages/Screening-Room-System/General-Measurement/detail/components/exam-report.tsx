@@ -1,54 +1,74 @@
+import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
+import FormControl from '@mui/material/FormControl'
+import Grid from '@mui/material/Grid'
+import InputAdornment from '@mui/material/InputAdornment'
+import MenuItem from '@mui/material/MenuItem'
+import Select from '@mui/material/Select'
+import Stack from '@mui/material/Stack'
 import Table from '@mui/material/Table'
 import TableCell from '@mui/material/TableCell'
 import TableRow from '@mui/material/TableRow'
 import TableContainer from '@mui/material/TableContainer'
-import TableCellSeparator from './table-cell-separator'
-import Stack from '@mui/material/Stack'
 import TextField from '@mui/material/TextField'
-import FormControl from '@mui/material/FormControl'
-import Select from '@mui/material/Select'
-import MenuItem from '@mui/material/MenuItem'
-import TableRowSeparator from './table-row-separator'
-import InputAdornment from '@mui/material/InputAdornment'
-import Button from '@mui/material/Button'
 import styles from '../_general-measurement-detail.module.scss'
+import TableCellSeparator from 'components/ScreeningRoom/TableSeparator/table-cell-separator'
+import TableRowSeparator from 'components/ScreeningRoom/TableSeparator/table-row-separator'
 
-const GeneralMeasurementExamReport = () => {
+type Props = {
+    readonly?: boolean
+    saveButton?: boolean
+}
+
+const GeneralMeasurementExamReport = ({ readonly, saveButton }: Props) => {
     return (
         <>
             <TableContainer style={{ overflow: 'auto' }}>
                 <Table size="small" className={styles.examReportTable}>
                     <TableRow>
                         <TableCell
-                            className={`${styles.examReportTableHeaderLabel} ${styles.tableCell}`}
+                            className={`${styles.examReportTableHeaderLabel} ${
+                                styles.tableCell
+                            } ${readonly ? styles.readonly : ''}`}
                             sx={{ minWidth: '250px !important' }}
                         >
                             Items
                         </TableCell>
                         <TableCell
                             width="25%"
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.currentTop}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.currentTop} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             Current
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
                             width="25%"
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.backDateTop}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.backDateTop} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             22-09-2020
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
                             width="25%"
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.backDateTop}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.backDateTop} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             22-09-2018
                         </TableCell>
                     </TableRow>
 
-                    <TableRowSeparator />
+                    <TableRowSeparator readonly={readonly} />
 
                     {/* Height */}
                     <TableRow>
@@ -56,7 +76,9 @@ const GeneralMeasurementExamReport = () => {
                             Height
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -73,13 +95,16 @@ const GeneralMeasurementExamReport = () => {
                                                 <small>Meter (s)</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -96,13 +121,16 @@ const GeneralMeasurementExamReport = () => {
                                                 <small>Meter (s)</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -119,6 +147,7 @@ const GeneralMeasurementExamReport = () => {
                                                 <small>Meter (s)</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
@@ -131,7 +160,9 @@ const GeneralMeasurementExamReport = () => {
                             Weight
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -148,13 +179,16 @@ const GeneralMeasurementExamReport = () => {
                                                 <small>Kilogram (s)</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -171,13 +205,16 @@ const GeneralMeasurementExamReport = () => {
                                                 <small>Kilogram (s)</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -194,6 +231,7 @@ const GeneralMeasurementExamReport = () => {
                                                 <small>Kilogram (s)</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
@@ -206,7 +244,9 @@ const GeneralMeasurementExamReport = () => {
                             Ideal Body
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -223,13 +263,16 @@ const GeneralMeasurementExamReport = () => {
                                                 <small>Kilogram (s)</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -246,13 +289,16 @@ const GeneralMeasurementExamReport = () => {
                                                 <small>Kilogram (s)</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -269,6 +315,7 @@ const GeneralMeasurementExamReport = () => {
                                                 <small>Kilogram (s)</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
@@ -281,7 +328,9 @@ const GeneralMeasurementExamReport = () => {
                             Body Fat
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -298,13 +347,16 @@ const GeneralMeasurementExamReport = () => {
                                                 <small>%</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -321,13 +373,16 @@ const GeneralMeasurementExamReport = () => {
                                                 <small>%</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -344,6 +399,7 @@ const GeneralMeasurementExamReport = () => {
                                                 <small>%</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
@@ -356,7 +412,9 @@ const GeneralMeasurementExamReport = () => {
                             BP (Right Hand) <small>Systolic/Diastolic</small>
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <Stack
                                 direction="row"
@@ -375,6 +433,7 @@ const GeneralMeasurementExamReport = () => {
                                                     <small>mmHg</small>
                                                 </InputAdornment>
                                             ),
+                                            readOnly: readonly,
                                         }}
                                     />
                                 </FormControl>
@@ -390,6 +449,7 @@ const GeneralMeasurementExamReport = () => {
                                                     <small>mmHg</small>
                                                 </InputAdornment>
                                             ),
+                                            readOnly: readonly,
                                         }}
                                     />
                                 </FormControl>
@@ -397,7 +457,9 @@ const GeneralMeasurementExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <Stack
                                 direction="row"
@@ -416,6 +478,7 @@ const GeneralMeasurementExamReport = () => {
                                                     <small>mmHg</small>
                                                 </InputAdornment>
                                             ),
+                                            readOnly: readonly,
                                         }}
                                     />
                                 </FormControl>
@@ -431,6 +494,7 @@ const GeneralMeasurementExamReport = () => {
                                                     <small>mmHg</small>
                                                 </InputAdornment>
                                             ),
+                                            readOnly: readonly,
                                         }}
                                     />
                                 </FormControl>
@@ -438,7 +502,9 @@ const GeneralMeasurementExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <Stack
                                 direction="row"
@@ -457,6 +523,7 @@ const GeneralMeasurementExamReport = () => {
                                                     <small>mmHg</small>
                                                 </InputAdornment>
                                             ),
+                                            readOnly: readonly,
                                         }}
                                     />
                                 </FormControl>
@@ -472,6 +539,7 @@ const GeneralMeasurementExamReport = () => {
                                                     <small>mmHg</small>
                                                 </InputAdornment>
                                             ),
+                                            readOnly: readonly,
                                         }}
                                     />
                                 </FormControl>
@@ -485,7 +553,9 @@ const GeneralMeasurementExamReport = () => {
                             BP (Left Hand) <small>Systolic/Diastolic</small>
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <Stack
                                 direction="row"
@@ -504,6 +574,7 @@ const GeneralMeasurementExamReport = () => {
                                                     <small>mmHg</small>
                                                 </InputAdornment>
                                             ),
+                                            readOnly: readonly,
                                         }}
                                     />
                                 </FormControl>
@@ -519,6 +590,7 @@ const GeneralMeasurementExamReport = () => {
                                                     <small>mmHg</small>
                                                 </InputAdornment>
                                             ),
+                                            readOnly: readonly,
                                         }}
                                     />
                                 </FormControl>
@@ -526,7 +598,9 @@ const GeneralMeasurementExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <Stack
                                 direction="row"
@@ -545,6 +619,7 @@ const GeneralMeasurementExamReport = () => {
                                                     <small>mmHg</small>
                                                 </InputAdornment>
                                             ),
+                                            readOnly: readonly,
                                         }}
                                     />
                                 </FormControl>
@@ -560,6 +635,7 @@ const GeneralMeasurementExamReport = () => {
                                                     <small>mmHg</small>
                                                 </InputAdornment>
                                             ),
+                                            readOnly: readonly,
                                         }}
                                     />
                                 </FormControl>
@@ -567,7 +643,9 @@ const GeneralMeasurementExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <Stack
                                 direction="row"
@@ -586,6 +664,7 @@ const GeneralMeasurementExamReport = () => {
                                                     <small>mmHg</small>
                                                 </InputAdornment>
                                             ),
+                                            readOnly: readonly,
                                         }}
                                     />
                                 </FormControl>
@@ -601,6 +680,7 @@ const GeneralMeasurementExamReport = () => {
                                                     <small>mmHg</small>
                                                 </InputAdornment>
                                             ),
+                                            readOnly: readonly,
                                         }}
                                     />
                                 </FormControl>
@@ -614,7 +694,9 @@ const GeneralMeasurementExamReport = () => {
                             Muscle Mass
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -625,6 +707,7 @@ const GeneralMeasurementExamReport = () => {
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
+                                    readOnly={readonly}
                                 >
                                     <MenuItem value={0}>-</MenuItem>
 
@@ -634,7 +717,9 @@ const GeneralMeasurementExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -645,6 +730,7 @@ const GeneralMeasurementExamReport = () => {
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
+                                    readOnly={readonly}
                                 >
                                     <MenuItem value={0}>-</MenuItem>
 
@@ -654,7 +740,9 @@ const GeneralMeasurementExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -665,6 +753,7 @@ const GeneralMeasurementExamReport = () => {
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
+                                    readOnly={readonly}
                                 >
                                     <MenuItem value={0}>-</MenuItem>
 
@@ -680,7 +769,9 @@ const GeneralMeasurementExamReport = () => {
                             Pulse Rate
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -697,13 +788,16 @@ const GeneralMeasurementExamReport = () => {
                                                 <small>/Minute</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -720,13 +814,16 @@ const GeneralMeasurementExamReport = () => {
                                                 <small>/Minute</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -743,6 +840,7 @@ const GeneralMeasurementExamReport = () => {
                                                 <small>/Minute</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
@@ -755,7 +853,9 @@ const GeneralMeasurementExamReport = () => {
                             Respiratory Rate
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -772,13 +872,16 @@ const GeneralMeasurementExamReport = () => {
                                                 <small>/Minute</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -795,13 +898,16 @@ const GeneralMeasurementExamReport = () => {
                                                 <small>/Minute</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -818,6 +924,7 @@ const GeneralMeasurementExamReport = () => {
                                                 <small>/Minute</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
@@ -830,7 +937,9 @@ const GeneralMeasurementExamReport = () => {
                             SPo2
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -847,13 +956,16 @@ const GeneralMeasurementExamReport = () => {
                                                 <small>%</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -870,13 +982,16 @@ const GeneralMeasurementExamReport = () => {
                                                 <small>%</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -893,26 +1008,33 @@ const GeneralMeasurementExamReport = () => {
                                                 <small>%</small>
                                             </InputAdornment>
                                         ),
+                                        readOnly: readonly,
                                     }}
                                 />
                             </FormControl>
                         </TableCell>
                     </TableRow>
 
-                    <TableRowSeparator lastRow />
+                    <TableRowSeparator readonly={readonly} lastRow />
                 </Table>
             </TableContainer>
 
-            <Box
-                sx={{
-                    float: 'right',
-                    marginTop: '1.5rem',
-                }}
-            >
-                <Button variant="contained" className={styles.saveButton}>
-                    Save
-                </Button>
-            </Box>
+            {saveButton && (
+                <Box
+                    sx={{
+                        marginTop: '1.5rem',
+                    }}
+                >
+                    <Grid container justifyContent="flex-end">
+                        <Button
+                            variant="contained"
+                            className={styles.saveButton}
+                        >
+                            Save
+                        </Button>
+                    </Grid>
+                </Box>
+            )}
         </>
     )
 }
