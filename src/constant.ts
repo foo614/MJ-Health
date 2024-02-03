@@ -81,3 +81,4 @@ export const FINAL_REPORT_LUNG_FUNCTION_TEST =
     FINAL_REPORT + '/lung-function-test'
 export const FINAL_REPORT_PERIPHERAL_VASCULAR_SCREENING =
     FINAL_REPORT + '/peripheral-vascular-screening'
+export const FINAL_REPORT_RETINOGRAPHY = FINAL_REPORT + '/retinography'

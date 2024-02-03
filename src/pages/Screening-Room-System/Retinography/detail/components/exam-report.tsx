@@ -1,4 +1,3 @@
-import { Stack, Typography } from '@mui/material'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import FormControl from '@mui/material/FormControl'
@@ -13,8 +12,16 @@ import TextField from '@mui/material/TextField'
 import TableCellSeparator from 'components/ScreeningRoom/TableSeparator/table-cell-separator'
 import TableRowSeparator from 'components/ScreeningRoom/TableSeparator/table-row-separator'
 import styles from '../_retinography.module.scss'
+import Typography from '@mui/material/Typography'
+import Stack from '@mui/material/Stack'
+import Grid from '@mui/material/Grid'
 
-const PeripheralVascularScreeningExamReport = () => {
+type Props = {
+    readonly?: boolean
+    saveButton?: boolean
+}
+
+const RetinographyExamReport = ({ readonly, saveButton }: Props) => {
     const options = [
         {
             id: 1,
@@ -40,33 +47,47 @@ const PeripheralVascularScreeningExamReport = () => {
                 <Table size="small" className={styles.examReportTable}>
                     <TableRow>
                         <TableCell
-                            className={`${styles.examReportTableHeaderLabel} ${styles.tableCell}`}
+                            className={`${styles.examReportTableHeaderLabel} ${
+                                styles.tableCell
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             Items
                         </TableCell>
                         <TableCell
                             width="26%"
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.currentTop}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.currentTop} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             Current
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
                             width="26%"
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.backDateTop}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.backDateTop} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             22-09-2020
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
                             width="26%"
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.backDateTop}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.backDateTop} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             22-09-2018
                         </TableCell>
                     </TableRow>
 
-                    <TableRowSeparator />
+                    <TableRowSeparator readonly={readonly} />
 
                     {/* Strabismus  */}
                     <TableRow>
@@ -74,7 +95,9 @@ const PeripheralVascularScreeningExamReport = () => {
                             Strabismus
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -86,6 +109,7 @@ const PeripheralVascularScreeningExamReport = () => {
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
+                                    readOnly={readonly}
                                 >
                                     <MenuItem value={0}>-</MenuItem>
                                     {options.map((item) => (
@@ -98,7 +122,9 @@ const PeripheralVascularScreeningExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -110,6 +136,7 @@ const PeripheralVascularScreeningExamReport = () => {
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
+                                    readOnly={readonly}
                                 >
                                     <MenuItem value={0}>-</MenuItem>
                                     {options.map((item) => (
@@ -122,7 +149,9 @@ const PeripheralVascularScreeningExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -134,6 +163,7 @@ const PeripheralVascularScreeningExamReport = () => {
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
+                                    readOnly={readonly}
                                 >
                                     <MenuItem value={0}>-</MenuItem>
                                     {options.map((item) => (
@@ -152,7 +182,9 @@ const PeripheralVascularScreeningExamReport = () => {
                             Astigmatism
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -164,6 +196,7 @@ const PeripheralVascularScreeningExamReport = () => {
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
+                                    readOnly={readonly}
                                 >
                                     <MenuItem value={0}>-</MenuItem>
                                     {options.map((item) => (
@@ -176,7 +209,9 @@ const PeripheralVascularScreeningExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -188,6 +223,7 @@ const PeripheralVascularScreeningExamReport = () => {
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
+                                    readOnly={readonly}
                                 >
                                     <MenuItem value={0}>-</MenuItem>
                                     {options.map((item) => (
@@ -200,7 +236,9 @@ const PeripheralVascularScreeningExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -212,6 +250,7 @@ const PeripheralVascularScreeningExamReport = () => {
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
+                                    readOnly={readonly}
                                 >
                                     <MenuItem value={0}>-</MenuItem>
                                     {options.map((item) => (
@@ -224,7 +263,7 @@ const PeripheralVascularScreeningExamReport = () => {
                         </TableCell>
                     </TableRow>
 
-                    <TableRowSeparator lastRow />
+                    <TableRowSeparator readonly={readonly} lastRow />
                     <TableRowSeparator noBackground />
 
                     {/* Without Glasses */}
@@ -251,7 +290,10 @@ const PeripheralVascularScreeningExamReport = () => {
                                     >
                                         Right
                                     </Typography>
-                                    <TextField size="small" />
+                                    <TextField
+                                        size="small"
+                                        InputProps={{ readOnly: readonly }}
+                                    />
                                 </FormControl>
                                 <FormControl
                                     fullWidth
@@ -266,7 +308,10 @@ const PeripheralVascularScreeningExamReport = () => {
                                     >
                                         Left
                                     </Typography>
-                                    <TextField size="small" />
+                                    <TextField
+                                        size="small"
+                                        InputProps={{ readOnly: readonly }}
+                                    />
                                 </FormControl>
                             </Stack>
                         </TableCell>
@@ -295,6 +340,7 @@ const PeripheralVascularScreeningExamReport = () => {
                                                     <small>mmHg</small>
                                                 </InputAdornment>
                                             ),
+                                            readOnly: readonly,
                                         }}
                                     />
                                 </FormControl>
@@ -310,6 +356,7 @@ const PeripheralVascularScreeningExamReport = () => {
                                                     <small>mmHg</small>
                                                 </InputAdornment>
                                             ),
+                                            readOnly: readonly,
                                         }}
                                     />
                                 </FormControl>
@@ -332,13 +379,19 @@ const PeripheralVascularScreeningExamReport = () => {
                                     fullWidth
                                     className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <TextField size="small" />
+                                    <TextField
+                                        size="small"
+                                        InputProps={{ readOnly: readonly }}
+                                    />
                                 </FormControl>
                                 <FormControl
                                     fullWidth
                                     className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <TextField size="small" />
+                                    <TextField
+                                        size="small"
+                                        InputProps={{ readOnly: readonly }}
+                                    />
                                 </FormControl>
                             </Stack>
                         </TableCell>
@@ -367,6 +420,7 @@ const PeripheralVascularScreeningExamReport = () => {
                                                     <small>mmHg</small>
                                                 </InputAdornment>
                                             ),
+                                            readOnly: readonly,
                                         }}
                                     />
                                 </FormControl>
@@ -382,6 +436,7 @@ const PeripheralVascularScreeningExamReport = () => {
                                                     <small>mmHg</small>
                                                 </InputAdornment>
                                             ),
+                                            readOnly: readonly,
                                         }}
                                     />
                                 </FormControl>
@@ -412,6 +467,7 @@ const PeripheralVascularScreeningExamReport = () => {
                                                     <small>mmHg</small>
                                                 </InputAdornment>
                                             ),
+                                            readOnly: readonly,
                                         }}
                                     />
                                 </FormControl>
@@ -427,6 +483,7 @@ const PeripheralVascularScreeningExamReport = () => {
                                                     <small>mmHg</small>
                                                 </InputAdornment>
                                             ),
+                                            readOnly: readonly,
                                         }}
                                     />
                                 </FormControl>
@@ -444,7 +501,10 @@ const PeripheralVascularScreeningExamReport = () => {
                                 fullWidth
                                 className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                             >
-                                <TextField size="small" />
+                                <TextField
+                                    size="small"
+                                    InputProps={{ readOnly: readonly }}
+                                />
                             </FormControl>
                         </TableCell>
                     </TableRow>
@@ -464,13 +524,19 @@ const PeripheralVascularScreeningExamReport = () => {
                                     fullWidth
                                     className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <TextField size="small" />
+                                    <TextField
+                                        size="small"
+                                        InputProps={{ readOnly: readonly }}
+                                    />
                                 </FormControl>
                                 <FormControl
                                     fullWidth
                                     className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                                 >
-                                    <TextField size="small" />
+                                    <TextField
+                                        size="small"
+                                        InputProps={{ readOnly: readonly }}
+                                    />
                                 </FormControl>
                             </Stack>
                         </TableCell>
@@ -481,18 +547,24 @@ const PeripheralVascularScreeningExamReport = () => {
                 </Table>
             </TableContainer>
 
-            <Box
-                sx={{
-                    float: 'right',
-                    marginTop: '1.5rem',
-                }}
-            >
-                <Button variant="contained" className={styles.saveButton}>
-                    Save
-                </Button>
-            </Box>
+            {saveButton && (
+                <Box
+                    sx={{
+                        marginTop: '1.5rem',
+                    }}
+                >
+                    <Grid container justifyContent="flex-end">
+                        <Button
+                            variant="contained"
+                            className={styles.saveButton}
+                        >
+                            Save
+                        </Button>
+                    </Grid>
+                </Box>
+            )}
         </>
     )
 }
 
-export default PeripheralVascularScreeningExamReport
+export default RetinographyExamReport

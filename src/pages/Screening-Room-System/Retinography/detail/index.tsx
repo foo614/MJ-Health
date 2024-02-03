@@ -15,7 +15,7 @@ import MedicalHistoryModal from 'pages/Physician-Consultation-Info/components/me
 import { useState } from 'react'
 import styles from './_retinography.module.scss'
 import ButtonCard from './components/button-card'
-import MammographyExamReport from './components/exam-report'
+import RetinographyExamReport from './components/exam-report'
 
 const RetinographyDetail = () => {
     const theme = useTheme()
@@ -117,7 +117,7 @@ const RetinographyDetail = () => {
                             />
 
                             {tabPage == 'examReport' && (
-                                <MammographyExamReport />
+                                <RetinographyExamReport saveButton />
                             )}
 
                             {tabPage == 'addonService' && <AddOnService />}
