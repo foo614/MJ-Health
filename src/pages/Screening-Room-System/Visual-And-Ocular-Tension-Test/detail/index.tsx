@@ -15,7 +15,7 @@ import MedicalHistoryModal from 'pages/Physician-Consultation-Info/components/me
 import { useState } from 'react'
 import styles from './_visual-and-ocular-tension-test.module.scss'
 import ButtonCard from './components/button-card'
-import MammographyExamReport from './components/exam-report'
+import T from './components/exam-report'
 
 const VisualAndOcularTensionDetail = () => {
     const theme = useTheme()
@@ -116,9 +116,7 @@ const VisualAndOcularTensionDetail = () => {
                                 }}
                             />
 
-                            {tabPage == 'examReport' && (
-                                <MammographyExamReport />
-                            )}
+                            {tabPage == 'examReport' && <T saveButton />}
 
                             {tabPage == 'addonService' && <AddOnService />}
 
