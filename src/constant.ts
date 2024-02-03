@@ -69,3 +69,5 @@ export const FINAL_REPORT_PAPS_SMEAR_EXAM = FINAL_REPORT + '/paps-smear-exam'
 export const FINAL_REPORT_HMC_RECORD = FINAL_REPORT + '/hmc-record'
 export const FINAL_REPORT_MPA = FINAL_REPORT + '/mpa'
 export const FINAL_REPORT_AUDIOMETRY = FINAL_REPORT + '/audiometry'
+export const FINAL_REPORT_BONE_MINERAL_DENSITY =
+    FINAL_REPORT + '/bone-mineral-density'

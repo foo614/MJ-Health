@@ -36,16 +36,14 @@
     font-weight: 600;
 }
 
-.examReportTable {
-    border-collapse: separate !important;
-}
-
 .examReportTable .tableCell {
     border-bottom: none !important;
     text-align: center;
 }
 
 .examReportTable {
+    border-collapse: separate !important;
+
     .tableCell.current,
     .tableCell.currentTop,
     .tableCell.currentBottom {

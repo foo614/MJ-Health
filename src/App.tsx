@@ -11,6 +11,7 @@ import {
     ENT_EXAMINATION_PAGE,
     FINAL_REPORT,
     FINAL_REPORT_AUDIOMETRY,
+    FINAL_REPORT_BONE_MINERAL_DENSITY,
     FINAL_REPORT_HMC_RECORD,
     FINAL_REPORT_HMP_BROCHURE,
     FINAL_REPORT_INTERVIEW_PAGE,
@@ -132,6 +133,7 @@ import PapsSmearExam from 'pages/Final-Report/Paps-Smear-Exam'
 import HMCRecord from 'pages/Final-Report/HMC-Record'
 import MPA from 'pages/Final-Report/MPA'
 import FinalReportAudiometry from 'pages/Final-Report/Audiometry'
+import FinalReportBoneMineralDensity from 'pages/Final-Report/Bone-Mineral-Density'
 
 function App() {
     const data = [
@@ -436,6 +438,10 @@ function App() {
                 <Route
                     path={FINAL_REPORT_AUDIOMETRY}
                     element={<FinalReportAudiometry />}
+                />
+                <Route
+                    path={FINAL_REPORT_BONE_MINERAL_DENSITY}
+                    element={<FinalReportBoneMineralDensity />}
                 />
             </Routes>
         </ThemeProvider>

@@ -105,7 +105,7 @@ const BoneMineralDensityInfo = () => {
                             />
 
                             {tabPage == 'examReport' && (
-                                <BoneMineralDensityExamReport />
+                                <BoneMineralDensityExamReport saveButton />
                             )}
 
                             {tabPage == 'addonService' && <AddOnService />}
