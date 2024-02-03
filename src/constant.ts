@@ -76,3 +76,4 @@ export const FINAL_REPORT_ELECTROCARDIOGRAM =
     FINAL_REPORT + '/electrocardiogram'
 export const FINAL_REPORT_GENERAL_MEASUREMENT =
     FINAL_REPORT + '/general-measurement'
+export const FINAL_REPORT_MAMMOGRAPHY = FINAL_REPORT + '/mammography'

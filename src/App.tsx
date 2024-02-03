@@ -18,6 +18,7 @@ import {
     FINAL_REPORT_HMC_RECORD,
     FINAL_REPORT_HMP_BROCHURE,
     FINAL_REPORT_INTERVIEW_PAGE,
+    FINAL_REPORT_MAMMOGRAPHY,
     FINAL_REPORT_MPA,
     FINAL_REPORT_PAPS_SMEAR_EXAM,
     GENERAL_MEASUREMENT_PAGE,
@@ -140,6 +141,7 @@ import FinalReportBoneMineralDensity from 'pages/Final-Report/Bone-Mineral-Densi
 import FinalReportENTExamination from 'pages/Final-Report/ENT-Examination'
 import FinalReportGeneralMeasurement from 'pages/Final-Report/General-Measurement'
 import FinalReportElectrocardiogram from 'pages/Final-Report/Electrocardiogram'
+import FinalReportMammography from 'pages/Final-Report/Mammography'
 
 function App() {
     const data = [
@@ -460,6 +462,10 @@ function App() {
                 <Route
                     path={FINAL_REPORT_ELECTROCARDIOGRAM}
                     element={<FinalReportElectrocardiogram />}
+                />
+                <Route
+                    path={FINAL_REPORT_MAMMOGRAPHY}
+                    element={<FinalReportMammography />}
                 />
             </Routes>
         </ThemeProvider>

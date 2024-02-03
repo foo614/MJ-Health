@@ -124,7 +124,7 @@ const MammographyDetail = () => {
                             />
 
                             {tabPage == 'examReport' && (
-                                <MammographyExamReport />
+                                <MammographyExamReport saveButton />
                             )}
 
                             {tabPage == 'addonService' && <AddOnService />}
