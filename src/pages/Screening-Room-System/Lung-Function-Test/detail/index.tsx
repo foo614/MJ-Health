@@ -14,7 +14,7 @@ import MedicalHistoryModal from 'pages/Physician-Consultation-Info/components/me
 import { useState } from 'react'
 import styles from './_lung-function-test.module.scss'
 import ButtonCard from './components/button-card'
-import MammographyExamReport from './components/exam-report'
+import LungFunctionTestExamReport from './components/exam-report'
 
 const LungFunctionTestDetail = () => {
     const theme = useTheme()
@@ -103,7 +103,7 @@ const LungFunctionTestDetail = () => {
                             />
 
                             {tabPage == 'examReport' && (
-                                <MammographyExamReport />
+                                <LungFunctionTestExamReport saveButton />
                             )}
 
                             {tabPage == 'addonService' && <AddOnService />}
