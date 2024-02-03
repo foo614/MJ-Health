@@ -22,6 +22,7 @@ import {
     FINAL_REPORT_MAMMOGRAPHY,
     FINAL_REPORT_MPA,
     FINAL_REPORT_PAPS_SMEAR_EXAM,
+    FINAL_REPORT_PERIPHERAL_VASCULAR_SCREENING,
     GENERAL_MEASUREMENT_PAGE,
     HEALTH_MANAGEMENT_CONSULTATION_INFO_PAGE,
     HEALTH_MANAGEMENT_CONSULTATION_PAGE,
@@ -144,6 +145,7 @@ import FinalReportGeneralMeasurement from 'pages/Final-Report/General-Measuremen
 import FinalReportElectrocardiogram from 'pages/Final-Report/Electrocardiogram'
 import FinalReportMammography from 'pages/Final-Report/Mammography'
 import FinalReportLungFunctionTest from 'pages/Final-Report/Lung-Function-Test'
+import FinalReportPeripheralVascularScreening from 'pages/Final-Report/Peripheral-Vascular-Screening'
 
 function App() {
     const data = [
@@ -472,6 +474,10 @@ function App() {
                 <Route
                     path={FINAL_REPORT_LUNG_FUNCTION_TEST}
                     element={<FinalReportLungFunctionTest />}
+                />
+                <Route
+                    path={FINAL_REPORT_PERIPHERAL_VASCULAR_SCREENING}
+                    element={<FinalReportPeripheralVascularScreening />}
                 />
             </Routes>
         </ThemeProvider>

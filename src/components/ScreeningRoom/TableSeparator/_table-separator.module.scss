@@ -7,6 +7,10 @@
     text-align: left !important;
 }
 
+.headerLabel.readonly {
+    color: var(--title-color);
+}
+
 .examReportTable .tableCellDateLabel {
     color: var(--title-color);
     text-align: center;

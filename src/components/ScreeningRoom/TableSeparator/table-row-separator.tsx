@@ -21,7 +21,9 @@ const TableRowSeparator = ({
             <TableCell
                 className={`${styles.tableRowSeparatorCell} ${
                     styles.tableCell
-                } ${headerLabel ? styles.headerLabel : ''}`}
+                } ${headerLabel ? styles.headerLabel : ''} ${
+                    readonly ? styles.readonly : ''
+                }`}
             >
                 {headerLabel}
             </TableCell>

@@ -12,7 +12,7 @@ import { useState } from 'react'
 import ScreeningRoomPersonalComplaintModal from 'components/PersonalComplaintModal'
 import MedicalHistoryModal from 'pages/Physician-Consultation-Info/components/medical-history-modal'
 import { Card, Divider, useMediaQuery, useTheme } from '@mui/material'
-import MammographyExamReport from './components/exam-report'
+import PeripheralVascularScreeningExamReport from './components/exam-report'
 import ButtonCard from './components/button-card'
 import AddOnService from 'components/ScreeningRoom/AddOnService'
 
@@ -103,7 +103,9 @@ const PeripheralVascularScreeningDetail = () => {
                             />
 
                             {tabPage == 'examReport' && (
-                                <MammographyExamReport />
+                                <PeripheralVascularScreeningExamReport
+                                    saveButton
+                                />
                             )}
 
                             {tabPage == 'addonService' && <AddOnService />}

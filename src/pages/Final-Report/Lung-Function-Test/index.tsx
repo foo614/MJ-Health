@@ -41,7 +41,7 @@ const FinalReportLungFunctionTest = () => {
                             >
                                 <Grid>
                                     <p className={styles.cardTitle}>
-                                        LungFunctionTest
+                                        Lung Function Test
                                     </p>
                                 </Grid>
                                 <Grid>

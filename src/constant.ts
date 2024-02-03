@@ -79,3 +79,5 @@ export const FINAL_REPORT_GENERAL_MEASUREMENT =
 export const FINAL_REPORT_MAMMOGRAPHY = FINAL_REPORT + '/mammography'
 export const FINAL_REPORT_LUNG_FUNCTION_TEST =
     FINAL_REPORT + '/lung-function-test'
+export const FINAL_REPORT_PERIPHERAL_VASCULAR_SCREENING =
+    FINAL_REPORT + '/peripheral-vascular-screening'
