@@ -123,7 +123,7 @@ const VisualAndOcularTensionDetail = () => {
                             {tabPage == 'addonService' && <AddOnService />}
 
                             {tabPage == 'commentAndSuggestion' && (
-                                <CommentSuggestionList />
+                                <CommentSuggestionList saveButton />
                             )}
                         </Card>
                     </Grid>

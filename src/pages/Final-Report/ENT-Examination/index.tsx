@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
-import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
+import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
 import Container from '@mui/material/Container'
 import Divider from '@mui/material/Divider'
@@ -12,10 +12,11 @@ import UserHeader from 'components/UserHeader'
 import { FINAL_REPORT } from 'constant'
 import { useState } from 'react'
 import EditIcon from 'images/member-edit.png'
-import styles from './_audiometry.module.scss'
-import AudiometryExamReport from 'pages/Screening-Room-System/Audiometry/detail/components/exam-report'
+import styles from './_ent-examination.module.scss'
+import ENTExaminationExamReport from 'pages/Screening-Room-System/ENT-Examination/detail/components/exam-report'
+import CommentSuggestionList from 'components/ScreeningRoom/CommentSuggestionList'
 
-const FinalReportAudiometry = () => {
+const FinalReportENTExamination = () => {
     const [readonly, setReadonly] = useState<boolean>(true)
 
     return (
@@ -58,7 +59,9 @@ const FinalReportAudiometry = () => {
                                         </Button>
                                     )}
                                 </Box>
-                                <p className={styles.cardTitle}>Audiometry</p>
+                                <p className={styles.cardTitle}>
+                                    ENT Examination
+                                </p>
                             </div>
                         }
                         titleTypographyProps={{ className: styles.cardTitle }}
@@ -72,7 +75,13 @@ const FinalReportAudiometry = () => {
                     />
 
                     <CardContent sx={{ padding: '0 1.5rem' }}>
-                        <AudiometryExamReport readonly={readonly} />
+                        <ENTExaminationExamReport readonly={readonly} />
+                    </CardContent>
+
+                    <CardContent
+                        sx={{ padding: '0 1.5rem', marginTop: '2rem' }}
+                    >
+                        <CommentSuggestionList readonly={readonly} />
                     </CardContent>
                 </Card>
             </Container>
@@ -80,4 +89,4 @@ const FinalReportAudiometry = () => {
     )
 }
 
-export default FinalReportAudiometry
+export default FinalReportENTExamination

@@ -109,11 +109,12 @@ const rows = [
     ),
 ]
 
-export default function CustomizedTables({
-    footer,
-}: {
+type Props = {
     footer?: React.ReactNode
-}) {
+    readonly?: boolean
+}
+
+export default function CustomizedTables({ footer, readonly }: Props) {
     return (
         <TableContainer
             component={Paper}
@@ -135,8 +136,12 @@ export default function CustomizedTables({
                     <TableRow className={styles.stickyHeader}>
                         <StyledTableCell>No.</StyledTableCell>
                         <StyledTableCell align="left">Content</StyledTableCell>
-                        <StyledTableCell></StyledTableCell>
-                        <StyledTableCell></StyledTableCell>
+                        {!readonly && (
+                            <>
+                                <StyledTableCell></StyledTableCell>
+                                <StyledTableCell></StyledTableCell>
+                            </>
+                        )}
                     </TableRow>
                 </TableHead>
             </Table>
@@ -150,20 +155,25 @@ export default function CustomizedTables({
                             <StyledTableRow key={row.number}>
                                 <StyledTableCell>{row.number}</StyledTableCell>
                                 <StyledTableCell>{row.content}</StyledTableCell>
-                                <StyledTableCell>
-                                    <Button size="small" variant="text">
-                                        Edit
-                                    </Button>
-                                </StyledTableCell>
-                                <StyledTableCell>
-                                    <Button
-                                        size="small"
-                                        variant="text"
-                                        sx={{ color: 'red' }}
-                                    >
-                                        Delete
-                                    </Button>
-                                </StyledTableCell>
+
+                                {!readonly && (
+                                    <>
+                                        <StyledTableCell>
+                                            <Button size="small" variant="text">
+                                                Edit
+                                            </Button>
+                                        </StyledTableCell>
+                                        <StyledTableCell>
+                                            <Button
+                                                size="small"
+                                                variant="text"
+                                                sx={{ color: 'red' }}
+                                            >
+                                                Delete
+                                            </Button>
+                                        </StyledTableCell>
+                                    </>
+                                )}
                             </StyledTableRow>
                         ))}
                     </TableBody>

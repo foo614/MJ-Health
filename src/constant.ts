@@ -71,3 +71,4 @@ export const FINAL_REPORT_MPA = FINAL_REPORT + '/mpa'
 export const FINAL_REPORT_AUDIOMETRY = FINAL_REPORT + '/audiometry'
 export const FINAL_REPORT_BONE_MINERAL_DENSITY =
     FINAL_REPORT + '/bone-mineral-density'
+export const FINAL_REPORT_ENT_EXAMINATION = FINAL_REPORT + '/ent-examination'

@@ -51,7 +51,9 @@ const BoneMineralDensityExamReport = ({ readonly, saveButton }: Props) => {
                 <Table size="small" className={styles.examReportTable}>
                     <TableRow>
                         <TableCell
-                            className={`${styles.examReportTableHeaderLabel} ${styles.tableCell}`}
+                            className={`${styles.examReportTableHeaderLabel} ${
+                                styles.tableCell
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             Items
                         </TableCell>

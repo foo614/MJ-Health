@@ -125,7 +125,7 @@ const ENTExaminationDetail = () => {
                             />
 
                             {tabPage == 'examReport' && (
-                                <ENTExaminationExamReport />
+                                <ENTExaminationExamReport saveButton />
                             )}
 
                             {tabPage == 'addonService' && <AddOnService />}

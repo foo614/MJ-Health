@@ -32,3 +32,13 @@ table {
     padding-top: 1rem !important;
     padding-bottom: 1rem !important;
 }
+
+.title {
+    color: var(--mj-deep-green);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.title.readonly {
+    color: var(--title-color);
+}
