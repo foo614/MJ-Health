@@ -24,6 +24,7 @@ import {
     FINAL_REPORT_PAPS_SMEAR_EXAM,
     FINAL_REPORT_PERIPHERAL_VASCULAR_SCREENING,
     FINAL_REPORT_RETINOGRAPHY,
+    FINAL_REPORT_SONOGRAPHY,
     FINAL_REPORT_VISION_AND_OCULAR_TENSION_TEST,
     FINAL_REPORT_X_RAY,
     GENERAL_MEASUREMENT_PAGE,
@@ -152,6 +153,7 @@ import FinalReportPeripheralVascularScreening from 'pages/Final-Report/Periphera
 import FinalReportRetinography from 'pages/Final-Report/Retinography'
 import FinalReportVisualAndOcularTensionTest from 'pages/Final-Report/Visual-And-Ocular-Tension-Test'
 import FinalReportXRay from 'pages/Final-Report/X-Ray'
+import FinalReportSonography from 'pages/Final-Report/Sonography'
 
 function App() {
     const data = [
@@ -488,6 +490,10 @@ function App() {
                 <Route
                     path={FINAL_REPORT_RETINOGRAPHY}
                     element={<FinalReportRetinography />}
+                />
+                <Route
+                    path={FINAL_REPORT_SONOGRAPHY}
+                    element={<FinalReportSonography />}
                 />
                 <Route
                     path={FINAL_REPORT_VISION_AND_OCULAR_TENSION_TEST}
