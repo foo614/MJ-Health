@@ -13,8 +13,14 @@ import Button from '@mui/material/Button'
 import styles from '../_paps-smear.module.scss'
 import TableCellSeparator from 'components/ScreeningRoom/TableSeparator/table-cell-separator'
 import TableRowSeparator from 'components/ScreeningRoom/TableSeparator/table-row-separator'
+import Grid from '@mui/material/Grid'
 
-const PapsSmearExamReport = () => {
+type Props = {
+    readonly?: boolean
+    saveButton?: boolean
+}
+
+const PapsSmearExamReport = ({ readonly, saveButton }: Props) => {
     const samplingOptions = [
         {
             id: 1,
@@ -59,33 +65,47 @@ const PapsSmearExamReport = () => {
                 <Table size="small" className={styles.examReportTable}>
                     <TableRow>
                         <TableCell
-                            className={`${styles.examReportTableHeaderLabel} ${styles.tableCell}`}
+                            className={`${styles.examReportTableHeaderLabel} ${
+                                styles.tableCell
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             Items
                         </TableCell>
                         <TableCell
                             width="26%"
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.currentTop}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.currentTop} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             Current
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
                             width="26%"
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.backDateTop}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.backDateTop} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             22-09-2020
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
                             width="26%"
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.backDateTop}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.backDateTop} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             22-09-2018
                         </TableCell>
                     </TableRow>
 
-                    <TableRowSeparator />
+                    <TableRowSeparator readonly={readonly} />
 
                     {/* Sampling */}
                     <TableRow>
@@ -93,7 +113,9 @@ const PapsSmearExamReport = () => {
                             Sampling
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -117,7 +139,9 @@ const PapsSmearExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -140,7 +164,9 @@ const PapsSmearExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -169,7 +195,9 @@ const PapsSmearExamReport = () => {
                             Sampling Abnormal
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -189,7 +217,9 @@ const PapsSmearExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -208,7 +238,9 @@ const PapsSmearExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -233,7 +265,9 @@ const PapsSmearExamReport = () => {
                             HPV Test
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -249,7 +283,9 @@ const PapsSmearExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -265,7 +301,9 @@ const PapsSmearExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -287,7 +325,9 @@ const PapsSmearExamReport = () => {
                             High Vaginal Swab
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -303,7 +343,9 @@ const PapsSmearExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -319,7 +361,9 @@ const PapsSmearExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -341,7 +385,9 @@ const PapsSmearExamReport = () => {
                             Date Of Last Sampling
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -365,7 +411,9 @@ const PapsSmearExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -388,7 +436,9 @@ const PapsSmearExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -417,7 +467,9 @@ const PapsSmearExamReport = () => {
                             Pelvic Examination
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -441,7 +493,9 @@ const PapsSmearExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -464,7 +518,9 @@ const PapsSmearExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -487,20 +543,26 @@ const PapsSmearExamReport = () => {
                         </TableCell>
                     </TableRow>
 
-                    <TableRowSeparator lastRow />
+                    <TableRowSeparator readonly={readonly} lastRow />
                 </Table>
             </TableContainer>
 
-            <Box
-                sx={{
-                    float: 'right',
-                    marginTop: '1.5rem',
-                }}
-            >
-                <Button variant="contained" className={styles.saveButton}>
-                    Save
-                </Button>
-            </Box>
+            {saveButton && (
+                <Box
+                    sx={{
+                        marginTop: '1.5rem',
+                    }}
+                >
+                    <Grid container justifyContent="flex-end">
+                        <Button
+                            variant="contained"
+                            className={styles.saveButton}
+                        >
+                            Save
+                        </Button>
+                    </Grid>
+                </Box>
+            )}
         </>
     )
 }

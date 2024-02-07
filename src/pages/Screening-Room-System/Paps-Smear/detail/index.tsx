@@ -133,7 +133,9 @@ const PapsSmearDetail = () => {
                                 }}
                             />
 
-                            {tabPage == 'examReport' && <PapsSmearExamReport />}
+                            {tabPage == 'examReport' && (
+                                <PapsSmearExamReport saveButton />
+                            )}
 
                             {tabPage == 'addonService' && <AddOnService />}
 

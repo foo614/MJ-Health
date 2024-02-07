@@ -21,6 +21,7 @@ import {
     FINAL_REPORT_LUNG_FUNCTION_TEST,
     FINAL_REPORT_MAMMOGRAPHY,
     FINAL_REPORT_MPA,
+    FINAL_REPORT_PAPS_SMEAR,
     FINAL_REPORT_PAPS_SMEAR_EXAM,
     FINAL_REPORT_PERIPHERAL_VASCULAR_SCREENING,
     FINAL_REPORT_RETINOGRAPHY,
@@ -154,6 +155,7 @@ import FinalReportRetinography from 'pages/Final-Report/Retinography'
 import FinalReportVisualAndOcularTensionTest from 'pages/Final-Report/Visual-And-Ocular-Tension-Test'
 import FinalReportXRay from 'pages/Final-Report/X-Ray'
 import FinalReportSonography from 'pages/Final-Report/Sonography'
+import FinalReportPapsSmear from 'pages/Final-Report/Paps-Smear'
 
 function App() {
     const data = [
@@ -448,6 +450,10 @@ function App() {
                 <Route
                     path={FINAL_REPORT_HMP_BROCHURE}
                     element={<HMPBrochure />}
+                />
+                <Route
+                    path={FINAL_REPORT_PAPS_SMEAR}
+                    element={<FinalReportPapsSmear />}
                 />
                 <Route
                     path={FINAL_REPORT_PAPS_SMEAR_EXAM}
