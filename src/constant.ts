@@ -82,6 +82,7 @@ export const FINAL_REPORT_LUNG_FUNCTION_TEST =
 export const FINAL_REPORT_PERIPHERAL_VASCULAR_SCREENING =
     FINAL_REPORT + '/peripheral-vascular-screening'
 export const FINAL_REPORT_RETINOGRAPHY = FINAL_REPORT + '/retinography'
+export const FINAL_REPORT_SONOGRAPHY = FINAL_REPORT + '/sonography'
 export const FINAL_REPORT_VISION_AND_OCULAR_TENSION_TEST =
     FINAL_REPORT + '/vision-and-ocular-tension-test'
 export const FINAL_REPORT_X_RAY = FINAL_REPORT + '/x-ray'
