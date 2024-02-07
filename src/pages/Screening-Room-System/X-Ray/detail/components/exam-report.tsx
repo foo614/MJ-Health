@@ -10,8 +10,14 @@ import TableRow from '@mui/material/TableRow'
 import TableCellSeparator from 'components/ScreeningRoom/TableSeparator/table-cell-separator'
 import TableRowSeparator from 'components/ScreeningRoom/TableSeparator/table-row-separator'
 import styles from '../_x-ray.module.scss'
+import Grid from '@mui/material/Grid'
 
-const XRayExamReport = () => {
+type Props = {
+    readonly?: boolean
+    saveButton?: boolean
+}
+
+const XRayExamReport = ({ readonly, saveButton }: Props) => {
     const options = [
         {
             id: 1,
@@ -37,33 +43,47 @@ const XRayExamReport = () => {
                 <Table size="small" className={styles.examReportTable}>
                     <TableRow>
                         <TableCell
-                            className={`${styles.examReportTableHeaderLabel} ${styles.tableCell}`}
+                            className={`${styles.examReportTableHeaderLabel} ${
+                                styles.tableCell
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             Items
                         </TableCell>
                         <TableCell
                             width="26%"
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.currentTop}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.currentTop} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             Current
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
                             width="26%"
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.backDateTop}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.backDateTop} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             22-09-2020
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
                             width="26%"
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.backDateTop}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.backDateTop} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             22-09-2018
                         </TableCell>
                     </TableRow>
 
-                    <TableRowSeparator />
+                    <TableRowSeparator readonly={readonly} />
 
                     {/* CXR */}
                     <TableRow>
@@ -71,7 +91,9 @@ const XRayExamReport = () => {
                             CXR
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -95,7 +117,9 @@ const XRayExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -119,7 +143,9 @@ const XRayExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -149,7 +175,9 @@ const XRayExamReport = () => {
                             KUB
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         >
                             <FormControl
                                 fullWidth
@@ -173,7 +201,9 @@ const XRayExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -197,7 +227,9 @@ const XRayExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -221,20 +253,20 @@ const XRayExamReport = () => {
                         </TableCell>
                     </TableRow>
 
-                    <TableRowSeparator lastRow />
+                    <TableRowSeparator readonly={readonly} lastRow />
                     <TableRowSeparator noBackground />
-                </Table>
-            </TableContainer>
 
-            <TableContainer style={{ overflow: 'auto' }}>
-                <Table size="small" className={styles.examReportTable}>
                     <TableRow>
                         <TableCell
                             className={`${styles.examReportTableHeaderLabel} ${styles.tableCell}`}
                         ></TableCell>
                         <TableCell
                             width="26%"
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.currentTop}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.currentTop} ${
+                                readonly ? styles.readonly : ''
+                            }`}
                         ></TableCell>
                         <TableCellSeparator />
                         <TableCell
@@ -248,7 +280,7 @@ const XRayExamReport = () => {
                         ></TableCell>
                     </TableRow>
 
-                    <TableRowSeparator />
+                    <TableRowSeparator readonly={readonly} />
 
                     {/* Lorem Ispum */}
                     <TableRow>
@@ -256,7 +288,11 @@ const XRayExamReport = () => {
                             Lorem Ispum
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }   `}
                         >
                             <FormControl
                                 fullWidth
@@ -280,7 +316,9 @@ const XRayExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -304,7 +342,9 @@ const XRayExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -333,7 +373,11 @@ const XRayExamReport = () => {
                             Lorem Ispum
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }   `}
                         >
                             <FormControl
                                 fullWidth
@@ -357,7 +401,9 @@ const XRayExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -381,7 +427,9 @@ const XRayExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -409,7 +457,11 @@ const XRayExamReport = () => {
                             Lorem Ispum
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }   `}
                         >
                             <FormControl
                                 fullWidth
@@ -433,7 +485,9 @@ const XRayExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -457,7 +511,9 @@ const XRayExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -485,7 +541,11 @@ const XRayExamReport = () => {
                             Lorem Ispum
                         </TableCell>
                         <TableCell
-                            className={`${styles.tableCellDateLabel} ${styles.tableCell} ${styles.current}`}
+                            className={`${styles.tableCellDateLabel} ${
+                                styles.tableCell
+                            } ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }   `}
                         >
                             <FormControl
                                 fullWidth
@@ -509,7 +569,9 @@ const XRayExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -533,7 +595,9 @@ const XRayExamReport = () => {
                         </TableCell>
                         <TableCellSeparator />
                         <TableCell
-                            className={`${styles.tableCell} ${styles.backDate}`}
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
                         >
                             <FormControl
                                 fullWidth
@@ -557,21 +621,27 @@ const XRayExamReport = () => {
                         </TableCell>
                     </TableRow>
 
-                    <TableRowSeparator lastRow />
+                    <TableRowSeparator readonly={readonly} lastRow />
                     <TableRowSeparator noBackground />
                 </Table>
             </TableContainer>
 
-            <Box
-                sx={{
-                    float: 'right',
-                    marginTop: '1.5rem',
-                }}
-            >
-                <Button variant="contained" className={styles.saveButton}>
-                    Save
-                </Button>
-            </Box>
+            {saveButton && (
+                <Box
+                    sx={{
+                        marginTop: '1.5rem',
+                    }}
+                >
+                    <Grid container justifyContent="flex-end">
+                        <Button
+                            variant="contained"
+                            className={styles.saveButton}
+                        >
+                            Save
+                        </Button>
+                    </Grid>
+                </Box>
+            )}
         </>
     )
 }
