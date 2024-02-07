@@ -12,6 +12,7 @@ import {
     FINAL_REPORT,
     FINAL_REPORT_AUDIOMETRY,
     FINAL_REPORT_BONE_MINERAL_DENSITY,
+    FINAL_REPORT_CT_SCAN,
     FINAL_REPORT_ELECTROCARDIOGRAM,
     FINAL_REPORT_ENT_EXAMINATION,
     FINAL_REPORT_GENERAL_MEASUREMENT,
@@ -26,6 +27,7 @@ import {
     FINAL_REPORT_PERIPHERAL_VASCULAR_SCREENING,
     FINAL_REPORT_RETINOGRAPHY,
     FINAL_REPORT_SONOGRAPHY,
+    FINAL_REPORT_SUPPLEMENTARY_REPORT,
     FINAL_REPORT_VISION_AND_OCULAR_TENSION_TEST,
     FINAL_REPORT_X_RAY,
     GENERAL_MEASUREMENT_PAGE,
@@ -156,6 +158,8 @@ import FinalReportVisualAndOcularTensionTest from 'pages/Final-Report/Visual-And
 import FinalReportXRay from 'pages/Final-Report/X-Ray'
 import FinalReportSonography from 'pages/Final-Report/Sonography'
 import FinalReportPapsSmear from 'pages/Final-Report/Paps-Smear'
+import SupplementaryReport from 'pages/Final-Report/Supplementary-Report'
+import FinalReportCTScan from 'pages/Final-Report/CT-Scan'
 
 function App() {
     const data = [
@@ -470,6 +474,10 @@ function App() {
                     element={<FinalReportBoneMineralDensity />}
                 />
                 <Route
+                    path={FINAL_REPORT_CT_SCAN}
+                    element={<FinalReportCTScan />}
+                />
+                <Route
                     path={FINAL_REPORT_ENT_EXAMINATION}
                     element={<FinalReportENTExamination />}
                 />
@@ -508,6 +516,10 @@ function App() {
                 <Route
                     path={FINAL_REPORT_X_RAY}
                     element={<FinalReportXRay />}
+                />
+                <Route
+                    path={FINAL_REPORT_SUPPLEMENTARY_REPORT}
+                    element={<SupplementaryReport />}
                 />
             </Routes>
         </ThemeProvider>

@@ -1,0 +1,137 @@
+@use 'styles/variables' as *;
+
+.smallCard {
+    background: linear-gradient(
+        231.33deg,
+        #ffffff 8.64%,
+        #f3f3f3 91.7%
+    ) !important;
+    box-shadow: 0px 3px 6px rgba(89, 86, 122, 0.15) !important;
+    border-radius: var(--br-3xs) !important;
+    height: 120px;
+    display: flex;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.smallCardTitle {
+    font-weight: 700 !important;
+    font-size: var(--font-size-base) !important;
+    text-align: center;
+    color: var(--title-color) !important;
+    margin: auto;
+}
+
+.tabButton {
+    background-color: var(--color-whitesmoke-300) !important;
+    color: var(--label-color) !important;
+    font-weight: 500;
+    width: 250px;
+    height: 50px;
+}
+
+.tabButton.active {
+    background-color: var(--color-white) !important;
+    color: var(--title-color) !important;
+    font-weight: 600;
+}
+
+.examReportTable .tableCell {
+    border-bottom: none !important;
+    text-align: center;
+}
+
+.examReportTable {
+    border-collapse: separate !important;
+
+    .tableCell.current,
+    .tableCell.currentTop,
+    .tableCell.currentBottom {
+        background-color: #ddd;
+    }
+
+    .tableCell.backDate,
+    .tableCell.backDateTop,
+    .tableCell.backDateBottom {
+        background-color: var(--color-lightgray);
+    }
+
+    .tableCell.currentTop,
+    .tableCell.backDateTop {
+        border-radius: 8px 8px 0 0;
+    }
+
+    .tableCell.currentBottom,
+    .tableCell.backDateBottom {
+        border-radius: 0 0 8px 8px;
+    }
+
+    .tableCell.readonly.current,
+    .tableCell.readonly.currentTop,
+    .tableCell.readonly.backDateTop,
+    .tableCell.readonly.backDate,
+    .tableCell.readonly.backDateTop,
+    .tableCell.readonly.backDateBottom {
+        background-color: #fdfdfd;
+        border-left: 1px solid #ededed;
+        border-right: 1px solid #ededed;
+    }
+
+    .tableCell.readonly.currentTop,
+    .tableCell.readonly.backDateTop {
+        border-top: 1px solid #ededed;
+    }
+
+    .tableCell.readonly.currentBottom,
+    .tableCell.readonly.backDateBottom {
+        border-bottom: 1px solid #ededed;
+    }
+}
+
+.examReportTableHeaderLabel,
+.tabPageTitle {
+    color: var(--mj-deep-green);
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    text-align: left !important;
+}
+
+.examReportTableHeaderLabel.readonly {
+    color: var(--title-color);
+}
+
+.examReportTable .tableCellDateLabel {
+    color: var(--title-color);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.examReportTableLabel {
+    color: var(--title-color);
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    text-align: left !important;
+}
+
+.examReportTableInput {
+    text-align: left !important;
+    background-color: var(--color-white);
+}
+
+.examReportTableSelectInput {
+    min-width: 200px;
+}
+
+.tableRowSeparatorCell {
+    padding-bottom: 30px !important;
+}
+
+.saveButton {
+    color: var(--color-white);
+    font-size: var(--font-size-5xl) !important;
+    font-weight: 700 !important;
+    width: 220px;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}

@@ -43,11 +43,11 @@ export const BONE_MINERAL_DENSITY_PAGE =
 export const INTERVIEW_PAGE = SCREENING_ROOM_SYSTEM_PAGE + '/interview'
 export const INTERVIEW_INFO_PAGE = INTERVIEW_PAGE + '/interview-info'
 export const AUDIOMETRY_PAGE = SCREENING_ROOM_SYSTEM_PAGE + '/audiometry'
-export const CT_SCAN_PAGE = SCREENING_ROOM_SYSTEM_PAGE + '/ct-scan'
 export const ELECTROCARDIOGRAM_PAGE =
     SCREENING_ROOM_SYSTEM_PAGE + '/electrocardiogram'
 export const ENT_EXAMINATION_PAGE =
     SCREENING_ROOM_SYSTEM_PAGE + '/ent-examination'
+export const CT_SCAN_PAGE = SCREENING_ROOM_SYSTEM_PAGE + '/ct-scan'
 export const GENERAL_MEASUREMENT_PAGE =
     SCREENING_ROOM_SYSTEM_PAGE + '/general-measurement'
 export const LUNG_FUNCTION_TEST_PAGE =
@@ -72,6 +72,7 @@ export const FINAL_REPORT_MPA = FINAL_REPORT + '/mpa'
 export const FINAL_REPORT_AUDIOMETRY = FINAL_REPORT + '/audiometry'
 export const FINAL_REPORT_BONE_MINERAL_DENSITY =
     FINAL_REPORT + '/bone-mineral-density'
+export const FINAL_REPORT_CT_SCAN = FINAL_REPORT + '/ct-scan'
 export const FINAL_REPORT_ENT_EXAMINATION = FINAL_REPORT + '/ent-examination'
 export const FINAL_REPORT_ELECTROCARDIOGRAM =
     FINAL_REPORT + '/electrocardiogram'
@@ -87,3 +88,5 @@ export const FINAL_REPORT_SONOGRAPHY = FINAL_REPORT + '/sonography'
 export const FINAL_REPORT_VISION_AND_OCULAR_TENSION_TEST =
     FINAL_REPORT + '/vision-and-ocular-tension-test'
 export const FINAL_REPORT_X_RAY = FINAL_REPORT + '/x-ray'
+export const FINAL_REPORT_SUPPLEMENTARY_REPORT =
+    FINAL_REPORT + '/supplementary-report'
