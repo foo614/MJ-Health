@@ -31,6 +31,15 @@ import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import RFSupplementaryModal from './rf-supplementary-report-modal'
+import { useNavigate } from 'react-router-dom'
+import {
+    FINAL_REPORT_MAMMOGRAPHY,
+    FINAL_REPORT_PAPS_SMEAR,
+    FINAL_REPORT_SONOGRAPHY,
+    FINAL_REPORT_SUPPLEMENTARY_REPORT,
+    FINAL_REPORT_VISION_AND_OCULAR_TENSION_TEST,
+    FINAL_REPORT_X_RAY,
+} from 'constant'
 
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
@@ -54,42 +63,50 @@ const ReportFollowedModal: React.FC<Props> = ({
     setOpenViewFinalReportModal,
     setOpenRFModal,
 }: Props) => {
+    const navigate = useNavigate()
     const theme = useTheme()
     const mdUp = useMediaQuery(theme.breakpoints.up('md'))
     const [isShowTextField, setIsShowTextField] = React.useState<boolean>(false)
     const [defaultReport, setDefaultReport] = React.useState<string>(
         'Supplementary Report 03-03-2023'
     )
+
     const remaining_section = [
         {
             id: 1,
             section: 'Mammography',
             status: 1,
+            redirectPath: FINAL_REPORT_MAMMOGRAPHY,
         },
         {
             id: 2,
             section: 'Pap’s Smear',
             status: 1,
+            redirectPath: FINAL_REPORT_PAPS_SMEAR,
         },
         {
             id: 3,
             section: 'Sonography',
             status: 0,
+            redirectPath: FINAL_REPORT_SONOGRAPHY,
         },
         {
             id: 4,
             section: 'X-Ray',
             status: 1,
+            redirectPath: FINAL_REPORT_X_RAY,
         },
         {
             id: 5,
             section: 'Vision and Ocular Tension Test',
             status: 0,
+            redirectPath: FINAL_REPORT_VISION_AND_OCULAR_TENSION_TEST,
         },
         {
             id: 6,
             section: 'Test',
             status: 1,
+            redirectPath: undefined,
         },
     ]
 
@@ -252,6 +269,11 @@ const ReportFollowedModal: React.FC<Props> = ({
                                                     styles.final_report_table_view_bttn
                                                 }
                                                 fullWidth
+                                                onClick={() =>
+                                                    navigate(
+                                                        FINAL_REPORT_SUPPLEMENTARY_REPORT
+                                                    )
+                                                }
                                             >
                                                 View
                                             </Button>
@@ -388,6 +410,12 @@ const ReportFollowedModal: React.FC<Props> = ({
                                                                 styles.final_report_table_view_bttn
                                                             }
                                                             fullWidth
+                                                            onClick={() =>
+                                                                item.redirectPath &&
+                                                                navigate(
+                                                                    item.redirectPath
+                                                                )
+                                                            }
                                                         >
                                                             View
                                                         </Button>

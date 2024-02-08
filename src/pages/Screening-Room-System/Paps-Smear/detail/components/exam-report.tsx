@@ -123,6 +123,7 @@ const PapsSmearExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },
@@ -149,6 +150,7 @@ const PapsSmearExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
@@ -174,6 +176,7 @@ const PapsSmearExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
@@ -205,6 +208,7 @@ const PapsSmearExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },
@@ -227,6 +231,7 @@ const PapsSmearExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
@@ -248,6 +253,7 @@ const PapsSmearExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
@@ -278,6 +284,7 @@ const PapsSmearExamReport = ({ readonly, saveButton }: Props) => {
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
+                                    InputProps={{ readOnly: readonly }}
                                 />
                             </FormControl>
                         </TableCell>
@@ -296,6 +303,7 @@ const PapsSmearExamReport = ({ readonly, saveButton }: Props) => {
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
+                                    InputProps={{ readOnly: readonly }}
                                 />
                             </FormControl>
                         </TableCell>
@@ -314,6 +322,7 @@ const PapsSmearExamReport = ({ readonly, saveButton }: Props) => {
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
+                                    InputProps={{ readOnly: readonly }}
                                 />
                             </FormControl>
                         </TableCell>
@@ -338,6 +347,7 @@ const PapsSmearExamReport = ({ readonly, saveButton }: Props) => {
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
+                                    InputProps={{ readOnly: readonly }}
                                 />
                             </FormControl>
                         </TableCell>
@@ -356,6 +366,7 @@ const PapsSmearExamReport = ({ readonly, saveButton }: Props) => {
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
+                                    InputProps={{ readOnly: readonly }}
                                 />
                             </FormControl>
                         </TableCell>
@@ -374,6 +385,7 @@ const PapsSmearExamReport = ({ readonly, saveButton }: Props) => {
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
+                                    InputProps={{ readOnly: readonly }}
                                 />
                             </FormControl>
                         </TableCell>
@@ -395,6 +407,7 @@ const PapsSmearExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },
@@ -421,6 +434,7 @@ const PapsSmearExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
@@ -446,6 +460,7 @@ const PapsSmearExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
@@ -477,6 +492,7 @@ const PapsSmearExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },
@@ -503,6 +519,7 @@ const PapsSmearExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}
@@ -528,6 +545,7 @@ const PapsSmearExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     inputProps={{
                                         style: { minWidth: '150px' },
                                     }}

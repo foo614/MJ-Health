@@ -101,6 +101,7 @@ const XRayExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },
@@ -127,6 +128,7 @@ const XRayExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },
@@ -153,6 +155,7 @@ const XRayExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },
@@ -185,6 +188,7 @@ const XRayExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },
@@ -211,6 +215,7 @@ const XRayExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },
@@ -237,6 +242,7 @@ const XRayExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },
@@ -300,6 +306,7 @@ const XRayExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },
@@ -326,6 +333,7 @@ const XRayExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },
@@ -352,6 +360,7 @@ const XRayExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },
@@ -385,6 +394,7 @@ const XRayExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },
@@ -411,6 +421,7 @@ const XRayExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },
@@ -437,6 +448,7 @@ const XRayExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },
@@ -469,6 +481,7 @@ const XRayExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },
@@ -495,6 +508,7 @@ const XRayExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },
@@ -521,6 +535,7 @@ const XRayExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },
@@ -553,6 +568,7 @@ const XRayExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },
@@ -579,6 +595,7 @@ const XRayExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },
@@ -605,6 +622,7 @@ const XRayExamReport = ({ readonly, saveButton }: Props) => {
                             >
                                 <Select
                                     size="small"
+                                    readOnly={readonly}
                                     value={1}
                                     inputProps={{
                                         style: { minWidth: '150px' },

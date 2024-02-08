@@ -10,6 +10,8 @@ import { Grid } from '@mui/material'
 import { useReactToPrint } from 'react-to-print'
 import { useRef } from 'react'
 import RFSupplementaryConfirmModal from './rf-supplementary-report-confirm-modal'
+import { FINAL_REPORT_SUPPLEMENTARY_REPORT } from 'constant'
+import { useNavigate } from 'react-router-dom'
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
         children: React.ReactElement<any, any>
@@ -36,6 +38,8 @@ const RFSupplementaryModal: React.FC<Props> = ({
     setOpenViewFinalReportModal,
     setOpenRFConfirmationModal,
 }: Props) => {
+    const navigate = useNavigate()
+
     const handleClose = () => {
         setOpen(false)
         setOpenReportFollowedModal(true)
@@ -46,6 +50,7 @@ const RFSupplementaryModal: React.FC<Props> = ({
         setOpenReportFollowedModal(false)
         setOpenViewFinalReportModal(false)
         setOpenRFConfirmationModal(true)
+        navigate(FINAL_REPORT_SUPPLEMENTARY_REPORT)
     }
 
     return (
