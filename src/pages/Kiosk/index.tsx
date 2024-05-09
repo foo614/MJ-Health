@@ -23,7 +23,7 @@ const Kiosk = () => {
     const [idNo, setIdNo] = useState('')
     const [keyboardLayout, setKeyboardLayout] = useState('default')
     const keyboard = useRef<any>(null)
-    const [onTextFieldFocus, setOnTextFieldFocus] = useState(false)
+    const [onTextFieldFocus, setOnTextFieldFocus] = useState(true)
 
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
@@ -209,6 +209,7 @@ const Kiosk = () => {
                             open={openInlineModal}
                             matches={matches}
                             setOpen={setOpenInlineModal}
+                            waitingNumber="004"
                         />
                     ) : null}
                     {openNoRecordModal ? (

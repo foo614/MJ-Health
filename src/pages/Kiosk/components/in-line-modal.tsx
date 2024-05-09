@@ -1,4 +1,4 @@
-import { Box } from '@mui/material'
+import { Box, useMediaQuery, useTheme } from '@mui/material'
 import Dialog from '@mui/material/Dialog'
 import DialogContent from '@mui/material/DialogContent'
 import { TransitionProps } from '@mui/material/transitions'
@@ -21,9 +21,15 @@ type Props = {
     open: boolean
     matches: boolean
     setOpen: any
+    waitingNumber: string
 }
 
-const InlineModal: React.FC<Props> = ({ open, matches, setOpen }: Props) => {
+const InlineModal: React.FC<Props> = ({
+    open,
+    matches,
+    setOpen,
+    waitingNumber,
+}: Props) => {
     const [counter, setCounter] = useState(10)
 
     useEffect(() => {
@@ -45,14 +51,40 @@ const InlineModal: React.FC<Props> = ({ open, matches, setOpen }: Props) => {
                 classes={{ paper: styles.kioskInlineModal }}
             >
                 <DialogContent
-                    sx={{ paddingTop: '2rem', paddingBottom: '2rem' }}
+                    className={
+                        matches
+                            ? styles.kioskInlineModalContent
+                            : styles.kioskInlineModalContentMobile
+                    }
                 >
                     <Box sx={{ textAlign: 'center' }}>
-                        <img src={KioskInlineImage} width="100" height="100" />
-                        <p className={styles.kioskModalTitle}>
+                        {/* <img src={KioskInlineImage} width="100" height="100" /> */}
+                        <h1
+                            className={
+                                matches
+                                    ? styles.kioskWaitingNumber
+                                    : styles.kioskWaitingNumberMobile
+                            }
+                        >
+                            {waitingNumber}
+                        </h1>
+
+                        <p
+                            className={
+                                matches
+                                    ? styles.kioskModalTitle
+                                    : styles.kioskModalTitleMobile
+                            }
+                        >
                             We have you in line.
                         </p>
-                        <p className={styles.kioskModalSubTitle}>
+                        <p
+                            className={
+                                matches
+                                    ? styles.kioskModalSubTitle
+                                    : styles.kioskModalSubTitleMobile
+                            }
+                        >
                             Please be patient while waiting for our staff to
                             call you out.
                         </p>
@@ -70,23 +102,35 @@ const InlineModal: React.FC<Props> = ({ open, matches, setOpen }: Props) => {
                             columnSpacing={1}
                             rowSpacing={1}
                             sx={{
-                                marginTop: '.5rem',
-                                paddingBottom: '1rem',
+                                marginTop: matches ? '1rem' : '0.5rem',
+                                paddingBottom: matches ? '1rem' : '0.5rem',
                                 paddingLeft: '12px',
                                 paddingRight: '12px',
                             }}
                         >
-                            <Grid item md={4} xs={4}>
-                                <p className={styles.kioskModalTextFieldTitle}>
-                                    Name:
+                            <Grid item md={12} xs={12}>
+                                <p
+                                    className={
+                                        matches
+                                            ? styles.kioskModalTextFieldTitle
+                                            : styles.kioskModalTextFieldTitleMobile
+                                    }
+                                >
+                                    Name
                                 </p>
                             </Grid>
-                            <Grid item md={8} xs={8}>
-                                <p className={styles.kioskModalTextFieldValue}>
+                            <Grid item md={12} xs={12}>
+                                <p
+                                    className={
+                                        matches
+                                            ? styles.kioskModalTextFieldValue
+                                            : styles.kioskModalTextFieldValueMobile
+                                    }
+                                >
                                     Mohamad Bin Afamosa
                                 </p>
                             </Grid>
-                            <Grid item md={4} xs={4}>
+                            {/* <Grid item md={4} xs={4}>
                                 <p className={styles.kioskModalTextFieldTitle}>
                                     Date:
                                 </p>
@@ -95,18 +139,30 @@ const InlineModal: React.FC<Props> = ({ open, matches, setOpen }: Props) => {
                                 <p className={styles.kioskModalTextFieldValue}>
                                     12 JUL 2022
                                 </p>
-                            </Grid>
-                            <Grid item md={4} xs={4}>
-                                <p className={styles.kioskModalTextFieldTitle}>
-                                    Slot Time:
+                            </Grid> */}
+                            <Grid item md={12} xs={12}>
+                                <p
+                                    className={
+                                        matches
+                                            ? styles.kioskModalTextFieldTitle
+                                            : styles.kioskModalTextFieldTitleMobile
+                                    }
+                                >
+                                    Slot Time
                                 </p>
                             </Grid>
-                            <Grid item md={8} xs={8}>
-                                <p className={styles.kioskModalTextFieldValue}>
+                            <Grid item md={12} xs={12}>
+                                <p
+                                    className={
+                                        matches
+                                            ? styles.kioskModalTextFieldValue
+                                            : styles.kioskModalTextFieldValueMobile
+                                    }
+                                >
                                     08:15 AM - 08:30 AM
                                 </p>
                             </Grid>
-                            <Grid item md={4} xs={4}>
+                            {/* <Grid item md={4} xs={4}>
                                 <p className={styles.kioskModalTextFieldTitle}>
                                     Check In:
                                 </p>
@@ -115,9 +171,16 @@ const InlineModal: React.FC<Props> = ({ open, matches, setOpen }: Props) => {
                                 <p className={styles.kioskModalTextFieldValue}>
                                     08:05 AM - 12 JUL 2022
                                 </p>
-                            </Grid>
+                            </Grid> */}
                         </Grid>
-                        <p className={styles.kioskModalReturnText}>
+                        <p
+                            className={
+                                matches
+                                    ? styles.kioskModalReturnText
+                                    : styles.kioskModalReturnTextMobile
+                            }
+                            onClick={() => setCounter(0)}
+                        >
                             Return to front page in{' '}
                             <span className={styles.kioskModalSecondText}>
                                 {counter}

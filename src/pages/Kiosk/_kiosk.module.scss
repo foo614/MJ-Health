@@ -162,7 +162,15 @@
 
 .kioskModalTitle {
     font-weight: 700 !important;
-    font-size: var(--font-size-lg) !important;
+    font-size: 32px !important;
+    text-align: center !important;
+    color: var(--title-color) !important;
+    margin: 0.5rem !important;
+}
+
+.kioskModalTitleMobile {
+    font-weight: 700 !important;
+    font-size: var(--font-size-5xl) !important;
     text-align: center !important;
     color: var(--title-color) !important;
     margin: 0.5rem !important;
@@ -170,7 +178,15 @@
 
 .kioskModalSubTitle {
     font-weight: 700 !important;
-    font-size: var(--font-size-sm) !important;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center !important;
+    color: #59567a !important;
+    margin-top: 0.5rem !important;
+}
+
+.kioskModalSubTitleMobile {
+    font-weight: 700 !important;
+    font-size: var(--font-size-lg) !important;
     text-align: center !important;
     color: #59567a !important;
     margin-top: 0.5rem !important;
@@ -197,23 +213,53 @@
 
 .kioskModalTextFieldTitle {
     font-weight: 500 !important;
-    font-size: var(--font-size-sm) !important;
+    font-size: var(--font-size-5xl) !important;
     color: #59567a !important;
     white-space: nowrap !important;
+    text-align: center;
+}
+
+.kioskModalTextFieldTitleMobile {
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    color: #59567a !important;
+    white-space: nowrap !important;
+    text-align: center;
 }
 
 .kioskModalTextFieldValue {
     font-weight: 700 !important;
-    font-size: var(--font-size-sm) !important;
+    font-size: 28px !important;
     color: var(--title-color) !important;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.kioskModalTextFieldValueMobile {
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    color: var(--title-color) !important;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .kioskModalReturnText {
+    font-weight: 500;
+    font-size: var(--font-size-5xl) !important;
+    text-align: center;
+    color: #908ea7 !important;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.kioskModalReturnTextMobile {
     font-weight: 500;
     font-size: var(--font-size-sm) !important;
     text-align: center;
     color: #908ea7 !important;
     margin-top: 1rem;
+    cursor: pointer;
 }
 
 .kioskModalSecondText {
@@ -232,4 +278,24 @@
     background-color: rgba(0, 0, 0, 0.8) !important;
     color: var(--color-white) !important;
     width: auto !important;
+}
+
+.kioskWaitingNumber {
+    color: var(--mj-deep-green);
+    font-weight: 600;
+    font-size: 160px;
+}
+
+.kioskWaitingNumberMobile {
+    color: var(--mj-deep-green);
+    font-weight: 600;
+    font-size: 70px;
+}
+
+.kioskInlineModalContent {
+    padding: 2rem 3rem;
+}
+
+.kioskInlineModalContentMobile {
+    padding: 1.5rem 1rem;
 }

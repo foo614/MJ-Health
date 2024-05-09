@@ -8,6 +8,7 @@ import styles from '../_kiosk.module.scss'
 import Grid from '@mui/material/Grid'
 import KioskNoRecordImage from '../../../images/kiosk-norecord.png'
 import { useState, useEffect } from 'react'
+
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
         children: React.ReactElement<any, any>
@@ -45,7 +46,11 @@ const NoRecordModal: React.FC<Props> = ({ open, matches, setOpen }: Props) => {
                 classes={{ paper: styles.kioskInlineModal }}
             >
                 <DialogContent
-                    sx={{ paddingTop: '2rem', paddingBottom: '2rem' }}
+                    className={
+                        matches
+                            ? styles.kioskInlineModalContent
+                            : styles.kioskInlineModalContentXs
+                    }
                 >
                     <Box sx={{ textAlign: 'center' }}>
                         <img
@@ -53,10 +58,22 @@ const NoRecordModal: React.FC<Props> = ({ open, matches, setOpen }: Props) => {
                             width="100"
                             height="100"
                         />
-                        <p className={styles.kioskModalTitle}>
+                        <p
+                            className={
+                                matches
+                                    ? styles.kioskModalTitle
+                                    : styles.kioskModalTitleMobile
+                            }
+                        >
                             No Record Found
                         </p>
-                        <p className={styles.kioskModalSubTitle}>
+                        <p
+                            className={
+                                matches
+                                    ? styles.kioskModalSubTitle
+                                    : styles.kioskModalSubTitleMobile
+                            }
+                        >
                             Sorry, there isn’t any appoinment match with your
                             given info.
                         </p>
@@ -69,7 +86,14 @@ const NoRecordModal: React.FC<Props> = ({ open, matches, setOpen }: Props) => {
                         />
                     </Box>
                     <Box sx={{ padding: '15px' }}>
-                        <p className={styles.kioskModalReturnText}>
+                        <p
+                            className={
+                                matches
+                                    ? styles.kioskModalReturnText
+                                    : styles.kioskModalReturnTextMobile
+                            }
+                            onClick={() => setCounter(0)}
+                        >
                             Return to front page in{' '}
                             <span className={styles.kioskModalSecondText}>
                                 {counter}
