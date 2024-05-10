@@ -14,6 +14,7 @@ const HMCRecord = () => {
         {
             id: 1,
             name: 'Jeffery Mohamad Bin Christofa',
+            category: 'Test Category',
             icNo: '830516015213',
             package: 'K3',
             memberID: '040110100073001',
@@ -24,6 +25,7 @@ const HMCRecord = () => {
         {
             id: 2,
             name: 'Wong Sin Yi',
+            category: 'Test Category',
             icNo: 'S693118A',
             package: 'K3',
             memberID: '040110100073001',
@@ -35,6 +37,7 @@ const HMCRecord = () => {
             id: 3,
             name: 'Liu Yan',
             icNo: '150103197908131051',
+            category: 'Test Category',
             package: 'K3',
             memberID: '040110100073001',
             seqNo: '003',
@@ -44,6 +47,7 @@ const HMCRecord = () => {
         {
             id: 4,
             name: 'Lok Wing Ching',
+            category: 'Test Category',
             icNo: '286730572532',
             package: 'K3',
             memberID: '040110100073001',
@@ -54,6 +58,7 @@ const HMCRecord = () => {
         {
             id: 5,
             name: 'Angelica Lee',
+            category: 'Test Category',
             icNo: '111000105757',
             package: 'K3',
             memberID: '040110100073001',
@@ -63,6 +68,7 @@ const HMCRecord = () => {
         },
         {
             id: 6,
+            category: 'Test Category',
             name: 'Noraini Binti Hassan',
             icNo: '690602136118',
             package: 'K3',
@@ -73,6 +79,7 @@ const HMCRecord = () => {
         },
         {
             id: 7,
+            category: 'Test Category',
             name: 'Grosen Edly Anak Henry',
             icNo: '900311136671',
             package: 'K3',
@@ -83,6 +90,7 @@ const HMCRecord = () => {
         },
         {
             id: 8,
+            category: 'Test Category',
             name: 'Dato Hussin',
             icNo: '510317-13-5131',
             package: 'K3',
@@ -94,6 +102,7 @@ const HMCRecord = () => {
         {
             id: 9,
             name: 'Chen Yu Lin',
+            category: 'Test Category',
             icNo: 'A234567890',
             package: 'K3',
             memberID: '040110100073001',
@@ -104,6 +113,7 @@ const HMCRecord = () => {
         {
             id: 10,
             name: 'Deen Zhen',
+            category: 'Test Category',
             icNo: '111000105757',
             package: 'K3',
             memberID: '040110100073001',
@@ -114,6 +124,7 @@ const HMCRecord = () => {
         {
             id: 11,
             name: 'Ramasamy Lispra',
+            category: 'Test Category',
             icNo: '900311136671',
             package: 'K3',
             memberID: '040110100073001',
@@ -124,6 +135,7 @@ const HMCRecord = () => {
         {
             id: 12,
             name: 'Mohammad Ismail',
+            category: 'Test Category',
             icNo: '690602136118',
             package: 'K3',
             memberID: '040110100073001',
@@ -134,6 +146,7 @@ const HMCRecord = () => {
         {
             id: 13,
             name: 'Sanjay Adam',
+            category: 'Test Category',
             icNo: 'S693118A',
             package: 'K3',
             memberID: '040110100073001',
@@ -143,6 +156,7 @@ const HMCRecord = () => {
         },
         {
             id: 14,
+            category: 'Test Category',
             name: 'Abu Bakar',
             icNo: '830516-01-5213',
             package: 'K3',
@@ -176,6 +190,14 @@ const HMCRecord = () => {
                         <TableCell>
                             <p className={styles.itRoomPrintingTableHeadTitle}>
                                 Name
+                            </p>
+                        </TableCell>
+                        <TableCell>
+                            <p
+                                className={styles.itRoomPrintingTableHeadTitle}
+                                style={{ textAlign: 'center' }}
+                            >
+                                Category
                             </p>
                         </TableCell>
                         <TableCell>
@@ -224,6 +246,16 @@ const HMCRecord = () => {
                                 <TableCell>
                                     <p className={styles.tableCellBoldValue}>
                                         {item.name}
+                                    </p>
+                                </TableCell>
+                                <TableCell>
+                                    <p
+                                        className={styles.tableCellValue}
+                                        style={{
+                                            textAlign: 'center',
+                                        }}
+                                    >
+                                        {item.category}
                                     </p>
                                 </TableCell>
                                 <TableCell>

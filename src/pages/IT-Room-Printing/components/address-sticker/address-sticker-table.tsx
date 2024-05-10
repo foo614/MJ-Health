@@ -14,6 +14,7 @@ const AddressStickerTable = () => {
         {
             id: 1,
             name: 'Jeffery Mohamad Bin Christofa',
+            category: 'Test Category',
             icNo: '830516015213',
             package: 'K3',
             memberID: '040110100073001',
@@ -24,6 +25,7 @@ const AddressStickerTable = () => {
         {
             id: 2,
             name: 'Wong Sin Yi',
+            category: 'Test Category',
             icNo: 'S693118A',
             package: 'K3',
             memberID: '040110100073001',
@@ -35,6 +37,7 @@ const AddressStickerTable = () => {
             id: 3,
             name: 'Liu Yan',
             icNo: '150103197908131051',
+            category: 'Test Category',
             package: 'K3',
             memberID: '040110100073001',
             seqNo: '003',
@@ -44,6 +47,7 @@ const AddressStickerTable = () => {
         {
             id: 4,
             name: 'Lok Wing Ching',
+            category: 'Test Category',
             icNo: '286730572532',
             package: 'K3',
             memberID: '040110100073001',
@@ -54,6 +58,7 @@ const AddressStickerTable = () => {
         {
             id: 5,
             name: 'Angelica Lee',
+            category: 'Test Category',
             icNo: '111000105757',
             package: 'K3',
             memberID: '040110100073001',
@@ -64,6 +69,7 @@ const AddressStickerTable = () => {
         {
             id: 6,
             name: 'Noraini Binti Hassan',
+            category: 'Test Category',
             icNo: '690602136118',
             package: 'K3',
             memberID: '040110100073001',
@@ -74,6 +80,7 @@ const AddressStickerTable = () => {
         {
             id: 7,
             name: 'Grosen Edly Anak Henry',
+            category: 'Test Category',
             icNo: '900311136671',
             package: 'K3',
             memberID: '040110100073001',
@@ -84,6 +91,7 @@ const AddressStickerTable = () => {
         {
             id: 8,
             name: 'Dato Hussin',
+            category: 'Test Category',
             icNo: '510317-13-5131',
             package: 'K3',
             memberID: '040110100073001',
@@ -94,6 +102,7 @@ const AddressStickerTable = () => {
         {
             id: 9,
             name: 'Chen Yu Lin',
+            category: 'Test Category',
             icNo: 'A234567890',
             package: 'K3',
             memberID: '040110100073001',
@@ -104,6 +113,7 @@ const AddressStickerTable = () => {
         {
             id: 10,
             name: 'Deen Zhen',
+            category: 'Test Category',
             icNo: '111000105757',
             package: 'K3',
             memberID: '040110100073001',
@@ -114,6 +124,7 @@ const AddressStickerTable = () => {
         {
             id: 11,
             name: 'Ramasamy Lispra',
+            category: 'Test Category',
             icNo: '900311136671',
             package: 'K3',
             memberID: '040110100073001',
@@ -124,6 +135,7 @@ const AddressStickerTable = () => {
         {
             id: 12,
             name: 'Mohammad Ismail',
+            category: 'Test Category',
             icNo: '690602136118',
             package: 'K3',
             memberID: '040110100073001',
@@ -134,6 +146,7 @@ const AddressStickerTable = () => {
         {
             id: 13,
             name: 'Sanjay Adam',
+            category: 'Test Category',
             icNo: 'S693118A',
             package: 'K3',
             memberID: '040110100073001',
@@ -144,6 +157,7 @@ const AddressStickerTable = () => {
         {
             id: 14,
             name: 'Abu Bakar',
+            category: 'Test Category',
             icNo: '830516-01-5213',
             package: 'K3',
             memberID: '040110100073001',
@@ -176,6 +190,14 @@ const AddressStickerTable = () => {
                         <TableCell>
                             <p className={styles.itRoomPrintingTableHeadTitle}>
                                 Name
+                            </p>
+                        </TableCell>
+                        <TableCell>
+                            <p
+                                className={styles.itRoomPrintingTableHeadTitle}
+                                style={{ textAlign: 'center' }}
+                            >
+                                Category
                             </p>
                         </TableCell>
                         <TableCell>
@@ -233,6 +255,14 @@ const AddressStickerTable = () => {
                                 <TableCell>
                                     <p className={styles.tableCellBoldValue}>
                                         {item.name}
+                                    </p>
+                                </TableCell>
+                                <TableCell>
+                                    <p
+                                        className={styles.tableCellValue}
+                                        style={{ textAlign: 'center' }}
+                                    >
+                                        {item.category}
                                     </p>
                                 </TableCell>
                                 <TableCell>

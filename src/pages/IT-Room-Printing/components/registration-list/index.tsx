@@ -26,6 +26,7 @@ const RegistrationList: React.FC<Props> = ({ matches }: Props) => {
         {
             id: 1,
             name: 'Jeffery Mohamad Bin Christofa',
+            category: 'Test Category',
             icNo: '830516015213',
             age: 56,
             gender: 'Male',
@@ -38,6 +39,7 @@ const RegistrationList: React.FC<Props> = ({ matches }: Props) => {
         {
             id: 2,
             name: 'Wong Sin Yi',
+            category: 'Test Category',
             icNo: 'S693118A',
             age: 56,
             gender: 'Male',
@@ -49,6 +51,7 @@ const RegistrationList: React.FC<Props> = ({ matches }: Props) => {
         },
         {
             id: 3,
+            category: 'Test Category',
             name: 'Liu Yan',
             icNo: '150103197908131051',
             age: 56,
@@ -61,6 +64,7 @@ const RegistrationList: React.FC<Props> = ({ matches }: Props) => {
         },
         {
             id: 4,
+            category: 'Test Category',
             name: 'Lok Wing Ching',
             icNo: '286730572532',
             age: 56,
@@ -74,6 +78,7 @@ const RegistrationList: React.FC<Props> = ({ matches }: Props) => {
         {
             id: 5,
             name: 'Angelica Lee',
+            category: 'Test Category',
             icNo: '111000105757',
             age: 56,
             gender: 'Male',
@@ -86,6 +91,7 @@ const RegistrationList: React.FC<Props> = ({ matches }: Props) => {
         {
             id: 6,
             name: 'Noraini Binti Hassan',
+            category: 'Test Category',
             icNo: '690602136118',
             age: 56,
             gender: 'Male',
@@ -98,6 +104,7 @@ const RegistrationList: React.FC<Props> = ({ matches }: Props) => {
         {
             id: 7,
             name: 'Grosen Edly Anak Henry',
+            category: 'Test Category',
             icNo: '900311136671',
             age: 56,
             gender: 'Male',
@@ -110,6 +117,7 @@ const RegistrationList: React.FC<Props> = ({ matches }: Props) => {
         {
             id: 8,
             name: 'Dato Hussin',
+            category: 'Test Category',
             icNo: '510317-13-5131',
             age: 56,
             gender: 'Male',
@@ -122,6 +130,7 @@ const RegistrationList: React.FC<Props> = ({ matches }: Props) => {
         {
             id: 9,
             name: 'Chen Yu Lin',
+            category: 'Test Category',
             icNo: 'A234567890',
             age: 56,
             gender: 'Male',
@@ -133,6 +142,7 @@ const RegistrationList: React.FC<Props> = ({ matches }: Props) => {
         },
         {
             id: 10,
+            category: 'Test Category',
             name: 'Deen Zhen',
             icNo: '111000105757',
             age: 56,
@@ -145,6 +155,7 @@ const RegistrationList: React.FC<Props> = ({ matches }: Props) => {
         },
         {
             id: 11,
+            category: 'Test Category',
             name: 'Ramasamy Lispra',
             icNo: '900311136671',
             age: 56,
@@ -157,6 +168,7 @@ const RegistrationList: React.FC<Props> = ({ matches }: Props) => {
         },
         {
             id: 12,
+            category: 'Test Category',
             name: 'Mohammad Ismail',
             icNo: '690602136118',
             age: 56,
@@ -169,6 +181,7 @@ const RegistrationList: React.FC<Props> = ({ matches }: Props) => {
         },
         {
             id: 13,
+            category: 'Test Category',
             name: 'Sanjay Adam',
             icNo: 'S693118A',
             age: 56,
@@ -181,6 +194,7 @@ const RegistrationList: React.FC<Props> = ({ matches }: Props) => {
         },
         {
             id: 14,
+            category: 'Test Category',
             name: 'Abu Bakar',
             icNo: '830516-01-5213',
             age: 56,
@@ -230,6 +244,16 @@ const RegistrationList: React.FC<Props> = ({ matches }: Props) => {
                                     }
                                 >
                                     Name
+                                </p>
+                            </TableCell>
+                            <TableCell>
+                                <p
+                                    className={
+                                        styles.itRoomPrintingTableHeadTitle
+                                    }
+                                    style={{ textAlign: 'center' }}
+                                >
+                                    Category
                                 </p>
                             </TableCell>
                             <TableCell>
@@ -300,6 +324,16 @@ const RegistrationList: React.FC<Props> = ({ matches }: Props) => {
                                             }
                                         >
                                             {item.name}
+                                        </p>
+                                    </TableCell>
+                                    <TableCell>
+                                        <p
+                                            className={styles.tableCellValue}
+                                            style={{
+                                                textAlign: 'center',
+                                            }}
+                                        >
+                                            {item.category}
                                         </p>
                                     </TableCell>
                                     <TableCell>

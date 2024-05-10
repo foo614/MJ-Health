@@ -10,7 +10,8 @@ import styles from '../_dining.module.scss'
 import { Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import { DINING_CHECK_IN_PAGE } from 'constant'
-
+import { useState } from 'react'
+import moment from 'moment'
 type WaitingListTableProps = {
     fakeData: any
     setOpen: any
@@ -21,6 +22,13 @@ const WaitingListTable: React.FC<WaitingListTableProps> = ({
     setOpen,
 }: WaitingListTableProps) => {
     const navigate = useNavigate()
+    const [testData, setTestData] = useState(fakeData)
+
+    const handleUpdateCheckInAt = (index: any) => {
+        const myList = [...testData]
+        myList[index].checkInAt = moment().format("HH:mm").toString()
+        setTestData(myList)
+    }
     return (
         <TableContainer component={Paper} className={styles.diningTable}>
             <Table>
@@ -69,7 +77,7 @@ const WaitingListTable: React.FC<WaitingListTableProps> = ({
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {fakeData.map((item: any, index: number) => {
+                    {testData.map((item: any, index: number) => {
                         return (
                             <TableRow key={index}>
                                 <TableCell size="small">
@@ -129,8 +137,11 @@ const WaitingListTable: React.FC<WaitingListTableProps> = ({
                                         className={styles.checkInBttn}
                                         fullWidth
                                         onClick={() =>
-                                            navigate(DINING_CHECK_IN_PAGE)
+                                            handleUpdateCheckInAt(index)
                                         }
+                                        // onClick={() =>
+                                        //     navigate(DINING_CHECK_IN_PAGE)
+                                        // }
                                     >
                                         Check In
                                     </Button>

@@ -67,6 +67,7 @@ const MemberProfile = () => {
             displayMember: 'show',
             replacedName: 'Mr.J',
             identityNo: '830516015213',
+            passportNo: 'A1234567',
             dateOfBirth: '16 - 05 - 1983',
             age: '54',
             memberId: '0401 1010 0007 3001',
@@ -381,26 +382,64 @@ const MemberProfile = () => {
                                 </Grid>
                             </Box>
                             <Box>
-                                <p className={styles.memberProfileFieldTitle}>
-                                    Identity No.
-                                </p>
-                                <TextField
-                                    InputProps={{
-                                        classes: { input: styles.inputField },
-                                        readOnly: isEdit ? false : true,
-                                    }}
-                                    variant="outlined"
-                                    size="small"
-                                    margin="dense"
-                                    value={formik.values.identityNo}
-                                    name="identityNo"
-                                    fullWidth
-                                    className={
-                                        isEdit
-                                            ? styles.editField
-                                            : styles.readOnlyField
-                                    }
-                                />
+                                <Grid container spacing={1}>
+                                    <Grid item md={6} xs={12}>
+                                        <p
+                                            className={
+                                                styles.memberProfileFieldTitle
+                                            }
+                                        >
+                                            NRIC No.
+                                        </p>
+                                        <TextField
+                                            InputProps={{
+                                                classes: {
+                                                    input: styles.inputField,
+                                                },
+                                                readOnly: isEdit ? false : true,
+                                            }}
+                                            variant="outlined"
+                                            size="small"
+                                            margin="dense"
+                                            value={formik.values.identityNo}
+                                            name="identityNo"
+                                            fullWidth
+                                            className={
+                                                isEdit
+                                                    ? styles.editField
+                                                    : styles.readOnlyField
+                                            }
+                                        />
+                                    </Grid>
+                                    <Grid item md={6} xs={12}>
+                                        <p
+                                            className={
+                                                styles.memberProfileFieldTitle
+                                            }
+                                        >
+                                            Passport No.
+                                        </p>
+                                        <TextField
+                                            InputProps={{
+                                                classes: {
+                                                    input: styles.inputField,
+                                                },
+                                                readOnly: isEdit ? false : true,
+                                            }}
+                                            variant="outlined"
+                                            size="small"
+                                            margin="dense"
+                                            value={formik.values.passportNo}
+                                            name="passportNo"
+                                            fullWidth
+                                            className={
+                                                isEdit
+                                                    ? styles.editField
+                                                    : styles.readOnlyField
+                                            }
+                                        />
+                                    </Grid>
+                                </Grid>
                             </Box>
                             <Box>
                                 <Grid container spacing={1}>
@@ -840,13 +879,37 @@ const MemberProfile = () => {
                                                             </p>
                                                         </TableCell>
                                                         <TableCell>
-                                                            <p
+                                                            <TextField
+                                                                InputProps={{
+                                                                    classes: {
+                                                                        input: styles.inputField,
+                                                                    },
+                                                                    readOnly:
+                                                                        isEdit
+                                                                            ? false
+                                                                            : true,
+                                                                }}
+                                                                variant="outlined"
+                                                                size="small"
+                                                                type="number"
+                                                                margin="dense"
+                                                                name="price"
+                                                                // value={
+                                                                //     item.price
+                                                                // }
+                                                                className={
+                                                                    isEdit
+                                                                        ? styles.editField
+                                                                        : styles.readOnlyField
+                                                                }
+                                                            />
+                                                            {/* <p
                                                                 className={
                                                                     styles.tableValue
                                                                 }
                                                             >
                                                                 {item.price}
-                                                            </p>
+                                                            </p> */}
                                                         </TableCell>
                                                         <TableCell
                                                             sx={{
@@ -869,7 +932,7 @@ const MemberProfile = () => {
                                 </Table>
                             </div>
                             <p className={styles.memberProfileFieldTitle}>
-                                Diet
+                                Diet Option
                             </p>
                             <FormControl
                                 size="small"
