@@ -7,6 +7,7 @@ import { useTheme } from '@mui/system'
 import { FunctionComponent } from 'react'
 import styles from './_queue-list.module.scss'
 import QueueListAppBar from './components'
+import { useParams } from 'react-router-dom'
 
 const OverlapGroup = (): JSX.Element => {
     const theme = useTheme()
@@ -16,7 +17,10 @@ const OverlapGroup = (): JSX.Element => {
             <Grid xs={12} sx={{ mb: 3 }}>
                 <Card>
                     <CardHeader
-                        sx={{ background: '#219b8e', px: matches ? 7 : 2 }}
+                        sx={{
+                            background: 'var(--mj-deep-green)',
+                            px: matches ? 7 : 2,
+                        }}
                         action={
                             <div className={styles.dFlex}>
                                 <img
@@ -70,12 +74,29 @@ const OverlapGroup = (): JSX.Element => {
     )
 }
 
+const mockAreaData = [
+    { id: 1, name: 'Reception Counter' },
+    { id: 2, name: 'Area 1' },
+    { id: 3, name: 'Area 2' },
+    { id: 4, name: 'Dining Area' },
+    { id: 5, name: 'Physcian Consultation Area' },
+    { id: 6, name: 'Life Style Consulting Area' },
+]
+
 const QueueManagementList: FunctionComponent = () => {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
+
+    const { areaId } = useParams()
+
     return (
         <>
-            <QueueListAppBar />
+            <QueueListAppBar
+                title={
+                    mockAreaData.find((x) => x.id == Number(areaId))?.name ??
+                    'Area 1'
+                }
+            />
             <Grid container sx={{ px: matches ? 10 : 2, py: matches ? 5 : 2 }}>
                 <OverlapGroup />
                 <OverlapGroup />

@@ -19,18 +19,28 @@
     background-color: #fff;
 }
 
+.cardGrid {
+    padding-top: 0 !important;
+}
+
 .card {
     // background: linear-gradient(231deg, white 0%, #f3f3f3 100%);
     box-shadow: 0px 3px 6px rgba(89, 86, 122, 0.15);
     border-radius: 10px;
     background-color: white;
-    padding: 100px 150px;
+    padding: 80px 50px;
     text-align: center;
     font-weight: 600;
     font-size: var(--font-size-base);
+    cursor: pointer;
     @media screen and (max-width: 600px) {
-        padding: 50px 70px;
+        padding: 40px 20px;
     }
+}
+
+.card.active {
+    border: 4px solid var(--mj-light-green);
+    box-shadow: 0px 3px 6px rgba(89, 86, 122, 0.15);
 }
 
 .leftBox {
@@ -70,31 +80,44 @@
     z-index: 3;
 }
 
+.monitorSystemTableAreaDisplay {
+    padding: 1.5rem !important;
+    font-weight: 600 !important;
+    font-size: var(--font-size-5xl) !important;
+    color: var(--color-white) !important;
+    text-transform: uppercase;
+}
+
 .monitorSystemTableHeadTitle {
+    padding: 0.75rem 1.5rem 0.75rem !important;
     font-weight: 500 !important;
     font-size: var(--font-size-sm) !important;
     color: var(--color-white) !important;
 }
 
 .tableCellValue {
+    padding: 0.75rem 1.5rem 0.75rem !important;
     color: var(--title-color);
     font-weight: 600;
     font-size: var(--font-size-base);
-    text-align: center;
+    // text-align: center;
 }
 
 .tableCellSecondValue {
+    padding: 0.75rem 1.5rem 0.75rem !important;
     color: var(--title-color);
     font-weight: 600;
     font-size: var(--font-size-base);
 }
 
 .tableCellValueLast {
+    padding: 0.75rem 1.5rem 0.75rem !important;
     color: var(--color-lightslategray);
     font-weight: 600;
     font-size: var(--font-size-base);
     text-align: center;
 }
+
 .flowModifierBttn {
     font-weight: 500 !important;
     font-size: var(--font-size-lg);

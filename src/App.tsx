@@ -160,6 +160,7 @@ import FinalReportSonography from 'pages/Final-Report/Sonography'
 import FinalReportPapsSmear from 'pages/Final-Report/Paps-Smear'
 import SupplementaryReport from 'pages/Final-Report/Supplementary-Report'
 import FinalReportCTScan from 'pages/Final-Report/CT-Scan'
+import QueueManagementReceptionCounter from 'pages/Queue-Management/components/reception-counter'
 
 function App() {
     const data = [
@@ -265,8 +266,12 @@ function App() {
                     element={<QueueManagement />}
                 />
                 <Route
-                    path={QUEUE_MANAGEMENT_PAGE + '/:id'}
+                    path={QUEUE_MANAGEMENT_PAGE + '/:areaId'}
                     element={<QueueManagementList />}
+                />
+                <Route
+                    path={QUEUE_MANAGEMENT_PAGE + '/reception-counter'}
+                    element={<QueueManagementReceptionCounter />}
                 />
                 <Route path={RECEPTION_PAGE} element={<Reception />} />
                 <Route

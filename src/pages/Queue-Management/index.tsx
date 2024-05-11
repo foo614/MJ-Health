@@ -13,6 +13,7 @@ import CustomHeader from 'components/CustomHeader'
 import { QUEUE_MANAGEMENT_PAGE } from 'constant'
 import { useNavigate } from 'react-router-dom'
 import styles from './_queue-management.module.scss'
+import { useState } from 'react'
 
 const mockData = [
     {
@@ -52,10 +53,23 @@ const mockData = [
     },
 ]
 
+const mockAreaData = [
+    { id: 1, name: 'Reception Counter' },
+    { id: 2, name: 'Area 1' },
+    { id: 3, name: 'Area 2' },
+    { id: 4, name: 'Dining Area' },
+    { id: 5, name: 'Physcian Consultation Area' },
+    { id: 6, name: 'Life Style Consulting Area' },
+]
+
+const receptionCounterId = 1
+
 function QueueManagement() {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
     const navigate = useNavigate()
+
+    const [selectedArea, setSelectedArea] = useState<number>(2)
 
     const StyledActiveBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
         '& .MuiBadge-badge': {
@@ -93,28 +107,33 @@ function QueueManagement() {
                             spacing={matches ? 6 : 0}
                             sx={{ p: matches ? 8 : 0 }}
                         >
-                            <Grid xs={12} md={6}>
-                                <Card className={styles.card}>Front Area</Card>
-                            </Grid>
-                            <Grid xs={12} md={6}>
-                                <Card className={styles.card}>Area 1</Card>
-                            </Grid>
-                            <Grid xs={12} md={6}>
-                                <Card className={styles.card}>Area 2</Card>
-                            </Grid>
-                            <Grid xs={12} md={6}>
-                                <Card className={styles.card}>Dining Area</Card>
-                            </Grid>
-                            <Grid xs={12} md={6}>
-                                <Card className={styles.card}>
-                                    Physician Consultation Area
-                                </Card>
-                            </Grid>
-                            <Grid xs={12} md={6}>
-                                <Card className={styles.card}>
-                                    Life Style Consulting Area
-                                </Card>
-                            </Grid>
+                            {mockAreaData.map((mockArea) => (
+                                <Grid
+                                    className={styles.cardGrid}
+                                    key={`area${mockArea.id}`}
+                                    xs={12}
+                                    sm={6}
+                                >
+                                    <Card
+                                        className={`${styles.card} ${selectedArea == mockArea.id && styles.active}`}
+                                        onClick={() => {
+                                            if (
+                                                mockArea.id ==
+                                                receptionCounterId
+                                            ) {
+                                                navigate(
+                                                    QUEUE_MANAGEMENT_PAGE +
+                                                        '/reception-counter'
+                                                )
+                                            } else {
+                                                setSelectedArea(mockArea.id)
+                                            }
+                                        }}
+                                    >
+                                        {mockArea.name}
+                                    </Card>
+                                </Grid>
+                            ))}
                         </Grid>
                     </div>
                 </Grid>
@@ -128,36 +147,45 @@ function QueueManagement() {
                                             styles.monitorSystemTableHead
                                         }
                                     >
+                                        {selectedArea && (
+                                            <TableRow>
+                                                <TableCell
+                                                    className={
+                                                        styles.monitorSystemTableAreaDisplay
+                                                    }
+                                                    colSpan={3}
+                                                >
+                                                    {
+                                                        mockAreaData.find(
+                                                            (x) =>
+                                                                x.id ==
+                                                                selectedArea
+                                                        )?.name
+                                                    }
+                                                </TableCell>
+                                            </TableRow>
+                                        )}
                                         <TableRow>
-                                            <TableCell>
-                                                <p
-                                                    className={
-                                                        styles.monitorSystemTableHeadTitle
-                                                    }
-                                                    style={{
-                                                        textAlign: 'center',
-                                                    }}
-                                                >
-                                                    Room No.
-                                                </p>
+                                            <TableCell
+                                                className={
+                                                    styles.monitorSystemTableHeadTitle
+                                                }
+                                            >
+                                                Room No.
                                             </TableCell>
-                                            <TableCell>
-                                                <p
-                                                    className={
-                                                        styles.monitorSystemTableHeadTitle
-                                                    }
-                                                >
-                                                    Room Name
-                                                </p>
+                                            <TableCell
+                                                className={
+                                                    styles.monitorSystemTableHeadTitle
+                                                }
+                                            >
+                                                Room Name
                                             </TableCell>
-                                            <TableCell>
-                                                <p
-                                                    className={
-                                                        styles.monitorSystemTableHeadTitle
-                                                    }
-                                                >
-                                                    Status
-                                                </p>
+                                            <TableCell
+                                                className={
+                                                    styles.monitorSystemTableHeadTitle
+                                                }
+                                            >
+                                                Status
                                             </TableCell>
                                         </TableRow>
                                     </TableHead>
@@ -166,25 +194,25 @@ function QueueManagement() {
                                             (item: any, index: number) => {
                                                 return (
                                                     <TableRow key={index}>
-                                                        <TableCell>
-                                                            <p
-                                                                className={
-                                                                    styles.tableCellValue
-                                                                }
-                                                            >
-                                                                {item.roomNo}
-                                                            </p>
+                                                        <TableCell
+                                                            className={
+                                                                styles.tableCellValue
+                                                            }
+                                                        >
+                                                            {item.roomNo}
                                                         </TableCell>
-                                                        <TableCell>
-                                                            <p
-                                                                className={
-                                                                    styles.tableCellSecondValue
-                                                                }
-                                                            >
-                                                                {item.roomName}
-                                                            </p>
+                                                        <TableCell
+                                                            className={
+                                                                styles.tableCellSecondValue
+                                                            }
+                                                        >
+                                                            {item.roomName}
                                                         </TableCell>
-                                                        <TableCell>
+                                                        <TableCell
+                                                            className={
+                                                                styles.tableCellValueLast
+                                                            }
+                                                        >
                                                             {item.status ===
                                                             0 ? (
                                                                 <StyledActiveBadge
@@ -192,13 +220,7 @@ function QueueManagement() {
                                                                         ''
                                                                     }
                                                                 >
-                                                                    <p
-                                                                        className={
-                                                                            styles.tableCellValueLast
-                                                                        }
-                                                                    >
-                                                                        Active
-                                                                    </p>
+                                                                    Active
                                                                 </StyledActiveBadge>
                                                             ) : (
                                                                 <StyledInactiveBadge
@@ -206,13 +228,7 @@ function QueueManagement() {
                                                                         ''
                                                                     }
                                                                 >
-                                                                    <p
-                                                                        className={
-                                                                            styles.tableCellValueLast
-                                                                        }
-                                                                    >
-                                                                        Off
-                                                                    </p>
+                                                                    Off
                                                                 </StyledInactiveBadge>
                                                             )}
                                                         </TableCell>

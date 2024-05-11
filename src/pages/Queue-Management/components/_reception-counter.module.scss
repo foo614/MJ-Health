@@ -1,0 +1,130 @@
+.dFlex {
+    display: flex;
+}
+
+.group9 {
+    margin: auto;
+
+    .textWrapper11 {
+        color: #ffffff;
+        font-family: 'Montserrat', Helvetica;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0;
+        line-height: normal;
+        white-space: nowrap;
+        @media screen and (max-width: 600px) {
+            font-size: 12px;
+        }
+    }
+
+    .textWrapper12 {
+        color: #ffffff;
+        font-family: 'Montserrat', Helvetica;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: normal;
+        @media screen and (max-width: 600px) {
+            font-size: 10px;
+        }
+    }
+}
+
+.textWrapper4 {
+    color: #ffffff;
+    font-family: 'Montserrat', Helvetica;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    @media screen and (max-width: 600px) {
+        font-size: 16px;
+    }
+}
+
+.textWrapper5 {
+    color: #211d4e;
+    font-family: 'Montserrat', Helvetica;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 34px;
+    white-space: nowrap;
+    @media screen and (max-width: 600px) {
+        font-size: 20px;
+    }
+}
+
+.textWrapper6 {
+    color: #5a567b;
+    font-family: 'Montserrat', Helvetica;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 34px;
+    white-space: nowrap;
+}
+
+.textWrapper8 {
+    color: #211d4e;
+    font-family: 'Montserrat', Helvetica;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 60px;
+    white-space: nowrap;
+    @media screen and (max-width: 600px) {
+        line-height: 30px;
+        margin-top: 25px;
+    }
+}
+
+.receptionDetail {
+    text-align: center;
+    align-self: center;
+
+    .sequenceNo,
+    .counterNo {
+        font-family: 'Montserrat', Helvetica;
+        font-size: 68px;
+        font-weight: 600;
+        letter-spacing: 3.4px;
+        line-height: normal;
+        white-space: nowrap;
+
+        @media screen and (max-width: 600px) {
+            font-size: 40px;
+        }
+    }
+
+    .sequenceNo {
+        color: var(--mj-deep-green);
+    }
+
+    .counterNo {
+        color: var(--mj-light-green);
+    }
+
+    .label {
+        color: var(--title-color);
+        font-family: 'Montserrat', Helvetica;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0;
+        text-align: center;
+        white-space: nowrap;
+        margin-top: 15px;
+
+        @media screen and (max-width: 600px) {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    }
+
+    .rightArrow {
+        @media screen and (max-width: 600px) {
+            width: 40px;
+        }
+    }
+}

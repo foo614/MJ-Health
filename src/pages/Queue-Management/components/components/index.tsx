@@ -20,7 +20,11 @@ import styles from './_appBar.module.scss'
 const settings = ['Setting', 'Logout']
 const drawerWidth = 240
 
-const QueueListAppBar = () => {
+type Props = {
+    title: string
+}
+
+const QueueListAppBar = ({ title }: Props) => {
     const [mobileOpen, setMobileOpen] = React.useState(false)
     const navigate = useNavigate()
 
@@ -182,9 +186,10 @@ const QueueListAppBar = () => {
                                 variant="h4"
                                 sx={{
                                     color: 'white',
+                                    textTransform: 'uppercase',
                                 }}
                             >
-                                <b>AREA 1</b>
+                                <b>{title}</b>
                             </Typography>
                         </Box>
 
