@@ -1,20 +1,30 @@
+import Button from '@mui/material/Button'
+import Paper from '@mui/material/Paper'
+import Stack from '@mui/material/Stack'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import Paper from '@mui/material/Paper'
+import ChangeStationIcon from 'images/change-station.png'
+import FlowModifierIcon from 'images/flow-modifier.png'
+import { Dispatch, SetStateAction } from 'react'
 import styles from '../_monitor-system.module.scss'
+
 type Props = {
     fakeData: any
     currentSelectedItem: any
     setCurrentSelectedItem: any
+    setOpenFlowModifierModal: Dispatch<SetStateAction<boolean>>
+    setOpenChangeStationModal: Dispatch<SetStateAction<boolean>>
 }
 const MonitorSystemBottomTable: React.FC<Props> = ({
     fakeData,
     currentSelectedItem,
     setCurrentSelectedItem,
+    setOpenFlowModifierModal,
+    setOpenChangeStationModal,
 }: Props) => {
     return (
         <TableContainer
@@ -77,6 +87,11 @@ const MonitorSystemBottomTable: React.FC<Props> = ({
                         <TableCell>
                             <p className={styles.monitorSystemTableHeadTitle}>
                                 Next Station
+                            </p>
+                        </TableCell>
+                        <TableCell>
+                            <p className={styles.monitorSystemTableHeadTitle}>
+                                Actions
                             </p>
                         </TableCell>
                     </TableRow>
@@ -169,6 +184,28 @@ const MonitorSystemBottomTable: React.FC<Props> = ({
                                     >
                                         {item.nextStation}
                                     </p>
+                                </TableCell>
+                                <TableCell>
+                                    <Stack spacing={1} direction="row">
+                                        <Button
+                                            variant="contained"
+                                            className={styles.flowModifierBttn}
+                                            onClick={() =>
+                                                setOpenFlowModifierModal(true)
+                                            }
+                                        >
+                                            <img src={FlowModifierIcon} />
+                                        </Button>
+                                        <Button
+                                            variant="contained"
+                                            className={styles.changeStationBttn}
+                                            onClick={() =>
+                                                setOpenChangeStationModal(true)
+                                            }
+                                        >
+                                            <img src={ChangeStationIcon} />
+                                        </Button>
+                                    </Stack>
                                 </TableCell>
                             </TableRow>
                         )

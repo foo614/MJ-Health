@@ -209,8 +209,6 @@ const MonitorSystem = () => {
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
 
     const lgUp = useMediaQuery(theme.breakpoints.up('lg'))
-    const [openChangeStationModal, setOpenChangeStationModal] =
-        useState<boolean>(false)
 
     const [currentSelectedItem, setCurrentSelectedItem] = useState(
         bottomFakeData?.[0]
@@ -218,6 +216,9 @@ const MonitorSystem = () => {
 
     const [openFlowModifierModal, setOpenFlowModifierModal] =
         useState<boolean>(false)
+    const [openChangeStationModal, setOpenChangeStationModal] =
+        useState<boolean>(false)
+
     return (
         <>
             <ResponsiveAppBar />
@@ -314,54 +315,19 @@ const MonitorSystem = () => {
                         </Button>
                     </Grid>
                 </Grid>
-                <div style={{ marginTop: '1rem' }}>
+                <div style={{ marginTop: '1rem', marginBottom: '1rem' }}>
                     <MonitorSystemTopTable fakeData={topFakeData} />
                 </div>
-                <div style={{ marginTop: '2rem' }}>
+                <div style={{ marginTop: '1rem', marginBottom: '1rem' }}>
                     <MonitorSystemBottomTable
                         fakeData={bottomFakeData}
                         currentSelectedItem={currentSelectedItem}
                         setCurrentSelectedItem={setCurrentSelectedItem}
+                        setOpenFlowModifierModal={setOpenFlowModifierModal}
+                        setOpenChangeStationModal={setOpenChangeStationModal}
                     />
                 </div>
 
-                <div style={{ marginTop: '2rem' }}>
-                    <Grid container>
-                        <Grid item md={8}></Grid>
-                        <Grid item md={4}>
-                            <Stack
-                                direction="row"
-                                spacing={2}
-                                sx={{
-                                    justifyContent: 'end',
-                                    height: '50px',
-                                    marginBottom: '2rem',
-                                }}
-                            >
-                                <Button
-                                    variant="contained"
-                                    className={styles.flowModifierBttn}
-                                    fullWidth
-                                    onClick={() =>
-                                        setOpenFlowModifierModal(true)
-                                    }
-                                >
-                                    Flow Modifier
-                                </Button>
-                                <Button
-                                    variant="contained"
-                                    className={styles.changeStationBttn}
-                                    fullWidth
-                                    onClick={() =>
-                                        setOpenChangeStationModal(true)
-                                    }
-                                >
-                                    Change Station
-                                </Button>
-                            </Stack>
-                        </Grid>
-                    </Grid>
-                </div>
                 {openChangeStationModal ? (
                     <ChangeStationModal
                         open={openChangeStationModal}
