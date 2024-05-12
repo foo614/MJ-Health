@@ -1,4 +1,5 @@
 @use '../../styles/variables' as *;
+
 .physicianConsultationHeader {
     position: relative;
     padding-bottom: 15px;
@@ -538,4 +539,38 @@
         font-size: 10px !important;
         padding: 0 1rem !important;
     }
+}
+
+.miniModal {
+    background: var(--color-white) !important;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 10px !important;
+}
+
+.miniModalTitle {
+    color: var(--mj-deep-green);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.miniModalContent {
+    padding: 2rem;
+}
+
+.miniModalCheckbox {
+    margin-right: 20px;
+}
+
+.miniModalCheckboxLabel {
+    color: var(--label-color);
+}
+
+.miniModalConfirmBttn {
+    font-weight: 700 !important;
+    color: var(--color-white) !important;
+    font-size: var(--font-size-5xl) !important;
+    // padding-top: 10px !important;
+    // padding-bottom: 10px !important;
+    height: unset !important;
 }

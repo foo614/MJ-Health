@@ -17,6 +17,9 @@ import AllergyModal from './components/allergy-modal'
 import CallHistoryModal from './components/call-history-modal'
 import CurrentTableEditModal from './components/current-table-edit-modal'
 import UserHeader from './components/user-header'
+import LowerLimbEdemaModal from './components/lower-limb-edema-modal'
+import GeneralExaminationModal from './components/general-examination-modal'
+import SystemicExaminationModal from './components/systemic-examination-modal'
 
 const PhysicianConsultationInfo = () => {
     const theme = useTheme()
@@ -24,14 +27,20 @@ const PhysicianConsultationInfo = () => {
     const lgUp = useMediaQuery(theme.breakpoints.up('lg'))
     const navigate = useNavigate()
     const [selectedSection, setSelectedSection] = useState<number>(1)
+
+    // Modal control in left.
     const [openMedicalHistoryModal, setOpenMedicalHistoryModal] =
         useState<boolean>(false)
-
     const [openPersonalComplaintModal, setOpenPersonalComplaintModal] =
         useState<boolean>(false)
-
     const [openAllergyModal, setOpenAllergyModal] = useState<boolean>(false)
     const [openCallHistoryModal, setOpenCallHistoryModal] =
+        useState<boolean>(false)
+    const [openLowerLimbEdemaModal, setOpenLowerLimbEdemaModal] =
+        useState<boolean>(false)
+    const [openGeneralExaminationModal, setOpenGeneralExaminationModal] =
+        useState<boolean>(false)
+    const [openSystemicExaminationModal, setOpenSystemicExaminationModal] =
         useState<boolean>(false)
 
     const displaySelectedSection = () => {
@@ -123,6 +132,37 @@ const PhysicianConsultationInfo = () => {
                             >
                                 <p className={styles.smallCardTitle}>
                                     Call History
+                                </p>
+                            </div>
+
+                            <div
+                                className={styles.smallCard}
+                                onClick={() => setOpenLowerLimbEdemaModal(true)}
+                            >
+                                <p className={styles.smallCardTitle}>
+                                    Lower Limb Edema
+                                </p>
+                            </div>
+
+                            <div
+                                className={styles.smallCard}
+                                onClick={() =>
+                                    setOpenGeneralExaminationModal(true)
+                                }
+                            >
+                                <p className={styles.smallCardTitle}>
+                                    General Examination
+                                </p>
+                            </div>
+
+                            <div
+                                className={styles.smallCard}
+                                onClick={() =>
+                                    setOpenSystemicExaminationModal(true)
+                                }
+                            >
+                                <p className={styles.smallCardTitle}>
+                                    Systemic Examination
                                 </p>
                             </div>
                         </Stack>
@@ -222,6 +262,24 @@ const PhysicianConsultationInfo = () => {
                     setOpen={setOpenCallHistoryModal}
                 />
             ) : null}
+            {openLowerLimbEdemaModal && (
+                <LowerLimbEdemaModal
+                    open={openLowerLimbEdemaModal}
+                    setOpen={setOpenLowerLimbEdemaModal}
+                />
+            )}
+            {openGeneralExaminationModal && (
+                <GeneralExaminationModal
+                    open={openGeneralExaminationModal}
+                    setOpen={setOpenGeneralExaminationModal}
+                />
+            )}
+            {openSystemicExaminationModal && (
+                <SystemicExaminationModal
+                    open={openSystemicExaminationModal}
+                    setOpen={setOpenSystemicExaminationModal}
+                />
+            )}
         </>
     )
 }

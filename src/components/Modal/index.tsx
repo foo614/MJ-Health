@@ -25,9 +25,11 @@ const CustomModal = ({ title, setOpen, open, children, width }: Props) => {
                 maxWidth={width}
                 fullWidth={!!width}
             >
-                <DialogTitle className={styles.infoModalColor}>
-                    <p className={styles.infoModalTitle}>{title}</p>
-                </DialogTitle>
+                {title && (
+                    <DialogTitle className={styles.infoModalColor}>
+                        <p className={styles.infoModalTitle}>{title}</p>
+                    </DialogTitle>
+                )}
                 <IconButton
                     onClick={() => setOpen(!open)}
                     sx={{
