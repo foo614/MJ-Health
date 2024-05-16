@@ -6,6 +6,8 @@ import Slide from '@mui/material/Slide'
 import * as React from 'react'
 import styles from '../_kiosk.module.scss'
 import Grid from '@mui/material/Grid'
+import IconButton from '@mui/material/IconButton'
+import CloseIcon from '@mui/icons-material/Close'
 import KioskInlineImage from '../../../images/kiosk-inline.png'
 import { useState, useEffect } from 'react'
 const Transition = React.forwardRef(function Transition(
@@ -50,6 +52,17 @@ const InlineModal: React.FC<Props> = ({
                 keepMounted
                 classes={{ paper: styles.kioskInlineModal }}
             >
+                <IconButton
+                    onClick={() => setOpen(false)}
+                    sx={{
+                        position: 'absolute',
+                        right: 8,
+                        top: 15,
+                        color: (theme: any) => theme?.palette?.grey[500],
+                    }}
+                >
+                    <CloseIcon className={styles.closeIcon} />
+                </IconButton>
                 <DialogContent
                     className={
                         matches

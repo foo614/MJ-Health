@@ -8,6 +8,8 @@ import styles from '../_kiosk.module.scss'
 import Grid from '@mui/material/Grid'
 import KioskNoRecordImage from '../../../images/kiosk-norecord.png'
 import { useState, useEffect } from 'react'
+import IconButton from '@mui/material/IconButton'
+import CloseIcon from '@mui/icons-material/Close'
 
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
@@ -45,6 +47,17 @@ const NoRecordModal: React.FC<Props> = ({ open, matches, setOpen }: Props) => {
                 keepMounted
                 classes={{ paper: styles.kioskInlineModal }}
             >
+                <IconButton
+                    onClick={() => setOpen(false)}
+                    sx={{
+                        position: 'absolute',
+                        right: 8,
+                        top: 15,
+                        color: (theme: any) => theme?.palette?.grey[500],
+                    }}
+                >
+                    <CloseIcon className={styles.closeIcon} />
+                </IconButton>
                 <DialogContent
                     className={
                         matches
