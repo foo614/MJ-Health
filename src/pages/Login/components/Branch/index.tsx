@@ -48,7 +48,9 @@ const ImageButton = styled(ButtonBase)(({ theme }) => ({
     '&:hover, &.Mui-focusVisible': {
         zIndex: 1,
         '& .MuiImageBackdrop-root': {
-            opacity: 0.15,
+            opacity: 1.5,
+            background:
+            'linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(144.7deg, rgba(58, 222, 187, 0.5) -0.38%, rgba(0, 174, 233, 0.5) 92.44%)',
         },
         '& .MuiImageMarked-root': {
             opacity: 0,
@@ -87,7 +89,9 @@ const ImageBackdrop = styled('span')(({ theme }) => ({
     right: 0,
     top: 0,
     bottom: 0,
-    backgroundColor: theme.palette.common.black,
+    background:
+        'linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(144.7deg, rgba(58, 222, 187, 0.5) -0.38%, rgba(0, 174, 233, 0.5) 92.44%)',
+    // backgroundColor: theme.palette.common.black,
     opacity: 0.4,
     transition: theme.transitions.create('opacity'),
 }))
