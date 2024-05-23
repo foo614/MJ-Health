@@ -1,0 +1,29 @@
+.tableContainer {
+    max-height: 400px !important;
+    overflow-y: auto !important;
+}
+
+.chooseAllBttn {
+    background: var(--mj-light-green) !important;
+    font-style: normal;
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    width: 200px;
+}
+
+.cancelBttn {
+    background: var(--color-whitesmoke-100) !important;
+    color: var(--label-color) !important;
+    font-style: normal;
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    width: 200px;
+}
+
+.saveAndPrintBttn {
+    background: var(--mj-deep-green) !important;
+    font-style: normal;
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    width: 200px;
+}

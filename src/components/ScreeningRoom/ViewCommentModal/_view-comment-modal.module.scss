@@ -1,11 +1,11 @@
 @use 'styles/variables' as *;
 
 table {
-    min-width: 650;
+    min-width: 650px;
 }
 
 .tableContainer {
-    max-height: 400 !important;
+    max-height: 400px !important;
     overflow-y: auto !important;
 }
 

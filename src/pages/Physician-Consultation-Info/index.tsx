@@ -20,6 +20,8 @@ import UserHeader from './components/user-header'
 import LowerLimbEdemaModal from './components/lower-limb-edema-modal'
 import GeneralExaminationModal from './components/general-examination-modal'
 import SystemicExaminationModal from './components/systemic-examination-modal'
+import PhysicalExamOutcomeCommentModal from './components/physical-exam-outcome-comment-modal'
+import FollowUpModal from './components/follow-up-modal'
 
 const PhysicianConsultationInfo = () => {
     const theme = useTheme()
@@ -28,7 +30,7 @@ const PhysicianConsultationInfo = () => {
     const navigate = useNavigate()
     const [selectedSection, setSelectedSection] = useState<number>(1)
 
-    // Modal control in left.
+    // Modal control at left.
     const [openMedicalHistoryModal, setOpenMedicalHistoryModal] =
         useState<boolean>(false)
     const [openPersonalComplaintModal, setOpenPersonalComplaintModal] =
@@ -42,6 +44,13 @@ const PhysicianConsultationInfo = () => {
         useState<boolean>(false)
     const [openSystemicExaminationModal, setOpenSystemicExaminationModal] =
         useState<boolean>(false)
+
+    // Modal control at right.
+    const [
+        openPhysicalExamOutcomeCommentModal,
+        setOpenPhysicalExamOutcomeCommentModal,
+    ] = useState<boolean>(false)
+    const [openFollowUpModal, setOpenFollowUpModal] = useState<boolean>(false)
 
     const displaySelectedSection = () => {
         switch (selectedSection) {
@@ -223,6 +232,7 @@ const PhysicianConsultationInfo = () => {
                     <Grid item md={2} xs={12} lg={2} xl={1}>
                         <Stack
                             direction="column"
+                            spacing={2}
                             // sx={{
                             //     width: lgUp ? '150px' : '100%',
                             //     margin: 'auto',
@@ -230,6 +240,42 @@ const PhysicianConsultationInfo = () => {
                         >
                             <div className={styles.smallCard}>
                                 <p className={styles.smallCardTitle}>Images</p>
+                            </div>
+
+                            <div
+                                className={styles.smallCard}
+                                onClick={() =>
+                                    setOpenPhysicalExamOutcomeCommentModal(true)
+                                }
+                            >
+                                <p className={styles.smallCardTitle}>
+                                    The Comment for physical exam outcome
+                                </p>
+                            </div>
+
+                            <div className={styles.smallCard}>
+                                <p className={styles.smallCardTitle}>
+                                    Ultrasound
+                                </p>
+                            </div>
+
+                            <div className={styles.smallCard}>
+                                <p className={styles.smallCardTitle}>ENT</p>
+                            </div>
+
+                            <div className={styles.smallCard}>
+                                <p className={styles.smallCardTitle}>
+                                    Retinography
+                                </p>
+                            </div>
+
+                            <div
+                                className={styles.smallCard}
+                                onClick={() => setOpenFollowUpModal(true)}
+                            >
+                                <p className={styles.smallCardTitle}>
+                                    Follow-up
+                                </p>
                             </div>
                         </Stack>
                     </Grid>
@@ -278,6 +324,20 @@ const PhysicianConsultationInfo = () => {
                 <SystemicExaminationModal
                     open={openSystemicExaminationModal}
                     setOpen={setOpenSystemicExaminationModal}
+                />
+            )}
+            {openPhysicalExamOutcomeCommentModal && (
+                <PhysicalExamOutcomeCommentModal
+                    matches={matches}
+                    open={openPhysicalExamOutcomeCommentModal}
+                    setOpen={setOpenPhysicalExamOutcomeCommentModal}
+                />
+            )}
+            {openFollowUpModal && (
+                <FollowUpModal
+                    matches={matches}
+                    open={openFollowUpModal}
+                    setOpen={setOpenFollowUpModal}
                 />
             )}
         </>

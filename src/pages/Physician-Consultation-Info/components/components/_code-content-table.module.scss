@@ -1,0 +1,12 @@
+.codeContentTable {
+    border: 2px solid #ededed !important;
+
+    thead {
+        background: var(--color-whitesmoke-100) !important;
+    }
+
+    thead th {
+        color: var(--title-color) !important;
+        font-weight: 600;
+    }
+}

@@ -216,6 +216,44 @@
     border-radius: 10px !important;
 }
 
+.infoModal {
+    background: var(--color-white) !important;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 10px !important;
+}
+
+.infoModal {
+    .infoModalSystemCheckbox {
+        margin-right: 20px;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .infoModalLocationCheckbox {
+        margin-right: 15px;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .infoModalCheckboxLabel {
+        color: var(--label-color);
+        align-items: flex-start;
+    }
+}
+
+.infoModalDialogContent {
+    padding: 1.5rem 2rem !important;
+    max-height: 480px;
+    overflow: auto;
+}
+
+.infoModalDialogContentTitle {
+    color: var(--mj-deep-green) !important;
+    font-weight: 600;
+    font-size: 20px;
+}
+
 .infoModalColor {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         linear-gradient(90deg, #3adebb -0.18%, #00aee9 99.82%);
