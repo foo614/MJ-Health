@@ -289,7 +289,7 @@ const PapSmearExamReport = () => {
                                                 handleOpenPDF(testPDF)
                                             }
                                         >
-                                            Print
+                                            Export as PDF
                                         </Button>
                                     ) : (
                                         <Button

@@ -287,7 +287,7 @@ const HealthManagementPromotion = () => {
                                                 handleOpenPDF(testPDF)
                                             }
                                         >
-                                            Print
+                                            Export as PDF
                                         </Button>
                                     ) : (
                                         <Button

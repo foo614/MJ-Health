@@ -289,7 +289,7 @@ const HMCRecord = () => {
                                                 handleOpenPDF(testPDF)
                                             }
                                         >
-                                            Print
+                                            Export as PDF
                                         </Button>
                                     ) : (
                                         <Button

@@ -301,7 +301,7 @@ const AddressStickerTable = () => {
                                                 handleOpenPDF(testPDF)
                                             }
                                         >
-                                            Print
+                                            Export as PDF
                                         </Button>
                                     ) : (
                                         <Button

@@ -523,7 +523,7 @@ const HealthScreeningReport = () => {
                                                             )
                                                         }
                                                     >
-                                                        Print
+                                                        Export as PDF
                                                     </Button>
                                                 ) : (
                                                     <Button

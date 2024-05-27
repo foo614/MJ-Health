@@ -436,7 +436,7 @@ const RegistrationList: React.FC<Props> = ({ matches }: Props) => {
                         fullWidth
                         onClick={() => setOpenPrintModal(true)}
                     >
-                        Print
+                        Export as PDF
                     </Button>
                 </Stack>
             </div>

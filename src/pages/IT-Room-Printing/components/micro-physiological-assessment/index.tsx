@@ -291,7 +291,7 @@ const MicroPhysiologicalAssessment = () => {
                                                 handleOpenPDF(testPDF)
                                             }
                                         >
-                                            Print
+                                            Export as PDF
                                         </Button>
                                     ) : (
                                         <Button
