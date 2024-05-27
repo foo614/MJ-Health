@@ -89,8 +89,8 @@ const HealthManagementConsultationInfo = () => {
                 return <MPA />
             case 6:
                 return <HMPReport />
-            case 7:
-                return <CommentSuggestion />
+            // case 7:
+            //     return <CommentSuggestion />
             default:
                 return null
         }
@@ -335,7 +335,7 @@ const HealthManagementConsultationInfo = () => {
                                             HMP Report
                                         </Button>
                                     </div>
-                                    <div>
+                                    {/* <div>
                                         <Button
                                             variant="contained"
                                             className={
@@ -349,7 +349,7 @@ const HealthManagementConsultationInfo = () => {
                                         >
                                             Comment & Suggestion
                                         </Button>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <Divider className={styles.divLine} />
                             </div>

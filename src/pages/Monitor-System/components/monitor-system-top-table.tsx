@@ -74,6 +74,14 @@ const MonitorSystemTopTable: React.FC<Props> = ({ fakeData }: Props) => {
                                 Completed
                             </p>
                         </TableCell>
+                        <TableCell>
+                            <p
+                                className={styles.monitorSystemTableHeadTitle}
+                                style={{ textAlign: 'center' }}
+                            >
+                                Total
+                            </p>
+                        </TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -146,6 +154,11 @@ const MonitorSystemTopTable: React.FC<Props> = ({ fakeData }: Props) => {
                                             style={{ color: '#219B8E' }}
                                         >
                                             {item.completed}
+                                        </p>
+                                    </TableCell>
+                                    <TableCell>
+                                        <p className={styles.tableCellValue}>
+                                            {item.completed + item.waiting}
                                         </p>
                                     </TableCell>
                                 </TableRow>
@@ -224,6 +237,15 @@ const MonitorSystemTopTable: React.FC<Props> = ({ fakeData }: Props) => {
                                             }
                                         >
                                             {item.completed}
+                                        </p>
+                                    </TableCell>
+                                    <TableCell>
+                                        <p
+                                            className={
+                                                styles.tableCellDisabledValue
+                                            }
+                                        >
+                                            -
                                         </p>
                                     </TableCell>
                                 </TableRow>
