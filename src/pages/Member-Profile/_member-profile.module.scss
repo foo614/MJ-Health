@@ -268,11 +268,11 @@
     color: var(--label-color) !important;
 }
 
-.searchField {
-    background: var(--color-white) !important;
-    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
-    border-radius: var(--br-8xs) !important;
-}
+// .searchField {
+//     background: var(--color-white) !important;
+//     box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
+//     border-radius: var(--br-8xs) !important;
+// }
 
 .searchInputField {
     font-weight: 500 !important;
@@ -513,6 +513,9 @@
     margin-top: 10px !important;
 }
 
+.optionalItemModalDialogContent{
+    background: #F5F5F5;
+}
 @media print {
     html,
     body {

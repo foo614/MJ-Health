@@ -57,9 +57,9 @@ const ConsultationCheckIn = (props: Props) => {
                                     label=""
                                     onChange={handleChange}
                                 >
-                                    <MenuItem value={1}>
+                                    {/* <MenuItem value={1}>
                                         Health Management Consultation
-                                    </MenuItem>
+                                    </MenuItem> */}
                                     <MenuItem value={2}>
                                         Physician Consultation
                                     </MenuItem>

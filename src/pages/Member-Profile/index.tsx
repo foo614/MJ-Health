@@ -932,7 +932,7 @@ const MemberProfile = () => {
                                 </Table>
                             </div>
                             <p className={styles.memberProfileFieldTitle}>
-                                Diet Option
+                                Meal Option
                             </p>
                             <FormControl
                                 size="small"

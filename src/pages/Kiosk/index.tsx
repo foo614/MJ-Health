@@ -84,11 +84,11 @@ const Kiosk = () => {
         <>
             <div
                 className={styles.kioskDiv}
-                style={{ height: onTextFieldFocus ? '80vh' : '100vh' }}
+                style={{ height: onTextFieldFocus ? '90vh' : '100vh' }}
             >
                 <div style={{ display: 'flex' }}>
                     <div style={{ marginTop: 'auto' }}>
-                        <img width="110" height="110" src={logo} alt="logo" />
+                        <img width="250" height="232" src={logo} alt="logo" />
                     </div>
                     <div style={{ marginLeft: 'auto' }}>
                         <div className={styles.languageDiv}>
@@ -117,7 +117,7 @@ const Kiosk = () => {
                                 </p>
                             </div>
                         </div>
-                        <div style={{ marginTop: '1rem' }}>
+                        <div style={{ marginTop: '3rem' }}>
                             <p className={styles.time}>01:00 PM</p>
                             <p className={styles.date}>30 JUL 2022</p>
                         </div>
@@ -125,10 +125,10 @@ const Kiosk = () => {
                 </div>
                 <Box
                     sx={{
-                        maxWidth: '600px',
+                        // maxWidth: '600px',
                         marginLeft: 'auto',
                         marginRight: 'auto',
-                        marginTop: '4rem',
+                        marginTop: '10rem',
                     }}
                 >
                     <Stack>
@@ -153,7 +153,7 @@ const Kiosk = () => {
                             name="idNo"
                             variant="outlined"
                             margin="dense"
-                            size="small"
+                            size="medium"
                             fullWidth
                             InputProps={{
                                 className: styles.kioskFieldProps,

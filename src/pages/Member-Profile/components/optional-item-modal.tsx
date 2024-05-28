@@ -64,12 +64,15 @@ const OptionalItemModal: React.FC<Props> = ({
                         <TextField
                             InputProps={{
                                 classes: { input: styles.searchInputField },
+                                style: {
+                                    backgroundColor: '#F5F5F5',
+                                },
                             }}
                             variant="outlined"
                             margin="dense"
                             fullWidth
                             name="searchField"
-                            className={styles.searchField}
+                            // className={styles.searchField}
                             placeholder="Search..."
                         />
                     </Box>
@@ -132,7 +135,11 @@ const OptionalItemModal: React.FC<Props> = ({
                                         (item: any, index: number) => {
                                             return (
                                                 <TableRow key={index}>
-                                                    <TableCell>
+                                                    <TableCell
+                                                        style={{
+                                                            borderBottom: '0',
+                                                        }}
+                                                    >
                                                         <p
                                                             className={
                                                                 styles.tableValue
@@ -141,7 +148,11 @@ const OptionalItemModal: React.FC<Props> = ({
                                                             {item.item}
                                                         </p>
                                                     </TableCell>
-                                                    <TableCell>
+                                                    <TableCell
+                                                        style={{
+                                                            borderBottom: '0',
+                                                        }}
+                                                    >
                                                         <p
                                                             className={
                                                                 styles.tableValue
@@ -150,7 +161,11 @@ const OptionalItemModal: React.FC<Props> = ({
                                                             {item.price}
                                                         </p>
                                                     </TableCell>
-                                                    <TableCell>
+                                                    <TableCell
+                                                        style={{
+                                                            borderBottom: '0',
+                                                        }}
+                                                    >
                                                         <Checkbox
                                                             checked={
                                                                 checkItem?.includes(
