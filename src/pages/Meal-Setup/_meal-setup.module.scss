@@ -6,7 +6,7 @@
 
 .vegetarianBttn {
     background: var(--color-white) !important;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1) !important;
+    // box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1) !important;
     border-radius: var(--br-8xs) !important;
     font-weight: 600 !important;
     font-size: var(--font-size-base) !important;
@@ -21,7 +21,7 @@
     font-size: var(--font-size-base) !important;
     text-align: center;
     color: var(--label-color) !important;
-    box-shadow: none !important;
+    // box-shadow: none !important;
 }
 
 .divider {
@@ -141,7 +141,7 @@
     background-color: var(--color-whitesmoke-300) !important;
     text-transform: capitalize !important;
     border-radius: var(--br-8xs) !important;
-    box-shadow: unset !important;
+    // box-shadow: unset !important;
 }
 
 .saveBttn {
@@ -152,7 +152,7 @@
     background-color: var(--color-turquoise) !important;
     text-transform: capitalize !important;
     border-radius: var(--br-8xs) !important;
-    box-shadow: 0px 3px 15px rgba(33, 155, 142, 0.25) !important;
+    // box-shadow: 0px 3px 15px rgba(33, 155, 142, 0.25) !important;
 }
 
 .addNewBttn {
