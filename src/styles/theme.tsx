@@ -15,8 +15,8 @@ let theme = createTheme({
             styleOverrides: {
                 contained: {
                     borderRadius: '5px !important',
-                    boxShadow:
-                        '0px 3px 15px rgba(33, 155, 142, 0.25) !important',
+                    // boxShadow:
+                    //     '0px 3px 15px rgba(33, 155, 142, 0.25) !important',
                     backgroundColor: '#3ADEBB',
                 },
                 root: {
