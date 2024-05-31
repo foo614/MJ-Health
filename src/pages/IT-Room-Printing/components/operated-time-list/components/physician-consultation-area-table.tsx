@@ -1,16 +1,16 @@
+import AddIcon from '@mui/icons-material/Add'
+import RemoveIcon from '@mui/icons-material/Remove'
+import Checkbox, { checkboxClasses } from '@mui/material/Checkbox'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import Paper from '@mui/material/Paper'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import Paper from '@mui/material/Paper'
-import styles from '../../../_it-room-printing.module.scss'
-import AddIcon from '@mui/icons-material/Add'
-import Checkbox, { checkboxClasses } from '@mui/material/Checkbox'
-import FormControlLabel from '@mui/material/FormControlLabel'
-import RemoveIcon from '@mui/icons-material/Remove'
 import { useState } from 'react'
+import styles from '../../../_it-room-printing.module.scss'
 type Props = {
     matches: boolean
     fakeData: any
@@ -44,7 +44,7 @@ const PhysicianConsultationArea: React.FC<Props> = ({
                                     paddingBottom: consultationAreaShow
                                         ? '0'
                                         : '16px',
-                                    width: '50%',
+                                    width: 200,
                                 }}
                             >
                                 <p
@@ -61,6 +61,7 @@ const PhysicianConsultationArea: React.FC<Props> = ({
                                     paddingBottom: consultationAreaShow
                                         ? '0'
                                         : '16px',
+                                    width: 180,
                                 }}
                             >
                                 {consultationAreaShow ? null : (
