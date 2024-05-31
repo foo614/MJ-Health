@@ -139,6 +139,7 @@ const StaffManagementTable = ({ fakeData }: Props) => {
                                     </TableCell>
                                     <TableCell>
                                         <Button
+                                            variant="contained"
                                             className={
                                                 styles.manageAccountButton
                                             }
