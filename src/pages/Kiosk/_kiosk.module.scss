@@ -29,6 +29,11 @@
     // column-gap: 10px;
     justify-content: space-around;
     align-items: center;
+    @media screen and (min-height: 1920px) {
+        width: 300px;
+        float: right;
+        margin-bottom: 3rem;
+    }
 }
 
 .englishLanguage {
@@ -79,6 +84,9 @@
         margin: 0.5rem 0;
         font-size: 32px !important;
     }
+    @media screen and (min-height: 1920px) {
+        font-size: 72px !important;
+    }
 }
 
 .date {
@@ -94,13 +102,29 @@
         font-size: 20px !important;
         letter-spacing: 2px;
     }
+    @media screen and (min-height: 1920px) {
+        font-size: 50px !important;
+    }
 }
 
 .idNo {
     font-weight: 700 !important;
-    font-size: var(--font-size-5xl) !important;
+    font-size: 20px !important;
     color: var(--color-white) !important;
     margin-top: 5px;
+    @media screen and (min-height: 1920px) {
+        font-size: 32px !important;
+    }
+}
+
+.personIcon {
+    font-size: 34px !important;
+    color: #fff;
+    vertical-align: bottom;
+    margin-right: 0.5rem;
+    @media screen and (min-height: 1920px) {
+        font-size: 48px !important;
+    }
 }
 
 .kioskFieldProps {
@@ -111,6 +135,10 @@
     font-size: 20px !important;
     color: #908ea7;
     font-family: var(--font-montserrat) !important;
+    @media screen and (min-height: 1920px) {
+        font-size: 32px !important;
+        height: 100px !important;
+    }
 }
 
 .inputField {
@@ -128,6 +156,10 @@
     @media (max-width: 600px) {
         font-size: 16px !important;
     }
+    @media screen and (min-height: 1920px) {
+        font-size: 32px !important;
+        height: 100px !important;
+    }
 }
 
 .checkInBttn:hover {
@@ -136,11 +168,6 @@
         #3adebb -0.18%,
         #00aee9 99.82%
     ) !important;
-}
-
-.personIcon {
-    font-size: 38px !important;
-    color: var(--color-white) !important;
 }
 
 .walkInNoticeDiv {
@@ -154,6 +181,9 @@
     @media (max-width: 600px) {
         width: 100%;
     }
+    @media screen and (min-height: 1920px) {
+        width: 70%;
+    }
 }
 
 .warningIcon {
@@ -164,15 +194,21 @@
     @media (max-width: 600px) {
         font-size: 24px !important;
     }
+    @media screen and (min-height: 1920px) {
+        font-size: 42px !important;
+    }
 }
 
 .walkInTitle {
     font-weight: 700 !important;
     font-size: 20px !important;
     color: var(--title-color) !important;
+    align-self: self-end;
     @media (max-width: 600px) {
         font-size: 16px !important;
-        align-self: self-end;
+    }
+    @media screen and (min-height: 1920px) {
+        font-size: 32px !important;
     }
 }
 
@@ -182,6 +218,9 @@
     text-align: center !important;
     color: var(--title-color) !important;
     margin-top: 0.5rem;
+    @media screen and (min-height: 1920px) {
+        font-size: 28px !important;
+    }
 }
 
 .kioskDiv {
@@ -351,5 +390,8 @@
     @media (max-width: 600px) {
         width: 100%;
         max-width: 150px;
+    }
+    @media screen and (min-height: 1920px) {
+        margin-bottom: 10rem;
     }
 }

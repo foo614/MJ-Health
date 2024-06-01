@@ -130,16 +130,10 @@ const Kiosk = () => {
                         <Box
                             sx={{
                                 display: 'flex',
+                                marginBottom: '8px',
                             }}
                         >
-                            <PersonIcon
-                                sx={{
-                                    fontSize: 34,
-                                    color: '#fff',
-                                    verticalAlign: 'bottom',
-                                    marginRight: 0.5,
-                                }}
-                            />
+                            <PersonIcon className={styles.personIcon} />
                             <p className={styles.idNo}>ID No:</p>
                         </Box>
                         <TextField
@@ -161,7 +155,6 @@ const Kiosk = () => {
                         <Box sx={{ mt: 3 }}></Box>
                         <Button
                             variant="contained"
-                            size="small"
                             fullWidth
                             className={styles.checkInBttn}
                             onClick={handleSubmit}
