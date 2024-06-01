@@ -89,7 +89,7 @@ const HealthAndScreening = () => {
                     />
                     <CustomBoxButton
                         image={Group2}
-                        label="Rediology Reporting"
+                        label="Radiology Reporting"
                         onClick={() => navigate(RADIOLOGY_REPORTING_PAGE)}
                     />
                     <CustomBoxButton

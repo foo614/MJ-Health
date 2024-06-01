@@ -25,7 +25,7 @@ import ButtonCard from './buttonCard'
 import Header from './header'
 import ViewCommentModal from './modal'
 import CustomizedTables from './table'
-
+import SonographyExamReport from './sonography-exam-report'
 const AntTabs = styled(Tabs)({
     borderBottom: '1px solid #e8e8e8',
     '& .MuiTabs-indicator': {
@@ -89,9 +89,10 @@ function TabPanel(props: TabPanelProps) {
             {...other}
         >
             {value === index && (
-                <Box sx={{ p: 3 }}>
-                    <Typography>{children}</Typography>
-                </Box>
+                //     <Box sx={{ p: 0 }}>
+                //     <Typography>{children}</Typography>
+                // </Box>
+                <Typography>{children}</Typography>
             )}
         </div>
     )
@@ -169,7 +170,7 @@ function RadiologyReportDetail() {
         setMammography(event.target.value)
     }
 
-    const RowButtonOptions = () => {
+    const RowButtonOptions = (currentIndex: any) => {
         return (
             <Grid xs={12}>
                 <Button
@@ -211,8 +212,11 @@ function RadiologyReportDetail() {
                 >
                     Comment & Suggestion
                 </Button>
-
-                <Divider light sx={{ my: 3 }} />
+                {/* <Divider light sx={{ my: 3 }} /> */}
+                {currentIndex.currentIndex === 3 ? null : (
+                    <Divider light sx={{ my: 3 }} />
+                )}
+                {/* {!isExamReport ? <Divider light sx={{ my: 3 }} /> : null} */}
             </Grid>
         )
     }
@@ -385,10 +389,17 @@ function RadiologyReportDetail() {
                                 <AntTab label="X-Ray" />
                                 <AntTab label="Sonography" />
                             </AntTabs>
-                            <Box sx={{ p: 3, bgcolor: '#fff' }}>
+                            <Box
+                                sx={{
+                                    p: currentIndex === 3 ? 0 : 3,
+                                    bgcolor: '#fff',
+                                }}
+                            >
                                 <TabPanel value={currentIndex} index={0}>
                                     <Grid container>
-                                        <RowButtonOptions />
+                                        <RowButtonOptions
+                                            currentIndex={currentIndex}
+                                        />
                                         {selectedType === 'report' && (
                                             <RowItemCard name="CT Scan" />
                                         )}
@@ -411,7 +422,9 @@ function RadiologyReportDetail() {
                                 </TabPanel>
                                 <TabPanel value={currentIndex} index={1}>
                                     <Grid container>
-                                        <RowButtonOptions />
+                                        <RowButtonOptions
+                                            currentIndex={currentIndex}
+                                        />
                                         {selectedType === 'report' && (
                                             <RowItemCard name="Mammography" />
                                         )}
@@ -434,7 +447,9 @@ function RadiologyReportDetail() {
                                     </Grid>
                                 </TabPanel>
                                 <TabPanel value={currentIndex} index={2}>
-                                    <RowButtonOptions />
+                                    <RowButtonOptions
+                                        currentIndex={currentIndex}
+                                    />
                                     {selectedType === 'report' && (
                                         <RowItemCard name="X-Ray" />
                                     )}
@@ -456,55 +471,21 @@ function RadiologyReportDetail() {
                                     )}
                                 </TabPanel>
                                 <TabPanel value={currentIndex} index={3}>
-                                    <RowButtonOptions />
-                                    {selectedType === 'report' && (
-                                        <RowItemCard name="Sonography" />
-                                    )}
-
+                                    <Box sx={{ p: 3 }}>
+                                        <RowButtonOptions
+                                            currentIndex={currentIndex}
+                                        />
+                                    </Box>
                                     {selectedType === 'report' && (
                                         <>
-                                            <Grid xs={12} sx={{ mt: 5 }}>
-                                                <Typography
-                                                    variant="h6"
-                                                    sx={{
-                                                        color: '#219B8E',
-                                                        fontSize: '20px',
-                                                        fontWeight: 600,
-                                                    }}
-                                                >
-                                                    Other Comment
-                                                </Typography>
-                                            </Grid>
-                                            <Grid xs={12}>
-                                                <TextField
-                                                    sx={{
-                                                        borderRadius: '8px',
-                                                        background: '#F9F9F9',
-                                                        boxShadow:
-                                                            '0px 2px 2px 1px rgba(0, 0, 0, 0.05) inset',
-                                                    }}
-                                                    fullWidth
-                                                    id="outlined-multiline-static"
-                                                    multiline
-                                                    rows={4}
-                                                    defaultValue="Type in your message & recommendation."
-                                                />
-                                            </Grid>
-                                            <Grid xs={12} md={2} mdOffset={10}>
-                                                <Button
-                                                    size="small"
-                                                    variant="contained"
-                                                    fullWidth
-                                                    sx={{ mt: 3 }}
-                                                >
-                                                    Save
-                                                </Button>
-                                            </Grid>
+                                            <SonographyExamReport />
                                         </>
                                     )}
-                                    {selectedType === 'comment' && (
-                                        <CommentSuggestionList />
-                                    )}
+                                    <Box sx={{ p: 3 }}>
+                                        {selectedType === 'comment' && (
+                                            <CommentSuggestionList />
+                                        )}
+                                    </Box>
                                 </TabPanel>
                             </Box>
                         </Box>

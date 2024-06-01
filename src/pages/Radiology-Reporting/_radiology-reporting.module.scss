@@ -219,3 +219,177 @@ table {
     background: white;
     z-index: 1;
 }
+
+//Exam Report CSS
+.examReportTable .tableCell {
+    border-bottom: none !important;
+    text-align: center;
+}
+
+.examReportTable {
+    border-collapse: separate !important;
+
+    .tableCell.current,
+    .tableCell.currentTop,
+    .tableCell.currentBottom {
+        background-color: #ddd;
+    }
+
+    .tableCell.backDate,
+    .tableCell.backDateTop,
+    .tableCell.backDateBottom {
+        background-color: var(--color-lightgray);
+    }
+
+    .tableCell.currentTop,
+    .tableCell.backDateTop {
+        border-radius: 8px 8px 0 0;
+    }
+
+    .tableCell.currentBottom,
+    .tableCell.backDateBottom {
+        border-radius: 0 0 8px 8px;
+    }
+
+    .tableCell.readonly.current,
+    .tableCell.readonly.currentTop,
+    .tableCell.readonly.backDateTop,
+    .tableCell.readonly.backDate,
+    .tableCell.readonly.backDateTop,
+    .tableCell.readonly.backDateBottom {
+        background-color: #fdfdfd;
+        border-left: 1px solid #ededed;
+        border-right: 1px solid #ededed;
+    }
+
+    .tableCell.readonly.currentTop,
+    .tableCell.readonly.backDateTop {
+        border-top: 1px solid #ededed;
+    }
+
+    .tableCell.readonly.currentBottom,
+    .tableCell.readonly.backDateBottom {
+        border-bottom: 1px solid #ededed;
+    }
+}
+
+.examReportTableHeaderLabel,
+.tabPageTitle {
+    color: var(--mj-deep-green);
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    text-align: left !important;
+}
+
+.examReportTableHeaderLabel.readonly {
+    color: var(--title-color);
+}
+
+.examReportTable .tableCellDateLabel {
+    color: var(--title-color);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.examReportTableLabel {
+    color: var(--title-color);
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    text-align: left !important;
+}
+
+.examReportTableInput {
+    text-align: left !important;
+    background-color: var(--color-white);
+}
+
+.examReportTableSelectInput {
+    min-width: 200px;
+}
+
+.commentText {
+    font-weight: 600 !important;
+    font-size: 20px !important;
+    color: var(--mj-deep-green) !important;
+}
+
+.inputField {
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+    color: var(--title-color) !important;
+}
+
+.textFieldProps {
+    border-radius: 3px !important;
+    background-color: var(--color-white) !important;
+    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1) !important;
+    font-weight: 500 !important;
+    font-size: var(--font-size-base) !important;
+    color: var(--title-color) !important;
+}
+
+.sono_menu {
+    // margin-left: 3rem;
+    // margin-right: 3rem;
+    padding: 20px;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    column-gap: 15px;
+    background-color: #f9f9f9;
+    border-top:2px solid #ededed;
+    border-bottom:2px solid #ededed;
+    // margin-top: 1rem;
+    // margin-bottom: 1rem;
+}
+
+.sono_menu_mobile {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 20px;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    column-gap: 15px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.sono_menu::-webkit-scrollbar {
+    display: none;
+}
+
+.sono_selected_menu{
+    font-weight: 600;
+    font-size: var(--font-size-base) !important;
+    color: var(--color-white) !important;
+    width: 180px !important;
+    background: var(--mj-light-green) !important;
+    box-shadow: 0px 3px 5px rgba(33, 155, 142, 0.15);
+}
+
+.sono_unselected_menu{
+    background-color: var(--color-whitesmoke-100) !important;
+    font-weight: 500;
+    font-size: var(--font-size-base) !important;
+    color: var(--label-color) !important;
+    width: 180px !important;
+}
+
+.sono_edit_bttn{
+    background-color: var(--label-color) !important;
+    color: var(--color-white) !important;
+    font-weight: 700;
+    font-size: var(--font-size-5xl) !important;
+    width: 220px !important;
+}
+
+.sono_confirm_bttn{
+    background-color:var(--color-whitesmoke-100) !important;
+    color: var(--color-whitesmoke-400) !important;
+    font-weight: 700;
+    font-size: var(--font-size-5xl) !important;
+    width: 220px !important;
+    box-shadow: none !important;
+}
