@@ -27,6 +27,8 @@
     background-color: rgba($color: #5a567b, $alpha: 0.5);
     display: flex;
     // column-gap: 10px;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .englishLanguage {
@@ -34,6 +36,9 @@
     font-size: var(--font-size-5xl) !important;
     color: var(--color-white) !important;
     margin: auto;
+    @media (max-width: 600px) {
+        font-size: var(--font-size-sm) !important;
+    }
 }
 
 .selectedLanguageDiv {
@@ -58,6 +63,9 @@
     font-size: var(--font-size-5xl) !important;
     text-align: center;
     color: var(--color-white) !important;
+    @media (max-width: 600px) {
+        font-size: var(--font-size-sm) !important;
+    }
 }
 
 .time {
@@ -66,6 +74,11 @@
     text-align: center;
     color: var(--color-white) !important;
     text-align: end;
+    @media (max-width: 600px) {
+        text-align: center;
+        margin: 0.5rem 0;
+        font-size: 32px !important;
+    }
 }
 
 .date {
@@ -75,6 +88,12 @@
     color: var(--color-white) !important;
     text-align: end;
     letter-spacing: 8px;
+    @media (max-width: 600px) {
+        text-align: center;
+        margin: 0.5rem 0;
+        font-size: 20px !important;
+        letter-spacing: 2px;
+    }
 }
 
 .idNo {
@@ -106,6 +125,9 @@
     background: var(--title-color) !important;
     border-radius: var(--br-8xs) !important;
     text-transform: capitalize !important;
+    @media (max-width: 600px) {
+        font-size: 16px !important;
+    }
 }
 
 .checkInBttn:hover {
@@ -122,19 +144,36 @@
 }
 
 .walkInNoticeDiv {
-    width: 600px;
     border-radius: 20px;
     background-color: rgba($color: #fff, $alpha: 0.5);
     margin-left: auto;
     margin-right: auto;
     margin-top: 3rem;
     padding: 25px 15px;
+    width: 60%;
+    @media (max-width: 600px) {
+        width: 100%;
+    }
+}
+
+.warningIcon {
+    font-size: 26px;
+    color: #211d4e;
+    vertical-align: bottom;
+    margin-right: 0.5rem;
+    @media (max-width: 600px) {
+        font-size: 24px !important;
+    }
 }
 
 .walkInTitle {
     font-weight: 700 !important;
     font-size: 20px !important;
     color: var(--title-color) !important;
+    @media (max-width: 600px) {
+        font-size: 16px !important;
+        align-self: self-end;
+    }
 }
 
 .walkInText {
@@ -152,11 +191,15 @@
     // padding-right: 60px;
     // padding-top: 25px;
     background-size: cover;
+    height: 100vh;
     // height: 100vh;
+    @media (max-width: 600px) {
+        padding: 1rem;
+    }
 }
 
 .kioskInlineModal {
-    width: 650px;
+    // width: 650px;
     background: var(--color-white) !important;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05) !important;
     border-radius: 25px !important;
@@ -195,7 +238,7 @@
 }
 
 .kioskModalDivider {
-    width: 300px;
+    // width: 300px;
     height: 8px;
     background-color: var(--color-turquoise);
     border-radius: 30px;
@@ -300,4 +343,13 @@
 
 .kioskInlineModalContentMobile {
     padding: 1.5rem 1rem;
+}
+
+.logo {
+    width: 250px;
+    height: auto;
+    @media (max-width: 600px) {
+        width: 100%;
+        max-width: 150px;
+    }
 }

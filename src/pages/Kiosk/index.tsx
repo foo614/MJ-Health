@@ -1,20 +1,19 @@
-import Box from '@mui/material/Box'
-import kioskBackground from '../../images/mask-group-kiosk@2x.png'
-import styles from './_kiosk.module.scss'
-import logo from '../../images/asset-2-1@2x.png'
-import { useState, useRef, ChangeEvent } from 'react'
-import { Button, TextField } from '@mui/material'
 import PersonIcon from '@mui/icons-material/Person'
-import Stack from '@mui/material/Stack'
 import WarningAmberIcon from '@mui/icons-material/WarningAmber'
-import InlineModal from './components/in-line-modal'
+import { Button, TextField } from '@mui/material'
+import Box from '@mui/material/Box'
+import Stack from '@mui/material/Stack'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
-import NoRecordModal from './components/no-record-modal'
-import * as Yup from 'yup'
 import { useFormik } from 'formik'
+import { useRef, useState } from 'react'
 import Keyboard from 'react-simple-keyboard'
 import 'react-simple-keyboard/build/css/index.css'
+import * as Yup from 'yup'
+import logo from '../../images/asset-2-1@2x.png'
+import styles from './_kiosk.module.scss'
+import InlineModal from './components/in-line-modal'
+import NoRecordModal from './components/no-record-modal'
 
 const Kiosk = () => {
     const [language, setLanguage] = useState('en')
@@ -82,13 +81,10 @@ const Kiosk = () => {
 
     return (
         <>
-            <div
-                className={styles.kioskDiv}
-                style={{ height: onTextFieldFocus ? '90vh' : '100vh' }}
-            >
-                <div style={{ display: 'flex' }}>
-                    <div style={{ marginTop: 'auto' }}>
-                        <img width="250" height="232" src={logo} alt="logo" />
+            <div className={styles.kioskDiv}>
+                <div style={{ display: 'flex', placeItems: 'self-start' }}>
+                    <div>
+                        <img className={styles.logo} src={logo} alt="logo" />
                     </div>
                     <div style={{ marginLeft: 'auto' }}>
                         <div className={styles.languageDiv}>
@@ -117,7 +113,7 @@ const Kiosk = () => {
                                 </p>
                             </div>
                         </div>
-                        <div style={{ marginTop: '3rem' }}>
+                        <div style={{ marginTop: '34px' }}>
                             <p className={styles.time}>01:00 PM</p>
                             <p className={styles.date}>30 JUL 2022</p>
                         </div>
@@ -125,10 +121,9 @@ const Kiosk = () => {
                 </div>
                 <Box
                     sx={{
-                        // maxWidth: '600px',
                         marginLeft: 'auto',
                         marginRight: 'auto',
-                        marginTop: '10rem',
+                        marginTop: '5rem',
                     }}
                 >
                     <Stack>
@@ -160,19 +155,8 @@ const Kiosk = () => {
                                 classes: { input: styles.inputField },
                             }}
                             value={idNo}
-                            // value={formik.values.idNo}
-                            placeholder="Enter Your ID No. (Enter 123 or 456 to check the modal)"
+                            placeholder="Enter Your ID No."
                             onChange={(e: any) => onChangeInput(e)}
-                            //onChange={formik.handleChange}
-                            // onBlur={formik.handleBlur}
-                            // error={
-                            //     formik.touched.idNo &&
-                            //     Boolean(formik.errors.idNo)
-                            // }
-                            // helperText={
-                            //     formik.touched.idNo && formik.errors.idNo
-                            // }
-                            // autoFocus
                         />
                         <Box sx={{ mt: 3 }}></Box>
                         <Button
@@ -189,14 +173,7 @@ const Kiosk = () => {
 
                     <div className={styles.walkInNoticeDiv}>
                         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                            <WarningAmberIcon
-                                sx={{
-                                    fontSize: 26,
-                                    color: '#211d4e',
-                                    verticalAlign: 'bottom',
-                                    marginRight: 0.5,
-                                }}
-                            />
+                            <WarningAmberIcon className={styles.warningIcon} />
                             <p className={styles.walkInTitle}>Walk In</p>
                         </Box>
                         <p className={styles.walkInText}>
@@ -231,7 +208,6 @@ const Kiosk = () => {
                         keyboardRef={(r) => (keyboard.current = r)}
                         onKeyPress={onKeyPress}
                         onChangeAll={(inputObj) => onChangeAll(inputObj)}
-                        //onChange={setIdNo}
                         layoutName={keyboardLayout}
                         buttonTheme={[
                             {
