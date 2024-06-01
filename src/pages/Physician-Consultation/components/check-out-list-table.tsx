@@ -124,6 +124,7 @@ const PhysicianConsultationCheckoutListTable: React.FC<
                                             styles.checkInBttnForCheckOut
                                         }
                                         fullWidth
+                                        disabled
                                     >
                                         Check In
                                     </Button>

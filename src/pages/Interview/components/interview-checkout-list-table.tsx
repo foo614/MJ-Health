@@ -74,7 +74,9 @@ const InterviewCheckOutListTable: React.FC<WaitingListTableProps> = ({
                                 <TableCell
                                     size="small"
                                     onClick={() =>
-                                        navigate(`${INTERVIEW_INFO_PAGE}/${item.id}`)
+                                        navigate(
+                                            `${INTERVIEW_INFO_PAGE}/${item.id}`
+                                        )
                                     }
                                     sx={{ cursor: 'pointer' }}
                                 >
@@ -122,6 +124,7 @@ const InterviewCheckOutListTable: React.FC<WaitingListTableProps> = ({
                                             styles.checkInBttnForCheckOut
                                         }
                                         fullWidth
+                                        disabled
                                     >
                                         Check In
                                     </Button>
