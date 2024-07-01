@@ -15,7 +15,7 @@ import MedicalHistoryModal from 'pages/Physician-Consultation-Info/components/me
 import { useState } from 'react'
 import styles from './_x-ray.module.scss'
 import ButtonCard from './components/button-card'
-import XRayExamReport from './components/exam-report'
+import XRayExamReportCheckbox from './components/exam-report-checkbox'
 
 const XRayDetail = () => {
     const theme = useTheme()
@@ -114,7 +114,7 @@ const XRayDetail = () => {
                             />
 
                             {tabPage == 'examReport' && (
-                                <XRayExamReport saveButton />
+                                <XRayExamReportCheckbox saveButton />
                             )}
 
                             {tabPage == 'addonService' && <AddOnService />}

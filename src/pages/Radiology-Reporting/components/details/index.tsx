@@ -20,12 +20,14 @@ import { styled } from '@mui/material/styles'
 import ResponsiveAppBar from 'components/AppBar'
 import CustomModal from 'components/Modal'
 import UserHeader from 'components/UserHeader'
+import XRayExamReport from 'pages/Screening-Room-System/X-Ray/detail/components/exam-report'
 import { useState } from 'react'
 import ButtonCard from './buttonCard'
 import Header from './header'
 import ViewCommentModal from './modal'
-import CustomizedTables from './table'
 import SonographyExamReport from './sonography-exam-report'
+import CustomizedTables from './table'
+
 const AntTabs = styled(Tabs)({
     borderBottom: '1px solid #e8e8e8',
     '& .MuiTabs-indicator': {
@@ -135,7 +137,7 @@ const CommentSuggestionList = () => {
                     fullWidth
                     sx={{ mt: 3 }}
                 >
-                    Save
+                    Confirm
                 </Button>
             </Grid>
         </>
@@ -451,7 +453,7 @@ function RadiologyReportDetail() {
                                         currentIndex={currentIndex}
                                     />
                                     {selectedType === 'report' && (
-                                        <RowItemCard name="X-Ray" />
+                                        <XRayExamReport />
                                     )}
 
                                     {selectedType === 'report' && (
