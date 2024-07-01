@@ -62,7 +62,7 @@ const XRayExamReportCheckbox = ({ readonly, saveButton }: Props) => {
                         </TableCell>
                     </TableRow>
 
-                    <TableRowSeparator readonly={readonly} />
+                    <TableRowSeparator readonly={readonly} isCheckboxRow />
 
                     {/* CXR (PA View) */}
                     <TableRow>
@@ -204,7 +204,11 @@ const XRayExamReportCheckbox = ({ readonly, saveButton }: Props) => {
                         </TableCell>
                     </TableRow>
 
-                    <TableRowSeparator readonly={readonly} lastRow />
+                    <TableRowSeparator
+                        readonly={readonly}
+                        lastRow
+                        isCheckboxRow
+                    />
                 </Table>
             </TableContainer>
 

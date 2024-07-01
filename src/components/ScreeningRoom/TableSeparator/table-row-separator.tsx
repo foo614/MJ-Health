@@ -30,7 +30,7 @@ const TableRowSeparator = ({
                 {headerLabel}
             </TableCell>
 
-            {isCheckboxRow ? (
+            {isCheckboxRow === undefined ? (
                 <>
                     <TableCell
                         width="26%"
