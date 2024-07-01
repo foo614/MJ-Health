@@ -1,7 +1,7 @@
-import CallOutDistributionHeader from './call-out-distribution-header'
-import CallOutDistributionTable from './call-out-distribution-table'
 import { useState } from 'react'
+import CallOutDistributionHeader from './call-out-distribution-header'
 import CreatePhoneConsultationModal from './create-phone-consultation-modal'
+import HmcCallOutDistributionTable from './hmc-call-out-distribution-table'
 
 const HmcCallOutDistribution = () => {
     const [openCreateModal, setOpenCreateModal] = useState<boolean>(false)
@@ -15,7 +15,7 @@ const HmcCallOutDistribution = () => {
                 allowCreate={true}
                 setOpenCreateModal={setOpenCreateModal}
             />
-            <CallOutDistributionTable />
+            <HmcCallOutDistributionTable />
 
             <CreatePhoneConsultationModal
                 openCreateModal={openCreateModal}

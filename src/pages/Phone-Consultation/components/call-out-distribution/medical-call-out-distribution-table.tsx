@@ -1,21 +1,21 @@
 import {
-    TableContainer,
+    Box,
+    Button,
     Paper,
+    Stack,
     Table,
+    TableBody,
+    TableCell,
+    TableContainer,
     TableHead,
     TableRow,
-    TableCell,
-    TableBody,
-    Button,
-    Box,
-    Stack,
 } from '@mui/material'
-import styles from './_call-out-distribution.module.scss'
-import { CallOutDistributionData } from '../../types/CallOutDistributionData'
-import { useNavigate } from 'react-router-dom'
 import { PHONE_CONSULTATION_DISTRIBUTE_PAGE } from 'constant'
+import { useNavigate } from 'react-router-dom'
+import { CallOutDistributionData } from '../../types/CallOutDistributionData'
+import styles from './_call-out-distribution.module.scss'
 
-const CallOutDistributionTable = () => {
+const MedicalCallOutDistributionTable = () => {
     const navigate = useNavigate()
 
     const data: CallOutDistributionData[] = [
@@ -227,4 +227,4 @@ const CallOutDistributionTable = () => {
     )
 }
 
-export default CallOutDistributionTable
+export default MedicalCallOutDistributionTable
