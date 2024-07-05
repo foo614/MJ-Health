@@ -1,16 +1,18 @@
-import { Grid, Stack } from '@mui/material'
+import Button from '@mui/material/Button'
+import Grid from '@mui/material/Grid'
+import Paper from '@mui/material/Paper'
+import Stack from '@mui/material/Stack'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import Paper from '@mui/material/Paper'
-import styles from '../../_it-room-printing.module.scss'
-import { Button } from '@mui/material'
-import pdf from '../../../../types.pdf'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import DateInput from 'components/Input/date-input'
+import pdf from '../../../../types.pdf'
+import styles from '../../_it-room-printing.module.scss'
 
 const testPDF = pdf('lorem-ipsum.pdf')
 
@@ -234,6 +236,12 @@ const HealthScreeningReport = () => {
 
     return (
         <>
+            <Grid container justifyContent="end">
+                <Grid sx={{ mb: 1 }}>
+                    <DateInput iconPosition="start" sx={{ width: '250px' }} />
+                </Grid>
+            </Grid>
+
             <Grid container spacing={2}>
                 <Grid item lg={4} md={6} sm={6} xs={12}>
                     <TableContainer

@@ -6,13 +6,16 @@ import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
 import styles from '../../_it-room-printing.module.scss'
-import { Button, Grid } from '@mui/material'
 import Stack from '@mui/material/Stack'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import { useState } from 'react'
 import PrintListModal from '../print-list-modal'
+import Button from '@mui/material/Button'
+import Grid from '@mui/material/Grid'
+import DateInput from 'components/Input/date-input'
+
 type Props = {
     matches: boolean
 }
@@ -220,6 +223,12 @@ const RegistrationList: React.FC<Props> = ({ matches }: Props) => {
 
     return (
         <>
+            <Grid container justifyContent="end">
+                <Grid sx={{ mb: 1 }}>
+                    <DateInput iconPosition="start" sx={{ width: '250px' }} />
+                </Grid>
+            </Grid>
+
             <TableContainer
                 component={Paper}
                 className={styles.itRoomPrintingTable}

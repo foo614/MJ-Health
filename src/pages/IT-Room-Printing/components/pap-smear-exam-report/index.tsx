@@ -1,14 +1,18 @@
+import Button from '@mui/material/Button'
+import Grid from '@mui/material/Grid'
+import Paper from '@mui/material/Paper'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import Paper from '@mui/material/Paper'
-import styles from '../../_it-room-printing.module.scss'
-import { Button } from '@mui/material'
+import DateInput from 'components/Input/date-input'
 import pdf from '../../../../types.pdf'
+import styles from '../../_it-room-printing.module.scss'
+
 const testPDF = pdf('lorem-ipsum.pdf')
+
 const PapSmearExamReport = () => {
     const fakeData = [
         {
@@ -172,149 +176,177 @@ const PapSmearExamReport = () => {
         window.open(pdfURLPath)
     }
     return (
-        <TableContainer
-            component={Paper}
-            className={styles.itRoomPrintingTable}
-        >
-            <Table>
-                <TableHead className={styles.itRoomPrintingTableHead}>
-                    <TableRow>
-                        <TableCell>
-                            <p
-                                className={styles.itRoomPrintingTableHeadTitle}
-                                style={{ textAlign: 'center' }}
-                            >
-                                Seq No.
-                            </p>
-                        </TableCell>
-                        <TableCell>
-                            <p className={styles.itRoomPrintingTableHeadTitle}>
-                                Name
-                            </p>
-                        </TableCell>
-                        <TableCell>
-                            <p
-                                className={styles.itRoomPrintingTableHeadTitle}
-                                style={{ textAlign: 'center' }}
-                            >
-                                Category
-                            </p>
-                        </TableCell>
-                        <TableCell>
-                            <p
-                                className={styles.itRoomPrintingTableHeadTitle}
-                                style={{ textAlign: 'end' }}
-                            >
-                                IC No.
-                            </p>
-                        </TableCell>
-                        <TableCell>
-                            <p
-                                className={styles.itRoomPrintingTableHeadTitle}
-                                style={{ textAlign: 'center' }}
-                            >
-                                Member ID
-                            </p>
-                        </TableCell>
-                        <TableCell>
-                            <p
-                                className={styles.itRoomPrintingTableHeadTitle}
-                                style={{ textAlign: 'center' }}
-                            >
-                                Status
-                            </p>
-                        </TableCell>
-                        <TableCell>
-                            <p
-                                className={styles.itRoomPrintingTableHeadTitle}
-                                style={{ textAlign: 'center' }}
-                            >
-                                Time Stamp
-                            </p>
-                        </TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {fakeData.map((item: any, index: number) => {
-                        return (
-                            <TableRow key={index}>
-                                <TableCell>
-                                    <p className={styles.tableCellValue}>
-                                        {item.seqNo}
-                                    </p>
-                                </TableCell>
-                                <TableCell>
-                                    <p className={styles.tableCellBoldValue}>
-                                        {item.name}
-                                    </p>
-                                </TableCell>
-                                <TableCell>
-                                    <p
-                                        className={styles.tableCellValue}
-                                        style={{
-                                            textAlign: 'center',
-                                        }}
-                                    >
-                                        {item.category}
-                                    </p>
-                                </TableCell>
-                                <TableCell>
-                                    <p
-                                        className={styles.tableCellValue}
-                                        style={{ textAlign: 'end' }}
-                                    >
-                                        {item.icNo}
-                                    </p>
-                                </TableCell>
-                                <TableCell>
-                                    <p className={styles.tableCellValue}>
-                                        {item.memberID}
-                                    </p>
-                                </TableCell>
-                                <TableCell>
-                                    {item.status === 0 ? (
-                                        <Button
-                                            variant="contained"
-                                            className={styles.waitingBttn}
-                                            fullWidth
-                                        >
-                                            Waiting
-                                        </Button>
-                                    ) : item.status === 1 ? (
-                                        <Button
-                                            variant="contained"
-                                            className={styles.printBttn}
-                                            fullWidth
-                                            onClick={() =>
-                                                handleOpenPDF(testPDF)
+        <>
+            <Grid container justifyContent="end">
+                <Grid sx={{ mb: 1 }}>
+                    <DateInput iconPosition="start" sx={{ width: '250px' }} />
+                </Grid>
+            </Grid>
+
+            <TableContainer
+                component={Paper}
+                className={styles.itRoomPrintingTable}
+            >
+                <Table>
+                    <TableHead className={styles.itRoomPrintingTableHead}>
+                        <TableRow>
+                            <TableCell>
+                                <p
+                                    className={
+                                        styles.itRoomPrintingTableHeadTitle
+                                    }
+                                    style={{ textAlign: 'center' }}
+                                >
+                                    Seq No.
+                                </p>
+                            </TableCell>
+                            <TableCell>
+                                <p
+                                    className={
+                                        styles.itRoomPrintingTableHeadTitle
+                                    }
+                                >
+                                    Name
+                                </p>
+                            </TableCell>
+                            <TableCell>
+                                <p
+                                    className={
+                                        styles.itRoomPrintingTableHeadTitle
+                                    }
+                                    style={{ textAlign: 'center' }}
+                                >
+                                    Category
+                                </p>
+                            </TableCell>
+                            <TableCell>
+                                <p
+                                    className={
+                                        styles.itRoomPrintingTableHeadTitle
+                                    }
+                                    style={{ textAlign: 'end' }}
+                                >
+                                    IC No.
+                                </p>
+                            </TableCell>
+                            <TableCell>
+                                <p
+                                    className={
+                                        styles.itRoomPrintingTableHeadTitle
+                                    }
+                                    style={{ textAlign: 'center' }}
+                                >
+                                    Member ID
+                                </p>
+                            </TableCell>
+                            <TableCell>
+                                <p
+                                    className={
+                                        styles.itRoomPrintingTableHeadTitle
+                                    }
+                                    style={{ textAlign: 'center' }}
+                                >
+                                    Status
+                                </p>
+                            </TableCell>
+                            <TableCell>
+                                <p
+                                    className={
+                                        styles.itRoomPrintingTableHeadTitle
+                                    }
+                                    style={{ textAlign: 'center' }}
+                                >
+                                    Time Stamp
+                                </p>
+                            </TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {fakeData.map((item: any, index: number) => {
+                            return (
+                                <TableRow key={index}>
+                                    <TableCell>
+                                        <p className={styles.tableCellValue}>
+                                            {item.seqNo}
+                                        </p>
+                                    </TableCell>
+                                    <TableCell>
+                                        <p
+                                            className={
+                                                styles.tableCellBoldValue
                                             }
                                         >
-                                            Export as PDF
-                                        </Button>
-                                    ) : (
-                                        <Button
-                                            variant="contained"
-                                            className={styles.noValueBttn}
-                                            fullWidth
+                                            {item.name}
+                                        </p>
+                                    </TableCell>
+                                    <TableCell>
+                                        <p
+                                            className={styles.tableCellValue}
+                                            style={{
+                                                textAlign: 'center',
+                                            }}
                                         >
-                                            -
-                                        </Button>
-                                    )}
-                                </TableCell>
-                                <TableCell>
-                                    <p
-                                        className={styles.timeStampValue}
-                                        style={{ textAlign: 'center' }}
-                                    >
-                                        {item.timestamp}
-                                    </p>
-                                </TableCell>
-                            </TableRow>
-                        )
-                    })}
-                </TableBody>
-            </Table>
-        </TableContainer>
+                                            {item.category}
+                                        </p>
+                                    </TableCell>
+                                    <TableCell>
+                                        <p
+                                            className={styles.tableCellValue}
+                                            style={{ textAlign: 'end' }}
+                                        >
+                                            {item.icNo}
+                                        </p>
+                                    </TableCell>
+                                    <TableCell>
+                                        <p className={styles.tableCellValue}>
+                                            {item.memberID}
+                                        </p>
+                                    </TableCell>
+                                    <TableCell>
+                                        {item.status === 0 ? (
+                                            <Button
+                                                variant="contained"
+                                                className={styles.waitingBttn}
+                                                fullWidth
+                                            >
+                                                Waiting
+                                            </Button>
+                                        ) : item.status === 1 ? (
+                                            <Button
+                                                variant="contained"
+                                                className={styles.printBttn}
+                                                fullWidth
+                                                onClick={() =>
+                                                    handleOpenPDF(testPDF)
+                                                }
+                                            >
+                                                Export as PDF
+                                            </Button>
+                                        ) : (
+                                            <Button
+                                                variant="contained"
+                                                className={styles.noValueBttn}
+                                                fullWidth
+                                            >
+                                                -
+                                            </Button>
+                                        )}
+                                    </TableCell>
+                                    <TableCell>
+                                        <p
+                                            className={styles.timeStampValue}
+                                            style={{ textAlign: 'center' }}
+                                        >
+                                            {item.timestamp}
+                                        </p>
+                                    </TableCell>
+                                </TableRow>
+                            )
+                        })}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        </>
     )
 }
 

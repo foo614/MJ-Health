@@ -14,6 +14,7 @@ import styles from './_call-out-distribution.module.scss'
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { Dispatch, SetStateAction } from 'react'
+import DateInput from 'components/Input/date-input'
 
 type Props = {
     allowCreate: boolean
@@ -32,26 +33,10 @@ const CallOutDistributionHeader = (props: Props) => {
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
                         <Grid container>
                             <Grid item xs={6}>
-                                <DatePicker
-                                    closeOnSelect
-                                    format="DD-MM-YYYY"
-                                    slotProps={{
-                                        inputAdornment: {
-                                            position: 'start',
-                                        },
-                                    }}
-                                />
+                                <DateInput iconPosition="start" />
                             </Grid>
                             <Grid item xs={6}>
-                                <DatePicker
-                                    closeOnSelect
-                                    format="DD-MM-YYYY"
-                                    slotProps={{
-                                        inputAdornment: {
-                                            position: 'start',
-                                        },
-                                    }}
-                                />
+                                <DateInput iconPosition="start" />
                             </Grid>
                         </Grid>
                     </LocalizationProvider>

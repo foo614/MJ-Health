@@ -1,17 +1,22 @@
+import Button from '@mui/material/Button'
+import Grid from '@mui/material/Grid'
+import Paper from '@mui/material/Paper'
+import Stack from '@mui/material/Stack'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import Paper from '@mui/material/Paper'
-import styles from '../../_it-room-printing.module.scss'
-import { Button, Stack } from '@mui/material'
+import DateInput from 'components/Input/date-input'
 import { useState } from 'react'
+import styles from '../../_it-room-printing.module.scss'
 import PrintListModal from '../print-list-modal'
+
 type Props = {
     matches: boolean
 }
+
 const MakeUpLaterList: React.FC<Props> = ({ matches }: Props) => {
     const [openPrintModal, setOpenPrintModal] = useState<boolean>(false)
     const fakeData = [
@@ -215,6 +220,12 @@ const MakeUpLaterList: React.FC<Props> = ({ matches }: Props) => {
 
     return (
         <>
+            <Grid container justifyContent="end">
+                <Grid sx={{ mb: 1 }}>
+                    <DateInput iconPosition="start" sx={{ width: '250px' }} />
+                </Grid>
+            </Grid>
+
             <TableContainer
                 component={Paper}
                 className={styles.itRoomPrintingTable}
