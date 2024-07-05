@@ -1,36 +1,36 @@
-import * as React from 'react'
+import CloseIcon from '@mui/icons-material/Close'
 import Button from '@mui/material/Button'
 import Dialog from '@mui/material/Dialog'
+import DialogActions from '@mui/material/DialogActions'
 import DialogContent from '@mui/material/DialogContent'
-import Slide from '@mui/material/Slide'
-import { TransitionProps } from '@mui/material/transitions'
-import styles from '../_health-management-consultation-info.module.scss'
-import IconButton from '@mui/material/IconButton'
-import CloseIcon from '@mui/icons-material/Close'
 import DialogTitle from '@mui/material/DialogTitle'
+import IconButton from '@mui/material/IconButton'
+import Paper from '@mui/material/Paper'
+import Slide from '@mui/material/Slide'
+import Stack from '@mui/material/Stack'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import Paper from '@mui/material/Paper'
 import { useTheme } from '@mui/material/styles'
+import { TransitionProps } from '@mui/material/transitions'
 import useMediaQuery from '@mui/material/useMediaQuery'
-import DialogActions from '@mui/material/DialogActions'
-import Stack from '@mui/material/Stack'
 import ConfirmIcon from 'images/reject.png'
+import * as React from 'react'
+import styles from '../_health-management-consultation-info.module.scss'
 
 import {
-    FormControl,
-    Select,
-    MenuItem,
-    TextField,
     Box,
+    FormControl,
+    MenuItem,
+    Select,
+    TextField,
     Typography,
 } from '@mui/material'
-import { useState } from 'react'
 import ConfirmationModal from 'components/ConfirmationModal'
+import { useState } from 'react'
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
         children: React.ReactElement<any, any>
@@ -708,15 +708,25 @@ const CallHistoryModal: React.FC<Props> = ({ setOpen, open }: Props) => {
                                 830505011212
                             </p>
                         </div>
-                        <div style={{ marginLeft: mdUp ? 'auto' : '0' }}>
-                            <p
-                                className={styles.callHistoryDialogActionText}
-                                style={{ textAlign: mdUp ? 'end' : 'start' }}
-                            >
+                        <div>
+                            <p className={styles.callHistoryDialogActionText}>
                                 Contact No.
                             </p>
                             <p className={styles.callHistoryDialogActionValue}>
                                 +60-100600660
+                            </p>
+                        </div>
+                        <div>
+                            <p className={styles.callHistoryDialogActionText}>
+                                HS Report
+                            </p>
+                            <p className={styles.callHistoryDialogActionValue}>
+                                <Button
+                                    variant="contained"
+                                    className={styles.viewHSReport}
+                                >
+                                    View PDF
+                                </Button>
                             </p>
                         </div>
                     </Stack>

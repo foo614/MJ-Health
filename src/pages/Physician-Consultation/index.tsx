@@ -1,9 +1,6 @@
 import ResponsiveAppBar from 'components/AppBar'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
-import InputAdornment from '@mui/material/InputAdornment'
-import SearchIcon from '@mui/icons-material/Search'
-import TextField from '@mui/material/TextField'
 import styles from './_physician-consultation.module.scss'
 import PhysicianConsultationWaitingListTable from './components/waiting-list-table'
 import { Container, Stack } from '@mui/material'
@@ -14,6 +11,7 @@ import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import LogoutIcon from '@mui/icons-material/Logout'
 import CheckOutModal from 'components/CheckOutModal'
+import SearchInput from 'components/Input/search-input'
 const PhysicianConsultation = () => {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('md'))
@@ -223,23 +221,7 @@ const PhysicianConsultation = () => {
                 </Grid>
                 <Grid xs={12} md={3}>
                     <div style={{ paddingRight: '30px', paddingLeft: '30px' }}>
-                        <TextField
-                            InputProps={{
-                                startAdornment: (
-                                    <InputAdornment position="start">
-                                        <SearchIcon
-                                            className={styles.searchIcon}
-                                        />
-                                    </InputAdornment>
-                                ),
-                            }}
-                            variant="outlined"
-                            size="small"
-                            margin="dense"
-                            fullWidth
-                            placeholder="Search..."
-                            className={styles.physicianConsultationSearchInput}
-                        />
+                        <SearchInput />
                     </div>
                 </Grid>
             </Grid>

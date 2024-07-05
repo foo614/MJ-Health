@@ -12,10 +12,6 @@
     right: 0;
 }
 
-.searchIcon {
-    color: var(--mj-deep-green);
-}
-
 .physicianConsultationSearchInput {
     border: 1px solid var(--color-whitesmoke-300) !important;
     box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
@@ -53,12 +49,6 @@
         font-size: 16px;
         align-self: center;
     }
-}
-
-.physicianConsultationSearchInputMobile {
-    border: 1px solid var(--color-whitesmoke-300) !important;
-    box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.05) !important;
-    border-radius: var(--br-8xs) !important;
 }
 
 .header {
