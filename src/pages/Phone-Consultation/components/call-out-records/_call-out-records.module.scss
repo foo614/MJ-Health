@@ -73,11 +73,17 @@
 
 .tableActionButton {
     border-radius: 3px;
-    background: var(--MJ-Light-Green);
+    background: var(--mj-light-green) !important;
     color: var(--color-white) !important;
     min-width: 100px !important;
 }
 
 .tableActionButton:disabled {
     background: var(--label-color) !important;
+}
+
+.searchLabel {
+    color: var(--label-color) !important;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
 }

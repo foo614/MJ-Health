@@ -4,7 +4,9 @@ import styles from './_search-button-header.module.scss'
 import TextField from '@mui/material/TextField'
 import InputAdornment from '@mui/material/InputAdornment'
 import SearchIcon from '@mui/icons-material/Search'
-import { Button } from '@mui/material'
+import { Box, Button } from '@mui/material'
+import SearchInput from 'components/Input/search-input'
+
 type Props = {
     title: string
     isSearchInput: boolean
@@ -31,24 +33,15 @@ const SearchButtonHeader: React.FC<Props> = ({
                     <>
                         <div className={styles.rightContent}>
                             {isSearchInput ? (
-                                <TextField
-                                    InputProps={{
-                                        startAdornment: (
-                                            <InputAdornment position="start">
-                                                <SearchIcon
-                                                    className={
-                                                        styles.searchIcon
-                                                    }
-                                                />
-                                            </InputAdornment>
-                                        ),
+                                <Box
+                                    sx={{
+                                        width: '300px',
+                                        mt: '0px !important',
+                                        mr: '3rem !important',
                                     }}
-                                    variant="outlined"
-                                    size="small"
-                                    margin="dense"
-                                    placeholder="Search..."
-                                    className={styles.searchInput}
-                                />
+                                >
+                                    <SearchInput />
+                                </Box>
                             ) : (
                                 <Button
                                     variant="contained"
@@ -70,24 +63,7 @@ const SearchButtonHeader: React.FC<Props> = ({
                             <p className={styles.headerTitle}>{title}</p>
                             <div style={{ textAlign: 'center' }}>
                                 {isSearchInput ? (
-                                    <TextField
-                                        InputProps={{
-                                            startAdornment: (
-                                                <InputAdornment position="start">
-                                                    <SearchIcon
-                                                        className={
-                                                            styles.searchIcon
-                                                        }
-                                                    />
-                                                </InputAdornment>
-                                            ),
-                                        }}
-                                        variant="outlined"
-                                        size="small"
-                                        margin="dense"
-                                        placeholder="Search..."
-                                        className={styles.searchInputMobile}
-                                    />
+                                    <SearchInput />
                                 ) : (
                                     <Button
                                         variant="contained"

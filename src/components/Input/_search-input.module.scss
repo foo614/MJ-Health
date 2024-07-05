@@ -1,0 +1,10 @@
+@use '../../styles/variables' as *;
+
+.searchIcon {
+    color: var(--mj-deep-green);
+}
+
+.searchInput {
+    background: var(--color-white);
+    margin-top: 0px !important;
+}

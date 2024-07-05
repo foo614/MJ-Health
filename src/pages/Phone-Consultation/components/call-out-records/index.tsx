@@ -2,8 +2,17 @@ import { CallOutRecordData } from 'pages/Phone-Consultation/types/CallOutRecordD
 import CallOutRecordsHeader from './call-out-records-header'
 import { useEffect, useState } from 'react'
 import CallOutRecordsTable from './call-out-records-table'
+import useTheme from '@mui/material/styles/useTheme'
+import useMediaQuery from '@mui/material/useMediaQuery'
+import Grid from '@mui/material/Grid'
+import Typography from '@mui/material/Typography'
+import styles from './_call-out-records.module.scss'
+import SearchInput from 'components/Input/search-input'
 
 const CallOutRecords = () => {
+    const theme = useTheme()
+    const lgUp = useMediaQuery(theme.breakpoints.up('lg'))
+
     const [dataType, setDataType] = useState<string>('accumulated')
     const [data, setData] = useState<CallOutRecordData[]>([])
 
@@ -209,6 +218,15 @@ const CallOutRecords = () => {
     return (
         <>
             <CallOutRecordsHeader setDataType={setDataType} />
+
+            <Grid container sx={{ my: 2 }}>
+                <Grid xs={12} lg={5}>
+                    <Typography className={styles.searchLabel}>
+                        Member Name, Member ID or IC no.
+                    </Typography>
+                    <SearchInput />
+                </Grid>
+            </Grid>
 
             <CallOutRecordsTable data={data} />
         </>
