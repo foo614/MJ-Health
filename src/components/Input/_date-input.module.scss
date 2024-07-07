@@ -1,0 +1,13 @@
+@use '../../styles/variables' as *;
+
+.datePickerHeader {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(90deg, #3adebb -0.18%, #00aee9 99.82%);
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: var(--font-size-lg);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
