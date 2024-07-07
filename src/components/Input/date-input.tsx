@@ -1,5 +1,7 @@
 import { ChevronLeft, ChevronRight } from '@mui/icons-material'
 import {
+    Box,
+    ClickAwayListener,
     Dialog,
     DialogContent,
     Grid,
@@ -156,58 +158,63 @@ const DateInput = ({ format, iconPosition, label, sx }: Props) => {
 
     return (
         <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <div ref={datePickerRef} style={{ position: 'relative' }}>
-                <DatePicker
-                    closeOnSelect
-                    dayOfWeekFormatter={(_day, date: dayjs.Dayjs) =>
-                        dayjs(date).format('ddd')
-                    }
-                    format={format ?? 'DD-MM-YYYY (ddd)'}
-                    open={open}
-                    slotProps={{
-                        day: {
-                            sx: {
-                                fontWeight: '600 !important',
-                                '&.Mui-selected': {
-                                    backgroundColor:
-                                        'var(--mj-light-green) !important',
-                                    color: 'white !important',
-                                    borderRadius: '10px',
-                                },
-                                '&.MuiDayCalendar-weekDayLabel': {
+            <ClickAwayListener
+                onClickAway={handleClose}
+                mouseEvent="onMouseDown"
+            >
+                <Box style={{ position: 'relative' }}>
+                    <DatePicker
+                        dayOfWeekFormatter={(_day, date: dayjs.Dayjs) =>
+                            dayjs(date).format('ddd')
+                        }
+                        format={format ?? 'DD-MM-YYYY (ddd)'}
+                        open={open}
+                        slotProps={{
+                            day: {
+                                sx: {
                                     fontWeight: '600 !important',
+                                    '&.Mui-selected': {
+                                        backgroundColor:
+                                            'var(--mj-light-green) !important',
+                                        color: 'white !important',
+                                        borderRadius: '10px',
+                                    },
+                                    '&.MuiDayCalendar-weekDayLabel': {
+                                        fontWeight: '600 !important',
+                                    },
                                 },
                             },
-                        },
-                        inputAdornment: {
-                            onClick: handleOpen,
-                            position: iconPosition,
-                            sx: {
-                                color: 'var(--mj-deep-green) !important',
-                            },
-                        },
-                        layout: {
-                            sx: {
-                                height: 'auto',
-                                pb: 2,
-                                '& .MuiDayCalendar-weekDayLabel': {
-                                    fontWeight: '600 !important',
+                            inputAdornment: {
+                                onClick: handleOpen,
+                                position: iconPosition,
+                                sx: {
+                                    color: 'var(--mj-deep-green) !important',
                                 },
                             },
-                        },
-                        openPickerButton: {
-                            color: 'inherit',
-                        },
-                        popper: {
-                            container: inputRef.current,
-                        },
-                    }}
-                    slots={{
-                        calendarHeader: CustomCalendarHeader,
-                    }}
-                    sx={sx}
-                />
-            </div>
+                            layout: {
+                                sx: {
+                                    height: 'auto',
+                                    pb: 4,
+                                    '& .MuiDayCalendar-weekDayLabel': {
+                                        fontWeight: '600 !important',
+                                    },
+                                },
+                            },
+                            openPickerButton: {
+                                color: 'inherit',
+                            },
+                            popper: {
+                                container: inputRef.current,
+                                sx: {},
+                            },
+                        }}
+                        slots={{
+                            calendarHeader: CustomCalendarHeader,
+                        }}
+                        sx={sx}
+                    />
+                </Box>
+            </ClickAwayListener>
         </LocalizationProvider>
     )
 }
