@@ -1,35 +1,29 @@
-import IconButton from '@mui/material/IconButton'
-import CloseIcon from '@mui/icons-material/Close'
-import DialogTitle from '@mui/material/DialogTitle'
+import { Button, Grid, InputBase, Stack, Typography } from '@mui/material'
+import Paper from '@mui/material/Paper'
+import { useTheme } from '@mui/material/styles'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import Paper from '@mui/material/Paper'
-import {
-    FormControl,
-    Select,
-    MenuItem,
-    TextField,
-    Grid,
-    Button,
-    Stack,
-} from '@mui/material'
-import styles from '../_physician-consultation-info.module.scss'
-import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import { useState } from 'react'
+import styles from '../_physician-consultation-info.module.scss'
+
 type Props = {
-    setOpen: any
+    setOpen?: any
 }
 
 const CommentSection: React.FC<Props> = ({ setOpen }: Props) => {
     const theme = useTheme()
     const mdUp = useMediaQuery(theme.breakpoints.up('md'))
-    const handleClose = () => {
-        setOpen(false)
-    }
+
+    const [selectedSection, setSelectedSection] = useState<string>('comment')
+
+    // const handleClose = () => {
+    //     setOpen(false)
+    // }
 
     const topTableData = [
         {
@@ -109,6 +103,103 @@ const CommentSection: React.FC<Props> = ({ setOpen }: Props) => {
     ]
     return (
         <>
+            <Typography className={styles.commentText} my={2}>
+                Comment and Suggestion
+            </Typography>
+
+            <InputBase
+                id="outlined-search"
+                placeholder="Search..."
+                type="search"
+                sx={{
+                    background: '#F9F9F9',
+                    boxShadow: '0px 2px 2px 1px rgba(0, 0, 0, 0.05) inset',
+                    borderRadius: '5px',
+                    minWidth: '100%',
+                    padding: '10px 15px',
+                    mb: 2,
+                }}
+            />
+
+            <Stack
+                direction={{
+                    xs: 'column',
+                    sm: 'column',
+                    md: 'column',
+                    lg: 'row',
+                    xl: 'row',
+                }}
+                spacing={2}
+                mb={2}
+            >
+                <Button
+                    variant="contained"
+                    className={
+                        selectedSection === 'comment'
+                            ? styles.selectedBttn
+                            : styles.unSelectedBttn
+                    }
+                    onClick={() => setSelectedSection('comment')}
+                >
+                    Comment
+                </Button>
+                <Button
+                    variant="contained"
+                    className={
+                        selectedSection === 'suggestion'
+                            ? styles.selectedBttn
+                            : styles.unSelectedBttn
+                    }
+                    onClick={() => setSelectedSection('suggestion')}
+                >
+                    Suggestion
+                </Button>
+                <Button
+                    variant="contained"
+                    className={
+                        selectedSection === 'midAbnormal'
+                            ? styles.selectedBttn
+                            : styles.unSelectedBttn
+                    }
+                    onClick={() => setSelectedSection('midAbnormal')}
+                >
+                    Mid Abnormal
+                </Button>
+                <Button
+                    variant="contained"
+                    className={
+                        selectedSection === 'repeatTest'
+                            ? styles.selectedBttn
+                            : styles.unSelectedBttn
+                    }
+                    onClick={() => setSelectedSection('repeatTest')}
+                >
+                    Repeat Test
+                </Button>
+                <Button
+                    variant="contained"
+                    className={
+                        selectedSection === 'followUp'
+                            ? styles.selectedBttn
+                            : styles.unSelectedBttn
+                    }
+                    onClick={() => setSelectedSection('followUp')}
+                >
+                    Follow-up
+                </Button>
+                <Button
+                    variant="contained"
+                    className={
+                        selectedSection === 'furtherExam'
+                            ? styles.selectedBttn
+                            : styles.unSelectedBttn
+                    }
+                    onClick={() => setSelectedSection('furtherExam')}
+                >
+                    Further Exam
+                </Button>
+            </Stack>
+
             <Grid container sx={{ border: '2px solid #ededed' }}>
                 <Grid item md={7} xs={12}>
                     <TableContainer
@@ -122,6 +213,7 @@ const CommentSection: React.FC<Props> = ({ setOpen }: Props) => {
                                         className={
                                             styles.currentTableEditTableCell
                                         }
+                                        width="25%"
                                     >
                                         <p
                                             className={
@@ -158,7 +250,7 @@ const CommentSection: React.FC<Props> = ({ setOpen }: Props) => {
                                                 >
                                                     <p
                                                         className={
-                                                            styles.callHistoryTableCell
+                                                            styles.callHistoryTableBodyCell
                                                         }
                                                     >
                                                         {item.code}
@@ -171,7 +263,7 @@ const CommentSection: React.FC<Props> = ({ setOpen }: Props) => {
                                                 >
                                                     <p
                                                         className={
-                                                            styles.callHistoryTableCell
+                                                            styles.callHistoryTableBodyCell
                                                         }
                                                     >
                                                         {item.content}
@@ -190,12 +282,13 @@ const CommentSection: React.FC<Props> = ({ setOpen }: Props) => {
                         className={styles.currentTableEditTable}
                     >
                         <Table stickyHeader size="small">
-                            <TableHead>
+                            <TableHead sx={{ fontWeight: '600' }}>
                                 <TableRow>
                                     <TableCell
                                         className={
                                             styles.currentTableEditTableCell
                                         }
+                                        width="25%"
                                     >
                                         <p
                                             className={
@@ -233,7 +326,7 @@ const CommentSection: React.FC<Props> = ({ setOpen }: Props) => {
                                                 >
                                                     <p
                                                         className={
-                                                            styles.callHistoryTableCell
+                                                            styles.callHistoryTableBodyCell
                                                         }
                                                     >
                                                         {item.code}
@@ -246,7 +339,7 @@ const CommentSection: React.FC<Props> = ({ setOpen }: Props) => {
                                                 >
                                                     <p
                                                         className={
-                                                            styles.callHistoryTableCell
+                                                            styles.callHistoryTableBodyCell
                                                         }
                                                     >
                                                         {item.content}
@@ -304,7 +397,7 @@ const CommentSection: React.FC<Props> = ({ setOpen }: Props) => {
                                     styles.currentTableEditModalConfirmBttn
                                 }
                                 fullWidth
-                                onClick={handleClose}
+                                // onClick={handleClose}
                             >
                                 Confirm
                             </Button>
@@ -314,7 +407,7 @@ const CommentSection: React.FC<Props> = ({ setOpen }: Props) => {
                                     styles.currentTableEditModalCancelBttn
                                 }
                                 fullWidth
-                                onClick={handleClose}
+                                // onClick={handleClose}
                             >
                                 Cancel
                             </Button>

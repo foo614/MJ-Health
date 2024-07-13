@@ -1,27 +1,28 @@
-import ResponsiveAppBar from 'components/AppBar'
-import styles from './_physician-consultation-info.module.scss'
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
+import { Button, Divider, Grid, Stack } from '@mui/material'
+import Card from '@mui/material/Card'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
-import { Grid, Button, Stack, Divider } from '@mui/material'
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
+import ResponsiveAppBar from 'components/AppBar'
 import { MONITOR_SYSTEM_PAGE, PHYSICIAN_CONSULTATION_PAGE } from 'constant'
-import { useNavigate } from 'react-router-dom'
-import Card from '@mui/material/Card'
 import { useState } from 'react'
-import CurrentTable from './components/current-table'
-import ScreeningOutcome from './components/screening-outcome'
-import Recommendation from './components/recommendation'
-import MedicalHistoryModal from './components/medical-history-modal'
-import PersonalComplaintModal from './components/personal-complaint-modal'
+import { useNavigate } from 'react-router-dom'
+import styles from './_physician-consultation-info.module.scss'
 import AllergyModal from './components/allergy-modal'
 import CallHistoryModal from './components/call-history-modal'
+import CommentSection from './components/comment-section'
+import CurrentTable from './components/current-table'
 import CurrentTableEditModal from './components/current-table-edit-modal'
-import UserHeader from './components/user-header'
-import LowerLimbEdemaModal from './components/lower-limb-edema-modal'
-import GeneralExaminationModal from './components/general-examination-modal'
-import SystemicExaminationModal from './components/systemic-examination-modal'
-import PhysicalExamOutcomeCommentModal from './components/physical-exam-outcome-comment-modal'
 import FollowUpModal from './components/follow-up-modal'
+import GeneralExaminationModal from './components/general-examination-modal'
+import LowerLimbEdemaModal from './components/lower-limb-edema-modal'
+import MedicalHistoryModal from './components/medical-history-modal'
+import PersonalComplaintModal from './components/personal-complaint-modal'
+import PhysicalExamOutcomeCommentModal from './components/physical-exam-outcome-comment-modal'
+import Recommendation from './components/recommendation'
+import ScreeningOutcome from './components/screening-outcome'
+import SystemicExaminationModal from './components/systemic-examination-modal'
+import UserHeader from './components/user-header'
 
 const PhysicianConsultationInfo = () => {
     const theme = useTheme()
@@ -55,7 +56,7 @@ const PhysicianConsultationInfo = () => {
     const displaySelectedSection = () => {
         switch (selectedSection) {
             case 1:
-                return <CurrentTable />
+                return <CommentSection />
             case 2:
                 return <ScreeningOutcome />
             case 3:
@@ -224,9 +225,8 @@ const PhysicianConsultationInfo = () => {
                                     </Button>
                                 </Stack>
                                 <Divider className={styles.divLine} />
+                                {displaySelectedSection()}
                             </div>
-
-                            {displaySelectedSection()}
                         </Card>
                     </Grid>
                     <Grid item md={2} xs={12} lg={2} xl={1}>

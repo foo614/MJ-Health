@@ -1,9 +1,10 @@
+import { Button, TextField } from '@mui/material'
 import styles from '../_physician-consultation-info.module.scss'
-import { TextField, Button } from '@mui/material'
+
 const Recommendation = () => {
     return (
         <>
-            <div style={{ paddingLeft: '35px', paddingRight: '35px' }}>
+            <div>
                 <p className={styles.commentText}>Other Recommendation</p>
                 <div>
                     <TextField
