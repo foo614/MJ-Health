@@ -406,6 +406,81 @@ const GeneralMeasurementExamReport = ({ readonly, saveButton }: Props) => {
                         </TableCell>
                     </TableRow>
 
+                    {/* Muscle Mass */}
+                    <TableRow>
+                        <TableCell className={styles.examReportTableLabel}>
+                            Muscle Mass
+                        </TableCell>
+                        <TableCell
+                            className={`${styles.tableCell} ${styles.current} ${
+                                readonly ? styles.readonly : ''
+                            }`}
+                        >
+                            <FormControl
+                                fullWidth
+                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
+                            >
+                                <Select
+                                    size="small"
+                                    inputProps={{
+                                        style: { minWidth: '150px' },
+                                    }}
+                                    readOnly={readonly}
+                                >
+                                    <MenuItem value={0}>-</MenuItem>
+
+                                    <MenuItem value={1}>Under</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </TableCell>
+                        <TableCellSeparator />
+                        <TableCell
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
+                        >
+                            <FormControl
+                                fullWidth
+                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
+                            >
+                                <Select
+                                    size="small"
+                                    inputProps={{
+                                        style: { minWidth: '150px' },
+                                    }}
+                                    readOnly={readonly}
+                                >
+                                    <MenuItem value={0}>-</MenuItem>
+
+                                    <MenuItem value={1}>Under</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </TableCell>
+                        <TableCellSeparator />
+                        <TableCell
+                            className={`${styles.tableCell} ${
+                                styles.backDate
+                            } ${readonly ? styles.readonly : ''}`}
+                        >
+                            <FormControl
+                                fullWidth
+                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
+                            >
+                                <Select
+                                    size="small"
+                                    inputProps={{
+                                        style: { minWidth: '150px' },
+                                    }}
+                                    readOnly={readonly}
+                                >
+                                    <MenuItem value={0}>-</MenuItem>
+
+                                    <MenuItem value={1}>Under</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </TableCell>
+                    </TableRow>
+
                     {/* BP (Right Hand) Systolic/Diastolic */}
                     <TableRow>
                         <TableCell className={styles.examReportTableLabel}>
@@ -685,81 +760,6 @@ const GeneralMeasurementExamReport = ({ readonly, saveButton }: Props) => {
                                     />
                                 </FormControl>
                             </Stack>
-                        </TableCell>
-                    </TableRow>
-
-                    {/* Muscle Mass */}
-                    <TableRow>
-                        <TableCell className={styles.examReportTableLabel}>
-                            Muscle Mass
-                        </TableCell>
-                        <TableCell
-                            className={`${styles.tableCell} ${styles.current} ${
-                                readonly ? styles.readonly : ''
-                            }`}
-                        >
-                            <FormControl
-                                fullWidth
-                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
-                            >
-                                <Select
-                                    size="small"
-                                    inputProps={{
-                                        style: { minWidth: '150px' },
-                                    }}
-                                    readOnly={readonly}
-                                >
-                                    <MenuItem value={0}>-</MenuItem>
-
-                                    <MenuItem value={1}>Under</MenuItem>
-                                </Select>
-                            </FormControl>
-                        </TableCell>
-                        <TableCellSeparator />
-                        <TableCell
-                            className={`${styles.tableCell} ${
-                                styles.backDate
-                            } ${readonly ? styles.readonly : ''}`}
-                        >
-                            <FormControl
-                                fullWidth
-                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
-                            >
-                                <Select
-                                    size="small"
-                                    inputProps={{
-                                        style: { minWidth: '150px' },
-                                    }}
-                                    readOnly={readonly}
-                                >
-                                    <MenuItem value={0}>-</MenuItem>
-
-                                    <MenuItem value={1}>Under</MenuItem>
-                                </Select>
-                            </FormControl>
-                        </TableCell>
-                        <TableCellSeparator />
-                        <TableCell
-                            className={`${styles.tableCell} ${
-                                styles.backDate
-                            } ${readonly ? styles.readonly : ''}`}
-                        >
-                            <FormControl
-                                fullWidth
-                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
-                            >
-                                <Select
-                                    size="small"
-                                    inputProps={{
-                                        style: { minWidth: '150px' },
-                                    }}
-                                    readOnly={readonly}
-                                >
-                                    <MenuItem value={0}>-</MenuItem>
-
-                                    <MenuItem value={1}>Under</MenuItem>
-                                </Select>
-                            </FormControl>
                         </TableCell>
                     </TableRow>
 
