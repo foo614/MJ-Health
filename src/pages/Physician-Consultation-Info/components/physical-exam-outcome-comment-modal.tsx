@@ -89,7 +89,10 @@ const PhysicalExamOutcomeCommentModal: React.FC<Props> = ({
                 >
                     <CloseIcon className={styles.closeIcon} />
                 </IconButton>
-                <DialogContent className={styles.infoModalDialogContent}>
+                <DialogContent
+                    className={styles.infoModalDialogContent}
+                    sx={{ maxHeight: 'inherit' }}
+                >
                     <p className={styles.infoModalDialogContentTitle}>
                         Choose System
                     </p>
