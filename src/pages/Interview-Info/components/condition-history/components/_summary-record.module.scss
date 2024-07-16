@@ -1,0 +1,14 @@
+@use '../../../../../styles/variables' as *;
+
+.dateBttn {
+    font-weight: 600;
+    color: var(--label-color) !important;
+    background: var(--color-white) !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    &.active {
+        color: var(--color-white) !important;
+        background: var(--mj-light-green) !important;
+    }
+}

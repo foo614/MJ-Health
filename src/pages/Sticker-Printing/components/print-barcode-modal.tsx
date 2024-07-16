@@ -1,23 +1,28 @@
-import * as React from 'react'
-import Button from '@mui/material/Button'
-import TextField from '@mui/material/TextField'
-import Dialog from '@mui/material/Dialog'
-import DialogContent from '@mui/material/DialogContent'
-import DialogTitle from '@mui/material/DialogContent'
-import DialogActions from '@mui/material/DialogActions'
-import Slide from '@mui/material/Slide'
-import { TransitionProps } from '@mui/material/transitions'
-import styles from '../_sticker-printing.module.scss'
-import { Grid } from '@mui/material'
-import IconButton from '@mui/material/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Dialog from '@mui/material/Dialog'
+import DialogActions from '@mui/material/DialogActions'
+import {
+    default as DialogContent,
+    default as DialogTitle,
+} from '@mui/material/DialogContent'
+import FormControl from '@mui/material/FormControl'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import Grid from '@mui/material/Grid'
+import IconButton from '@mui/material/IconButton'
 import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
-import FormControlLabel from '@mui/material/FormControlLabel'
-import FormControl from '@mui/material/FormControl'
+import Slide from '@mui/material/Slide'
+import TextField from '@mui/material/TextField'
+import { TransitionProps } from '@mui/material/transitions'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
+import * as React from 'react'
+import styles from '../_sticker-printing.module.scss'
+import QuantityInput from 'components/Input/quantity-input'
+
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
         children: React.ReactElement<any, any>
@@ -66,6 +71,8 @@ const PrintBarcodeModal: React.FC<Props> = ({
                 TransitionComponent={Transition}
                 keepMounted
                 classes={{ paper: styles.printBarcodeModal }}
+                maxWidth="md"
+                fullWidth
             >
                 <DialogTitle className={styles.printBarcodeTitleColor}>
                     <p className={styles.printBarcodeModalTitle}>
@@ -187,6 +194,19 @@ const PrintBarcodeModal: React.FC<Props> = ({
                                     </RadioGroup>
                                 </FormControl>
                             </div>
+
+                            <Box mt={2}>
+                                <p className={styles.printBarcodeOptionTitle}>
+                                    Copies
+                                </p>
+                                <Box mt={1.5}>
+                                    <QuantityInput
+                                        min={1}
+                                        max={10}
+                                        defaultValue={1}
+                                    />
+                                </Box>
+                            </Box>
                         </Grid>
                         <Grid item md={6} xs={12}>
                             <div>
@@ -218,7 +238,7 @@ const PrintBarcodeModal: React.FC<Props> = ({
                                                         />
                                                     ),
                                                 }}
-                                                format='DD/MM/YYYY'
+                                                format="DD/MM/YYYY"
                                             />
                                         </LocalizationProvider>
                                     </Grid>
@@ -246,7 +266,7 @@ const PrintBarcodeModal: React.FC<Props> = ({
                                                         />
                                                     ),
                                                 }}
-                                                format='DD/MM/YYYY'
+                                                format="DD/MM/YYYY"
                                             />
                                         </LocalizationProvider>
                                     </Grid>

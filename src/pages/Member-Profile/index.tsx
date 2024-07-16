@@ -1086,44 +1086,29 @@ const MemberProfile = () => {
                                             Preferred Language
                                         </p>
                                     </FormLabel>
-                                    <FormGroup sx={{ marginTop: '10px' }}>
+
+                                    <RadioGroup
+                                        aria-labelledby="demo-radio-buttons-group-label"
+                                        defaultValue="en_language"
+                                        name="radio-buttons-group"
+                                        sx={{ marginTop: '10px' }}
+                                    >
                                         <FormControlLabel
-                                            control={
-                                                <Checkbox
-                                                    // onChange={handleChange}
-                                                    name="en_language"
-                                                />
-                                            }
-                                            classes={{
-                                                label: styles.checkBoxLabel,
-                                            }}
+                                            value="en_language"
+                                            control={<Radio />}
                                             label="EN"
                                         />
                                         <FormControlLabel
-                                            control={
-                                                <Checkbox
-                                                    // onChange={handleChange}
-                                                    name="bm_language"
-                                                />
-                                            }
-                                            classes={{
-                                                label: styles.checkBoxLabel,
-                                            }}
+                                            value="bm_language"
+                                            control={<Radio />}
                                             label="BM"
                                         />
                                         <FormControlLabel
-                                            control={
-                                                <Checkbox
-                                                    // onChange={handleChange}
-                                                    name="cn_language"
-                                                />
-                                            }
-                                            classes={{
-                                                label: styles.checkBoxLabel,
-                                            }}
+                                            value="cn_language"
+                                            control={<Radio />}
                                             label="CN"
                                         />
-                                    </FormGroup>
+                                    </RadioGroup>
                                 </FormControl>
                             </div>
                             <p className={styles.memberProfileTitle}>

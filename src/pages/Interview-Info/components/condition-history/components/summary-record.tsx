@@ -1,14 +1,16 @@
-import { Grid, Button, Stack } from '@mui/material'
-import styles from '../../../_interview-info.module.scss'
+import Button from '@mui/material/Button'
+import Grid from '@mui/material/Grid'
+import Paper from '@mui/material/Paper'
+import Stack from '@mui/material/Stack'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import Paper from '@mui/material/Paper'
 import { useNavigate } from 'react-router-dom'
-import { INTERVIEW_QUESTIONAIRE_PAGE, INTERVIEW_INFO_PAGE } from 'constant'
+import styles from '../../../_interview-info.module.scss'
+import summaryRecordStyles from './_summary-record.module.scss'
 
 type Props = {
     questionnaireAction: () => void
@@ -70,6 +72,9 @@ const SummaryRecord = ({ questionnaireAction, readonly }: Props) => {
         },
     ]
 
+    const activeDate = '22 - 09 - 2020'
+    const inactiveDate = '22 - 09 - 2018'
+
     return (
         <>
             <div
@@ -81,6 +86,21 @@ const SummaryRecord = ({ questionnaireAction, readonly }: Props) => {
                     borderBottom: '2px solid #EDEDED',
                 }}
             >
+                <Stack direction="row" spacing={1} justifyContent="end" mb={3}>
+                    <Button
+                        variant="contained"
+                        className={`${summaryRecordStyles.dateBttn} ${summaryRecordStyles.active}`}
+                    >
+                        {activeDate}
+                    </Button>
+                    <Button
+                        variant="contained"
+                        className={summaryRecordStyles.dateBttn}
+                    >
+                        {inactiveDate}
+                    </Button>
+                </Stack>
+
                 <Grid container spacing={2}>
                     <Grid item md={6} xs={12}>
                         <p className={styles.medical_content_title}>

@@ -17,6 +17,7 @@ import PersonalFamilyHistory3 from './components/personal-family-history-3'
 import * as React from 'react'
 import { useState } from 'react'
 import styles from './_interview-questionaire.module.scss'
+import UserHeader from 'components/UserHeader'
 
 type TabPanelProps = {
     children?: React.ReactNode
@@ -61,6 +62,7 @@ const InterviewQuestionaire = () => {
     return (
         <>
             <ResponsiveAppBar />
+            <UserHeader />
             <CustomHeader to={INTERVIEW_PAGE} title="INTERVIEW" />
             <Container maxWidth="xl" sx={{ marginTop: '25px' }}>
                 <Card sx={{ padding: '25px' }}>
