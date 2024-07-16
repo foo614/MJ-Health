@@ -113,7 +113,7 @@ const CheckInScreeningRoom1 = ({ onClose }: Props) => {
         { value: '9', label: 'Mammography' },
         { value: '10', label: "Pap's Smear" },
         { value: '11', label: 'Peripheral Vascular Screening' },
-        { value: '12', label: 'Sonargraphy' },
+        { value: '12', label: 'Sonography' },
         { value: '13', label: 'Retinography' },
         { value: '14', label: 'Vision & Coular Tension Test' },
         { value: '15', label: 'X-Ray' },
