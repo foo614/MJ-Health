@@ -25,8 +25,9 @@ import { useState } from 'react'
 import ButtonCard from './buttonCard'
 import Header from './header'
 import ViewCommentModal from './modal'
-import SonographyExamReport from './sonography-exam-report'
+// import SonographyExamReport from './sonography-exam-report'
 import CustomizedTables from './table'
+import SonographyExamReport from 'pages/Screening-Room-System/Sonography/detail/components/exam-report'
 
 const AntTabs = styled(Tabs)({
     borderBottom: '1px solid #e8e8e8',
