@@ -11,10 +11,10 @@ import IconButton from '@mui/material/IconButton'
 import Slide from '@mui/material/Slide'
 import Stack from '@mui/material/Stack'
 import { TransitionProps } from '@mui/material/transitions'
+import CodeContentTable from 'components/CodeContentTable'
 import React, { Dispatch, SetStateAction } from 'react'
 import styles from '../_physician-consultation-info.module.scss'
 import ownStyles from './_physical-exam-outcome-comment-modal.module.scss'
-import CodeContentTable from './components/code-content-table'
 import QuantityRow from './components/quantity-row'
 
 const Transition = React.forwardRef(function Transition(

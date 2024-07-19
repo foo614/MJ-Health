@@ -23,6 +23,7 @@ import ButtonCard from 'pages/Radiology-Reporting/components/details/buttonCard'
 import { useState } from 'react'
 import styles from './_sonography-detail.module.scss'
 import SonographyExamReport from './components/exam-report'
+import CodeContentTable from 'components/CodeContentTable'
 
 const SonographyDetail = () => {
     const theme = useTheme()
@@ -159,6 +160,28 @@ const SonographyDetail = () => {
                             {selectedType === 'report' && (
                                 <SonographyExamReport />
                             )}
+                            {selectedType === 'report' && (
+                                <>
+                                    <Grid xs={12} sx={{ p: 3 }}>
+                                        <Grid xs={12}>
+                                            <Typography
+                                                variant="h6"
+                                                sx={{
+                                                    color: '#219B8E',
+                                                    fontSize: '20px',
+                                                    fontWeight: 600,
+                                                }}
+                                            >
+                                                Overview
+                                            </Typography>
+                                        </Grid>
+                                        <Grid xs={12}>
+                                            <CodeContentTable />
+                                        </Grid>
+                                    </Grid>
+                                </>
+                            )}
+
                             {selectedType === 'report' && (
                                 <Grid xs={12} sx={{ p: 3 }}>
                                     <Grid xs={12}>
