@@ -1,20 +1,20 @@
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import FormControl from '@mui/material/FormControl'
+import Grid from '@mui/material/Grid'
 import InputAdornment from '@mui/material/InputAdornment'
 import MenuItem from '@mui/material/MenuItem'
 import Select from '@mui/material/Select'
+import Stack from '@mui/material/Stack'
 import Table from '@mui/material/Table'
 import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableRow from '@mui/material/TableRow'
 import TextField from '@mui/material/TextField'
+import Typography from '@mui/material/Typography'
 import TableCellSeparator from 'components/ScreeningRoom/TableSeparator/table-cell-separator'
 import TableRowSeparator from 'components/ScreeningRoom/TableSeparator/table-row-separator'
 import styles from '../_retinography.module.scss'
-import Typography from '@mui/material/Typography'
-import Stack from '@mui/material/Stack'
-import Grid from '@mui/material/Grid'
 
 type Props = {
     readonly?: boolean
@@ -89,10 +89,10 @@ const RetinographyExamReport = ({ readonly, saveButton }: Props) => {
 
                     <TableRowSeparator readonly={readonly} />
 
-                    {/* Strabismus  */}
+                    {/* Retinography  */}
                     <TableRow>
                         <TableCell className={styles.examReportTableLabel}>
-                            Strabismus
+                            Retinography
                         </TableCell>
                         <TableCell
                             className={`${styles.tableCell} ${styles.current} ${
@@ -176,10 +176,10 @@ const RetinographyExamReport = ({ readonly, saveButton }: Props) => {
                         </TableCell>
                     </TableRow>
 
-                    {/* Astigmatism  */}
+                    {/* Slit Lamp  */}
                     <TableRow>
                         <TableCell className={styles.examReportTableLabel}>
-                            Astigmatism
+                            Slit Lamp
                         </TableCell>
                         <TableCell
                             className={`${styles.tableCell} ${styles.current} ${
@@ -501,10 +501,21 @@ const RetinographyExamReport = ({ readonly, saveButton }: Props) => {
                                 fullWidth
                                 className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
                             >
-                                <TextField
+                                <Select
                                     size="small"
-                                    InputProps={{ readOnly: readonly }}
-                                />
+                                    value={1}
+                                    inputProps={{
+                                        style: { minWidth: '150px' },
+                                    }}
+                                    readOnly={readonly}
+                                >
+                                    <MenuItem value={0}>-</MenuItem>
+                                    {options.map((item) => (
+                                        <MenuItem key={item.id} value={item.id}>
+                                            {item.label}
+                                        </MenuItem>
+                                    ))}
+                                </Select>
                             </FormControl>
                         </TableCell>
                     </TableRow>
@@ -541,8 +552,69 @@ const RetinographyExamReport = ({ readonly, saveButton }: Props) => {
                             </Stack>
                         </TableCell>
                         <TableCellSeparator />
-                        <TableCell colSpan={2}></TableCell>
-                        <TableCell colSpan={2}></TableCell>
+                        <TableCell
+                            colSpan={2}
+                            className={styles.examReportTableLabel}
+                        >
+                            Astigmatism
+                        </TableCell>
+                        <TableCell colSpan={2}>
+                            <FormControl
+                                fullWidth
+                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
+                            >
+                                <Select
+                                    size="small"
+                                    value={1}
+                                    inputProps={{
+                                        style: { minWidth: '150px' },
+                                    }}
+                                    readOnly={readonly}
+                                >
+                                    <MenuItem value={0}>-</MenuItem>
+                                    {options.map((item) => (
+                                        <MenuItem key={item.id} value={item.id}>
+                                            {item.label}
+                                        </MenuItem>
+                                    ))}
+                                </Select>
+                            </FormControl>
+                        </TableCell>
+                    </TableRow>
+
+                    {/* Strabismus */}
+                    <TableRow>
+                        <TableCell className={styles.tableCell}></TableCell>
+                        <TableCell className={styles.tableCell}></TableCell>
+                        <TableCellSeparator />
+                        <TableCell
+                            colSpan={2}
+                            className={styles.examReportTableLabel}
+                        >
+                            Strabismus
+                        </TableCell>
+                        <TableCell colSpan={2}>
+                            <FormControl
+                                fullWidth
+                                className={`${styles.examReportTableInput} ${styles.examReportTableSelectInput}`}
+                            >
+                                <Select
+                                    size="small"
+                                    value={1}
+                                    inputProps={{
+                                        style: { minWidth: '150px' },
+                                    }}
+                                    readOnly={readonly}
+                                >
+                                    <MenuItem value={0}>-</MenuItem>
+                                    {options.map((item) => (
+                                        <MenuItem key={item.id} value={item.id}>
+                                            {item.label}
+                                        </MenuItem>
+                                    ))}
+                                </Select>
+                            </FormControl>
+                        </TableCell>
                     </TableRow>
                 </Table>
             </TableContainer>
