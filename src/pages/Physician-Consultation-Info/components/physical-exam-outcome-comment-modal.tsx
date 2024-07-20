@@ -70,7 +70,7 @@ const PhysicalExamOutcomeCommentModal: React.FC<Props> = ({
                 TransitionComponent={Transition}
                 keepMounted
                 classes={{ paper: styles.infoModal }}
-                maxWidth="lg"
+                maxWidth="xl"
                 fullWidth
             >
                 <DialogTitle className={styles.infoModalColor}>

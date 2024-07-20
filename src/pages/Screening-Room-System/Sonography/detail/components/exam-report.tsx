@@ -14,6 +14,7 @@ import CustomTable from 'components/CustomTable'
 import { useState } from 'react'
 import AxillaryDialog from './axillary-dialog'
 import CommentDialog from './comment-dialog'
+import AbnormalDialog from './abnormal-dialog'
 
 const abdomenData = [
     {
@@ -21,63 +22,63 @@ const abdomenData = [
         list: [
             {
                 name: 'Liver',
-                option: ['Normal', 'Adnormal', 'Normal But Detected', 'Others'],
+                option: ['Normal', 'Abnormal', 'Normal But Detected', 'Others'],
                 hasInput: false,
                 hasLength: false,
                 hasDimension: false,
             },
             {
                 name: 'Intrahepatic Bile Duct',
-                option: ['Normal', 'Adnormal', 'Normal But Detected', 'Others'],
+                option: ['Normal', 'Abnormal', 'Normal But Detected', 'Others'],
                 hasInput: false,
                 hasLength: false,
                 hasDimension: false,
             },
             {
                 name: 'Common Bile Duct',
-                option: ['Normal', 'Adnormal', 'Normal But Detected', 'Others'],
+                option: ['Normal', 'Abnormal', 'Normal But Detected', 'Others'],
                 hasInput: false,
                 hasLength: false,
                 hasDimension: false,
             },
             {
                 name: 'Gall Bladdar',
-                option: ['Normal', 'Adnormal', 'Normal But Detected', 'Others'],
+                option: ['Normal', 'Abnormal', 'Normal But Detected', 'Others'],
                 hasInput: false,
                 hasLength: false,
                 hasDimension: false,
             },
             {
                 name: 'Right Kidney',
-                option: ['Normal', 'Adnormal', 'Normal But Detected', 'Others'],
+                option: ['Normal', 'Abnormal', 'Normal But Detected', 'Others'],
                 hasInput: false,
                 hasLength: false,
                 hasDimension: false,
             },
             {
                 name: 'Left Kidney',
-                option: ['Normal', 'Adnormal', 'Normal But Detected', 'Others'],
+                option: ['Normal', 'Abnormal', 'Normal But Detected', 'Others'],
                 hasInput: false,
                 hasLength: false,
                 hasDimension: false,
             },
             {
                 name: 'Hapatic Portal Vein',
-                option: ['Normal', 'Adnormal', 'Normal But Detected', 'Others'],
+                option: ['Normal', 'Abnormal', 'Normal But Detected', 'Others'],
                 hasInput: false,
                 hasLength: false,
                 hasDimension: false,
             },
             {
                 name: 'Pancreas',
-                option: ['Normal', 'Adnormal', 'Normal But Detected', 'Others'],
+                option: ['Normal', 'Abnormal', 'Normal But Detected', 'Others'],
                 hasInput: false,
                 hasLength: false,
                 hasDimension: false,
             },
             {
                 name: 'Spleen and Others',
-                option: ['Normal', 'Adnormal', 'Normal But Detected', 'Others'],
+                option: ['Normal', 'Abnormal', 'Normal But Detected', 'Others'],
                 hasInput: false,
                 hasLength: false,
                 hasDimension: false,
@@ -92,14 +93,14 @@ const carotidData = [
         list: [
             {
                 name: 'Mean Intima-media',
-                option: ['Normal', 'Adnormal', 'Normal But Detected', 'Others'],
+                option: ['Normal', 'Abnormal', 'Normal But Detected', 'Others'],
                 hasInput: true,
                 hasLength: false,
                 hasDimension: false,
             },
             {
                 name: 'Plaque/ Others',
-                option: ['Normal', 'Adnormal', 'Normal But Detected', 'Others'],
+                option: ['Normal', 'Abnormal', 'Normal But Detected', 'Others'],
                 hasInput: true,
                 hasLength: false,
                 hasDimension: false,
@@ -111,35 +112,35 @@ const carotidData = [
         list: [
             {
                 name: 'CCA-PSV (CM/S)',
-                option: ['Normal', 'Adnormal', 'Normal But Detected', 'Others'],
+                option: ['Normal', 'Abnormal', 'Normal But Detected', 'Others'],
                 hasInput: true,
                 hasLength: false,
                 hasDimension: false,
             },
             {
                 name: 'ICA-PSV (CM/S)',
-                option: ['Normal', 'Adnormal', 'Normal But Detected', 'Others'],
+                option: ['Normal', 'Abnormal', 'Normal But Detected', 'Others'],
                 hasInput: true,
                 hasLength: false,
                 hasDimension: false,
             },
             {
                 name: 'CIA-EDV (CM/S)',
-                option: ['Normal', 'Adnormal', 'Normal But Detected', 'Others'],
+                option: ['Normal', 'Abnormal', 'Normal But Detected', 'Others'],
                 hasInput: true,
                 hasLength: false,
                 hasDimension: false,
             },
             {
                 name: 'ICA/CCA PSV ratio',
-                option: ['Normal', 'Adnormal', 'Normal But Detected', 'Others'],
+                option: ['Normal', 'Abnormal', 'Normal But Detected', 'Others'],
                 hasInput: true,
                 hasLength: false,
                 hasDimension: false,
             },
             {
                 name: 'VA PSV (CM/S)',
-                option: ['Normal', 'Adnormal', 'Normal But Detected', 'Others'],
+                option: ['Normal', 'Abnormal', 'Normal But Detected', 'Others'],
                 hasInput: true,
                 hasLength: false,
                 hasDimension: false,
@@ -154,28 +155,28 @@ const sampleData = [
         list: [
             {
                 name: 'Sample',
-                option: ['Normal', 'Adnormal', 'Normal But Detected', 'Others'],
+                option: ['Normal', 'Abnormal', 'Normal But Detected', 'Others'],
                 hasInput: false,
                 hasLength: false,
                 hasDimension: false,
             },
             {
                 name: 'Sample',
-                option: ['Normal', 'Adnormal', 'Normal But Detected', 'Others'],
+                option: ['Normal', 'Abnormal', 'Normal But Detected', 'Others'],
                 hasInput: false,
                 hasLength: false,
                 hasDimension: false,
             },
             {
                 name: 'Sample',
-                option: ['Normal', 'Adnormal', 'Normal But Detected', 'Others'],
+                option: ['Normal', 'Abnormal', 'Normal But Detected', 'Others'],
                 hasInput: false,
                 hasLength: false,
                 hasDimension: false,
             },
             {
                 name: 'Sample',
-                option: ['Normal', 'Adnormal', 'Normal But Detected', 'Others'],
+                option: ['Normal', 'Abnormal', 'Normal But Detected', 'Others'],
                 hasInput: false,
                 hasLength: false,
                 hasDimension: false,
@@ -551,6 +552,7 @@ const SonographyExamReport = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [openBreastComment, setOpenBreastComment] = useState<boolean>(false)
     const [openBreastAxillary, setOpenBreastAxillary] = useState<boolean>(false)
+    const [openAbnormalDialog, setOpenAbnormalDialog] = useState<boolean>(false)
 
     const handleMammography = (event: SelectChangeEvent) => {
         setMammography(event.target.value)
@@ -561,11 +563,13 @@ const SonographyExamReport = () => {
         isEdit,
         arrayField,
         hasLeftRightLabel,
+        displayAbnormalPopup,
     }: {
         label: string
         isEdit: boolean
         arrayField: any
         hasLeftRightLabel: boolean
+        displayAbnormalPopup: boolean
     }) => {
         return (
             <Box
@@ -760,7 +764,19 @@ const SonographyExamReport = () => {
                                                 labelId="demo-select-small-label"
                                                 id="demo-select-small"
                                                 value={mammography}
-                                                onChange={handleMammography}
+                                                onChange={(e) => {
+                                                    if (
+                                                        displayAbnormalPopup &&
+                                                        e.target.value ==
+                                                            'Abnormal'
+                                                    ) {
+                                                        setOpenAbnormalDialog(
+                                                            true
+                                                        )
+                                                    }
+
+                                                    handleMammography(e)
+                                                }}
                                                 sx={{
                                                     background: '#fff',
                                                 }}
@@ -821,6 +837,8 @@ const SonographyExamReport = () => {
     }
 
     const RowItemCard = ({ arrayField }: { arrayField: any }) => {
+        const displayAbnormalPopup = arrayField == abdomenData
+
         return (
             <Grid2 xs={12}>
                 <Box sx={{ p: 3 }}>
@@ -882,6 +900,7 @@ const SonographyExamReport = () => {
                                     arrayField[0].name === 'Gray Scale Imaging'
                                 }
                                 arrayField={arrayField}
+                                displayAbnormalPopup={displayAbnormalPopup}
                             />
                         </Grid2>
                         <Grid2 xs={12} md={3}>
@@ -892,6 +911,7 @@ const SonographyExamReport = () => {
                                     arrayField[0].name === 'Gray Scale Imaging'
                                 }
                                 arrayField={arrayField}
+                                displayAbnormalPopup={displayAbnormalPopup}
                             />
                         </Grid2>
                         <Grid2 xs={12} md={3}>
@@ -902,6 +922,7 @@ const SonographyExamReport = () => {
                                     arrayField[0].name === 'Gray Scale Imaging'
                                 }
                                 arrayField={arrayField}
+                                displayAbnormalPopup={displayAbnormalPopup}
                             />
                         </Grid2>
                     </Grid2>
@@ -1072,6 +1093,13 @@ const SonographyExamReport = () => {
         <>
             <RowButton />
             {handleDisplay(currentIndex)}
+
+            {openAbnormalDialog && (
+                <AbnormalDialog
+                    open={openAbnormalDialog}
+                    setOpen={setOpenAbnormalDialog}
+                />
+            )}
 
             {openBreastComment && (
                 <CommentDialog

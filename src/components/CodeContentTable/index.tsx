@@ -4,6 +4,7 @@ import TableCell from '@mui/material/TableCell'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import styles from './_code-content-table.module.scss'
+import InputBase from '@mui/material/InputBase'
 
 const mockData = [
     {
@@ -27,22 +28,43 @@ const mockData = [
     },
 ]
 
-const CodeContentTable: React.FC = () => {
+type Props = {
+    searchBar?: boolean
+}
+
+const CodeContentTable: React.FC<Props> = ({ searchBar }: Props) => {
     return (
-        <Table size="small" className={styles.codeContentTable}>
-            <TableHead>
-                <TableCell>Code</TableCell>
-                <TableCell>Content</TableCell>
-            </TableHead>
-            <TableBody>
-                {mockData.map((data, index) => (
-                    <TableRow key={index}>
-                        <TableCell>{data.code}</TableCell>
-                        <TableCell>{data.content}</TableCell>
-                    </TableRow>
-                ))}
-            </TableBody>
-        </Table>
+        <>
+            {searchBar && (
+                <InputBase
+                    id="outlined-search"
+                    placeholder="Search..."
+                    type="search"
+                    sx={{
+                        background: 'var(--color-white)',
+                        boxShadow: '0px 2px 2px 1px rgba(0, 0, 0, 0.05) inset',
+                        borderRadius: '5px',
+                        minWidth: '100%',
+                        padding: '10px 15px',
+                    }}
+                />
+            )}
+
+            <Table size="small" className={styles.codeContentTable}>
+                <TableHead>
+                    <TableCell>Code</TableCell>
+                    <TableCell>Content</TableCell>
+                </TableHead>
+                <TableBody>
+                    {mockData.map((data, index) => (
+                        <TableRow key={index}>
+                            <TableCell>{data.code}</TableCell>
+                            <TableCell>{data.content}</TableCell>
+                        </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
+        </>
     )
 }
 

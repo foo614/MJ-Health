@@ -1,0 +1,100 @@
+@use 'styles/variables' as *;
+
+.modalDialogContent {
+    max-height: auto;
+    padding: 20px 35px !important;
+}
+
+.modalDialogContent::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #ebebeb; /* or add it to the track */
+}
+
+.modalDialogContent::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.container {
+    border: 2px solid #ededed;
+    background: #fdfdfd;
+    padding: 20px;
+}
+
+.title {
+    color: var(--title-color) !important;
+    font-weight: 600 !important;
+    font-size: var(--font-size-lg) !important;
+}
+
+.container .inputLabel {
+    color: var(--title-color) !important;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.container .inputSm {
+    width: 120px;
+}
+
+.container .inputXs {
+    width: 60px;
+}
+
+.quantityRow {
+    overflow: auto;
+    margin-bottom: 10px;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 5px;
+        border-radius: 10px;
+        background-color: #ebebeb; /* or add it to the track */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #aaa;
+        border-radius: 10px;
+    }
+}
+
+.quantityRow .quantityLabel {
+    min-width: 50px;
+}
+
+.prostateInput {
+    border-collapse: collapse;
+}
+
+.prostateInput th {
+    text-align: left;
+    color: var(--title-color) !important;
+    line-height: 1;
+}
+
+.prostateInput td {
+    padding-right: 8px;
+}
+
+.addBttn {
+    background-color: var(--mj-deep-green) !important;
+    color: var(--color-white);
+    font-weight: 600;
+    width: 180px;
+}
+
+.deleteBttn {
+    background-color: var(--color-red) !important;
+    color: var(--color-white);
+    font-weight: 600;
+    width: 180px;
+}
+
+.okBttn {
+    background-color: var(--mj-light-green) !important;
+    color: var(--color-white);
+    font-weight: 600;
+    width: 180px;
+}
