@@ -28,6 +28,8 @@ import ViewCommentModal from './modal'
 // import SonographyExamReport from './sonography-exam-report'
 import CustomizedTables from './table'
 import SonographyExamReport from 'pages/Screening-Room-System/Sonography/detail/components/exam-report'
+import SonographyOtherComment from 'pages/Screening-Room-System/Sonography/detail/components/other-comment'
+import styles from './_radiology-report-details.module.scss'
 
 const AntTabs = styled(Tabs)({
     borderBottom: '1px solid #e8e8e8',
@@ -482,6 +484,31 @@ function RadiologyReportDetail() {
                                     {selectedType === 'report' && (
                                         <>
                                             <SonographyExamReport />
+
+                                            <SonographyOtherComment />
+
+                                            <Stack
+                                                direction="row"
+                                                spacing={2}
+                                                justifyContent="end"
+                                                px={3}
+                                            >
+                                                <Button
+                                                    variant="contained"
+                                                    className={styles.editBttn}
+                                                >
+                                                    Edit
+                                                </Button>
+                                                <Button
+                                                    variant="contained"
+                                                    className={
+                                                        styles.confirmBttn
+                                                    }
+                                                    disabled
+                                                >
+                                                    Confirm
+                                                </Button>
+                                            </Stack>
                                         </>
                                     )}
                                     <Box sx={{ p: 3 }}>

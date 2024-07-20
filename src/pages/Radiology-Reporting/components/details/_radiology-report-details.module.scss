@@ -1,0 +1,12 @@
+@use 'styles/variables' as *;
+
+.editBttn,
+.confirmBttn {
+    width: 140px;
+    font-weight: 600 !important;
+    font-size: var(--font-size-base) !important;
+}
+
+.editBttn {
+    background: var(--label-color) !important;
+}

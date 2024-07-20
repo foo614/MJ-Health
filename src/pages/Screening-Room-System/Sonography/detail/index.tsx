@@ -24,6 +24,7 @@ import { useState } from 'react'
 import styles from './_sonography-detail.module.scss'
 import SonographyExamReport from './components/exam-report'
 import CodeContentTable from 'components/CodeContentTable'
+import SonographyOtherComment from './components/other-comment'
 
 const SonographyDetail = () => {
     const theme = useTheme()
@@ -183,61 +184,44 @@ const SonographyDetail = () => {
                             )}
 
                             {selectedType === 'report' && (
-                                <Grid xs={12} sx={{ p: 3 }}>
-                                    <Grid xs={12}>
-                                        <Typography
-                                            variant="h6"
-                                            sx={{
-                                                color: '#219B8E',
-                                                fontSize: '20px',
-                                                fontWeight: 600,
-                                            }}
-                                        >
-                                            Other Comment
-                                        </Typography>
-                                    </Grid>
-                                    <Grid xs={12}>
-                                        <TextField
-                                            sx={{
-                                                borderRadius: '8px',
-                                                background: '#F9F9F9',
-                                                boxShadow:
-                                                    '0px 2px 2px 1px rgba(0, 0, 0, 0.05) inset',
-                                            }}
-                                            fullWidth
-                                            id="outlined-multiline-static"
-                                            multiline
-                                            rows={4}
-                                            defaultValue="Type in your message & recommendation."
-                                        />
-                                    </Grid>
+                                <>
+                                    <SonographyOtherComment />
+
                                     <Grid
                                         container
+                                        xs={12}
                                         spacing={2}
                                         justifyContent={'flex-end'}
                                     >
-                                        <Grid xs={12} md={3}>
+                                        <Grid>
                                             <Button
                                                 size="small"
                                                 variant="contained"
                                                 fullWidth
-                                                sx={{ mt: 3 }}
+                                                sx={{
+                                                    mt: 3,
+                                                    background:
+                                                        'var(--mj-deep-green) !important',
+                                                }}
+                                                className={styles.saveButton}
                                             >
                                                 Save
                                             </Button>
                                         </Grid>
-                                        <Grid xs={12} md={3}>
+
+                                        <Grid>
                                             <Button
                                                 size="small"
                                                 variant="contained"
                                                 fullWidth
                                                 sx={{ mt: 3 }}
+                                                className={styles.confirmButton}
                                             >
                                                 Confirm
                                             </Button>
                                         </Grid>
                                     </Grid>
-                                </Grid>
+                                </>
                             )}
                             {selectedType === 'addon' && <AddOnService />}
                             {selectedType === 'comment' && (
