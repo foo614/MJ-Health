@@ -1,28 +1,42 @@
-import * as React from 'react'
+import CloseIcon from '@mui/icons-material/Close'
+import {
+    DialogActions,
+    FormControl,
+    MenuItem,
+    Select,
+    Stack,
+} from '@mui/material'
 import Button from '@mui/material/Button'
 import Dialog from '@mui/material/Dialog'
 import DialogContent from '@mui/material/DialogContent'
+import DialogTitle from '@mui/material/DialogTitle'
+import IconButton from '@mui/material/IconButton'
+import { SelectChangeEvent } from '@mui/material/Select'
 import Slide from '@mui/material/Slide'
 import { TransitionProps } from '@mui/material/transitions'
-import styles from '../_final-report.module.scss'
-import IconButton from '@mui/material/IconButton'
-import CloseIcon from '@mui/icons-material/Close'
-import DialogTitle from '@mui/material/DialogTitle'
 import {
-    FormControl,
-    Select,
-    MenuItem,
-    DialogActions,
-    Stack,
-} from '@mui/material'
-import { SelectChangeEvent } from '@mui/material/Select'
-import {
+    FINAL_REPORT_AUDIOMETRY,
+    FINAL_REPORT_BONE_MINERAL_DENSITY,
+    FINAL_REPORT_CT_SCAN,
+    FINAL_REPORT_ELECTROCARDIOGRAM,
+    FINAL_REPORT_ENT_EXAMINATION,
+    FINAL_REPORT_GENERAL_MEASUREMENT,
     FINAL_REPORT_HMC_RECORD,
     FINAL_REPORT_HMP_BROCHURE,
+    FINAL_REPORT_INTERVIEW_PAGE,
+    FINAL_REPORT_LUNG_FUNCTION_TEST,
+    FINAL_REPORT_MAMMOGRAPHY,
     FINAL_REPORT_MPA,
     FINAL_REPORT_PAPS_SMEAR_EXAM,
+    FINAL_REPORT_PERIPHERAL_VASCULAR_SCREENING,
+    FINAL_REPORT_RETINOGRAPHY,
+    FINAL_REPORT_SONOGRAPHY,
+    FINAL_REPORT_VISION_AND_OCULAR_TENSION_TEST,
+    FINAL_REPORT_X_RAY,
 } from 'constant'
+import * as React from 'react'
 import { useNavigate } from 'react-router-dom'
+import styles from '../_final-report.module.scss'
 
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
@@ -84,62 +98,77 @@ const ViewFinalReportModal: React.FC<Props> = ({
         {
             id: 6,
             label: 'Interview',
+            to: FINAL_REPORT_INTERVIEW_PAGE,
         },
         {
             id: 7,
             label: 'Audiometry',
+            to: FINAL_REPORT_AUDIOMETRY,
         },
         {
             id: 8,
             label: 'Bone Mineral Density',
+            to: FINAL_REPORT_BONE_MINERAL_DENSITY,
         },
         {
             id: 9,
             label: 'CT Scan',
+            to: FINAL_REPORT_CT_SCAN,
         },
         {
             id: 10,
             label: 'Electrocardiogram',
+            to: FINAL_REPORT_ELECTROCARDIOGRAM,
         },
         {
             id: 11,
             label: 'ENT Examination',
+            to: FINAL_REPORT_ENT_EXAMINATION,
         },
         {
             id: 12,
             label: 'General Measurement',
+            to: FINAL_REPORT_GENERAL_MEASUREMENT,
         },
         {
             id: 13,
             label: 'Lung Function Test',
+            to: FINAL_REPORT_LUNG_FUNCTION_TEST,
         },
         {
             id: 14,
             label: 'Mammography',
+            to: FINAL_REPORT_MAMMOGRAPHY,
         },
         {
             id: 15,
             label: "Pap's Smear",
+            to: FINAL_REPORT_PAPS_SMEAR_EXAM,
         },
         {
             id: 16,
             label: 'Peripheral Vascular Screening',
+            to: FINAL_REPORT_PERIPHERAL_VASCULAR_SCREENING,
         },
         {
             id: 17,
             label: 'Retinography',
+            to: FINAL_REPORT_RETINOGRAPHY,
         },
         {
             id: 18,
             label: 'Sonography',
+            to: FINAL_REPORT_SONOGRAPHY,
         },
         {
             id: 19,
             label: 'Vision & Ocular Tension Test',
+            to: FINAL_REPORT_VISION_AND_OCULAR_TENSION_TEST,
         },
         {
             id: 20,
             label: 'X-Ray',
+            to: FINAL_REPORT_X_RAY,
         },
     ]
 
@@ -235,6 +264,11 @@ const ViewFinalReportModal: React.FC<Props> = ({
                                                     key={index}
                                                     className={
                                                         styles.inputField
+                                                    }
+                                                    onClick={() =>
+                                                        handleOnClickOption(
+                                                            item
+                                                        )
                                                     }
                                                 >
                                                     {item.label}
