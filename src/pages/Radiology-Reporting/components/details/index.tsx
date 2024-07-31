@@ -528,6 +528,10 @@ function RadiologyReportDetail() {
                     setOpen={setOpenMedicalHistory}
                     title="Medical History"
                     width="md"
+                    sx={{
+                        height: '600px',
+                        alignSelf: 'center',
+                    }}
                 >
                     <Grid container>
                         <Grid xs={12}>

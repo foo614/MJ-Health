@@ -3,7 +3,7 @@ import Dialog from '@mui/material/Dialog'
 import DialogContent from '@mui/material/DialogContent'
 import DialogTitle from '@mui/material/DialogTitle'
 import IconButton from '@mui/material/IconButton'
-import { Breakpoint } from '@mui/material/styles'
+import { Breakpoint, SxProps, Theme } from '@mui/material/styles'
 import * as React from 'react'
 import styles from './_modal.module.scss'
 
@@ -13,9 +13,10 @@ type Props = {
     children: React.ReactNode
     title: string
     width: false | Breakpoint | undefined //false = full width
+    sx?: SxProps<Theme>
 }
 
-const CustomModal = ({ title, setOpen, open, children, width }: Props) => {
+const CustomModal = ({ title, setOpen, open, children, width, sx }: Props) => {
     return (
         <React.Fragment>
             <Dialog
@@ -24,6 +25,7 @@ const CustomModal = ({ title, setOpen, open, children, width }: Props) => {
                 classes={{ paper: styles.infoModal }}
                 maxWidth={width}
                 fullWidth={!!width}
+                sx={sx ?? {}}
             >
                 {title && (
                     <DialogTitle className={styles.infoModalColor}>
