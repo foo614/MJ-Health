@@ -16,6 +16,7 @@ import { useState } from 'react'
 import styles from './_retinography.module.scss'
 import ButtonCard from './components/button-card'
 import RetinographyExamReport from './components/exam-report'
+import ViewCommentModal from 'components/ScreeningRoom/ViewCommentModal'
 
 const RetinographyDetail = () => {
     const theme = useTheme()
@@ -28,6 +29,7 @@ const RetinographyDetail = () => {
     const [openAllergyModal, setOpenAllergyModal] = useState<boolean>(false)
     const [openPersonalComplaintModal, setOpenPersonalComplaintModal] =
         useState<boolean>(false)
+    const [openViewComment, setOpenViewComment] = useState<boolean>(false)
 
     return (
         <>
@@ -64,6 +66,10 @@ const RetinographyDetail = () => {
                                     setOpenPersonalComplaintModal(true)
                                 }
                                 label="Personal Complaint"
+                            />
+                            <ButtonCard
+                                label="View Comment"
+                                onClick={() => setOpenViewComment(true)}
                             />
                         </Stack>
                     </Grid>
@@ -103,7 +109,8 @@ const RetinographyDetail = () => {
                                             : ''
                                     }`}
                                 >
-                                    Comment & Suggestion
+                                    {/* Comment & Suggestion */}
+                                    Overview
                                 </Button>
                             </Stack>
 
@@ -147,6 +154,13 @@ const RetinographyDetail = () => {
                 setOpen={setOpenPersonalComplaintModal}
                 open={openPersonalComplaintModal}
             />
+
+            {openViewComment && (
+                <ViewCommentModal
+                    open={openViewComment}
+                    handleClose={() => setOpenViewComment(false)}
+                />
+            )}
         </>
     )
 }

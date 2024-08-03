@@ -1,10 +1,12 @@
 import Paper from '@mui/material/Paper'
+import Stack from '@mui/material/Stack'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
+import styles from '../_view-comment-modal.module.scss'
 
 function createData(number: string, content: string) {
     return { number, content }
@@ -73,57 +75,79 @@ const rows = [
     ),
 ]
 
-export default function ReadTable() {
+type Props = {
+    date: string
+}
+
+export default function ReadTable({ date }: Props) {
     return (
-        <TableContainer
-            component={Paper}
-            sx={{
-                mt: 3,
-                borderRadius: '8px !important',
-                maxHeight: '300px',
-                background: '#F9F9F9',
-            }}
-            className={'tableContainer'}
-        >
-            <Table
+        <>
+            <TableContainer
+                component={Paper}
                 sx={{
-                    minWidth: 650,
-                    boxShadow: '0px 2px 2px 1px rgba(0, 0, 0, 0.05) inset',
+                    mt: 3,
+                    borderRadius: '8px !important',
+                    maxHeight: '300px',
+                    background: '#F9F9F9',
                 }}
-                size="small"
-                aria-label="a dense table"
-                stickyHeader
+                className={'tableContainer'}
             >
-                <TableHead>
-                    <TableRow>
-                        <TableCell>No.</TableCell>
-                        <TableCell>Content</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {rows.map((row) => (
-                        <TableRow
-                            key={row.number}
-                            sx={{
-                                '&:last-child td, &:last-child th': {
-                                    border: 0,
-                                },
-                            }}
-                        >
-                            <TableCell
-                                component="th"
-                                scope="row"
-                                sx={{ borderBottom: 'none' }}
-                            >
-                                {row.number}
-                            </TableCell>
-                            <TableCell sx={{ borderBottom: 'none' }}>
-                                {row.content}
-                            </TableCell>
+                <Table
+                    sx={{
+                        minWidth: 650,
+                        boxShadow: '0px 2px 2px 1px rgba(0, 0, 0, 0.05) inset',
+                    }}
+                    size="small"
+                    aria-label="a dense table"
+                    stickyHeader
+                >
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>No.</TableCell>
+                            <TableCell>Content</TableCell>
                         </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
+                    </TableHead>
+                    <TableBody>
+                        {rows.map((row) => (
+                            <TableRow
+                                key={row.number}
+                                sx={{
+                                    '&:last-child td, &:last-child th': {
+                                        border: 0,
+                                    },
+                                }}
+                            >
+                                <TableCell
+                                    component="th"
+                                    scope="row"
+                                    sx={{ borderBottom: 'none' }}
+                                >
+                                    {row.number}
+                                </TableCell>
+                                <TableCell sx={{ borderBottom: 'none' }}>
+                                    {row.content}
+                                </TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+
+            <Stack direction="row" spacing={2} mt={2}>
+                <p>
+                    <span className={styles.tableBottomText}>
+                        last update:{' '}
+                    </span>
+                    <span className={styles.tableBottomValue}>{date}</span>
+                </p>
+
+                <p>
+                    <span className={styles.tableBottomText}>Staff ID: </span>
+                    <span className={styles.tableBottomValue}>
+                        0000-0000-0000-0000
+                    </span>
+                </p>
+            </Stack>
+        </>
     )
 }

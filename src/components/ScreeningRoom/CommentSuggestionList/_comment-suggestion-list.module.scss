@@ -36,7 +36,7 @@ table {
 .title {
     color: var(--mj-deep-green);
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 600 !important;
 }
 
 .title.readonly {

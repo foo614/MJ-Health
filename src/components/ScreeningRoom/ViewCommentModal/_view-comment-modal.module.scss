@@ -22,3 +22,16 @@ table {
     background: white;
     z-index: 1;
 }
+
+.tableBottomText {
+    font-weight: 600 !important;
+    font-size: var(--font-size-xs) !important;
+    color: var(--label-color) !important;
+}
+
+.tableBottomValue {
+    font-weight: 500 !important;
+    font-size: var(--font-size-xs) !important;
+    color: var(--label-color) !important;
+    padding-left: 15px;
+}

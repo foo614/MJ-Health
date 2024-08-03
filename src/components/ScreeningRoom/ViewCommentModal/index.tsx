@@ -115,11 +115,11 @@ const ViewCommentModal: React.FC<CustomModalWithTabsProps> = ({
 
             <TabPanel value={tabValue} index={0}>
                 {/* Content for Tab 1 */}
-                <ReadTable />
+                <ReadTable date="11:11 22-09-2020" />
             </TabPanel>
             <TabPanel value={tabValue} index={1}>
                 {/* Content for Tab 2 */}
-                <ReadTable />
+                <ReadTable date="11:11 22-09-2018" />
             </TabPanel>
             {/* Add more TabPanels as needed */}
         </Dialog>
