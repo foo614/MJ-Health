@@ -15,6 +15,7 @@ import { MUL_REPORT_PAGE } from 'constant'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './_mul-report.module.scss'
+import UserHeader from 'components/UserHeader'
 
 const MULReport = () => {
     const theme = useTheme()
@@ -225,6 +226,9 @@ const MULReport = () => {
     return (
         <>
             <ResponsiveAppBar />
+
+            <UserHeader />
+
             <CustomHeader
                 title="MUL REPORT"
                 endAdornment={

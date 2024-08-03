@@ -28,6 +28,7 @@ import Doctor from 'images/group-712@2x.png'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from '../../_mul-report.module.scss'
+import UserHeader from 'components/UserHeader'
 
 const MULReportDetail = () => {
     const theme = useTheme()
@@ -109,6 +110,9 @@ const MULReportDetail = () => {
     return (
         <>
             <ResponsiveAppBar />
+
+            <UserHeader />
+
             <CustomHeader
                 title="MUL REPORT"
                 endAdornment={
@@ -209,6 +213,8 @@ const MULReportDetail = () => {
                                 container
                                 justifyContent={'space-between'}
                                 alignItems="flex-end"
+                                px={3}
+                                py={2}
                             >
                                 <Grid item>
                                     <Typography
@@ -227,7 +233,7 @@ const MULReportDetail = () => {
                                         component="div"
                                         className={styles.tableHeaderTitle}
                                     >
-                                        22-09-2022
+                                        22 - 09 - 2022
                                     </Typography>
                                 </Grid>
                                 <Grid item>
@@ -287,6 +293,7 @@ const MULReportDetail = () => {
                                             </TableCell>
                                             <TableCell
                                                 className={styles.fontBold}
+                                                width={'5%'}
                                             >
                                                 <Checkbox
                                                     defaultChecked={
@@ -327,6 +334,7 @@ const MULReportDetail = () => {
                         </TableContainer>
                     </Grid>
                 </Grid>
+
                 <Dialog
                     open={open}
                     aria-labelledby="responsive-dialog-title"
@@ -334,12 +342,13 @@ const MULReportDetail = () => {
                         borderTopLeftRadius: '10px',
                         borderTopRightRadius: '10px',
                     }}
+                    className={styles.queueModal}
                 >
                     <DialogTitle
                         id="scroll-dialog-title"
                         sx={{
                             background:
-                                'linear-gradient(90deg, #3ADEBB 0%, #00AEE9 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%)',
+                                'linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),linear-gradient(117deg, #3adebb 20%, #00aee9 100%)',
                         }}
                     >
                         <Box sx={{ ml: 2, mt: 5 }}>
@@ -355,8 +364,8 @@ const MULReportDetail = () => {
                         alt="Remy Sharp"
                         src={Doctor}
                         sx={{
-                            width: 120,
-                            height: 120,
+                            width: 140,
+                            height: 140,
                             position: 'absolute',
                             right: 40,
                             bottom: 90,
@@ -375,12 +384,13 @@ const MULReportDetail = () => {
                                     Current Waiting List:{' '}
                                     <b className={styles.queueNumber}>2</b>
                                 </Typography>
-                                <Grid container spacing={2}>
+                                <Grid container spacing={2} mt={1}>
                                     <Grid item xs={6}>
                                         <Button
                                             variant="outlined"
                                             fullWidth
                                             onClick={handleClose}
+                                            className={styles.cancelButton}
                                         >
                                             Cancel
                                         </Button>
@@ -390,6 +400,7 @@ const MULReportDetail = () => {
                                             variant="contained"
                                             fullWidth
                                             onClick={handleClose}
+                                            className={styles.queueButton}
                                         >
                                             Queue Now
                                         </Button>

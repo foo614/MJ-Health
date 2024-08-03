@@ -27,6 +27,9 @@ import ButtonCard from '../../../Radiology-Reporting/components/details/buttonCa
 import Header from '../../../Radiology-Reporting/components/details/header'
 import CustomizedTables from '../../../Radiology-Reporting/components/details/table'
 import ViewCommentModal from './modal'
+import CustomHeader from 'components/CustomHeader'
+import { MUL_REPORT_PAGE } from 'constant'
+import { useParams } from 'react-router-dom'
 
 const AntTabs = styled(Tabs)({
     borderBottom: '1px solid #e8e8e8',
@@ -142,6 +145,8 @@ function MULReportDetailTable() {
     const theme = useTheme()
     const matches = useMediaQuery(theme.breakpoints.up('sm'))
     const [isEdit, setIsEdit] = useState(false)
+    const { id } = useParams()
+
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setCurrentIndex(newValue)
         setSelectedType('report')
@@ -1087,7 +1092,24 @@ function MULReportDetailTable() {
         <>
             <ResponsiveAppBar />
             <UserHeader />
-            <Header />
+            <CustomHeader
+                to={MUL_REPORT_PAGE + `/${id}`}
+                title="MUL REPORT"
+                endAdornment={
+                    <Button
+                        variant="contained"
+                        sx={{
+                            height: '40px',
+                            marginTop: '5px',
+                            minWidth: '100px',
+                        }}
+                        size={matches ? 'medium' : 'small'}
+                        // onClick={() => setOpen(true)}
+                    >
+                        Print
+                    </Button>
+                }
+            />
             <Grid container sx={{ background: '#EDEDED' }}>
                 <Grid xs={12} md={2} sx={{ mt: matches ? 4 : 2 }}>
                     <Stack

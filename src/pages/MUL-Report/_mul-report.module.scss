@@ -45,8 +45,10 @@
 }
 
 .tableAppBar {
-    background: linear-gradient(117deg, #3adebb 11%, #00aee9 100%),
-        linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+    // background: linear-gradient(117deg, #3adebb 11%, #00aee9 100%),
+    //     linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(117deg, #3adebb 20%, #00aee9 100%);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     height: 140px;
@@ -87,8 +89,8 @@
 }
 .tableHeaderTitle {
     color: white;
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 36px !important;
+    font-weight: 700 !important;
     text-transform: uppercase;
     word-wrap: break-word;
 }
@@ -106,15 +108,15 @@
 //modal
 .title1 {
     color: white;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 18px !important;
+    font-weight: 500 !important;
     word-wrap: break-word;
 }
 
 .title2 {
     color: white;
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 28px !important;
+    font-weight: 700 !important;
     word-wrap: break-word;
 }
 
@@ -136,4 +138,17 @@
     font-size: 16px;
     font-weight: 700;
     word-wrap: break-word;
+}
+
+.queueModal {
+    .cancelButton {
+        font-weight: 700 !important;
+        color: var(--color-lightslategray) !important;
+        background-color: var(--color-whitesmoke-300) !important;
+        border: none !important;
+    }
+
+    .queueButton {
+        font-weight: 700 !important;
+    }
 }
