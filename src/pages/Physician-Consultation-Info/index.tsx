@@ -9,7 +9,6 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './_physician-consultation-info.module.scss'
 import AllergyModal from './components/allergy-modal'
-import CallHistoryModal from './components/call-history-modal'
 import CommentSection from './components/comment-section'
 import CurrentTable from './components/current-table'
 import CurrentTableEditModal from './components/current-table-edit-modal'
@@ -23,6 +22,7 @@ import Recommendation from './components/recommendation'
 import ScreeningOutcome from './components/screening-outcome'
 import SystemicExaminationModal from './components/systemic-examination-modal'
 import UserHeader from './components/user-header'
+import CallHistoryModal from 'components/CallHistoryModal'
 
 const PhysicianConsultationInfo = () => {
     const theme = useTheme()
