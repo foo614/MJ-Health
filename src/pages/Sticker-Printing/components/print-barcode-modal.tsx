@@ -22,6 +22,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import * as React from 'react'
 import styles from '../_sticker-printing.module.scss'
 import QuantityInput from 'components/Input/quantity-input'
+import DateInput from 'components/Input/date-input'
 
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
@@ -216,59 +217,11 @@ const PrintBarcodeModal: React.FC<Props> = ({
                                 <Grid container sx={{ marginTop: '1rem' }}>
                                     <Grid item md={6} xs={12}>
                                         <p className={styles.dateTitle}>From</p>
-                                        <LocalizationProvider
-                                            dateAdapter={AdapterDayjs}
-                                        >
-                                            <DatePicker
-                                                slots={{
-                                                    textField: (params) => (
-                                                        <TextField
-                                                            variant="outlined"
-                                                            {...params}
-                                                            size="small"
-                                                            className={
-                                                                styles.printBarcodeDateInput
-                                                            }
-                                                            InputProps={{
-                                                                classes: {
-                                                                    input: styles.inputField,
-                                                                },
-                                                            }}
-                                                            margin="dense"
-                                                        />
-                                                    ),
-                                                }}
-                                                format="DD/MM/YYYY"
-                                            />
-                                        </LocalizationProvider>
+                                        <DateInput />
                                     </Grid>
                                     <Grid item md={6} xs={12}>
                                         <p className={styles.dateTitle}>To</p>
-                                        <LocalizationProvider
-                                            dateAdapter={AdapterDayjs}
-                                        >
-                                            <DatePicker
-                                                slots={{
-                                                    textField: (params) => (
-                                                        <TextField
-                                                            variant="outlined"
-                                                            {...params}
-                                                            size="small"
-                                                            className={
-                                                                styles.printBarcodeDateInput
-                                                            }
-                                                            InputProps={{
-                                                                classes: {
-                                                                    input: styles.inputField,
-                                                                },
-                                                            }}
-                                                            margin="dense"
-                                                        />
-                                                    ),
-                                                }}
-                                                format="DD/MM/YYYY"
-                                            />
-                                        </LocalizationProvider>
+                                        <DateInput />
                                     </Grid>
                                 </Grid>
                             </div>

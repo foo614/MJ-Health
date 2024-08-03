@@ -194,9 +194,17 @@ const DateInput = ({ format, iconPosition, label, sx }: Props) => {
                             layout: {
                                 sx: {
                                     height: 'auto',
-                                    pb: 4,
                                     '& .MuiDayCalendar-weekDayLabel': {
                                         fontWeight: '600 !important',
+                                    },
+                                    '.MuiDateCalendar-root': {
+                                        height: 'auto',
+                                        maxHeight: 'fit-content',
+                                        minHeight: 'auto',
+                                    },
+                                    '.MuiPickersSlideTransition-root': {
+                                        minHeight: 'auto',
+                                        pb: 2,
                                     },
                                 },
                             },
@@ -206,6 +214,13 @@ const DateInput = ({ format, iconPosition, label, sx }: Props) => {
                             popper: {
                                 container: inputRef.current,
                                 sx: {},
+                            },
+                            textField: {
+                                onClick: () => {
+                                    if (iconPosition == undefined) {
+                                        setOpen(true)
+                                    }
+                                },
                             },
                         }}
                         slots={{
