@@ -18,6 +18,7 @@ import CardContent from '@mui/material/CardContent'
 import CommentSuggestionList from 'components/ScreeningRoom/CommentSuggestionList'
 import RowButton from './components/row-button'
 import RowItemCard from './components/row-item-card'
+import SonographyExamReport from 'pages/Screening-Room-System/Sonography/detail/components/exam-report'
 
 const FinalReportSonography = () => {
     const [readonly, setReadonly] = useState<boolean>(true)
@@ -811,7 +812,7 @@ const FinalReportSonography = () => {
                         }}
                     />
 
-                    {selectedType === 'report' && (
+                    {/* {selectedType === 'report' && (
                         <RowButton
                             currentIndex={currentIndex}
                             handleChange={handleChange}
@@ -827,7 +828,9 @@ const FinalReportSonography = () => {
                     <CardContent sx={{ padding: '0 1.5rem' }}>
                         {selectedType === 'report' &&
                             handleDisplay(currentIndex)}
-                    </CardContent>
+                    </CardContent> */}
+
+                    {selectedType === 'report' && <SonographyExamReport />}
 
                     <CardContent
                         sx={{ padding: '0 1.5rem', marginTop: '2rem' }}

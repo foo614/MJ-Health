@@ -8,6 +8,7 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import GroupsIcon from '@mui/icons-material/Groups'
 import FolderOpenIcon from '@mui/icons-material/FolderOpen'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
+import DateInput from 'components/Input/date-input'
 
 const TopSectionPanel = () => {
     const [gender, setGender] = useState<string>('')
@@ -140,47 +141,11 @@ const TopSectionPanel = () => {
                     <Grid container>
                         <Grid item md={6} sm={6} xs={12}>
                             <p className={styles.top_section_title}>From</p>
-                            <div>
-                                <TextField
-                                    margin="dense"
-                                    variant="outlined"
-                                    size="small"
-                                    InputProps={{
-                                        classes: {
-                                            input: styles.inputField,
-                                        },
-                                        startAdornment: (
-                                            <InputAdornment position="start">
-                                                <CalendarMonthIcon
-                                                    className={
-                                                        styles.searchIcon
-                                                    }
-                                                    fontSize={'large'}
-                                                />
-                                            </InputAdornment>
-                                        ),
-                                    }}
-                                    fullWidth
-                                    className={styles.textFieldProps}
-                                />
-                            </div>
+                            <DateInput iconPosition="start" />
                         </Grid>
                         <Grid item md={6} sm={6} xs={12}>
                             <p className={styles.top_section_title}>To</p>
-                            <div>
-                                <TextField
-                                    margin="dense"
-                                    variant="outlined"
-                                    size="small"
-                                    InputProps={{
-                                        classes: {
-                                            input: styles.inputField,
-                                        },
-                                    }}
-                                    fullWidth
-                                    className={styles.textFieldProps}
-                                />
-                            </div>
+                            <DateInput iconPosition="start" />
                         </Grid>
                     </Grid>
                 </Grid>

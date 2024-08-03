@@ -112,7 +112,7 @@ const SonographyDetail = () => {
                         }}
                         onClick={() => handleButtonChange('comment')}
                     >
-                        Comment & Suggestion
+                        Overview
                     </Button>
                 </Grid>
             </>
