@@ -1,37 +1,38 @@
-import * as React from 'react'
+/*
+ * This component should be shared used.
+ * In UI addon requirement, there are some new changes only applied to the CallHistory component in Health Consultation module.
+ * Hence, this common CallHistory component is replaced by the one in Health Consultation module.
+ */
+import CloseIcon from '@mui/icons-material/Close'
+import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Dialog from '@mui/material/Dialog'
+import DialogActions from '@mui/material/DialogActions'
 import DialogContent from '@mui/material/DialogContent'
-import Slide from '@mui/material/Slide'
-import { TransitionProps } from '@mui/material/transitions'
-// import styles from '../_health-management-consultation-info.module.scss'
-import IconButton from '@mui/material/IconButton'
-import CloseIcon from '@mui/icons-material/Close'
 import DialogTitle from '@mui/material/DialogTitle'
+import FormControl from '@mui/material/FormControl'
+import IconButton from '@mui/material/IconButton'
+import MenuItem from '@mui/material/MenuItem'
+import Paper from '@mui/material/Paper'
+import Select from '@mui/material/Select'
+import Slide from '@mui/material/Slide'
+import Stack from '@mui/material/Stack'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import Paper from '@mui/material/Paper'
+import TextField from '@mui/material/TextField'
+import Typography from '@mui/material/Typography'
 import { useTheme } from '@mui/material/styles'
+import { TransitionProps } from '@mui/material/transitions'
 import useMediaQuery from '@mui/material/useMediaQuery'
-import DialogActions from '@mui/material/DialogActions'
-import Stack from '@mui/material/Stack'
-import ConfirmIcon from 'images/reject.png'
-
-import {
-    FormControl,
-    Select,
-    MenuItem,
-    TextField,
-    Box,
-    Typography,
-} from '@mui/material'
-import { useState } from 'react'
 import ConfirmationModal from 'components/ConfirmationModal'
+import ConfirmIcon from 'images/reject.png'
+import React, { Dispatch, SetStateAction, useState } from 'react'
 import styles from './_call-history-modal.module.scss'
+
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
         children: React.ReactElement<any, any>
@@ -42,19 +43,19 @@ const Transition = React.forwardRef(function Transition(
 })
 
 type Props = {
-    setOpen: any
-    open: any
-    listData: any
-    listOption: any
-    statusOption: any
+    setOpen: Dispatch<SetStateAction<boolean>>
+    open: boolean
+    module?:
+        | 'PhysicianConsultaion'
+        | 'HealthManagementConsultation'
+        | 'PhoneConsultation'
+        | 'Interview'
 }
 
 const CallHistoryModal: React.FC<Props> = ({
     setOpen,
     open,
-    listData,
-    listOption,
-    statusOption,
+    module,
 }: Props) => {
     const theme = useTheme()
     const lgUp = useMediaQuery(theme.breakpoints.up('lg'))
@@ -67,6 +68,67 @@ const CallHistoryModal: React.FC<Props> = ({
     const handleClose = () => {
         setOpen(false)
     }
+
+    const listData = [
+        {
+            id: 1,
+            date: '03-03-2023',
+            relative: 1,
+            remark: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
+            pic: 'MYJB-0001',
+            status: 1,
+        },
+        {
+            id: 2,
+            date: '03-03-2023',
+            relative: 2,
+            remark: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
+            pic: 'MYJB-0001',
+            status: 4,
+        },
+        {
+            id: 3,
+            date: '03-03-2023',
+            relative: 1,
+            remark: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
+            pic: 'MYJB-0001',
+            status: 4,
+        },
+        {
+            id: 4,
+            date: '03-03-2023',
+            relative: 1,
+            remark: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
+            pic: 'MYJB-0001',
+            status: 4,
+        },
+        {
+            id: 5,
+            date: '03-03-2023',
+            relative: 2,
+            remark: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
+            pic: 'MYJB-0001',
+            status: 4,
+        },
+    ]
+
+    const listOption = [
+        {
+            id: 1,
+            label: 'Daughter',
+        },
+        {
+            id: 2,
+            label: 'Son',
+        },
+    ]
+
+    const statusOption = [
+        { id: 1, label: 'Call Again' },
+        { id: 2, label: 'No Answer' },
+        { id: 3, label: 'Follow Up' },
+        { id: 4, label: 'Closed' },
+    ]
 
     return (
         <React.Fragment>
@@ -261,14 +323,14 @@ const CallHistoryModal: React.FC<Props> = ({
                                                         >
                                                             <span
                                                                 className={
-                                                                    styles.callHistoryModalBottomText
+                                                                    styles.personalComplaintModalBottomText
                                                                 }
                                                             >
                                                                 last update:
                                                             </span>
                                                             <span
                                                                 className={
-                                                                    styles.callHistoryModalBottomValue
+                                                                    styles.personalComplaintModalBottomValue
                                                                 }
                                                             >
                                                                 -
@@ -446,6 +508,7 @@ const CallHistoryModal: React.FC<Props> = ({
                                                         multiline
                                                         value={item.remark}
                                                         disabled
+                                                        sx={{ mt: 0 }}
                                                     />
                                                     <p
                                                         style={{
@@ -454,14 +517,14 @@ const CallHistoryModal: React.FC<Props> = ({
                                                     >
                                                         <span
                                                             className={
-                                                                styles.callHistoryModalBottomText
+                                                                styles.personalComplaintModalBottomText
                                                             }
                                                         >
                                                             last update:
                                                         </span>
                                                         <span
                                                             className={
-                                                                styles.callHistoryModalBottomValue
+                                                                styles.personalComplaintModalBottomValue
                                                             }
                                                         >
                                                             11:11 22-09-2022
@@ -488,6 +551,7 @@ const CallHistoryModal: React.FC<Props> = ({
                                                         }}
                                                         value={item.pic}
                                                         disabled
+                                                        sx={{ mt: 0 }}
                                                     />
                                                 </TableCell>
                                                 <TableCell
@@ -542,7 +606,7 @@ const CallHistoryModal: React.FC<Props> = ({
                                                         </Select>
                                                     </FormControl>
 
-                                                    {/* <Box
+                                                    <Box
                                                         sx={{
                                                             position:
                                                                 'absolute',
@@ -556,52 +620,54 @@ const CallHistoryModal: React.FC<Props> = ({
                                                             alignItems="center"
                                                             spacing={1}
                                                         >
-                                                            {item.status ==
-                                                                1 && (
-                                                                <>
-                                                                    {rowSpanId !=
-                                                                    item.id ? (
-                                                                        <Button
-                                                                            fullWidth
-                                                                            variant="contained"
-                                                                            onClick={() =>
-                                                                                setRowSpanId(
-                                                                                    item.id
-                                                                                )
-                                                                            }
-                                                                        >
-                                                                            Create
-                                                                        </Button>
-                                                                    ) : (
-                                                                        <>
-                                                                            <Button
-                                                                                fullWidth
-                                                                                variant="contained"
-                                                                                onClick={() =>
-                                                                                    setOpenConfirmationModal(
-                                                                                        true
-                                                                                    )
-                                                                                }
-                                                                            >
-                                                                                Confirm
-                                                                            </Button>
+                                                            {module ==
+                                                                'PhoneConsultation' &&
+                                                                item.status ==
+                                                                    1 && (
+                                                                    <>
+                                                                        {rowSpanId !=
+                                                                        item.id ? (
                                                                             <Button
                                                                                 fullWidth
                                                                                 variant="contained"
                                                                                 onClick={() =>
                                                                                     setRowSpanId(
-                                                                                        undefined
+                                                                                        item.id
                                                                                     )
                                                                                 }
                                                                             >
-                                                                                Cancel
+                                                                                Create
                                                                             </Button>
-                                                                        </>
-                                                                    )}
-                                                                </>
-                                                            )}
+                                                                        ) : (
+                                                                            <>
+                                                                                <Button
+                                                                                    fullWidth
+                                                                                    variant="contained"
+                                                                                    onClick={() =>
+                                                                                        setOpenConfirmationModal(
+                                                                                            true
+                                                                                        )
+                                                                                    }
+                                                                                >
+                                                                                    Confirm
+                                                                                </Button>
+                                                                                <Button
+                                                                                    fullWidth
+                                                                                    variant="contained"
+                                                                                    onClick={() =>
+                                                                                        setRowSpanId(
+                                                                                            undefined
+                                                                                        )
+                                                                                    }
+                                                                                >
+                                                                                    Cancel
+                                                                                </Button>
+                                                                            </>
+                                                                        )}
+                                                                    </>
+                                                                )}
                                                         </Stack>
-                                                    </Box> */}
+                                                    </Box>
                                                 </TableCell>
                                             </TableRow>
                                         </>
@@ -657,15 +723,25 @@ const CallHistoryModal: React.FC<Props> = ({
                                 830505011212
                             </p>
                         </div>
-                        <div style={{ marginLeft: mdUp ? 'auto' : '0' }}>
-                            <p
-                                className={styles.callHistoryDialogActionText}
-                                style={{ textAlign: mdUp ? 'end' : 'start' }}
-                            >
+                        <div>
+                            <p className={styles.callHistoryDialogActionText}>
                                 Contact No.
                             </p>
                             <p className={styles.callHistoryDialogActionValue}>
                                 +60-100600660
+                            </p>
+                        </div>
+                        <div>
+                            <p className={styles.callHistoryDialogActionText}>
+                                HS Report
+                            </p>
+                            <p className={styles.callHistoryDialogActionValue}>
+                                <Button
+                                    variant="contained"
+                                    className={styles.viewHSReport}
+                                >
+                                    View PDF
+                                </Button>
                             </p>
                         </div>
                     </Stack>

@@ -301,9 +301,9 @@ const InterviewInfo = () => {
                 <CallHistoryModal
                     open={openCallHistoryModal}
                     setOpen={setOpenCallHistoryModal}
-                    listData={listData}
-                    listOption={listOption}
-                    statusOption={statusOption}
+                    // listData={listData}
+                    // listOption={listOption}
+                    // statusOption={statusOption}
                 />
             ) : null}
             {openPregnancyWaiverFormModal ? (

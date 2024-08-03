@@ -13,7 +13,7 @@ import {
 import { PHONE_CONSULTATION_DISTRIBUTE_PAGE } from 'constant'
 import { CallOutRecordData } from 'pages/Phone-Consultation/types/CallOutRecordData'
 import styles from './_call-out-records.module.scss'
-import CallHistoryModal from 'pages/Health-Management-Consultation-Info/components/call-history-modal'
+import CallHistoryModal from 'components/CallHistoryModal'
 import { useState } from 'react'
 
 type Props = {
@@ -154,7 +154,11 @@ const CallOutRecordsTable = (props: Props) => {
                 </TableContainer>
             </Box>
 
-            <CallHistoryModal setOpen={setOpen} open={open} />
+            <CallHistoryModal
+                setOpen={setOpen}
+                open={open}
+                module="PhoneConsultation"
+            />
         </>
     )
 }
